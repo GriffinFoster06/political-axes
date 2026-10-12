@@ -1,0 +1,198 @@
+{
+  "domain_id": "D20",
+  "domain": "Elections & voting",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "High pole is consistently 'stricter rules / status quo institutions'.",
+  "items": [
+    {
+      "id": "voter_id",
+      "subtopic": "Voter ID",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should voters have to show a photo ID to vote?",
+      "scope": "Voting in person.",
+      "options": [
+        "No; signature checks and other methods are enough",
+        "Yes, but accept many kinds of ID, give IDs free, and allow a backup option for people without one",
+        "Yes, a government-issued photo ID, with no backup option"
+      ],
+      "high_pole": "strict"
+    },
+    {
+      "id": "proof_of_citizenship",
+      "subtopic": "Voter ID",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should people have to show a document proving citizenship, like a passport or birth certificate, when registering to vote?",
+      "scope": "Today people swear they are citizens, under penalty of law.",
+      "options": [
+        "No; the sworn statement and existing checks are enough",
+        "Only when government records can't confirm citizenship",
+        "Yes, everyone"
+      ],
+      "high_pole": "everyone"
+    },
+    {
+      "id": "mail_voting",
+      "subtopic": "Mail voting",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Who should be able to vote by mail?",
+      "scope": "Federal elections.",
+      "options": [
+        "Every voter, with ballots mailed automatically",
+        "Any voter who asks",
+        "Only voters with a reason, like illness or travel",
+        "Almost no one; vote in person"
+      ],
+      "high_pole": "restrict"
+    },
+    {
+      "id": "mail_ballot_deadline",
+      "subtopic": "Mail voting",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should mail ballots that arrive after Election Day count if they were mailed by Election Day?",
+      "scope": "Ballots with a postmark on or before Election Day.",
+      "options": [
+        "Yes, if they arrive within a week or more",
+        "Yes, if they arrive within 3 days",
+        "No; only ballots received by Election Day"
+      ],
+      "high_pole": "by Election Day"
+    },
+    {
+      "id": "auto_registration",
+      "subtopic": "Automatic registration",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should eligible citizens be registered to vote automatically when they deal with government agencies, like getting a driver's license?",
+      "scope": "Only people the agency confirms are eligible citizens.",
+      "options": [
+        "Yes, unless they choose to opt out",
+        "Offer registration, but people must choose to sign up",
+        "No; people should register on their own"
+      ],
+      "high_pole": "on their own"
+    },
+    {
+      "id": "felony_voting",
+      "subtopic": "Voting after a felony conviction",
+      "axis": ["VOTING", "ORDER"],
+      "format": "position",
+      "stem": "When should people convicted of a felony be able to vote?",
+      "scope": "Any felony conviction.",
+      "options": [
+        "Always, even while in prison",
+        "Once released from prison",
+        "After finishing parole or probation",
+        "Only after a waiting period or an individual review",
+        "Never"
+      ],
+      "high_pole": "never"
+    },
+    {
+      "id": "electoral_college",
+      "subtopic": "Electoral College",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "How should the president be elected?",
+      "scope": "This would apply to elections from now on, whichever party it might help.",
+      "options": [
+        "By national popular vote, ending the Electoral College",
+        "Keep the Electoral College, but divide each state's votes in proportion to how the state voted",
+        "Keep the Electoral College as it is"
+      ],
+      "high_pole": "keep"
+    },
+    {
+      "id": "popular_vote_loser",
+      "subtopic": "Electoral College",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Is it acceptable for a candidate to win the presidency while getting fewer votes nationwide than the opponent?",
+      "scope": "This has happened 5 times, most recently in 2016.",
+      "options": [
+        "No; it should be impossible",
+        "Acceptable, but the system should change to make it rarer",
+        "Yes; it reflects the role of states in choosing the president"
+      ],
+      "high_pole": "acceptable",
+      "facts": [
+        {"claim": "Popular-vote loser won the presidency in 1824, 1876, 1888, 2000, 2016", "source": "National Archives; Federal Election Commission", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "redistricting",
+      "subtopic": "Redistricting and gerrymandering",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Who should draw the lines for congressional districts?",
+      "scope": "Answer whichever party it might help in your state.",
+      "options": [
+        "Independent commissions with no politicians involved",
+        "Commissions with equal members from both parties",
+        "State legislatures, once every 10 years after the census",
+        "State legislatures, whenever they choose, including mid-decade"
+      ],
+      "high_pole": "legislatures anytime"
+    },
+    {
+      "id": "campaign_spending",
+      "subtopic": "Campaign finance",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should there be limits on how much corporations, unions and wealthy individuals can spend on elections?",
+      "scope": "Spending on ads and campaigns, not direct donations to candidates.",
+      "options": [
+        "Yes, strict limits, with a constitutional amendment if needed",
+        "No limits, but full disclosure of who pays for political ads",
+        "No limits or disclosure rules; spending on politics is free speech"
+      ],
+      "high_pole": "no limits"
+    },
+    {
+      "id": "public_financing",
+      "subtopic": "Campaign finance",
+      "axis": ["VOTING"],
+      "format": "position",
+      "stem": "Should candidates get public money for their campaigns if they agree to spending limits?",
+      "scope": "Federal campaigns.",
+      "options": [
+        "Yes, matching small donations several times over",
+        "Yes, a modest amount",
+        "No public money for campaigns"
+      ],
+      "high_pole": "none"
+    },
+    {
+      "id": "congress_term_limits",
+      "subtopic": "Term limits (Congress / Supreme Court)",
+      "axis": ["VOTING", "POP"],
+      "format": "position",
+      "stem": "Should members of Congress have term limits?",
+      "scope": "Limits on total years served in each chamber.",
+      "options": [
+        "Yes, 12 years or less",
+        "Yes, about 18 to 24 years",
+        "No; voters can remove them"
+      ],
+      "high_pole": "no limits",
+      "notes": "Popular across parties; may load on POP rather than VOTING."
+    },
+    {
+      "id": "court_term_limits",
+      "subtopic": "Term limits (Congress / Supreme Court)",
+      "axis": ["VOTING", "NORMS"],
+      "format": "position",
+      "stem": "Should Supreme Court justices serve a fixed term instead of for life?",
+      "scope": "For future justices.",
+      "options": [
+        "Yes, 18 years",
+        "Yes, but longer, around 25 years",
+        "No; keep life terms"
+      ],
+      "high_pole": "life terms"
+    }
+  ]
+}

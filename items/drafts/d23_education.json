@@ -1,0 +1,184 @@
+{
+  "domain_id": "D23",
+  "domain": "Education",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Two possible sub-dimensions: funding/choice and curriculum/parental control. High pole is consistently 'more choice and parental control / less public provision'.",
+  "items": [
+    {
+      "id": "school_choice",
+      "subtopic": "School choice and vouchers",
+      "axis": ["EDUC"],
+      "format": "position",
+      "stem": "Should public money follow students to the school their family chooses, including private schools?",
+      "scope": "K-12 education.",
+      "options": [
+        "No; fund public schools only",
+        "Only to public charter schools, not private schools",
+        "Yes, including private schools, for low-income families",
+        "Yes, including private schools, for every family"
+      ],
+      "high_pole": "every family"
+    },
+    {
+      "id": "charter_schools",
+      "subtopic": "School choice and vouchers",
+      "axis": ["EDUC"],
+      "format": "position",
+      "stem": "How many public charter schools should there be?",
+      "scope": "Charter schools are tuition-free public schools run independently of the school district.",
+      "options": [
+        "Fewer; limit or close them",
+        "About as many as today",
+        "More",
+        "Many more; let any qualified group open one"
+      ],
+      "high_pole": "many more"
+    },
+    {
+      "id": "curriculum_control",
+      "subtopic": "Who controls curriculum",
+      "axis": ["EDUC"],
+      "format": "position",
+      "stem": "Who should have the most say over what public schools teach?",
+      "scope": "Public K-12 schools.",
+      "options": [
+        "Teachers and education experts",
+        "State education boards",
+        "Local elected school boards",
+        "Parents, with the right to review all materials"
+      ],
+      "high_pole": "parents"
+    },
+    {
+      "id": "lesson_opt_out",
+      "subtopic": "Who controls curriculum",
+      "axis": ["EDUC"],
+      "format": "position",
+      "stem": "Should parents be able to take their children out of lessons they object to?",
+      "scope": "Public K-12 schools.",
+      "options": [
+        "No; the curriculum is for all students",
+        "Only for sex education",
+        "Yes, for any lesson that conflicts with their values"
+      ],
+      "high_pole": "any lesson"
+    },
+    {
+      "id": "teach_gender_identity",
+      "subtopic": "Teaching about race and gender",
+      "axis": ["EDUC", "GENDERID"],
+      "format": "position",
+      "stem": "Should public schools teach about gender identity?",
+      "scope": "For example, that some people identify as a gender different from their sex at birth.",
+      "options": [
+        "Yes, starting in elementary school",
+        "Only in middle and high school",
+        "Only in high school, with parents choosing whether their child takes part",
+        "No, at any grade"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "sex_education",
+      "subtopic": "Teaching about race and gender",
+      "axis": ["EDUC", "MORAL"],
+      "format": "position",
+      "stem": "What kind of sex education should public high schools teach?",
+      "scope": "Required health classes, with parents able to opt out.",
+      "options": [
+        "Full coverage, including contraception, consent and sexual orientation",
+        "Contraception and consent, while encouraging teens to wait",
+        "Abstinence only",
+        "None; leave it to parents"
+      ],
+      "high_pole": "none"
+    },
+    {
+      "id": "student_loan_cancel",
+      "subtopic": "Student loan relief",
+      "axis": ["EDUC", "REDIS"],
+      "format": "position",
+      "stem": "What should happen to existing federal student loan debt?",
+      "scope": "Loans from the federal government, not private lenders.",
+      "options": [
+        "Cancel all of it",
+        "Cancel up to about $10,000 to $20,000 per borrower",
+        "Cancel only for people misled by their schools, or after years of public service",
+        "No cancellation"
+      ],
+      "high_pole": "none"
+    },
+    {
+      "id": "loan_repayment",
+      "subtopic": "Student loan relief",
+      "axis": ["EDUC", "REDIS"],
+      "format": "position",
+      "stem": "Should monthly federal student loan payments be capped at a share of the borrower's income?",
+      "scope": "For future and current borrowers.",
+      "options": [
+        "Yes, at 5% of income or less, with any remaining debt forgiven after 10 years",
+        "Yes, at about 10% of income, with remaining debt forgiven after 20 to 25 years",
+        "No; borrowers should repay what they borrowed on standard terms"
+      ],
+      "high_pole": "standard terms"
+    },
+    {
+      "id": "free_college",
+      "subtopic": "Tuition-free public college",
+      "axis": ["EDUC", "REDIS"],
+      "format": "position",
+      "stem": "Should tuition be free at public colleges and universities?",
+      "scope": "Paid for by taxes.",
+      "options": [
+        "Yes, for everyone",
+        "Yes, for families earning under about $125,000",
+        "Only community college",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "education_department",
+      "subtopic": "Federal role in education",
+      "axis": ["EDUC", "FED"],
+      "format": "position",
+      "stem": "What should happen to the federal Department of Education?",
+      "scope": "Its main jobs are student aid, civil rights enforcement and funding for low-income schools.",
+      "options": [
+        "Expand it and increase federal school funding",
+        "Keep it about as it is",
+        "Shrink it and send money and control to states",
+        "Close it"
+      ],
+      "high_pole": "close"
+    },
+    {
+      "id": "school_discipline",
+      "subtopic": "School discipline and safety",
+      "axis": ["EDUC", "ORDER"],
+      "format": "position",
+      "stem": "How should schools handle students who are repeatedly disruptive or violent?",
+      "scope": "Public K-12 schools.",
+      "options": [
+        "Counseling and repairing harm; suspend only as a last resort",
+        "A mix of counseling and suspension",
+        "Suspend or expel them to protect other students"
+      ],
+      "high_pole": "suspend"
+    },
+    {
+      "id": "selective_admissions",
+      "subtopic": "Merit-based admissions to selective public schools",
+      "axis": ["EDUC", "EQUITY"],
+      "format": "position",
+      "stem": "How should selective public high schools choose their students?",
+      "scope": "Public schools with more applicants than seats, such as specialized science schools.",
+      "options": [
+        "A lottery among qualified applicants",
+        "Grades and tests, plus seats for the top students from every middle school",
+        "Admission test and grades only"
+      ],
+      "high_pole": "test and grades"
+    }
+  ]
+}

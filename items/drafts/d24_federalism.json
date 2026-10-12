@@ -1,0 +1,126 @@
+{
+  "domain_id": "D24",
+  "domain": "Federalism & local control",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Federalism views often follow which party holds federal power. Items ask for rules 'under any administration' and the states_differ item spans issues favored by both sides, so a consistent federalist can be told apart from someone who wants their side's policy at whatever level wins. High pole is consistently 'more state and local control'.",
+  "items": [
+    {
+      "id": "national_vs_state_tradeoff",
+      "subtopic": "Federal vs state power in general",
+      "axis": ["FED"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view?",
+      "scope": "Think about major policies in general, whichever party is in power.",
+      "sides": [
+        {"label": "National standards", "text": "Major policies should be set nationally, so rules are the same everywhere, even if some states disagree."},
+        {"label": "State control", "text": "States should decide most policies, even if rules differ from state to state."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "closer_government_tradeoff",
+      "subtopic": "Federal vs state power in general",
+      "axis": ["FED"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view of who solves problems better?",
+      "scope": "Problems like roads, schools and public health.",
+      "sides": [
+        {"label": "Federal government", "text": "The federal government, which has more money and expertise, even if it is far from local conditions."},
+        {"label": "State and local", "text": "State and local governments, which are closer to people, even if some lack money or expertise."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "states_differ",
+      "subtopic": "Letting states differ on contested issues",
+      "axis": ["FED"],
+      "format": "exceptions",
+      "stem": "For each of these, should the rules be the same nationwide, or decided by each state?",
+      "scope": "Answer each one separately. This is about who decides, not what the rule should be.",
+      "options": ["Same nationwide", "Each state decides"],
+      "high_pole": "Each state decides",
+      "cases": [
+        {"id": "sd_guns", "text": "Gun laws"},
+        {"id": "sd_marijuana", "text": "Marijuana laws"},
+        {"id": "sd_min_wage", "text": "Minimum wage"},
+        {"id": "sd_voting", "text": "Voting rules, such as mail voting and voter ID"},
+        {"id": "sd_marriage", "text": "Marriage laws"}
+      ],
+      "notes": "Abortion is asked separately (abortion_who_decides)."
+    },
+    {
+      "id": "state_preemption",
+      "subtopic": "State preemption of cities",
+      "axis": ["FED"],
+      "format": "position",
+      "stem": "Should state governments be able to stop cities from passing their own laws on things like minimum wage, guns or plastic bags?",
+      "scope": "Answer whichever party controls your state or your city.",
+      "options": [
+        "Yes; states should decide these",
+        "Only where one statewide rule is clearly needed",
+        "No; cities should set their own rules"
+      ],
+      "high_pole": "local control"
+    },
+    {
+      "id": "grant_conditions",
+      "subtopic": "Conditions on federal grants",
+      "axis": ["FED"],
+      "format": "position",
+      "stem": "Should the federal government be able to withhold money from states that don't follow its policies?",
+      "scope": "Answer for any administration, and policies you like or dislike.",
+      "options": [
+        "Yes, on any policy it chooses",
+        "Only for conditions about how that money is spent",
+        "No conditions; give states the money to spend as they see fit"
+      ],
+      "high_pole": "no conditions"
+    },
+    {
+      "id": "state_refusal",
+      "subtopic": "States refusing federal law",
+      "axis": ["FED"],
+      "format": "position",
+      "stem": "Should states be able to refuse to help enforce federal laws they disagree with?",
+      "scope": "Think of laws on immigration, guns or marijuana, under any administration.",
+      "options": [
+        "No; states must help with federal enforcement",
+        "States can decline to use their own police and resources, but not block federal agents",
+        "States can refuse and pass laws blocking enforcement within their borders"
+      ],
+      "high_pole": "block enforcement"
+    },
+    {
+      "id": "federal_size",
+      "subtopic": "Size of the federal government",
+      "axis": ["FED", "REDIS"],
+      "format": "position",
+      "stem": "Overall, how big should the federal government be?",
+      "scope": "Think about what it does and spends, not about any particular administration.",
+      "options": [
+        "Much bigger, doing much more",
+        "Somewhat bigger",
+        "About the same as now",
+        "Somewhat smaller",
+        "Much smaller, doing far less"
+      ],
+      "high_pole": "smaller"
+    },
+    {
+      "id": "experimentation_tradeoff",
+      "subtopic": "National standards vs state experimentation",
+      "axis": ["FED"],
+      "format": "tradeoff",
+      "stem": "When it's unclear which policy works best, which approach is closer to your view?",
+      "scope": "Policies on things like health care, schools or welfare.",
+      "sides": [
+        {"label": "One national approach", "text": "Pick one national approach based on the best evidence, even if states can't try alternatives."},
+        {"label": "Let states experiment", "text": "Let states try different approaches, even if some get it wrong and people there are worse off."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    }
+  ]
+}
