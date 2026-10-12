@@ -130,6 +130,9 @@ def check(path: Path, ids: dict | None = None):
         lo, hi = {"exceptions": (2, 3), "tradeoff": (4, 4)}.get(fmt, (3, 7))
         if not lo <= len(opts) <= hi:
             errs.append(f"{iid}: {len(opts)} options (allowed {lo}-{hi} for {fmt})")
+        hp = str(it.get("high_pole", "")).lower()
+        if opts and hp in [o.lower() for o in opts] and hp != opts[-1].lower():
+            errs.append(f"{iid}: high_pole names option '{it['high_pole']}' but it is not the last code")
         if len(set(o.lower() for o in opts)) != len(opts):
             errs.append(f"{iid}: duplicate options")
         if fmt == "exceptions":

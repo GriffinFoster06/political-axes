@@ -1,0 +1,593 @@
+{
+  "domain_id": "D21",
+  "domain": "Trust & anti-establishment",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Trust items ask about concrete behavior, not general feelings, and always say 'whichever party is in charge' where power changes hands, so answers track the institution rather than the current officeholders. Frequency scales use numeric anchors (Rule 6).",
+  "items": [
+    {
+      "id": "trust_fed_motives",
+      "subtopic": "Trust in the federal government",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When federal agencies make decisions, how often are they trying to serve the public rather than themselves or special interests?",
+      "scope": "Think about the federal government in general, whichever party is in charge.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_fed_honest",
+      "subtopic": "Trust in the federal government",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "How often do federal officials tell the public the truth about the problems they are dealing with?",
+      "scope": "Think about federal officials in general, whichever party is in charge.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_courts",
+      "subtopic": "Trust in courts",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When federal judges decide major cases, how often do they follow the law rather than their own political views?",
+      "scope": "Think about judges appointed by presidents of both parties.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_news_facts",
+      "subtopic": "Trust in news media",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "When major national news organizations report a story, how often do they get the basic facts right?",
+      "scope": "Think of large newspapers, TV networks and their websites, across the range of outlets.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_news_fair",
+      "subtopic": "Trust in news media",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "How often do major national news organizations cover political news fairly to all sides?",
+      "scope": "Think of large newspapers, TV networks and their websites, across the range of outlets.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_scientists",
+      "subtopic": "Trust in scientists and experts",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "How often do scientists report their findings honestly, even when the results are unpopular?",
+      "scope": "Think of scientists at universities and research institutes in general.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_expert_consensus",
+      "subtopic": "Trust in scientists and experts",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "When most experts in a field agree on something, how often do they turn out to be right?",
+      "scope": "Think of fields like medicine, economics and engineering.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_vote_count",
+      "subtopic": "Trust in election administration",
+      "axis": [
+        "ESTAB",
+        "VOTING"
+      ],
+      "format": "frequency",
+      "stem": "In US federal elections, how often do local election officials count the votes accurately?",
+      "scope": "Think about recent elections across the country, regardless of who won.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "hidden_power",
+      "subtopic": "Whose interests government serves",
+      "axis": [
+        "POP"
+      ],
+      "format": "frequency",
+      "stem": "How often are major government decisions really made by a small group of powerful people behind the scenes, rather than by voters and elected officials?",
+      "scope": "Think about national decisions in general.",
+      "options": [
+        "Rarely (1 in 10 or less)",
+        "Sometimes (about 3 in 10)",
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
+      ],
+      "high_pole": "almost always",
+      "notes": "Keyed opposite to most trust items (frequent = more anti-establishment), so frequency wording can't drive the axis on its own."
+    },
+    {
+      "id": "corporate_power",
+      "subtopic": "Power of large corporations",
+      "axis": [
+        "POP"
+      ],
+      "format": "position",
+      "stem": "How much influence do large corporations have over what the federal government does?",
+      "scope": "Think about influence through lobbying, donations and jobs, whichever party is in charge.",
+      "options": [
+        "Far too much; they decide most important things",
+        "Too much, though voters still have the final say",
+        "About the right amount",
+        "Too little; government and activists push businesses around"
+      ],
+      "high_pole": "too little",
+      "notes": "Expected to cross-cut: populists of both sides choose the first option."
+    },
+    {
+      "id": "experts_vs_voters",
+      "subtopic": "Experts vs ordinary people deciding",
+      "axis": [
+        "POP"
+      ],
+      "format": "tradeoff",
+      "stem": "For complex decisions, like setting interest rates or approving new medicines, which comes closer to your view?",
+      "scope": "Think about technical decisions, not moral questions.",
+      "sides": [
+        {
+          "label": "Experts decide",
+          "text": "Experts should mainly decide, even if most voters disagree with them."
+        },
+        {
+          "label": "Voters' representatives decide",
+          "text": "Officials who answer to voters should decide, even if experts think they're making a mistake."
+        }
+      ],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "expertise_vs_experience",
+      "subtopic": "Experts vs ordinary people deciding",
+      "axis": [
+        "POP"
+      ],
+      "format": "tradeoff",
+      "stem": "When it comes to solving the country's problems, whose judgment would you rather rely on?",
+      "scope": "Think about national problems in general.",
+      "sides": [
+        {
+          "label": "Trained experts",
+          "text": "People with expert training, even if they are out of touch with everyday life."
+        },
+        {
+          "label": "Ordinary people",
+          "text": "The practical judgment of ordinary people, even if they lack expert knowledge."
+        }
+      ],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "trust_public_health",
+      "subtopic": "Trust in public health agencies",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "When national public health agencies, like the CDC, give health advice, how often is it based on the best evidence rather than politics?",
+      "scope": "Think about these agencies in general, whichever party is in charge.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely",
+      "notes": "Agency leadership changed in 2025; watch for answers tracking current leadership. Compare with trust_scientists."
+    },
+    {
+      "id": "trust_congress_effort",
+      "subtopic": "Trust in Congress",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When the country faces a serious problem, how often does Congress make a real effort to solve it?",
+      "scope": "Think about Congress in general, whichever party controls it.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_congress_promises",
+      "subtopic": "Trust in Congress",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "How often do members of Congress try to keep the main promises they made when running for office?",
+      "scope": "Think about members of both parties.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_state_gov",
+      "subtopic": "Trust in state and local government",
+      "axis": [
+        "TRUST",
+        "FED"
+      ],
+      "format": "frequency",
+      "stem": "How often does your state government spend its money wisely?",
+      "scope": "Think about the state where you live, whichever party is in charge there.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_local_gov",
+      "subtopic": "Trust in state and local government",
+      "axis": [
+        "TRUST",
+        "FED"
+      ],
+      "format": "frequency",
+      "stem": "How often does your local government, such as your city or county, respond to what residents want?",
+      "scope": "Think about the place where you live.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_police_fair",
+      "subtopic": "Trust in the police",
+      "axis": [
+        "TRUST",
+        "ORDER"
+      ],
+      "format": "frequency",
+      "stem": "How often do police in the US treat the people they stop fairly?",
+      "scope": "Think about police across the country, not one incident.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_military",
+      "subtopic": "Trust in the military",
+      "axis": [
+        "TRUST",
+        "HAWK"
+      ],
+      "format": "frequency",
+      "stem": "How often do senior US military leaders give honest assessments to the public and to elected officials?",
+      "scope": "Think about military leadership in general, under presidents of both parties.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "gov_big_projects",
+      "subtopic": "Government competence at big projects",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When the federal government takes on a big project, like building infrastructure or starting a new program, how often does it finish close to on time and on budget?",
+      "scope": "Think about such projects in general, whichever party is in charge.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "gov_services_work",
+      "subtopic": "Government competence at big projects",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When the federal government runs a service people rely on, such as Social Security payments or passports, how often does it work well?",
+      "scope": "Think about federal services in general.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_statistics",
+      "subtopic": "Trust in official statistics",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "frequency",
+      "stem": "How often do official government statistics, such as the unemployment and inflation rates, give an honest picture of the economy?",
+      "scope": "Think about these statistics in general, whichever party is in charge.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_university_research",
+      "subtopic": "Trust in universities",
+      "axis": [
+        "ESTAB",
+        "EDUC"
+      ],
+      "format": "frequency",
+      "stem": "When major universities publish research on social issues, like crime or poverty, how often can it be trusted?",
+      "scope": "Think about university research in general.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "trust_tech_companies",
+      "subtopic": "Trust in large tech companies",
+      "axis": [
+        "ESTAB",
+        "TECH"
+      ],
+      "format": "frequency",
+      "stem": "How often do large technology companies, such as those running social media and search, act in the public's interest?",
+      "scope": "Think about these companies in general.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "news_source_accuracy",
+      "subtopic": "Mainstream vs independent news sources",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "position",
+      "stem": "Which kind of source gives a more accurate picture of what's happening in the country?",
+      "scope": "Major sources: large newspapers and TV networks. Independent sources: podcasts, newsletters and online creators.",
+      "options": [
+        "Major news organizations, by a wide margin",
+        "Major news organizations, somewhat",
+        "Both about equally",
+        "Independent sources, somewhat",
+        "Independent sources, by a wide margin"
+      ],
+      "high_pole": "independent"
+    },
+    {
+      "id": "officials_care",
+      "subtopic": "Whether officials care about people like you",
+      "axis": [
+        "POP"
+      ],
+      "format": "frequency",
+      "stem": "How often do elected officials care what people like you think?",
+      "scope": "Think about officials of both parties, at any level of government.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "economy_rigged",
+      "subtopic": "Whether the economy is rigged by the powerful",
+      "axis": [
+        "POP"
+      ],
+      "format": "frequency",
+      "stem": "When the government sets economic rules, such as on taxes, trade and banking, how often do the rich and powerful benefit at everyone else's expense?",
+      "scope": "Think about economic rules in general, whichever party wrote them.",
+      "options": [
+        "Rarely (1 in 10 or less)",
+        "Sometimes (about 3 in 10)",
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
+      ],
+      "high_pole": "almost always"
+    },
+    {
+      "id": "outsider_vs_experience",
+      "subtopic": "Outsiders vs experienced politicians",
+      "axis": [
+        "POP"
+      ],
+      "format": "tradeoff",
+      "stem": "Which kind of candidate would you usually rather elect?",
+      "scope": "Think about national offices in general, not any one race.",
+      "sides": [
+        {
+          "label": "Experienced",
+          "text": "Someone with long experience in government who knows how it works, even if they're part of the system."
+        },
+        {
+          "label": "Outsider",
+          "text": "An outsider who will shake up the system, even if they lack government experience."
+        }
+      ],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "wall_street_vs_workers",
+      "subtopic": "Wall Street vs ordinary workers",
+      "axis": [
+        "POP"
+      ],
+      "format": "frequency",
+      "stem": "When the economy is in trouble, how often does the government protect big banks and investors more than ordinary workers?",
+      "scope": "Think about downturns in general, under either party.",
+      "options": [
+        "Rarely (1 in 10 or less)",
+        "Sometimes (about 3 in 10)",
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
+      ],
+      "high_pole": "almost always"
+    },
+    {
+      "id": "ballot_measures",
+      "subtopic": "Direct democracy (ballot measures)",
+      "axis": [
+        "POP",
+        "NORMS"
+      ],
+      "format": "position",
+      "stem": "Should more laws be decided directly by voters through ballot measures?",
+      "scope": "Ballot measures let citizens collect signatures to put a law to a public vote.",
+      "context": "About half the states allow citizens to put laws on the ballot. There is no national ballot measure.",
+      "options": [
+        "Yes, in every state, and add national ballot measures",
+        "Yes, every state should allow them",
+        "Keep it as today: states decide",
+        "Fewer; laws should be made by elected legislators"
+      ],
+      "high_pole": "fewer",
+      "facts": [
+        {
+          "claim": "26 states provide for statewide citizen-initiated ballot measures or popular referendums; no national initiative process",
+          "source": "Ballotpedia; National Conference of State Legislatures",
+          "checked": "2026-10-12",
+          "verify": true
+        }
+      ]
+    }
+  ]
+}
