@@ -55,6 +55,7 @@ are in [`docs/limitations.md`](docs/limitations.md).
 | `tests/` | Simulation recovery test |
 | `reports/` | All outputs, including `RESULTS.md` |
 | `scripts/` + `.github/workflows/fetch-data.yml` | Data fetching (see `DATA.md`) |
+| `docs/question-bank-plan.md`, `items/blueprint.csv` | The full plan: 25 topic areas, 230 subtopics, 383 draft questions, 29 candidate axes, pilot design and decision rules |
 | `docs/item-writing-standard.md` | How every quiz question must be written: positions not agreement, scope + exceptions, definitions, no party cues |
 | `docs/how-many-dimensions.md` | The rule for deciding how many axes to report |
 | `items/drafts/` + `scripts/validate_items.py` | Draft quiz items in the new format, and the checker they must pass |

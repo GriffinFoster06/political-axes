@@ -1,0 +1,231 @@
+domain_id,domain,subtopic,axis_hypothesis,draft_items,min_final,format_mix,tag,notes
+D01,Taxes & redistribution,Income tax structure (flat vs graduated),REDIS,3,2,position,core,Ladder from single flat rate to steeply graduated; state today's structure in context
+D01,Taxes & redistribution,Top income tax rate,REDIS,2,1,position,core,Use real rates (current top federal rate as the status-quo option)
+D01,Taxes & redistribution,Corporate tax rate,REDIS,2,1,position,core,
+D01,Taxes & redistribution,Wealth tax on very large fortunes,REDIS,2,1,position,core,Define wealth threshold in dollars
+D01,Taxes & redistribution,Estate tax,REDIS,2,1,position,core,State exemption size as a fact with date
+D01,Taxes & redistribution,Capital gains vs wage income,REDIS,2,1,position,core,
+D01,Taxes & redistribution,Cash aid to low-income households,REDIS,2,1,position,core,
+D01,Taxes & redistribution,Work requirements for aid,REDIS,2,1,position+exceptions,core,Exceptions: parents of young children; disabled; areas with few jobs
+D01,Taxes & redistribution,Universal basic income,REDIS,1,1,position,core,
+D01,Taxes & redistribution,Child benefits,REDIS,2,1,position,core,
+D01,Taxes & redistribution,Inequality as a problem for government,REDIS,2,1,tradeoff,core,Belief + policy pair
+D02,Labor & business regulation,Minimum wage,REG,2,1,position,core,Drafted: min_wage
+D02,Labor & business regulation,Unions and right-to-work,REG,3,2,position,core,
+D02,Labor & business regulation,Mandated benefits (paid leave etc.),REG,2,1,position,core,
+D02,Labor & business regulation,Gig worker classification,REG,1,1,position,core,
+D02,Labor & business regulation,General business regulation,REG,2,1,tradeoff,core,
+D02,Labor & business regulation,Corporate size and antitrust,REG,2,1,position,core,Cross-cutting candidate (populist left + populist right)
+D02,Labor & business regulation,Financial regulation and bailouts,REG,2,1,position,core,
+D02,Labor & business regulation,Occupational licensing,REG,1,1,position,core,Cross-cutting candidate
+D02,Labor & business regulation,Price controls and price-gouging laws,REG,1,1,position,core,
+D03,Health care & social insurance,Overall coverage system,SOCINS,2,1,position,core,Drafted: health_coverage
+D03,Health care & social insurance,Public option / single payer details,SOCINS,2,1,position,core,
+D03,Health care & social insurance,Prescription drug prices,SOCINS,2,1,position,core,Cross-cutting candidate
+D03,Health care & social insurance,Medicaid scope and work rules,SOCINS,2,1,position,core,
+D03,Health care & social insurance,Social Security future,SOCINS,3,2,position,core,Retirement age / benefit levels / payroll tax cap
+D03,Health care & social insurance,Medicare future,SOCINS,2,1,position,core,
+D03,Health care & social insurance,Private retirement accounts,SOCINS,1,1,position,core,
+D03,Health care & social insurance,Insurance mandates,SOCINS,1,1,position,core,
+D03,Health care & social insurance,Vaccine requirements,LIBERTY,2,1,position+exceptions,core,Also scored toward personal liberty; exceptions: religious / medical
+D03,Health care & social insurance,Immigrants' eligibility for public health benefits,IMMIG,1,1,position,core,
+D04,Housing & land use,Zoning and density,HOUSING,3,2,position,core,Strong cross-cutting candidate (YIMBY vs NIMBY on both sides)
+D04,Housing & land use,Rent control,HOUSING,2,1,position,core,
+D04,Housing & land use,Public and subsidized housing,HOUSING,2,1,position,core,
+D04,Housing & land use,Homelessness policy,HOUSING,3,2,position,core,Encampments; housing-first vs treatment-first; involuntary treatment
+D05,Environment & energy,Level of climate action and its cost,ENV,3,2,position,core,Drafted: climate_action
+D05,Environment & energy,Carbon pricing,ENV,2,1,position,core,
+D05,Environment & energy,Fossil fuel production on public land,ENV,2,1,position,core,
+D05,Environment & energy,Nuclear power,ENV,2,1,position,core,Cross-cutting candidate
+D05,Environment & energy,Electric vehicle rules and subsidies,ENV,2,1,position,core,
+D05,Environment & energy,Environmental rules vs jobs,ENV,2,1,tradeoff,core,
+D05,Environment & energy,Conservation and public lands,ENV,2,1,position,core,
+D05,Environment & energy,International climate agreements,ENV,1,1,position,core,
+D05,Environment & energy,Beliefs about climate science,ENV,1,1,belief,core,Belief item: reported separately; tested for whether it belongs on the axis
+D05,Environment & energy,Environmental justice,ENV,1,1,position,core,
+D06,Trade & economic nationalism,Tariffs,TRADE,3,2,position,core,Word as taxes on imported goods; no leader cues
+D06,Trade & economic nationalism,Trade agreements,TRADE,2,1,position,core,
+D06,Trade & economic nationalism,Economic decoupling from China,TRADE,2,1,position,core,
+D06,Trade & economic nationalism,Industrial policy and buy-American,TRADE,2,1,position,core,
+D06,Trade & economic nationalism,Penalties for offshoring jobs,TRADE,1,1,position,core,
+D07,Technology & AI,Overall AI regulation,TECH,3,2,position,core,
+D07,Technology & AI,Licensing or testing of the most powerful AI systems,TECH,2,1,position,core,
+D07,Technology & AI,Government response to AI job loss,TECH,2,1,position,core,
+D07,Technology & AI,Social media content moderation,TECH,2,1,position,core,Also tested against SPEECH
+D07,Technology & AI,Platform liability for user content,TECH,1,1,position,core,
+D07,Technology & AI,Children online and age verification,TECH,2,1,position,core,
+D07,Technology & AI,Algorithmic discrimination rules,TECH,1,1,position,core,
+D07,Technology & AI,Data centers and energy use,TECH,1,1,position,current,
+D07,Technology & AI,AI deepfakes in elections,TECH,1,1,position,core,
+D07,Technology & AI,Automation taxes,TECH,1,1,position,core,
+D08,Privacy & surveillance,Government surveillance for security,PRIVACY,3,2,tradeoff,core,
+D08,Privacy & surveillance,Encryption access for law enforcement,PRIVACY,1,1,position,core,
+D08,Privacy & surveillance,Police facial recognition,PRIVACY,2,1,position+exceptions,core,
+D08,Privacy & surveillance,Consumer data privacy law,PRIVACY,2,1,position,core,
+D08,Privacy & surveillance,National digital ID,PRIVACY,1,1,position,core,
+D08,Privacy & surveillance,Searches of phones at the border,PRIVACY,1,1,position,core,
+D09,Abortion & reproduction,Legal rule,MORAL,1,1,position,core,Drafted: abortion_rule
+D09,Abortion & reproduction,Exceptions (life / health / rape-incest / fatal condition),MORAL,4,4,exceptions,core,Drafted: abortion_exceptions
+D09,Abortion & reproduction,Federal vs state decision,FED,1,1,position,core,Also scored toward federalism
+D09,Abortion & reproduction,Abortion pills by mail,MORAL,2,1,position,core,
+D09,Abortion & reproduction,Public funding of abortion,MORAL,1,1,position,core,
+D09,Abortion & reproduction,IVF and embryo status,MORAL,1,1,position,core,
+D09,Abortion & reproduction,Contraception access,MORAL,1,1,position,core,
+D09,Abortion & reproduction,Parental involvement for minors,MORAL,1,1,position,core,
+D10,Sexuality & gender identity,Same-sex marriage,GENDERID,2,1,position,core,
+D10,Sexuality & gender identity,Religious exemptions for businesses,GENDERID,2,1,position+exceptions,core,Also tested against RELIGION
+D10,Sexuality & gender identity,Medical transition for minors,GENDERID,2,1,position+exceptions,core,Exceptions by age / type of care
+D10,Sexuality & gender identity,Transgender athletes,GENDERID,2,1,position,core,Drafted: trans_school_sports; add adult/college level
+D10,Sexuality & gender identity,Bathrooms and facilities,GENDERID,1,1,position,core,
+D10,Sexuality & gender identity,Sex marker on legal documents,GENDERID,1,1,position,core,
+D10,Sexuality & gender identity,School pronouns and parental notification,GENDERID,2,1,position,core,
+D10,Sexuality & gender identity,LGBT nondiscrimination law,GENDERID,2,1,position+exceptions,core,
+D11,Religion in public life,Church-state separation,RELIGION,2,1,tradeoff,core,
+D11,Religion in public life,Prayer and religious displays in public schools and buildings,RELIGION,2,1,position,core,
+D11,Religion in public life,Public money for religious schools,RELIGION,2,1,position,core,Also tested against EDUC
+D11,Religion in public life,Religious exemptions from general laws,RELIGION,2,1,position+exceptions,core,
+D11,Religion in public life,Religion and national identity,RELIGION,2,1,position,core,
+D12,Family & gender roles,Traditional roles at home and work,FAMILY,2,1,position,core,Avoid agree/disagree; use concrete arrangements
+D12,Family & gender roles,Government support for marriage,FAMILY,2,1,position,core,
+D12,Family & gender roles,Public childcare vs family care,FAMILY,2,1,position,core,
+D12,Family & gender roles,Divorce law,FAMILY,1,1,position,core,
+D12,Family & gender roles,Gender equality policies at work,FAMILY,2,1,position,core,
+D12,Family & gender roles,Birth rates and pro-family policy,FAMILY,1,1,position,core,Cross-cutting candidate
+D13,Race & equity,Causes of racial gaps,EQUITY,3,2,belief,core,Belief items with concrete options; reported separately from policy
+D13,Race & equity,Race-conscious admissions and hiring,EQUITY,3,2,position,core,Drafted: college_admissions_race
+D13,Race & equity,Diversity programs at employers and agencies,EQUITY,2,1,position,core,
+D13,Race & equity,Reparations,EQUITY,2,1,position,core,
+D13,Race & equity,Hate crime laws,EQUITY,1,1,position,core,
+D13,Race & equity,Race in voting districts,EQUITY,1,1,position,core,
+D13,Race & equity,Teaching about racism in schools,EQUITY,2,1,position,core,Also tested against EDUC
+D13,Race & equity,How much discrimination exists,EQUITY,2,1,belief,core,Frequency-anchored
+D13,Race & equity,Tribal sovereignty,EQUITY,1,1,position,core,
+D13,Race & equity,Disparate impact rules,EQUITY,1,1,position,core,
+D14,Immigration & national identity,Legal immigration level,IMMIG,3,2,position,core,Numbers per year as options
+D14,Immigration & national identity,Skills-based vs family-based selection,IMMIG,2,1,position,core,
+D14,Immigration & national identity,People without legal status: main rule,IMMIG,1,1,position,core,Drafted: status_policy
+D14,Immigration & national identity,People without legal status: groups follow-up,IMMIG,3,3,exceptions,core,Drafted: status_groups
+D14,Immigration & national identity,Border enforcement methods,IMMIG,2,1,position,core,
+D14,Immigration & national identity,Interior and workplace enforcement,IMMIG,2,1,position,core,
+D14,Immigration & national identity,Asylum rules,IMMIG,2,1,position,core,
+D14,Immigration & national identity,Refugee admissions,IMMIG,1,1,position,core,
+D14,Immigration & national identity,Birthright citizenship,IMMIG,1,1,position,core,
+D14,Immigration & national identity,Language and assimilation,NATION,1,1,position,core,
+D14,Immigration & national identity,What makes someone American,NATION,2,1,position,core,Civic vs ethnic/cultural nationhood
+D15,Crime policing & punishment,Police funding and role,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Police accountability and qualified immunity,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Sentence length and mandatory minimums,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Death penalty,ORDER,2,1,position+exceptions,core,
+D15,Crime policing & punishment,Bail and pretrial detention,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Prison: punishment vs rehabilitation,ORDER,2,1,tradeoff,core,
+D15,Crime policing & punishment,Juvenile justice,ORDER,1,1,position,core,
+D15,Crime policing & punishment,Private prisons,ORDER,1,1,position,core,
+D15,Crime policing & punishment,Protests and public order,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Military in domestic law enforcement,ORDER,1,1,position,core,Also tested against NORMS
+D15,Crime policing & punishment,Victims' rights and restitution,ORDER,1,1,position,core,
+D16,Guns,Rules for buying a handgun,GUNS,1,1,position,core,Drafted: handgun_purchase
+D16,Guns,Private-sale background checks,GUNS,1,1,position,core,
+D16,Guns,Semi-automatic rifles with military-style features,GUNS,2,1,position,core,Define the category; avoid either side's label
+D16,Guns,Carrying in public,GUNS,2,1,position,core,
+D16,Guns,Extreme risk (red flag) orders,GUNS,2,1,position+exceptions,core,
+D16,Guns,Minimum age,GUNS,1,1,position,core,
+D16,Guns,Meaning of the Second Amendment,GUNS,1,1,belief,core,
+D17,Drugs & personal liberty,Marijuana,LIBERTY,2,1,position,core,
+D17,Drugs & personal liberty,Other drugs: decriminalization,LIBERTY,2,1,position,core,
+D17,Drugs & personal liberty,Supervised consumption sites,LIBERTY,1,1,position,core,
+D17,Drugs & personal liberty,Gambling and sports betting,LIBERTY,1,1,position,core,
+D17,Drugs & personal liberty,Sex work,LIBERTY,2,1,position,core,
+D17,Drugs & personal liberty,Medical aid in dying,LIBERTY,2,1,position+exceptions,core,Also tested against MORAL
+D17,Drugs & personal liberty,Public-health paternalism (sin taxes / helmet and seatbelt laws),LIBERTY,2,1,position,core,
+D18,Free speech & civil liberties,Hate speech laws,SPEECH,2,1,position,core,
+D18,Free speech & civil liberties,Controversial speakers at public universities,SPEECH,2,1,exceptions,core,Same question for speakers from several sides (GSS-style tolerance but modern targets)
+D18,Free speech & civil liberties,Flag burning,SPEECH,1,1,position,core,
+D18,Free speech & civil liberties,Protest rights and restrictions,SPEECH,2,1,position,core,
+D18,Free speech & civil liberties,Government action on misinformation,SPEECH,2,1,position,core,
+D18,Free speech & civil liberties,Government pressure on platforms,SPEECH,1,1,position,core,
+D18,Free speech & civil liberties,Removing books from school libraries,SPEECH,2,1,position,core,
+D18,Free speech & civil liberties,Employers firing workers for speech,SPEECH,2,1,position+exceptions,core,
+D19,Democratic norms & executive power,President vs court rulings,NORMS,1,1,position,core,Drafted: president_court_ruling
+D19,Democratic norms & executive power,Scope of executive orders,NORMS,2,1,position,core,Written for any president of either party
+D19,Democratic norms & executive power,Emergency powers,NORMS,2,1,position,core,
+D19,Democratic norms & executive power,Independent agencies and civil service,NORMS,2,1,position,core,
+D19,Democratic norms & executive power,Investigating or prosecuting political opponents,NORMS,2,1,position,core,
+D19,Democratic norms & executive power,Accepting election results,NORMS,1,1,position,core,
+D19,Democratic norms & executive power,Checks and balances vs getting things done,NORMS,2,1,tradeoff,core,
+D19,Democratic norms & executive power,Strong leader who bends rules,NORMS,1,1,position,core,
+D19,Democratic norms & executive power,Political violence,NORMS,1,1,position,core,Careful neutral wording; any side
+D20,Elections & voting,Voter ID,VOTING,1,1,position,core,
+D20,Elections & voting,Mail voting,VOTING,2,1,position,core,
+D20,Elections & voting,Automatic registration,VOTING,1,1,position,core,
+D20,Elections & voting,Voting after a felony conviction,VOTING,1,1,position,core,
+D20,Elections & voting,Electoral College,VOTING,2,1,position,core,
+D20,Elections & voting,Redistricting and gerrymandering,VOTING,1,1,position,core,
+D20,Elections & voting,Campaign finance,VOTING,2,1,position,core,
+D20,Elections & voting,Term limits (Congress / Supreme Court),VOTING,2,1,position,core,
+D21,Trust & anti-establishment,Trust in the federal government,TRUST,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in courts,TRUST,1,1,frequency,core,
+D21,Trust & anti-establishment,Trust in news media,ESTAB,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in scientists and experts,ESTAB,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in election administration,ESTAB,1,1,frequency,core,
+D21,Trust & anti-establishment,Whose interests government serves,POP,2,1,frequency,core,Drafted: congress_motives
+D21,Trust & anti-establishment,Power of large corporations,POP,1,1,position,core,
+D21,Trust & anti-establishment,Experts vs ordinary people deciding,POP,2,1,tradeoff,core,
+D21,Trust & anti-establishment,Trust in public health agencies,ESTAB,1,1,frequency,core,
+D22,Foreign policy & defense,Engagement vs restraint,GLOBAL,2,1,tradeoff,core,
+D22,Foreign policy & defense,Alliance commitments,GLOBAL,2,1,position,core,Drafted: ally_attacked
+D22,Foreign policy & defense,Defense spending,HAWK,2,1,position,core,
+D22,Foreign policy & defense,When to use military force,HAWK,2,1,exceptions,core,List of scenarios
+D22,Foreign policy & defense,Foreign aid,GLOBAL,2,1,position,core,
+D22,Foreign policy & defense,Israel and the Middle East,GLOBAL,2,1,position,current,Rotating module; excluded from axis scores if it drifts
+D22,Foreign policy & defense,Russia and Ukraine,GLOBAL,1,1,position,current,Rotating module
+D22,Foreign policy & defense,China and Taiwan,HAWK,2,1,position,core,
+D22,Foreign policy & defense,International institutions (UN / international courts),GLOBAL,2,1,position,core,
+D22,Foreign policy & defense,Human rights in foreign policy,GLOBAL,1,1,tradeoff,core,
+D22,Foreign policy & defense,Nuclear weapons and arms control,HAWK,1,1,position,core,
+D22,Foreign policy & defense,Military draft or national service,HAWK,1,1,position,core,
+D23,Education,School choice and vouchers,EDUC,2,1,position,core,
+D23,Education,Who controls curriculum,EDUC,2,1,position,core,
+D23,Education,Teaching about race and gender,EDUC,2,1,position,core,
+D23,Education,Student loan relief,EDUC,2,1,position,core,
+D23,Education,Tuition-free public college,EDUC,1,1,position,core,
+D23,Education,Federal role in education,EDUC,1,1,position,core,
+D23,Education,School discipline and safety,EDUC,1,1,position,core,
+D23,Education,Merit-based admissions to selective public schools,EDUC,1,1,position,core,
+D24,Federalism & local control,Federal vs state power in general,FED,2,1,tradeoff,core,
+D24,Federalism & local control,Letting states differ on contested issues,FED,2,1,exceptions,core,Same question across abortion / guns / marijuana / minimum wage
+D24,Federalism & local control,State preemption of cities,FED,1,1,position,core,
+D24,Federalism & local control,Conditions on federal grants,FED,1,1,position,core,
+D24,Federalism & local control,States refusing federal law,FED,1,1,position,core,
+D24,Federalism & local control,Size of the federal government,FED,1,1,position,core,
+D25,Values (cross-cutting),Equality vs freedom,VALUES,4,2,agree_defined+tradeoff,core,Two balanced pairs
+D25,Values (cross-cutting),Order vs liberty,VALUES,2,1,tradeoff,core,
+D25,Values (cross-cutting),Tradition vs change,VALUES,2,1,agree_defined,core,Balanced pair
+D25,Values (cross-cutting),Individual vs collective responsibility,VALUES,2,1,agree_defined,core,Balanced pair; drafted: gov_role_values (+_rev)
+D25,Values (cross-cutting),Hierarchy vs equality between groups,VALUES,2,1,agree_defined,core,Balanced pair
+D25,Values (cross-cutting),Authority in child-rearing,VALUES,2,1,tradeoff,core,Own forced-choice pairs
+D25,Values (cross-cutting),Universal vs national loyalty,VALUES,2,1,tradeoff,core,
+D25,Values (cross-cutting),Views of human nature,VALUES,2,1,agree_defined,core,Balanced pair
+D21,Trust & anti-establishment,Trust in Congress,TRUST,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in state and local government,TRUST,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in the police,TRUST,1,1,frequency,core,Also tested against ORDER
+D21,Trust & anti-establishment,Trust in the military,TRUST,1,1,frequency,core,
+D21,Trust & anti-establishment,Government competence at big projects,TRUST,2,1,frequency,core,
+D21,Trust & anti-establishment,Trust in official statistics,ESTAB,1,1,frequency,core,
+D21,Trust & anti-establishment,Trust in universities,ESTAB,1,1,frequency,core,
+D21,Trust & anti-establishment,Trust in large tech companies,ESTAB,1,1,frequency,core,
+D21,Trust & anti-establishment,Mainstream vs independent news sources,ESTAB,1,1,position,core,
+D21,Trust & anti-establishment,Whether officials care about people like you,POP,1,1,frequency,core,
+D21,Trust & anti-establishment,Whether the economy is rigged by the powerful,POP,1,1,frequency,core,
+D21,Trust & anti-establishment,Outsiders vs experienced politicians,POP,1,1,tradeoff,core,
+D21,Trust & anti-establishment,Wall Street vs ordinary workers,POP,1,1,frequency,core,
+D21,Trust & anti-establishment,Direct democracy (ballot measures),POP,1,1,position,core,
+D14,Immigration & national identity,Pride and patriotic education,NATION,1,1,position,core,
+D14,Immigration & national identity,Respect for national symbols,NATION,1,1,position,core,
+D14,Immigration & national identity,Shared culture vs multiculturalism,NATION,1,1,tradeoff,core,
+D14,Immigration & national identity,Dual citizenship,NATION,1,1,position,core,
+D14,Immigration & national identity,Is the US exceptional,NATION,1,1,belief,core,
+D14,Immigration & national identity,English as official language,NATION,1,1,position,core,
+D14,Immigration & national identity,Citizens first for jobs and benefits,NATION,1,1,position,core,
+D22,Foreign policy & defense,Strikes on terrorist groups abroad,HAWK,1,1,position,core,
+D22,Foreign policy & defense,Arms sales to other countries,HAWK,1,1,position,core,
+D24,Federalism & local control,National standards vs state experimentation,FED,1,1,tradeoff,core,
