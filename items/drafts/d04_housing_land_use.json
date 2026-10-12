@@ -7,7 +7,9 @@
     {
       "id": "zoning_density",
       "subtopic": "Zoning and density",
-      "axis": ["HOUSING"],
+      "axis": [
+        "HOUSING"
+      ],
       "format": "position",
       "stem": "Should cities allow more homes to be built in neighborhoods now zoned only for single-family houses?",
       "scope": "Think about neighborhoods in cities and suburbs with high housing costs.",
@@ -19,13 +21,21 @@
       ],
       "high_pole": "keep",
       "definitions": [
-        {"term": "zoned", "text": "Zoning is local law that sets what can be built where, such as only one house per lot.", "source": "descriptive", "verify": false}
+        {
+          "term": "zoned",
+          "text": "Zoning is local law that sets what can be built where, such as only one house per lot.",
+          "source": "descriptive",
+          "verify": false
+        }
       ]
     },
     {
       "id": "zoning_state_override",
       "subtopic": "Zoning and density",
-      "axis": ["HOUSING", "FED"],
+      "axis": [
+        "HOUSING",
+        "FED"
+      ],
       "format": "position",
       "stem": "Should state governments override local zoning to get more housing built?",
       "scope": "State laws that require cities to allow more homes than local rules do.",
@@ -39,7 +49,9 @@
     {
       "id": "housing_approval",
       "subtopic": "Zoning and density",
-      "axis": ["HOUSING"],
+      "axis": [
+        "HOUSING"
+      ],
       "format": "position",
       "stem": "Should new housing that already follows the zoning rules be approved without public hearings or lawsuits that can delay it?",
       "scope": "Projects that meet every building and zoning rule.",
@@ -53,7 +65,10 @@
     {
       "id": "rent_control",
       "subtopic": "Rent control",
-      "axis": ["HOUSING", "REG"],
+      "axis": [
+        "HOUSING",
+        "REG"
+      ],
       "format": "position",
       "stem": "Should cities be allowed to limit how much landlords raise rent each year?",
       "scope": "Limits for existing tenants in existing buildings.",
@@ -68,7 +83,10 @@
     {
       "id": "eviction_cause",
       "subtopic": "Rent control",
-      "axis": ["HOUSING", "REG"],
+      "axis": [
+        "HOUSING",
+        "REG"
+      ],
       "format": "position",
       "stem": "Should landlords need a specific reason, such as unpaid rent, to evict a tenant or refuse to renew a lease?",
       "scope": "Ordinary rental apartments and houses.",
@@ -82,7 +100,10 @@
     {
       "id": "rent_vouchers",
       "subtopic": "Public and subsidized housing",
-      "axis": ["HOUSING", "REDIS"],
+      "axis": [
+        "HOUSING",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should every low-income family that qualifies for federal rent help receive it?",
       "scope": "Rent vouchers that pay part of a family's rent to a private landlord.",
@@ -95,13 +116,21 @@
       ],
       "high_pole": "fewer",
       "facts": [
-        {"claim": "Only about 1 in 4 households eligible for federal rental assistance receives it", "source": "Center on Budget and Policy Priorities analysis of HUD data", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "Only about 1 in 4 households eligible for federal rental assistance receives it",
+          "source": "Center on Budget and Policy Priorities analysis of HUD data",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ]
     },
     {
       "id": "public_housing",
       "subtopic": "Public and subsidized housing",
-      "axis": ["HOUSING", "REDIS"],
+      "axis": [
+        "HOUSING",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should government build and own more housing itself?",
       "scope": "Housing owned and managed by a government agency.",
@@ -116,7 +145,10 @@
     {
       "id": "encampments",
       "subtopic": "Homelessness policy",
-      "axis": ["HOUSING", "ORDER"],
+      "axis": [
+        "HOUSING",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "What should cities do about people camping on sidewalks and in parks?",
       "scope": "Think of people with nowhere else to sleep that night.",
@@ -129,13 +161,21 @@
       ],
       "high_pole": "stricter",
       "facts": [
-        {"claim": "City of Grants Pass v. Johnson (2024): enforcing public camping bans is not cruel and unusual punishment", "source": "603 U.S. ___ (2024)", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "City of Grants Pass v. Johnson (2024): enforcing public camping bans is not cruel and unusual punishment",
+          "source": "603 U.S. ___ (2024)",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "housing_first",
       "subtopic": "Homelessness policy",
-      "axis": ["HOUSING", "ORDER"],
+      "axis": [
+        "HOUSING",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "For homeless people with addiction or mental illness, which approach comes closest to your view?",
       "scope": "Government-funded housing programs.",
@@ -149,7 +189,10 @@
     {
       "id": "involuntary_treatment",
       "subtopic": "Homelessness policy",
-      "axis": ["HOUSING", "LIBERTY"],
+      "axis": [
+        "HOUSING",
+        "LIBERTY"
+      ],
       "format": "position",
       "stem": "Should it be easier to require treatment for people living on the street with severe mental illness who refuse help?",
       "scope": "Today this is usually allowed only when someone is an immediate danger to themselves or others.",
@@ -159,6 +202,77 @@
         "Much easier, including longer required hospital stays"
       ],
       "high_pole": "easier"
+    },
+    {
+      "id": "investor_homes",
+      "subtopic": "Investors and short-term rentals",
+      "axis": [
+        "HOUSING",
+        "POP"
+      ],
+      "format": "position",
+      "stem": "Should large investment firms be allowed to buy single-family homes to rent out?",
+      "scope": "Firms owning hundreds or thousands of homes.",
+      "options": [
+        "No, ban it",
+        "Allow it, but with limits or extra taxes",
+        "Yes, they add rental housing"
+      ],
+      "high_pole": "allow"
+    },
+    {
+      "id": "short_term_rentals",
+      "subtopic": "Investors and short-term rentals",
+      "axis": [
+        "HOUSING",
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should cities limit short-term rentals like Airbnb in residential neighborhoods?",
+      "scope": "Whole homes rented to visitors by the night.",
+      "options": [
+        "Ban them in most neighborhoods",
+        "Allow them only in the owner's own home",
+        "Allow them with registration and taxes",
+        "No limits"
+      ],
+      "high_pole": "no limits"
+    },
+    {
+      "id": "mortgage_deduction",
+      "subtopic": "Homeownership subsidies",
+      "axis": [
+        "HOUSING",
+        "REDIS"
+      ],
+      "format": "position",
+      "stem": "Should homeowners be able to deduct mortgage interest from their federal income taxes?",
+      "scope": "Today this deduction mostly benefits higher-income homeowners who itemize.",
+      "options": [
+        "No; end it and use the money for renters or first-time buyers",
+        "Keep it, but only for smaller mortgages",
+        "Keep it as is",
+        "Expand it to help more homeowners"
+      ],
+      "high_pole": "expand"
+    },
+    {
+      "id": "transit_vs_roads",
+      "subtopic": "Transit vs roads",
+      "axis": [
+        "HOUSING",
+        "ENV"
+      ],
+      "format": "position",
+      "stem": "How should transportation money be split between public transit and roads?",
+      "scope": "Federal and state transportation spending.",
+      "options": [
+        "Much more to transit, less to new roads",
+        "Somewhat more to transit",
+        "Keep about today's split",
+        "More to roads and highways"
+      ],
+      "high_pole": "roads"
     }
   ]
 }

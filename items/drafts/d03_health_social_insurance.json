@@ -96,7 +96,8 @@
         "No; imported drugs are too hard to keep safe"
       ],
       "high_pole": "no imports",
-      "notes": "Cross-cutting candidate; may not load on SOCINS."
+      "notes": "Cross-cutting candidate; may not load on SOCINS.",
+      "issue_map_only": true
     },
     {
       "id": "medicaid_scope",
@@ -158,7 +159,7 @@
       "format": "position",
       "stem": "How should Social Security's funding gap be closed?",
       "scope": "If nothing changes, benefits would be cut automatically when the trust fund runs out.",
-      "context": "Its trust fund is projected to run out in the early 2030s. After that, incoming taxes would pay about 80% of promised benefits.",
+      "context": "Its trust funds are projected to run out between 2032 and 2034. After that, incoming taxes would pay about 80% of promised benefits.",
       "options": [
         "Only raise taxes, mainly on high earners, and keep or increase benefits",
         "Mostly raise taxes, with small benefit changes",
@@ -169,11 +170,10 @@
       "high_pole": "benefit cuts only",
       "facts": [
         {
-          "claim": "2025 Trustees Report: OASI trust fund depletion 2033 (77% payable); combined OASDI 2034 (81% payable)",
-          "source": "2025 Social Security Trustees Report",
+          "claim": "2026 Trustees Report: OASI reserves depleted in Q4 2032; combined OASDI in Q3 2034, when about 83% of scheduled benefits would be payable",
+          "source": "Congressional Research Service IF13256, 'Social Security: Selected Findings of the 2026 Annual Report' (June 2026)",
           "checked": "2026-10-12",
-          "verify": true,
-          "note": "Check whether a 2026 Trustees Report changed these dates."
+          "verify": false
         }
       ]
     },
@@ -264,7 +264,8 @@
         "No; everyone paid in and should pay the same"
       ],
       "high_pole": "same for all",
-      "notes": "Direction relative to G unclear; means-testing appeals to some on both sides. Keep only if it loads."
+      "notes": "Direction relative to G unclear; means-testing appeals to some on both sides. Keep only if it loads.",
+      "issue_map_only": true
     },
     {
       "id": "ss_private_accounts",
@@ -384,21 +385,37 @@
       ]
     },
     {
-      "id": "outbreak_vaccine_jobs",
+      "id": "outbreak_gov_mandate",
       "subtopic": "Vaccine requirements",
       "axis": [
         "LIBERTY"
       ],
       "format": "position",
-      "stem": "During a serious outbreak of a contagious disease, who should be able to require workers to be vaccinated?",
-      "scope": "Assume a vaccine is widely judged safe and effective. Medical exemptions would always apply.",
+      "stem": "During a serious outbreak of a contagious disease, should government require most workers to be vaccinated?",
+      "scope": "Assume a vaccine widely judged safe and effective. Medical exemptions always apply.",
       "options": [
-        "Government should require it for most workers",
-        "Each employer can choose to require it",
-        "Only health care employers can require it",
-        "No one should be able to require it"
+        "Yes, most workers",
+        "Only health care and other close-contact jobs",
+        "No government requirement"
       ],
-      "high_pole": "no one"
+      "high_pole": "no requirement"
+    },
+    {
+      "id": "outbreak_employer",
+      "subtopic": "Vaccine requirements",
+      "axis": [
+        "LIBERTY",
+        "REG"
+      ],
+      "format": "position",
+      "stem": "During a serious outbreak, should employers be allowed to require their own workers to be vaccinated?",
+      "scope": "Assume a vaccine widely judged safe and effective. Medical exemptions always apply.",
+      "options": [
+        "Yes, any employer",
+        "Only health care employers",
+        "No employer"
+      ],
+      "high_pole": "no employer"
     },
     {
       "id": "immigrant_health_benefits",
@@ -414,7 +431,7 @@
       "options": [
         "Everyone living here, whatever their legal status",
         "Legal immigrants right away, plus children whatever their status",
-        "Legal immigrants after 5 years, as today",
+        "Most legal immigrants after 5 years, as today",
         "Legal immigrants only after 10 years or more",
         "Citizens only"
       ],
@@ -424,9 +441,62 @@
           "claim": "Most lawful permanent residents face a 5-year bar before federal Medicaid eligibility; unauthorized immigrants are eligible only for emergency Medicaid",
           "source": "Personal Responsibility and Work Opportunity Reconciliation Act of 1996; KFF",
           "checked": "2026-10-12",
-          "verify": false
+          "verify": true,
+          "note": "Public Law 119-21 (2025) narrows Medicaid eligibility for some lawfully present immigrants from late 2026; confirm and adjust context."
         }
       ]
+    },
+    {
+      "id": "water_fluoride",
+      "subtopic": "Food additives and fluoride",
+      "axis": [
+        "LIBERTY",
+        "ESTAB"
+      ],
+      "format": "position",
+      "stem": "Should cities add fluoride to drinking water to prevent tooth decay?",
+      "scope": "Most US public water systems do this today.",
+      "options": [
+        "Yes, as health agencies recommend",
+        "Let each city decide",
+        "No; it should be banned"
+      ],
+      "high_pole": "banned",
+      "notes": "New cross-party coalition since 2024; tests ESTAB and LIBERTY apart from left-right."
+    },
+    {
+      "id": "food_additives",
+      "subtopic": "Food additives and fluoride",
+      "axis": [
+        "REG",
+        "ESTAB"
+      ],
+      "format": "position",
+      "stem": "Should the government ban food additives, such as some artificial dyes, that are allowed in the US but banned in other countries?",
+      "scope": "Additives approved by US regulators.",
+      "options": [
+        "Yes, ban them",
+        "Require clear warning labels instead",
+        "No; trust US regulators' approval"
+      ],
+      "high_pole": "trust regulators"
+    },
+    {
+      "id": "long_term_care",
+      "subtopic": "Long-term care",
+      "axis": [
+        "SOCINS"
+      ],
+      "format": "position",
+      "stem": "Who should pay for nursing home and home care for older people who can no longer care for themselves?",
+      "scope": "Today Medicare covers little long-term care; Medicaid pays after people spend down their savings.",
+      "options": [
+        "A new government insurance program for everyone",
+        "Government help for middle-income families too, not only the poor",
+        "Keep today's system",
+        "Families and private insurance, with less government help"
+      ],
+      "high_pole": "families"
     }
   ]
 }

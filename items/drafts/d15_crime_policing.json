@@ -14,6 +14,7 @@
       "stem": "Should spending on police in most US cities go up or down?",
       "scope": "Think about cities in general, not only your own.",
       "options": [
+        "Replace police departments with other public-safety services",
         "Cut it a lot and move the money to social services",
         "Cut it somewhat and move some money to social services",
         "Keep it about the same",
@@ -62,7 +63,8 @@
           "source": "Harlow v. Fitzgerald, 457 U.S. 800 (1982); Pearson v. Callahan (2009)",
           "verify": false
         }
-      ]
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "misconduct_records",
@@ -186,22 +188,6 @@
       "high_pole": "more detention"
     },
     {
-      "id": "pretrial_danger",
-      "subtopic": "Bail and pretrial detention",
-      "axis": [
-        "ORDER"
-      ],
-      "format": "position",
-      "stem": "Should judges be able to keep someone in jail before trial because they seem dangerous?",
-      "scope": "No bail option is offered. The person has not been convicted.",
-      "options": [
-        "No; everyone is presumed innocent until proven guilty",
-        "Only for the most serious violent charges",
-        "Yes, for any charge if the judge finds them dangerous"
-      ],
-      "high_pole": "any charge"
-    },
-    {
       "id": "prison_purpose",
       "subtopic": "Prison: punishment vs rehabilitation",
       "axis": [
@@ -276,6 +262,7 @@
       "id": "private_prisons",
       "subtopic": "Private prisons",
       "axis": [
+        "REG",
         "ORDER"
       ],
       "format": "position",
@@ -354,6 +341,41 @@
         "Victims' views should carry significant weight"
       ],
       "high_pole": "significant"
+    },
+    {
+      "id": "asset_forfeiture",
+      "subtopic": "Civil asset forfeiture",
+      "axis": [
+        "ORDER",
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "Should police be able to take cash or property they suspect is linked to a crime, without convicting the owner?",
+      "scope": "Called civil asset forfeiture. The owner can go to court to get it back.",
+      "options": [
+        "No; only after a criminal conviction",
+        "Only with strong evidence, and the government must prove its case",
+        "Yes, as most states allow today"
+      ],
+      "high_pole": "allow",
+      "notes": "Expected to cross-cut: libertarian and left opposition."
+    },
+    {
+      "id": "stop_and_frisk",
+      "subtopic": "Stop-and-frisk",
+      "axis": [
+        "ORDER",
+        "EQUITY"
+      ],
+      "format": "position",
+      "stem": "Should police be able to stop and pat down people they find suspicious in high-crime areas?",
+      "scope": "Stops without an arrest, based on an officer's suspicion.",
+      "options": [
+        "No",
+        "Only with specific reasons, recorded and reviewed for bias",
+        "Yes, it helps prevent crime"
+      ],
+      "high_pole": "yes"
     }
   ]
 }

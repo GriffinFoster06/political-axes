@@ -7,21 +7,25 @@
     {
       "id": "hate_speech_law",
       "subtopic": "Hate speech laws",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "position",
-      "stem": "Should it be a crime to say hateful things in public about people because of their race, religion or sexual orientation?",
+      "stem": "Should it be a crime to say hateful things in public about people because of their race, religion, sexual orientation or gender identity?",
       "scope": "Speech only. Threats and calls for violence are already crimes and are not what this asks about.",
       "options": [
         "No; government should not punish speech, however hateful, unless it threatens or incites violence (as today)",
         "Yes, but only the most extreme public speech, such as calling a group subhuman",
-        "Yes, with fines or jail, as in some European countries"
+        "Yes, with fines or jail"
       ],
       "high_pole": "crime"
     },
     {
       "id": "hateful_speaker_response",
       "subtopic": "Hate speech laws",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "position",
       "stem": "If someone says something most people consider hateful toward a racial or religious group, what response is right?",
       "scope": "Speech that is legal. Think of a public figure speaking, not a private conversation.",
@@ -36,26 +40,64 @@
     {
       "id": "campus_speakers",
       "subtopic": "Controversial speakers at public universities",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "exceptions",
       "stem": "A student group at a public university invites each of these speakers. Should the university allow the talk?",
       "scope": "Assume the speaker makes their argument without threats. Answer each one separately.",
-      "options": ["Should be allowed", "Should not be allowed"],
+      "options": [
+        "Should be allowed",
+        "Should not be allowed"
+      ],
       "high_pole": "Should not be allowed",
       "cases": [
-        {"id": "sp_race_iq", "text": "Someone who argues that some races are naturally less intelligent than others"},
-        {"id": "sp_abolish_police", "text": "Someone who argues that police departments should be abolished"},
-        {"id": "sp_trans_women", "text": "Someone who argues that transgender women are not women"},
-        {"id": "sp_israel", "text": "Someone who argues that Israel should not exist as a Jewish state"},
-        {"id": "sp_stolen_election", "text": "Someone who argues that a recent presidential election was stolen"},
-        {"id": "sp_abolish_property", "text": "Someone who argues that private ownership of businesses should be abolished"}
+        {
+          "id": "sp_abortion_illegal",
+          "text": "Someone who argues that abortion should be illegal in all cases"
+        },
+        {
+          "id": "sp_abortion_any",
+          "text": "Someone who argues that abortion should be legal at any point in pregnancy"
+        },
+        {
+          "id": "sp_trans_women",
+          "text": "Someone who argues that transgender women are not women"
+        },
+        {
+          "id": "sp_abolish_police",
+          "text": "Someone who argues that police departments should be abolished"
+        },
+        {
+          "id": "sp_stolen_election",
+          "text": "Someone who argues that a recent presidential election was stolen"
+        },
+        {
+          "id": "sp_israel",
+          "text": "Someone who argues that Israel should not exist as a Jewish state"
+        },
+        {
+          "id": "sp_race_iq",
+          "text": "Someone who argues that some races are naturally less intelligent than others"
+        },
+        {
+          "id": "sp_revolution",
+          "text": "Someone who argues that violent revolution against the US government is justified"
+        },
+        {
+          "id": "sp_expert_rule",
+          "text": "Someone who argues that democracy should be replaced by rule by experts"
+        }
       ],
-      "notes": "Three targets usually disliked more on the left, three more on the right. Check that pilot item difficulties don't simply track G."
+      "notes": "Targets paired by extremity (mild: abortion; medium: trans/police and election/Israel; strong: race/revolution) plus one disliked on both sides."
     },
     {
       "id": "flag_burning",
       "subtopic": "Flag burning",
-      "axis": ["SPEECH", "NATION"],
+      "axis": [
+        "SPEECH",
+        "NATION"
+      ],
       "format": "position",
       "stem": "Should burning the American flag as a political protest be legal?",
       "scope": "Burning a flag you own, in a public place.",
@@ -67,13 +109,21 @@
       ],
       "high_pole": "ban",
       "facts": [
-        {"claim": "Texas v. Johnson (1989) held flag burning is protected expression", "source": "491 U.S. 397 (1989)", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Texas v. Johnson (1989) held flag burning is protected expression",
+          "source": "491 U.S. 397 (1989)",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "protest_masks",
       "subtopic": "Protest rights and restrictions",
-      "axis": ["SPEECH", "ORDER"],
+      "axis": [
+        "SPEECH",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should it be illegal to wear a mask to hide your identity at a protest?",
       "scope": "Masks worn for health reasons would be allowed under every option.",
@@ -87,7 +137,10 @@
     {
       "id": "campus_encampments",
       "subtopic": "Protest rights and restrictions",
-      "axis": ["SPEECH", "ORDER"],
+      "axis": [
+        "SPEECH",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should public universities allow students to set up protest camps on campus?",
       "scope": "Peaceful camps, for any cause.",
@@ -101,7 +154,10 @@
     {
       "id": "gov_misinformation",
       "subtopic": "Government action on misinformation",
-      "axis": ["SPEECH", "TECH"],
+      "axis": [
+        "SPEECH",
+        "TECH"
+      ],
       "format": "position",
       "stem": "What role should the government have in dealing with false information online?",
       "scope": "Think about false claims on topics like health and elections, under any administration.",
@@ -116,7 +172,9 @@
     {
       "id": "misinfo_penalty",
       "subtopic": "Government action on misinformation",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "position",
       "stem": "Should people be punished by law for knowingly spreading false information that causes harm?",
       "scope": "Examples: false claims about a medicine's dangers, or about a disaster. Existing laws against fraud and defamation stay in place.",
@@ -130,13 +188,16 @@
     {
       "id": "jawboning",
       "subtopic": "Government pressure on platforms",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "position",
       "stem": "Should government officials be allowed to ask social media companies to take down posts the officials consider harmful?",
       "scope": "Officials of any party, with no court order involved. The posts are legal.",
       "options": [
         "No; officials should never pressure companies over legal speech",
         "Only for clear legal violations, like threats",
+        "Yes, but every request must be made public",
         "Yes, they can ask, and companies decide"
       ],
       "high_pole": "can ask"
@@ -144,7 +205,10 @@
     {
       "id": "library_book_decisions",
       "subtopic": "Removing books from school libraries",
-      "axis": ["SPEECH", "EDUC"],
+      "axis": [
+        "SPEECH",
+        "EDUC"
+      ],
       "format": "position",
       "stem": "When a parent objects to a book in a public school library, who should decide whether it stays?",
       "scope": "Library books students choose to read, not required class reading.",
@@ -159,7 +223,10 @@
     {
       "id": "library_explicit",
       "subtopic": "Removing books from school libraries",
-      "axis": ["SPEECH", "MORAL"],
+      "axis": [
+        "SPEECH",
+        "MORAL"
+      ],
       "format": "position",
       "stem": "Should high school libraries carry novels that include explicit descriptions of sex?",
       "scope": "Books with recognized literary value, not pornography.",
@@ -173,7 +240,9 @@
     {
       "id": "employer_speech",
       "subtopic": "Employers firing workers for speech",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "position",
       "stem": "Should private employers be allowed to fire workers for political views they express outside of work?",
       "scope": "Legal speech on personal time, such as on social media. Specific cases come next.",
@@ -188,18 +257,86 @@
     {
       "id": "employer_speech_cases",
       "subtopic": "Employers firing workers for speech",
-      "axis": ["SPEECH"],
+      "axis": [
+        "SPEECH"
+      ],
       "format": "exceptions",
       "stem": "Should a private employer be able to fire someone for each of these, done outside of work?",
       "scope": "Answer each case separately.",
-      "options": ["Firing should not be allowed", "Firing should be allowed"],
+      "options": [
+        "Firing should not be allowed",
+        "Firing should be allowed"
+      ],
       "high_pole": "Firing should be allowed",
       "cases": [
-        {"id": "fire_racist_joke", "text": "Posting racist jokes on personal social media"},
-        {"id": "fire_protest", "text": "Going to a peaceful protest for a cause the employer opposes"},
-        {"id": "fire_praise_attack", "text": "Posting approval of a deadly attack on a political figure"},
-        {"id": "fire_donation", "text": "Donating to a candidate the employer opposes"}
+        {
+          "id": "fire_racist_joke",
+          "text": "Posting racist jokes on personal social media"
+        },
+        {
+          "id": "fire_protest",
+          "text": "Going to a peaceful protest for a cause the employer opposes"
+        },
+        {
+          "id": "fire_praise_attack",
+          "text": "Posting approval of a deadly attack on a political figure"
+        },
+        {
+          "id": "fire_donation",
+          "text": "Donating to a candidate the employer opposes"
+        }
       ]
+    },
+    {
+      "id": "defamation_public_figures",
+      "subtopic": "Defamation law",
+      "axis": [
+        "SPEECH"
+      ],
+      "format": "position",
+      "stem": "Should it be easier for public figures to sue news outlets for false stories about them?",
+      "scope": "Today a public figure must prove the outlet knew the story was false or recklessly ignored the truth.",
+      "options": [
+        "No; keep today's high bar",
+        "Somewhat easier",
+        "Much easier: proving the story was false and harmful should be enough"
+      ],
+      "high_pole": "much easier"
+    },
+    {
+      "id": "public_broadcasting",
+      "subtopic": "Public broadcasting",
+      "axis": [
+        "SPEECH",
+        "ESTAB"
+      ],
+      "format": "position",
+      "stem": "Should the federal government fund public broadcasting, like public radio and TV stations?",
+      "scope": "Funding for local stations and national programs.",
+      "options": [
+        "Yes, more than in the past",
+        "Yes, about as in the past",
+        "No federal funding"
+      ],
+      "high_pole": "none",
+      "notes": "Federal funding was cut in 2025; wording avoids 'today' so it doesn't cue the current administration."
+    },
+    {
+      "id": "campus_speech_codes",
+      "subtopic": "Campus speech codes",
+      "axis": [
+        "SPEECH",
+        "EDUC"
+      ],
+      "format": "position",
+      "stem": "Should public universities be able to discipline students for offensive speech that isn't a threat or harassment?",
+      "scope": "Speech on campus, such as remarks about race, religion or sex.",
+      "options": [
+        "Yes",
+        "Only for repeated speech aimed at a specific person",
+        "No"
+      ],
+      "high_pole": "no"
     }
   ]
 }

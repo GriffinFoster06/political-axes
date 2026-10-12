@@ -1,7 +1,7 @@
 domain_id,domain,subtopic,axis_hypothesis,draft_items,min_final,format_mix,tag,notes
 D01,Taxes & redistribution,Income tax structure (flat vs graduated),REDIS,3,2,position,core,Ladder from single flat rate to steeply graduated; state today's structure in context
 D01,Taxes & redistribution,Top income tax rate,REDIS,2,1,position,core,Use real rates (current top federal rate as the status-quo option)
-D01,Taxes & redistribution,Corporate tax rate,REDIS,2,1,position,core,
+D01,Taxes & redistribution,Corporate tax rate,REDIS,1,1,position,core,"corporate_minimum_tax removed in review (knowledge-heavy, redundant)"
 D01,Taxes & redistribution,Wealth tax on very large fortunes,REDIS,2,1,position,core,Define wealth threshold in dollars
 D01,Taxes & redistribution,Estate tax,REDIS,2,1,position,core,State exemption size as a fact with date
 D01,Taxes & redistribution,Capital gains vs wage income,REDIS,2,1,position,core,
@@ -9,7 +9,7 @@ D01,Taxes & redistribution,Cash aid to low-income households,REDIS,2,1,position,
 D01,Taxes & redistribution,Work requirements for aid,REDIS,2,1,position+exceptions,core,Exceptions: parents of young children; disabled; areas with few jobs
 D01,Taxes & redistribution,Universal basic income,REDIS,1,1,position,core,
 D01,Taxes & redistribution,Child benefits,REDIS,2,1,position,core,
-D01,Taxes & redistribution,Inequality as a problem for government,REDIS,2,1,tradeoff,core,Belief + policy pair
+D01,Taxes & redistribution,Inequality as a problem for government,REDIS,1,1,tradeoff,core,Belief + policy pair; outcomes_vs_chances removed in review (near-duplicate)
 D02,Labor & business regulation,Minimum wage,REG,2,1,position,core,Drafted: min_wage
 D02,Labor & business regulation,Unions and right-to-work,REG,3,2,position,core,
 D02,Labor & business regulation,Mandated benefits (paid leave etc.),REG,2,1,position,core,
@@ -116,7 +116,7 @@ D15,Crime policing & punishment,Police funding and role,ORDER,2,1,position,core,
 D15,Crime policing & punishment,Police accountability and qualified immunity,ORDER,2,1,position,core,
 D15,Crime policing & punishment,Sentence length and mandatory minimums,ORDER,2,1,position,core,
 D15,Crime policing & punishment,Death penalty,ORDER,2,1,position+exceptions,core,
-D15,Crime policing & punishment,Bail and pretrial detention,ORDER,2,1,position,core,
+D15,Crime policing & punishment,Bail and pretrial detention,ORDER,1,1,position,core,pretrial_danger removed in review (duplicated cash_bail option)
 D15,Crime policing & punishment,Prison: punishment vs rehabilitation,ORDER,2,1,tradeoff,core,
 D15,Crime policing & punishment,Juvenile justice,ORDER,1,1,position,core,
 D15,Crime policing & punishment,Private prisons,ORDER,1,1,position,core,
@@ -229,3 +229,67 @@ D14,Immigration & national identity,Citizens first for jobs and benefits,NATION,
 D22,Foreign policy & defense,Strikes on terrorist groups abroad,HAWK,1,1,position,core,
 D22,Foreign policy & defense,Arms sales to other countries,HAWK,1,1,position,core,
 D24,Federalism & local control,National standards vs state experimentation,FED,1,1,tradeoff,core,
+D01,Taxes & redistribution,Federal deficit and debt,REDIS,2,1,position,core,Added in review 2026-10-12
+D01,Taxes & redistribution,Causes of poverty (belief),REDIS,1,1,belief,core,Added in review 2026-10-12
+D01,Taxes & redistribution,Job guarantee,REDIS,1,1,position,core,Added in review 2026-10-12
+D01,Taxes & redistribution,Taxes on tips and overtime,REDIS,1,1,position,core,Added in review 2026-10-12
+D02,Labor & business regulation,Markets vs public ownership,REG,3,1,position,core,Added in review 2026-10-12
+D02,Labor & business regulation,Noncompete agreements and right to repair,REG,2,1,position,core,Added in review 2026-10-12
+D02,Labor & business regulation,Business subsidies,REG,2,1,position,core,Added in review 2026-10-12
+D02,Labor & business regulation,Federal Reserve and interest rates,REG,1,1,position,core,Added in review 2026-10-12
+D02,Labor & business regulation,Infrastructure investment,REG,1,1,position,core,Added in review 2026-10-12
+D03,Health care & social insurance,Food additives and fluoride,LIBERTY,2,1,position,core,Added in review 2026-10-12
+D03,Health care & social insurance,Long-term care,SOCINS,1,1,position,core,Added in review 2026-10-12
+D04,Housing & land use,Investors and short-term rentals,HOUSING,2,1,position,core,Added in review 2026-10-12
+D04,Housing & land use,Homeownership subsidies,HOUSING,1,1,position,core,Added in review 2026-10-12
+D04,Housing & land use,Transit vs roads,HOUSING,1,1,position,core,Added in review 2026-10-12
+D05,Environment & energy,Adaptation vs emissions cuts,ENV,1,1,tradeoff,core,Added in review 2026-10-12
+D05,Environment & energy,Local environmental rules,ENV,1,1,position,core,Added in review 2026-10-12
+D06,Trade & economic nationalism,Export controls and friend-shoring,TRADE,2,1,position,core,Added in review 2026-10-12
+D07,Technology & AI,Cryptocurrency and digital money,TECH,2,1,position,core,Added in review 2026-10-12
+D07,Technology & AI,AI and copyright,TECH,1,1,position,core,Added in review 2026-10-12
+D07,Technology & AI,AI companions and minors,TECH,1,1,position,core,Added in review 2026-10-12
+D08,Privacy & surveillance,DNA databases,PRIVACY,1,1,position,core,Added in review 2026-10-12
+D08,Privacy & surveillance,Workplace monitoring,PRIVACY,1,1,position,core,Added in review 2026-10-12
+D09,Abortion & reproduction,Moral status of the unborn (belief),MORAL,1,1,belief,core,Added in review 2026-10-12
+D09,Abortion & reproduction,Surrogacy,MORAL,1,1,position,core,Added in review 2026-10-12
+D10,Sexuality & gender identity,Sex and gender (belief),GENDERID,1,1,belief,core,Added in review 2026-10-12
+D11,Religion in public life,Evolution in science classes,RELIGION,1,1,position,core,Added in review 2026-10-12
+D11,Religion in public life,Faith-based charities and public funds,RELIGION,1,1,position,core,Added in review 2026-10-12
+D12,Family & gender roles,Women in the draft and combat,FAMILY,1,1,position,core,Added in review 2026-10-12
+D12,Family & gender roles,Nature vs culture in gender roles (belief),FAMILY,1,1,belief,core,Added in review 2026-10-12
+D13,Race & equity,Monuments and names,EQUITY,1,1,position,core,Added in review 2026-10-12
+D14,Immigration & national identity,Immigrant selection by culture or religion,NATION,1,1,position,core,Added in review 2026-10-12
+D14,Immigration & national identity,Enforcement methods,IMMIG,2,1,exceptions,core,Added in review 2026-10-12
+D15,Crime policing & punishment,Civil asset forfeiture,ORDER,1,1,position,core,Added in review 2026-10-12
+D15,Crime policing & punishment,Stop-and-frisk,ORDER,1,1,position,core,Added in review 2026-10-12
+D16,Guns,Self-defense laws,GUNS,1,1,position,core,Added in review 2026-10-12
+D16,Guns,Gun maker liability,GUNS,1,1,position,core,Added in review 2026-10-12
+D16,Guns,Gun registration,GUNS,1,1,position,core,Added in review 2026-10-12
+D16,Guns,Suppressors,GUNS,1,1,position,core,Added in review 2026-10-12
+D17,Drugs & personal liberty,Drinking age,LIBERTY,1,1,position,core,Added in review 2026-10-12
+D17,Drugs & personal liberty,Vaping and tobacco bans,LIBERTY,1,1,position,core,Added in review 2026-10-12
+D17,Drugs & personal liberty,Organ sales,LIBERTY,1,1,position,core,Added in review 2026-10-12
+D17,Drugs & personal liberty,Right to try experimental treatments,LIBERTY,1,1,position,core,Added in review 2026-10-12
+D17,Drugs & personal liberty,Raw milk and food freedom,LIBERTY,1,1,position,core,Added in review 2026-10-12
+D18,Free speech & civil liberties,Defamation law,SPEECH,1,1,position,core,Added in review 2026-10-12
+D18,Free speech & civil liberties,Public broadcasting,SPEECH,1,1,position,core,Added in review 2026-10-12
+D18,Free speech & civil liberties,Campus speech codes,SPEECH,1,1,position,core,Added in review 2026-10-12
+D19,Democratic norms & executive power,Supreme Court size,NORMS,1,1,position,core,Added in review 2026-10-12
+D19,Democratic norms & executive power,Presidential immunity,NORMS,1,1,position,core,Added in review 2026-10-12
+D19,Democratic norms & executive power,Government action against news outlets,NORMS,1,1,position,core,Added in review 2026-10-12
+D19,Democratic norms & executive power,Court deference to agencies,NORMS,1,1,position,core,Added in review 2026-10-12
+D20,Elections & voting,Ranked-choice voting,VOTING,1,1,position,core,Added in review 2026-10-12
+D20,Elections & voting,DC and Puerto Rico statehood,VOTING,1,1,exceptions,core,Added in review 2026-10-12
+D20,Elections & voting,Voting age,VOTING,1,1,position,core,Added in review 2026-10-12
+D20,Elections & voting,Noncitizen voting in local elections,VOTING,1,1,position,core,Added in review 2026-10-12
+D21,Trust & anti-establishment,Trust shown in behavior,TRUST,4,1,position,core,Added in review 2026-10-12: position-format trust items so TRUST/ESTAB aren't measured by one answer format
+D21,Trust & anti-establishment,Science vs elected officials,ESTAB,1,1,position,core,Added in review 2026-10-12
+D21,Trust & anti-establishment,Congressional stock trading,POP,1,1,position,core,Added in review 2026-10-12
+D22,Foreign policy & defense,Iran,HAWK,1,1,position,current,Added in review 2026-10-12; rotating module
+D22,Foreign policy & defense,Acquiring territory,HAWK,1,1,position,current,Added in review 2026-10-12; rotating module
+D23,Education,Legacy and donor admissions,EDUC,1,1,position,core,Added in review 2026-10-12
+D25,Values (cross-cutting),Purity and sanctity,VALUES,2,1,agree_defined,core,Added in review 2026-10-12
+D25,Values (cross-cutting),Zero-sum thinking,VALUES,2,1,agree_defined,core,Added in review 2026-10-12
+D25,Values (cross-cutting),Proportionality vs need,VALUES,1,1,tradeoff,core,Added in review 2026-10-12
+D25,Values (cross-cutting),What decides who gets ahead,VALUES,3,1,position,core,Added in review 2026-10-12

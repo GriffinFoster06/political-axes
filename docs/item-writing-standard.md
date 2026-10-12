@@ -145,6 +145,14 @@ One JSON file per domain in `items/drafts/`. Each item has:
   source, checked, verify, note}], `followup` / `show_if`, `cases`, `sides`,
   `point_meanings` + `pair`, `notes` (open concerns for reviewers), `links`
   (ANES/GSS counterparts, for national comparison only)
+- analysis flags: `testlet` (near-duplicate cluster, modeled together),
+  `issue_map_only` (shown and reported, never used for axis scores),
+  `knowledge_heavy` (counts toward axes only if it passes the extra
+  screening in the pre-registration)
+- **mirror cases**: when a rule question tends to be answered by "who does
+  this help", add an exceptions follow-up that asks the same rule with each
+  side benefiting (e.g. `filibuster_cases`). Consistency is scored
+  separately
 
 Checks to run after any edit:
 

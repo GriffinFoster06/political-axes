@@ -6,7 +6,9 @@
     {
       "id": "min_wage_jobs",
       "subtopic": "Minimum wage",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "Suppose raising the federal minimum wage to $15 would raise pay for millions of workers but cost some low-wage jobs. Which comes closest to your view?",
       "scope": "Assume both effects are real. The question is which tradeoff you'd accept.",
@@ -21,7 +23,9 @@
     {
       "id": "right_to_work",
       "subtopic": "Unions and right-to-work",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "Should workers covered by a union contract be required to pay fees to the union that negotiated it?",
       "scope": "This is about private-sector jobs. Nobody can be required to join a union.",
@@ -33,16 +37,28 @@
       ],
       "high_pole": "national right-to-work",
       "facts": [
-        {"claim": "26 states have right-to-work laws (Michigan repealed its law effective Feb 2024)", "source": "National Conference of State Legislatures; Michigan Public Act 8 of 2023", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "26 states have right-to-work laws (Michigan repealed its law effective Feb 2024)",
+          "source": "National Conference of State Legislatures; Michigan Public Act 8 of 2023",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ],
       "definitions": [
-        {"term": "right-to-work", "text": "A state law that bars union contracts from requiring workers to pay any fees to the union that represents them.", "source": "descriptive; 29 U.S.C. sec. 164(b)", "verify": false}
+        {
+          "term": "right-to-work",
+          "text": "A state law that bars union contracts from requiring workers to pay any fees to the union that represents them.",
+          "source": "descriptive; 29 U.S.C. sec. 164(b)",
+          "verify": false
+        }
       ]
     },
     {
       "id": "union_organizing",
       "subtopic": "Unions and right-to-work",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "How easy should it be for workers to form a union at their workplace?",
       "scope": "Private-sector workplaces.",
@@ -50,14 +66,16 @@
         "Much easier: the union is recognized once most workers sign cards, with large fines for employers who interfere",
         "Somewhat easier: faster votes and larger fines for illegal interference",
         "Keep today's rules",
-        "Harder: always require a secret-ballot vote, and hold new votes every few years to keep the union"
+        "Harder: hold new votes every few years for workers to keep the union"
       ],
       "high_pole": "harder"
     },
     {
       "id": "public_unions",
       "subtopic": "Unions and right-to-work",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "Should government employees, such as teachers and state office workers, be able to bargain as a group through unions?",
       "scope": "Police and firefighters aside; think of most government workers.",
@@ -72,7 +90,10 @@
     {
       "id": "paid_leave",
       "subtopic": "Mandated benefits (paid leave etc.)",
-      "axis": ["REG", "SOCINS"],
+      "axis": [
+        "REG",
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Which comes closest to what federal law should do about paid leave for a new child or a serious illness?",
       "scope": "This is about leave of several weeks, not ordinary sick days.",
@@ -85,28 +106,36 @@
       ],
       "high_pole": "no federal role",
       "facts": [
-        {"claim": "Family and Medical Leave Act (1993) provides up to 12 weeks unpaid job-protected leave to eligible employees; no federal paid-leave mandate", "source": "US Department of Labor, FMLA", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Family and Medical Leave Act (1993) provides up to 12 weeks unpaid job-protected leave to eligible employees; no federal paid-leave mandate",
+          "source": "US Department of Labor, FMLA",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "sick_days",
       "subtopic": "Mandated benefits (paid leave etc.)",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "Should employers be required to give workers paid sick days?",
       "scope": "Short-term illness, like the flu.",
       "options": [
         "Yes, at least 7 days a year, for all employers",
         "Yes, but only employers with more than 50 workers",
-        "No federal requirement; leave it to states",
-        "No requirement at any level; leave it to employers"
+        "No requirement; leave it to states and employers"
       ],
       "high_pole": "no requirement"
     },
     {
       "id": "gig_workers",
       "subtopic": "Gig worker classification",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "How should the law treat app-based drivers and delivery workers?",
       "scope": "Think of people who mainly earn a living this way, not people doing it on the side.",
@@ -120,41 +149,71 @@
     {
       "id": "regulation_tradeoff",
       "subtopic": "General business regulation",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view of rules on business?",
       "scope": "Think about business regulation in general.",
       "sides": [
-        {"label": "Stronger protections", "text": "Stronger rules to protect workers, consumers and the environment, even if prices rise and fewer businesses start."},
-        {"label": "Fewer rules", "text": "Fewer rules so businesses grow and prices stay low, even if some people are less protected."}
+        {
+          "label": "Stronger protections",
+          "text": "Stronger rules to protect workers, consumers and the environment, even if prices rise and fewer businesses start."
+        },
+        {
+          "label": "Fewer rules",
+          "text": "Fewer rules so businesses grow and prices stay low, even if more workers and consumers are harmed by unsafe practices."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "precaution_tradeoff",
       "subtopic": "General business regulation",
-      "axis": ["REG", "TECH"],
+      "axis": [
+        "REG",
+        "TECH"
+      ],
       "format": "tradeoff",
       "stem": "When a new kind of product comes along, which approach is closer to your view?",
       "scope": "Think of new products in general, such as new chemicals, foods or devices.",
       "sides": [
-        {"label": "Prove it safe first", "text": "Companies should show it is safe before selling it, even if that delays useful products for years."},
-        {"label": "Sell first, fix problems", "text": "Allow it to be sold and deal with problems as they appear, even if some people are harmed first."}
+        {
+          "label": "Prove it safe first",
+          "text": "Companies should show it is safe before selling it, even if that delays useful products for years."
+        },
+        {
+          "label": "Allow first, fix problems",
+          "text": "Allow it to be sold and deal with problems as they appear, even if some people are harmed first."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "big_company_breakup",
       "subtopic": "Corporate size and antitrust",
-      "axis": ["REG", "POP"],
+      "axis": [
+        "REG",
+        "POP"
+      ],
       "format": "position",
       "stem": "What should the government do about companies that control most of their market?",
       "scope": "Think of companies with most of the business in their field, such as online search or meatpacking.",
       "options": [
         "Break them up, even if their prices are low",
-        "Break them up only if they are proven to hurt customers, workers or competitors",
+        "Break them up only if they are proven to hurt consumers, workers or competitors",
         "Leave existing companies alone, but block them from buying rivals",
         "Leave them alone; large size usually reflects success, and new competitors will emerge"
       ],
@@ -163,7 +222,9 @@
     {
       "id": "merger_rules",
       "subtopic": "Corporate size and antitrust",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "When two large companies want to merge, how strict should the government be?",
       "scope": "Think of mergers between companies that sell similar things.",
@@ -178,7 +239,9 @@
     {
       "id": "bank_rules",
       "subtopic": "Financial regulation and bailouts",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "How strict should the rules on large banks be?",
       "scope": "Banks with more than $100 billion in assets.",
@@ -193,7 +256,10 @@
     {
       "id": "bailouts",
       "subtopic": "Financial regulation and bailouts",
-      "axis": ["REG"],
+      "axis": [
+        "REG",
+        "POP"
+      ],
       "format": "position",
       "stem": "If a large bank or company is about to fail and its collapse could hurt the whole economy, what should government do?",
       "scope": "Think of a failure big enough to cause a recession.",
@@ -208,7 +274,10 @@
     {
       "id": "licensing",
       "subtopic": "Occupational licensing",
-      "axis": ["REG", "LIBERTY"],
+      "axis": [
+        "REG",
+        "LIBERTY"
+      ],
       "format": "position",
       "stem": "Which comes closest to your view of requiring a government license to work in jobs like barber, electrician or interior designer?",
       "scope": "Think about licensing in general, not one job.",
@@ -221,13 +290,20 @@
       ],
       "high_pole": "fewer licenses",
       "facts": [
-        {"claim": "About 20-22% of employed people held an active professional certification or license, mostly government-required licenses", "source": "US Bureau of Labor Statistics, Current Population Survey (certification and licensing)", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "About 20-22% of employed people held an active professional certification or license, mostly government-required licenses",
+          "source": "US Bureau of Labor Statistics, Current Population Survey (certification and licensing)",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ]
     },
     {
       "id": "price_controls",
       "subtopic": "Price controls and price-gouging laws",
-      "axis": ["REG"],
+      "axis": [
+        "REG"
+      ],
       "format": "position",
       "stem": "Should government limit how much businesses can charge for essentials like food, water and gas?",
       "scope": "Think of essentials, not luxuries. Rent is asked about separately.",
@@ -237,6 +313,163 @@
         "No; high prices draw in more supply and should be allowed, even after disasters"
       ],
       "high_pole": "no limits"
+    },
+    {
+      "id": "economic_system",
+      "subtopic": "Markets vs public ownership",
+      "axis": [
+        "REG",
+        "REDIS"
+      ],
+      "format": "position",
+      "stem": "Which kind of economy do you think works best?",
+      "scope": "Think about how the economy is organized overall.",
+      "options": [
+        "Most major industries owned by the public or by their workers",
+        "Private businesses, but with government running key industries like energy and health care",
+        "Private businesses and markets, with strong government rules and a large safety net",
+        "Private businesses and markets, with modest rules and a basic safety net",
+        "Private businesses and free markets, with as little government as possible"
+      ],
+      "high_pole": "free markets"
+    },
+    {
+      "id": "public_ownership",
+      "subtopic": "Markets vs public ownership",
+      "axis": [
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should the government own and run industries like electricity, railroads and internet service?",
+      "scope": "Owned by federal, state or local government, as some cities do with electricity today.",
+      "options": [
+        "Yes, most of them",
+        "Some of them, where private companies have failed",
+        "Only in places with no private provider",
+        "No; private companies should run them"
+      ],
+      "high_pole": "private"
+    },
+    {
+      "id": "workers_on_boards",
+      "subtopic": "Markets vs public ownership",
+      "axis": [
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should workers at large companies elect some members of the company's board of directors?",
+      "scope": "Companies with more than 1,000 employees. Germany requires this.",
+      "options": [
+        "Yes, about half the board",
+        "Yes, about a third of the board",
+        "Allow it if companies choose, but don't require it",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "noncompetes",
+      "subtopic": "Noncompete agreements and right to repair",
+      "axis": [
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should employers be allowed to make workers agree not to work for a competitor after they leave?",
+      "scope": "Agreements that block a worker from a similar job for a period after leaving.",
+      "options": [
+        "No, ban them for all workers",
+        "Only for top executives",
+        "Allow them, but limit them to a year or less",
+        "Allow them; it's a contract both sides agreed to"
+      ],
+      "high_pole": "allow"
+    },
+    {
+      "id": "right_to_repair",
+      "subtopic": "Noncompete agreements and right to repair",
+      "axis": [
+        "REG",
+        "TECH"
+      ],
+      "format": "position",
+      "stem": "Should companies be required to make parts, tools and manuals available so owners and independent shops can repair products?",
+      "scope": "Products like phones, cars and farm equipment.",
+      "options": [
+        "Yes, for most products",
+        "Only for products where repair matters most, like cars and farm equipment",
+        "No; companies should decide"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "farm_subsidies",
+      "subtopic": "Business subsidies",
+      "axis": [
+        "REG"
+      ],
+      "format": "position",
+      "stem": "What should happen to federal payments and subsidized insurance for farmers?",
+      "scope": "Programs that pay farmers when prices or harvests fall.",
+      "options": [
+        "Expand them",
+        "Keep them about as they are",
+        "Limit them to small and mid-size farms",
+        "Phase them out"
+      ],
+      "high_pole": "phase out",
+      "notes": "Expected to cross-cut: opposed by free-market and some left voters, supported in farm regions of both parties."
+    },
+    {
+      "id": "business_incentives",
+      "subtopic": "Business subsidies",
+      "axis": [
+        "REG",
+        "POP"
+      ],
+      "format": "position",
+      "stem": "Should states and cities offer tax breaks to persuade companies to build factories or offices there?",
+      "scope": "Deals like tax breaks for a company that brings jobs to an area.",
+      "options": [
+        "Yes, they bring jobs",
+        "Only with strict job guarantees and repayment if the company leaves",
+        "No; ban these deals"
+      ],
+      "high_pole": "ban"
+    },
+    {
+      "id": "fed_independence",
+      "subtopic": "Federal Reserve and interest rates",
+      "axis": [
+        "NORMS",
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Who should decide the interest rates set by the Federal Reserve?",
+      "scope": "Answer for any president of either party.",
+      "options": [
+        "The Federal Reserve alone, with no pressure from elected officials",
+        "The Federal Reserve, but Congress should review its decisions more closely",
+        "The president should be able to direct the Federal Reserve"
+      ],
+      "high_pole": "president"
+    },
+    {
+      "id": "infrastructure",
+      "subtopic": "Infrastructure investment",
+      "axis": [
+        "REG",
+        "REDIS"
+      ],
+      "format": "position",
+      "stem": "How much should the federal government spend on roads, bridges, water systems and the power grid?",
+      "scope": "Compared with today. Assume the money is borrowed or comes from taxes.",
+      "options": [
+        "Much more",
+        "Somewhat more",
+        "About the same",
+        "Less; leave more to states and private companies"
+      ],
+      "high_pole": "less"
     }
   ]
 }

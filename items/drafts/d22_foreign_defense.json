@@ -7,35 +7,63 @@
     {
       "id": "engagement_tradeoff",
       "subtopic": "Engagement vs restraint",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view of the US role in the world?",
       "scope": "Think about the long run, not one conflict.",
       "sides": [
-        {"label": "Active role", "text": "Take an active role in world affairs, even if it is costly and risks war."},
-        {"label": "Focus at home", "text": "Focus on problems at home and stay out of other countries' affairs, even if rivals gain influence."}
+        {
+          "label": "Active role",
+          "text": "Take an active role in world affairs, even if it is costly and risks war."
+        },
+        {
+          "label": "Focus at home",
+          "text": "Focus on problems at home and stay out of other countries' affairs, even if rivals gain influence."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "allies_tradeoff",
       "subtopic": "Engagement vs restraint",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "tradeoff",
       "stem": "When pursuing its goals abroad, which should the US usually do?",
       "scope": "Think about trade, security and diplomacy.",
       "sides": [
-        {"label": "Work with allies", "text": "Work through alliances and agreements, even if that means compromising sometimes."},
-        {"label": "Act alone if needed", "text": "Act on its own to pursue its interests, even if allies object."}
+        {
+          "label": "Work with allies",
+          "text": "Work through alliances and agreements, even if that means compromising sometimes."
+        },
+        {
+          "label": "Act alone if needed",
+          "text": "Act on its own to pursue its interests, even if allies object."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "nato",
       "subtopic": "Alliance commitments",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US remain in NATO, the military alliance with Canada and most of Europe?",
       "scope": "Members promise to defend each other if attacked.",
@@ -43,17 +71,19 @@
         "Yes, and strengthen the US commitment",
         "Yes, but require allies to spend much more on defense",
         "Yes, but reduce US forces in Europe",
-        "No; withdraw"
+        "No; withdraw from NATO and bring US forces home from Europe"
       ],
       "high_pole": "withdraw"
     },
     {
       "id": "defense_spending",
       "subtopic": "Defense spending",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "position",
       "stem": "Should US military spending go up or down?",
-      "scope": "Today it is roughly $900 billion a year, more than the next several countries combined.",
+      "scope": "Today it is roughly $900 billion to $1 trillion a year, more than the next several countries combined.",
       "options": [
         "Cut it by a quarter or more",
         "Cut it somewhat",
@@ -63,13 +93,21 @@
       ],
       "high_pole": "increase",
       "facts": [
-        {"claim": "US national defense spending roughly $850-950 billion per year (FY2025-26); exceeds the next ~9 countries combined", "source": "CBO; SIPRI Military Expenditure Database; Peter G. Peterson Foundation", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "US national defense spending about $0.9-1.0 trillion in FY2026 including 2025 reconciliation funds; exceeds the next ~9 countries combined",
+          "source": "CBO; SIPRI Military Expenditure Database; Peter G. Peterson Foundation",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ]
     },
     {
       "id": "troops_abroad",
       "subtopic": "Defense spending",
-      "axis": ["HAWK", "GLOBAL"],
+      "axis": [
+        "HAWK",
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US keep troops stationed in other countries, like Germany, Japan and South Korea?",
       "scope": "Permanent bases in allied countries, not war zones.",
@@ -84,28 +122,49 @@
     {
       "id": "use_force_cases",
       "subtopic": "When to use military force",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "exceptions",
       "stem": "Would you support using US military force in each of these situations?",
       "scope": "Assume Congress or the UN has not acted. Answer each case separately.",
-      "options": ["Would oppose", "Would support"],
+      "options": [
+        "Would oppose",
+        "Would support"
+      ],
       "high_pole": "Would support",
       "cases": [
-        {"id": "force_mass_killing", "text": "To stop a government from killing large numbers of its own people"},
-        {"id": "force_nuclear", "text": "To stop a hostile country from building nuclear weapons"},
-        {"id": "force_shipping", "text": "To protect international shipping from attacks"},
-        {"id": "force_hostages", "text": "To rescue Americans held hostage abroad"},
-        {"id": "force_cartels", "text": "To strike drug cartels in another country without that country's permission"}
+        {
+          "id": "force_mass_killing",
+          "text": "To stop a government from killing large numbers of its own people"
+        },
+        {
+          "id": "force_nuclear",
+          "text": "To stop a hostile country from building nuclear weapons"
+        },
+        {
+          "id": "force_shipping",
+          "text": "To protect international shipping from attacks"
+        },
+        {
+          "id": "force_hostages",
+          "text": "To rescue Americans held hostage abroad"
+        },
+        {
+          "id": "force_cartels",
+          "text": "To strike drug cartels in another country without that country's permission"
+        }
       ]
     },
     {
       "id": "foreign_aid_level",
       "subtopic": "Foreign aid",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should US spending on foreign aid go up or down?",
-      "scope": "Economic, health and humanitarian aid, not military aid.",
-      "context": "Before 2025 cuts, foreign aid was about 1% of the federal budget.",
+      "scope": "Economic, health and humanitarian aid, not military aid. It has usually been about 1% of the federal budget.",
       "options": [
         "Increase it a lot",
         "Increase it somewhat",
@@ -115,13 +174,20 @@
       ],
       "high_pole": "cut",
       "facts": [
-        {"claim": "US foreign aid historically about 1% of federal outlays", "source": "KFF; Congressional Research Service", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "US foreign aid historically about 1% of federal outlays",
+          "source": "KFF; Congressional Research Service",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ]
     },
     {
       "id": "global_health_aid",
       "subtopic": "Foreign aid",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US fund programs abroad that fight diseases like HIV, malaria and childhood illness?",
       "scope": "Programs run by US agencies or through charities.",
@@ -136,7 +202,9 @@
     {
       "id": "israel_military_aid",
       "subtopic": "Israel and the Middle East",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US provide military aid to Israel?",
       "scope": "Weapons and funding for Israel's military.",
@@ -152,7 +220,9 @@
     {
       "id": "palestinian_state",
       "subtopic": "Israel and the Middle East",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US support creating an independent Palestinian state alongside Israel?",
       "scope": "A state in the West Bank and Gaza.",
@@ -166,7 +236,10 @@
     {
       "id": "ukraine_support",
       "subtopic": "Russia and Ukraine",
-      "axis": ["GLOBAL", "HAWK"],
+      "axis": [
+        "GLOBAL",
+        "HAWK"
+      ],
       "format": "position",
       "stem": "If fighting between Russia and Ukraine continues or resumes, what should the US do?",
       "scope": "Russia invaded Ukraine in 2022.",
@@ -182,7 +255,9 @@
     {
       "id": "taiwan_defense",
       "subtopic": "China and Taiwan",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "position",
       "stem": "If China invaded Taiwan, what should the US do?",
       "scope": "Taiwan is a self-governing island that China claims.",
@@ -197,7 +272,9 @@
     {
       "id": "china_posture",
       "subtopic": "China and Taiwan",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "position",
       "stem": "Which comes closest to how the US should deal with China?",
       "scope": "Think about the overall relationship over the next decade.",
@@ -211,7 +288,9 @@
     {
       "id": "united_nations",
       "subtopic": "International institutions (UN / international courts)",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "How should the US deal with the United Nations?",
       "scope": "The UN and its agencies.",
@@ -226,7 +305,9 @@
     {
       "id": "international_courts",
       "subtopic": "International institutions (UN / international courts)",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US accept the authority of the International Criminal Court, which tries people for war crimes?",
       "scope": "The US is not a member today.",
@@ -238,27 +319,48 @@
       ],
       "high_pole": "punish",
       "facts": [
-        {"claim": "The US signed but did not ratify the Rome Statute and withdrew its signature in 2002; sanctions on ICC officials imposed in 2020 and 2025", "source": "UN Treaty Collection; Executive Order 14203 (2025)", "checked": "2026-10-12", "verify": true}
-      ]
+        {
+          "claim": "The US signed but did not ratify the Rome Statute and withdrew its signature in 2002; sanctions on ICC officials imposed in 2020 and 2025",
+          "source": "UN Treaty Collection; Executive Order 14203 (2025)",
+          "checked": "2026-10-12",
+          "verify": true
+        }
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "human_rights_tradeoff",
       "subtopic": "Human rights in foreign policy",
-      "axis": ["GLOBAL"],
+      "axis": [
+        "GLOBAL"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to how the US should treat countries with poor human rights records?",
       "scope": "Countries that jail critics or persecute minorities.",
       "sides": [
-        {"label": "Press on rights", "text": "Press them on human rights, even if it hurts trade or security ties."},
-        {"label": "Interests first", "text": "Work with them when it serves US interests, whatever their record."}
+        {
+          "label": "Press on rights",
+          "text": "Press them on human rights, even if it hurts trade or security ties."
+        },
+        {
+          "label": "Interests first",
+          "text": "Work with them when it serves US interests, whatever their record."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "nuclear_arms_control",
       "subtopic": "Nuclear weapons and arms control",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "position",
       "stem": "Should the US negotiate limits on nuclear weapons with Russia and China?",
       "scope": "Agreements that cap or reduce each country's arsenal.",
@@ -272,7 +374,10 @@
     {
       "id": "national_service",
       "subtopic": "Military draft or national service",
-      "axis": ["HAWK", "NATION"],
+      "axis": [
+        "HAWK",
+        "NATION"
+      ],
       "format": "position",
       "stem": "Should young Americans be required to serve their country?",
       "scope": "In peacetime, for people aged about 18 to 25.",
@@ -287,7 +392,9 @@
     {
       "id": "strikes_on_terrorists",
       "subtopic": "Strikes on terrorist groups abroad",
-      "axis": ["HAWK"],
+      "axis": [
+        "HAWK"
+      ],
       "format": "position",
       "stem": "Should the US use drone strikes against leaders of terrorist groups in other countries?",
       "scope": "Groups that have attacked or threatened Americans.",
@@ -301,7 +408,10 @@
     {
       "id": "arms_sales",
       "subtopic": "Arms sales to other countries",
-      "axis": ["HAWK", "GLOBAL"],
+      "axis": [
+        "HAWK",
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Which countries should the US sell weapons to?",
       "scope": "Sales by US companies that the government approves.",
@@ -312,6 +422,41 @@
         "Any friendly government"
       ],
       "high_pole": "any friendly"
+    },
+    {
+      "id": "iran_nuclear",
+      "subtopic": "Iran",
+      "axis": [
+        "HAWK"
+      ],
+      "format": "position",
+      "stem": "If Iran moved to build a nuclear weapon, what should the US do?",
+      "scope": "Assume US intelligence was confident of it.",
+      "options": [
+        "Negotiate, and accept some risk",
+        "Negotiate, backed by tough sanctions",
+        "Strike its nuclear sites if talks fail",
+        "Strike its nuclear sites right away"
+      ],
+      "high_pole": "strike now"
+    },
+    {
+      "id": "acquire_territory",
+      "subtopic": "Acquiring territory",
+      "axis": [
+        "HAWK",
+        "NATION"
+      ],
+      "format": "position",
+      "stem": "Should the US try to gain new territory, such as Greenland?",
+      "scope": "Territory now belonging to another country.",
+      "options": [
+        "No",
+        "Only if the people living there vote for it",
+        "Yes, through purchase or negotiation, even if local people object",
+        "Yes, by any means, including economic or military pressure"
+      ],
+      "high_pole": "any means"
     }
   ]
 }

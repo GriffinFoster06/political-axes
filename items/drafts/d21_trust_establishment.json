@@ -29,16 +29,17 @@
         "TRUST"
       ],
       "format": "frequency",
-      "stem": "How often do federal officials tell the public the truth about the problems they are dealing with?",
+      "stem": "How often do federal officials hide mistakes or bad news from the public?",
       "scope": "Think about federal officials in general, whichever party is in charge.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_courts",
@@ -83,16 +84,17 @@
         "ESTAB"
       ],
       "format": "frequency",
-      "stem": "How often do major national news organizations cover political news fairly to all sides?",
+      "stem": "How often do major national news organizations slant political news toward one side?",
       "scope": "Think of large newspapers, TV networks and their websites, across the range of outlets.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_scientists",
@@ -211,7 +213,8 @@
         "Lean B",
         "Clearly B"
       ],
-      "high_pole": "Clearly B"
+      "high_pole": "Clearly B",
+      "testlet": "experts"
     },
     {
       "id": "expertise_vs_experience",
@@ -238,7 +241,8 @@
         "Lean B",
         "Clearly B"
       ],
-      "high_pole": "Clearly B"
+      "high_pole": "Clearly B",
+      "testlet": "experts"
     },
     {
       "id": "trust_public_health",
@@ -247,17 +251,17 @@
         "ESTAB"
       ],
       "format": "frequency",
-      "stem": "When national public health agencies, like the CDC, give health advice, how often is it based on the best evidence rather than politics?",
+      "stem": "When national public health agencies, like the CDC, give health advice, how often is it shaped by politics or industry pressure rather than evidence?",
       "scope": "Think about these agencies in general, whichever party is in charge.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely",
-      "notes": "Agency leadership changed in 2025; watch for answers tracking current leadership. Compare with trust_scientists."
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_congress_effort",
@@ -275,7 +279,8 @@
         "Sometimes (about 3 in 10)",
         "Rarely (1 in 10 or less)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "rarely",
+      "testlet": "congress_trust"
     },
     {
       "id": "trust_congress_promises",
@@ -284,16 +289,18 @@
         "TRUST"
       ],
       "format": "frequency",
-      "stem": "How often do members of Congress try to keep the main promises they made when running for office?",
+      "stem": "How often do members of Congress break the main promises they made when running for office?",
       "scope": "Think about members of both parties.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis.",
+      "testlet": "congress_trust"
     },
     {
       "id": "trust_state_gov",
@@ -303,16 +310,17 @@
         "FED"
       ],
       "format": "frequency",
-      "stem": "How often does your state government spend its money wisely?",
+      "stem": "How often does your state government waste the money it spends?",
       "scope": "Think about the state where you live, whichever party is in charge there.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_local_gov",
@@ -350,7 +358,8 @@
         "Sometimes (about 3 in 10)",
         "Rarely (1 in 10 or less)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "rarely",
+      "notes": "Police trust ties to race and to left-right more than other trust items; expected to split from TRUST toward ORDER/EQUITY."
     },
     {
       "id": "trust_military",
@@ -369,7 +378,8 @@
         "Sometimes (about 3 in 10)",
         "Rarely (1 in 10 or less)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "rarely",
+      "notes": "Military trust leans right; expected to load partly on HAWK rather than TRUST."
     },
     {
       "id": "gov_big_projects",
@@ -378,16 +388,17 @@
         "TRUST"
       ],
       "format": "frequency",
-      "stem": "When the federal government takes on a big project, like building infrastructure or starting a new program, how often does it finish close to on time and on budget?",
+      "stem": "When the federal government takes on a big project, like building infrastructure or starting a new program, how often does it go far over budget or behind schedule?",
       "scope": "Think about such projects in general, whichever party is in charge.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "gov_services_work",
@@ -414,16 +425,17 @@
         "ESTAB"
       ],
       "format": "frequency",
-      "stem": "How often do official government statistics, such as the unemployment and inflation rates, give an honest picture of the economy?",
+      "stem": "How often are official statistics, such as the unemployment and inflation rates, shaped to make whoever is in power look good?",
       "scope": "Think about these statistics in general, whichever party is in charge.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_university_research",
@@ -433,16 +445,17 @@
         "EDUC"
       ],
       "format": "frequency",
-      "stem": "When major universities publish research on social issues, like crime or poverty, how often can it be trusted?",
+      "stem": "When major universities publish research on social issues, like crime or poverty, how often is it slanted by the researchers' own politics?",
       "scope": "Think about university research in general.",
       "options": [
-        "Almost always (9 or more times in 10)",
-        "Most of the time (about 7 in 10)",
-        "About half the time",
+        "Rarely (1 in 10 or less)",
         "Sometimes (about 3 in 10)",
-        "Rarely (1 in 10 or less)"
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
       ],
-      "high_pole": "rarely"
+      "high_pole": "almost always",
+      "notes": "Reverse-keyed in review (frequent = distrust) so a 'how often' response style can't drive the axis."
     },
     {
       "id": "trust_tech_companies",
@@ -588,6 +601,109 @@
           "verify": true
         }
       ]
+    },
+    {
+      "id": "recall_response",
+      "subtopic": "Trust shown in behavior",
+      "axis": [
+        "ESTAB",
+        "TRUST"
+      ],
+      "format": "position",
+      "stem": "If a federal safety agency recalled a product you use, saying it might be dangerous, what would you most likely do?",
+      "scope": "Think of a food, medicine or car part.",
+      "options": [
+        "Stop using it right away",
+        "Stop using it, then check other sources",
+        "Check other sources before deciding",
+        "Keep using it unless I saw a problem myself"
+      ],
+      "high_pole": "keep using"
+    },
+    {
+      "id": "budget_office_reliance",
+      "subtopic": "Trust shown in behavior",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "position",
+      "stem": "When Congress votes on a major bill, how much should it rely on cost estimates from its own nonpartisan budget office?",
+      "scope": "The Congressional Budget Office, under either party's control of Congress.",
+      "options": [
+        "Treat them as the final word",
+        "Rely on them heavily, along with other evidence",
+        "Treat them as one opinion among many",
+        "Mostly ignore them; they're often wrong"
+      ],
+      "high_pole": "ignore"
+    },
+    {
+      "id": "more_power_outcome",
+      "subtopic": "Trust shown in behavior",
+      "axis": [
+        "TRUST"
+      ],
+      "format": "position",
+      "stem": "If the federal government got more money and power to fix a problem you care about, what would most likely happen?",
+      "scope": "Under either party.",
+      "options": [
+        "It would mostly fix it",
+        "It would make real progress",
+        "It would make a little progress and waste a lot",
+        "It would make things worse"
+      ],
+      "high_pole": "worse"
+    },
+    {
+      "id": "accept_certified_loss",
+      "subtopic": "Trust shown in behavior",
+      "axis": [
+        "ESTAB",
+        "VOTING"
+      ],
+      "format": "position",
+      "stem": "If officials certified a close election that your preferred candidate lost, what would you need before accepting the result?",
+      "scope": "A close race for president or governor.",
+      "options": [
+        "Nothing more; I'd accept it once certified",
+        "Any recounts required by law",
+        "An independent audit",
+        "Confirmation from observers on my own side"
+      ],
+      "high_pole": "own side"
+    },
+    {
+      "id": "science_vs_officials",
+      "subtopic": "Science vs elected officials",
+      "axis": [
+        "ESTAB"
+      ],
+      "format": "position",
+      "stem": "When public health scientists and elected officials disagree about a health rule, who should have the final say?",
+      "scope": "For example, rules during a disease outbreak.",
+      "options": [
+        "Public health scientists",
+        "Elected officials, following scientists' advice in most cases",
+        "Elected officials, treating scientists' advice as one input",
+        "Elected officials; scientists should advise only when asked"
+      ],
+      "high_pole": "officials"
+    },
+    {
+      "id": "congress_stock_ban",
+      "subtopic": "Congressional stock trading",
+      "axis": [
+        "POP"
+      ],
+      "format": "position",
+      "stem": "Should members of Congress be banned from trading individual stocks while in office?",
+      "scope": "Today they may trade, but must report trades.",
+      "options": [
+        "Yes, ban it for members, their spouses and senior staff",
+        "Yes, for members only",
+        "No; reporting trades is enough"
+      ],
+      "high_pole": "no ban"
     }
   ]
 }

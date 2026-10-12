@@ -31,14 +31,14 @@
       ]
     },
     {
-      "id": "temp_workers",
+      "id": "temp_workers_seasonal",
       "subtopic": "Legal immigration level",
       "axis": [
         "IMMIG"
       ],
       "format": "position",
-      "stem": "Should the US admit more or fewer temporary foreign workers, such as farmworkers and engineers?",
-      "scope": "Workers who come on visas for a set number of years.",
+      "stem": "Should the US admit more or fewer temporary foreign workers for seasonal farm and service jobs?",
+      "scope": "Workers who come on visas for a season or a few years, then return home.",
       "options": [
         "Many more than today",
         "Somewhat more",
@@ -49,21 +49,23 @@
       "high_pole": "fewer"
     },
     {
-      "id": "immigration_pause",
+      "id": "temp_workers_skilled",
       "subtopic": "Legal immigration level",
       "axis": [
         "IMMIG"
       ],
       "format": "position",
-      "stem": "Should the US temporarily stop nearly all new legal immigration?",
-      "scope": "Refugees and spouses of citizens are part of this question too.",
+      "stem": "Should the US admit more or fewer temporary foreign workers for skilled jobs, such as engineers and programmers?",
+      "scope": "Workers who come on visas for a set number of years.",
       "options": [
-        "No; keep or increase current levels",
-        "No, but reduce the levels",
-        "Yes, for a few years",
-        "Yes, for many years"
+        "Many more than today",
+        "Somewhat more",
+        "About the same",
+        "Somewhat fewer",
+        "Many fewer"
       ],
-      "high_pole": "long pause"
+      "high_pole": "fewer",
+      "notes": "Split from temp_workers in review: views on skilled and seasonal visas differ, including within parties."
     },
     {
       "id": "skills_vs_family",
@@ -116,7 +118,7 @@
       "stem": "Which comes closest to how the US should handle the southern border?",
       "scope": "Think about the border with Mexico.",
       "options": [
-        "Fewer agents and barriers; expand legal ways to come instead",
+        "Fewer agents and barriers than today",
         "Keep about current enforcement",
         "More agents and technology, but no new physical wall",
         "A wall along most of the border, plus more agents"
@@ -293,6 +295,10 @@
       "high_pole": "Very important",
       "cases": [
         {
+          "id": "am_laws",
+          "text": "Respecting American laws and institutions"
+        },
+        {
           "id": "am_born",
           "text": "Being born in the US"
         },
@@ -345,7 +351,8 @@
         "Teach failures and achievements in balance",
         "Emphasize achievements and ideals so students take pride in the country"
       ],
-      "high_pole": "emphasize pride"
+      "high_pole": "emphasize pride",
+      "testlet": "history_teaching"
     },
     {
       "id": "anthem_kneeling",
@@ -404,7 +411,8 @@
         "Yes, except for people in high government office",
         "No; citizens should hold only US citizenship"
       ],
-      "high_pole": "no"
+      "high_pole": "no",
+      "issue_map_only": true
     },
     {
       "id": "us_exceptional",
@@ -456,6 +464,65 @@
         "Yes, and private employers should have to show no citizen is available before hiring a non-citizen"
       ],
       "high_pole": "strong preference"
+    },
+    {
+      "id": "immigrant_selection_culture",
+      "subtopic": "Immigrant selection by culture or religion",
+      "axis": [
+        "NATION",
+        "IMMIG"
+      ],
+      "format": "position",
+      "stem": "Should the US consider an immigrant's culture or religion when deciding who may come?",
+      "scope": "Legal immigration, after security screening.",
+      "options": [
+        "No; culture and religion should never count",
+        "Only knowledge of English and US civics should count",
+        "Give some preference to people from countries with cultures closer to America's",
+        "Yes, and bar people from some religions or cultures"
+      ],
+      "high_pole": "bar some"
+    },
+    {
+      "id": "enforcement_limits",
+      "subtopic": "Enforcement methods",
+      "axis": [
+        "IMMIG"
+      ],
+      "format": "exceptions",
+      "stem": "When enforcing immigration law against people without legal status, should agents be allowed to do each of these?",
+      "scope": "Answer each case separately.",
+      "options": [
+        "Should not be allowed",
+        "Should be allowed"
+      ],
+      "high_pole": "Should be allowed",
+      "cases": [
+        {
+          "id": "el_schools",
+          "text": "Make arrests at schools"
+        },
+        {
+          "id": "el_churches",
+          "text": "Make arrests at places of worship"
+        },
+        {
+          "id": "el_hospitals",
+          "text": "Make arrests at hospitals"
+        },
+        {
+          "id": "el_families",
+          "text": "Hold families with children in detention"
+        },
+        {
+          "id": "el_third_country",
+          "text": "Deport people to a country that isn't their own"
+        },
+        {
+          "id": "el_masks",
+          "text": "Wear masks to hide their identity while working"
+        }
+      ]
     }
   ]
 }

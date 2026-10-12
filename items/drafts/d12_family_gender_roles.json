@@ -5,21 +5,36 @@
   "notes": "Uses concrete household arrangements instead of agree/disagree statements (the ANES gender items split by keying). High pole is consistently 'more traditional / more family responsibility'.",
   "items": [
     {
-      "id": "family_arrangement",
+      "id": "work_arrangement",
       "subtopic": "Traditional roles at home and work",
       "axis": [
         "FAMILY"
       ],
       "format": "position",
       "stem": "For a married couple with young children, which arrangement do you think is usually best?",
-      "scope": "Assume either arrangement is affordable for them.",
+      "scope": "Assume any of these is affordable for them.",
       "options": [
-        "Both parents work and share childcare equally",
-        "Both work, and whoever earns less does more childcare",
-        "One parent stays home; it doesn't matter which",
-        "The father works and the mother stays home"
+        "Both parents work full time and share childcare",
+        "Both work, with one part time",
+        "One parent stays home while the children are young"
       ],
-      "high_pole": "traditional"
+      "high_pole": "one at home"
+    },
+    {
+      "id": "caregiver_parent",
+      "subtopic": "Traditional roles at home and work",
+      "axis": [
+        "FAMILY"
+      ],
+      "format": "position",
+      "stem": "When one parent stays home with young children, who should it usually be?",
+      "scope": "Married couples of a man and a woman.",
+      "options": [
+        "Whoever wants to or earns less; it shouldn't depend on sex",
+        "Usually the mother, but either is fine",
+        "The mother; young children need their mother at home"
+      ],
+      "high_pole": "mother"
     },
     {
       "id": "marriage_decisions",
@@ -36,7 +51,8 @@
         "Equally, but each spouse leads in different areas",
         "The husband should have the final say"
       ],
-      "high_pole": "husband"
+      "high_pole": "husband",
+      "issue_map_only": true
     },
     {
       "id": "promote_marriage",
@@ -71,23 +87,38 @@
       "high_pole": "marriage only"
     },
     {
-      "id": "childcare_funding",
+      "id": "childcare_spending",
       "subtopic": "Public childcare vs family care",
       "axis": [
         "FAMILY",
         "REDIS"
       ],
       "format": "position",
-      "stem": "How should childcare for children under 5 be paid for?",
-      "scope": "Think about families of all incomes.",
+      "stem": "How much should government spend to help families with the cost of care for children under 5?",
+      "scope": "Think about families of all incomes. How the help is given is asked next.",
       "options": [
-        "Free public childcare for every family",
-        "Government help so no family pays more than about 7% of its income",
-        "Help only for low-income families, as today",
-        "Give parents money directly, whether they use childcare or stay home",
-        "No government role"
+        "Enough to make childcare free for every family",
+        "Enough that no family pays more than about 7% of its income",
+        "Help for low-income families only, as today",
+        "No government help"
       ],
-      "high_pole": "family responsibility"
+      "high_pole": "none"
+    },
+    {
+      "id": "childcare_form",
+      "subtopic": "Public childcare vs family care",
+      "axis": [
+        "FAMILY"
+      ],
+      "format": "position",
+      "stem": "Should government help for families with young children go mainly to childcare programs or directly to parents?",
+      "scope": "Answer about the form of help, whatever amount you prefer.",
+      "options": [
+        "Mainly to childcare programs, so parents can work",
+        "Split between both",
+        "Mainly to parents as cash, whether they use childcare or stay home"
+      ],
+      "high_pole": "cash to parents"
     },
     {
       "id": "stay_home_support",
@@ -180,6 +211,60 @@
         }
       ],
       "notes": "Cross-cutting candidate; direction relative to G unclear."
+    },
+    {
+      "id": "workplace_gender_programs",
+      "subtopic": "Gender equality policies at work",
+      "axis": [
+        "FAMILY",
+        "EQUITY"
+      ],
+      "format": "position",
+      "stem": "Should large employers run programs to increase the share of women in jobs and leadership roles where they are few?",
+      "scope": "Private companies with more than 500 employees.",
+      "options": [
+        "Yes, with specific hiring targets and required training",
+        "Yes, through outreach and mentoring, without targets",
+        "Only general training on treating everyone equally",
+        "No such programs, but leave the choice to each company",
+        "No such programs, and government should bar them at companies with federal contracts"
+      ],
+      "high_pole": "no programs"
+    },
+    {
+      "id": "women_draft",
+      "subtopic": "Women in the draft and combat",
+      "axis": [
+        "FAMILY",
+        "HAWK"
+      ],
+      "format": "position",
+      "stem": "If the US ever brought back a military draft, should women be drafted too?",
+      "scope": "Today only men must register for the draft.",
+      "options": [
+        "Yes, on the same terms as men",
+        "Yes, but only for non-combat roles",
+        "No; only men"
+      ],
+      "high_pole": "only men"
+    },
+    {
+      "id": "natural_roles",
+      "subtopic": "Nature vs culture in gender roles (belief)",
+      "axis": [
+        "FAMILY"
+      ],
+      "format": "belief",
+      "stem": "Where do differences in men's and women's roles in family life mostly come from?",
+      "scope": "Think about typical differences, not every person.",
+      "options": [
+        "Almost entirely from upbringing and culture",
+        "Mostly from culture, partly from nature",
+        "About equally from both",
+        "Mostly from natural differences between the sexes",
+        "Almost entirely from nature; men and women are suited to different roles"
+      ],
+      "high_pole": "nature"
     }
   ]
 }

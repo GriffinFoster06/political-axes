@@ -108,6 +108,14 @@
       while (idx < q.length && isFollowup(q, idx)) idx++;
       q.splice(idx, 0, { k: "qc", id: qcs[k].id });
     });
+    // pilot experiments (docs/preregistration.md section 12): a "Torn" middle on tradeoffs for
+    // half of people, and the order of the two top-tax questions
+    S.exp = CFG.experiments === false ? null : { torn: rnd() < 0.5, topTaxSwap: rnd() < 0.5, context: true };
+    if (S.exp && S.exp.topTaxSwap) {
+      var i1 = -1, i2 = -1;
+      q.forEach(function (e, k) { if (e.id === "top_income_tax") i1 = k; if (e.id === "top_rate_number") i2 = k; });
+      if (i1 >= 0 && i2 >= 0) { var tmp = q[i1]; q[i1] = q[i2]; q[i2] = tmp; }
+    }
     B.quality.repeated_items.ids.forEach(function (i) { if (ids[i]) q.push({ k: "repeat", id: i }); });
     S.queue = q;
     S.pos = 0;
@@ -206,14 +214,14 @@
     }
     if (step === 2) {
       var opts = [
-        { id: "pilot", title: "Pilot version", time: "about 45 minutes", text: "A balanced share of the questions. Everyone gets a different share, so together the answers cover every question. This is the version for the pilot study." },
+        { id: "pilot", title: "Pilot version", time: "about 50 minutes", text: "A balanced share of the questions. Everyone gets a different share, so together the answers cover every question. This is the version for the pilot study." },
       ];
-      if (CFG.allowFullMode !== false) opts.push({ id: "full", title: "Full map", time: "about 75 minutes", text: "Every question in every topic. You can stop and come back any time on this device." });
+      if (CFG.allowFullMode !== false) opts.push({ id: "full", title: "Full map", time: "about 2 hours", text: "Every question in every topic. Take it in as many sittings as you like; your answers are saved on this device." });
       var html = '<h2>Choose a length</h2><div class="mode">';
       opts.forEach(function (o) {
         html += '<button class="opt" data-mode="' + o.id + '" aria-pressed="' + (S.mode === o.id) + '"><b>' + esc(o.title) + "</b> <span class=\"mono\">" + esc(o.time) + "</span><small>" + esc(o.text) + "</small></button>";
       });
-      html += '<div class="opt" aria-disabled="true" style="opacity:.55;cursor:default"><b>Precision mode</b> <span class="mono">about 30–45 minutes</span><small>Picks the most informative questions for you. Available once the pilot has calibrated the questions.</small></div>';
+      html += '<div class="opt" aria-disabled="true" style="opacity:.55;cursor:default"><b>Precision mode</b> <span class="mono">about 40–60 minutes</span><small>Picks the most informative questions for you. Available once the pilot has calibrated the questions.</small></div>';
       html += '</div><div class="nav"><button class="link" id="bk">Back</button><button class="btn" id="go"' + (S.mode ? "" : " disabled") + ">Continue</button></div>";
       show(html);
       screen.querySelectorAll("[data-mode]").forEach(function (b) {
@@ -296,7 +304,12 @@
     var rich = richFactory(it);
     var html = header(it, isRep ? "One more look" : "");
     if (isRep) html += '<p class="scope">You saw this question earlier. Please answer it again as you see it now.</p>';
-    if (it.context) html += '<div class="context">' + rich(it.context) + "</div>";
+    if (it.context) {
+      // context experiment: shown or hidden at random per person and question (recorded as a.cx)
+      if (a.cx == null) a.cx = (S.exp && S.exp.context && !isRep) ? hash(S.rid + "|cx|" + it.id) % 2 : 1;
+      if (isRep) a.cx = (S.ans[it.id] && S.ans[it.id].cx != null) ? S.ans[it.id].cx : 1;
+      if (a.cx) html += '<div class="context">' + rich(it.context) + "</div>";
+    }
     html += '<p class="stem">' + rich(it.stem) + "</p>";
     html += '<p class="scope">' + rich(it.scope) + "</p>";
     html += '<div id="defs"></div>';
@@ -309,7 +322,7 @@
       }).join("") + "</div>";
       html += '<div id="nf" ' + (a.e === 1 ? "" : "hidden") + '><label for="nftext" class="scope">Optional: what would your answer be?</label><textarea id="nftext" maxlength="500">' + esc(a.x || "") + "</textarea></div>";
       if (it.format === "position" || it.format === "tradeoff") {
-        html += '<div class="firm" id="firm" ' + (a.c != null ? "" : "hidden") + "><span>How settled is this view?</span>" +
+        html += '<div class="firm" id="firm" ' + (a.c != null || a.t ? "" : "hidden") + "><span>How settled is this view?</span>" +
           FIRMNESS.map(function (f, k) { return '<button type="button" class="chip" data-firm="' + k + '" aria-pressed="' + (a.f === k) + '">' + esc(f) + "</button>"; }).join("") + "</div>";
       }
     }
@@ -335,10 +348,13 @@
     var left = swap ? Bs : A, right = swap ? A : Bs;
     var codes = swap ? [3, 2, 1, 0] : [0, 1, 2, 3];
     var labels = ["Clearly " + left.label, "Lean " + left.label, "Lean " + right.label, "Clearly " + right.label];
+    var torn = S.exp && S.exp.torn && it.id.indexOf("qc_") !== 0;
+    var btns = codes.map(function (c, p) {
+      return '<button type="button" class="opt" data-code="' + c + '" data-pos="' + (torn && p > 1 ? p + 1 : p) + '">' + esc(labels[p]) + "</button>";
+    });
+    if (torn) btns.splice(2, 0, '<button type="button" class="opt" data-torn="1" data-pos="2">Torn between them</button>');
     return '<div class="sides"><div class="side"><b>' + esc(left.label) + "</b><span>" + rich(left.text) + '</span></div><div class="side"><b>' + esc(right.label) + "</b><span>" + rich(right.text) + "</span></div></div>" +
-      '<div class="scale options" role="group">' + codes.map(function (c, p) {
-        return '<button type="button" class="opt" data-code="' + c + '" data-pos="' + p + '">' + esc(labels[p]) + "</button>";
-      }).join("") + "</div>";
+      '<div class="scale options' + (torn ? " five" : "") + '" role="group">' + btns.join("") + "</div>";
   }
   function wireOptions(it, a) {
     var key = Object.keys(S.ans).filter(function (k) { return S.ans[k] === a; })[0];
@@ -346,22 +362,26 @@
       screen.querySelectorAll(".opt[data-code]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.c != null && +b.getAttribute("data-code") === a.c)); });
       screen.querySelectorAll(".esc").forEach(function (b) { b.setAttribute("aria-pressed", String(a.e === +b.getAttribute("data-esc"))); });
       var nf = document.getElementById("nf"); if (nf) nf.hidden = a.e !== 1;
-      var fm = document.getElementById("firm"); if (fm) fm.hidden = a.c == null;
+      var fm = document.getElementById("firm"); if (fm) fm.hidden = a.c == null && !a.t;
+      screen.querySelectorAll(".opt[data-torn]").forEach(function (b) { b.setAttribute("aria-pressed", String(!!a.t)); });
       screen.querySelectorAll("[data-firm]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.f === +b.getAttribute("data-firm"))); });
       var nx = document.getElementById("next"); if (nx) nx.disabled = !answered(it, a);
     }
     paint();
     screen.querySelectorAll(".opt[data-code]").forEach(function (b) {
       b.addEventListener("click", function () {
-        a.c = +b.getAttribute("data-code"); a.p = +b.getAttribute("data-pos"); a.e = null;
+        a.c = +b.getAttribute("data-code"); a.p = +b.getAttribute("data-pos"); a.e = null; a.t = null;
         if (it.format === "tradeoff") a.s = a.d;
         save(); paint();
       });
     });
+    screen.querySelectorAll(".opt[data-torn]").forEach(function (b) {
+      b.addEventListener("click", function () { a.t = 1; a.c = null; a.p = 2; a.e = null; a.s = a.d; save(); paint(); });
+    });
     screen.querySelectorAll(".esc").forEach(function (b) {
       b.addEventListener("click", function () {
         var v = +b.getAttribute("data-esc");
-        a.e = a.e === v ? null : v; a.c = null; a.p = null; a.f = null;
+        a.e = a.e === v ? null : v; a.c = null; a.p = null; a.f = null; a.t = null;
         save(); paint();
       });
     });
@@ -413,7 +433,7 @@
     if (it.format === "exceptions") {
       return it.cases.every(function (c) { var ca = S.ans[c.id]; return ca && (ca.c != null || ca.e); });
     }
-    return !!(a && (a.c != null || a.e));
+    return !!(a && (a.c != null || a.e || a.t));
   }
   function navHtml(ok) {
     return '<div class="nav"><button class="link" id="bk"' + (S.pos === 0 ? " hidden" : "") + '>Back</button>' +
@@ -567,7 +587,7 @@
   // ---------- finish and submit ----------
   function payload() {
     return {
-      v: S.v, bank: S.bank, rid: S.rid, code: S.code, mode: S.mode, form: S.form, started: S.started,
+      v: S.v, bank: S.bank, rid: S.rid, code: S.code, mode: S.mode, form: S.form, started: S.started, exp: S.exp || null,
       active_s: Math.round(S.activeMs / 1000),
       order: S.queue.map(function (e) { return e.k === "qc" ? "qc:" + e.id : e.k === "repeat" ? e.id + "#r" : e.id; }),
       ans: S.ans, qc: S.qc, pri: S.pri, about: S.about, honesty: S.honesty,
@@ -593,6 +613,7 @@
     if (!a) return null;
     if (a.e === 1) return "None of these fit my view" + (a.x ? ': "' + a.x + '"' : "");
     if (a.e === 2) return "I don't know enough to say";
+    if (a.t) return "Torn between " + it.sides[0].label + " and " + it.sides[1].label;
     if (a.c == null) return null;
     if (it.format === "tradeoff") {
       var side = a.c <= 1 ? it.sides[0] : it.sides[1];

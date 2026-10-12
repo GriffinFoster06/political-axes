@@ -53,7 +53,8 @@
         "Owe nothing, and get larger refundable credits than today",
         "Owe nothing, with about today's refundable credits",
         "Owe nothing, but with smaller refundable credits than today",
-        "Every household with income should pay at least a small amount of federal income tax"
+        "Pay a small minimum income tax, such as $100 a year",
+        "Pay the same flat rate as everyone else, with no tax-free amount"
       ],
       "high_pole": "everyone pays something",
       "facts": [
@@ -116,7 +117,8 @@
           "checked": "2026-10-12",
           "verify": false
         }
-      ]
+      ],
+      "testlet": "top_tax"
     },
     {
       "id": "corporate_rate",
@@ -132,8 +134,7 @@
         "35% or higher",
         "About 28%",
         "21%, as today",
-        "About 15%",
-        "No tax on corporate profits; tax owners only when they receive the money as dividends or gains"
+        "About 15%"
       ],
       "high_pole": "lower",
       "facts": [
@@ -146,32 +147,6 @@
       ]
     },
     {
-      "id": "corporate_minimum_tax",
-      "subtopic": "Corporate tax rate",
-      "axis": [
-        "REDIS"
-      ],
-      "format": "position",
-      "stem": "Some large, profitable companies pay little federal tax in some years because of deductions and credits. Which comes closest to your view?",
-      "scope": "Think about companies with more than $1 billion a year in profits.",
-      "context": "Since 2023, the largest companies must pay at least 15% of the profits they report to shareholders.",
-      "options": [
-        "Raise the minimum above 15% and remove most special business tax breaks",
-        "Keep the 15% minimum and today's tax breaks",
-        "Repeal the minimum tax; breaks for investment and research work as intended",
-        "Repeal the minimum tax and add more breaks to encourage investment in the US"
-      ],
-      "high_pole": "fewer limits on breaks",
-      "facts": [
-        {
-          "claim": "Corporate alternative minimum tax of 15% of adjusted financial statement income for corporations averaging over $1 billion, effective tax years after 2022",
-          "source": "Inflation Reduction Act of 2022, Public Law 117-169, sec. 10101",
-          "checked": "2026-10-12",
-          "verify": true
-        }
-      ]
-    },
-    {
       "id": "wealth_tax",
       "subtopic": "Wealth tax on very large fortunes",
       "axis": [
@@ -179,7 +154,7 @@
       ],
       "format": "position",
       "stem": "Should the federal government tax the total wealth of the very richest households each year?",
-      "scope": "Assume the tax applies only to wealth above $50 million, about 1 in 1,000 households.",
+      "scope": "Assume the tax applies only to wealth above $50 million, a tiny fraction of households.",
       "options": [
         "Yes, 3% or more a year on wealth above $50 million",
         "Yes, about 1% to 2% a year",
@@ -201,7 +176,7 @@
           "source": "Federal Reserve Survey of Consumer Finances; Saez & Zucman wealth tax estimates",
           "checked": "2026-10-12",
           "verify": true,
-          "note": "Scope says 'about 1 in 1,000'; check and adjust."
+          "note": "Scope now says 'a tiny fraction' instead of an unverified count."
         }
       ]
     },
@@ -216,7 +191,8 @@
       "scope": "Think about how taxes should treat them, not about any particular person.",
       "options": [
         "They are a problem in themselves; taxes should be set to shrink them over time",
-        "They are acceptable, but the richest should pay more in taxes than they do now",
+        "The richest should pay much more in taxes than now",
+        "The richest should pay somewhat more than now",
         "The richest pay about the right amount now",
         "Taxes on the richest are already too high and discourage investment"
       ],
@@ -297,7 +273,8 @@
           "checked": "2026-10-12",
           "verify": false
         }
-      ]
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "gains_at_death",
@@ -306,8 +283,8 @@
         "REDIS"
       ],
       "format": "position",
-      "stem": "When someone dies, the rise in value of what they owned is never taxed as income. Which comes closest to your view?",
-      "scope": "Example: stock bought for $100,000 is worth $1 million at death. The $900,000 gain is never taxed under today's rules.",
+      "stem": "Stock bought for $100,000 is worth $1 million when its owner dies. Under today's rules, the $900,000 gain is never taxed as income. What should happen?",
+      "scope": "Think about large estates. Family farms and small businesses could get special treatment under any option.",
       "options": [
         "Tax those gains at death, above an exemption of about $1 million",
         "Don't tax at death, but heirs pay tax on the full gain when they sell",
@@ -321,7 +298,8 @@
           "checked": "2026-10-12",
           "verify": false
         }
-      ]
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "cash_aid_level",
@@ -345,8 +323,8 @@
       "id": "aid_form",
       "subtopic": "Cash aid to low-income households",
       "axis": [
-        "REDIS",
-        "LIBERTY"
+        "LIBERTY",
+        "REDIS"
       ],
       "format": "position",
       "stem": "How much say should people getting aid have over how they spend it?",
@@ -423,15 +401,15 @@
         "REDIS"
       ],
       "format": "position",
-      "stem": "Should the federal government send every adult a regular cash payment, whether or not they work or need it?",
+      "stem": "Should the federal government send every adult a regular cash payment, regardless of income or whether they work?",
       "scope": "Assume taxes would rise to pay for any payment.",
       "options": [
         "Yes, enough to live on: about $1,500 a month or more",
         "Yes, a smaller payment of about $500 a month",
-        "No; keep cash aid limited to people with low incomes, as today",
-        "No; and reduce the cash aid that exists today"
+        "No universal payment, but a guaranteed minimum income for anyone below a set level",
+        "No guaranteed income of any kind"
       ],
-      "high_pole": "no payment, less aid",
+      "high_pole": "no guaranteed income",
       "definitions": [
         {
           "term": "regular cash payment",
@@ -510,35 +488,108 @@
         "Lean B",
         "Clearly B"
       ],
-      "high_pole": "Clearly B"
+      "high_pole": "Clearly B",
+      "testlet": "equality_freedom"
     },
     {
-      "id": "outcomes_vs_chances",
-      "subtopic": "Inequality as a problem for government",
+      "id": "deficit_approach",
+      "subtopic": "Federal deficit and debt",
       "axis": [
         "REDIS",
-        "VALUES"
+        "SOCINS"
       ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to what government should aim for?",
-      "scope": "Think about the economy as a whole.",
-      "sides": [
+      "format": "position",
+      "stem": "The federal government spends much more than it collects in taxes. Which comes closest to what should be done?",
+      "scope": "Think about the next ten years.",
+      "context": "In 2025 the federal government spent about $1.8 trillion more than it collected.",
+      "options": [
+        "Borrowing is fine for now; focus on other priorities",
+        "Close the gap mainly by raising taxes on high earners and corporations",
+        "Close the gap with an even mix of tax increases and spending cuts",
+        "Close the gap mainly by cutting spending",
+        "Close the gap entirely by cutting spending, with no tax increases"
+      ],
+      "high_pole": "spending cuts only",
+      "facts": [
         {
-          "label": "Narrow the results",
-          "text": "Make sure no one's living standard falls far below others', even if hard work and risk are rewarded less."
-        },
-        {
-          "label": "Equal chances only",
-          "text": "Make sure everyone has a fair chance to get ahead, but don't try to even out the results."
+          "claim": "FY2025 federal deficit about $1.8 trillion",
+          "source": "Congressional Budget Office, Monthly Budget Review (Oct 2025)",
+          "checked": "2026-10-12",
+          "verify": true
         }
       ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
+      "notes": "Option 0 is held on both left (spend now) and right (cut taxes now); expect a non-monotone curve and check with the nominal model."
+    },
+    {
+      "id": "balanced_budget_amendment",
+      "subtopic": "Federal deficit and debt",
+      "axis": [
+        "REDIS",
+        "FED"
       ],
-      "high_pole": "Clearly B"
+      "format": "position",
+      "stem": "Should the Constitution require the federal government to balance its budget every year?",
+      "scope": "Spending could not exceed tax revenue in a year.",
+      "options": [
+        "No; the government needs to be able to borrow",
+        "Only in normal times, with exceptions for wars and recessions",
+        "Yes, every year, with no exceptions"
+      ],
+      "high_pole": "every year"
+    },
+    {
+      "id": "poverty_cause",
+      "subtopic": "Causes of poverty (belief)",
+      "axis": [
+        "REDIS"
+      ],
+      "format": "belief",
+      "stem": "When people in the US are poor, what is usually the main reason?",
+      "scope": "Think about working-age adults without disabilities.",
+      "options": [
+        "An economic system that is unfair to them",
+        "Circumstances they didn't choose, like where they grew up or bad luck",
+        "A mix of their circumstances and their own choices",
+        "Their own choices, like dropping out of school or not working",
+        "Lack of effort"
+      ],
+      "high_pole": "individual causes"
+    },
+    {
+      "id": "job_guarantee",
+      "subtopic": "Job guarantee",
+      "axis": [
+        "REDIS",
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should the federal government guarantee a job to anyone who wants to work but can't find one?",
+      "scope": "Public jobs such as care work or infrastructure, paid at least the minimum wage.",
+      "options": [
+        "Yes, for anyone who wants one",
+        "Only in areas with high unemployment",
+        "No; help with job searches and training instead",
+        "No; jobs should come from the private sector"
+      ],
+      "high_pole": "private sector"
+    },
+    {
+      "id": "tips_overtime_tax",
+      "subtopic": "Taxes on tips and overtime",
+      "axis": [
+        "REDIS",
+        "POP"
+      ],
+      "format": "position",
+      "stem": "Should income from tips and overtime pay be taxed the same as other wages?",
+      "scope": "Federal income tax only.",
+      "options": [
+        "Yes, all income should be taxed the same way",
+        "Exempt it only for workers with low or middle incomes",
+        "Exempt it for everyone"
+      ],
+      "high_pole": "exempt for everyone",
+      "notes": "Popular across parties; a POP candidate as much as REDIS."
     }
   ]
 }

@@ -7,53 +7,101 @@
     {
       "id": "national_vs_state_tradeoff",
       "subtopic": "Federal vs state power in general",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view?",
       "scope": "Think about major policies in general, whichever party is in power.",
       "sides": [
-        {"label": "National standards", "text": "Major policies should be set nationally, so rules are the same everywhere, even if some states disagree."},
-        {"label": "State control", "text": "States should decide most policies, even if rules differ from state to state."}
+        {
+          "label": "National standards",
+          "text": "Major policies should be set nationally, so rules are the same everywhere, even if some states disagree."
+        },
+        {
+          "label": "State control",
+          "text": "States should decide most policies, even if rules differ from state to state."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "closer_government_tradeoff",
       "subtopic": "Federal vs state power in general",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view of who solves problems better?",
       "scope": "Problems like roads, schools and public health.",
       "sides": [
-        {"label": "Federal government", "text": "The federal government, which has more money and expertise, even if it is far from local conditions."},
-        {"label": "State and local", "text": "State and local governments, which are closer to people, even if some lack money or expertise."}
+        {
+          "label": "Federal government",
+          "text": "The federal government, which has more money and expertise, even if it is far from local conditions."
+        },
+        {
+          "label": "State and local",
+          "text": "State and local governments, which are closer to people, even if some lack money or expertise."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "states_differ",
       "subtopic": "Letting states differ on contested issues",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "exceptions",
       "stem": "For each of these, should the rules be the same nationwide, or decided by each state?",
       "scope": "Answer each one separately. This is about who decides, not what the rule should be.",
-      "options": ["Same nationwide", "Each state decides"],
+      "options": [
+        "Same nationwide",
+        "Each state decides"
+      ],
       "high_pole": "Each state decides",
       "cases": [
-        {"id": "sd_guns", "text": "Gun laws"},
-        {"id": "sd_marijuana", "text": "Marijuana laws"},
-        {"id": "sd_min_wage", "text": "Minimum wage"},
-        {"id": "sd_voting", "text": "Voting rules, such as mail voting and voter ID"},
-        {"id": "sd_marriage", "text": "Marriage laws"}
+        {
+          "id": "sd_guns",
+          "text": "Gun laws"
+        },
+        {
+          "id": "sd_marijuana",
+          "text": "Marijuana laws"
+        },
+        {
+          "id": "sd_min_wage",
+          "text": "Minimum wage"
+        },
+        {
+          "id": "sd_voting",
+          "text": "Voting rules, such as mail voting and voter ID"
+        },
+        {
+          "id": "sd_marriage",
+          "text": "Marriage laws"
+        }
       ],
       "notes": "Abortion is asked separately (abortion_who_decides)."
     },
     {
       "id": "state_preemption",
       "subtopic": "State preemption of cities",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "position",
       "stem": "Should state governments be able to stop cities from passing their own laws on things like minimum wage, guns or plastic bags?",
       "scope": "Answer whichever party controls your state or your city.",
@@ -67,7 +115,9 @@
     {
       "id": "grant_conditions",
       "subtopic": "Conditions on federal grants",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "position",
       "stem": "Should the federal government be able to withhold money from states that don't follow its policies?",
       "scope": "Answer for any administration, and policies you like or dislike.",
@@ -76,26 +126,105 @@
         "Only for conditions about how that money is spent",
         "No conditions; give states the money to spend as they see fit"
       ],
-      "high_pole": "no conditions"
+      "high_pole": "no conditions",
+      "followup": "grant_conditions_cases"
+    },
+    {
+      "id": "grant_conditions_cases",
+      "subtopic": "Conditions on federal grants",
+      "axis": [
+        "FED"
+      ],
+      "format": "exceptions",
+      "stem": "Should the federal government be able to cut funding to states or cities for each of these reasons?",
+      "scope": "Answer each case separately, under any administration.",
+      "options": [
+        "Should not be able to",
+        "Should be able to"
+      ],
+      "high_pole": "Should be able to",
+      "cases": [
+        {
+          "id": "gc_immigration",
+          "text": "Refusing to help with federal immigration enforcement"
+        },
+        {
+          "id": "gc_abortion",
+          "text": "Passing strict limits on abortion"
+        },
+        {
+          "id": "gc_sports_allow",
+          "text": "Letting transgender girls play on girls' school teams"
+        },
+        {
+          "id": "gc_sports_ban",
+          "text": "Banning transgender girls from girls' school teams"
+        },
+        {
+          "id": "gc_police_cuts",
+          "text": "Cutting police budgets sharply"
+        }
+      ],
+      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
     },
     {
       "id": "state_refusal",
       "subtopic": "States refusing federal law",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "position",
       "stem": "Should states be able to refuse to help enforce federal laws they disagree with?",
-      "scope": "Think of laws on immigration, guns or marijuana, under any administration.",
+      "scope": "Think about federal laws in general, under any administration. Specific laws come next.",
       "options": [
         "No; states must help with federal enforcement",
         "States can decline to use their own police and resources, but not block federal agents",
         "States can refuse and pass laws blocking enforcement within their borders"
       ],
-      "high_pole": "block enforcement"
+      "high_pole": "block enforcement",
+      "followup": "state_refusal_cases"
+    },
+    {
+      "id": "state_refusal_cases",
+      "subtopic": "States refusing federal law",
+      "axis": [
+        "FED"
+      ],
+      "format": "exceptions",
+      "stem": "Should a state be able to refuse to help enforce each of these federal laws?",
+      "scope": "Answer each case separately.",
+      "options": [
+        "Must help enforce",
+        "Can refuse"
+      ],
+      "high_pole": "Can refuse",
+      "cases": [
+        {
+          "id": "sr_immigration",
+          "text": "Immigration laws"
+        },
+        {
+          "id": "sr_marijuana",
+          "text": "Marijuana laws"
+        },
+        {
+          "id": "sr_guns",
+          "text": "Gun laws"
+        },
+        {
+          "id": "sr_abortion_pills",
+          "text": "Federal rules on abortion pills"
+        }
+      ],
+      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
     },
     {
       "id": "federal_size",
       "subtopic": "Size of the federal government",
-      "axis": ["FED", "REDIS"],
+      "axis": [
+        "FED",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Overall, how big should the federal government be?",
       "scope": "Think about what it does and spends, not about any particular administration.",
@@ -111,15 +240,28 @@
     {
       "id": "experimentation_tradeoff",
       "subtopic": "National standards vs state experimentation",
-      "axis": ["FED"],
+      "axis": [
+        "FED"
+      ],
       "format": "tradeoff",
       "stem": "When it's unclear which policy works best, which approach is closer to your view?",
       "scope": "Policies on things like health care, schools or welfare.",
       "sides": [
-        {"label": "One national approach", "text": "Pick one national approach based on the best evidence, even if states can't try alternatives."},
-        {"label": "Let states experiment", "text": "Let states try different approaches, even if some get it wrong and people there are worse off."}
+        {
+          "label": "One national approach",
+          "text": "Pick one national approach based on the best evidence, even if states can't try alternatives."
+        },
+        {
+          "label": "Let states experiment",
+          "text": "Let states try different approaches, even if some get it wrong and people there are worse off."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     }
   ]

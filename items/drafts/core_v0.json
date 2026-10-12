@@ -214,7 +214,8 @@
         "anes": [
           "millionaire_tax"
         ]
-      }
+      },
+      "testlet": "top_tax"
     },
     {
       "id": "climate_action",
@@ -233,7 +234,8 @@
         "Require fast, deep cuts in greenhouse gas emissions, even if energy prices rise noticeably",
         "Require gradual cuts in emissions, accepting small increases in energy prices",
         "Fund research and offer tax credits for clean energy, but not require cuts",
-        "Take no specific action on climate change"
+        "Take no specific action on climate change",
+        "Repeal existing climate rules and expand fossil fuel production"
       ],
       "high_pole": "less action",
       "definitions": [],
@@ -506,7 +508,8 @@
           "donors_orgs",
           "votes_for_donations"
         ]
-      }
+      },
+      "testlet": "congress_trust"
     },
     {
       "id": "ally_attacked",

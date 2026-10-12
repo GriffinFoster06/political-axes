@@ -53,11 +53,12 @@ every answer; people can stop and resume. A short break screen comes every
 people engaged.
 
 **Two modes, one scale:**
-- **Full mode** asks every question: the complete issue map. About 60–75
+- **Full mode** asks every question: the complete issue map. About 2 hours
+  after the 2026-10-12 review (469 questions); taken in several sittings. Was 60–75
   minutes.
 - **Precision mode** asks questions adaptively until every axis reaches the
   precision target (§5), always covering every subtopic at least once.
-  Expected 30–45 minutes. Scores are on the same scale; only the error bands
+  Expected 40–60 minutes (revised after the review added questions). Scores are on the same scale; only the error bands
   differ.
 
 ---
@@ -153,9 +154,11 @@ issue map.
 | D25 | Values (cross-cutting) | 8 | 18 | 9 | VALUES |
 | | **Total** | **230** | **383** | **248** | **29 candidates** |
 
-**Status (2026-10-12): every subtopic is drafted.** The bank is 379 questions
-in 26 files under `items/drafts/` (one per domain plus `core_v0.json`), worth
-425 scored units because each exception case is scored on its own. Every
+**Status (2026-10-12, after the review in `reports/question_review.md`):**
+the bank is **469 questions** in 26 files under `items/drafts/`, worth **555
+scored units** (each exception case is scored on its own) across 294
+subtopics: the original 230 plus 64 added to close coverage gaps. The first
+draft was 379 questions / 425 units. Every
 subtopic meets or exceeds its planned count and every candidate axis has at
 least 10 units. `scripts/coverage.py` checks this against the blueprint
 (written per subtopic: `items/coverage.csv`); `scripts/audit_items.py` writes
@@ -205,7 +208,7 @@ wider bands and a flag.
 
 - Position question: ~15 s on average (reading options); exception case
   ~5 s; firmness ~3 s.
-- Full mode at ~250 core questions + ~40 exception cases ≈ **60–75 minutes**.
+- Full mode at ~250 core questions + ~40 exception cases ≈ **60–75 minutes** (original estimate; the full draft bank is now about 2 hours, and v1 will be cut to the precision targets).
 - Precision mode ≈ **30–45 minutes**, to be confirmed by simulating adaptive
   testing on pilot data.
 
@@ -283,14 +286,14 @@ since those are where existing quizzes are weakest:
 
 ## 9. Pilot design
 
-No single person can sensibly answer 383 draft questions, and nobody has to.
+No single person can sensibly answer 469 draft questions, and nobody has to.
 The pilot uses a **planned-missing design**: the IRT model handles questions a
 person wasn't shown.
 
 - Split the bank into 9 balanced blocks of ~43 questions (each block covers
   many domains and every axis).
 - Each person gets 3 random blocks plus a fixed 20-question link block of
-  strong general-factor questions, about **150 questions, ~40 minutes**.
+  strong general-factor questions, about **170 questions, ~50 minutes** in all (`items/pilot_design.json`: 22 link questions + 3 blocks of ~50).
 - With n respondents: each question is answered by about n/3, each pair of
   questions in different blocks by about n/12, and the link block by everyone.
 
@@ -301,8 +304,8 @@ person wasn't shown.
 | B | Paid, quota-balanced on age, sex, race, education, region and 2024 vote | ~1,500 | Calibration, factor structure, axis decisions, DIF, norms. ~500 answers per question, ~125 per cross-block pair |
 | Retest | Subset of B, 2–4 weeks later | ~200–300 | Test–retest per question and per axis |
 
-Rough cost of Pilot B at ~40 minutes, $12/hour pay and a 33–43% platform fee:
-**about $16,000–17,000** (fees from earlier research, partly from secondary
+Rough cost of Pilot B at ~50 minutes, $12/hour pay and a 33–43% platform fee:
+**about $20,000–21,500** (was $16–17k at 40 minutes, before the review added questions) (fees from earlier research, partly from secondary
 sources; re-check before budgeting). A smaller paid pilot (~500) plus a large
 free pilot is the lower-cost path; it gives good item statistics but weaker
 national comparisons.
@@ -358,7 +361,7 @@ results can't be tuned after the fact.
 
 | # | Deliverable | Done when | Status |
 |---|---|---|---|
-| M1 | All 25 domains drafted (383 questions planned) | Validator passes; balance check done per domain | **Done** 2026-10-12: 379 questions / 425 scored units, 0 validator errors; audit in `reports/item_audit.md` |
+| M1 | All 25 domains drafted (383 questions planned) | Validator passes; balance check done per domain | **Done** 2026-10-12; revised after self-review: 469 questions / 555 scored units, 0 validator errors; review in `reports/question_review.md`, audit in `reports/item_audit.md` |
 | M2 | Two-sided review + think-alouds | Every question rated; revisions logged | **Kit ready** (`review/`); needs readers and interviewees |
 | M3 | Priorities, values, about-you and quality modules | Validator passes | **Drafted** 2026-10-12: values in `items/drafts/d25_values.json`; other modules in `items/modules/` |
 | M4 | Quiz app (pilot version) | Planned-missing blocks, save/resume, timing, free-text capture | **Built** 2026-10-12 (`app/`, browser-tested); needs hosting and a collector URL |

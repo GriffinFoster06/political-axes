@@ -7,4 +7,8 @@ window.QUIZ_CONFIG = {
   // "pilot": link block + 3 of 9 blocks (about 45 min). "full": every question.
   defaultMode: "pilot",
   allowFullMode: true,
+  // Pilot A experiments (preregistration section 12): background lines shown or hidden at
+  // random, a "Torn" option on tradeoffs for half of people, top-tax question order.
+  // Set to false for Pilot B and for the public version.
+  experiments: true,
 };

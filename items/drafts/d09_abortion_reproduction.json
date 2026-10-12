@@ -17,7 +17,7 @@
       "context": "Since 2022 each state has set its own abortion law.",
       "options": [
         "The same nationwide, set by Congress",
-        "States decide, within national limits set by Congress",
+        "Mostly by Congress, with room for states to adjust details",
         "Each state decides, as today"
       ],
       "high_pole": "states",
@@ -117,7 +117,7 @@
       "scope": "Methods like the pill, IUDs and condoms, for adults.",
       "options": [
         "Free to anyone, with no prescription needed",
-        "Insurance must cover it, with exemptions for employers with religious objections",
+        "Insurance must cover it at no extra cost, as today",
         "Legal, but employers and insurers shouldn't have to cover it",
         "Some types, such as emergency contraception, should be restricted"
       ],
@@ -140,6 +140,48 @@
         "A parent must give permission, with no exceptions"
       ],
       "high_pole": "permission required"
+    },
+    {
+      "id": "life_begins",
+      "subtopic": "Moral status of the unborn (belief)",
+      "axis": [
+        "MORAL"
+      ],
+      "format": "belief",
+      "stem": "At what point does a developing human have the same right to life as a born person?",
+      "scope": "Your own view, whatever the law says.",
+      "options": [
+        "Only at birth",
+        "Around viability, when it could survive outside the womb",
+        "When a heartbeat is detectable, about 6 weeks",
+        "At conception"
+      ],
+      "high_pole": "conception",
+      "definitions": [
+        {
+          "term": "viability",
+          "text": "The point after which a fetus could survive outside the womb with medical care, usually around 22 to 24 weeks.",
+          "source": "descriptive",
+          "verify": false
+        }
+      ]
+    },
+    {
+      "id": "surrogacy",
+      "subtopic": "Surrogacy",
+      "axis": [
+        "MORAL",
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "Should it be legal to pay a woman to carry a pregnancy for someone else?",
+      "scope": "Surrogacy arranged by contract between adults.",
+      "options": [
+        "Yes, legal and regulated",
+        "Only unpaid surrogacy, with expenses covered",
+        "No; ban surrogacy"
+      ],
+      "high_pole": "ban"
     }
   ]
 }

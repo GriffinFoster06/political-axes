@@ -87,6 +87,8 @@ revised before v1 and excluded from the structural models in this round:
 | Option order | Nominal response model: an option's estimated slope out of its written order with 95% CI excluding the written order → flag |
 | Median time | > 3 × the bank median for its format (too hard to read) |
 | Exception cases | Case answered identically by > 97% (no information) → drop the case |
+| Knowledge-heavy items (`knowledge_heavy: true`) | Count toward axes only if "don't know" < 15% **and** no DIF by education (section 6) |
+| `issue_map_only: true` | Shown and reported in the issue map; never used in axis estimation |
 
 ## 5. Structure
 
@@ -126,6 +128,13 @@ confirmation half as a bifactor graded response model
   improves held-out log loss with a 95% CI excluding 0.
 - **Drop to issue map** any axis left with fewer than 4 items loading
   ≥ .30 on its specific factor.
+- **Local dependence.** After each fit, compute Yen's Q3 residual
+  correlations for all item pairs with ≥ 60 joint answers. Any pair above
+  .20 (and every pair tagged with the same `testlet` in the bank) is
+  modeled as a testlet (an extra nuisance factor), or one item is dropped
+  if the pair is near-duplicate wording. A specific factor that gets 60% or
+  more of its total squared loading from one dependent pair or testlet is
+  **not an axis**, whatever its reliability.
 - An item may load on its primary axis only, plus G. Secondary tags in
   `axis` are tested as alternatives: an item moves to a secondary axis only
   if its loading there exceeds its primary loading by ≥ .15 on the
@@ -142,8 +151,21 @@ toward G.
 | 1 | Reliability | Empirical marginal reliability ≥ .70 using the questions a typical **precision-mode** taker would answer (simulated by replaying confirmation-half answers through the adaptive algorithm) |
 | 2 | Held-out prediction | Mask 15% of each person's answers (5 random folds, seeds 1–5). Adding the axis to the bifactor model lowers mean held-out log loss; the 95% paired bootstrap CI (2,000 resamples of people) of the improvement excludes 0 |
 | 3 | Test–retest | Correlation of EAP scores between occasions ≥ .70 (retest subsample, scores computed from the same questions both times) |
-| 4 | Not a keying artifact | Refit without `agree_defined` and `frequency` items; the axis must still be identified (≥ 4 items loading ≥ .30) with Tucker congruence ≥ .90 to the full-model loadings |
+| 4 | Not a format or keying artifact | Re-estimate the axis twice: (a) from its position, tradeoff, belief and exception items only, and (b) from its reverse-keyed items only (frequency or agree items keyed so the frequent / agreeing answer is the low pole, plus all non-frequency items). Both must identify the axis (≥ 4 items loading ≥ .30) with Tucker congruence ≥ .90 to the full-model loadings |
 | 5 | Same meaning across groups | DIF (below) on ≤ 20% of the axis's items, **and** the differential test functioning on the axis score is < 0.20 SD for every grouping variable |
+
+### 6a. Principle consistency (mirror cases)
+
+Exception items tagged as mirror cases (`emergency_funding_cases`,
+`refuse_to_spend_cases`, `filibuster_cases`, `tariff_authority_cases`,
+`grant_conditions_cases`, `state_refusal_cases`) ask the same rule with
+each side benefiting. For each person and each mirror item, consistency =
+1 − (share of case pairs answered differently across the partisan
+mirror). It is reported as its own "principle vs outcome" measure, and
+tested as a moderator: NORMS and FED axes are estimated (a) with all
+items and (b) using only the parent questions plus each person's
+**consistent** mirror answers. If the two versions correlate < .90, the
+results page reports the consistent-only version.
 
 ### DIF method
 
@@ -212,7 +234,29 @@ labels. Users see membership probabilities, never a single forced label.
 - The exclusion counts and the with/without-exclusion rerun.
 - Code and the exact commit used.
 
-## 12. Software and seeds
+## 12. Pilot A experiments
+
+Randomized within Pilot A only (`experiments: true` in the app config;
+off for Pilot B):
+
+1. **Background lines:** each question with a context line shows it or
+   hides it at random per person (recorded per answer as `context_shown`).
+   Decision: if showing it shifts answers by party (ordinal regression
+   interaction context × party, p < .01 after Benjamini–Hochberg, and a
+   shift ≥ 0.2 categories in either party), the line is rewritten or
+   dropped. If it only reduces "don't know" without a party interaction,
+   it stays.
+2. **"Torn" on tradeoffs:** half of people get a fifth, middle option.
+   Torn answers are scored as the middle category of a 5-category version
+   of each tradeoff (separate parameters for each arm, linked through the
+   other items). Decision: keep "Torn" if it is chosen by ≥ 10% on
+   average **and** 2–4 week retest agreement on tradeoffs is no worse than
+   in the no-torn arm (difference CI includes 0 or favors torn).
+3. **Top-tax order:** the two top-tax questions appear in random order;
+   any order effect > 0.2 categories is reported and the pair is treated
+   as a testlet.
+
+## 13. Software and seeds
 
 Pipeline in this repo (`pipeline/`), Python 3.12+, versions pinned in
 `requirements.txt` at the `prereg-v1` tag. Random seeds: sample split

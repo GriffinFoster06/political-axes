@@ -47,6 +47,8 @@ def walk(page, rng, mode):
                 (c.query_selector(".esc") if rng.random() < 0.05 else rng.choice(chips)).click()
         else:
             r = rng.random()
+            if not page.query_selector('[data-esc="1"]'):
+                r = 1.0  # attention-check screens have no escape options
             if r < 0.04:
                 page.click('[data-esc="1"]')
                 page.fill("#nftext", "my own view")
@@ -168,3 +170,32 @@ def test_payload_is_compact(built):
     bank = json.loads((ROOT / "app" / "dist" / "bank.js").read_text()[len("window.BANK = "):-2])
     n = len(bank["items"]) + sum(len(i.get("cases", [])) for i in bank["items"].values())
     assert n * 80 < 200_000
+
+
+def test_experiments(built):
+    """Torn option appears only in the torn arm, is recorded, and context visibility is recorded."""
+    with pw.sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.route("**/fonts.g*/**", lambda r: r.abort())
+        page.goto(built)
+        page.click("#go"); page.check("#consent"); page.click("#go")
+        page.click('[data-mode="full"]'); page.click("#go"); page.click("#go")
+        for torn in (True, False):
+            page.evaluate(f"""(() => {{ const S = window.__wys.state(), B = window.__wys.bank;
+                S.exp.torn = {str(torn).lower()};
+                S.pos = S.queue.findIndex(e => e.k === 'item' && B.items[e.id].format === 'tradeoff'); }})()""")
+            page.click("#skip"); page.click("#bk")
+            assert bool(page.query_selector("[data-torn]")) == torn
+            if torn:
+                page.click("[data-torn]")
+                assert not page.is_disabled("#next")
+                a = page.evaluate("(() => { const S = window.__wys.state(); return S.ans[S.queue[S.pos].id]; })()")
+                assert a["t"] == 1 and a.get("c") is None
+        page.evaluate("""(() => { const S = window.__wys.state(), B = window.__wys.bank;
+            S.pos = S.queue.findIndex(e => e.k === 'item' && B.items[e.id].context && !B.items[e.id].show_if); })()""")
+        page.click("#skip"); page.click("#bk")
+        a = page.evaluate("(() => { const S = window.__wys.state(); return S.ans[S.queue[S.pos].id]; })()")
+        assert a["cx"] in (0, 1)
+        assert bool(page.query_selector(".context")) == bool(a["cx"])
+        browser.close()

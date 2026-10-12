@@ -16,6 +16,7 @@
       "options": [
         "No; signature checks and other methods are enough",
         "Yes, but accept many kinds of ID, give IDs free, and allow a backup option for people without one",
+        "Yes, a photo ID, with free IDs for anyone who needs one, but no backup option",
         "Yes, a government-issued photo ID, with no backup option"
       ],
       "high_pole": "strict"
@@ -67,7 +68,8 @@
         "Yes, if they arrive within 3 days",
         "No; only ballots received by Election Day"
       ],
-      "high_pole": "by Election Day"
+      "high_pole": "by Election Day",
+      "knowledge_heavy": true
     },
     {
       "id": "auto_registration",
@@ -227,6 +229,83 @@
         "No; keep life terms"
       ],
       "high_pole": "life terms"
+    },
+    {
+      "id": "ranked_choice",
+      "subtopic": "Ranked-choice voting",
+      "axis": [
+        "VOTING"
+      ],
+      "format": "position",
+      "stem": "Should elections use ranked-choice voting, where voters rank candidates instead of picking one?",
+      "scope": "A few states and cities use it today.",
+      "options": [
+        "Yes, for all elections",
+        "Let each state or city decide",
+        "No; ban it"
+      ],
+      "high_pole": "ban"
+    },
+    {
+      "id": "statehood",
+      "subtopic": "DC and Puerto Rico statehood",
+      "axis": [
+        "VOTING",
+        "FED"
+      ],
+      "format": "exceptions",
+      "stem": "Should each of these become a state, with its own senators and representatives?",
+      "scope": "Answer each separately.",
+      "options": [
+        "Yes",
+        "Only if its residents vote for it",
+        "No"
+      ],
+      "high_pole": "No",
+      "cases": [
+        {
+          "id": "st_dc",
+          "text": "Washington, DC"
+        },
+        {
+          "id": "st_pr",
+          "text": "Puerto Rico"
+        }
+      ]
+    },
+    {
+      "id": "voting_age",
+      "subtopic": "Voting age",
+      "axis": [
+        "VOTING"
+      ],
+      "format": "position",
+      "stem": "What should the voting age be?",
+      "scope": "For federal elections.",
+      "options": [
+        "16",
+        "17, if you'll be 18 by the next general election",
+        "18, as today",
+        "21"
+      ],
+      "high_pole": "older"
+    },
+    {
+      "id": "noncitizen_local_voting",
+      "subtopic": "Noncitizen voting in local elections",
+      "axis": [
+        "VOTING",
+        "IMMIG"
+      ],
+      "format": "position",
+      "stem": "Should legal permanent residents who aren't citizens be able to vote in local elections, like school board races?",
+      "scope": "Federal elections are citizens-only under every option.",
+      "options": [
+        "Yes",
+        "Let each city decide",
+        "No; ban it everywhere"
+      ],
+      "high_pole": "ban"
     }
   ]
 }

@@ -39,7 +39,7 @@ Known gaps (no foreign policy, trade, AI, democratic norms or populism yet)
 are in [`docs/limitations.md`](docs/limitations.md).
 
 **Question bank (drafted 2026-10-12).** The quiz's own questions are written:
-379 questions in `items/drafts/`, covering all 230 subtopics and 29 candidate
+469 questions in `items/drafts/`, covering 294 subtopics and 29 candidate
 axes, each one a concrete position with a scope line, definitions, sourced
 facts and exception follow-ups where edge cases matter. They are drafts: the
 next step is two-sided review and think-aloud interviews (kit in `review/`),
@@ -64,10 +64,10 @@ ready.
 | `tests/` | Simulation recovery test |
 | `reports/` | All outputs, including `RESULTS.md` |
 | `scripts/` + `.github/workflows/fetch-data.yml` | Data fetching (see `DATA.md`) |
-| `docs/question-bank-plan.md`, `items/blueprint.csv` | The full plan: 25 topic areas, 230 subtopics, 383 draft questions, 29 candidate axes, pilot design and decision rules |
+| `docs/question-bank-plan.md`, `items/blueprint.csv` | The full plan: 25 topic areas, 294 subtopics, 469 draft questions, 29 candidate axes, pilot design and decision rules |
 | `docs/item-writing-standard.md` | How every quiz question must be written: positions not agreement, scope + exceptions, definitions, no party cues |
 | `docs/how-many-dimensions.md` | The rule for deciding how many axes to report |
-| `items/drafts/` | **The full draft question bank**: 379 original questions (425 scored units) across all 25 topic areas, one file per area |
+| `items/drafts/` | **The full draft question bank**: 469 original questions (555 scored units), revised after a full review (`reports/question_review.md`) across all 25 topic areas, one file per area |
 | `items/modules/` | Intro, priorities (best–worst design), quality checks and optional about-you questions |
 | `scripts/validate_items.py`, `scripts/coverage.py`, `scripts/audit_items.py` | Rule checker, coverage against the blueprint, balance audit (`reports/item_audit.md`) |
 | `review/` | Reviewer kit for the two-sided review and think-aloud interviews: readable packet, fill-in sheet, protocol |

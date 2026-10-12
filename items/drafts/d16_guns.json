@@ -34,7 +34,8 @@
         "Ban new sales and buy back the ones people own",
         "Ban new sales; people can keep the ones they have",
         "Allow sales only to people 21 and older with a license and training",
-        "Allow sales with a background check, as most states do now"
+        "Allow sales with a background check, as most states do now",
+        "Allow sales with no federal background check"
       ],
       "high_pole": "fewer restrictions",
       "definitions": [
@@ -94,15 +95,40 @@
       "axis": [
         "GUNS"
       ],
-      "format": "position",
-      "stem": "Should people with permits be allowed to carry guns in schools, bars and government buildings?",
-      "scope": "Adults with a carry permit, not police.",
+      "format": "exceptions",
+      "stem": "Should people with a carry permit be allowed to carry a gun in each of these places?",
+      "scope": "Adults with a valid permit, not police. Answer each place separately.",
       "options": [
-        "No, in none of these places",
-        "Not in schools or government buildings; bars and other businesses can decide",
-        "Yes in most places, including trained teachers in schools"
+        "Should not be allowed",
+        "Should be allowed"
       ],
-      "high_pole": "most places"
+      "high_pole": "Should be allowed",
+      "cases": [
+        {
+          "id": "cl_k12",
+          "text": "K-12 schools, by trained teachers or staff"
+        },
+        {
+          "id": "cl_college",
+          "text": "College campuses"
+        },
+        {
+          "id": "cl_bars",
+          "text": "Bars and restaurants that serve alcohol"
+        },
+        {
+          "id": "cl_gov",
+          "text": "Government buildings, such as city halls"
+        },
+        {
+          "id": "cl_worship",
+          "text": "Places of worship"
+        },
+        {
+          "id": "cl_business",
+          "text": "Private businesses, unless the owner posts a ban"
+        }
+      ]
     },
     {
       "id": "red_flag",
@@ -172,7 +198,8 @@
           "claim": "18 U.S.C. 922(b)(1): dealers may not sell handguns to under-21 or long guns to under-18",
           "source": "18 U.S.C. sec. 922(b)(1)",
           "checked": "2026-10-12",
-          "verify": false
+          "verify": true,
+          "note": "A 2025 Fifth Circuit ruling (Reese v. ATF) held the dealer handgun age limit unconstitutional in that circuit; confirm status and add 'in most of the country' if it stands."
         }
       ]
     },
@@ -192,6 +219,79 @@
         "An individual right with almost no limits"
       ],
       "high_pole": "almost no limits"
+    },
+    {
+      "id": "self_defense_law",
+      "subtopic": "Self-defense laws",
+      "axis": [
+        "GUNS",
+        "ORDER"
+      ],
+      "format": "position",
+      "stem": "When someone is attacked in a public place, should they have to try to safely retreat before using deadly force?",
+      "scope": "Situations where the person reasonably fears serious harm.",
+      "options": [
+        "Yes, retreat first if it can be done safely",
+        "Only if they started the conflict",
+        "No; they can stand their ground anywhere they have a right to be"
+      ],
+      "high_pole": "stand ground"
+    },
+    {
+      "id": "gun_maker_liability",
+      "subtopic": "Gun maker liability",
+      "axis": [
+        "GUNS"
+      ],
+      "format": "position",
+      "stem": "Should gun makers and sellers be able to be sued when their guns are used in crimes?",
+      "scope": "A 2005 federal law blocks most such lawsuits.",
+      "options": [
+        "Yes, like makers of other dangerous products",
+        "Only if they broke the law or marketed irresponsibly",
+        "No; keep today's protection"
+      ],
+      "high_pole": "protection",
+      "facts": [
+        {
+          "claim": "Protection of Lawful Commerce in Arms Act (2005) bars most civil suits against gun makers and dealers over criminal misuse",
+          "source": "15 U.S.C. sec. 7901-7903",
+          "checked": "2026-10-12",
+          "verify": false
+        }
+      ]
+    },
+    {
+      "id": "gun_registry",
+      "subtopic": "Gun registration",
+      "axis": [
+        "GUNS"
+      ],
+      "format": "position",
+      "stem": "Should there be a national registry of who owns which guns?",
+      "scope": "Federal law now bars the government from creating one.",
+      "options": [
+        "Yes, for all guns",
+        "Only for handguns and semi-automatic rifles",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "suppressors",
+      "subtopic": "Suppressors",
+      "axis": [
+        "GUNS"
+      ],
+      "format": "position",
+      "stem": "What should the rules be for buying a gun suppressor (silencer)?",
+      "scope": "Today buyers need federal registration and a long approval process.",
+      "options": [
+        "Ban them for civilians",
+        "Keep today's rules",
+        "Treat them like ordinary gun parts, with no special registration"
+      ],
+      "high_pole": "fewer rules"
     }
   ]
 }

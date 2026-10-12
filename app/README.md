@@ -16,7 +16,7 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
   answers work, and a random resume code (not linked to any identity).
 - **Pilot form**: the link block plus 3 of 9 blocks, assigned by the
   balanced design in `items/pilot_design.json` (about 35 minutes of
-  questions, ~45 in total). **Full map** asks everything. Precision mode is
+  questions, ~50 in total). **Full map** asks everything. Precision mode is
   shown as coming after calibration.
 - **Every format** in the bank: position ladders, belief, frequency,
   defined agree/disagree scales (with each point's meaning), tradeoffs (two

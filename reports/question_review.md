@@ -1,5 +1,13 @@
 # Question bank review (bank v0.1, 2026-10-12)
 
+> **Status: implemented 2026-10-12.** Every change below was applied
+> (`scripts/revisions/rev_2026_10_12a_fixes.py`, `rev_2026_10_12b_additions.py`;
+> each logged in `items/review_log.csv`), and the pre-registration was
+> updated (§5). The bank went from 379 questions / 425 scored answers to 469 /
+> 555, slightly more than estimated here because the mirror cases and new
+> exception items added more cases. This report describes the bank as it was
+> **before** the changes.
+
 A full read of all 379 draft questions (425 scored answers) against the
 project's one goal: **accuracy**. That means each answer should mean the same
 thing to everyone, each option should be a real position, options should sit

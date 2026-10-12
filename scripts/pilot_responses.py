@@ -8,7 +8,8 @@ people downloaded from the results page. Writes to data/pilot/ (git-ignored):
 
   answers_long.csv   one row per answer: rid, item, case, code, escape,
                      firmness, ms, screen_pos, display_dir, side_swap,
-                     defs_opened, repeat, order_index
+                     defs_opened, repeat, torn (tradeoff middle, scored as
+                     the midpoint), context_shown (experiment), order_index
   respondents.csv    one row per person: mode, form, time, counts, quality
                      flags and the exclusion decision (docs/preregistration.md
                      section 3)
@@ -82,6 +83,7 @@ def main(paths):
                 "none_fit_text": a.get("x", ""), "firmness": a.get("f"), "ms": a.get("ms"),
                 "screen_pos": a.get("p"), "display_dir": a.get("d"), "side_swap": a.get("s"),
                 "defs_opened": "|".join(a.get("df", [])), "repeat": int(rep),
+                "torn": int(bool(a.get("t"))), "context_shown": a.get("cx", ""),
                 "order_index": pos_in_order.get(item if base in case_parent else key),
             })
         # assigned questions
@@ -102,7 +104,7 @@ def main(paths):
                 if (ans.get(parent) or {}).get("c") not in codes:
                     continue
             units += len(keys)
-            done = [k for k in keys if (ans.get(k) or {}).get("c") is not None or (ans.get(k) or {}).get("e")]
+            done = [k for k in keys if (ans.get(k) or {}).get("c") is not None or (ans.get(k) or {}).get("e") or (ans.get(k) or {}).get("t")]
             answered += len(done)
             ms = (ans.get(i) or {}).get("ms")
             if it["format"] == "exceptions":
@@ -163,6 +165,7 @@ def main(paths):
             "repeat_mean_diff": round(sum(rep_diff) / len(rep_diff), 3) if rep_diff else "",
             "repeat_flag": int(sum(d >= 0.5 for d in rep_diff) >= 4),
             "exclude": int(bool(reasons)), "exclude_reasons": "|".join(reasons),
+            "exp_torn": int(bool((P.get("exp") or {}).get("torn"))), "exp_top_tax_swap": int(bool((P.get("exp") or {}).get("topTaxSwap"))),
             **{f"about_{k}": (json.dumps(v) if isinstance(v, list) else v) for k, v in about.items()},
         })
     with open(OUT / "answers_long.csv", "w", newline="") as f:

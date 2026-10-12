@@ -17,8 +17,8 @@
       "id": "mode",
       "title": "Choose a length",
       "options": [
-        {"id": "full", "label": "Full map (about 60 to 75 minutes)", "text": "Every question. The most complete picture of your views, topic by topic. You can stop and come back any time."},
-        {"id": "precision", "label": "Precision mode (about 30 to 45 minutes)", "text": "The quiz picks the most informative questions for you and stops when your results are precise enough. Same scale, slightly wider error bands."}
+        {"id": "full", "label": "Full map (about 2 hours, in as many sittings as you like)", "text": "Every question. The most complete picture of your views, topic by topic. You can stop and come back any time."},
+        {"id": "precision", "label": "Precision mode (about 40 to 60 minutes)", "text": "The quiz picks the most informative questions for you and stops when your results are precise enough. Same scale, slightly wider error bands."}
       ]
     },
     {

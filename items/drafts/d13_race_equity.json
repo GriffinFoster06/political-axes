@@ -7,7 +7,9 @@
     {
       "id": "gap_cause_wealth",
       "subtopic": "Causes of racial gaps",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "belief",
       "stem": "On average, Black families in the US have much less wealth than white families. What do you think is the main reason?",
       "scope": "Think about the average gap, not any one family.",
@@ -19,13 +21,21 @@
       ],
       "high_pole": "individual explanations",
       "facts": [
-        {"claim": "Median white household wealth is several times median Black household wealth", "source": "Federal Reserve Survey of Consumer Finances 2022", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Median white household wealth is several times median Black household wealth",
+          "source": "Federal Reserve Survey of Consumer Finances 2022",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "gap_cause_arrests",
       "subtopic": "Causes of racial gaps",
-      "axis": ["EQUITY", "ORDER"],
+      "axis": [
+        "EQUITY",
+        "ORDER"
+      ],
       "format": "belief",
       "stem": "Black Americans are arrested at higher rates than white Americans. What do you think is the main reason?",
       "scope": "Think about the national average.",
@@ -40,7 +50,10 @@
     {
       "id": "gap_cause_tests",
       "subtopic": "Causes of racial gaps",
-      "axis": ["EQUITY", "EDUC"],
+      "axis": [
+        "EQUITY",
+        "EDUC"
+      ],
       "format": "belief",
       "stem": "Average test scores differ between racial groups in US schools. What do you think is the main reason?",
       "scope": "Think about national averages on standardized tests.",
@@ -56,7 +69,9 @@
     {
       "id": "hiring_race",
       "subtopic": "Race-conscious admissions and hiring",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "When employers choose among qualified job applicants, should an applicant's race be considered?",
       "scope": "Answer about what you think should happen, regardless of what current law allows.",
@@ -71,7 +86,9 @@
     {
       "id": "contract_set_asides",
       "subtopic": "Race-conscious admissions and hiring",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "Should government set aside a share of its contracts for businesses owned by racial minorities?",
       "scope": "Federal, state and local government contracts.",
@@ -85,9 +102,11 @@
     {
       "id": "workplace_diversity",
       "subtopic": "Diversity programs at employers and agencies",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
-      "stem": "Should large employers run programs to increase the share of women and racial minorities in their workforce?",
+      "stem": "Should large employers run programs to increase the share of racial minorities in their workforce?",
       "scope": "Private companies with more than 500 employees.",
       "options": [
         "Yes, with specific hiring targets and required diversity training",
@@ -101,9 +120,11 @@
     {
       "id": "dei_offices",
       "subtopic": "Diversity programs at employers and agencies",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
-      "stem": "Should government agencies and public universities have offices focused on diversity, equity and inclusion?",
+      "stem": "Should public universities have offices focused on diversity, equity and inclusion?",
       "scope": "Offices whose job is to support people from underrepresented groups and train staff.",
       "options": [
         "Yes, and expand them",
@@ -115,7 +136,9 @@
     {
       "id": "reparations",
       "subtopic": "Reparations",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "Should the federal government provide reparations to Black Americans descended from people enslaved in the US?",
       "scope": "Reparations means compensation for slavery and later government discrimination.",
@@ -130,7 +153,9 @@
     {
       "id": "local_redlining_compensation",
       "subtopic": "Reparations",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "Should cities that enforced housing segregation in the past compensate the families affected?",
       "scope": "For example, cities that barred Black families from buying homes in certain neighborhoods.",
@@ -144,13 +169,16 @@
     {
       "id": "hate_crime_sentences",
       "subtopic": "Hate crime laws",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
-      "stem": "Should crimes motivated by hatred of someone's race, religion or sexual orientation carry longer sentences?",
+      "stem": "Should crimes motivated by hatred of someone's race, religion, sexual orientation or gender identity carry longer sentences?",
       "scope": "Crimes like assault or vandalism, compared with the same crime without that motive.",
       "options": [
         "Yes, much longer",
         "Somewhat longer",
+        "Only for crimes against people, not property",
         "No; punish the crime the same whatever the motive"
       ],
       "high_pole": "same"
@@ -158,7 +186,10 @@
     {
       "id": "race_districts",
       "subtopic": "Race in voting districts",
-      "axis": ["EQUITY", "VOTING"],
+      "axis": [
+        "EQUITY",
+        "VOTING"
+      ],
       "format": "position",
       "stem": "When drawing voting districts, should states have to create districts where a racial minority group is the majority?",
       "scope": "The aim of such districts is to let the group elect candidates it prefers.",
@@ -172,21 +203,28 @@
     {
       "id": "teach_racism_history",
       "subtopic": "Teaching about racism in schools",
-      "axis": ["EQUITY", "EDUC"],
+      "axis": [
+        "EQUITY",
+        "EDUC"
+      ],
       "format": "position",
       "stem": "How should public schools teach about racism in American history, such as slavery and segregation?",
       "scope": "Middle and high school history classes.",
       "options": [
         "As central to the American story, including how it shapes society today",
         "As an important part of history, alongside the nation's progress",
-        "Briefly, focusing more on progress and shared achievements"
+        "Teach the facts of slavery and segregation fully, but not as the defining story of the country"
       ],
-      "high_pole": "briefly"
+      "high_pole": "briefly",
+      "testlet": "history_teaching"
     },
     {
       "id": "teach_institutional_racism",
       "subtopic": "Teaching about racism in schools",
-      "axis": ["EQUITY", "EDUC"],
+      "axis": [
+        "EQUITY",
+        "EDUC"
+      ],
       "format": "position",
       "stem": "Should public schools teach that racism is built into American laws and institutions today?",
       "scope": "High school classes.",
@@ -195,32 +233,103 @@
         "Yes, as one view among several",
         "No; it should not be taught in public schools"
       ],
-      "high_pole": "not taught"
+      "high_pole": "not taught",
+      "testlet": "history_teaching"
     },
     {
       "id": "discrimination_black",
       "subtopic": "How much discrimination exists",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "belief",
       "stem": "When Black Americans apply for jobs today, how often do they face discrimination because of their race?",
       "scope": "Think about job searches across the country.",
-      "options": ["Almost always (9 or more times in 10)", "Often (about 7 in 10)", "About half the time", "Sometimes (about 3 in 10)", "Rarely (1 in 10 or less)"],
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
       "high_pole": "rarely"
     },
     {
       "id": "discrimination_white",
       "subtopic": "How much discrimination exists",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "belief",
       "stem": "When white Americans apply for jobs or college today, how often do they face discrimination because of their race?",
       "scope": "Think about applications across the country.",
-      "options": ["Rarely (1 in 10 or less)", "Sometimes (about 3 in 10)", "About half the time", "Often (about 7 in 10)", "Almost always (9 or more times in 10)"],
+      "options": [
+        "Rarely (1 in 10 or less)",
+        "Sometimes (about 3 in 10)",
+        "About half the time",
+        "Most of the time (about 7 in 10)",
+        "Almost always (9 or more times in 10)"
+      ],
       "high_pole": "almost always"
+    },
+    {
+      "id": "discrimination_groups",
+      "subtopic": "How much discrimination exists",
+      "axis": [
+        "EQUITY"
+      ],
+      "format": "exceptions",
+      "stem": "How much discrimination does each of these groups face in the US today?",
+      "scope": "Answer each group separately.",
+      "options": [
+        "Little or none",
+        "Some",
+        "A lot"
+      ],
+      "high_pole": "A lot",
+      "cases": [
+        {
+          "id": "dg_hispanic",
+          "text": "Hispanic Americans"
+        },
+        {
+          "id": "dg_asian",
+          "text": "Asian Americans"
+        },
+        {
+          "id": "dg_women",
+          "text": "Women"
+        },
+        {
+          "id": "dg_men",
+          "text": "Men"
+        },
+        {
+          "id": "dg_christians",
+          "text": "Christians"
+        },
+        {
+          "id": "dg_muslims",
+          "text": "Muslims"
+        },
+        {
+          "id": "dg_gay",
+          "text": "Gay and lesbian people"
+        },
+        {
+          "id": "dg_rural",
+          "text": "People in rural areas"
+        }
+      ],
+      "notes": "Broad set separates general perception of discrimination from sympathy for particular groups; cases for men, Christians and rural people are expected to load in the opposite direction."
     },
     {
       "id": "tribal_sovereignty",
       "subtopic": "Tribal sovereignty",
-      "axis": ["EQUITY", "FED"],
+      "axis": [
+        "EQUITY",
+        "FED"
+      ],
       "format": "position",
       "stem": "How much power should Native American tribes have to govern their own lands?",
       "scope": "Federally recognized tribes and their reservations.",
@@ -234,7 +343,9 @@
     {
       "id": "disparate_impact",
       "subtopic": "Disparate impact rules",
-      "axis": ["EQUITY"],
+      "axis": [
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "A hiring test isn't meant to discriminate, but it leads to far fewer people of one race being hired. Should using it be illegal?",
       "scope": "Think of tests or rules used by employers, landlords or lenders.",
@@ -243,7 +354,26 @@
         "Only if a fairer test would work just as well and the employer refused to use it",
         "No; only intentional discrimination should be illegal"
       ],
-      "high_pole": "intent only"
+      "high_pole": "intent only",
+      "knowledge_heavy": true
+    },
+    {
+      "id": "confederate_monuments",
+      "subtopic": "Monuments and names",
+      "axis": [
+        "EQUITY",
+        "NATION"
+      ],
+      "format": "position",
+      "stem": "What should happen to public monuments honoring Confederate leaders?",
+      "scope": "Statues and names on public land and buildings.",
+      "options": [
+        "Remove them",
+        "Move them to museums with historical context",
+        "Keep them, but add historical context",
+        "Keep them as they are"
+      ],
+      "high_pole": "keep"
     }
   ]
 }

@@ -7,7 +7,9 @@
     {
       "id": "school_choice",
       "subtopic": "School choice and vouchers",
-      "axis": ["EDUC"],
+      "axis": [
+        "EDUC"
+      ],
       "format": "position",
       "stem": "Should public money follow students to the school their family chooses, including private schools?",
       "scope": "K-12 education.",
@@ -22,7 +24,9 @@
     {
       "id": "charter_schools",
       "subtopic": "School choice and vouchers",
-      "axis": ["EDUC"],
+      "axis": [
+        "EDUC"
+      ],
       "format": "position",
       "stem": "How many public charter schools should there be?",
       "scope": "Charter schools are tuition-free public schools run independently of the school district.",
@@ -37,7 +41,9 @@
     {
       "id": "curriculum_control",
       "subtopic": "Who controls curriculum",
-      "axis": ["EDUC"],
+      "axis": [
+        "EDUC"
+      ],
       "format": "position",
       "stem": "Who should have the most say over what public schools teach?",
       "scope": "Public K-12 schools.",
@@ -52,7 +58,9 @@
     {
       "id": "lesson_opt_out",
       "subtopic": "Who controls curriculum",
-      "axis": ["EDUC"],
+      "axis": [
+        "EDUC"
+      ],
       "format": "position",
       "stem": "Should parents be able to take their children out of lessons they object to?",
       "scope": "Public K-12 schools.",
@@ -66,7 +74,10 @@
     {
       "id": "teach_gender_identity",
       "subtopic": "Teaching about race and gender",
-      "axis": ["EDUC", "GENDERID"],
+      "axis": [
+        "EDUC",
+        "GENDERID"
+      ],
       "format": "position",
       "stem": "Should public schools teach about gender identity?",
       "scope": "For example, that some people identify as a gender different from their sex at birth.",
@@ -81,7 +92,10 @@
     {
       "id": "sex_education",
       "subtopic": "Teaching about race and gender",
-      "axis": ["EDUC", "MORAL"],
+      "axis": [
+        "EDUC",
+        "MORAL"
+      ],
       "format": "position",
       "stem": "What kind of sex education should public high schools teach?",
       "scope": "Required health classes, with parents able to opt out.",
@@ -96,7 +110,10 @@
     {
       "id": "student_loan_cancel",
       "subtopic": "Student loan relief",
-      "axis": ["EDUC", "REDIS"],
+      "axis": [
+        "EDUC",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "What should happen to existing federal student loan debt?",
       "scope": "Loans from the federal government, not private lenders.",
@@ -111,7 +128,10 @@
     {
       "id": "loan_repayment",
       "subtopic": "Student loan relief",
-      "axis": ["EDUC", "REDIS"],
+      "axis": [
+        "EDUC",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should monthly federal student loan payments be capped at a share of the borrower's income?",
       "scope": "For future and current borrowers.",
@@ -125,7 +145,10 @@
     {
       "id": "free_college",
       "subtopic": "Tuition-free public college",
-      "axis": ["EDUC", "REDIS"],
+      "axis": [
+        "EDUC",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should tuition be free at public colleges and universities?",
       "scope": "Paid for by taxes.",
@@ -140,7 +163,10 @@
     {
       "id": "education_department",
       "subtopic": "Federal role in education",
-      "axis": ["EDUC", "FED"],
+      "axis": [
+        "EDUC",
+        "FED"
+      ],
       "format": "position",
       "stem": "What should happen to the federal Department of Education?",
       "scope": "Its main jobs are student aid, civil rights enforcement and funding for low-income schools.",
@@ -150,12 +176,24 @@
         "Shrink it and send money and control to states",
         "Close it"
       ],
-      "high_pole": "close"
+      "high_pole": "close",
+      "facts": [
+        {
+          "claim": "Department's main functions: federal student aid, civil rights enforcement, Title I funding",
+          "source": "US Department of Education",
+          "checked": "2026-10-12",
+          "verify": true,
+          "note": "Several functions were being moved to other agencies in late 2025; confirm the scope line."
+        }
+      ]
     },
     {
       "id": "school_discipline",
       "subtopic": "School discipline and safety",
-      "axis": ["EDUC", "ORDER"],
+      "axis": [
+        "EDUC",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "How should schools handle students who are repeatedly disruptive or violent?",
       "scope": "Public K-12 schools.",
@@ -169,7 +207,10 @@
     {
       "id": "selective_admissions",
       "subtopic": "Merit-based admissions to selective public schools",
-      "axis": ["EDUC", "EQUITY"],
+      "axis": [
+        "EDUC",
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "How should selective public high schools choose their students?",
       "scope": "Public schools with more applicants than seats, such as specialized science schools.",
@@ -179,6 +220,23 @@
         "Admission test and grades only"
       ],
       "high_pole": "test and grades"
+    },
+    {
+      "id": "legacy_admissions",
+      "subtopic": "Legacy and donor admissions",
+      "axis": [
+        "EDUC",
+        "POP"
+      ],
+      "format": "position",
+      "stem": "Should colleges give an advantage to children of graduates or donors?",
+      "scope": "Colleges that get any federal funding, public or private.",
+      "options": [
+        "No; ban it",
+        "Allow it, but disclose it publicly",
+        "Yes; colleges should decide"
+      ],
+      "high_pole": "allow"
     }
   ]
 }

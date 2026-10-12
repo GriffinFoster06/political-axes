@@ -48,9 +48,9 @@
       "stem": "Should there be a federal tax on the carbon pollution from fossil fuels?",
       "scope": "A tax of $100 per ton would add about 90 cents to a gallon of gasoline.",
       "options": [
-        "Yes, a high and rising tax, around $100 a ton, with the money spent on clean energy",
-        "Yes, a moderate tax, with all the money returned to households as equal rebates",
-        "No carbon tax of any kind"
+        "Yes, a high and rising tax, around $100 a ton",
+        "Yes, a moderate tax, around $25 to $50 a ton",
+        "No carbon tax"
       ],
       "high_pole": "no tax",
       "facts": [
@@ -61,6 +61,23 @@
           "verify": false
         }
       ]
+    },
+    {
+      "id": "carbon_tax_use",
+      "subtopic": "Carbon pricing",
+      "axis": [
+        "ENV",
+        "REDIS"
+      ],
+      "format": "position",
+      "stem": "If there were a federal carbon tax, what should the money mainly be used for?",
+      "scope": "Answer even if you oppose a carbon tax.",
+      "options": [
+        "Clean energy and climate programs",
+        "Equal rebates paid to every household",
+        "Cutting other taxes, such as income or payroll taxes"
+      ],
+      "high_pole": "cut other taxes"
     },
     {
       "id": "carbon_border_fee",
@@ -77,7 +94,8 @@
         "Only if US producers also pay for their own carbon pollution",
         "No"
       ],
-      "high_pole": "no"
+      "high_pole": "no",
+      "knowledge_heavy": true
     },
     {
       "id": "drilling_public_lands",
@@ -129,7 +147,8 @@
         "Many new plants, with faster approvals"
       ],
       "high_pole": "many more",
-      "notes": "Cross-cutting candidate: support is high among both climate hawks and fossil-fuel supporters."
+      "notes": "Cross-cutting candidate: support is high among both climate hawks and fossil-fuel supporters.",
+      "testlet": "nuclear"
     },
     {
       "id": "nuclear_funding",
@@ -145,7 +164,8 @@
         "Loan guarantees only",
         "Yes, large direct support"
       ],
-      "high_pole": "large support"
+      "high_pole": "large support",
+      "testlet": "nuclear"
     },
     {
       "id": "ev_requirement",
@@ -172,7 +192,7 @@
       "format": "position",
       "stem": "Should buyers of new electric vehicles get a federal tax credit?",
       "scope": "Credits for individual buyers.",
-      "context": "A credit of up to $7,500 ended in September 2025.",
+      "context": "There is currently no federal tax credit for buying an electric vehicle.",
       "options": [
         "Yes, $7,500 or more",
         "Yes, a smaller credit, only for lower- and middle-income buyers",
@@ -288,7 +308,7 @@
       "format": "position",
       "stem": "Should the US take part in international agreements to cut greenhouse gas emissions, like the Paris Agreement?",
       "scope": "Agreements among most countries of the world.",
-      "context": "The US withdrew from the Paris Agreement in January 2026.",
+      "context": "The US is not currently part of the Paris Agreement.",
       "options": [
         "Yes, with binding targets for each country",
         "Yes, with voluntary targets, as in the Paris Agreement",
@@ -314,7 +334,7 @@
       "stem": "Which comes closest to your view of climate change?",
       "scope": "Changes in the Earth's average temperature over recent decades.",
       "options": [
-        "Mostly caused by humans, and a serious threat that needs urgent action",
+        "Mostly caused by humans, and a serious threat",
         "Mostly caused by humans, but a manageable problem",
         "Partly human, partly natural, with uncertain effects",
         "Mostly natural, not caused by humans",
@@ -338,6 +358,50 @@
         "No special priority"
       ],
       "high_pole": "no priority"
+    },
+    {
+      "id": "adaptation_tradeoff",
+      "subtopic": "Adaptation vs emissions cuts",
+      "axis": [
+        "ENV"
+      ],
+      "format": "tradeoff",
+      "stem": "For climate change, where should government money mainly go?",
+      "scope": "Answer even if you doubt climate change matters much.",
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
+      "high_pole": "Clearly B",
+      "sides": [
+        {
+          "label": "Cut emissions",
+          "text": "Cutting emissions, even if less is spent protecting communities from floods and heat."
+        },
+        {
+          "label": "Prepare for effects",
+          "text": "Protecting communities from floods and heat, even if emissions are cut more slowly."
+        }
+      ]
+    },
+    {
+      "id": "plastic_bags",
+      "subtopic": "Local environmental rules",
+      "axis": [
+        "ENV",
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "Should single-use plastic bags be banned or charged for in stores?",
+      "scope": "Bags given out at checkout.",
+      "options": [
+        "Banned",
+        "Allowed, with a fee per bag",
+        "Allowed, free, as each store chooses"
+      ],
+      "high_pole": "allowed free"
     }
   ]
 }

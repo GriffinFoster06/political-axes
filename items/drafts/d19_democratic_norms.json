@@ -44,7 +44,43 @@
           "checked": "2026-10-12",
           "verify": false
         }
-      ]
+      ],
+      "followup": "refuse_to_spend_cases",
+      "knowledge_heavy": true
+    },
+    {
+      "id": "refuse_to_spend_cases",
+      "subtopic": "Scope of executive orders",
+      "axis": [
+        "NORMS"
+      ],
+      "format": "exceptions",
+      "stem": "Should a president be able to refuse to spend money Congress approved for each of these?",
+      "scope": "Answer each case separately, for any president.",
+      "options": [
+        "Should not be able to",
+        "Should be able to"
+      ],
+      "high_pole": "Should be able to",
+      "cases": [
+        {
+          "id": "rs_foreign_aid",
+          "text": "Foreign aid"
+        },
+        {
+          "id": "rs_border",
+          "text": "Border security"
+        },
+        {
+          "id": "rs_clean",
+          "text": "Clean-energy grants"
+        },
+        {
+          "id": "rs_police",
+          "text": "Grants to local police departments"
+        }
+      ],
+      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
     },
     {
       "id": "emergency_duration",
@@ -70,7 +106,8 @@
           "checked": "2026-10-12",
           "verify": false
         }
-      ]
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "emergency_funding",
@@ -86,7 +123,42 @@
         "Only for a sudden threat, such as an attack, until Congress can act",
         "Yes, whenever the president judges the need is urgent"
       ],
-      "high_pole": "more presidential power"
+      "high_pole": "more presidential power",
+      "followup": "emergency_funding_cases"
+    },
+    {
+      "id": "emergency_funding_cases",
+      "subtopic": "Emergency powers",
+      "axis": [
+        "NORMS"
+      ],
+      "format": "exceptions",
+      "stem": "Should a president be able to declare an emergency to spend money that Congress refused to provide, for each of these?",
+      "scope": "Answer each case separately, for any president.",
+      "options": [
+        "Should not be able to",
+        "Should be able to"
+      ],
+      "high_pole": "Should be able to",
+      "cases": [
+        {
+          "id": "em_wall",
+          "text": "Building a wall on the southern border"
+        },
+        {
+          "id": "em_clean",
+          "text": "Building clean-energy projects"
+        },
+        {
+          "id": "em_student_debt",
+          "text": "Canceling student loan debt"
+        },
+        {
+          "id": "em_hurricane",
+          "text": "Rebuilding after a major hurricane"
+        }
+      ],
+      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
     },
     {
       "id": "civil_service",
@@ -127,7 +199,8 @@
           "source": "Federal Reserve Board",
           "verify": false
         }
-      ]
+      ],
+      "knowledge_heavy": true
     },
     {
       "id": "prosecute_opponents",
@@ -221,7 +294,7 @@
         },
         {
           "label": "Majority rules",
-          "text": "When most voters clearly support a law, courts should rarely overrule it."
+          "text": "When most voters clearly support a law, courts should rarely overrule it, even if the law takes away some people's rights."
         }
       ],
       "options": [
@@ -257,7 +330,42 @@
           "verify": false
         }
       ],
-      "notes": "Positions on this rule historically flip with Senate control; watch for DIF by party."
+      "notes": "Positions on this rule historically flip with Senate control; watch for DIF by party.",
+      "followup": "filibuster_cases"
+    },
+    {
+      "id": "filibuster_cases",
+      "subtopic": "Checks and balances vs getting things done",
+      "axis": [
+        "NORMS"
+      ],
+      "format": "exceptions",
+      "stem": "Suppose 51 senators but not 60 support each of these. Should the majority be able to pass it?",
+      "scope": "Answer each case separately, whatever you think of the bill itself.",
+      "options": [
+        "No; keep the 60-vote rule",
+        "Yes; let the majority pass it"
+      ],
+      "high_pole": "Yes; let the majority pass it",
+      "cases": [
+        {
+          "id": "fb_abortion_protect",
+          "text": "A national law protecting abortion access"
+        },
+        {
+          "id": "fb_abortion_restrict",
+          "text": "A national law restricting abortion"
+        },
+        {
+          "id": "fb_mail_voting",
+          "text": "A law expanding mail voting nationwide"
+        },
+        {
+          "id": "fb_voter_id",
+          "text": "A law requiring photo ID to vote nationwide"
+        }
+      ],
+      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
     },
     {
       "id": "rule_bending_leader",
@@ -266,7 +374,7 @@
         "NORMS"
       ],
       "format": "position",
-      "stem": "How do you feel about a president who ignores rules or laws they believe block what voters elected them to do?",
+      "stem": "How do you feel about a president who bends or works around rules that block what voters elected them to do?",
       "scope": "Answer for any president of either party.",
       "options": [
         "That is never acceptable",
@@ -292,6 +400,91 @@
       ],
       "high_pole": "sometimes",
       "notes": "Expected to be very skewed. Kept for the issue map; may not meet discrimination criteria for scoring."
+    },
+    {
+      "id": "court_expansion",
+      "subtopic": "Supreme Court size",
+      "axis": [
+        "NORMS"
+      ],
+      "format": "position",
+      "stem": "Should Congress change the number of Supreme Court justices?",
+      "scope": "There have been 9 since 1869. Answer whichever party would gain.",
+      "options": [
+        "Yes, add justices when the majority wants different rulings",
+        "Only as part of a bipartisan reform",
+        "No; keep it at 9"
+      ],
+      "high_pole": "keep 9",
+      "notes": "High pole here is 'keep' (more restraint), the reverse of most NORMS items."
+    },
+    {
+      "id": "presidential_immunity",
+      "subtopic": "Presidential immunity",
+      "axis": [
+        "NORMS"
+      ],
+      "format": "position",
+      "stem": "Should former presidents be immune from criminal prosecution for things they did as president?",
+      "scope": "Answer for any president of either party.",
+      "context": "In 2024 the Supreme Court ruled that former presidents have broad immunity for official acts.",
+      "options": [
+        "No; they can be prosecuted like anyone else",
+        "Only for core duties set by the Constitution",
+        "Yes, for all official acts"
+      ],
+      "high_pole": "full immunity",
+      "facts": [
+        {
+          "claim": "Supreme Court held former presidents have absolute immunity for core constitutional acts and presumptive immunity for other official acts",
+          "source": "603 U.S. 593 (2024)",
+          "checked": "2026-10-12",
+          "verify": false
+        }
+      ]
+    },
+    {
+      "id": "press_retaliation",
+      "subtopic": "Government action against news outlets",
+      "axis": [
+        "NORMS",
+        "SPEECH"
+      ],
+      "format": "position",
+      "stem": "Should a president be able to punish news outlets that cover them unfairly, such as by pulling broadcast licenses or press access?",
+      "scope": "Answer for any president of either party.",
+      "options": [
+        "Never; a president should not punish outlets for their coverage",
+        "Only limit access to events like briefings, not licenses",
+        "Yes, outlets that spread falsehoods should face consequences"
+      ],
+      "high_pole": "yes"
+    },
+    {
+      "id": "agency_deference",
+      "subtopic": "Court deference to agencies",
+      "axis": [
+        "TRUST",
+        "NORMS"
+      ],
+      "format": "position",
+      "stem": "When a law is unclear, should courts defer to the judgment of the federal agency experts who carry it out?",
+      "scope": "Agencies of any administration.",
+      "context": "In 2024 the Supreme Court ended a rule that required courts to defer to agencies in many such cases.",
+      "options": [
+        "Yes, courts should usually defer",
+        "Only on technical or scientific questions",
+        "No; judges should decide what the law means themselves"
+      ],
+      "high_pole": "judges decide",
+      "facts": [
+        {
+          "claim": "Loper Bright Enterprises v. Raimondo (2024) overruled Chevron deference",
+          "source": "603 U.S. 369 (2024)",
+          "checked": "2026-10-12",
+          "verify": false
+        }
+      ]
     }
   ]
 }

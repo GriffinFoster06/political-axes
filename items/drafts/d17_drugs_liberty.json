@@ -249,6 +249,89 @@
         "Yes, all riders"
       ],
       "high_pole": "all riders"
+    },
+    {
+      "id": "drinking_age",
+      "subtopic": "Drinking age",
+      "axis": [
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "What should the legal drinking age be?",
+      "scope": "Buying and drinking alcohol.",
+      "options": [
+        "18",
+        "18 for beer and wine, 21 for liquor",
+        "21, as today",
+        "Older than 21"
+      ],
+      "high_pole": "older"
+    },
+    {
+      "id": "vape_flavors",
+      "subtopic": "Vaping and tobacco bans",
+      "axis": [
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "Should flavored vapes and cigarettes be banned for adults?",
+      "scope": "Sales to adults 21 and older.",
+      "options": [
+        "No; adults should choose",
+        "Allowed, with higher taxes",
+        "Banned"
+      ],
+      "high_pole": "banned"
+    },
+    {
+      "id": "kidney_payment",
+      "subtopic": "Organ sales",
+      "axis": [
+        "LIBERTY",
+        "MORAL"
+      ],
+      "format": "position",
+      "stem": "Should people be allowed to be paid for donating a kidney?",
+      "scope": "Living donors, with medical screening. Federal law bans payment today.",
+      "options": [
+        "Yes, in a regulated market",
+        "Only a fixed payment from the government, not a market",
+        "No; keep the ban"
+      ],
+      "high_pole": "keep ban"
+    },
+    {
+      "id": "right_to_try",
+      "subtopic": "Right to try experimental treatments",
+      "axis": [
+        "LIBERTY",
+        "REG"
+      ],
+      "format": "position",
+      "stem": "Should seriously ill patients be able to use treatments that haven't finished FDA approval?",
+      "scope": "Patients with life-threatening illnesses, with their doctor's support.",
+      "options": [
+        "Yes, any treatment that passed early safety testing",
+        "Only through FDA-supervised programs",
+        "No; wait for full approval"
+      ],
+      "high_pole": "wait"
+    },
+    {
+      "id": "raw_milk",
+      "subtopic": "Raw milk and food freedom",
+      "axis": [
+        "LIBERTY"
+      ],
+      "format": "position",
+      "stem": "Should stores be allowed to sell unpasteurized (raw) milk?",
+      "scope": "Sold with a warning label.",
+      "options": [
+        "Yes, anywhere",
+        "Only directly from farms",
+        "No"
+      ],
+      "high_pole": "no"
     }
   ]
 }
