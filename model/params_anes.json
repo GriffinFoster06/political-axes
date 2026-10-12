@@ -1,0 +1,3813 @@
+{
+ "version": "0.2.0-anes-bifactor",
+ "source": "ANES 2024 Time Series (release 2026-05-19), weight V240107a",
+ "model": "bifactor graded response model: general factor G + specific factors, all independent N(0,1)",
+ "dimensions": [
+  {
+   "id": "G",
+   "label": "General left-right"
+  },
+  {
+   "id": "CULT",
+   "label": "Moral traditionalism & authority in child-rearing"
+  },
+  {
+   "id": "EQUITY",
+   "label": "Perceived discrimination & group equity"
+  },
+  {
+   "id": "ESTAB",
+   "label": "Distrust of mainstream media, elections & experts"
+  },
+  {
+   "id": "FOREIGN",
+   "label": "Support for Israel & foreign engagement"
+  },
+  {
+   "id": "GENDER",
+   "label": "Resentment of women's equality claims"
+  },
+  {
+   "id": "GOV",
+   "label": "Role of government (economy, environment, guns)"
+  },
+  {
+   "id": "NORMS",
+   "label": "Indifference to democratic checks & a free press"
+  },
+  {
+   "id": "THREAT",
+   "label": "Foreign threat perception"
+  },
+  {
+   "id": "TRUST",
+   "label": "Distrust of government institutions (Congress, courts, parties)"
+  }
+ ],
+ "sigma": [
+  [
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "scoring": {
+  "method": "EAP, Laplace-centered importance sampling, antithetic draws",
+  "prng": "mulberry32",
+  "seed": 20261012,
+  "draws": 2000,
+  "inflate": 1.3
+ },
+ "items": [
+  {
+   "id": "svc_spending7",
+   "dim": "GOV",
+   "a": 1.44217,
+   "slopes": {
+    "G": 1.44217,
+    "GOV": 1.145986
+   },
+   "d": [
+    2.241285,
+    1.251107,
+    -0.056006,
+    -1.556418,
+    -2.878457,
+    -3.880507
+   ],
+   "ncat": 7,
+   "source_var": "V241239",
+   "source_label": "7-pt: government should provide many fewer services ... many more services",
+   "high_pole": "fewer services, less spending"
+  },
+  {
+   "id": "health_insurance7",
+   "dim": "GOV",
+   "a": 1.303221,
+   "slopes": {
+    "G": 1.303221,
+    "GOV": 0.751997
+   },
+   "d": [
+    1.814362,
+    0.940568,
+    0.099814,
+    -1.008673,
+    -1.838967,
+    -2.683477
+   ],
+   "ncat": 7,
+   "source_var": "V241245",
+   "source_label": "7-pt: government insurance plan ... private insurance plan",
+   "high_pole": "private insurance plan"
+  },
+  {
+   "id": "jobs_income7",
+   "dim": "GOV",
+   "a": 1.33439,
+   "slopes": {
+    "G": 1.33439,
+    "GOV": 0.962317
+   },
+   "d": [
+    2.554343,
+    1.756698,
+    0.743062,
+    -0.494969,
+    -1.518693,
+    -2.679223
+   ],
+   "ncat": 7,
+   "source_var": "V241252",
+   "source_label": "7-pt: government should see to jobs and standard of living ... let each person get ahead",
+   "high_pole": "let each person get ahead on their own"
+  },
+  {
+   "id": "env_business7",
+   "dim": "GOV",
+   "a": 1.834857,
+   "slopes": {
+    "G": 1.834857,
+    "GOV": 0.978716
+   },
+   "d": [
+    1.752113,
+    0.616566,
+    -0.480953,
+    -1.890825,
+    -2.94425,
+    -3.876267
+   ],
+   "ncat": 7,
+   "source_var": "V241258",
+   "source_label": "7-pt: tougher regulations on business needed ... regulations already too much a burden",
+   "high_pole": "regulations already too much"
+  },
+  {
+   "id": "less_gov",
+   "dim": "GOV",
+   "a": 1.211661,
+   "slopes": {
+    "G": 1.211661,
+    "GOV": 1.225364
+   },
+   "d": [
+    1.744116,
+    -0.041509,
+    -0.405917,
+    -0.648288,
+    -1.966786
+   ],
+   "ncat": 6,
+   "source_var": "V242248x",
+   "source_label": "The less government the better vs there are more things government should be doing (with strength)",
+   "high_pole": "the less government the better"
+  },
+  {
+   "id": "gov_regulation",
+   "dim": "GOV",
+   "a": 1.238664,
+   "slopes": {
+    "G": 1.238664,
+    "GOV": 0.933774
+   },
+   "d": [
+    3.81915,
+    2.443824,
+    1.524765,
+    -0.376286,
+    -1.402465,
+    -2.422605
+   ],
+   "ncat": 7,
+   "source_var": "V242249",
+   "source_label": "Good for society to have more or less government regulation",
+   "high_pole": "much less regulation"
+  },
+  {
+   "id": "reduce_inequality",
+   "dim": "GOV",
+   "a": 1.514101,
+   "slopes": {
+    "G": 1.514101,
+    "GOV": 0.785519
+   },
+   "d": [
+    1.59556,
+    0.371605,
+    0.135314,
+    -1.483645,
+    -1.6777,
+    -2.447297
+   ],
+   "ncat": 7,
+   "source_var": "V242253x",
+   "source_label": "Favor/oppose government trying to reduce the difference in incomes",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "millionaire_tax",
+   "dim": "GOV",
+   "a": 1.293785,
+   "slopes": {
+    "G": 1.293785,
+    "GOV": 0.820406
+   },
+   "d": [
+    -0.803001,
+    -2.310251
+   ],
+   "ncat": 3,
+   "source_var": "V242316a",
+   "source_label": "Favor/oppose increasing income taxes on people making over one million dollars a year",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "min_wage",
+   "dim": "GOV",
+   "a": 1.433759,
+   "slopes": {
+    "G": 1.433759,
+    "GOV": 1.090383
+   },
+   "d": [
+    -0.703826,
+    -3.182184
+   ],
+   "ncat": 3,
+   "source_var": "V242350",
+   "source_label": "Federal minimum wage should be raised, kept the same, lowered or eliminated",
+   "high_pole": "lowered/eliminated"
+  },
+  {
+   "id": "paid_leave",
+   "dim": "GOV",
+   "a": 0.788395,
+   "slopes": {
+    "G": 0.788395,
+    "GOV": 0.710102
+   },
+   "d": [
+    -0.037262,
+    -1.169528,
+    -1.371648,
+    -2.914805,
+    -3.147863,
+    -4.166475
+   ],
+   "ncat": 7,
+   "source_var": "V241367+V241368",
+   "source_label": "Require employers to offer paid leave to parents of new children",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "deficit_importance",
+   "dim": "GENDER",
+   "a": 0.803095,
+   "slopes": {
+    "G": 0.803095,
+    "GENDER": 0.021479
+   },
+   "d": [
+    4.258502,
+    2.508002,
+    0.941374,
+    -0.595434
+   ],
+   "ncat": 5,
+   "source_var": "V242315",
+   "source_label": "How important is reducing the federal budget deficit",
+   "high_pole": "extremely important"
+  },
+  {
+   "id": "campaign_limits",
+   "dim": "NORMS",
+   "a": 0.438411,
+   "slopes": {
+    "G": 0.438411,
+    "NORMS": 0.839124
+   },
+   "d": [
+    -0.825212,
+    -2.991343
+   ],
+   "ncat": 3,
+   "source_var": "V242214",
+   "source_label": "Favor/oppose limits on how much money candidates can raise and spend",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "egal_equal_opp",
+   "dim": "GOV",
+   "a": 0.745518,
+   "slopes": {
+    "G": 0.745518,
+    "GOV": 0.731303
+   },
+   "d": [
+    -0.001992,
+    -1.478909,
+    -2.594726,
+    -3.765908
+   ],
+   "ncat": 5,
+   "source_var": "V242254",
+   "source_label": "Society should do whatever is necessary to make sure everyone has an equal opportunity",
+   "high_pole": "disagree"
+  },
+  {
+   "id": "egal_worry_less",
+   "dim": "GOV",
+   "a": 1.693365,
+   "slopes": {
+    "G": 1.693365,
+    "GOV": 0.35333
+   },
+   "d": [
+    1.562656,
+    0.348342,
+    -0.879426,
+    -2.419891
+   ],
+   "ncat": 5,
+   "source_var": "V242255",
+   "source_label": "We'd be better off if we worried less about how equal people are",
+   "high_pole": "agree"
+  },
+  {
+   "id": "egal_not_big_problem",
+   "dim": "GOV",
+   "a": 1.059849,
+   "slopes": {
+    "G": 1.059849,
+    "GOV": 0.361953
+   },
+   "d": [
+    1.065535,
+    -0.255972,
+    -1.59873,
+    -3.169186
+   ],
+   "ncat": 5,
+   "source_var": "V242256",
+   "source_label": "It is not really that big a problem if some people have more of a chance in life than others",
+   "high_pole": "agree"
+  },
+  {
+   "id": "egal_treated_fairly",
+   "dim": "GOV",
+   "a": 1.083718,
+   "slopes": {
+    "G": 1.083718,
+    "GOV": 0.73601
+   },
+   "d": [
+    0.926235,
+    -0.772945,
+    -2.04145,
+    -3.289125
+   ],
+   "ncat": 5,
+   "source_var": "V242257",
+   "source_label": "If people were treated more equally in this country we would have many fewer problems",
+   "high_pole": "disagree"
+  },
+  {
+   "id": "spend_socsec",
+   "dim": "GOV",
+   "a": 0.122283,
+   "slopes": {
+    "G": 0.122283,
+    "GOV": 0.994062
+   },
+   "d": [
+    -0.669914,
+    -3.293714
+   ],
+   "ncat": 3,
+   "source_var": "V241261",
+   "source_label": "Federal spending on Social Security",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "spend_schools",
+   "dim": "GOV",
+   "a": 1.189226,
+   "slopes": {
+    "G": 1.189226,
+    "GOV": 1.120699
+   },
+   "d": [
+    -1.364036,
+    -3.417249
+   ],
+   "ncat": 3,
+   "source_var": "V241264",
+   "source_label": "Federal spending on public schools",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "spend_welfare",
+   "dim": "GOV",
+   "a": 1.554538,
+   "slopes": {
+    "G": 1.554538,
+    "GOV": 0.723541
+   },
+   "d": [
+    1.033472,
+    -1.454089
+   ],
+   "ncat": 3,
+   "source_var": "V241273",
+   "source_label": "Federal spending on welfare programs",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "spend_poor",
+   "dim": "GOV",
+   "a": 1.329491,
+   "slopes": {
+    "G": 1.329491,
+    "GOV": 1.016596
+   },
+   "d": [
+    -0.289746,
+    -2.897925
+   ],
+   "ncat": 3,
+   "source_var": "V241279",
+   "source_label": "Federal spending on aid to the poor",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "spend_environment",
+   "dim": "GOV",
+   "a": 2.075404,
+   "slopes": {
+    "G": 2.075404,
+    "GOV": 1.189429
+   },
+   "d": [
+    -0.553648,
+    -3.443365
+   ],
+   "ncat": 3,
+   "source_var": "V241282",
+   "source_label": "Federal spending on protecting the environment",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "spend_health",
+   "dim": "GOV",
+   "a": 1.151787,
+   "slopes": {
+    "G": 1.151787,
+    "GOV": 0.920702
+   },
+   "d": [
+    1.580035,
+    -0.048645,
+    -0.494538,
+    -2.353404,
+    -2.597265,
+    -3.693319
+   ],
+   "ncat": 7,
+   "source_var": "V242353x",
+   "source_label": "Increase/decrease government spending to help people pay for health care",
+   "high_pole": "decrease"
+  },
+  {
+   "id": "opioids",
+   "dim": "GOV",
+   "a": -0.128387,
+   "slopes": {
+    "G": -0.128387,
+    "GOV": 0.623121
+   },
+   "d": [
+    -0.180284,
+    -1.03385,
+    -1.257435,
+    -3.244416,
+    -3.338443,
+    -4.20355
+   ],
+   "ncat": 7,
+   "source_var": "V242335x",
+   "source_label": "Should the government do more or less about opioid drug addiction",
+   "high_pole": "do less"
+  },
+  {
+   "id": "climate_gov_action",
+   "dim": "GOV",
+   "a": 2.114879,
+   "slopes": {
+    "G": 2.114879,
+    "GOV": 1.166556
+   },
+   "d": [
+    1.313148,
+    0.041155,
+    -0.224809,
+    -2.780216,
+    -3.179593,
+    -4.452611
+   ],
+   "ncat": 7,
+   "source_var": "V241364+V241365",
+   "source_label": "Federal government should be doing more/less about rising temperatures",
+   "high_pole": "doing less"
+  },
+  {
+   "id": "greenhouse_regulation",
+   "dim": "GOV",
+   "a": 1.719197,
+   "slopes": {
+    "G": 1.719197,
+    "GOV": 0.820701
+   },
+   "d": [
+    0.954289,
+    -0.363316,
+    -0.680437,
+    -2.668709,
+    -3.035243,
+    -4.000582
+   ],
+   "ncat": 7,
+   "source_var": "V242324x",
+   "source_label": "Favor/oppose increased regulation on greenhouse emissions",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "climate_effect",
+   "dim": "GOV",
+   "a": 1.824131,
+   "slopes": {
+    "G": 1.824131,
+    "GOV": 0.752275
+   },
+   "d": [
+    1.208854,
+    0.080455,
+    -1.569044,
+    -3.134345
+   ],
+   "ncat": 5,
+   "source_var": "V242321",
+   "source_label": "How much is climate change currently affecting severe weather and temperatures",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "abortion7",
+   "dim": "CULT",
+   "a": 1.622949,
+   "slopes": {
+    "G": 1.622949,
+    "CULT": 1.190002
+   },
+   "d": [
+    1.849695,
+    0.607549,
+    -0.23396,
+    -1.245915,
+    -2.134955,
+    -3.644791
+   ],
+   "ncat": 7,
+   "source_var": "V241248",
+   "source_label": "7-pt: abortion should always be permitted without restrictions ... never be permitted",
+   "high_pole": "never permitted"
+  },
+  {
+   "id": "abortion4",
+   "dim": "CULT",
+   "a": 1.879934,
+   "slopes": {
+    "G": 1.879934,
+    "CULT": 1.443323
+   },
+   "d": [
+    0.096708,
+    -1.483371,
+    -4.395002
+   ],
+   "ncat": 4,
+   "source_var": "V241302",
+   "source_label": "Standard 4-option abortion item (never ... always as personal choice)",
+   "high_pole": "never permitted"
+  },
+  {
+   "id": "trans_bathrooms",
+   "dim": "CULT",
+   "a": 2.159305,
+   "slopes": {
+    "G": 2.159305,
+    "CULT": 0.696205
+   },
+   "d": [
+    3.163827,
+    2.113469,
+    1.813768,
+    -0.057357,
+    -0.225723,
+    -0.757087
+   ],
+   "ncat": 7,
+   "source_var": "V241370+V241371",
+   "source_label": "Transgender people using bathrooms that match the gender they identify with",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "trans_sports_ban",
+   "dim": "ESTAB",
+   "a": 1.348032,
+   "slopes": {
+    "G": 1.348032,
+    "ESTAB": 0.184799
+   },
+   "d": [
+    2.517806,
+    1.846255,
+    1.687617,
+    0.157777,
+    -0.011677,
+    -0.524208
+   ],
+   "ncat": 7,
+   "source_var": "V241373+V241374",
+   "source_label": "Banning transgender girls from participating in K-12 girls' sports",
+   "high_pole": "favor ban"
+  },
+  {
+   "id": "trans_military",
+   "dim": "CULT",
+   "a": 1.954707,
+   "slopes": {
+    "G": 1.954707,
+    "CULT": 0.751755
+   },
+   "d": [
+    2.479323,
+    1.302398,
+    1.000697,
+    -1.879142,
+    -2.031403,
+    -2.632494
+   ],
+   "ncat": 7,
+   "source_var": "V242364x",
+   "source_label": "Allowing transgender people to serve in the military",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "gay_job_protection",
+   "dim": "CULT",
+   "a": 1.268174,
+   "slopes": {
+    "G": 1.268174,
+    "CULT": 0.870884
+   },
+   "d": [
+    -0.995329,
+    -2.135787,
+    -2.935024
+   ],
+   "ncat": 4,
+   "source_var": "V241376+V241377",
+   "source_label": "Laws to protect gays and lesbians against job discrimination",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "gay_adoption",
+   "dim": "CULT",
+   "a": 1.875213,
+   "slopes": {
+    "G": 1.875213,
+    "CULT": 1.760921
+   },
+   "d": [
+    0.083657,
+    -1.669141,
+    -2.492271,
+    -2.713361,
+    -3.534805
+   ],
+   "ncat": 6,
+   "source_var": "V241381x",
+   "source_label": "Should gay and lesbian couples be allowed to adopt children",
+   "high_pole": "should not be allowed"
+  },
+  {
+   "id": "gay_marriage",
+   "dim": "CULT",
+   "a": 2.127549,
+   "slopes": {
+    "G": 2.127549,
+    "CULT": 2.421025
+   },
+   "d": [
+    -1.502706,
+    -3.812095
+   ],
+   "ncat": 3,
+   "source_var": "V241382",
+   "source_label": "Legal marriage / civil unions only / no legal recognition (split ballot)",
+   "high_pole": "no legal recognition"
+  },
+  {
+   "id": "moral_adjust",
+   "dim": "CULT",
+   "a": 0.949104,
+   "slopes": {
+    "G": 0.949104,
+    "CULT": 0.418268
+   },
+   "d": [
+    2.149447,
+    0.515959,
+    -0.550209,
+    -1.541001
+   ],
+   "ncat": 5,
+   "source_var": "V242258",
+   "source_label": "The world is always changing and we should adjust our view of moral behavior",
+   "high_pole": "disagree"
+  },
+  {
+   "id": "trad_family",
+   "dim": "CULT",
+   "a": 1.606319,
+   "slopes": {
+    "G": 1.606319,
+    "CULT": 0.53651
+   },
+   "d": [
+    3.141319,
+    1.892863,
+    0.369381,
+    -1.185809
+   ],
+   "ncat": 5,
+   "source_var": "V242259",
+   "source_label": "This country would have many fewer problems if there were more emphasis on traditional family ties",
+   "high_pole": "agree"
+  },
+  {
+   "id": "vaccines_schools",
+   "dim": "ESTAB",
+   "a": 0.98169,
+   "slopes": {
+    "G": 0.98169,
+    "ESTAB": 0.666206
+   },
+   "d": [
+    0.339208,
+    -0.386084,
+    -0.535734,
+    -1.743611,
+    -1.986997,
+    -2.705062
+   ],
+   "ncat": 7,
+   "source_var": "V242319x",
+   "source_label": "Requiring children to be vaccinated to attend public schools",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "colleges_run",
+   "dim": "ESTAB",
+   "a": 0.519222,
+   "slopes": {
+    "G": 0.519222,
+    "ESTAB": 0.401964
+   },
+   "d": [
+    3.6277,
+    2.065848,
+    1.786186,
+    -0.29992,
+    -0.396696,
+    -1.434406
+   ],
+   "ncat": 7,
+   "source_var": "V241287x",
+   "source_label": "Approve/disapprove of the way colleges and universities are being run",
+   "high_pole": "disapprove"
+  },
+  {
+   "id": "man_works",
+   "dim": "CULT",
+   "a": 0.871352,
+   "slopes": {
+    "G": 0.871352,
+    "CULT": 0.402282
+   },
+   "d": [
+    4.309535,
+    3.199832,
+    3.024538,
+    -1.114521,
+    -1.294001,
+    -2.04934
+   ],
+   "ncat": 7,
+   "source_var": "V242279x",
+   "source_label": "Better or worse if the man works outside the home and the woman takes care of home and family",
+   "high_pole": "much better"
+  },
+  {
+   "id": "women_special_favors",
+   "dim": "GENDER",
+   "a": 1.950991,
+   "slopes": {
+    "G": 1.950991,
+    "GENDER": 2.419842
+   },
+   "d": [
+    1.350908,
+    -1.838933,
+    -3.761049,
+    -6.431866
+   ],
+   "ncat": 5,
+   "source_var": "V242280",
+   "source_label": "Women demanding equality seek special favors",
+   "high_pole": "always"
+  },
+  {
+   "id": "women_complain",
+   "dim": "GENDER",
+   "a": 2.107518,
+   "slopes": {
+    "G": 2.107518,
+    "GENDER": 2.325404
+   },
+   "d": [
+    2.022415,
+    -1.955631,
+    -3.858676,
+    -6.559689
+   ],
+   "ncat": 5,
+   "source_var": "V242281",
+   "source_label": "Women complaining about discrimination cause more problems than they solve",
+   "high_pole": "always"
+  },
+  {
+   "id": "harassment_too_far",
+   "dim": "G",
+   "a": 0.942692,
+   "slopes": {
+    "G": 0.942692
+   },
+   "d": [
+    1.687399,
+    0.699652,
+    -1.515927,
+    -2.34335
+   ],
+   "ncat": 5,
+   "source_var": "V242361x",
+   "source_label": "Attention to sexual harassment has gone too far / not far enough",
+   "high_pole": "gone much too far"
+  },
+  {
+   "id": "aid_blacks7",
+   "dim": "GENDER",
+   "a": 1.799697,
+   "slopes": {
+    "G": 1.799697,
+    "GENDER": -0.158998
+   },
+   "d": [
+    2.679899,
+    1.694103,
+    0.73381,
+    -0.925127,
+    -1.728785,
+    -2.673105
+   ],
+   "ncat": 7,
+   "source_var": "V241255",
+   "source_label": "7-pt: government should help Blacks ... Blacks should help themselves",
+   "high_pole": "Blacks should help themselves"
+  },
+  {
+   "id": "dei",
+   "dim": "GOV",
+   "a": 1.859578,
+   "slopes": {
+    "G": 1.859578,
+    "GOV": 0.721495
+   },
+   "d": [
+    3.02473,
+    1.577231,
+    1.245978,
+    -1.395516,
+    -1.665952,
+    -2.551347
+   ],
+   "ncat": 7,
+   "source_var": "V241290x",
+   "source_label": "Favor/oppose diversity, equity and inclusion (DEI) programs",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "pref_hiring_blacks",
+   "dim": "EQUITY",
+   "a": 1.394027,
+   "slopes": {
+    "G": 1.394027,
+    "EQUITY": 0.487908
+   },
+   "d": [
+    2.011651,
+    1.003852,
+    -0.462083
+   ],
+   "ncat": 4,
+   "source_var": "V242241x",
+   "source_label": "Preferential hiring and promotion of Blacks",
+   "high_pole": "strongly against"
+  },
+  {
+   "id": "affirm_action_univ",
+   "dim": "EQUITY",
+   "a": 1.600415,
+   "slopes": {
+    "G": 1.600415,
+    "EQUITY": 0.458024
+   },
+   "d": [
+    2.734129,
+    1.516842,
+    1.212921,
+    -0.603303,
+    -0.898297,
+    -1.866963
+   ],
+   "ncat": 7,
+   "source_var": "V242245x",
+   "source_label": "Affirmative action in universities",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "rr_no_favors",
+   "dim": "G",
+   "a": 1.992564,
+   "slopes": {
+    "G": 1.992564
+   },
+   "d": [
+    2.314696,
+    1.059576,
+    -0.530521,
+    -2.03722
+   ],
+   "ncat": 5,
+   "source_var": "V242300",
+   "source_label": "Irish, Italians, Jewish and other minorities overcame prejudice; Blacks should do the same without special favors",
+   "high_pole": "agree"
+  },
+  {
+   "id": "rr_slavery",
+   "dim": "EQUITY",
+   "a": 2.013546,
+   "slopes": {
+    "G": 2.013546,
+    "EQUITY": 0.525157
+   },
+   "d": [
+    1.938472,
+    0.020346,
+    -1.065512,
+    -2.409596
+   ],
+   "ncat": 5,
+   "source_var": "V242301",
+   "source_label": "Generations of slavery and discrimination make it difficult for Blacks to work their way out of the lower class",
+   "high_pole": "disagree"
+  },
+  {
+   "id": "rr_less_deserve",
+   "dim": "EQUITY",
+   "a": 2.119836,
+   "slopes": {
+    "G": 2.119836,
+    "EQUITY": 0.732362
+   },
+   "d": [
+    2.955396,
+    0.955511,
+    -0.892418,
+    -2.288401
+   ],
+   "ncat": 5,
+   "source_var": "V242302",
+   "source_label": "Over the past few years, Blacks have gotten less than they deserve",
+   "high_pole": "disagree"
+  },
+  {
+   "id": "rr_try_harder",
+   "dim": "EQUITY",
+   "a": 1.941802,
+   "slopes": {
+    "G": 1.941802,
+    "EQUITY": 0.205961
+   },
+   "d": [
+    1.562392,
+    0.151329,
+    -1.331425,
+    -2.923167
+   ],
+   "ncat": 5,
+   "source_var": "V242303",
+   "source_label": "It's really a matter of some people not trying hard enough; if Blacks tried harder they could be as well off as whites",
+   "high_pole": "agree"
+  },
+  {
+   "id": "whites_lose_jobs",
+   "dim": "GENDER",
+   "a": 1.296394,
+   "slopes": {
+    "G": 1.296394,
+    "GENDER": 0.265862
+   },
+   "d": [
+    0.614754,
+    -1.024919,
+    -2.568476,
+    -3.856962
+   ],
+   "ncat": 5,
+   "source_var": "V242519",
+   "source_label": "How likely is it that whites won't get a job because employers hire minorities",
+   "high_pole": "extremely likely"
+  },
+  {
+   "id": "gov_treats_races",
+   "dim": "EQUITY",
+   "a": 1.742039,
+   "slopes": {
+    "G": 1.742039,
+    "EQUITY": 0.935707
+   },
+   "d": [
+    2.282449,
+    0.913855,
+    0.336742,
+    -2.853065,
+    -3.420897,
+    -4.771835
+   ],
+   "ncat": 7,
+   "source_var": "V242522x",
+   "source_label": "Does the federal government treat Blacks or whites better",
+   "high_pole": "treats Blacks much better"
+  },
+  {
+   "id": "police_treat_races",
+   "dim": "EQUITY",
+   "a": 1.851986,
+   "slopes": {
+    "G": 1.851986,
+    "EQUITY": 0.945986
+   },
+   "d": [
+    1.093101,
+    -0.387397,
+    -1.071906,
+    -5.620639,
+    -6.174633,
+    -6.883304
+   ],
+   "ncat": 7,
+   "source_var": "V242525x",
+   "source_label": "Do the police treat Blacks or whites better",
+   "high_pole": "treat Blacks much better"
+  },
+  {
+   "id": "disc_blacks",
+   "dim": "EQUITY",
+   "a": 2.496202,
+   "slopes": {
+    "G": 2.496202,
+    "EQUITY": 3.083365
+   },
+   "d": [
+    3.48892,
+    0.360371,
+    -3.435607,
+    -7.61507
+   ],
+   "ncat": 5,
+   "source_var": "V242549",
+   "source_label": "Discrimination in the US against Blacks",
+   "high_pole": "none at all"
+  },
+  {
+   "id": "disc_hispanics",
+   "dim": "EQUITY",
+   "a": 1.496088,
+   "slopes": {
+    "G": 1.496088,
+    "EQUITY": 2.14415
+   },
+   "d": [
+    3.602898,
+    1.229566,
+    -1.842937,
+    -5.218328
+   ],
+   "ncat": 5,
+   "source_var": "V242550",
+   "source_label": "Discrimination in the US against Hispanics",
+   "high_pole": "none at all"
+  },
+  {
+   "id": "disc_gays",
+   "dim": "EQUITY",
+   "a": 1.301854,
+   "slopes": {
+    "G": 1.301854,
+    "EQUITY": 1.63647
+   },
+   "d": [
+    2.372042,
+    0.344675,
+    -1.83198,
+    -4.360766
+   ],
+   "ncat": 5,
+   "source_var": "V242553",
+   "source_label": "Discrimination in the US against gays and lesbians",
+   "high_pole": "none at all"
+  },
+  {
+   "id": "disc_women",
+   "dim": "EQUITY",
+   "a": 1.323532,
+   "slopes": {
+    "G": 1.323532,
+    "EQUITY": 1.653273
+   },
+   "d": [
+    3.62891,
+    1.745852,
+    -0.838931,
+    -3.692143
+   ],
+   "ncat": 5,
+   "source_var": "V242554",
+   "source_label": "Discrimination in the US against women",
+   "high_pole": "none at all"
+  },
+  {
+   "id": "disc_whites",
+   "dim": "GENDER",
+   "a": 1.025793,
+   "slopes": {
+    "G": 1.025793,
+    "GENDER": 0.217932
+   },
+   "d": [
+    0.786907,
+    -1.158007,
+    -2.808519,
+    -3.77909
+   ],
+   "ncat": 5,
+   "source_var": "V242552",
+   "source_label": "Discrimination in the US against whites",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "disc_men",
+   "dim": "EQUITY",
+   "a": 0.858887,
+   "slopes": {
+    "G": 0.858887,
+    "EQUITY": -0.535349
+   },
+   "d": [
+    0.62778,
+    -1.177089,
+    -2.71355,
+    -3.722631
+   ],
+   "ncat": 5,
+   "source_var": "V242555",
+   "source_label": "Discrimination in the US against men",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "diversity_better",
+   "dim": "EQUITY",
+   "a": 1.305333,
+   "slopes": {
+    "G": 1.305333,
+    "EQUITY": -0.079679
+   },
+   "d": [
+    1.076833,
+    0.141794,
+    -2.740807,
+    -3.412792
+   ],
+   "ncat": 5,
+   "source_var": "V242349x",
+   "source_label": "Increasing diversity has made the US a better or worse place to live",
+   "high_pole": "a lot worse"
+  },
+  {
+   "id": "immig_policy",
+   "dim": "EQUITY",
+   "a": 1.617789,
+   "slopes": {
+    "G": 1.617789,
+    "EQUITY": 0.018056
+   },
+   "d": [
+    2.787128,
+    -0.533362,
+    -1.608731
+   ],
+   "ncat": 4,
+   "source_var": "V241386",
+   "source_label": "Policy toward unauthorized immigrants (felony+deport ... citizenship without penalty)",
+   "high_pole": "make felons and deport"
+  },
+  {
+   "id": "end_birthright",
+   "dim": "EQUITY",
+   "a": 1.265195,
+   "slopes": {
+    "G": 1.265195,
+    "EQUITY": 0.010171
+   },
+   "d": [
+    1.257014,
+    0.457594,
+    0.305448,
+    -1.294242,
+    -1.495982,
+    -2.205313
+   ],
+   "ncat": 7,
+   "source_var": "V241387+V241388",
+   "source_label": "Ending birthright citizenship",
+   "high_pole": "favor ending"
+  },
+  {
+   "id": "dreamers",
+   "dim": "EQUITY",
+   "a": 1.378568,
+   "slopes": {
+    "G": 1.378568,
+    "EQUITY": 0.049341
+   },
+   "d": [
+    0.232413,
+    -1.490891,
+    -2.302353,
+    -2.563564,
+    -3.415745
+   ],
+   "ncat": 6,
+   "source_var": "V241390+V241391",
+   "source_label": "Children brought illegally: sent back vs allowed to live and work in the US",
+   "high_pole": "sent back"
+  },
+  {
+   "id": "border_wall",
+   "dim": "ESTAB",
+   "a": 2.386744,
+   "slopes": {
+    "G": 2.386744,
+    "ESTAB": 0.005205
+   },
+   "d": [
+    2.444613,
+    1.538642,
+    1.320072,
+    -0.41113,
+    -0.651204,
+    -1.472139
+   ],
+   "ncat": 7,
+   "source_var": "V241393+V241394",
+   "source_label": "Building a wall on the US border with Mexico",
+   "high_pole": "favor"
+  },
+  {
+   "id": "spend_border",
+   "dim": "THREAT",
+   "a": 1.589628,
+   "slopes": {
+    "G": 1.589628,
+    "THREAT": 0.589533
+   },
+   "d": [
+    3.101406,
+    1.110925
+   ],
+   "ncat": 3,
+   "source_var": "V241267",
+   "source_label": "Federal spending on tightening border security to prevent illegal immigration",
+   "high_pole": "increase"
+  },
+  {
+   "id": "immig_level",
+   "dim": "EQUITY",
+   "a": 1.01977,
+   "slopes": {
+    "G": 1.01977,
+    "EQUITY": -0.100747
+   },
+   "d": [
+    2.974448,
+    1.847925,
+    -0.230141,
+    -1.29036
+   ],
+   "ncat": 5,
+   "source_var": "V242227",
+   "source_label": "Number of immigrants permitted to come to the US should be increased a lot ... decreased a lot",
+   "high_pole": "decreased a lot"
+  },
+  {
+   "id": "immig_jobs",
+   "dim": "THREAT",
+   "a": 1.745802,
+   "slopes": {
+    "G": 1.745802,
+    "THREAT": 0.032577
+   },
+   "d": [
+    0.943384,
+    -1.162188,
+    -2.476914
+   ],
+   "ncat": 4,
+   "source_var": "V242228",
+   "source_label": "How likely recent immigration levels will take jobs away from people already here",
+   "high_pole": "extremely likely"
+  },
+  {
+   "id": "immig_crime",
+   "dim": "ESTAB",
+   "a": 2.026125,
+   "slopes": {
+    "G": 2.026125,
+    "ESTAB": 0.261074
+   },
+   "d": [
+    7.317842,
+    6.107831,
+    5.548774,
+    0.906926,
+    0.082818,
+    -1.582146
+   ],
+   "ncat": 7,
+   "source_var": "V242231x",
+   "source_label": "Effect of illegal immigration on the crime rate",
+   "high_pole": "increase a lot"
+  },
+  {
+   "id": "path_citizenship",
+   "dim": "EQUITY",
+   "a": 1.135524,
+   "slopes": {
+    "G": 1.135524,
+    "EQUITY": 0.047962
+   },
+   "d": [
+    1.019847,
+    -0.324851,
+    -0.649159,
+    -1.718901,
+    -1.868553,
+    -2.53648
+   ],
+   "ncat": 7,
+   "source_var": "V242234x",
+   "source_label": "Providing a path to citizenship for unauthorized immigrants",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "immig_economy",
+   "dim": "EQUITY",
+   "a": 1.278901,
+   "slopes": {
+    "G": 1.278901,
+    "EQUITY": -0.070706
+   },
+   "d": [
+    1.941219,
+    0.072362,
+    -0.664888,
+    -1.87198,
+    -2.505772,
+    -3.510642
+   ],
+   "ncat": 7,
+   "source_var": "V242235",
+   "source_label": "Immigrants are generally good or bad for America's economy",
+   "high_pole": "extremely bad"
+  },
+  {
+   "id": "immig_adapt",
+   "dim": "GENDER",
+   "a": 1.126022,
+   "slopes": {
+    "G": 1.126022,
+    "GENDER": -0.14422
+   },
+   "d": [
+    3.193089,
+    1.699731,
+    0.143671,
+    -1.234495
+   ],
+   "ncat": 5,
+   "source_var": "V242236",
+   "source_label": "How important for immigrants to adapt to the customs and traditions of the US",
+   "high_pole": "extremely important"
+  },
+  {
+   "id": "english_important",
+   "dim": "GENDER",
+   "a": 1.080093,
+   "slopes": {
+    "G": 1.080093,
+    "GENDER": -0.168063
+   },
+   "d": [
+    3.183922,
+    1.928509,
+    0.01425
+   ],
+   "ncat": 4,
+   "source_var": "V241396",
+   "source_label": "How important is it that people in the US be able to speak English",
+   "high_pole": "very important"
+  },
+  {
+   "id": "natid_born",
+   "dim": "G",
+   "a": 0.854482,
+   "slopes": {
+    "G": 0.854482
+   },
+   "d": [
+    1.558056,
+    0.086245,
+    -1.373677
+   ],
+   "ncat": 4,
+   "source_var": "V242454",
+   "source_label": "Importance of having been born in the US to being truly American",
+   "high_pole": "very important"
+  },
+  {
+   "id": "natid_english",
+   "dim": "GENDER",
+   "a": 1.235845,
+   "slopes": {
+    "G": 1.235845,
+    "GENDER": -0.113515
+   },
+   "d": [
+    3.516495,
+    2.004085,
+    -0.155146
+   ],
+   "ncat": 4,
+   "source_var": "V242455",
+   "source_label": "Importance of being able to speak English to being truly American",
+   "high_pole": "very important"
+  },
+  {
+   "id": "death_penalty",
+   "dim": "GENDER",
+   "a": 1.108242,
+   "slopes": {
+    "G": 1.108242,
+    "GENDER": -0.072483
+   },
+   "d": [
+    1.875935,
+    0.644636,
+    -0.559401
+   ],
+   "ncat": 4,
+   "source_var": "V241306+V241307",
+   "source_label": "Death penalty for persons convicted of murder",
+   "high_pole": "favor"
+  },
+  {
+   "id": "spend_crime",
+   "dim": "ESTAB",
+   "a": 0.844868,
+   "slopes": {
+    "G": 0.844868,
+    "ESTAB": -0.121045
+   },
+   "d": [
+    3.036052,
+    0.777056
+   ],
+   "ncat": 3,
+   "source_var": "V241270",
+   "source_label": "Federal spending on dealing with crime",
+   "high_pole": "increase"
+  },
+  {
+   "id": "urban_unrest7",
+   "dim": "GENDER",
+   "a": 1.824214,
+   "slopes": {
+    "G": 1.824214,
+    "GENDER": -0.086475
+   },
+   "d": [
+    1.718649,
+    0.992705,
+    0.30419,
+    -0.924147,
+    -1.924464,
+    -2.772684
+   ],
+   "ncat": 7,
+   "source_var": "V241397",
+   "source_label": "7-pt: solve problems of racism and police violence ... use all available force to maintain law and order",
+   "high_pole": "use all available force"
+  },
+  {
+   "id": "police_force",
+   "dim": "EQUITY",
+   "a": 0.72254,
+   "slopes": {
+    "G": 0.72254,
+    "EQUITY": 0.632505
+   },
+   "d": [
+    3.343751,
+    1.632187,
+    -0.406569,
+    -4.244774
+   ],
+   "ncat": 5,
+   "source_var": "V242336",
+   "source_label": "How often do police officers use more force than is necessary",
+   "high_pole": "never"
+  },
+  {
+   "id": "gun_buying",
+   "dim": "GOV",
+   "a": 1.555382,
+   "slopes": {
+    "G": 1.555382,
+    "GOV": 0.644976
+   },
+   "d": [
+    -0.419929,
+    -3.725059
+   ],
+   "ncat": 3,
+   "source_var": "V242325",
+   "source_label": "Federal government should make it more difficult or easier to buy a gun",
+   "high_pole": "easier"
+  },
+  {
+   "id": "gun_background",
+   "dim": "GOV",
+   "a": 0.818455,
+   "slopes": {
+    "G": 0.818455,
+    "GOV": 0.748934
+   },
+   "d": [
+    -0.980435,
+    -1.997221,
+    -2.275689,
+    -3.358322,
+    -3.57095,
+    -4.318305
+   ],
+   "ncat": 7,
+   "source_var": "V242328x",
+   "source_label": "Background checks for gun purchases",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "assault_ban",
+   "dim": "GOV",
+   "a": 1.148194,
+   "slopes": {
+    "G": 1.148194,
+    "GOV": 0.504566
+   },
+   "d": [
+    0.28918,
+    -0.084283,
+    -0.184689,
+    -1.229002,
+    -1.43488,
+    -2.018141
+   ],
+   "ncat": 7,
+   "source_var": "V242331x",
+   "source_label": "Banning 'assault-style' rifles",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "voter_id",
+   "dim": "ESTAB",
+   "a": 1.349192,
+   "slopes": {
+    "G": 1.349192,
+    "ESTAB": 0.252845
+   },
+   "d": [
+    3.938225,
+    2.92658,
+    2.75713,
+    1.389769,
+    1.100989,
+    0.237954
+   ],
+   "ncat": 7,
+   "source_var": "V241317+V241318",
+   "source_label": "Requiring all people to show a government issued photo ID when they vote",
+   "high_pole": "favor"
+  },
+  {
+   "id": "felon_voting",
+   "dim": "NORMS",
+   "a": 0.661904,
+   "slopes": {
+    "G": 0.661904,
+    "NORMS": 0.299096
+   },
+   "d": [
+    0.98694,
+    -0.1507,
+    -0.502954,
+    -1.869582,
+    -2.02975,
+    -2.696457
+   ],
+   "ncat": 7,
+   "source_var": "V241320+V241321",
+   "source_label": "Allowing convicted felons to vote once they complete their sentence",
+   "high_pole": "oppose"
+  },
+  {
+   "id": "cr_respect",
+   "dim": "CULT",
+   "a": 1.02633,
+   "slopes": {
+    "G": 1.02633,
+    "CULT": 0.677427
+   },
+   "d": [
+    0.955381,
+    0.869787
+   ],
+   "ncat": 3,
+   "source_var": "V242260",
+   "source_label": "Independence vs respect for elders",
+   "high_pole": "respect for elders"
+  },
+  {
+   "id": "cr_manners",
+   "dim": "CULT",
+   "a": 0.922937,
+   "slopes": {
+    "G": 0.922937,
+    "CULT": 0.514157
+   },
+   "d": [
+    0.470634,
+    0.36455
+   ],
+   "ncat": 3,
+   "source_var": "V242261",
+   "source_label": "Curiosity vs good manners",
+   "high_pole": "good manners"
+  },
+  {
+   "id": "cr_obedience",
+   "dim": "CULT",
+   "a": 0.796766,
+   "slopes": {
+    "G": 0.796766,
+    "CULT": 0.74193
+   },
+   "d": [
+    -0.377316,
+    -0.464603
+   ],
+   "ncat": 3,
+   "source_var": "V242262",
+   "source_label": "Obedience vs self-reliance",
+   "high_pole": "obedience"
+  },
+  {
+   "id": "cr_behaved",
+   "dim": "CULT",
+   "a": 0.611066,
+   "slopes": {
+    "G": 0.611066,
+    "CULT": 0.373407
+   },
+   "d": [
+    -0.803605,
+    -0.950149
+   ],
+   "ncat": 3,
+   "source_var": "V242263",
+   "source_label": "Being considerate vs well behaved",
+   "high_pole": "well behaved"
+  },
+  {
+   "id": "trust_gov",
+   "dim": "ESTAB",
+   "a": 0.629753,
+   "slopes": {
+    "G": 0.629753,
+    "ESTAB": 1.421314
+   },
+   "d": [
+    5.413662,
+    2.437221,
+    0.393508,
+    -2.424353
+   ],
+   "ncat": 5,
+   "source_var": "V241229",
+   "source_label": "How often trust the federal government to do what is right",
+   "high_pole": "never"
+  },
+  {
+   "id": "trust_courts",
+   "dim": "TRUST",
+   "a": 0.072043,
+   "slopes": {
+    "G": 0.072043,
+    "TRUST": 0.924961
+   },
+   "d": [
+    4.610843,
+    1.288328,
+    -0.093574,
+    -2.6945
+   ],
+   "ncat": 5,
+   "source_var": "V241230",
+   "source_label": "How often trust the court system to do what is right",
+   "high_pole": "never"
+  },
+  {
+   "id": "trust_media",
+   "dim": "ESTAB",
+   "a": 1.044169,
+   "slopes": {
+    "G": 1.044169,
+    "ESTAB": 1.218009
+   },
+   "d": [
+    4.20473,
+    2.608966,
+    0.30827,
+    -1.748315
+   ],
+   "ncat": 5,
+   "source_var": "V241335",
+   "source_label": "Trust and confidence in the news media",
+   "high_pole": "none"
+  },
+  {
+   "id": "trust_congress",
+   "dim": "TRUST",
+   "a": -0.203233,
+   "slopes": {
+    "G": -0.203233,
+    "TRUST": 2.698381
+   },
+   "d": [
+    6.857077,
+    0.37346,
+    -3.476013
+   ],
+   "ncat": 4,
+   "source_var": "V242417",
+   "source_label": "Trust in Congress",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "trust_government",
+   "dim": "TRUST",
+   "a": 0.369298,
+   "slopes": {
+    "G": 0.369298,
+    "TRUST": 3.065919
+   },
+   "d": [
+    7.196622,
+    0.176427,
+    -3.594565
+   ],
+   "ncat": 4,
+   "source_var": "V242418",
+   "source_label": "Trust in government",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "trust_judiciary",
+   "dim": "TRUST",
+   "a": -0.228413,
+   "slopes": {
+    "G": -0.228413,
+    "TRUST": 1.733017
+   },
+   "d": [
+    3.627247,
+    -0.904118,
+    -3.276151
+   ],
+   "ncat": 4,
+   "source_var": "V242419",
+   "source_label": "Trust in the judiciary",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "trust_scientists",
+   "dim": "CULT",
+   "a": 1.406357,
+   "slopes": {
+    "G": 1.406357,
+    "CULT": 0.355675
+   },
+   "d": [
+    0.855679,
+    -2.202064,
+    -3.789306
+   ],
+   "ncat": 4,
+   "source_var": "V242420",
+   "source_label": "Trust in scientists",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "trust_parties",
+   "dim": "TRUST",
+   "a": -0.205942,
+   "slopes": {
+    "G": -0.205942,
+    "TRUST": 1.78773
+   },
+   "d": [
+    5.984935,
+    0.79088,
+    -2.291305
+   ],
+   "ncat": 4,
+   "source_var": "V242421",
+   "source_label": "Trust in political parties",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "trust_trad_media",
+   "dim": "ESTAB",
+   "a": 0.859793,
+   "slopes": {
+    "G": 0.859793,
+    "ESTAB": 1.075608
+   },
+   "d": [
+    3.675287,
+    0.160067,
+    -1.741036
+   ],
+   "ncat": 4,
+   "source_var": "V242422",
+   "source_label": "Trust in traditional media",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "votes_counted",
+   "dim": "ESTAB",
+   "a": 1.398991,
+   "slopes": {
+    "G": 1.398991,
+    "ESTAB": 1.194576
+   },
+   "d": [
+    2.5041,
+    0.110582,
+    -1.928693,
+    -3.196945
+   ],
+   "ncat": 5,
+   "source_var": "V241314",
+   "source_label": "How accurately will votes be counted in the November 2024 election",
+   "high_pole": "not at all accurately"
+  },
+  {
+   "id": "trust_election_officials",
+   "dim": "ESTAB",
+   "a": 1.000849,
+   "slopes": {
+    "G": 1.000849,
+    "ESTAB": 1.324306
+   },
+   "d": [
+    1.618812,
+    0.163529,
+    -1.713405,
+    -3.034336
+   ],
+   "ncat": 5,
+   "source_var": "V241315",
+   "source_label": "Trust the officials who oversee elections where you live",
+   "high_pole": "not at all"
+  },
+  {
+   "id": "vote_denied",
+   "dim": "G",
+   "a": -0.576757,
+   "slopes": {
+    "G": -0.576757
+   },
+   "d": [
+    1.827417,
+    -0.136292,
+    -2.032667,
+    -3.593087
+   ],
+   "ncat": 5,
+   "source_var": "V241316",
+   "source_label": "How often are eligible voters denied the right to vote",
+   "high_pole": "very often"
+  },
+  {
+   "id": "big_interests",
+   "dim": "ESTAB",
+   "a": 0.388761,
+   "slopes": {
+    "G": 0.388761,
+    "ESTAB": 1.577372
+   },
+   "d": [
+    2.229703
+   ],
+   "ncat": 2,
+   "source_var": "V241231",
+   "source_label": "Government run by a few big interests vs for the benefit of all",
+   "high_pole": "run by a few big interests"
+  },
+  {
+   "id": "gov_waste",
+   "dim": "ESTAB",
+   "a": 0.982836,
+   "slopes": {
+    "G": 0.982836,
+    "ESTAB": 1.232649
+   },
+   "d": [
+    4.570806,
+    1.167907
+   ],
+   "ncat": 3,
+   "source_var": "V241232",
+   "source_label": "Do people in government waste tax money",
+   "high_pole": "waste a lot"
+  },
+  {
+   "id": "gov_corrupt",
+   "dim": "ESTAB",
+   "a": 0.488829,
+   "slopes": {
+    "G": 0.488829,
+    "ESTAB": 1.553269
+   },
+   "d": [
+    6.136632,
+    1.257298,
+    -0.863419,
+    -4.127325
+   ],
+   "ncat": 5,
+   "source_var": "V241233",
+   "source_label": "How many of the people running the government are corrupt",
+   "high_pole": "all"
+  },
+  {
+   "id": "elections_attention",
+   "dim": "TRUST",
+   "a": 0.366138,
+   "slopes": {
+    "G": 0.366138,
+    "TRUST": 0.736728
+   },
+   "d": [
+    1.034444,
+    -1.469018
+   ],
+   "ncat": 3,
+   "source_var": "V241235",
+   "source_label": "How much do elections make the government pay attention to what people think",
+   "high_pole": "not much"
+  },
+  {
+   "id": "donors_orgs",
+   "dim": "NORMS",
+   "a": -0.14956,
+   "slopes": {
+    "G": -0.14956,
+    "NORMS": -0.314767
+   },
+   "d": [
+    2.251721,
+    0.864664,
+    -0.519283,
+    -1.643273
+   ],
+   "ncat": 5,
+   "source_var": "V242215",
+   "source_label": "Congress passes laws that benefit organizations that contribute",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "votes_for_donations",
+   "dim": "NORMS",
+   "a": -0.146051,
+   "slopes": {
+    "G": -0.146051,
+    "NORMS": -0.465879
+   },
+   "d": [
+    3.787223,
+    2.006069,
+    -0.049461,
+    -1.822998
+   ],
+   "ncat": 5,
+   "source_var": "V242217",
+   "source_label": "Members of Congress change their votes because of campaign donations",
+   "high_pole": "all the time"
+  },
+  {
+   "id": "system_insiders",
+   "dim": "TRUST",
+   "a": -0.53152,
+   "slopes": {
+    "G": -0.53152,
+    "TRUST": 0.794372
+   },
+   "d": [
+    3.151598,
+    2.098456,
+    -0.185089,
+    -1.472588
+   ],
+   "ncat": 5,
+   "source_var": "V242304",
+   "source_label": "'Our political system only works for the insiders with money and power'",
+   "high_pole": "extremely well"
+  },
+  {
+   "id": "rich_powerful",
+   "dim": "GOV",
+   "a": -0.81002,
+   "slopes": {
+    "G": -0.81002,
+    "GOV": -0.586128
+   },
+   "d": [
+    2.755272,
+    1.294102,
+    -0.650254,
+    -1.72502
+   ],
+   "ncat": 5,
+   "source_var": "V242305",
+   "source_label": "'Because of the rich and powerful it becomes difficult for the rest of us to get ahead'",
+   "high_pole": "extremely well"
+  },
+  {
+   "id": "corruption_widespread",
+   "dim": "TRUST",
+   "a": 0.057122,
+   "slopes": {
+    "G": 0.057122,
+    "TRUST": 0.868448
+   },
+   "d": [
+    3.997264,
+    1.522078,
+    -0.832287
+   ],
+   "ncat": 4,
+   "source_var": "V242456",
+   "source_label": "How widespread is corruption such as bribe taking among politicians",
+   "high_pole": "very widespread"
+  },
+  {
+   "id": "norm_press_free",
+   "dim": "NORMS",
+   "a": 0.627466,
+   "slopes": {
+    "G": 0.627466,
+    "NORMS": 1.371067
+   },
+   "d": [
+    0.740196,
+    -0.493144,
+    -2.198127,
+    -3.010296
+   ],
+   "ncat": 5,
+   "source_var": "V241324",
+   "source_label": "Importance that news organizations are free to criticize political leaders",
+   "high_pole": "not important"
+  },
+  {
+   "id": "norm_checks",
+   "dim": "NORMS",
+   "a": 0.690335,
+   "slopes": {
+    "G": 0.690335,
+    "NORMS": 2.685158
+   },
+   "d": [
+    -0.2629,
+    -2.693255,
+    -5.34767,
+    -6.835544
+   ],
+   "ncat": 5,
+   "source_var": "V241325",
+   "source_label": "Importance that the branches keep one another from having too much power",
+   "high_pole": "not important"
+  },
+  {
+   "id": "norm_consequences",
+   "dim": "NORMS",
+   "a": 0.813995,
+   "slopes": {
+    "G": 0.813995,
+    "NORMS": 2.052792
+   },
+   "d": [
+    -0.90327,
+    -3.183494,
+    -5.204639,
+    -6.605904
+   ],
+   "ncat": 5,
+   "source_var": "V241326",
+   "source_label": "Importance that elected officials face serious consequences for misconduct",
+   "high_pole": "not important"
+  },
+  {
+   "id": "norm_facts",
+   "dim": "NORMS",
+   "a": 0.572492,
+   "slopes": {
+    "G": 0.572492,
+    "NORMS": 1.427782
+   },
+   "d": [
+    0.796331,
+    -1.373591,
+    -3.583,
+    -4.6582
+   ],
+   "ncat": 5,
+   "source_var": "V241327",
+   "source_label": "Importance that people agree on basic facts even if they disagree politically",
+   "high_pole": "not important"
+  },
+  {
+   "id": "pres_unchecked",
+   "dim": "NORMS",
+   "a": 0.231636,
+   "slopes": {
+    "G": 0.231636,
+    "NORMS": 0.6719
+   },
+   "d": [
+    0.768596,
+    -0.194537,
+    -0.368163,
+    -1.695057,
+    -1.882801,
+    -3.047133
+   ],
+   "ncat": 7,
+   "source_var": "V241328+V241329",
+   "source_label": "Helpful/harmful if presidents could work without paying attention to Congress and the courts",
+   "high_pole": "helpful"
+  },
+  {
+   "id": "restrict_journalists",
+   "dim": "NORMS",
+   "a": 0.410311,
+   "slopes": {
+    "G": 0.410311,
+    "NORMS": 0.95873
+   },
+   "d": [
+    0.816677,
+    -0.239318,
+    -0.475369,
+    -2.251448,
+    -2.445207,
+    -3.544337
+   ],
+   "ncat": 7,
+   "source_var": "V241331+V241332",
+   "source_label": "Elected officials restricting journalists' access to information about government decision-making",
+   "high_pole": "favor"
+  },
+  {
+   "id": "media_undermined",
+   "dim": "NORMS",
+   "a": 0.22795,
+   "slopes": {
+    "G": 0.22795,
+    "NORMS": 1.135448
+   },
+   "d": [
+    1.403891,
+    -0.095318,
+    -1.836089,
+    -3.082587
+   ],
+   "ncat": 5,
+   "source_var": "V241334",
+   "source_label": "Concern that people in government might want to undermine the news media's ability to check power",
+   "high_pole": "not at all concerned"
+  },
+  {
+   "id": "prefer_democracy",
+   "dim": "FOREIGN",
+   "a": 0.141579,
+   "slopes": {
+    "G": 0.141579,
+    "FOREIGN": -0.58727
+   },
+   "d": [
+    0.029582,
+    -1.030345,
+    -2.568383,
+    -3.627658
+   ],
+   "ncat": 5,
+   "source_var": "V242409",
+   "source_label": "'Democracy is always and under all circumstances preferable to any other kind of government'",
+   "high_pole": "strongly disagree"
+  },
+  {
+   "id": "courts_stop_gov",
+   "dim": "NORMS",
+   "a": 0.341561,
+   "slopes": {
+    "G": 0.341561,
+    "NORMS": 0.740217
+   },
+   "d": [
+    0.123322,
+    -1.441564,
+    -2.902222,
+    -3.699502
+   ],
+   "ncat": 5,
+   "source_var": "V242410",
+   "source_label": "'The courts should be able to stop the government acting beyond its authority'",
+   "high_pole": "strongly disagree"
+  },
+  {
+   "id": "strong_leader",
+   "dim": "GENDER",
+   "a": 0.973514,
+   "slopes": {
+    "G": 0.973514,
+    "GENDER": 0.280547
+   },
+   "d": [
+    1.222324,
+    0.124674,
+    -0.827992,
+    -2.392624
+   ],
+   "ncat": 5,
+   "source_var": "V242411",
+   "source_label": "'Having a strong leader in government is good even if the leader bends the rules'",
+   "high_pole": "strongly agree"
+  },
+  {
+   "id": "rule_business",
+   "dim": "GENDER",
+   "a": 0.846871,
+   "slopes": {
+    "G": 0.846871,
+    "GENDER": 0.328146
+   },
+   "d": [
+    0.021292,
+    -0.915265,
+    -2.224833,
+    -4.112582
+   ],
+   "ncat": 5,
+   "source_var": "V242413",
+   "source_label": "Country would be run better if decisions were left to successful business leaders",
+   "high_pole": "strongly agree"
+  },
+  {
+   "id": "rule_experts",
+   "dim": "THREAT",
+   "a": -0.25033,
+   "slopes": {
+    "G": -0.25033,
+    "THREAT": -0.389366
+   },
+   "d": [
+    0.632685,
+    -0.230054,
+    -1.483018,
+    -3.162671
+   ],
+   "ncat": 5,
+   "source_var": "V242414",
+   "source_label": "Country would be run better if decisions were left to independent experts",
+   "high_pole": "strongly agree"
+  },
+  {
+   "id": "stay_home",
+   "dim": "FOREIGN",
+   "a": -0.517727,
+   "slopes": {
+    "G": -0.517727,
+    "FOREIGN": 0.986491
+   },
+   "d": [
+    2.116311,
+    0.909988,
+    -0.678432
+   ],
+   "ncat": 4,
+   "source_var": "V241310+V241311",
+   "source_label": "'This country would be better off if we just stayed home and did not concern ourselves with problems in other parts of the world'",
+   "high_pole": "disagree (engaged)"
+  },
+  {
+   "id": "defense7",
+   "dim": "THREAT",
+   "a": 0.967634,
+   "slopes": {
+    "G": 0.967634,
+    "THREAT": 0.504375
+   },
+   "d": [
+    2.94704,
+    2.206054,
+    1.338167,
+    -0.054468,
+    -1.117427,
+    -2.137422
+   ],
+   "ncat": 7,
+   "source_var": "V241242",
+   "source_label": "7-pt: greatly decrease ... greatly increase defense spending",
+   "high_pole": "greatly increase"
+  },
+  {
+   "id": "ukraine_weapons",
+   "dim": "ESTAB",
+   "a": -0.889666,
+   "slopes": {
+    "G": -0.889666,
+    "ESTAB": -0.69449
+   },
+   "d": [
+    2.109416,
+    1.359902,
+    1.141237,
+    -0.251483,
+    -0.535646,
+    -1.566124
+   ],
+   "ncat": 7,
+   "source_var": "V241398+V241399",
+   "source_label": "US giving weapons to help Ukraine fight Russia",
+   "high_pole": "favor"
+  },
+  {
+   "id": "israel_military_aid",
+   "dim": "FOREIGN",
+   "a": 1.36862,
+   "slopes": {
+    "G": 1.36862,
+    "FOREIGN": 2.582005
+   },
+   "d": [
+    3.224294,
+    2.128582,
+    1.813767,
+    -0.743067,
+    -1.221716,
+    -2.869824
+   ],
+   "ncat": 7,
+   "source_var": "V241401+V241402",
+   "source_label": "US giving military assistance to Israel",
+   "high_pole": "favor"
+  },
+  {
+   "id": "palestinian_aid",
+   "dim": "NORMS",
+   "a": -1.508248,
+   "slopes": {
+    "G": -1.508248,
+    "NORMS": -0.603904
+   },
+   "d": [
+    3.174852,
+    2.516579,
+    2.284377,
+    0.290853,
+    -0.063043,
+    -1.275791
+   ],
+   "ncat": 7,
+   "source_var": "V241404+V241405",
+   "source_label": "US giving humanitarian aid to Palestinians in Gaza",
+   "high_pole": "favor"
+  },
+  {
+   "id": "side_israel",
+   "dim": "FOREIGN",
+   "a": 2.907447,
+   "slopes": {
+    "G": 2.907447,
+    "FOREIGN": 3.138346
+   },
+   "d": [
+    6.824822,
+    5.310003,
+    5.029155,
+    -2.287093,
+    -2.770188,
+    -4.263639
+   ],
+   "ncat": 7,
+   "source_var": "V241407+V241408",
+   "source_label": "Side more with Israelis or Palestinians (with strength)",
+   "high_pole": "Israelis a lot"
+  },
+  {
+   "id": "gaza_protests",
+   "dim": "FOREIGN",
+   "a": 1.717978,
+   "slopes": {
+    "G": 1.717978,
+    "FOREIGN": 0.865129
+   },
+   "d": [
+    3.458181,
+    2.269457,
+    1.871104,
+    -0.584408,
+    -0.858094,
+    -1.753212
+   ],
+   "ncat": 7,
+   "source_var": "V241410+V241411",
+   "source_label": "Approve/disapprove of protests against the war in Gaza",
+   "high_pole": "disapprove a lot"
+  },
+  {
+   "id": "us_better",
+   "dim": "TRUST",
+   "a": 0.478756,
+   "slopes": {
+    "G": 0.478756,
+    "TRUST": -0.563888
+   },
+   "d": [
+    2.614725,
+    1.320471,
+    0.074441,
+    -1.100204
+   ],
+   "ncat": 5,
+   "source_var": "V242266x",
+   "source_label": "Is the US better or worse than most other countries",
+   "high_pole": "a lot better"
+  },
+  {
+   "id": "threat_china",
+   "dim": "THREAT",
+   "a": 0.646695,
+   "slopes": {
+    "G": 0.646695,
+    "THREAT": 2.156462
+   },
+   "d": [
+    5.075398,
+    2.768441,
+    0.413217,
+    -1.271768
+   ],
+   "ncat": 5,
+   "source_var": "V242365",
+   "source_label": "How much is China a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "threat_russia",
+   "dim": "THREAT",
+   "a": -0.56215,
+   "slopes": {
+    "G": -0.56215,
+    "THREAT": 3.012474
+   },
+   "d": [
+    6.431143,
+    3.801162,
+    0.798182,
+    -1.241711
+   ],
+   "ncat": 5,
+   "source_var": "V242366",
+   "source_label": "How much is Russia a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "threat_mexico",
+   "dim": "THREAT",
+   "a": 0.804103,
+   "slopes": {
+    "G": 0.804103,
+    "THREAT": 0.432025
+   },
+   "d": [
+    0.535563,
+    -0.90822,
+    -2.411749,
+    -3.665072
+   ],
+   "ncat": 5,
+   "source_var": "V242367",
+   "source_label": "How much is Mexico a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "threat_iran",
+   "dim": "THREAT",
+   "a": 0.743751,
+   "slopes": {
+    "G": 0.743751,
+    "THREAT": 2.158901
+   },
+   "d": [
+    4.275014,
+    2.140877,
+    -0.160176,
+    -1.874105
+   ],
+   "ncat": 5,
+   "source_var": "V242368",
+   "source_label": "How much is Iran a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "threat_japan",
+   "dim": "NORMS",
+   "a": 0.397027,
+   "slopes": {
+    "G": 0.397027,
+    "NORMS": 0.714442
+   },
+   "d": [
+    -0.089304,
+    -1.158733,
+    -2.53924,
+    -3.437762
+   ],
+   "ncat": 5,
+   "source_var": "V242369",
+   "source_label": "How much is Japan a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "threat_israel",
+   "dim": "FOREIGN",
+   "a": -0.415773,
+   "slopes": {
+    "G": -0.415773,
+    "FOREIGN": -1.014787
+   },
+   "d": [
+    0.316831,
+    -0.827171,
+    -2.4279,
+    -3.397396
+   ],
+   "ncat": 5,
+   "source_var": "V242370",
+   "source_label": "How much is Israel a threat to the US",
+   "high_pole": "a great deal"
+  },
+  {
+   "id": "import_limits",
+   "dim": "ESTAB",
+   "a": 1.262835,
+   "slopes": {
+    "G": 1.262835,
+    "ESTAB": 0.113636
+   },
+   "d": [
+    1.414863,
+    -0.01996,
+    -1.344976
+   ],
+   "ncat": 4,
+   "source_var": "V242226x",
+   "source_label": "Placing new limits on imports",
+   "high_pole": "favor strongly"
+  },
+  {
+   "id": "free_trade",
+   "dim": "NORMS",
+   "a": 0.386131,
+   "slopes": {
+    "G": 0.386131,
+    "NORMS": 0.640381
+   },
+   "d": [
+    2.201332,
+    0.673009,
+    0.321217,
+    -2.631211,
+    -2.795509,
+    -3.54809
+   ],
+   "ncat": 7,
+   "source_var": "V242346x",
+   "source_label": "Free trade agreements with other countries",
+   "high_pole": "oppose"
+  }
+ ],
+ "norms_percentiles_1_to_99": {
+  "G": [
+   -2.4016722966435617,
+   -2.109916482854937,
+   -1.9604827365819975,
+   -1.8296234596140328,
+   -1.7254220042024768,
+   -1.6480756871843307,
+   -1.5412197020717164,
+   -1.4680095565310398,
+   -1.4058811726309517,
+   -1.3334622687200866,
+   -1.2740940849613167,
+   -1.2107803443912242,
+   -1.1689876523869231,
+   -1.1283832977712012,
+   -1.0800374466134588,
+   -1.0311675091734862,
+   -0.9835482447039535,
+   -0.9429747966268692,
+   -0.8943828274195642,
+   -0.8445325777611832,
+   -0.8001135221912817,
+   -0.7662003454370572,
+   -0.7146815230700581,
+   -0.674290857051176,
+   -0.6338140858344263,
+   -0.6000558880907224,
+   -0.571090143105148,
+   -0.5384620634741997,
+   -0.4977070674003155,
+   -0.47416520987627925,
+   -0.4402978808857378,
+   -0.4126577000264357,
+   -0.386920594889709,
+   -0.35955036347782154,
+   -0.33253876828957196,
+   -0.30873781355092805,
+   -0.27790759953750876,
+   -0.24996205798774773,
+   -0.22146747187585153,
+   -0.20200143678247073,
+   -0.17826249464623273,
+   -0.15929706994432924,
+   -0.1340484139541805,
+   -0.10840694068132536,
+   -0.08772688773618967,
+   -0.05943464749994762,
+   -0.03585899126256173,
+   -0.01826122949757733,
+   2.877457632056228e-05,
+   0.022619576870704483,
+   0.05004073223864859,
+   0.07407445543962402,
+   0.09371550162736457,
+   0.11729349336563849,
+   0.14737122334997257,
+   0.17298888018472194,
+   0.1936390648236894,
+   0.2178752208432494,
+   0.24085338035976028,
+   0.2622024858528698,
+   0.2861290948541269,
+   0.31138942130996317,
+   0.33123015939148526,
+   0.35914442516824985,
+   0.39547961069162024,
+   0.423502016439442,
+   0.45020736699757796,
+   0.48279228906852434,
+   0.5061746987342879,
+   0.5255207982013114,
+   0.5464931568504703,
+   0.5765714927606561,
+   0.5990050468658933,
+   0.6234713849098156,
+   0.6504586106688833,
+   0.6851896121301306,
+   0.7156650826182397,
+   0.7395427914803789,
+   0.7717243162689569,
+   0.8059133523074457,
+   0.8368069741503518,
+   0.8688315005073928,
+   0.8995183029095524,
+   0.9328341920824844,
+   0.9608560889805238,
+   1.0049862743537552,
+   1.0484414562516997,
+   1.095494895748262,
+   1.129400719690477,
+   1.189631721240855,
+   1.2321657656132485,
+   1.2746369822889827,
+   1.3442947112488919,
+   1.4141355851657704,
+   1.4853580056362952,
+   1.5586433571254643,
+   1.6612532178040609,
+   1.7726524596888114,
+   2.057558393240811
+  ],
+  "CULT": [
+   -1.770468415668486,
+   -1.4908646851588758,
+   -1.3593063634461668,
+   -1.2591390354758896,
+   -1.2011970027281302,
+   -1.13239022972921,
+   -1.088783338816221,
+   -1.0260211640248431,
+   -0.9829107824893454,
+   -0.955946061328082,
+   -0.9251298866493147,
+   -0.8877502048857573,
+   -0.846768567988366,
+   -0.8216780727334488,
+   -0.7973226693228337,
+   -0.7639188543556675,
+   -0.7392889708024168,
+   -0.7194435158371708,
+   -0.6994906747618078,
+   -0.6610562542205581,
+   -0.6350327187110334,
+   -0.6179601250335293,
+   -0.5925838057694458,
+   -0.5665404276845698,
+   -0.5438953518616059,
+   -0.5269897276414981,
+   -0.5073323352626407,
+   -0.4836860489513606,
+   -0.46011517493750687,
+   -0.439346826940172,
+   -0.41841866887094775,
+   -0.40632262060331886,
+   -0.3876831544000828,
+   -0.37256692969178185,
+   -0.35593374489064444,
+   -0.3382039771501568,
+   -0.3142700130954611,
+   -0.289977863045987,
+   -0.2715645646334871,
+   -0.24430289247552298,
+   -0.23006069479606917,
+   -0.2116056491746101,
+   -0.1918660318826515,
+   -0.17118232869546557,
+   -0.15345750621857887,
+   -0.13630049994557406,
+   -0.1042569397460004,
+   -0.08090798780903016,
+   -0.06283261215313632,
+   -0.0415817409798338,
+   -0.024125527509677457,
+   -0.007525876928720378,
+   -0.003927917804703601,
+   -0.0014609139813622015,
+   -8.931567110376874e-05,
+   0.0017558421377155927,
+   0.017658548193121865,
+   0.0390705104596112,
+   0.0624956515470791,
+   0.09581231072164567,
+   0.11428460248530799,
+   0.14032031594197925,
+   0.16194302255409762,
+   0.18428920229635434,
+   0.21040080239392342,
+   0.2351535160283434,
+   0.26162470417467,
+   0.28271597848897795,
+   0.3082593846365038,
+   0.33065452868554196,
+   0.3575509088373805,
+   0.3827657578172339,
+   0.40873809930810834,
+   0.4429002452230448,
+   0.4835046804295672,
+   0.5116877783039733,
+   0.5472157034775617,
+   0.5874514778769112,
+   0.6112042699724629,
+   0.6430849650850278,
+   0.6775615255620828,
+   0.7235938546682654,
+   0.7549116169415767,
+   0.7943400726017932,
+   0.8344098109825143,
+   0.8657018044933266,
+   0.9257104014343536,
+   0.956523498789801,
+   0.9983138364314499,
+   1.0558571660571876,
+   1.1127596738441876,
+   1.1578019177742052,
+   1.242467069115786,
+   1.3116708548847928,
+   1.4092405343133352,
+   1.5258523173468823,
+   1.6155430649328293,
+   1.7822818132777063,
+   2.0655047033737994
+  ],
+  "EQUITY": [
+   -2.068032052368843,
+   -1.8754187404001543,
+   -1.6966753436290198,
+   -1.588634763814282,
+   -1.451410799722488,
+   -1.3573138809266339,
+   -1.2336167542161298,
+   -1.1535223085688204,
+   -1.0992652327844443,
+   -1.0364234287957987,
+   -1.0006717877018303,
+   -0.9678980454839882,
+   -0.9165477865638435,
+   -0.868188001184726,
+   -0.811263498642839,
+   -0.7670104470620397,
+   -0.7288925828075598,
+   -0.6908153175075339,
+   -0.6386062320974322,
+   -0.6100454305763688,
+   -0.5735021367154336,
+   -0.5438397913616242,
+   -0.5093161287319145,
+   -0.47968942463794473,
+   -0.44153468755372755,
+   -0.4071978004431628,
+   -0.3663153593778003,
+   -0.3353929469429664,
+   -0.30951083351513003,
+   -0.2915315110347712,
+   -0.27488349255124034,
+   -0.25693417201376506,
+   -0.2370037196558636,
+   -0.21007300077742483,
+   -0.1785162467617229,
+   -0.15979380095315865,
+   -0.1452011588724262,
+   -0.12803424610896938,
+   -0.10706851634913962,
+   -0.08663468032709822,
+   -0.06385055425897998,
+   -0.048409260186919593,
+   -0.03358368602021965,
+   -0.02602982202625992,
+   -0.021142921466765458,
+   -0.014932393002951613,
+   -0.011147511455700134,
+   -0.006323724036331928,
+   -0.0013515147256913376,
+   0.0017093373225353717,
+   0.007631442616778884,
+   0.013352332455721106,
+   0.01991963287769934,
+   0.025405743645323487,
+   0.031152385306874374,
+   0.037739297528674116,
+   0.046991070185611765,
+   0.05770511431405217,
+   0.06770355606095756,
+   0.08643114319665127,
+   0.1069085754101627,
+   0.13726921190457816,
+   0.16247691857053334,
+   0.1834138754268476,
+   0.20563070720122306,
+   0.24280304109111303,
+   0.26581723556294706,
+   0.28169084972874386,
+   0.3084597237708906,
+   0.33418673692915785,
+   0.365433910573944,
+   0.3928059180168278,
+   0.4129247766683069,
+   0.4346386522516223,
+   0.45756291194712123,
+   0.4897608867341448,
+   0.52520603169278,
+   0.5589301763415517,
+   0.5958966808308418,
+   0.633428583267634,
+   0.6631016329579478,
+   0.6970220392558433,
+   0.7333931082884833,
+   0.768302997658469,
+   0.8063515852339103,
+   0.8428995492275241,
+   0.8941565235868407,
+   0.9319299533884458,
+   0.987406089452323,
+   1.0434500584122643,
+   1.0896675075002749,
+   1.1403179051881593,
+   1.2097027985187132,
+   1.2849216379783488,
+   1.3556931372990204,
+   1.4782010002586852,
+   1.6577855673798976,
+   1.824028794941514,
+   2.1073581072594143
+  ],
+  "ESTAB": [
+   -2.0440846760163462,
+   -1.7584412965055698,
+   -1.6375277764402663,
+   -1.4973976519794934,
+   -1.4126959739381906,
+   -1.333498048890554,
+   -1.2560946880372759,
+   -1.1966803540788225,
+   -1.1442643421281435,
+   -1.093426812745438,
+   -1.0393916565448407,
+   -0.9973514067255526,
+   -0.9554016516424966,
+   -0.9102354834476485,
+   -0.8698975338371543,
+   -0.8311836817170105,
+   -0.7900545451451134,
+   -0.7592529466092944,
+   -0.7270084725201077,
+   -0.6991557868897493,
+   -0.677289443662338,
+   -0.6495598502488178,
+   -0.622035063397222,
+   -0.5961384481912688,
+   -0.5713904239533135,
+   -0.5536075626414234,
+   -0.5274064119478242,
+   -0.5066932305879881,
+   -0.4773482583956453,
+   -0.45621896117702676,
+   -0.43316066662199326,
+   -0.4098430562424456,
+   -0.3854234507251913,
+   -0.36554389603381543,
+   -0.3416445332914026,
+   -0.31673541127924787,
+   -0.2993922904315457,
+   -0.2806920014121743,
+   -0.2543491313712376,
+   -0.23560481092466296,
+   -0.2145459409926838,
+   -0.19033018281489641,
+   -0.16550056981614084,
+   -0.13977425039969243,
+   -0.12454835997238749,
+   -0.11028520242269144,
+   -0.09172075581935026,
+   -0.06573088237297882,
+   -0.05312952629312764,
+   -0.03330899556717143,
+   -0.008563714599392959,
+   0.011252461509179256,
+   0.03172568895165475,
+   0.05200042637157389,
+   0.0771259709853456,
+   0.09276146154550664,
+   0.10959358104786564,
+   0.13163481068799524,
+   0.1540635097813444,
+   0.16908910063037746,
+   0.1886109508844863,
+   0.21995858403599494,
+   0.24824818789780193,
+   0.2700966910471703,
+   0.30130167757824694,
+   0.32689072411575015,
+   0.3477061432933718,
+   0.37480285749233716,
+   0.40277960121697454,
+   0.42108811075106695,
+   0.4436187971937503,
+   0.47831726589845325,
+   0.5062460704093315,
+   0.5334384885597985,
+   0.5652656453625229,
+   0.6054724718544224,
+   0.626169987231538,
+   0.6669645743991978,
+   0.6825872570874564,
+   0.7083703462936883,
+   0.7526147584044112,
+   0.7791321494323029,
+   0.8167894826485874,
+   0.858592267107707,
+   0.9007478739089539,
+   0.934022451172587,
+   0.9763424131778715,
+   1.0238155762644905,
+   1.075481283502675,
+   1.1242059992466973,
+   1.1815346282197121,
+   1.2256777005231885,
+   1.2751631490364588,
+   1.3435492806395262,
+   1.4422443692244782,
+   1.544840324296331,
+   1.6877536012332497,
+   1.8529101038764422,
+   2.151818926107056
+  ],
+  "FOREIGN": [
+   -1.9437213951796632,
+   -1.7233734220691175,
+   -1.5912543872434108,
+   -1.4769585617620424,
+   -1.4092289405900813,
+   -1.3259631049331462,
+   -1.245143296503574,
+   -1.1993094921061802,
+   -1.1411981244898453,
+   -1.0948998101450083,
+   -1.0617207840870242,
+   -1.0021489066356188,
+   -0.9572878668960898,
+   -0.9143792339541792,
+   -0.8846853647051819,
+   -0.8430746977927813,
+   -0.8007614892758979,
+   -0.7605533681401968,
+   -0.7226428064516612,
+   -0.6814619350636227,
+   -0.6536221993762894,
+   -0.6246287936551521,
+   -0.6003688656193783,
+   -0.5671509371780045,
+   -0.5566061415926501,
+   -0.5325310482816299,
+   -0.49388192604874664,
+   -0.4744147222277436,
+   -0.45193778878932184,
+   -0.42983326963614965,
+   -0.40612746037629527,
+   -0.38671548242288173,
+   -0.364012825575241,
+   -0.33638197448436735,
+   -0.3187751429165025,
+   -0.2957953386797116,
+   -0.27801671314870147,
+   -0.26249827843371437,
+   -0.23842097588134006,
+   -0.21940606041088148,
+   -0.20628193601824785,
+   -0.18476096418829138,
+   -0.16558099538297397,
+   -0.14695250238399302,
+   -0.12558647605705137,
+   -0.10628865069220506,
+   -0.07551567720748359,
+   -0.05394744314533323,
+   -0.02729336269995979,
+   -0.011446272283687981,
+   -0.0030931725113364037,
+   -0.0003037781421125991,
+   0.0014634700012321731,
+   0.003365568266621022,
+   0.016038279314799835,
+   0.03159484230217714,
+   0.06432285331450491,
+   0.0943699092597,
+   0.12003889147702043,
+   0.1441127684264413,
+   0.1674089374470148,
+   0.19787052844345993,
+   0.2160405229715013,
+   0.25018819310425117,
+   0.27135740853082535,
+   0.2916995203093788,
+   0.31944761934965954,
+   0.3465137384039356,
+   0.37341215551756496,
+   0.4016942966501071,
+   0.4346547945589115,
+   0.4592271720367763,
+   0.4894531501114977,
+   0.5238546861449653,
+   0.5538357383184057,
+   0.595568257486704,
+   0.636993942579525,
+   0.6703967086745706,
+   0.7117274533009209,
+   0.749089710522008,
+   0.7967171341524129,
+   0.847450783050996,
+   0.8863021468555123,
+   0.9369115107786493,
+   0.9802264845379461,
+   1.0233991788034178,
+   1.065647289124748,
+   1.095923135028229,
+   1.136421102308341,
+   1.1774160637245845,
+   1.2355779210438038,
+   1.2928398531910097,
+   1.3357620024158636,
+   1.4017814670329438,
+   1.449725137237095,
+   1.5229421974484534,
+   1.5976770897901433,
+   1.7130846940950444,
+   1.9642276510779317
+  ],
+  "GENDER": [
+   -1.6602748847749103,
+   -1.4736453166989387,
+   -1.3821369970354391,
+   -1.2974798698624503,
+   -1.2235280526265098,
+   -1.1518940511641833,
+   -1.0746075890657814,
+   -1.0175136742122133,
+   -0.9815208776864434,
+   -0.9452467075790894,
+   -0.9058441508226543,
+   -0.8630704345519997,
+   -0.83418061437193,
+   -0.8014650886859905,
+   -0.7766060128713373,
+   -0.7430427601114155,
+   -0.7156194905560502,
+   -0.6949641595514985,
+   -0.6557651837151117,
+   -0.6320778263040329,
+   -0.6094259174617922,
+   -0.5847350116730583,
+   -0.5576982280451048,
+   -0.5301785001288372,
+   -0.5000340468140381,
+   -0.47418965581039896,
+   -0.4487004450839914,
+   -0.4197021696325729,
+   -0.40159409680202685,
+   -0.3726665634192512,
+   -0.3474484657280539,
+   -0.32371409827177305,
+   -0.3032654433404296,
+   -0.265198062923371,
+   -0.2359859918548404,
+   -0.2130922948999949,
+   -0.19423886390797318,
+   -0.1703310322235952,
+   -0.1519280001169439,
+   -0.1315852114881542,
+   -0.11826979883375108,
+   -0.10569188060197796,
+   -0.091915627650886,
+   -0.08237126592826106,
+   -0.06908365047601224,
+   -0.05508508335425711,
+   -0.04542633791821599,
+   -0.03289407341253584,
+   -0.01554883659619098,
+   -0.00042803840442869436,
+   0.007409029150943864,
+   0.0195300680294491,
+   0.029723704000768153,
+   0.04276650388942007,
+   0.05384312164076887,
+   0.06540987859091207,
+   0.07840238117333805,
+   0.0880335688317647,
+   0.10143606658124617,
+   0.11482780224526834,
+   0.12469208678468385,
+   0.13801167430851635,
+   0.161110274739077,
+   0.18542321036290146,
+   0.20048629390609546,
+   0.21930631768853168,
+   0.2368107260557915,
+   0.25458501763185715,
+   0.2774679831226688,
+   0.3060923403694092,
+   0.33350268032370567,
+   0.3559658297650335,
+   0.3820440022083716,
+   0.40288509648641374,
+   0.4381789360968463,
+   0.4640633488021711,
+   0.49021937611171995,
+   0.5303025471045814,
+   0.5683054136305109,
+   0.6048320122245919,
+   0.6333417400432988,
+   0.6499723197441672,
+   0.6848775380672008,
+   0.7195640883633674,
+   0.7597928948445771,
+   0.8075357723095938,
+   0.8534555035854303,
+   0.8827213826964564,
+   0.9104350450297813,
+   0.9509321921583963,
+   1.0222891660195377,
+   1.080641897967945,
+   1.129419096688451,
+   1.2038800364097628,
+   1.2813482990231948,
+   1.414812921840388,
+   1.5798850005317817,
+   1.740018916656531,
+   2.041249625564916
+  ],
+  "GOV": [
+   -2.0638525103475103,
+   -1.8187665349345508,
+   -1.6999029642988337,
+   -1.5913116541613435,
+   -1.468080667403427,
+   -1.3998936369865156,
+   -1.3171479178146903,
+   -1.245863910826775,
+   -1.1738124786102875,
+   -1.1082735776020791,
+   -1.0543043194012145,
+   -1.0145179588211024,
+   -0.9728932186394301,
+   -0.9304859183514654,
+   -0.8877757618751488,
+   -0.8524720132288428,
+   -0.8073748858006592,
+   -0.7710365919008663,
+   -0.741268100027242,
+   -0.7088322163502295,
+   -0.6722126246112798,
+   -0.6487440427886472,
+   -0.6194460999847833,
+   -0.6038975810310919,
+   -0.5778925332995147,
+   -0.5576671749767808,
+   -0.5177133647094478,
+   -0.4944568760584144,
+   -0.4712737737928334,
+   -0.4464236236078594,
+   -0.4199434187125595,
+   -0.38780532526625566,
+   -0.36514423308371063,
+   -0.33958069765845283,
+   -0.2996059552487353,
+   -0.27333655645415356,
+   -0.2467640805876741,
+   -0.2190768120483649,
+   -0.19943241215820964,
+   -0.17434767957916428,
+   -0.1563136489586167,
+   -0.13109832048362505,
+   -0.10591573283482796,
+   -0.08717308831483582,
+   -0.06617642864122117,
+   -0.045877073251351694,
+   -0.026780843359093382,
+   -0.007812146682158328,
+   0.0011506062349804008,
+   0.02552323405573007,
+   0.03960775827013164,
+   0.0531456189101926,
+   0.07461108183858767,
+   0.09665124227211655,
+   0.11627140494500464,
+   0.13847048304090465,
+   0.15741451438539472,
+   0.1721059284330587,
+   0.1968456841687803,
+   0.21399814418340296,
+   0.2440933922053539,
+   0.2666363462449632,
+   0.2813990147347049,
+   0.30882148191558917,
+   0.3209702401177488,
+   0.34414589671595336,
+   0.3635972054610832,
+   0.39106696322725665,
+   0.41376418577167734,
+   0.43028513790994694,
+   0.45957347565152007,
+   0.4852956384623357,
+   0.5141748803720878,
+   0.5377602119865125,
+   0.5635030626888736,
+   0.5932409131015927,
+   0.6119657645545137,
+   0.6403052544336512,
+   0.675922513562272,
+   0.7068507339430724,
+   0.7319805089806837,
+   0.7637389025632951,
+   0.7887806953629013,
+   0.8215213352332189,
+   0.8558801578589726,
+   0.892683287404405,
+   0.9348098906125052,
+   0.9767293206277291,
+   1.011273205391109,
+   1.049566475020019,
+   1.1029458460744728,
+   1.1538098102322187,
+   1.227459994543247,
+   1.2975816141531793,
+   1.356851213468714,
+   1.4243872710642156,
+   1.5575227078101308,
+   1.7064859487840118,
+   2.060680771802783
+  ],
+  "NORMS": [
+   -1.7979825788666415,
+   -1.664473566743446,
+   -1.5232583012428678,
+   -1.4387359653079546,
+   -1.3505924549089408,
+   -1.2936161517426394,
+   -1.2609432502732993,
+   -1.214257817656459,
+   -1.1669061193894084,
+   -1.1393205590182292,
+   -1.10439558086668,
+   -1.0568555931758683,
+   -1.0122689554719482,
+   -0.9769520857624814,
+   -0.9430471264331514,
+   -0.9191496673363018,
+   -0.8811809032368952,
+   -0.8466908248154655,
+   -0.8046608528770877,
+   -0.7660136424864067,
+   -0.7379852627369163,
+   -0.7101008858779481,
+   -0.6790275332369139,
+   -0.6450613903043355,
+   -0.6112283335244372,
+   -0.5785374620405128,
+   -0.5459751583241476,
+   -0.5232958644618746,
+   -0.5020263268589723,
+   -0.47787350509429277,
+   -0.44974412503664746,
+   -0.42411958237013364,
+   -0.393549682716996,
+   -0.3564364944213914,
+   -0.3290865359968692,
+   -0.307390527608519,
+   -0.2793813453291283,
+   -0.2511986096885024,
+   -0.22596008436928716,
+   -0.20904703273284947,
+   -0.1856692024388655,
+   -0.16162731362023475,
+   -0.13667479490987,
+   -0.11199219653251774,
+   -0.08077204950755858,
+   -0.05725571079844472,
+   -0.027636463232563753,
+   -0.014619155301342347,
+   -0.005841550295930112,
+   -0.0026369278372903033,
+   -0.0005007395965062945,
+   0.0015210247663432865,
+   0.006278540992337672,
+   0.027367069929535432,
+   0.04969005838503816,
+   0.06859850215798563,
+   0.08088650231898853,
+   0.1031425946689205,
+   0.13179938659319748,
+   0.15481629778170064,
+   0.17697178721000037,
+   0.20056630258341124,
+   0.21796448744983027,
+   0.2570161852977542,
+   0.29005820242901564,
+   0.3165406571437206,
+   0.34510940718534744,
+   0.3783153931784011,
+   0.40205470773626073,
+   0.426959519471157,
+   0.4507190589701941,
+   0.48062307370539364,
+   0.5050860836265819,
+   0.5282039733768402,
+   0.5518449042946783,
+   0.583136568645605,
+   0.6196455134473445,
+   0.6494618519088172,
+   0.6921264044765035,
+   0.7448569568003357,
+   0.7755331224566714,
+   0.8184122864418061,
+   0.847841822512438,
+   0.9009956425070109,
+   0.9486792412021822,
+   0.9865796490080933,
+   1.026313635320186,
+   1.0647087852382295,
+   1.126960923968538,
+   1.1766956667330613,
+   1.2117404901284448,
+   1.2703688783693188,
+   1.326957227556041,
+   1.4088365045886582,
+   1.4544600113167665,
+   1.563219987831838,
+   1.6733691349606576,
+   1.805054305781626,
+   2.1664576720268727
+  ],
+  "THREAT": [
+   -2.3445490191355134,
+   -1.9248666301758421,
+   -1.6147148926818429,
+   -1.518703443281231,
+   -1.4603561421474998,
+   -1.381243311778328,
+   -1.2772419519726999,
+   -1.1930503930981866,
+   -1.1224162161080178,
+   -1.0690563461164795,
+   -0.9998862843358424,
+   -0.9545871786695876,
+   -0.9045781272157084,
+   -0.8401915675617045,
+   -0.8135943361720013,
+   -0.7712489742622594,
+   -0.7318598548603225,
+   -0.6889400567830624,
+   -0.6644165558463936,
+   -0.6321684317037891,
+   -0.6108256991988372,
+   -0.6010727217742863,
+   -0.5861679690142557,
+   -0.5657548494628305,
+   -0.5444712248669202,
+   -0.5183101777725105,
+   -0.4904055912311343,
+   -0.4669162302745919,
+   -0.4405546444989886,
+   -0.41782963134490875,
+   -0.394821449692024,
+   -0.3698915326531315,
+   -0.3471232509678073,
+   -0.317792454692781,
+   -0.301294095605986,
+   -0.27701632688587186,
+   -0.2573191991457631,
+   -0.23310891569381903,
+   -0.21166382445729076,
+   -0.19171848026901725,
+   -0.16914440017267338,
+   -0.153575619377328,
+   -0.12987777993398766,
+   -0.108616686805183,
+   -0.0836981735676249,
+   -0.060867310379061804,
+   -0.039546677956043365,
+   -0.018099524078455703,
+   -0.002587407317010829,
+   0.0034330500265115273,
+   0.021809041867429036,
+   0.046190179190990714,
+   0.056601773477412735,
+   0.07999017768646041,
+   0.09980539686126928,
+   0.11645536135832327,
+   0.1336425499775642,
+   0.1500932216619386,
+   0.1714586148453161,
+   0.19056185444291365,
+   0.20881751578066274,
+   0.22707677121156353,
+   0.24715592560111838,
+   0.26287444570385177,
+   0.28672941445155,
+   0.30854994094394156,
+   0.326788630829631,
+   0.3569648441865022,
+   0.37405834192149023,
+   0.39922963711207515,
+   0.42316124563021973,
+   0.45741984811247577,
+   0.49110751530189106,
+   0.5134639346264097,
+   0.5375415182670664,
+   0.5675819555745738,
+   0.5989421050092629,
+   0.6272669433792067,
+   0.6546559868806152,
+   0.6807732221390483,
+   0.7219807039004655,
+   0.7464533775224769,
+   0.7893620728298908,
+   0.8455183603963888,
+   0.8877628668598668,
+   0.9559731049932345,
+   1.0313060045511404,
+   1.1122910631896537,
+   1.1655502027772393,
+   1.1958118789664094,
+   1.2272782811357013,
+   1.2712222676459135,
+   1.3082467649602534,
+   1.3463110492166506,
+   1.3878065089060923,
+   1.4369388321822743,
+   1.5073322693650861,
+   1.5672633149832158,
+   1.6947735170809728
+  ],
+  "TRUST": [
+   -2.003958810764708,
+   -1.6430221225823267,
+   -1.4492158509105166,
+   -1.319845589039423,
+   -1.2482252154962568,
+   -1.1963129401400814,
+   -1.1510942075595503,
+   -1.0953619057325321,
+   -1.0472574500836866,
+   -1.019245432557268,
+   -0.997319799723123,
+   -0.975338215885361,
+   -0.9460227952942604,
+   -0.9280891568723671,
+   -0.8988156358084355,
+   -0.8724962627388048,
+   -0.845208285687435,
+   -0.820315841721152,
+   -0.7885295528391911,
+   -0.7661509131540747,
+   -0.7424492974350182,
+   -0.7206806215343545,
+   -0.6997984560544196,
+   -0.6830080750298917,
+   -0.6626095089403374,
+   -0.6454965597619958,
+   -0.618074169474493,
+   -0.5833389963362725,
+   -0.5504139431052171,
+   -0.5225131548535858,
+   -0.4950232740369848,
+   -0.4688603826000504,
+   -0.444028238576977,
+   -0.4128509709419217,
+   -0.3845010241233884,
+   -0.34947340302941776,
+   -0.3231480070479776,
+   -0.28987529730900136,
+   -0.2538648374166025,
+   -0.2261519745446047,
+   -0.19855096683138515,
+   -0.1705731457914153,
+   -0.14584607676409572,
+   -0.12708421150069757,
+   -0.10272471626114972,
+   -0.08561599864818269,
+   -0.07635629772481128,
+   -0.05946551212885946,
+   -0.04063113905498802,
+   -0.006378222679509182,
+   0.001739019128536936,
+   0.029781574582080524,
+   0.06163605944119165,
+   0.08982843156767031,
+   0.12515927826659848,
+   0.156217380118183,
+   0.18275341827904865,
+   0.20544176943828052,
+   0.22859560118182912,
+   0.24572383471200615,
+   0.2650364605887875,
+   0.2814469537630053,
+   0.29721977665806193,
+   0.314813254571284,
+   0.3269034729358913,
+   0.3430105224408168,
+   0.3559379950572186,
+   0.3710717195273064,
+   0.39341050673533884,
+   0.4193984691150518,
+   0.4433709487143883,
+   0.46965799242632705,
+   0.49445403587709313,
+   0.5081698484804433,
+   0.5261372412715964,
+   0.5572915211570559,
+   0.581242522400386,
+   0.6001657554529664,
+   0.6248384314860509,
+   0.6409563837418291,
+   0.6635858870515692,
+   0.6897575789345279,
+   0.7182568142354787,
+   0.7525960049366897,
+   0.783560503560938,
+   0.8376033803463577,
+   0.8854709336914705,
+   0.9484509064358585,
+   1.0158826488357313,
+   1.0836167357169433,
+   1.167017987294222,
+   1.2314068740003945,
+   1.299912853572307,
+   1.39920343573891,
+   1.5810407616462558,
+   1.6747374987431134,
+   1.8392708445244976,
+   1.968006725856297,
+   2.156696076779986
+  ]
+ },
+ "dropped_items": [
+  "spend_highways",
+  "donors_individuals",
+  "rule_referendums",
+  "compromise",
+  "use_force"
+ ],
+ "overrides": {
+  "rr_try_harder": "EQUITY",
+  "rr_no_favors": "EQUITY",
+  "egal_worry_less": "GOV",
+  "egal_not_big_problem": "GOV"
+ }
+}

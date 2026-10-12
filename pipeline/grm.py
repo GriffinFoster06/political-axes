@@ -84,11 +84,24 @@ def _item_negloglik(v, r, theta):
 
 @dataclass
 class Item:
+    """One item. `dim`/`a` give its primary dimension and slope; `slopes`
+    (optional) gives slopes on several dimensions for within-item models
+    such as the bifactor model (then `a` is the primary slope)."""
     item_id: str
     dim: str
     a: float
     d: np.ndarray
     ncat: int
+    slopes: dict | None = None
+
+    def avec(self, dim_idx: dict, D: int) -> np.ndarray:
+        v = np.zeros(D)
+        if self.slopes:
+            for k, a in self.slopes.items():
+                v[dim_idx[k]] = a
+        else:
+            v[dim_idx[self.dim]] = self.a
+        return v
 
 
 @dataclass
@@ -251,7 +264,7 @@ def score_eap(responses: dict[str, int], items: list[Item], dims: list[str],
     """EAP + posterior SD for one respondent under the correlated MVN prior."""
     D = len(dims)
     dim_idx = {d: i for i, d in enumerate(dims)}
-    used = [(dim_idx[it.dim], it, responses[it.item_id]) for it in items
+    used = [(it.avec(dim_idx, D), it, responses[it.item_id]) for it in items
             if it.item_id in responses and responses[it.item_id] is not None]
     Sinv = np.linalg.inv(Sigma)
 
@@ -259,11 +272,11 @@ def score_eap(responses: dict[str, int], items: list[Item], dims: list[str],
         lp = -0.5 * t @ Sinv @ t
         g = -Sinv @ t
         H = -Sinv.copy()
-        for di, it, k in used:
-            l, g1, h1 = _item_ll_and_derivs(t[di], it.a, it.d, k)
+        for av, it, k in used:
+            l, g1, h1 = _item_ll_and_derivs(float(av @ t), 1.0, it.d, k)
             lp += l
-            g[di] += g1
-            H[di, di] += h1
+            g += av * g1
+            H += np.outer(av, av) * h1
         return lp, g, H
 
     # Newton for the posterior mode
@@ -292,8 +305,8 @@ def score_eap(responses: dict[str, int], items: list[Item], dims: list[str],
     # log proposal (up to the same constant for every draw)
     logq = -0.5 * (Z ** 2).sum(axis=1)
     logp = -0.5 * np.einsum("nd,de,ne->n", draws, Sinv, draws)
-    for di, it, k in used:
-        logp += np.log(cat_probs(it.a, it.d, draws[:, di])[:, k])
+    for av, it, k in used:
+        logp += np.log(cat_probs(1.0, it.d, draws @ av)[:, k])
     lw = logp - logq
     lw -= lw.max()
     wgt = np.exp(lw)

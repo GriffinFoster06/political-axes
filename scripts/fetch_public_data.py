@@ -43,7 +43,7 @@ CES = {
     "ces2024": "doi:10.7910/DVN/X11EP6",
     "ces_cumulative": "doi:10.7910/DVN/II2DB6",
 }
-CES_KEEP_EXT = (".dta", ".csv", ".feather", ".tab", ".pdf", ".rds")
+CES_KEEP_EXT = (".csv", ".feather", ".pdf")  # one format per file; .dta/.rds duplicate these
 
 
 def get(url: str, dest: Path, retries: int = 3) -> dict:

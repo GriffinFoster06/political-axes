@@ -1,0 +1,10 @@
+{
+ "bifactor_minus_9corr_logloss_95ci": [
+  -0.028,
+  -0.022
+ ],
+ "bifactor_minus_2axis_logloss_95ci": [
+  -0.0592,
+  -0.0508
+ ]
+}

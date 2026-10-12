@@ -12,8 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "pipeline"))
 from grm import Item, score_eap  # noqa: E402
 
-params = json.loads((ROOT / "model" / "params.json").read_text())
-items = [Item(i["id"], i["dim"], i["a"], np.array(i["d"]), i["ncat"]) for i in params["items"]]
+
+MODEL_FILE = sys.argv[1] if len(sys.argv) > 1 else "params.json"
+OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "fixtures.json"
+params = json.loads((ROOT / "model" / MODEL_FILE).read_text())
+items = [Item(i["id"], i["dim"], i["a"], np.array(i["d"]), i["ncat"], i.get("slopes"))
+         for i in params["items"]]
 dims = [d["id"] for d in params["dimensions"]]
 S = np.array(params["sigma"])
 sc = params["scoring"]
@@ -34,5 +38,5 @@ for c in cases:
     c["expected"] = {"mean": out["mean"].tolist(), "sd": out["sd"].tolist(),
                      "map": out["map"].tolist(), "ess": out["ess"]}
 
-(Path(__file__).parent / "fixtures.json").write_text(json.dumps(cases))
+(Path(__file__).parent / OUT_FILE).write_text(json.dumps(cases))
 print("wrote", len(cases), "cases")

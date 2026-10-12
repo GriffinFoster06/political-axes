@@ -15,6 +15,9 @@ export interface ItemParams {
   a: number;
   d: number[]; // decreasing intercepts, length ncat - 1
   ncat: number;
+  /** Slopes on several dimensions (within-item / bifactor models). When
+   *  present it replaces {dim: a}. */
+  slopes?: Record<string, number>;
 }
 
 export interface ModelParams {
@@ -158,19 +161,30 @@ export function scoreEAP(responses: Responses, model: ModelParams, opts: Partial
   let nDraws = opts.draws ?? model.scoring.draws;
   const seed = opts.seed ?? model.scoring.seed;
   const inflate = opts.inflate ?? model.scoring.inflate;
-  const used: [number, ItemParams, number][] = [];
+  const used: [number[], ItemParams, number][] = [];
   for (const it of model.items) {
     const r = responses[it.id];
     if (r === null || r === undefined) continue;
     if (!Number.isInteger(r) || r < 0 || r >= it.ncat) throw new Error(`bad response ${r} for ${it.id}`);
-    used.push([dimIdx.get(it.dim)!, it, r]);
+    const av = new Array(D).fill(0);
+    if (it.slopes) {
+      for (const [k, a] of Object.entries(it.slopes)) av[dimIdx.get(k)!] = a;
+    } else {
+      av[dimIdx.get(it.dim)!] = it.a;
+    }
+    used.push([av, it, r]);
   }
+  const dot = (av: number[], t: number[]) => {
+    let s = 0;
+    for (let i = 0; i < D; i++) s += av[i] * t[i];
+    return s;
+  };
   const Sinv = invertSPD(model.sigma);
 
   const logpost = (t: number[]) => {
     let lp = 0;
     for (let i = 0; i < D; i++) for (let j = 0; j < D; j++) lp -= 0.5 * t[i] * Sinv[i][j] * t[j];
-    for (const [di, it, k] of used) lp += Math.log(catProb(it.a, it.d, t[di], k));
+    for (const [av, it, k] of used) lp += Math.log(catProb(1, it.d, dot(av, t), k));
     return lp;
   };
   const lgh = (t: number[]): [number, number[], number[][]] => {
@@ -183,11 +197,14 @@ export function scoreEAP(responses: Responses, model: ModelParams, opts: Partial
         g[i] -= Sinv[i][j] * t[j];
       }
     }
-    for (const [di, it, k] of used) {
-      const [l, g1, h1] = itemLLDerivs(t[di], it.a, it.d, k);
+    for (const [av, it, k] of used) {
+      const [l, g1, h1] = itemLLDerivs(dot(av, t), 1, it.d, k);
       lp += l;
-      g[di] += g1;
-      H[di][di] += h1;
+      for (let i = 0; i < D; i++) {
+        if (av[i] === 0) continue;
+        g[i] += av[i] * g1;
+        for (let j = 0; j < D; j++) if (av[j] !== 0) H[i][j] += av[i] * av[j] * h1;
+      }
     }
     return [lp, g, H];
   };

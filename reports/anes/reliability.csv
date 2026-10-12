@@ -1,0 +1,11 @@
+dimension,label,items,empirical_reliability,corr_with_self_label
+G,General left-right,136,0.9518780985696718,0.7721644758793639
+CULT,Moral traditionalism & authority in child-rearing,15,0.6133640763876792,0.18155860746776514
+EQUITY,Perceived discrimination & group equity,20,0.7044197825334413,-0.0049969086507822055
+ESTAB,"Distrust of mainstream media, elections & experts",17,0.7597090528188056,0.12790170768301323
+FOREIGN,Support for Israel & foreign engagement,6,0.7223108046143836,0.09404336983022536
+GENDER,Resentment of women's equality claims,13,0.5715319431284647,-0.021426954362393034
+GOV,"Role of government (economy, environment, guns)",29,0.7318452197055034,0.20558745059321545
+NORMS,Indifference to democratic checks & a free press,15,0.7775302453145224,-0.01353104737779691
+THREAT,Foreign threat perception,8,0.715606358091378,-0.0034125866412391343
+TRUST,"Distrust of government institutions (Congress, courts, parties)",9,0.7202193485983481,0.003981539846900741

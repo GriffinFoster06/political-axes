@@ -1,0 +1,6 @@
+predictors,n,cv_auc
+Self-label only,3574,0.9225699990891159
+General factor only,3948,0.9693520386013222
+General + 9 specific,3948,0.9807965630221872
+General + 9 specific + self-label,3574,0.9842273677360354
+Party ID only (reference; never an input),3938,0.9635273018258939

@@ -12,9 +12,9 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from factor_analyzer import FactorAnalyzer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from efa import efa  # noqa: E402
 from polychoric import nearest_pd, polychoric_matrix  # noqa: E402
 from prep import ROOT, load_gss  # noqa: E402
 
@@ -66,23 +66,13 @@ def main():
 
     rows = []
     for k in range(1, 9):
-        fa = FactorAnalyzer(n_factors=k, rotation="oblimin" if k > 1 else None,
-                            method="minres", is_corr_matrix=True)
-        fa.fit(Rc)
-        L = pd.DataFrame(fa.loadings_, index=items, columns=[f"F{i+1}" for i in range(k)])
-        resid = Rc - L.to_numpy() @ (fa.phi_ if k > 1 and fa.phi_ is not None else np.eye(k)) @ L.to_numpy().T
-        off = resid[np.triu_indices(len(items), 1)]
-        rmsr = float(np.sqrt(np.mean(off ** 2)))
-        L["primary"] = L.abs().idxmax(axis=1)
-        L["max_abs"] = L[[f"F{i+1}" for i in range(k)]].abs().max(axis=1)
+        L, Phi, rmsr = efa(Rc, k, items)
         L["hyp_dim"] = cw.set_index("item_id").loc[items, "hyp_dimension"].values
         L.round(3).to_csv(OUT / f"efa_loadings_k{k}.csv")
-        if k > 1 and fa.phi_ is not None:
-            pd.DataFrame(fa.phi_, index=L.columns[:k], columns=L.columns[:k]).round(3) \
-                .to_csv(OUT / f"efa_phi_k{k}.csv")
+        if k > 1:
+            Phi.round(3).to_csv(OUT / f"efa_phi_k{k}.csv")
         weak = int((L["max_abs"] < 0.30).sum())
-        rows.append({"k": k, "rmsr": rmsr, "items_max_loading_lt_.30": weak,
-                     "var_explained": float(fa.get_factor_variance()[2][-1])})
+        rows.append({"k": k, "rmsr": rmsr, "items_max_loading_lt_.30": weak})
     summ = pd.DataFrame(rows)
     summ.to_csv(OUT / "efa_summary.csv", index=False)
     print(summ.round(4).to_string(index=False))

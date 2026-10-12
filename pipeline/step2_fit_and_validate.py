@@ -124,7 +124,8 @@ def predictive_logloss(items, dims, scores, masked):
             ll.append(np.nan); hit.append(np.nan)
             continue
         s = scores[pos]
-        P = cat_probs(it.a, it.d, s["draws"][:, dim_idx[it.dim]])   # (draws, K)
+        av = it.avec(dim_idx, len(dims))
+        P = cat_probs(1.0, it.d, s["draws"] @ av)                     # (draws, K)
         p = s["weights"] @ P
         ll.append(-np.log(max(p[y], 1e-12)))
         hit.append(float(np.argmax(p) == y))

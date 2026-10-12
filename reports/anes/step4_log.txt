@@ -1,0 +1,115 @@
+items: 136 dropped: ['spend_highways', 'donors_individuals', 'rule_referendums', 'compromise', 'use_force']
+general-only items: ['harassment_too_far', 'rr_no_favors', 'natid_born', 'vote_denied']
+hidden answers: 27905
+fitting 1 dimension (single left-right)
+  LR: 136 items, EM iters 15, converged True
+  done 52s
+fitting 2 dimensions (compass-style)
+  ECO: 29 items, EM iters 10, converged True
+  SOC: 107 items, EM iters 18, converged True
+  done 104s
+fitting 9 correlated dimensions
+  GOV: 29 items, EM iters 10, converged True
+  GENDER: 15 items, EM iters 6, converged True
+  NORMS: 15 items, EM iters 8, converged True
+  CULT: 15 items, EM iters 11, converged True
+  ESTAB: 17 items, EM iters 6, converged True
+  EQUITY: 22 items, EM iters 10, converged True
+  THREAT: 8 items, EM iters 12, converged True
+  TRUST: 9 items, EM iters 9, converged True
+  FOREIGN: 6 items, EM iters 20, converged True
+  done 176s
+fitting bifactor (general + 9 specific)
+  bifactor: 31 EM iterations, converged True
+  done 327s
+                          model  log_loss  accuracy  improvement_vs_marginal_%
+    Average American (marginal)    1.3640    0.4090                     0.0000
+Liberal-conservative self-label    1.2707    0.4625                     6.8445
+             Party ID (7-point)    1.2731    0.4643                     6.6651
+          Self-label x party ID    1.2695    0.4632                     6.9334
+1 dimension (single left-right)    1.2179    0.4902                    10.7103
+   2 dimensions (compass-style)    1.2103    0.4929                    11.2693
+        9 correlated dimensions    1.1805    0.5084                    13.4549
+ Bifactor: general + 9 specific    1.1555    0.5184                    15.2907
+{'bifactor_minus_9corr_logloss_95ci': [-0.028, -0.022], 'bifactor_minus_2axis_logloss_95ci': [-0.0592, -0.0508]}
+final bifactor fit on all respondents
+  bifactor: 32 EM iterations, converged True
+dimension                                                           label  items  empirical_reliability  corr_with_self_label
+        G                                              General left-right    136                  0.952                 0.772
+     CULT               Moral traditionalism & authority in child-rearing     15                  0.613                 0.182
+   EQUITY                         Perceived discrimination & group equity     20                  0.704                -0.005
+    ESTAB               Distrust of mainstream media, elections & experts     17                  0.760                 0.128
+  FOREIGN                         Support for Israel & foreign engagement      6                  0.722                 0.094
+   GENDER                           Resentment of women's equality claims     13                  0.572                -0.021
+      GOV                 Role of government (economy, environment, guns)     29                  0.732                 0.206
+    NORMS                Indifference to democratic checks & a free press     15                  0.778                -0.014
+   THREAT                                       Foreign threat perception      8                  0.716                -0.003
+    TRUST Distrust of government institutions (Congress, courts, parties)      9                  0.720                 0.004
+             G  CULT  EQUITY  ESTAB  ...   GOV  NORMS  THREAT  TRUST
+polviews                             ...                            
+1.0      -1.54 -0.23   -0.16   0.32  ... -0.29  -0.20   -0.13   0.20
+2.0      -1.04 -0.22    0.05  -0.16  ... -0.11  -0.22    0.11  -0.02
+3.0      -0.70 -0.14    0.08  -0.19  ...  0.05  -0.18    0.13  -0.11
+4.0      -0.08 -0.03   -0.01  -0.07  ... -0.03   0.13   -0.07  -0.04
+5.0       0.36  0.00    0.18   0.08  ...  0.25  -0.03   -0.12  -0.03
+6.0       0.86  0.11    0.09   0.11  ...  0.27  -0.23    0.10  -0.08
+7.0       1.17  0.28   -0.02   0.12  ...  0.09  -0.32    0.19   0.12
+
+[7 rows x 10 columns]
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+                               predictors    n  cv_auc
+                          Self-label only 3574   0.923
+                      General factor only 3948   0.969
+                     General + 9 specific 3948   0.981
+        General + 9 specific + self-label 3574   0.984
+Party ID only (reference; never an input) 3938   0.964
+wrote model/params_anes.json (667s)

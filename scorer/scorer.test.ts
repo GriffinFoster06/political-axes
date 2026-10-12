@@ -7,6 +7,8 @@ import { scoreEAP, mulberry32, percentile, catProbs, type ModelParams } from "./
 const here = new URL(".", import.meta.url);
 const model: ModelParams = JSON.parse(readFileSync(new URL("../model/params.json", here), "utf8"));
 const fixtures = JSON.parse(readFileSync(new URL("./fixtures.json", here), "utf8"));
+const anesModel: ModelParams = JSON.parse(readFileSync(new URL("../model/params_anes.json", here), "utf8"));
+const anesFixtures = JSON.parse(readFileSync(new URL("./fixtures_anes.json", here), "utf8"));
 
 test("mulberry32 matches the Python stream", () => {
   const r = mulberry32(20261012);
@@ -25,15 +27,17 @@ test("category probabilities sum to 1", () => {
   }
 });
 
-for (const c of fixtures) {
-  test(`matches Python reference: ${c.name}`, () => {
-    const out = scoreEAP(c.responses, model);
+for (const [label, m, fx] of [["GSS", model, fixtures], ["ANES bifactor", anesModel, anesFixtures]] as const) {
+for (const c of fx) {
+  test(`${label} matches Python reference: ${c.name}`, () => {
+    const out = scoreEAP(c.responses, m);
     for (let i = 0; i < out.mean.length; i++) {
       assert.ok(Math.abs(out.mean[i] - c.expected.mean[i]) < 1e-6, `mean[${i}] ${out.mean[i]} vs ${c.expected.mean[i]}`);
       assert.ok(Math.abs(out.sd[i] - c.expected.sd[i]) < 1e-6, `sd[${i}] ${out.sd[i]} vs ${c.expected.sd[i]}`);
     }
     assert.ok(Math.abs(out.ess - c.expected.ess) / c.expected.ess < 1e-6);
   });
+}
 }
 
 test("no answers returns the prior (mean 0, sd about 1)", () => {

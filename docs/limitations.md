@@ -1,4 +1,4 @@
-# Known limitations (v0.1, GSS-only model)
+# Known limitations (v0.2: GSS model + ANES 2024 bifactor model)
 
 Honest list, kept current. Every item here should either get fixed or stay
 visible on the results page.
@@ -16,9 +16,9 @@ quiz's own items will be linked to.
   1970s (school prayer refers to a 1960s Supreme Court ruling; civil-liberties
   items ask about communists and "militarists"). They work statistically, but
   the quiz needs modern items linked to them.
-- **Missing whole domains.** No foreign policy, trade, AI/technology,
-  democratic norms, or populism items survived into this model. GSS barely asks
-  them. ANES 2024 and the Pew 2026 Typology items are needed for those.
+- **Missing domains (GSS model).** GSS barely asks about foreign policy,
+  trade, democratic norms or populism. The ANES 2024 model covers these;
+  AI/technology is still missing from both.
 - **The economic dimension (ECON) has only 4 items** (the GSS "help" and
   income-differences items). Its reliability is good (.84) but its content is
   narrow. ANES's 7-point scales will broaden it.
@@ -60,3 +60,28 @@ quiz's own items will be linked to.
 - **Directions are named, not judged.** "High" on a dimension means closer to
   the pole named in `params.json`; it is not better or worse.
 - **Who is "average"** comes from the weighted GSS sample, not from quiz-takers.
+
+## Added with the ANES 2024 model
+
+- **One survey, one year.** The ANES model is calibrated on a single 2024
+  election survey, fielded during a campaign. Items about Israel, Gaza,
+  Ukraine and election integrity are tied to that moment, and several are
+  among the strongest measures of the general factor. They need re-checking
+  against later data before they anchor a quiz.
+- **Mixed weights.** Pre- and post-election items are modelled together with
+  the pre-election weight (`V240107a`); post-election items have about 10%
+  fewer respondents.
+- **Specific dimensions are less reliable (.57–.78) than the general factor
+  (.95).** That is inherent to bifactor models; the quiz must show wider
+  uncertainty on them.
+- **The "GENDER" specific factor is really two items** (women seeking special
+  favors; women complaining about discrimination). Other items assigned to it
+  carry almost no specific variance. It needs more items before it means much.
+- **Acquiescence is handled by design, not modelled.** Balanced batteries are
+  kept on one dimension so agreement bias cancels, but there is no explicit
+  acquiescence factor yet.
+- **Two separate models.** GSS and ANES share no identically worded items in
+  this version, so their scores are not on a common scale yet. Linking them
+  needs anchor items asked in both, or a sample that answers both sets.
+- **ANES respondent timings and voter validation files are not used yet.**
+  They allow a speeder check and a validated-turnout check respectively.

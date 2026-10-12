@@ -23,7 +23,9 @@ items are copyrighted and are not used anywhere in this project.
 data" → Run workflow. It also runs monthly. The Action's log lists anything
 that failed.
 
-**ANES 2024:**
+**ANES 2024:** the pipeline reads `data/raw/anes/anes_timeseries_2024_csv_20260519.csv`
+(plus the codebook and questionnaire PDFs for wording). This folder is
+git-ignored. To share it across machines through a private repo:
 1. Sign in at electionstudies.org and download the 2024 Time Series CSV zip.
 2. Make sure the repo is private (Settings → General → Danger Zone → Change
    visibility), or point the script at a separate private repo with
