@@ -42,8 +42,10 @@ are in [`docs/limitations.md`](docs/limitations.md).
 379 questions in `items/drafts/`, covering all 230 subtopics and 29 candidate
 axes, each one a concrete position with a scope line, definitions, sourced
 facts and exception follow-ups where edge cases matter. They are drafts: the
-next step is two-sided review and think-aloud interviews, then pilots
-([`docs/question-bank-plan.md`](docs/question-bank-plan.md) §8–9).
+next step is two-sided review and think-aloud interviews (kit in `review/`),
+then pilots ([`docs/question-bank-plan.md`](docs/question-bank-plan.md) §8–9).
+The pilot app (`app/`), pilot design and pre-registered analysis plan are
+ready.
 
 ## Layout
 
@@ -68,6 +70,10 @@ next step is two-sided review and think-aloud interviews, then pilots
 | `items/drafts/` | **The full draft question bank**: 379 original questions (425 scored units) across all 25 topic areas, one file per area |
 | `items/modules/` | Intro, priorities (best–worst design), quality checks and optional about-you questions |
 | `scripts/validate_items.py`, `scripts/coverage.py`, `scripts/audit_items.py` | Rule checker, coverage against the blueprint, balance audit (`reports/item_audit.md`) |
+| `review/` | Reviewer kit for the two-sided review and think-aloud interviews: readable packet, fill-in sheet, protocol |
+| `items/pilot_design.json` | Planned-missing pilot design: link block + 3 of 9 balanced blocks per person |
+| `docs/preregistration.md` | Every pilot decision rule and threshold, fixed before data |
+| `app/` | The pilot quiz app (static site); `server/` has a free Google Sheets collector; `scripts/pilot_responses.py` turns responses into analysis files with quality flags |
 | `docs/` | Privacy notice, limitations |
 
 ## Run it

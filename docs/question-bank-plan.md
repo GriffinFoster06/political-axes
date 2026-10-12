@@ -359,11 +359,11 @@ results can't be tuned after the fact.
 | # | Deliverable | Done when | Status |
 |---|---|---|---|
 | M1 | All 25 domains drafted (383 questions planned) | Validator passes; balance check done per domain | **Done** 2026-10-12: 379 questions / 425 scored units, 0 validator errors; audit in `reports/item_audit.md` |
-| M2 | Two-sided review + think-alouds | Every question rated; revisions logged | Next |
+| M2 | Two-sided review + think-alouds | Every question rated; revisions logged | **Kit ready** (`review/`); needs readers and interviewees |
 | M3 | Priorities, values, about-you and quality modules | Validator passes | **Drafted** 2026-10-12: values in `items/drafts/d25_values.json`; other modules in `items/modules/` |
-| M4 | Quiz app (pilot version) | Planned-missing blocks, save/resume, timing, free-text capture | |
+| M4 | Quiz app (pilot version) | Planned-missing blocks, save/resume, timing, free-text capture | **Built** 2026-10-12 (`app/`, browser-tested); needs hosting and a collector URL |
 | M5 | Pilot A | 300+ complete; item screening report | |
-| M6 | Thresholds pre-registered in repo | Committed before Pilot B | |
+| M6 | Thresholds pre-registered in repo | Committed before Pilot B | **Drafted** (`docs/preregistration.md`); tag `prereg-v1` before Pilot B |
 | M7 | Pilot B + retest | Data in; structure, axis decisions, selection report | |
 | M8 | v1 instrument | Precision targets met; adaptive mode validated | |
 | M9 | Public launch | Results page, limitations page, open item parameters | |
