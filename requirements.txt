@@ -1,0 +1,8 @@
+numpy>=2.0
+scipy>=1.13
+pandas>=2.2
+pyarrow>=16
+factor_analyzer==0.5.1
+scikit-learn>=1.4,<1.6
+pyreadr>=0.5
+pytest>=8

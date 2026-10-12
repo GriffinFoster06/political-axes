@@ -1,0 +1,105 @@
+model items: 79 {'ECON': 4, 'SPEND': 15, 'CULT': 16, 'GENDER': 5, 'GROUP': 14, 'TOLER': 12, 'TRUST': 13}
+hidden answers: 26608 from 4000 people
+fitting 1 dimension (single left-right)
+  LR: 79 items, EM iters 14, converged True
+  done (45s)
+fitting 2 dimensions (compass-style econ vs social)
+  ECO: 19 items, EM iters 9, converged True
+  SOC: 60 items, EM iters 15, converged True
+  done (90s)
+fitting 7 dimensions (data-driven)
+  SPEND: 15 items, EM iters 10, converged True
+  GROUP: 14 items, EM iters 9, converged True
+  ECON: 4 items, EM iters 11, converged True
+  CULT: 16 items, EM iters 17, converged True
+  GENDER: 5 items, EM iters 13, converged True
+  TOLER: 12 items, EM iters 12, converged True
+  TRUST: 13 items, EM iters 7, converged True
+  done (161s)
+                                      model  log_loss  accuracy  improvement_vs_marginal_%
+                Marginal (average American)    0.9211    0.5524                     0.0000
+            Liberal-conservative self-label    0.8796    0.5838                     4.5061
+                                   Party ID    0.8839    0.5815                     4.0387
+                      Self-label x party ID    0.8730    0.5868                     5.2220
+            1 dimension (single left-right)    0.8376    0.6096                     9.0603
+2 dimensions (compass-style econ vs social)    0.8260    0.6159                    10.3175
+                 7 dimensions (data-driven)    0.7685    0.6549                    16.5677
+fitting final 7-dimension model on all data
+  ECON: 4 items, EM iters 11, converged True
+  SPEND: 15 items, EM iters 10, converged True
+  CULT: 16 items, EM iters 17, converged True
+  GENDER: 5 items, EM iters 13, converged True
+  GROUP: 14 items, EM iters 9, converged True
+  TOLER: 12 items, EM iters 12, converged True
+  TRUST: 13 items, EM iters 7, converged True
+dimension                                                      label  items  respondents_with_3plus  empirical_reliability  median_items_answered
+     ECON                        Redistribution & role of government      4                   10560                  0.840                    4.0
+    SPEND                               Domestic spending priorities     15                   16035                  0.775                    7.0
+     CULT    Moral traditionalism (abortion, sexuality, end of life)     16                   15107                  0.759                    8.0
+   GENDER                                   Traditional gender roles      5                   10670                  0.736                    4.0
+    GROUP                          Race, immigration & law-and-order     14                   15969                  0.817                    8.0
+    TOLER Civil-liberties tolerance (reversed: high = less tolerant)     12                   10522                  0.786                   12.0
+    TRUST Institutional confidence (reversed: high = less confident)     13                   10744                  0.821                   13.0
+        ECON  SPEND  CULT  GENDER  GROUP  TOLER  TRUST
+ECON    1.00   0.71  0.34    0.22   0.70  -0.08   0.11
+SPEND   0.71   1.00  0.40    0.32   0.66   0.05  -0.02
+CULT    0.34   0.40  1.00    0.46   0.44   0.33  -0.03
+GENDER  0.22   0.32  0.46    1.00   0.34   0.26   0.02
+GROUP   0.70   0.66  0.44    0.34   1.00   0.19   0.16
+TOLER  -0.08   0.05  0.33    0.26   0.19   1.00  -0.07
+TRUST   0.11  -0.02 -0.03    0.02   0.16  -0.07   1.00
+          ECON  SPEND  CULT  GENDER  GROUP  TOLER  TRUST
+polviews                                                
+1.0      -0.97  -0.96 -0.82   -0.56  -1.11  -0.35   0.02
+2.0      -0.68  -0.70 -0.69   -0.46  -0.84  -0.26  -0.12
+3.0      -0.34  -0.33 -0.39   -0.22  -0.43  -0.16  -0.11
+4.0      -0.03  -0.03 -0.06   -0.01   0.02   0.06  -0.02
+5.0       0.33   0.28  0.16    0.12   0.32   0.00   0.06
+6.0       0.67   0.67  0.58    0.34   0.69   0.12   0.11
+7.0       0.67   0.67  0.79    0.52   0.80   0.30   0.19
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+                                   predictors    n  cv_auc
+                              Self-label only 4291   0.881
+2 axes (avg of econ dims, avg of social dims) 4362   0.917
+                                 7 dimensions 4362   0.926
+                    7 dimensions + self-label 4291   0.944
+wrote model/params.json; total 410s

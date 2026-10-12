@@ -1,0 +1,5 @@
+predictors,n,cv_auc
+Self-label only,4291,0.8813197609092779
+"2 axes (avg of econ dims, avg of social dims)",4362,0.9165644491820115
+7 dimensions,4362,0.9263325557111546
+7 dimensions + self-label,4291,0.9439068877712706

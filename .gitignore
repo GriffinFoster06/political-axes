@@ -1,0 +1,9 @@
+data/raw/
+data/staging/
+data/*.parquet
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+.DS_Store
+.venv/

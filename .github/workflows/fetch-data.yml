@@ -1,0 +1,48 @@
+name: Fetch public data
+
+# Run by hand from the Actions tab ("Run workflow"), and monthly so the
+# Voteview roll calls stay current. Results land on the orphan `data` branch.
+on:
+  workflow_dispatch:
+    inputs:
+      skip:
+        description: "Sources to skip (space-separated: gss voteview ces)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "17 9 3 * *"   # 09:17 UTC on the 3rd of each month
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download public datasets
+        run: python3 scripts/fetch_public_data.py --out "$RUNNER_TEMP/staging" --skip ${{ github.event.inputs.skip }}
+
+      - name: Show what was fetched
+        run: |
+          du -sh "$RUNNER_TEMP/staging"/* || true
+          cat "$RUNNER_TEMP/staging/FAILURES.txt" 2>/dev/null || echo "no failures"
+
+      - name: Commit to data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          chmod +x scripts/commit_to_data_branch.sh
+          scripts/commit_to_data_branch.sh "$RUNNER_TEMP/staging" "Fetch public data $(date -u +%Y-%m-%d)"

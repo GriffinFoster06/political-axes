@@ -1,0 +1,87 @@
+item_id,gss_var,domain,hyp_dimension,gss_label,recode,high_pole,notes
+spend_welfare,natfare,safety net,ECON,"welfare (spending too little/about right/too much)","{1:0,2:1,3:2}",spend less,"Split ballot A; 'welfare' label effect"
+spend_poor,natfarey,safety net,ECON,"assistance to the poor (spending)","{1:0,2:1,3:2}",spend less,"Split ballot B wording of natfare"
+spend_health,natheal,health,ECON,"improving and protecting the nation's health (spending)","{1:0,2:1,3:2}",spend less,
+spend_educ,nateduc,education,ECON,"improving the nation's education system (spending)","{1:0,2:1,3:2}",spend less,
+spend_socsec,natsoc,safety net,ECON,"social security (spending)","{1:0,2:1,3:2}",spend less,
+spend_child,natchld,safety net,ECON,"assistance for childcare (spending)","{1:0,2:1,3:2}",spend less,
+spend_cities,natcity,economy,ECON,"solving the problems of big cities (spending)","{1:0,2:1,3:2}",spend less,
+spend_env,natenvir,environment,ECON,"improving and protecting the environment (spending)","{1:0,2:1,3:2}",spend less,
+spend_transit,natmass,infrastructure,ECON,"mass transportation (spending)","{1:0,2:1,3:2}",spend less,"Expected weak; not asked 2024"
+spend_parks,natpark,infrastructure,ECON,"parks and recreation (spending)","{1:0,2:1,3:2}",spend less,"Expected weak; not asked 2024"
+spend_roads,natroad,infrastructure,ECON,"highways and bridges (spending)","{1:0,2:1,3:2}",spend less,Expected weak
+spend_science,natsci,science,ECON,"supporting scientific research (spending)","{1:0,2:1,3:2}",spend less,Expected weak
+spend_space,natspac,science,ECON,"space exploration program (spending)","{1:0,2:1,3:2}",spend less,Expected weak or non-ideological
+spend_drugs,natdrug,crime,ECON,"dealing with drug addiction (spending)","{1:0,2:1,3:2}",spend less,
+spend_foreignaid,nataid,foreign policy,ECON,"foreign aid (spending)","{1:0,2:1,3:2}",spend less,Split ballot A
+spend_othercountries,nataidy,foreign policy,ECON,"assistance to other countries (spending)","{1:0,2:1,3:2}",spend less,Split ballot B wording
+spend_military,natarms,defense,ECON,"the military, armaments and defense (spending)","{3:0,2:1,1:2}",spend more,Reversed: more defense spending is the right pole
+spend_crime,natcrime,crime,ORDER,"halting the rising crime rate (spending)","{3:0,2:1,1:2}",spend more,"Reversed; stem presupposes rising crime"
+spend_race,natrace,race,RACE_IMM,"improving the conditions of Black people (spending)","{1:0,2:1,3:2}",spend less,Split ballot A
+spend_race_b,natracey,race,RACE_IMM,"assistance to Black people (spending)","{1:0,2:1,3:2}",spend less,Split ballot B wording
+gov_income_diff,eqwlth,economy,ECON,"should govt reduce income differences (1-7)","{1:0,2:1,3:2,4:3,5:4,6:5,7:6}",govt should not,
+gov_help_poor,helppoor,safety net,ECON,"should govt improve standard of living? (1-5)","{1:0,2:1,3:2,4:3,5:4}",people care for themselves,
+gov_do_more,helpnot,economy,ECON,"should govt do more or less? (1-5)","{1:0,2:1,3:2,4:3,5:4}",govt does too much,
+gov_medical,helpsick,health,ECON,"should govt help pay for medical care? (1-5)","{1:0,2:1,3:2,4:3,5:4}",people care for themselves,
+gov_help_black,helpblk,race,RACE_IMM,"should govt aid Black people? (1-5)","{1:0,2:1,3:2,4:3,5:4}",no special treatment,
+getahead_luck,getahead,economy,ECON,"how people get ahead (hard work / both / luck)","{3:0,2:1,1:2}",hard work most important,'other' set missing
+death_penalty,cappun,crime,ORDER,"favor or oppose death penalty for murder","{2:0,1:1}",favor,
+gun_permit,gunlaw,guns,ORDER,"favor or oppose requiring a police permit to buy a gun","{1:0,2:1}",oppose,
+courts_harsh,courts,crime,ORDER,"courts dealing with criminals","{1:0,3:1,2:2}",not harsh enough,
+marijuana_legal,grass,drugs,CULT,"should marijuana be made legal","{1:0,2:1}",not legal,Not asked 2021
+abort_any,abany,abortion,CULT,"legal abortion if woman wants it for any reason","{1:0,2:1}",no,
+abort_defect,abdefect,abortion,CULT,"legal abortion if strong chance of serious defect","{1:0,2:1}",no,
+abort_nomore,abnomore,abortion,CULT,"legal abortion if married and wants no more children","{1:0,2:1}",no,
+abort_health,abhlth,abortion,CULT,"legal abortion if woman's health seriously endangered","{1:0,2:1}",no,Ceiling effect expected
+abort_poor,abpoor,abortion,CULT,"legal abortion if low income and can't afford more children","{1:0,2:1}",no,
+abort_rape,abrape,abortion,CULT,"legal abortion if pregnant as a result of rape","{1:0,2:1}",no,
+abort_single,absingle,abortion,CULT,"legal abortion if not married","{1:0,2:1}",no,
+samesex_wrong,homosex,sexuality,CULT,"sexual relations between two adults of the same sex","{4:0,3:1,2:2,1:3}",always wrong,'other' set missing
+premarital_wrong,premarsx,sexuality,CULT,"sex before marriage","{4:0,3:1,2:2,1:3}",always wrong,'other' set missing
+school_prayer,prayer,religion,CULT,"approve of Supreme Court ruling against required Bible/prayer in public schools","{1:0,2:1}",disapprove,Item references a 1960s ruling; not asked 2021
+sex_ed,sexeduc,education,CULT,"sex education in public schools","{1:0,2:1}",oppose,'depends' (volunteered) set missing
+divorce_law,divlaw,family,CULT,"divorce should be easier / stay as is / more difficult","{1:0,3:1,2:2}",more difficult,
+porn_law,pornlaw,sexuality,CULT,"pornography laws","{3:0,2:1,1:2}",illegal for all,
+euthanasia,letdie1,end of life,CULT,"allow doctor to end life of incurable patient if requested","{1:0,2:1}",no,
+assisted_suicide,suicide1,end of life,CULT,"right to end own life if incurable disease","{1:0,2:1}",no,
+women_politics,fepol,gender,CULT,"women not suited for politics","{2:0,1:1}",agree,
+women_home,fefam,gender,CULT,"better for man to work and woman to tend home","{4:0,3:1,2:2,1:3}",agree,
+working_mother_ok,fechld,gender,CULT,"working mother can have warm relationship with children","{1:0,2:1,3:2,4:3}",disagree,
+preschool_suffers,fepresch,gender,CULT,"preschool child suffers if mother works","{4:0,3:1,2:2,1:3}",agree,
+immig_level,letin1a,immigration,RACE_IMM,"number of immigrants nowadays should be increased a lot ... reduced a lot","{1:0,2:1,3:2,4:3,5:4}",reduced,"Key anchor; same wording family as ANES"
+immig_level_b,letin1,immigration,RACE_IMM,"number of immigrants to America nowadays should be ...","{1:0,2:1,3:2,4:3,5:4}",reduced,2024 only
+immig_crime,immcrime,immigration,RACE_IMM,"immigrants increase crime rates","{5:0,4:1,3:2,2:3,1:4}",agree,2022+ only
+immig_jobs,immjobs,immigration,RACE_IMM,"immigrants take jobs away from people born in America","{5:0,4:1,3:2,2:3,1:4}",agree,2022+ only
+race_discrim,racdif1,race,RACE_IMM,"Black-white differences mainly due to discrimination","{1:0,2:1}",no,
+race_inborn,racdif2,race,RACE_IMM,"differences due to in-born ability","{2:0,1:1}",yes,Very low endorsement; may misbehave
+race_education,racdif3,race,RACE_IMM,"differences due to lack of chance for education","{1:0,2:1}",no,
+race_will,racdif4,race,RACE_IMM,"differences due to lack of motivation or will power","{2:0,1:1}",yes,
+race_noFavors,wrkwayup,race,RACE_IMM,"Black people should overcome prejudice without favors","{5:0,4:1,3:2,2:3,1:4}",agree,Racial-resentment style item
+affirm_action,affrmact,race,RACE_IMM,"favor preference in hiring Black people","{1:0,2:1,3:2,4:3}",strongly oppose,
+whites_hurt,discaff,race,RACE_IMM,"how likely a white person won't get a job because of affirmative action","{4:0,3:1,2:2,1:3}",very likely,
+women_pref_hiring,fejobaff,gender,CULT,"for or against preferential hiring of women","{1:0,2:1,3:2,4:3}",strongly oppose,Small subsample
+tol_speak_atheist,spkath,civil liberties,TOLER,"allow anti-religionist to speak","{1:0,2:1}",not allowed,
+tol_teach_atheist,colath,civil liberties,TOLER,"allow anti-religionist to teach in college","{4:0,5:1}",not allowed,
+tol_book_atheist,libath,civil liberties,TOLER,"remove anti-religious book from library","{2:0,1:1}",remove,
+tol_speak_racist,spkrac,civil liberties,TOLER,"allow racist to speak","{1:0,2:1}",not allowed,
+tol_teach_racist,colrac,civil liberties,TOLER,"allow racist to teach in college","{4:0,5:1}",not allowed,
+tol_book_racist,librac,civil liberties,TOLER,"remove racist book from library","{2:0,1:1}",remove,
+tol_speak_communist,spkcom,civil liberties,TOLER,"allow communist to speak","{1:0,2:1}",not allowed,
+tol_teach_communist,colcom,civil liberties,TOLER,"should communist teacher be fired","{5:0,4:1}",fired,Reversed response codes vs other col* items
+tol_book_communist,libcom,civil liberties,TOLER,"remove communist book from library","{2:0,1:1}",remove,
+tol_speak_muslim,spkmslm,civil liberties,TOLER,"allow Muslim clergyman preaching hatred of the US to speak","{1:0,2:1}",not allowed,
+tol_teach_muslim,colmslm,civil liberties,TOLER,"allow anti-American Muslim clergyman to teach in college","{4:0,5:1}",not allowed,
+tol_book_muslim,libmslm,civil liberties,TOLER,"remove book by anti-American Muslim clergyman from library","{2:0,1:1}",remove,
+conf_exec,confed,institutions,TRUST,"confidence in the executive branch of the federal government","{1:0,2:1,3:2}",hardly any,Flips with who is president
+conf_congress,conlegis,institutions,TRUST,"confidence in Congress","{1:0,2:1,3:2}",hardly any,
+conf_courts,conjudge,institutions,TRUST,"confidence in the U.S. Supreme Court","{1:0,2:1,3:2}",hardly any,
+conf_press,conpress,institutions,TRUST,"confidence in the press","{1:0,2:1,3:2}",hardly any,
+conf_business,conbus,institutions,TRUST,"confidence in major companies","{1:0,2:1,3:2}",hardly any,
+conf_banks,confinan,institutions,TRUST,"confidence in banks and financial institutions","{1:0,2:1,3:2}",hardly any,
+conf_education,coneduc,institutions,TRUST,"confidence in education","{1:0,2:1,3:2}",hardly any,
+conf_military,conarmy,institutions,TRUST,"confidence in the military","{1:0,2:1,3:2}",hardly any,
+conf_science,consci,institutions,TRUST,"confidence in the scientific community","{1:0,2:1,3:2}",hardly any,
+conf_medicine,conmedic,institutions,TRUST,"confidence in medicine","{1:0,2:1,3:2}",hardly any,
+conf_religion,conclerg,institutions,TRUST,"confidence in organized religion","{1:0,2:1,3:2}",hardly any,
+conf_tv,contv,institutions,TRUST,"confidence in television","{1:0,2:1,3:2}",hardly any,
+conf_labor,conlabor,institutions,TRUST,"confidence in organized labor","{1:0,2:1,3:2}",hardly any,

@@ -1,0 +1,8 @@
+dimension,label,items,respondents_with_3plus,empirical_reliability,median_items_answered
+ECON,Redistribution & role of government,4,10560,0.8401826180752837,4.0
+SPEND,Domestic spending priorities,15,16035,0.7753311181489633,7.0
+CULT,"Moral traditionalism (abortion, sexuality, end of life)",16,15107,0.7588876710032878,8.0
+GENDER,Traditional gender roles,5,10670,0.735596849595159,4.0
+GROUP,"Race, immigration & law-and-order",14,15969,0.8171065926935731,8.0
+TOLER,Civil-liberties tolerance (reversed: high = less tolerant),12,10522,0.7856313741504948,12.0
+TRUST,Institutional confidence (reversed: high = less confident),13,10744,0.8207716365863709,13.0

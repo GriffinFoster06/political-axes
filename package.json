@@ -1,0 +1,9 @@
+{
+  "name": "political-axes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scorer/scorer.test.ts"
+  },
+  "engines": { "node": ">=22.18" }
+}
