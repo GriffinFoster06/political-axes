@@ -1,0 +1,552 @@
+{
+  "version": "drafts-0.1",
+  "status": "DRAFT: not yet reviewed, pretested or calibrated. Facts marked verify=true need checking against a primary source before use.",
+  "conventions": {
+    "codes": "Options are listed in code order 0..K-1. Code K-1 is the pole named in high_pole. Display order is randomized per person between forward and reverse; codes never change.",
+    "always_appended": [
+      "None of these fit my view (optional: tell us why)",
+      "I don't know enough about this to say"
+    ],
+    "firmness_followup": [
+      "Firm",
+      "Fairly firm",
+      "It really depends on the details"
+    ]
+  },
+  "items": [
+    {
+      "id": "abortion_rule",
+      "dimension_hint": [
+        "G",
+        "CULT"
+      ],
+      "format": "position",
+      "stem": "Which comes closest to what you think the law on abortion should be?",
+      "scope": "Pick the rule you'd want in most situations. You'll be able to add exceptions next.",
+      "options": [
+        "Legal for any reason at any point in pregnancy",
+        "Legal for any reason until about the point of viability (around 24 weeks); after that, only for serious risks to the woman's health",
+        "Legal for any reason in about the first 12 to 15 weeks; after that, only in specific circumstances",
+        "Legal only in specific circumstances, such as rape, incest, or a threat to the woman's life or health",
+        "Legal only to save the woman's life",
+        "Never legal"
+      ],
+      "high_pole": "more restrictive",
+      "definitions": [
+        {
+          "term": "viability",
+          "text": "The point in pregnancy after which a fetus could survive outside the womb with medical care, usually placed at around 22 to 24 weeks.",
+          "source": "American College of Obstetricians and Gynecologists, periviability guidance",
+          "verify": true
+        }
+      ],
+      "followup": "abortion_exceptions",
+      "links": {
+        "anes": [
+          "abortion4",
+          "abortion7"
+        ],
+        "gss": [
+          "abort_any",
+          "abort_rape",
+          "abort_health",
+          "abort_defect"
+        ]
+      }
+    },
+    {
+      "id": "abortion_exceptions",
+      "dimension_hint": [
+        "CULT"
+      ],
+      "format": "exceptions",
+      "show_if": {
+        "abortion_rule": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "stem": "Under the rule you picked, should abortion also be legal in each of these cases, at any point in pregnancy?",
+      "scope": "Answer each case separately.",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "high_pole": "No",
+      "cases": [
+        {
+          "id": "exc_life",
+          "text": "The pregnancy threatens the woman's life"
+        },
+        {
+          "id": "exc_health",
+          "text": "The pregnancy seriously threatens the woman's health, but not her life"
+        },
+        {
+          "id": "exc_rape",
+          "text": "The pregnancy resulted from rape or incest"
+        },
+        {
+          "id": "exc_fatal",
+          "text": "The fetus has a condition that means it will die before or shortly after birth"
+        }
+      ],
+      "definitions": [],
+      "links": {
+        "gss": [
+          "abort_health",
+          "abort_rape",
+          "abort_defect"
+        ]
+      }
+    },
+    {
+      "id": "min_wage",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "position",
+      "stem": "What should the federal minimum wage be?",
+      "scope": "This is the national floor. States could still set higher minimums.",
+      "context": "The federal minimum wage is $7.25 an hour and has not changed since 2009.",
+      "options": [
+        "$20 an hour or more, rising with inflation each year",
+        "About $15 an hour, rising with inflation each year",
+        "About $10 to $12 an hour",
+        "Keep it at $7.25 an hour",
+        "No federal minimum; leave it to states and employers"
+      ],
+      "high_pole": "lower or no federal minimum",
+      "facts": [
+        {
+          "claim": "Federal minimum wage is $7.25/hour, unchanged since July 24, 2009",
+          "source": "US Department of Labor, Wage and Hour Division",
+          "checked": "2026-10-12",
+          "verify": true
+        }
+      ],
+      "definitions": [],
+      "links": {
+        "anes": [
+          "min_wage"
+        ]
+      }
+    },
+    {
+      "id": "health_coverage",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "position",
+      "stem": "Which comes closest to how you think Americans should get health insurance?",
+      "scope": "Think about the system as a whole, not your own plan.",
+      "options": [
+        "One government plan covers everyone; private insurance plays little or no role",
+        "Everyone can choose a government plan or private insurance (a public option)",
+        "Mostly private insurance, with government programs for older people, people with low incomes, and those who can't get covered otherwise (roughly today's system)",
+        "Mostly private insurance, with smaller government programs than today",
+        "Private insurance or paying directly; the government does not provide coverage"
+      ],
+      "high_pole": "less government role",
+      "definitions": [
+        {
+          "term": "public option",
+          "text": "A health plan run by the government that anyone can choose to buy instead of a private plan.",
+          "source": "descriptive",
+          "verify": false
+        }
+      ],
+      "links": {
+        "anes": [
+          "health_insurance7",
+          "spend_health"
+        ],
+        "gss": [
+          "gov_medical"
+        ]
+      }
+    },
+    {
+      "id": "top_income_tax",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "position",
+      "stem": "How should federal income taxes change for people earning more than $1 million a year?",
+      "scope": "Assume the money raised or lost changes the federal budget, not your own taxes.",
+      "options": [
+        "Raise them a lot",
+        "Raise them somewhat",
+        "Keep them about the same",
+        "Lower them somewhat",
+        "Lower them a lot"
+      ],
+      "high_pole": "lower",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "millionaire_tax"
+        ]
+      }
+    },
+    {
+      "id": "climate_action",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "position",
+      "stem": "Which comes closest to what the federal government should do about climate change?",
+      "scope": "Each option includes its likely cost. Pick the one whose tradeoff you'd accept.",
+      "options": [
+        "Require fast, deep cuts in greenhouse gas emissions, even if energy prices rise noticeably",
+        "Require gradual cuts in emissions, accepting small increases in energy prices",
+        "Fund research and offer tax credits for clean energy, but not require cuts",
+        "Take no specific action on climate change"
+      ],
+      "high_pole": "less action",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "climate_gov_action",
+          "greenhouse_regulation",
+          "env_business7"
+        ]
+      }
+    },
+    {
+      "id": "handgun_purchase",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "position",
+      "stem": "Which comes closest to the rules you want for an adult buying a handgun?",
+      "scope": "Think about a typical adult with no criminal record or history of serious mental illness.",
+      "context": "Under current federal law, licensed gun dealers must run a background check; most private sales between individuals do not require one.",
+      "options": [
+        "Ban handgun sales to most civilians",
+        "Require a license that includes safety training, plus a background check for every sale",
+        "Require a background check for every sale, including private sales, but no license",
+        "Keep current federal law",
+        "Fewer federal rules than today, such as ending required background checks"
+      ],
+      "high_pole": "fewer restrictions",
+      "facts": [
+        {
+          "claim": "Federal background checks are required for sales by federally licensed dealers, not most private sales",
+          "source": "Gun Control Act of 1968; Brady Handgun Violence Prevention Act (1993); ATF",
+          "checked": "2026-10-12",
+          "verify": true
+        }
+      ],
+      "definitions": [
+        {
+          "term": "background check",
+          "text": "A check of federal records to confirm the buyer is not legally barred from owning a gun, for example because of a felony conviction.",
+          "source": "FBI National Instant Criminal Background Check System (NICS)",
+          "verify": false
+        }
+      ],
+      "links": {
+        "anes": [
+          "gun_buying",
+          "gun_background"
+        ],
+        "gss": [
+          "gun_permit"
+        ]
+      }
+    },
+    {
+      "id": "status_policy",
+      "dimension_hint": [
+        "G",
+        "EQUITY"
+      ],
+      "format": "position",
+      "stem": "Millions of people live in the US without legal immigration status. What should happen to most of them?",
+      "scope": "Think about the typical person in this group: someone who has lived here for several years and has no serious criminal record. You'll be asked about other groups next.",
+      "options": [
+        "Let them stay and apply for citizenship without major penalties",
+        "Let them stay and apply for citizenship after requirements such as paying a fine and passing a background check",
+        "Let them stay and work legally, but not become citizens",
+        "Let them work here for a limited time, then require them to leave",
+        "Require them to leave, starting with people with criminal records",
+        "Remove all of them as quickly as possible"
+      ],
+      "high_pole": "more removal",
+      "facts": [
+        {
+          "claim": "Pew estimates 14 million unauthorized immigrants as of July 2023 (a record), with a likely decline of up to 1 million in the first half of 2025; DHS estimated about 11 million for January 2022",
+          "source": "Pew Research Center, 'U.S. Unauthorized Immigrant Population Reached a Record 14 Million in 2023' (Aug 21, 2025); DHS Office of Homeland Security Statistics",
+          "checked": "2026-10-12",
+          "verify": true,
+          "note": "Pew figures verified 2026-10-12; DHS figure not re-checked. Stem deliberately says 'millions' so the item doesn't date quickly."
+        }
+      ],
+      "definitions": [
+        {
+          "term": "without legal immigration status",
+          "text": "People who entered the US without authorization, or who entered legally but stayed after their permission expired.",
+          "source": "descriptive",
+          "verify": false
+        }
+      ],
+      "followup": "status_groups",
+      "links": {
+        "anes": [
+          "immig_policy",
+          "path_citizenship",
+          "dreamers"
+        ]
+      }
+    },
+    {
+      "id": "status_groups",
+      "dimension_hint": [
+        "EQUITY"
+      ],
+      "format": "exceptions",
+      "stem": "Compared with your last answer, should these groups be treated more leniently, the same, or more strictly?",
+      "scope": "Answer each group separately.",
+      "options": [
+        "More leniently",
+        "The same",
+        "More strictly"
+      ],
+      "high_pole": "More strictly",
+      "cases": [
+        {
+          "id": "grp_children",
+          "text": "People brought to the US as young children"
+        },
+        {
+          "id": "grp_recent",
+          "text": "People who arrived in the last two years"
+        },
+        {
+          "id": "grp_crime",
+          "text": "People convicted of a serious crime in the US"
+        }
+      ],
+      "definitions": [],
+      "links": {
+        "anes": [
+          "dreamers"
+        ]
+      }
+    },
+    {
+      "id": "college_admissions_race",
+      "dimension_hint": [
+        "G",
+        "EQUITY"
+      ],
+      "format": "position",
+      "stem": "When colleges choose among qualified applicants, should an applicant's race be considered?",
+      "scope": "Answer about what you think should happen, regardless of what current law allows.",
+      "context": "In 2023 the Supreme Court ruled that colleges may not use race as a factor in admissions.",
+      "options": [
+        "Yes, as one important factor, to increase diversity",
+        "Yes, but only as a minor factor, such as a tie-breaker",
+        "No, but colleges can consider economic hardship instead",
+        "No, colleges should not consider race or other group characteristics at all"
+      ],
+      "high_pole": "no consideration",
+      "facts": [
+        {
+          "claim": "Students for Fair Admissions v. Harvard (2023) ended race-conscious admissions",
+          "source": "Supreme Court of the United States, 600 U.S. 181 (2023)",
+          "checked": "2026-10-12",
+          "verify": false
+        }
+      ],
+      "definitions": [],
+      "links": {
+        "anes": [
+          "affirm_action_univ",
+          "dei"
+        ]
+      }
+    },
+    {
+      "id": "trans_school_sports",
+      "dimension_hint": [
+        "G",
+        "CULT"
+      ],
+      "format": "position",
+      "stem": "In high school sports, which rule comes closest to your view for transgender girls?",
+      "scope": "Think about competitive school teams, not casual or intramural play.",
+      "options": [
+        "They should be able to play on girls' teams",
+        "They should be able to play on girls' teams if they meet medical criteria, such as hormone levels",
+        "They should play on boys' teams or in an open category, not girls' teams"
+      ],
+      "high_pole": "not on girls' teams",
+      "definitions": [
+        {
+          "term": "transgender girls",
+          "text": "Students who were identified as male at birth and identify as girls.",
+          "source": "descriptive",
+          "verify": false
+        }
+      ],
+      "links": {
+        "anes": [
+          "trans_sports_ban"
+        ]
+      }
+    },
+    {
+      "id": "president_court_ruling",
+      "dimension_hint": [
+        "NORMS"
+      ],
+      "format": "position",
+      "stem": "If a federal court rules that something a president did is illegal, what should the president do?",
+      "scope": "Answer for any president of either party, now or in the future.",
+      "options": [
+        "Comply fully while appealing, and avoid attacking the judge",
+        "Comply while appealing, but criticize the judge publicly",
+        "Comply only if a higher court agrees with the ruling",
+        "Ignore the ruling if the president believes it is wrong"
+      ],
+      "high_pole": "less deference to courts",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "courts_stop_gov",
+          "pres_unchecked",
+          "norm_checks"
+        ]
+      }
+    },
+    {
+      "id": "congress_motives",
+      "dimension_hint": [
+        "TRUST"
+      ],
+      "format": "frequency",
+      "stem": "When Congress passes a major law, how often do you think its main purpose is to help the public rather than donors or party leaders?",
+      "scope": "Think about Congress in general, under either party's control.",
+      "options": [
+        "Almost always (9 or more times in 10)",
+        "Most of the time (about 7 in 10)",
+        "About half the time",
+        "Sometimes (about 3 in 10)",
+        "Rarely (1 in 10 or less)"
+      ],
+      "high_pole": "rarely",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "trust_congress",
+          "donors_orgs",
+          "votes_for_donations"
+        ]
+      }
+    },
+    {
+      "id": "ally_attacked",
+      "dimension_hint": [
+        "FOREIGN"
+      ],
+      "format": "position",
+      "stem": "If another country attacks a US ally, what should the US usually do?",
+      "scope": "Think about an ally the US has a formal defense agreement with, such as a NATO member.",
+      "options": [
+        "Send US troops to help defend it",
+        "Send weapons and money, but not troops",
+        "Impose sanctions on the attacker and send humanitarian aid, but not weapons",
+        "Stay out of it"
+      ],
+      "high_pole": "less involvement",
+      "definitions": [
+        {
+          "term": "formal defense agreement",
+          "text": "A treaty in which the US has promised to help defend another country, such as the North Atlantic Treaty (NATO).",
+          "source": "descriptive",
+          "verify": false
+        }
+      ],
+      "links": {
+        "anes": [
+          "stay_home",
+          "use_force",
+          "ukraine_weapons"
+        ]
+      }
+    },
+    {
+      "id": "gov_role_values",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "agree_defined",
+      "stem": "\"When government tries to solve a social problem, it usually makes things worse.\"",
+      "scope": "Use the meanings shown for each answer.",
+      "options": [
+        "Strongly disagree",
+        "Disagree",
+        "Torn",
+        "Agree",
+        "Strongly agree"
+      ],
+      "point_meanings": [
+        "False in nearly every case I can think of",
+        "False in most cases, with some real exceptions",
+        "I can see it both ways about equally",
+        "True in most cases, with some real exceptions",
+        "True in nearly every case I can think of"
+      ],
+      "high_pole": "Strongly agree",
+      "pair": "gov_role_values_rev",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "less_gov"
+        ]
+      }
+    },
+    {
+      "id": "gov_role_values_rev",
+      "dimension_hint": [
+        "G",
+        "GOV"
+      ],
+      "format": "agree_defined",
+      "stem": "\"Some social problems are too big to be solved without the federal government.\"",
+      "scope": "Use the meanings shown for each answer.",
+      "options": [
+        "Strongly agree",
+        "Agree",
+        "Torn",
+        "Disagree",
+        "Strongly disagree"
+      ],
+      "point_meanings": [
+        "True in nearly every case I can think of",
+        "True in most cases, with some real exceptions",
+        "I can see it both ways about equally",
+        "False in most cases, with some real exceptions",
+        "False in nearly every case I can think of"
+      ],
+      "high_pole": "Strongly disagree",
+      "pair": "gov_role_values",
+      "definitions": [],
+      "links": {
+        "anes": [
+          "less_gov"
+        ]
+      }
+    }
+  ]
+}

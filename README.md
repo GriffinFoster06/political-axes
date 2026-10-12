@@ -55,6 +55,9 @@ are in [`docs/limitations.md`](docs/limitations.md).
 | `tests/` | Simulation recovery test |
 | `reports/` | All outputs, including `RESULTS.md` |
 | `scripts/` + `.github/workflows/fetch-data.yml` | Data fetching (see `DATA.md`) |
+| `docs/item-writing-standard.md` | How every quiz question must be written: positions not agreement, scope + exceptions, definitions, no party cues |
+| `docs/how-many-dimensions.md` | The rule for deciding how many axes to report |
+| `items/drafts/` + `scripts/validate_items.py` | Draft quiz items in the new format, and the checker they must pass |
 | `docs/` | Privacy notice, limitations |
 
 ## Run it
@@ -66,6 +69,7 @@ python3 pipeline/step0_extract_gss.py
 python3 pipeline/step1_dimensionality.py
 python3 pipeline/step2_fit_and_validate.py   # ~10 min
 python3 -m pytest -q tests/
+python3 scripts/validate_items.py           # draft quiz items
 # ANES (download it yourself into data/raw/anes/, see DATA.md)
 python3 pipeline/step3_anes_dimensionality.py
 python3 pipeline/step4_anes_models.py        # ~12 min
