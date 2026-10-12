@@ -1,0 +1,152 @@
+{
+  "domain_id": "D16",
+  "domain": "Guns",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Uses descriptive terms ('semi-automatic rifles') rather than either side's labels. High pole is consistently 'fewer restrictions'.",
+  "items": [
+    {
+      "id": "private_sale_checks",
+      "subtopic": "Private-sale background checks",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "Should a background check be required when one private person sells a gun to another?",
+      "scope": "Sales between individuals, not through a licensed dealer.",
+      "options": [
+        "Yes, for every sale or transfer, including between family members",
+        "Yes, for all sales, but not gifts or loans between family and close friends",
+        "Only for sales at gun shows and online",
+        "No; private sales should not require a check"
+      ],
+      "high_pole": "no checks"
+    },
+    {
+      "id": "semi_auto_rifles",
+      "subtopic": "Semi-automatic rifles with military-style features",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "What should the law be on semi-automatic rifles like the AR-15?",
+      "scope": "Rifles that fire one shot per trigger pull and reload automatically, with features like a detachable magazine.",
+      "options": [
+        "Ban new sales and buy back the ones people own",
+        "Ban new sales; people can keep the ones they have",
+        "Allow sales only to people 21 and older with a license and training",
+        "Allow sales with a background check, as most states do now"
+      ],
+      "high_pole": "fewer restrictions",
+      "definitions": [
+        {"term": "semi-automatic", "text": "A gun that fires one round each time the trigger is pulled and loads the next round automatically. Most handguns sold today are semi-automatic.", "source": "ATF firearms glossary", "verify": false}
+      ]
+    },
+    {
+      "id": "magazine_limit",
+      "subtopic": "Semi-automatic rifles with military-style features",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "Should the law limit how many rounds a gun magazine can hold?",
+      "scope": "Magazines for both handguns and rifles.",
+      "options": [
+        "Yes, 10 rounds or fewer",
+        "Yes, about 15 to 20 rounds",
+        "No limit"
+      ],
+      "high_pole": "no limit"
+    },
+    {
+      "id": "concealed_carry",
+      "subtopic": "Carrying in public",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "What should be required to carry a concealed handgun in public?",
+      "scope": "Adults who can legally own a gun.",
+      "context": "More than half the states now allow it without a permit.",
+      "options": [
+        "Generally not allowed, except for police and security guards",
+        "A permit with training and a background check",
+        "A permit with a background check only",
+        "No permit needed"
+      ],
+      "high_pole": "no permit",
+      "facts": [
+        {"claim": "29 states allow permitless concealed carry", "source": "US Concealed Carry Association; state statutes", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "carry_locations",
+      "subtopic": "Carrying in public",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "Should people with permits be allowed to carry guns in schools, bars and government buildings?",
+      "scope": "Adults with a carry permit, not police.",
+      "options": [
+        "No, in none of these places",
+        "Not in schools or government buildings; bars and other businesses can decide",
+        "Yes in most places, including trained teachers in schools"
+      ],
+      "high_pole": "most places"
+    },
+    {
+      "id": "red_flag",
+      "subtopic": "Extreme risk (red flag) orders",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "Should courts be able to temporarily take guns from someone found to be a danger to themselves or others?",
+      "scope": "Someone not convicted of a crime. Specific cases come next.",
+      "options": [
+        "Yes, at the request of police or family members",
+        "Yes, at police request only, with a quick hearing where the person can respond",
+        "No; only after a criminal conviction or a formal mental health commitment"
+      ],
+      "high_pole": "no",
+      "followup": "red_flag_cases"
+    },
+    {
+      "id": "red_flag_cases",
+      "subtopic": "Extreme risk (red flag) orders",
+      "axis": ["GUNS"],
+      "format": "exceptions",
+      "stem": "Should a court be able to temporarily take guns from each of these people?",
+      "scope": "Answer each case separately.",
+      "options": ["Yes", "No"],
+      "high_pole": "No",
+      "cases": [
+        {"id": "rf_online_threats", "text": "Someone who posted threats of violence online but hasn't been charged"},
+        {"id": "rf_suicidal", "text": "Someone a family member reports as suicidal"},
+        {"id": "rf_restraining", "text": "Someone under a temporary restraining order for domestic abuse"}
+      ]
+    },
+    {
+      "id": "gun_purchase_age",
+      "subtopic": "Minimum age",
+      "axis": ["GUNS"],
+      "format": "position",
+      "stem": "What should the minimum age be to buy a gun?",
+      "scope": "Purchases from any seller.",
+      "context": "Under federal law, licensed dealers can sell handguns only to people 21 and older, and rifles and shotguns to people 18 and older.",
+      "options": [
+        "21 for any gun",
+        "21 for handguns and semi-automatic rifles; 18 for hunting rifles and shotguns",
+        "21 for handguns; 18 for rifles and shotguns, as federal law requires of dealers",
+        "18 for any gun"
+      ],
+      "high_pole": "18",
+      "facts": [
+        {"claim": "18 U.S.C. 922(b)(1): dealers may not sell handguns to under-21 or long guns to under-18", "source": "18 U.S.C. sec. 922(b)(1)", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "second_amendment_meaning",
+      "subtopic": "Meaning of the Second Amendment",
+      "axis": ["GUNS"],
+      "format": "belief",
+      "stem": "Which comes closest to what you think the Second Amendment protects?",
+      "scope": "Your own reading, regardless of court rulings.",
+      "options": [
+        "Only the right of states to maintain militias",
+        "An individual right to own guns, subject to broad regulation",
+        "An individual right to own guns, with only narrow limits",
+        "An individual right with almost no limits"
+      ],
+      "high_pole": "almost no limits"
+    }
+  ]
+}

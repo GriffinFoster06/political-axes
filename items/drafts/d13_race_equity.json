@@ -1,0 +1,249 @@
+{
+  "domain_id": "D13",
+  "domain": "Race & equity",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Belief items (causes, amount of discrimination) are reported separately from policy positions and tested for whether they belong on EQUITY. Discrimination is asked about for more than one group so the item measures perceptions, not only sympathy for one side.",
+  "items": [
+    {
+      "id": "gap_cause_wealth",
+      "subtopic": "Causes of racial gaps",
+      "axis": ["EQUITY"],
+      "format": "belief",
+      "stem": "On average, Black families in the US have much less wealth than white families. What do you think is the main reason?",
+      "scope": "Think about the average gap, not any one family.",
+      "options": [
+        "Mostly discrimination that continues today",
+        "Mostly the lasting effects of past discrimination, like slavery and segregation",
+        "A mix of past discrimination and differences in choices, families and culture",
+        "Mostly differences in choices, families and culture, not discrimination"
+      ],
+      "high_pole": "individual explanations",
+      "facts": [
+        {"claim": "Median white household wealth is several times median Black household wealth", "source": "Federal Reserve Survey of Consumer Finances 2022", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "gap_cause_arrests",
+      "subtopic": "Causes of racial gaps",
+      "axis": ["EQUITY", "ORDER"],
+      "format": "belief",
+      "stem": "Black Americans are arrested at higher rates than white Americans. What do you think is the main reason?",
+      "scope": "Think about the national average.",
+      "options": [
+        "Mostly bias in policing and courts",
+        "Both bias and differences in crime rates, about equally",
+        "Mostly differences in crime rates, driven by poverty and neighborhood conditions",
+        "Mostly differences in crime rates, driven by family and culture"
+      ],
+      "high_pole": "individual explanations"
+    },
+    {
+      "id": "gap_cause_tests",
+      "subtopic": "Causes of racial gaps",
+      "axis": ["EQUITY", "EDUC"],
+      "format": "belief",
+      "stem": "Average test scores differ between racial groups in US schools. What do you think is the main reason?",
+      "scope": "Think about national averages on standardized tests.",
+      "options": [
+        "Mostly that the tests are biased",
+        "Mostly unequal schools and resources",
+        "Mostly differences in family income and neighborhood conditions",
+        "Mostly differences in family structure and culture"
+      ],
+      "high_pole": "individual explanations",
+      "notes": "A genetic explanation is held by a small share; left to 'None of these fit' plus free text. Add an option if free text shows it above ~3%."
+    },
+    {
+      "id": "hiring_race",
+      "subtopic": "Race-conscious admissions and hiring",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "When employers choose among qualified job applicants, should an applicant's race be considered?",
+      "scope": "Answer about what you think should happen, regardless of what current law allows.",
+      "options": [
+        "Yes, as one important factor, to increase diversity",
+        "Only as a tie-breaker between equally qualified applicants",
+        "No, but employers should recruit in many different communities",
+        "No, race should play no part at all"
+      ],
+      "high_pole": "no consideration"
+    },
+    {
+      "id": "contract_set_asides",
+      "subtopic": "Race-conscious admissions and hiring",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should government set aside a share of its contracts for businesses owned by racial minorities?",
+      "scope": "Federal, state and local government contracts.",
+      "options": [
+        "Yes, with set percentages",
+        "No, but help small or disadvantaged businesses of any race",
+        "No special programs for any group"
+      ],
+      "high_pole": "no programs"
+    },
+    {
+      "id": "workplace_diversity",
+      "subtopic": "Diversity programs at employers and agencies",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should large employers run programs to increase the share of women and racial minorities in their workforce?",
+      "scope": "Private companies with more than 500 employees.",
+      "options": [
+        "Yes, with specific hiring targets and required diversity training",
+        "Yes, through outreach and mentoring, without targets",
+        "Only general training on treating everyone equally",
+        "No such programs, but leave the choice to each company",
+        "No such programs, and government should bar them at companies with federal contracts"
+      ],
+      "high_pole": "no programs"
+    },
+    {
+      "id": "dei_offices",
+      "subtopic": "Diversity programs at employers and agencies",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should government agencies and public universities have offices focused on diversity, equity and inclusion?",
+      "scope": "Offices whose job is to support people from underrepresented groups and train staff.",
+      "options": [
+        "Yes, and expand them",
+        "Keep them, but focus on equal treatment for everyone",
+        "No; close them"
+      ],
+      "high_pole": "close"
+    },
+    {
+      "id": "reparations",
+      "subtopic": "Reparations",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should the federal government provide reparations to Black Americans descended from people enslaved in the US?",
+      "scope": "Reparations means compensation for slavery and later government discrimination.",
+      "options": [
+        "Yes, cash payments to each eligible person",
+        "Yes, through programs like housing, education and business grants rather than cash",
+        "No payments, but a formal government apology and an official study",
+        "No; nothing beyond today's laws"
+      ],
+      "high_pole": "nothing"
+    },
+    {
+      "id": "local_redlining_compensation",
+      "subtopic": "Reparations",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should cities that enforced housing segregation in the past compensate the families affected?",
+      "scope": "For example, cities that barred Black families from buying homes in certain neighborhoods.",
+      "options": [
+        "Yes, the people harmed and their descendants",
+        "Only people personally harmed who are still living",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "hate_crime_sentences",
+      "subtopic": "Hate crime laws",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "Should crimes motivated by hatred of someone's race, religion or sexual orientation carry longer sentences?",
+      "scope": "Crimes like assault or vandalism, compared with the same crime without that motive.",
+      "options": [
+        "Yes, much longer",
+        "Somewhat longer",
+        "No; punish the crime the same whatever the motive"
+      ],
+      "high_pole": "same"
+    },
+    {
+      "id": "race_districts",
+      "subtopic": "Race in voting districts",
+      "axis": ["EQUITY", "VOTING"],
+      "format": "position",
+      "stem": "When drawing voting districts, should states have to create districts where a racial minority group is the majority?",
+      "scope": "The aim of such districts is to let the group elect candidates it prefers.",
+      "options": [
+        "Yes, whenever a minority group is large and close together enough",
+        "Only where there is evidence of past voting discrimination",
+        "No; districts should be drawn without considering race"
+      ],
+      "high_pole": "race-blind"
+    },
+    {
+      "id": "teach_racism_history",
+      "subtopic": "Teaching about racism in schools",
+      "axis": ["EQUITY", "EDUC"],
+      "format": "position",
+      "stem": "How should public schools teach about racism in American history, such as slavery and segregation?",
+      "scope": "Middle and high school history classes.",
+      "options": [
+        "As central to the American story, including how it shapes society today",
+        "As an important part of history, alongside the nation's progress",
+        "Briefly, focusing more on progress and shared achievements"
+      ],
+      "high_pole": "briefly"
+    },
+    {
+      "id": "teach_institutional_racism",
+      "subtopic": "Teaching about racism in schools",
+      "axis": ["EQUITY", "EDUC"],
+      "format": "position",
+      "stem": "Should public schools teach that racism is built into American laws and institutions today?",
+      "scope": "High school classes.",
+      "options": [
+        "Yes, as an established fact",
+        "Yes, as one view among several",
+        "No; it should not be taught in public schools"
+      ],
+      "high_pole": "not taught"
+    },
+    {
+      "id": "discrimination_black",
+      "subtopic": "How much discrimination exists",
+      "axis": ["EQUITY"],
+      "format": "belief",
+      "stem": "When Black Americans apply for jobs today, how often do they face discrimination because of their race?",
+      "scope": "Think about job searches across the country.",
+      "options": ["Almost always (9 or more times in 10)", "Often (about 7 in 10)", "About half the time", "Sometimes (about 3 in 10)", "Rarely (1 in 10 or less)"],
+      "high_pole": "rarely"
+    },
+    {
+      "id": "discrimination_white",
+      "subtopic": "How much discrimination exists",
+      "axis": ["EQUITY"],
+      "format": "belief",
+      "stem": "When white Americans apply for jobs or college today, how often do they face discrimination because of their race?",
+      "scope": "Think about applications across the country.",
+      "options": ["Rarely (1 in 10 or less)", "Sometimes (about 3 in 10)", "About half the time", "Often (about 7 in 10)", "Almost always (9 or more times in 10)"],
+      "high_pole": "almost always"
+    },
+    {
+      "id": "tribal_sovereignty",
+      "subtopic": "Tribal sovereignty",
+      "axis": ["EQUITY", "FED"],
+      "format": "position",
+      "stem": "How much power should Native American tribes have to govern their own lands?",
+      "scope": "Federally recognized tribes and their reservations.",
+      "options": [
+        "Full self-government, including over non-Native people on tribal land",
+        "Self-government over tribal members, with limited authority over others",
+        "More state and federal control than today"
+      ],
+      "high_pole": "more outside control"
+    },
+    {
+      "id": "disparate_impact",
+      "subtopic": "Disparate impact rules",
+      "axis": ["EQUITY"],
+      "format": "position",
+      "stem": "A hiring test isn't meant to discriminate, but it leads to far fewer people of one race being hired. Should using it be illegal?",
+      "scope": "Think of tests or rules used by employers, landlords or lenders.",
+      "options": [
+        "Yes, unless it's clearly necessary for the job",
+        "Only if a fairer test would work just as well and the employer refused to use it",
+        "No; only intentional discrimination should be illegal"
+      ],
+      "high_pole": "intent only"
+    }
+  ]
+}

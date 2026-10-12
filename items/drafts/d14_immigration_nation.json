@@ -1,0 +1,359 @@
+{
+  "domain_id": "D14",
+  "domain": "Immigration & national identity",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "IMMIG items are about policy; NATION items are about what membership in the nation means. The pilot tests whether these are one axis or two.",
+  "items": [
+    {
+      "id": "legal_immigration_level",
+      "subtopic": "Legal immigration level",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "About 1 million people get permanent legal residence (green cards) each year. What should that number be?",
+      "scope": "Permanent legal immigration only, not temporary visas or refugees.",
+      "options": [
+        "2 million or more",
+        "About 1.5 million",
+        "About 1 million, as now",
+        "About 500,000",
+        "Fewer than 250,000"
+      ],
+      "high_pole": "fewer",
+      "facts": [
+        {"claim": "Roughly 1.0-1.2 million lawful permanent residents admitted per year in recent fiscal years", "source": "DHS Office of Homeland Security Statistics, Yearbook of Immigration Statistics", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "temp_workers",
+      "subtopic": "Legal immigration level",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Should the US admit more or fewer temporary foreign workers, such as farmworkers and engineers?",
+      "scope": "Workers who come on visas for a set number of years.",
+      "options": [
+        "Many more than today",
+        "Somewhat more",
+        "About the same",
+        "Somewhat fewer",
+        "Many fewer"
+      ],
+      "high_pole": "fewer"
+    },
+    {
+      "id": "immigration_pause",
+      "subtopic": "Legal immigration level",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Should the US temporarily stop nearly all new legal immigration?",
+      "scope": "Refugees and spouses of citizens are part of this question too.",
+      "options": [
+        "No; keep or increase current levels",
+        "No, but reduce the levels",
+        "Yes, for a few years",
+        "Yes, for many years"
+      ],
+      "high_pole": "long pause"
+    },
+    {
+      "id": "skills_vs_family",
+      "subtopic": "Skills-based vs family-based selection",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "How should the US mainly choose who gets green cards?",
+      "scope": "Today about two-thirds are based on family ties to people already here.",
+      "options": [
+        "Mostly family ties, as now",
+        "An even mix of family ties and job skills",
+        "Mostly job skills and education, as in Canada and Australia"
+      ],
+      "high_pole": "skills",
+      "facts": [
+        {"claim": "Family-sponsored and immediate-relative categories account for roughly 60-65% of new green cards", "source": "DHS Yearbook of Immigration Statistics", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "sponsor_relatives",
+      "subtopic": "Skills-based vs family-based selection",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Which relatives should US citizens be able to sponsor to immigrate?",
+      "scope": "Sponsoring means the relative can apply for a green card through the citizen.",
+      "options": [
+        "Spouses, children, parents and siblings, with shorter waits than today",
+        "Spouses, children, parents and siblings, as today",
+        "Only spouses, minor children and parents",
+        "Only spouses and minor children"
+      ],
+      "high_pole": "narrower"
+    },
+    {
+      "id": "border_security",
+      "subtopic": "Border enforcement methods",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Which comes closest to how the US should handle the southern border?",
+      "scope": "Think about the border with Mexico.",
+      "options": [
+        "Fewer agents and barriers; expand legal ways to come instead",
+        "Keep about current enforcement",
+        "More agents and technology, but no new physical wall",
+        "A wall along most of the border, plus more agents"
+      ],
+      "high_pole": "more enforcement"
+    },
+    {
+      "id": "military_border",
+      "subtopic": "Border enforcement methods",
+      "axis": ["IMMIG", "HAWK"],
+      "format": "position",
+      "stem": "Should the military be used to stop people from crossing the border without permission?",
+      "scope": "US troops stationed at the southern border.",
+      "options": [
+        "No; border control should be left to civilian agencies",
+        "Troops can support border agents with transport and surveillance, but not stop people",
+        "Yes, troops should stop people and turn them back"
+      ],
+      "high_pole": "yes"
+    },
+    {
+      "id": "everify",
+      "subtopic": "Interior and workplace enforcement",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Should all employers be required to check electronically that new hires are allowed to work in the US?",
+      "scope": "Using a federal online system called E-Verify.",
+      "options": [
+        "No; it burdens workers and businesses",
+        "Only large employers",
+        "Yes, all employers, with heavy fines for hiring people without legal status"
+      ],
+      "high_pole": "all employers"
+    },
+    {
+      "id": "local_police_cooperation",
+      "subtopic": "Interior and workplace enforcement",
+      "axis": ["IMMIG", "FED"],
+      "format": "position",
+      "stem": "Should local police help federal immigration agents find and detain people living here without legal status?",
+      "scope": "Local police and jails in your state, under any administration.",
+      "options": [
+        "No; local police should not help at all",
+        "Only for people convicted of serious crimes",
+        "Yes, whenever federal agents ask"
+      ],
+      "high_pole": "always help"
+    },
+    {
+      "id": "asylum_rules",
+      "subtopic": "Asylum rules",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "People fleeing persecution can ask for asylum in the US. Which comes closest to your view?",
+      "scope": "Think of people arriving at the southern border.",
+      "options": [
+        "Make it easier to apply, and let applicants live and work here while they wait",
+        "Keep the right to apply here, but decide cases much faster",
+        "Require people to apply from outside the US or in the first safe country they reach",
+        "End or sharply limit asylum at the southern border"
+      ],
+      "high_pole": "limit",
+      "definitions": [
+        {"term": "asylum", "text": "Protection for people already in or arriving at the US who fear persecution in their home country because of race, religion, nationality, political opinion or membership in a social group.", "source": "8 U.S.C. sec. 1158; USCIS", "verify": false}
+      ]
+    },
+    {
+      "id": "asylum_grounds",
+      "subtopic": "Asylum rules",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "Should people fleeing gang violence or domestic abuse in their home country qualify for asylum?",
+      "scope": "People whose own government is not the one threatening them.",
+      "options": [
+        "Yes",
+        "Only if their own government can't or won't protect them",
+        "No; asylum should be only for people targeted for their race, religion, politics or similar reasons"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "refugee_cap",
+      "subtopic": "Refugee admissions",
+      "axis": ["IMMIG"],
+      "format": "position",
+      "stem": "How many refugees should the US resettle each year?",
+      "scope": "Refugees are screened abroad before they come, unlike asylum seekers.",
+      "context": "Since 1980 the yearly limit has ranged from under 10,000 to over 200,000.",
+      "options": [
+        "125,000 or more",
+        "About 50,000 to 100,000",
+        "About 15,000 to 30,000",
+        "Fewer than 10,000",
+        "None"
+      ],
+      "high_pole": "fewer",
+      "facts": [
+        {"claim": "Refugee ceilings: 231,700 (FY1980) high; 7,500 (FY2026) low", "source": "State Department / Refugee Processing Center; Presidential Determination for FY2026", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "birthright_citizenship",
+      "subtopic": "Birthright citizenship",
+      "axis": ["IMMIG", "NATION"],
+      "format": "position",
+      "stem": "Should children born in the US automatically be citizens?",
+      "scope": "Children born on US soil, whatever their parents' situation.",
+      "options": [
+        "Yes, all children born here",
+        "Only if at least one parent is a citizen or has legal permanent residence",
+        "Only if at least one parent is a citizen"
+      ],
+      "high_pole": "narrower"
+    },
+    {
+      "id": "assimilation",
+      "subtopic": "Language and assimilation",
+      "axis": ["NATION"],
+      "format": "position",
+      "stem": "How much should immigrants be expected to adopt American customs and ways of life?",
+      "scope": "Think of immigrants who plan to stay permanently.",
+      "options": [
+        "Not at all; they should keep their own customs if they wish",
+        "Learn English and follow the law, but keep their own culture freely",
+        "Learn English and adopt most American customs",
+        "Fully blend in and leave their old customs behind"
+      ],
+      "high_pole": "fully blend in"
+    },
+    {
+      "id": "american_criteria",
+      "subtopic": "What makes someone American",
+      "axis": ["NATION"],
+      "format": "exceptions",
+      "stem": "How important is each of these to being truly American?",
+      "scope": "Answer each one separately.",
+      "options": ["Not important", "Somewhat important", "Very important"],
+      "high_pole": "Very important",
+      "cases": [
+        {"id": "am_born", "text": "Being born in the US"},
+        {"id": "am_english", "text": "Speaking English"},
+        {"id": "am_christian", "text": "Being Christian"},
+        {"id": "am_customs", "text": "Sharing American customs and traditions"},
+        {"id": "am_generations", "text": "Having family in the US for several generations"}
+      ]
+    },
+    {
+      "id": "american_basis",
+      "subtopic": "What makes someone American",
+      "axis": ["NATION"],
+      "format": "position",
+      "stem": "Which comes closest to your view of what makes someone American?",
+      "scope": "This is about belonging, not legal citizenship.",
+      "options": [
+        "Believing in the country's ideals, like freedom and equality; anyone can become American",
+        "Those ideals plus learning English and sharing the culture",
+        "Being born here or raised in the culture from childhood"
+      ],
+      "high_pole": "birth or upbringing"
+    },
+    {
+      "id": "patriotic_education",
+      "subtopic": "Pride and patriotic education",
+      "axis": ["NATION", "EDUC"],
+      "format": "position",
+      "stem": "Overall, how should public schools teach American history?",
+      "scope": "Middle and high school history classes.",
+      "options": [
+        "Give the country's failures and injustices at least as much attention as its achievements",
+        "Teach failures and achievements in balance",
+        "Emphasize achievements and ideals so students take pride in the country"
+      ],
+      "high_pole": "emphasize pride"
+    },
+    {
+      "id": "anthem_kneeling",
+      "subtopic": "Respect for national symbols",
+      "axis": ["NATION"],
+      "format": "position",
+      "stem": "Is kneeling during the national anthem an acceptable way to protest?",
+      "scope": "For example, by athletes before a game, for any cause.",
+      "options": [
+        "Yes, always acceptable",
+        "Acceptable, but not at official government or military events",
+        "Not acceptable; it disrespects the country"
+      ],
+      "high_pole": "not acceptable"
+    },
+    {
+      "id": "culture_tradeoff",
+      "subtopic": "Shared culture vs multiculturalism",
+      "axis": ["NATION"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view?",
+      "scope": "Think about the country as a whole over the long run.",
+      "sides": [
+        {"label": "Many cultures", "text": "America is stronger when groups keep their own cultures, even if people share less in common."},
+        {"label": "One shared culture", "text": "America is stronger when people adopt one shared culture, even if some traditions fade."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "dual_citizenship",
+      "subtopic": "Dual citizenship",
+      "axis": ["NATION"],
+      "format": "position",
+      "stem": "Should US citizens be allowed to also be citizens of another country?",
+      "scope": "Today this is allowed.",
+      "options": [
+        "Yes, as today",
+        "Yes, except for people in high government office",
+        "No; citizens should hold only US citizenship"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "us_exceptional",
+      "subtopic": "Is the US exceptional",
+      "axis": ["NATION"],
+      "format": "belief",
+      "stem": "Compared with other countries, which comes closest to your view of the US?",
+      "scope": "Think about the country overall, not its current government.",
+      "options": [
+        "Many countries are better",
+        "It's no better or worse than many other countries",
+        "It's one of the greatest countries, along with some others",
+        "It stands above all other countries"
+      ],
+      "high_pole": "above all"
+    },
+    {
+      "id": "english_official",
+      "subtopic": "English as official language",
+      "axis": ["NATION"],
+      "format": "position",
+      "stem": "Should English be the official language of the US, with government business done only in English?",
+      "scope": "Federal, state and local government services and documents.",
+      "options": [
+        "No; government should offer services in many languages",
+        "Official language, but keep things like ballots and health information in other languages",
+        "Yes, English only for government business"
+      ],
+      "high_pole": "English only"
+    },
+    {
+      "id": "citizens_first",
+      "subtopic": "Citizens first for jobs and benefits",
+      "axis": ["NATION", "IMMIG"],
+      "format": "position",
+      "stem": "Should US citizens get preference over legal immigrants for jobs and government benefits?",
+      "scope": "Legal permanent residents, not people without legal status.",
+      "options": [
+        "No; legal immigrants should be treated the same",
+        "Only for government jobs",
+        "Yes, for government jobs and benefits",
+        "Yes, and private employers should have to show no citizen is available before hiring a non-citizen"
+      ],
+      "high_pole": "strong preference"
+    }
+  ]
+}
