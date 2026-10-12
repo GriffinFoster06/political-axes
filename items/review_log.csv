@@ -1,0 +1,7 @@
+date,item_id,change_type,before,after,reason,flagged_by
+2026-10-12,workplace_diversity,split option,"No; and government should bar such programs at companies with federal contracts","No such programs, but leave the choice to each company | No such programs, and government should bar them at companies with federal contracts",Option joined two positions,self-review
+2026-10-12,promote_marriage,reword option,"No; government should be neutral about marriage","No; government should not favor married people over unmarried people",Banned blank-middle word,validator
+2026-10-12,hidden_power;economy_rigged;wall_street_vs_workers,reverse code order,,,High pole was not the last code,validator
+2026-10-12,ss_payroll_cap,add option,,"Lower the Social Security tax rate, even if future benefits must shrink",Current law sat at one end of the ladder,audit
+2026-10-12,filibuster,add option,,"Expand it, so nominations for judges and cabinet posts also need 60 votes",Current law sat at one end of the ladder,audit
+2026-10-12,asylum_grounds;emergency_funding;ai_layoff_limits;abortion_shield_laws;proof_of_citizenship;police_spending;carbon_tax,reword options,,,Wording-length asymmetry between ladder halves,audit
