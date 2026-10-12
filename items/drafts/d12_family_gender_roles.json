@@ -7,7 +7,9 @@
     {
       "id": "family_arrangement",
       "subtopic": "Traditional roles at home and work",
-      "axis": ["FAMILY"],
+      "axis": [
+        "FAMILY"
+      ],
       "format": "position",
       "stem": "For a married couple with young children, which arrangement do you think is usually best?",
       "scope": "Assume either arrangement is affordable for them.",
@@ -22,7 +24,10 @@
     {
       "id": "marriage_decisions",
       "subtopic": "Traditional roles at home and work",
-      "axis": ["FAMILY", "RELIGION"],
+      "axis": [
+        "FAMILY",
+        "RELIGION"
+      ],
       "format": "position",
       "stem": "In a marriage between a man and a woman, how should major family decisions be made?",
       "scope": "Decisions like where to live or how to spend large sums.",
@@ -36,7 +41,9 @@
     {
       "id": "promote_marriage",
       "subtopic": "Government support for marriage",
-      "axis": ["FAMILY"],
+      "axis": [
+        "FAMILY"
+      ],
       "format": "position",
       "stem": "Should government policies encourage people to marry?",
       "scope": "Through taxes, benefits or public messages.",
@@ -50,7 +57,9 @@
     {
       "id": "unmarried_partner_rights",
       "subtopic": "Government support for marriage",
-      "axis": ["FAMILY"],
+      "axis": [
+        "FAMILY"
+      ],
       "format": "position",
       "stem": "Should unmarried couples who live together have the same legal rights as married couples, such as inheritance and hospital visits?",
       "scope": "Couples who have not signed any legal agreement.",
@@ -64,7 +73,10 @@
     {
       "id": "childcare_funding",
       "subtopic": "Public childcare vs family care",
-      "axis": ["FAMILY", "REDIS"],
+      "axis": [
+        "FAMILY",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "How should childcare for children under 5 be paid for?",
       "scope": "Think about families of all incomes.",
@@ -80,7 +92,9 @@
     {
       "id": "stay_home_support",
       "subtopic": "Public childcare vs family care",
-      "axis": ["FAMILY"],
+      "axis": [
+        "FAMILY"
+      ],
       "format": "position",
       "stem": "Should parents who stay home with young children get the same government support as parents who pay for childcare?",
       "scope": "Support like tax credits or subsidies.",
@@ -94,7 +108,10 @@
     {
       "id": "no_fault_divorce",
       "subtopic": "Divorce law",
-      "axis": ["FAMILY", "MORAL"],
+      "axis": [
+        "FAMILY",
+        "MORAL"
+      ],
       "format": "position",
       "stem": "Should one spouse be able to get a divorce without the other's agreement or proof of wrongdoing?",
       "scope": "Today every state allows this.",
@@ -108,7 +125,10 @@
     {
       "id": "pay_transparency",
       "subtopic": "Gender equality policies at work",
-      "axis": ["FAMILY", "REG"],
+      "axis": [
+        "FAMILY",
+        "REG"
+      ],
       "format": "position",
       "stem": "Should large employers be required to post pay ranges for jobs and report pay by gender to the government?",
       "scope": "Employers with 100 or more workers.",
@@ -122,7 +142,10 @@
     {
       "id": "board_gender_rules",
       "subtopic": "Gender equality policies at work",
-      "axis": ["FAMILY", "EQUITY"],
+      "axis": [
+        "FAMILY",
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "Should large public companies be required to have a minimum share of women on their boards?",
       "scope": "Companies listed on stock exchanges.",
@@ -136,7 +159,9 @@
     {
       "id": "birth_rate_policy",
       "subtopic": "Birth rates and pro-family policy",
-      "axis": ["FAMILY"],
+      "axis": [
+        "FAMILY"
+      ],
       "format": "position",
       "stem": "US birth rates are at a record low. What should government do about it?",
       "scope": "Policies aimed at families having children.",
@@ -147,7 +172,12 @@
       ],
       "high_pole": "raise births",
       "facts": [
-        {"claim": "US total fertility rate reached a record low of about 1.6 births per woman (2024-2025)", "source": "CDC National Center for Health Statistics", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "US fertility rate fell to a record low in 2025 (CDC provisional data, released April 2026)",
+          "source": "CDC National Center for Health Statistics, provisional 2025 births",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ],
       "notes": "Cross-cutting candidate; direction relative to G unclear."
     }

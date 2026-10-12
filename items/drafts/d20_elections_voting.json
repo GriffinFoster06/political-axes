@@ -7,7 +7,9 @@
     {
       "id": "voter_id",
       "subtopic": "Voter ID",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should voters have to show a photo ID to vote?",
       "scope": "Voting in person.",
@@ -21,21 +23,25 @@
     {
       "id": "proof_of_citizenship",
       "subtopic": "Voter ID",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should people have to show a document proving citizenship, like a passport or birth certificate, when registering to vote?",
       "scope": "Today people swear they are citizens, under penalty of law.",
       "options": [
         "No; the sworn statement and existing checks are enough",
         "Only when government records can't confirm citizenship",
-        "Yes, everyone"
+        "Yes, everyone registering must show such a document"
       ],
       "high_pole": "everyone"
     },
     {
       "id": "mail_voting",
       "subtopic": "Mail voting",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Who should be able to vote by mail?",
       "scope": "Federal elections.",
@@ -50,7 +56,9 @@
     {
       "id": "mail_ballot_deadline",
       "subtopic": "Mail voting",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should mail ballots that arrive after Election Day count if they were mailed by Election Day?",
       "scope": "Ballots with a postmark on or before Election Day.",
@@ -64,7 +72,9 @@
     {
       "id": "auto_registration",
       "subtopic": "Automatic registration",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should eligible citizens be registered to vote automatically when they deal with government agencies, like getting a driver's license?",
       "scope": "Only people the agency confirms are eligible citizens.",
@@ -78,7 +88,10 @@
     {
       "id": "felony_voting",
       "subtopic": "Voting after a felony conviction",
-      "axis": ["VOTING", "ORDER"],
+      "axis": [
+        "VOTING",
+        "ORDER"
+      ],
       "format": "position",
       "stem": "When should people convicted of a felony be able to vote?",
       "scope": "Any felony conviction.",
@@ -94,7 +107,9 @@
     {
       "id": "electoral_college",
       "subtopic": "Electoral College",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "How should the president be elected?",
       "scope": "This would apply to elections from now on, whichever party it might help.",
@@ -108,7 +123,9 @@
     {
       "id": "popular_vote_loser",
       "subtopic": "Electoral College",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Is it acceptable for a candidate to win the presidency while getting fewer votes nationwide than the opponent?",
       "scope": "This has happened 5 times, most recently in 2016.",
@@ -119,13 +136,20 @@
       ],
       "high_pole": "acceptable",
       "facts": [
-        {"claim": "Popular-vote loser won the presidency in 1824, 1876, 1888, 2000, 2016", "source": "National Archives; Federal Election Commission", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Popular-vote loser won the presidency in 1824, 1876, 1888, 2000, 2016",
+          "source": "National Archives; Federal Election Commission",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "redistricting",
       "subtopic": "Redistricting and gerrymandering",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Who should draw the lines for congressional districts?",
       "scope": "Answer whichever party it might help in your state.",
@@ -140,7 +164,9 @@
     {
       "id": "campaign_spending",
       "subtopic": "Campaign finance",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should there be limits on how much corporations, unions and wealthy individuals can spend on elections?",
       "scope": "Spending on ads and campaigns, not direct donations to candidates.",
@@ -154,7 +180,9 @@
     {
       "id": "public_financing",
       "subtopic": "Campaign finance",
-      "axis": ["VOTING"],
+      "axis": [
+        "VOTING"
+      ],
       "format": "position",
       "stem": "Should candidates get public money for their campaigns if they agree to spending limits?",
       "scope": "Federal campaigns.",
@@ -168,7 +196,10 @@
     {
       "id": "congress_term_limits",
       "subtopic": "Term limits (Congress / Supreme Court)",
-      "axis": ["VOTING", "POP"],
+      "axis": [
+        "VOTING",
+        "POP"
+      ],
       "format": "position",
       "stem": "Should members of Congress have term limits?",
       "scope": "Limits on total years served in each chamber.",
@@ -183,7 +214,10 @@
     {
       "id": "court_term_limits",
       "subtopic": "Term limits (Congress / Supreme Court)",
-      "axis": ["VOTING", "NORMS"],
+      "axis": [
+        "VOTING",
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should Supreme Court justices serve a fixed term instead of for life?",
       "scope": "For future justices.",

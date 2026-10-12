@@ -1,13 +1,15 @@
 {
   "domain_id": "D15",
-  "domain": "Crime, policing & punishment",
+  "domain": "Crime policing & punishment",
   "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
   "notes": "High pole is consistently 'more punitive / more police power'.",
   "items": [
     {
       "id": "police_spending",
       "subtopic": "Police funding and role",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should spending on police in most US cities go up or down?",
       "scope": "Think about cities in general, not only your own.",
@@ -15,15 +17,17 @@
         "Cut it a lot and move the money to social services",
         "Cut it somewhat and move some money to social services",
         "Keep it about the same",
-        "Increase it somewhat",
-        "Increase it a lot"
+        "Increase it somewhat, to hire and train more officers",
+        "Increase it a lot, to hire and train many more officers"
       ],
       "high_pole": "increase"
     },
     {
       "id": "crisis_responders",
       "subtopic": "Police funding and role",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Who should respond to 911 calls about someone having a mental health crisis?",
       "scope": "Calls where no weapon or violence has been reported.",
@@ -37,7 +41,9 @@
     {
       "id": "qualified_immunity",
       "subtopic": "Police accountability and qualified immunity",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should people be able to sue individual police officers who violate their constitutional rights?",
       "scope": "Lawsuits for money damages, not criminal charges.",
@@ -50,13 +56,20 @@
       ],
       "high_pole": "more protection",
       "definitions": [
-        {"term": "qualified immunity", "text": "A court-made rule that protects government officials from personal lawsuits unless they violated a clearly established right.", "source": "Harlow v. Fitzgerald, 457 U.S. 800 (1982); Pearson v. Callahan (2009)", "verify": false}
+        {
+          "term": "qualified immunity",
+          "text": "A court-made rule that protects government officials from personal lawsuits unless they violated a clearly established right.",
+          "source": "Harlow v. Fitzgerald, 457 U.S. 800 (1982); Pearson v. Callahan (2009)",
+          "verify": false
+        }
       ]
     },
     {
       "id": "misconduct_records",
       "subtopic": "Police accountability and qualified immunity",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should records of complaints about police misconduct be public?",
       "scope": "Complaints about things like excessive force or dishonesty.",
@@ -70,7 +83,9 @@
     {
       "id": "mandatory_minimums",
       "subtopic": "Sentence length and mandatory minimums",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should judges be required to give minimum prison sentences for certain crimes, such as drug dealing?",
       "scope": "Minimum sentences set by law that judges cannot go below.",
@@ -85,7 +100,9 @@
     {
       "id": "violent_sentences",
       "subtopic": "Sentence length and mandatory minimums",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "For violent crimes such as armed robbery and serious assault, how long are US prison sentences?",
       "scope": "Think about typical sentences, not one case.",
@@ -101,7 +118,10 @@
     {
       "id": "death_penalty",
       "subtopic": "Death penalty",
-      "axis": ["ORDER", "MORAL"],
+      "axis": [
+        "ORDER",
+        "MORAL"
+      ],
       "format": "position",
       "stem": "Should the death penalty be used for murder?",
       "scope": "Cases where guilt is not in doubt. Other crimes come next.",
@@ -116,23 +136,44 @@
     {
       "id": "death_penalty_cases",
       "subtopic": "Death penalty",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "exceptions",
-      "show_if": {"death_penalty": [1, 2]},
+      "show_if": {
+        "death_penalty": [
+          1,
+          2
+        ]
+      },
       "stem": "Should the death penalty also be possible for each of these crimes?",
       "scope": "Answer each case separately. Guilt is not in doubt.",
-      "options": ["Should not be possible", "Should be possible"],
+      "options": [
+        "Should not be possible",
+        "Should be possible"
+      ],
       "high_pole": "Should be possible",
       "cases": [
-        {"id": "dp_terror", "text": "A terrorist attack that kills people"},
-        {"id": "dp_child_rape", "text": "Raping a child, without killing"},
-        {"id": "dp_drug_kingpin", "text": "Running a large drug trafficking operation"}
+        {
+          "id": "dp_terror",
+          "text": "A terrorist attack that kills people"
+        },
+        {
+          "id": "dp_child_rape",
+          "text": "Raping a child, without killing"
+        },
+        {
+          "id": "dp_drug_kingpin",
+          "text": "Running a large drug trafficking operation"
+        }
       ]
     },
     {
       "id": "cash_bail",
       "subtopic": "Bail and pretrial detention",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Before trial, how should it be decided who stays in jail?",
       "scope": "People charged with a crime but not yet convicted.",
@@ -147,7 +188,9 @@
     {
       "id": "pretrial_danger",
       "subtopic": "Bail and pretrial detention",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should judges be able to keep someone in jail before trial because they seem dangerous?",
       "scope": "No bail option is offered. The person has not been convicted.",
@@ -161,35 +204,63 @@
     {
       "id": "prison_purpose",
       "subtopic": "Prison: punishment vs rehabilitation",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "tradeoff",
       "stem": "Which should prisons focus on more?",
       "scope": "Think about prisons in general.",
       "sides": [
-        {"label": "Rehabilitation", "text": "Education and treatment to prepare people for release, even if it costs more."},
-        {"label": "Punishment", "text": "Punishing crime and protecting the public, even if fewer people change their ways."}
+        {
+          "label": "Rehabilitation",
+          "text": "Education and treatment to prepare people for release, even if it costs more."
+        },
+        {
+          "label": "Punishment",
+          "text": "Punishing crime and protecting the public, even if fewer people change their ways."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "second_chance",
       "subtopic": "Prison: punishment vs rehabilitation",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "tradeoff",
       "stem": "After people finish their sentences, which comes closer to your view?",
       "scope": "Think of people convicted of nonviolent crimes.",
       "sides": [
-        {"label": "Second chances", "text": "Limit how employers and landlords can use criminal records, even if they take on some risk."},
-        {"label": "Free to consider records", "text": "Let employers and landlords freely consider records, even if it's harder for people to rebuild their lives."}
+        {
+          "label": "Second chances",
+          "text": "Limit how employers and landlords can use criminal records, even if they take on some risk."
+        },
+        {
+          "label": "Free to consider records",
+          "text": "Let employers and landlords freely consider records, even if it's harder for people to rebuild their lives."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "juveniles_adult_court",
       "subtopic": "Juvenile justice",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should teenagers aged 15 to 17 accused of serious violent crimes be tried as adults?",
       "scope": "Crimes like armed robbery or killing someone.",
@@ -204,7 +275,9 @@
     {
       "id": "private_prisons",
       "subtopic": "Private prisons",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "Should governments use private companies to run prisons and immigration detention centers?",
       "scope": "Companies paid by government to hold people.",
@@ -218,7 +291,10 @@
     {
       "id": "road_blocking",
       "subtopic": "Protests and public order",
-      "axis": ["ORDER", "SPEECH"],
+      "axis": [
+        "ORDER",
+        "SPEECH"
+      ],
       "format": "position",
       "stem": "What should happen to protesters who block a highway or major road?",
       "scope": "Peaceful protesters, for any cause.",
@@ -233,7 +309,9 @@
     {
       "id": "riot_response",
       "subtopic": "Protests and public order",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "When a protest turns into rioting and looting, what should authorities do?",
       "scope": "Any protest, for any cause.",
@@ -247,7 +325,10 @@
     {
       "id": "troops_in_cities",
       "subtopic": "Military in domestic law enforcement",
-      "axis": ["ORDER", "NORMS"],
+      "axis": [
+        "ORDER",
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should the president be able to send troops into a US city to fight crime, over the state governor's objection?",
       "scope": "National Guard or active-duty troops. Answer for any president of either party.",
@@ -261,7 +342,9 @@
     {
       "id": "victims_voice",
       "subtopic": "Victims' rights and restitution",
-      "axis": ["ORDER"],
+      "axis": [
+        "ORDER"
+      ],
       "format": "position",
       "stem": "How much weight should crime victims' views carry when judges decide sentences and parole boards decide on release?",
       "scope": "Victims or their families speaking about the offender.",

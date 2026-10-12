@@ -120,6 +120,40 @@ come in balanced pairs (one keyed each way) so agreement bias cancels.
 - Answer order is shown in both directions (randomized per person) so
   "first option" effects cancel; the score direction never changes.
 
+## Formats
+
+| Format | When | Rules the validator enforces |
+|---|---|---|
+| `position` | Default for any policy question | 3–7 ordered options |
+| `exceptions` | Edge cases after a rule question, or one question across several targets | 2–3 options; `cases`, each scored as its own item |
+| `tradeoff` | When the real disagreement is a choice between two goods | Exactly 2 `sides` (label ≤6 words, text ≤35 words, each naming its cost with "even if…"); fixed scale `Clearly A / Lean A / Lean B / Clearly B`, shown with the side labels. No middle: the point is to make the choice. "None fit" and "Don't know" are still offered |
+| `frequency` | Trust and perception questions | Every option has a numeric anchor ("about 7 in 10") |
+| `belief` | Empirical beliefs (causes of racial gaps, climate science) | Same as position; reported separately and tested for whether it belongs on an axis |
+| `agree_defined` | Values statements only | Defined meaning for every point; a reverse-keyed `pair` using the same scale reversed |
+
+## Item file format
+
+One JSON file per domain in `items/drafts/`. Each item has:
+
+- `id` (unique across the whole bank, including exception case ids)
+- `subtopic` (must match `items/blueprint.csv`) and `axis` (candidate axes; the
+  first is the one the item is written for, later ones are tested)
+- `format`, `stem`, `scope`, optional `context`
+- `options` in code order 0..K-1; `high_pole` describes code K-1. Display
+  direction is randomized per person; codes never change
+- optional `definitions` [{term, text, source, verify}], `facts` [{claim,
+  source, checked, verify, note}], `followup` / `show_if`, `cases`, `sides`,
+  `point_meanings` + `pair`, `notes` (open concerns for reviewers), `links`
+  (ANES/GSS counterparts, for national comparison only)
+
+Checks to run after any edit:
+
+```bash
+python3 scripts/validate_items.py   # rules (errors) and things to check (warnings)
+python3 scripts/coverage.py         # every subtopic and axis has enough items
+python3 scripts/audit_items.py      # balance review list -> reports/item_audit.md
+```
+
 ## Global instructions (shown once, before the first question)
 
 > There are no trick questions. Each question asks about the usual case. When

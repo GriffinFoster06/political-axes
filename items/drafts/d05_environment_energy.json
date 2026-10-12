@@ -7,7 +7,9 @@
     {
       "id": "net_zero_target",
       "subtopic": "Level of climate action and its cost",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "By when should the US aim to stop adding to the overall amount of greenhouse gases in the atmosphere (net zero)?",
       "scope": "Net zero means any emissions left are balanced by removing the same amount.",
@@ -22,7 +24,9 @@
     {
       "id": "climate_willing_to_pay",
       "subtopic": "Level of climate action and its cost",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "How much more per month would you accept paying in energy costs for policies that fight climate change?",
       "scope": "Think of your own household's electricity and fuel bills.",
@@ -37,24 +41,34 @@
     {
       "id": "carbon_tax",
       "subtopic": "Carbon pricing",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should there be a federal tax on the carbon pollution from fossil fuels?",
       "scope": "A tax of $100 per ton would add about 90 cents to a gallon of gasoline.",
       "options": [
         "Yes, a high and rising tax, around $100 a ton, with the money spent on clean energy",
         "Yes, a moderate tax, with all the money returned to households as equal rebates",
-        "No carbon tax"
+        "No carbon tax of any kind"
       ],
       "high_pole": "no tax",
       "facts": [
-        {"claim": "Burning a gallon of gasoline emits about 8.9 kg CO2, so $100/ton is about $0.89/gallon", "source": "US EPA greenhouse gas equivalencies", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Burning a gallon of gasoline emits about 8.9 kg CO2, so $100/ton is about $0.89/gallon",
+          "source": "US EPA greenhouse gas equivalencies",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "carbon_border_fee",
       "subtopic": "Carbon pricing",
-      "axis": ["ENV", "TRADE"],
+      "axis": [
+        "ENV",
+        "TRADE"
+      ],
       "format": "position",
       "stem": "Should imports from countries with weaker pollution rules pay a fee based on the carbon pollution from making them?",
       "scope": "Goods like steel, cement and aluminum.",
@@ -68,7 +82,9 @@
     {
       "id": "drilling_public_lands",
       "subtopic": "Fossil fuel production on public land",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should new oil and gas drilling be allowed on federal lands and in federal waters offshore?",
       "scope": "Land and waters owned by the federal government.",
@@ -83,7 +99,9 @@
     {
       "id": "coal_plants",
       "subtopic": "Fossil fuel production on public land",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "What should happen to coal-fired power plants?",
       "scope": "Plants that make electricity by burning coal.",
@@ -98,7 +116,9 @@
     {
       "id": "nuclear_power",
       "subtopic": "Nuclear power",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should the US build more nuclear power plants?",
       "scope": "Plants that make electricity from nuclear energy.",
@@ -114,7 +134,9 @@
     {
       "id": "nuclear_funding",
       "subtopic": "Nuclear power",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should government help pay to build new nuclear plants?",
       "scope": "Federal money, loans or tax credits.",
@@ -128,7 +150,9 @@
     {
       "id": "ev_requirement",
       "subtopic": "Electric vehicle rules and subsidies",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should government require most new cars sold to be electric by a set date?",
       "scope": "New passenger cars and SUVs.",
@@ -142,7 +166,9 @@
     {
       "id": "ev_tax_credit",
       "subtopic": "Electric vehicle rules and subsidies",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "Should buyers of new electric vehicles get a federal tax credit?",
       "scope": "Credits for individual buyers.",
@@ -154,42 +180,76 @@
       ],
       "high_pole": "no credit",
       "facts": [
-        {"claim": "Clean vehicle credit (IRC 30D) terminated for vehicles acquired after September 30, 2025", "source": "Public Law 119-21 (2025); IRS", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Clean vehicle credit (IRC 30D) terminated for vehicles acquired after September 30, 2025",
+          "source": "Public Law 119-21 (2025); IRS",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "env_jobs_tradeoff",
       "subtopic": "Environmental rules vs jobs",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view?",
       "scope": "Think of industries like mining, oil and manufacturing.",
       "sides": [
-        {"label": "Protect the environment", "text": "Stricter environmental rules, even if some jobs in those industries are lost."},
-        {"label": "Protect the jobs", "text": "Keep those jobs, even if the environment is less protected."}
+        {
+          "label": "Protect the environment",
+          "text": "Stricter environmental rules, even if some jobs in those industries are lost."
+        },
+        {
+          "label": "Protect the jobs",
+          "text": "Keep those jobs, even if the environment is less protected."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "permitting_tradeoff",
       "subtopic": "Environmental rules vs jobs",
-      "axis": ["ENV", "HOUSING"],
+      "axis": [
+        "ENV",
+        "HOUSING"
+      ],
       "format": "tradeoff",
       "stem": "For big projects like pipelines, power lines and solar farms, which comes closer to your view?",
       "scope": "Projects of any kind of energy.",
       "sides": [
-        {"label": "Thorough review", "text": "Keep thorough environmental reviews, even if projects take many years to build."},
-        {"label": "Build faster", "text": "Speed up approvals, even if some environmental harms are missed."}
+        {
+          "label": "Thorough review",
+          "text": "Keep thorough environmental reviews, even if projects take many years to build."
+        },
+        {
+          "label": "Build faster",
+          "text": "Speed up approvals, even if some environmental harms are missed."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B",
       "notes": "Cross-cutting candidate: clean-energy builders and fossil-fuel producers both favor speed."
     },
     {
       "id": "land_protection",
       "subtopic": "Conservation and public lands",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "position",
       "stem": "How much land should be protected from development like mining, drilling and logging?",
       "scope": "Land and waters in the US.",
@@ -204,7 +264,10 @@
     {
       "id": "sell_public_land",
       "subtopic": "Conservation and public lands",
-      "axis": ["ENV", "FED"],
+      "axis": [
+        "ENV",
+        "FED"
+      ],
       "format": "position",
       "stem": "Should the federal government sell some of its land to states or private owners?",
       "scope": "Federal land such as national forests and grazing land, not national parks.",
@@ -218,7 +281,10 @@
     {
       "id": "climate_agreements",
       "subtopic": "International climate agreements",
-      "axis": ["ENV", "GLOBAL"],
+      "axis": [
+        "ENV",
+        "GLOBAL"
+      ],
       "format": "position",
       "stem": "Should the US take part in international agreements to cut greenhouse gas emissions, like the Paris Agreement?",
       "scope": "Agreements among most countries of the world.",
@@ -230,13 +296,20 @@
       ],
       "high_pole": "no",
       "facts": [
-        {"claim": "US withdrawal from the Paris Agreement took effect January 27, 2026 (one year after notification)", "source": "UNFCCC depositary notification; Executive Order 14162", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "US withdrawal from the Paris Agreement took effect in January 2026, one year after notification",
+          "source": "E&E News, 'So long, Paris: US officially leaves landmark climate pact' (Jan 2026); UNFCCC",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "climate_belief",
       "subtopic": "Beliefs about climate science",
-      "axis": ["ENV"],
+      "axis": [
+        "ENV"
+      ],
       "format": "belief",
       "stem": "Which comes closest to your view of climate change?",
       "scope": "Changes in the Earth's average temperature over recent decades.",
@@ -252,7 +325,10 @@
     {
       "id": "environmental_justice",
       "subtopic": "Environmental justice",
-      "axis": ["ENV", "EQUITY"],
+      "axis": [
+        "ENV",
+        "EQUITY"
+      ],
       "format": "position",
       "stem": "Should pollution cleanup give extra priority to low-income and minority neighborhoods?",
       "scope": "Federal cleanup money and enforcement.",

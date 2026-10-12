@@ -153,7 +153,18 @@ issue map.
 | D25 | Values (cross-cutting) | 8 | 18 | 9 | VALUES |
 | | **Total** | **230** | **383** | **248** | **29 candidates** |
 
-16 of the draft questions are already written (`items/drafts/core_v0.json`).
+**Status (2026-10-12): every subtopic is drafted.** The bank is 379 questions
+in 26 files under `items/drafts/` (one per domain plus `core_v0.json`), worth
+425 scored units because each exception case is scored on its own. Every
+subtopic meets or exceeds its planned count and every candidate axis has at
+least 10 units. `scripts/coverage.py` checks this against the blueprint
+(written per subtopic: `items/coverage.csv`); `scripts/audit_items.py` writes
+the balance review list to `reports/item_audit.md`.
+
+Final format mix of scored units: position 286, exceptions 63, tradeoff 33,
+frequency 25, agree/disagree pairs 10, belief 8. Exceptions came out higher
+than planned because several follow-ups list 3–6 cases; each case is short
+(~5 s), so the time cost is small.
 
 ---
 
@@ -345,17 +356,17 @@ results can't be tuned after the fact.
 
 ## 12. Milestones
 
-| # | Deliverable | Done when |
-|---|---|---|
-| M1 | All 25 domains drafted (383 questions) | Validator passes; balance check done per domain |
-| M2 | Two-sided review + think-alouds | Every question rated; revisions logged |
-| M3 | Priorities, values, about-you and quality modules | Validator passes |
-| M4 | Quiz app (pilot version) | Planned-missing blocks, save/resume, timing, free-text capture |
-| M5 | Pilot A | 300+ complete; item screening report |
-| M6 | Thresholds pre-registered in repo | Committed before Pilot B |
-| M7 | Pilot B + retest | Data in; structure, axis decisions, selection report |
-| M8 | v1 instrument | Precision targets met; adaptive mode validated |
-| M9 | Public launch | Results page, limitations page, open item parameters |
+| # | Deliverable | Done when | Status |
+|---|---|---|---|
+| M1 | All 25 domains drafted (383 questions planned) | Validator passes; balance check done per domain | **Done** 2026-10-12: 379 questions / 425 scored units, 0 validator errors; audit in `reports/item_audit.md` |
+| M2 | Two-sided review + think-alouds | Every question rated; revisions logged | Next |
+| M3 | Priorities, values, about-you and quality modules | Validator passes | **Drafted** 2026-10-12: values in `items/drafts/d25_values.json`; other modules in `items/modules/` |
+| M4 | Quiz app (pilot version) | Planned-missing blocks, save/resume, timing, free-text capture | |
+| M5 | Pilot A | 300+ complete; item screening report | |
+| M6 | Thresholds pre-registered in repo | Committed before Pilot B | |
+| M7 | Pilot B + retest | Data in; structure, axis decisions, selection report | |
+| M8 | v1 instrument | Precision targets met; adaptive mode validated | |
+| M9 | Public launch | Results page, limitations page, open item parameters | |
 
 ---
 

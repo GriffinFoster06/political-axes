@@ -6,7 +6,9 @@
     {
       "id": "coverage_guarantee",
       "subtopic": "Overall coverage system",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should the federal government make sure every American has health insurance?",
       "scope": "This is about the goal. How the system works is asked separately.",
@@ -21,7 +23,9 @@
     {
       "id": "medicare_age",
       "subtopic": "Public option / single payer details",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Who should be able to get Medicare, the federal health plan now mainly for people 65 and older?",
       "scope": "Assume people who join would pay premiums or taxes in some form.",
@@ -37,7 +41,9 @@
     {
       "id": "private_insurance_role",
       "subtopic": "Public option / single payer details",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Suppose the US had a government health plan open to everyone. What role should private health insurance have?",
       "scope": "Answer even if you oppose such a plan.",
@@ -51,7 +57,10 @@
     {
       "id": "drug_prices",
       "subtopic": "Prescription drug prices",
-      "axis": ["SOCINS", "REG"],
+      "axis": [
+        "SOCINS",
+        "REG"
+      ],
       "format": "position",
       "stem": "What role should the government have in setting prescription drug prices?",
       "scope": "Think about brand-name drugs with no cheaper generic.",
@@ -64,13 +73,20 @@
       ],
       "high_pole": "no government role",
       "facts": [
-        {"claim": "Medicare Drug Price Negotiation Program: first 10 negotiated prices effective January 1, 2026", "source": "Inflation Reduction Act of 2022; CMS", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Medicare Drug Price Negotiation Program: first 10 negotiated prices effective January 1, 2026",
+          "source": "Inflation Reduction Act of 2022; CMS",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "drug_import",
       "subtopic": "Prescription drug prices",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should people in the US be able to buy prescription drugs imported from countries where they cost less, such as Canada?",
       "scope": "Drugs approved in the other country, sold through licensed pharmacies.",
@@ -85,7 +101,9 @@
     {
       "id": "medicaid_scope",
       "subtopic": "Medicaid scope and work rules",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Which comes closest to what should happen to Medicaid, the health program for people with low incomes?",
       "scope": "Medicaid is paid for jointly by the federal government and states.",
@@ -97,13 +115,21 @@
       ],
       "high_pole": "less federal",
       "definitions": [
-        {"term": "Medicaid", "text": "A health coverage program for people with low incomes, run by states under federal rules and paid for by both.", "source": "Centers for Medicare & Medicaid Services", "verify": false}
+        {
+          "term": "Medicaid",
+          "text": "A health coverage program for people with low incomes, run by states under federal rules and paid for by both.",
+          "source": "Centers for Medicare & Medicaid Services",
+          "verify": false
+        }
       ]
     },
     {
       "id": "medicaid_work",
       "subtopic": "Medicaid scope and work rules",
-      "axis": ["SOCINS", "REDIS"],
+      "axis": [
+        "SOCINS",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should adults on Medicaid who are able to work be required to work, volunteer or go to school to keep their coverage?",
       "scope": "Think of adults without disabilities or young children.",
@@ -115,13 +141,20 @@
       ],
       "high_pole": "stricter",
       "facts": [
-        {"claim": "Public Law 119-21 requires expansion adults 19-64 to show 80 hours/month of work, community service, or school, with exemptions; states must implement by Jan 1, 2027", "source": "Public Law 119-21 (2025), sec. 71119; KFF", "checked": "2026-10-12", "verify": true}
+        {
+          "claim": "Public Law 119-21 requires expansion adults 19-64 to show 80 hours/month of work, community service, or school, with exemptions; states must implement by Jan 1, 2027",
+          "source": "Public Law 119-21 (2025), sec. 71119; KFF",
+          "checked": "2026-10-12",
+          "verify": true
+        }
       ]
     },
     {
       "id": "ss_shortfall",
       "subtopic": "Social Security future",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "How should Social Security's funding gap be closed?",
       "scope": "If nothing changes, benefits would be cut automatically when the trust fund runs out.",
@@ -135,13 +168,21 @@
       ],
       "high_pole": "benefit cuts only",
       "facts": [
-        {"claim": "2025 Trustees Report: OASI trust fund depletion 2033 (77% payable); combined OASDI 2034 (81% payable)", "source": "2025 Social Security Trustees Report", "checked": "2026-10-12", "verify": true, "note": "Check whether a 2026 Trustees Report changed these dates."}
+        {
+          "claim": "2025 Trustees Report: OASI trust fund depletion 2033 (77% payable); combined OASDI 2034 (81% payable)",
+          "source": "2025 Social Security Trustees Report",
+          "checked": "2026-10-12",
+          "verify": true,
+          "note": "Check whether a 2026 Trustees Report changed these dates."
+        }
       ]
     },
     {
       "id": "ss_retirement_age",
       "subtopic": "Social Security future",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "What should Social Security's full retirement age be for people now under 50?",
       "scope": "Full retirement age is when someone can get their full benefit. Early, reduced benefits could still start at 62.",
@@ -154,13 +195,21 @@
       ],
       "high_pole": "higher",
       "facts": [
-        {"claim": "Full retirement age is 67 for people born 1960 or later", "source": "Social Security Administration", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Full retirement age is 67 for people born 1960 or later",
+          "source": "Social Security Administration",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "ss_payroll_cap",
       "subtopic": "Social Security future",
-      "axis": ["SOCINS", "REDIS"],
+      "axis": [
+        "SOCINS",
+        "REDIS"
+      ],
       "format": "position",
       "stem": "Should Social Security tax apply to wages above the current limit?",
       "scope": "The tax is 12.4% of wages, split between worker and employer.",
@@ -169,17 +218,25 @@
         "Yes, on all wages, with no limit",
         "Yes, on wages above $400,000, leaving wages in between untaxed",
         "Raise the limit somewhat, but keep one",
-        "Keep the limit as it is"
+        "Keep the limit as it is",
+        "Lower the Social Security tax rate, even if future benefits must shrink"
       ],
-      "high_pole": "keep limit",
+      "high_pole": "less payroll tax",
       "facts": [
-        {"claim": "Social Security contribution and benefit base is $184,500 for 2026", "source": "Social Security Administration, 2026 COLA fact sheet", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Social Security contribution and benefit base is $184,500 for 2026",
+          "source": "Social Security Administration, 2026 COLA fact sheet",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "medicare_structure",
       "subtopic": "Medicare future",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Which comes closest to how Medicare should work for future retirees?",
       "scope": "Think of people who retire 15 or more years from now.",
@@ -194,7 +251,9 @@
     {
       "id": "medicare_means_test",
       "subtopic": "Medicare future",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should retirees with higher incomes pay more for Medicare than others?",
       "scope": "Higher-income retirees already pay somewhat higher premiums today.",
@@ -210,7 +269,9 @@
     {
       "id": "ss_private_accounts",
       "subtopic": "Private retirement accounts",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should workers be able to put part of their Social Security taxes into personal investment accounts?",
       "scope": "Accounts the worker would own and could invest, for example in stock funds.",
@@ -225,7 +286,10 @@
     {
       "id": "insurance_mandate",
       "subtopic": "Insurance mandates",
-      "axis": ["SOCINS", "LIBERTY"],
+      "axis": [
+        "SOCINS",
+        "LIBERTY"
+      ],
       "format": "position",
       "stem": "Should people be required to have health insurance?",
       "scope": "Assume help paying is available for people who can't afford it.",
@@ -237,13 +301,20 @@
       ],
       "high_pole": "personal choice",
       "facts": [
-        {"claim": "Individual mandate penalty reduced to $0 starting 2019", "source": "Tax Cuts and Jobs Act, Public Law 115-97, sec. 11081", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Individual mandate penalty reduced to $0 starting 2019",
+          "source": "Tax Cuts and Jobs Act, Public Law 115-97, sec. 11081",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "preexisting_conditions",
       "subtopic": "Insurance mandates",
-      "axis": ["SOCINS"],
+      "axis": [
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should health insurers be allowed to charge more or refuse coverage because of a person's past health problems?",
       "scope": "Think of conditions like diabetes or cancer that a person had before buying insurance.",
@@ -255,13 +326,21 @@
       ],
       "high_pole": "allow",
       "facts": [
-        {"claim": "Affordable Care Act bars denial of coverage and premium rating based on health status from 2014", "source": "42 U.S.C. sec. 300gg, 300gg-1, 300gg-3", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Affordable Care Act bars denial of coverage and premium rating based on health status from 2014",
+          "source": "42 U.S.C. sec. 300gg, 300gg-1, 300gg-3",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "school_vaccines",
       "subtopic": "Vaccine requirements",
-      "axis": ["LIBERTY", "SOCINS"],
+      "axis": [
+        "LIBERTY",
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Should children have to be vaccinated against diseases like measles and polio to attend school?",
       "scope": "Think of children with no medical reason to skip. You'll be asked about other exemptions next.",
@@ -276,22 +355,40 @@
     {
       "id": "vaccine_exemptions",
       "subtopic": "Vaccine requirements",
-      "axis": ["LIBERTY"],
+      "axis": [
+        "LIBERTY"
+      ],
       "format": "exceptions",
-      "show_if": {"school_vaccines": [0, 1]},
+      "show_if": {
+        "school_vaccines": [
+          0,
+          1
+        ]
+      },
       "stem": "Under the rule you picked, should these children be allowed to skip the required vaccines?",
       "scope": "Answer each case separately.",
-      "options": ["Should not be allowed to skip", "Should be allowed to skip"],
+      "options": [
+        "Should not be allowed to skip",
+        "Should be allowed to skip"
+      ],
       "high_pole": "Should be allowed to skip",
       "cases": [
-        {"id": "vax_religious", "text": "Children whose parents have religious objections"},
-        {"id": "vax_personal", "text": "Children whose parents have personal or philosophical objections"}
+        {
+          "id": "vax_religious",
+          "text": "Children whose parents have religious objections"
+        },
+        {
+          "id": "vax_personal",
+          "text": "Children whose parents have personal or philosophical objections"
+        }
       ]
     },
     {
       "id": "outbreak_vaccine_jobs",
       "subtopic": "Vaccine requirements",
-      "axis": ["LIBERTY"],
+      "axis": [
+        "LIBERTY"
+      ],
       "format": "position",
       "stem": "During a serious outbreak of a contagious disease, who should be able to require workers to be vaccinated?",
       "scope": "Assume a vaccine is widely judged safe and effective. Medical exemptions would always apply.",
@@ -306,7 +403,10 @@
     {
       "id": "immigrant_health_benefits",
       "subtopic": "Immigrants' eligibility for public health benefits",
-      "axis": ["IMMIG", "SOCINS"],
+      "axis": [
+        "IMMIG",
+        "SOCINS"
+      ],
       "format": "position",
       "stem": "Which immigrants should be able to get Medicaid if their incomes are low enough?",
       "scope": "Emergency room care is always available to everyone and is not part of this question.",
@@ -320,7 +420,12 @@
       ],
       "high_pole": "citizens only",
       "facts": [
-        {"claim": "Most lawful permanent residents face a 5-year bar before federal Medicaid eligibility; unauthorized immigrants are eligible only for emergency Medicaid", "source": "Personal Responsibility and Work Opportunity Reconciliation Act of 1996; KFF", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Most lawful permanent residents face a 5-year bar before federal Medicaid eligibility; unauthorized immigrants are eligible only for emergency Medicaid",
+          "source": "Personal Responsibility and Work Opportunity Reconciliation Act of 1996; KFF",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     }
   ]

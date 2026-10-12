@@ -7,7 +7,9 @@
     {
       "id": "exec_orders_scope",
       "subtopic": "Scope of executive orders",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "When Congress won't pass a policy the president wants, what should the president be able to do?",
       "scope": "Answer for any president of either party, now or in the future.",
@@ -22,7 +24,9 @@
     {
       "id": "refuse_to_spend",
       "subtopic": "Scope of executive orders",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "If Congress passes a law funding a program the president opposes, should the president be able to refuse to spend the money?",
       "scope": "Answer for any president of either party.",
@@ -34,13 +38,20 @@
       ],
       "high_pole": "more presidential power",
       "facts": [
-        {"claim": "Impoundment Control Act of 1974: rescission proposals lapse unless Congress approves within 45 days of continuous session", "source": "2 U.S.C. sec. 683; Government Accountability Office", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "Impoundment Control Act of 1974: rescission proposals lapse unless Congress approves within 45 days of continuous session",
+          "source": "2 U.S.C. sec. 683; Government Accountability Office",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "emergency_duration",
       "subtopic": "Emergency powers",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "When a president declares a national emergency to use special powers, how long should it last without Congress voting to approve it?",
       "scope": "Answer for any president of either party.",
@@ -53,18 +64,25 @@
       ],
       "high_pole": "more presidential power",
       "facts": [
-        {"claim": "National Emergencies Act: emergency continues until terminated by the president or by joint resolution (subject to veto); annual renewal notice required", "source": "50 U.S.C. sec. 1621-1622", "checked": "2026-10-12", "verify": false}
+        {
+          "claim": "National Emergencies Act: emergency continues until terminated by the president or by joint resolution (subject to veto); annual renewal notice required",
+          "source": "50 U.S.C. sec. 1621-1622",
+          "checked": "2026-10-12",
+          "verify": false
+        }
       ]
     },
     {
       "id": "emergency_funding",
       "subtopic": "Emergency powers",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should a president be able to declare an emergency to pay for a project that Congress refused to fund?",
       "scope": "Answer for any president of either party, and for projects you like or dislike.",
       "options": [
-        "Never",
+        "Never; spending decisions belong to Congress",
         "Only for a sudden threat, such as an attack, until Congress can act",
         "Yes, whenever the president judges the need is urgent"
       ],
@@ -73,7 +91,9 @@
     {
       "id": "civil_service",
       "subtopic": "Independent agencies and civil service",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should a president be able to fire career government employees, such as scientists and analysts, for disagreeing with the president's policies?",
       "scope": "Career employees are hired for their skills, not appointed for their politics. Answer for any president.",
@@ -87,7 +107,9 @@
     {
       "id": "independent_agencies",
       "subtopic": "Independent agencies and civil service",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Some agencies, like the Federal Reserve, are set up so the president can't fire their leaders over policy disagreements. Which comes closest to your view?",
       "scope": "Answer for any president of either party.",
@@ -99,13 +121,20 @@
       ],
       "high_pole": "more presidential power",
       "definitions": [
-        {"term": "Federal Reserve", "text": "The central bank of the US, which sets interest rates and oversees banks.", "source": "Federal Reserve Board", "verify": false}
+        {
+          "term": "Federal Reserve",
+          "text": "The central bank of the US, which sets interest rates and oversees banks.",
+          "source": "Federal Reserve Board",
+          "verify": false
+        }
       ]
     },
     {
       "id": "prosecute_opponents",
       "subtopic": "Investigating or prosecuting political opponents",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should a president be involved in deciding whether the Justice Department investigates specific people?",
       "scope": "Think about political opponents or critics of the president. Answer for any president of either party.",
@@ -119,7 +148,9 @@
     {
       "id": "pardon_allies",
       "subtopic": "Investigating or prosecuting political opponents",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Should presidents pardon their own family members, associates or political allies?",
       "scope": "Answer for any president of either party.",
@@ -133,7 +164,9 @@
     {
       "id": "accept_results",
       "subtopic": "Accepting election results",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "A candidate believes they lost an election because of fraud, but courts and election officials have confirmed the result. What should the candidate do?",
       "scope": "Answer for a candidate of any party, in any federal or state election.",
@@ -148,39 +181,68 @@
     {
       "id": "checks_vs_action",
       "subtopic": "Checks and balances vs getting things done",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "tradeoff",
       "stem": "Which kind of system is closer to what you want?",
       "scope": "Think about the federal government in general, whichever party is in charge.",
       "sides": [
-        {"label": "Strong checks", "text": "No single leader can act without others agreeing, even if needed changes take years."},
-        {"label": "Leaders can act", "text": "An elected leader can act quickly, even if there are fewer checks on mistakes or abuse."}
+        {
+          "label": "Strong checks",
+          "text": "No single leader can act without others agreeing, even if needed changes take years."
+        },
+        {
+          "label": "Leaders can act",
+          "text": "An elected leader can act quickly, even if there are fewer checks on mistakes or abuse."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "courts_vs_majority",
       "subtopic": "Checks and balances vs getting things done",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "tradeoff",
       "stem": "Which comes closer to your view of courts?",
       "scope": "Think about laws in general, including ones you like and dislike.",
       "sides": [
-        {"label": "Courts can overrule", "text": "Courts should strike down laws that violate the Constitution, even when most voters support them."},
-        {"label": "Majority rules", "text": "When most voters clearly support a law, courts should rarely overrule it."}
+        {
+          "label": "Courts can overrule",
+          "text": "Courts should strike down laws that violate the Constitution, even when most voters support them."
+        },
+        {
+          "label": "Majority rules",
+          "text": "When most voters clearly support a law, courts should rarely overrule it."
+        }
       ],
-      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "options": [
+        "Clearly A",
+        "Lean A",
+        "Lean B",
+        "Clearly B"
+      ],
       "high_pole": "Clearly B"
     },
     {
       "id": "filibuster",
       "subtopic": "Checks and balances vs getting things done",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Most bills in the Senate need 60 of 100 votes to pass. What should happen to this rule?",
       "scope": "Answer for either party being in the majority.",
       "options": [
+        "Expand it, so nominations for judges and cabinet posts also need 60 votes",
         "Keep it as it is",
         "Keep it, but make senators who block a bill stay and speak on the floor",
         "End it for some kinds of bills, such as voting rights or budget bills",
@@ -188,14 +250,21 @@
       ],
       "high_pole": "majority rule",
       "definitions": [
-        {"term": "60 of 100 votes", "text": "Under Senate rules, ending debate on most bills needs 60 votes. A senator can otherwise delay a vote indefinitely (a filibuster).", "source": "US Senate, Rule XXII", "verify": false}
+        {
+          "term": "60 of 100 votes",
+          "text": "Under Senate rules, ending debate on most bills needs 60 votes. A senator can otherwise delay a vote indefinitely (a filibuster).",
+          "source": "US Senate, Rule XXII",
+          "verify": false
+        }
       ],
       "notes": "Positions on this rule historically flip with Senate control; watch for DIF by party."
     },
     {
       "id": "rule_bending_leader",
       "subtopic": "Strong leader who bends rules",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "How do you feel about a president who ignores rules or laws they believe block what voters elected them to do?",
       "scope": "Answer for any president of either party.",
@@ -210,7 +279,9 @@
     {
       "id": "political_violence",
       "subtopic": "Political violence",
-      "axis": ["NORMS"],
+      "axis": [
+        "NORMS"
+      ],
       "format": "position",
       "stem": "Is violence ever justified to achieve political goals in the US today?",
       "scope": "This is about violence by any group, for any cause. Self-defense against an attack is not included.",
