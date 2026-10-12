@@ -1,0 +1,194 @@
+{
+  "domain_id": "D17",
+  "domain": "Drugs & personal liberty",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "High pole is consistently 'more restriction / more paternalism'. This domain tests whether a personal-liberty axis exists separately from G, which compass-style quizzes assume but never test.",
+  "items": [
+    {
+      "id": "marijuana_law",
+      "subtopic": "Marijuana",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "What should the law be on marijuana for adults 21 and older?",
+      "scope": "Recreational use, not medical. Driving while impaired stays illegal under every option.",
+      "context": "About half the states allow adults to buy it legally. Federal law still bans it.",
+      "options": [
+        "Legal to grow and sell, regulated like alcohol",
+        "Legal to have small amounts, but not sold in stores",
+        "Legal only for medical use with a doctor's recommendation",
+        "Illegal, with fines but no jail for small amounts",
+        "Illegal, with jail possible for having it"
+      ],
+      "high_pole": "stricter",
+      "facts": [
+        {"claim": "24 states plus DC have legalized adult-use cannabis; it remains a federally controlled substance", "source": "National Conference of State Legislatures; Controlled Substances Act", "checked": "2026-10-12", "verify": true, "note": "Check federal rescheduling status (Schedule III process begun 2024; executive action Dec 2025)."}
+      ]
+    },
+    {
+      "id": "marijuana_records",
+      "subtopic": "Marijuana",
+      "axis": ["LIBERTY", "ORDER"],
+      "format": "position",
+      "stem": "In places where marijuana is now legal, what should happen to people's past convictions for having small amounts?",
+      "scope": "Convictions for possession only, not for selling or violence.",
+      "options": [
+        "Clear them automatically",
+        "Clear them if the person applies",
+        "Keep them on record"
+      ],
+      "high_pole": "keep"
+    },
+    {
+      "id": "drug_possession",
+      "subtopic": "Other drugs: decriminalization",
+      "axis": ["LIBERTY", "ORDER"],
+      "format": "position",
+      "stem": "What should happen to adults caught with a small amount of a drug like cocaine or heroin for their own use?",
+      "scope": "Personal use only. Selling drugs is a separate matter.",
+      "options": [
+        "Nothing; it should be legal and regulated, like alcohol",
+        "A civil fine or a referral to treatment, not a crime",
+        "A crime, but treatment instead of jail for first offenses",
+        "A crime, with jail possible even for first offenses"
+      ],
+      "high_pole": "stricter"
+    },
+    {
+      "id": "psychedelics",
+      "subtopic": "Other drugs: decriminalization",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "Should psilocybin, the drug in \"magic mushrooms\", be legal for adults?",
+      "scope": "Adults 21 and older.",
+      "options": [
+        "Legal for any adult",
+        "Legal only in supervised settings, like a licensed center",
+        "Legal only as a prescribed treatment, if approved as a medicine",
+        "Illegal"
+      ],
+      "high_pole": "illegal"
+    },
+    {
+      "id": "supervised_sites",
+      "subtopic": "Supervised consumption sites",
+      "axis": ["LIBERTY", "ORDER"],
+      "format": "position",
+      "stem": "Should cities be allowed to run sites where people can use drugs they bring, with staff present to prevent overdose deaths?",
+      "scope": "Staff would not provide drugs. They would offer treatment referrals.",
+      "options": [
+        "Yes, and the federal government should help fund them",
+        "Yes, if the city chooses, without federal funding",
+        "No; they encourage drug use and should be illegal"
+      ],
+      "high_pole": "illegal"
+    },
+    {
+      "id": "sports_betting",
+      "subtopic": "Gambling and sports betting",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "What should the law be on betting on sports through phone apps?",
+      "scope": "Adults 21 and older.",
+      "options": [
+        "Legal everywhere, with few limits",
+        "Legal where states choose, with limits on advertising and bet sizes",
+        "Legal only in person at casinos and licensed locations, not on phones",
+        "Illegal"
+      ],
+      "high_pole": "illegal"
+    },
+    {
+      "id": "sex_work_law",
+      "subtopic": "Sex work",
+      "axis": ["LIBERTY", "MORAL"],
+      "format": "position",
+      "stem": "What should the law be when one adult pays another adult for sex?",
+      "scope": "Consenting adults only. Trafficking and anything involving minors stay serious crimes under every option.",
+      "options": [
+        "No criminal penalties for either person",
+        "Legal, but only in licensed and regulated businesses, as in some Nevada counties",
+        "Illegal to pay for sex, but not to sell it",
+        "Illegal for both people, as in most states"
+      ],
+      "high_pole": "illegal for both"
+    },
+    {
+      "id": "adult_content",
+      "subtopic": "Sex work",
+      "axis": ["LIBERTY", "MORAL"],
+      "format": "position",
+      "stem": "What should the law be on sexually explicit videos and images of adults?",
+      "scope": "Content made by consenting adults. Content involving minors is always a serious crime.",
+      "options": [
+        "Legal, with no special limits",
+        "Legal, but websites must verify that viewers are adults",
+        "Legal, but banned from most websites and sold only through restricted channels",
+        "Illegal to make or sell"
+      ],
+      "high_pole": "illegal"
+    },
+    {
+      "id": "aid_in_dying",
+      "subtopic": "Medical aid in dying",
+      "axis": ["LIBERTY", "MORAL"],
+      "format": "position",
+      "stem": "Should doctors be allowed to prescribe medicine that a dying adult can choose to take to end their life?",
+      "scope": "Think of an adult who is mentally capable and expected to die within 6 months. Other situations come next.",
+      "context": "About a dozen states and Washington, DC allow this.",
+      "options": [
+        "Yes, with a short waiting period",
+        "Yes, with strict safeguards, such as two doctors' approval and a longer wait",
+        "No"
+      ],
+      "high_pole": "no",
+      "followup": "aid_in_dying_cases",
+      "facts": [
+        {"claim": "Medical aid in dying is authorized in about 11-12 jurisdictions including DC (statute or court ruling)", "source": "Death with Dignity National Center; state statutes", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "aid_in_dying_cases",
+      "subtopic": "Medical aid in dying",
+      "axis": ["LIBERTY", "MORAL"],
+      "format": "exceptions",
+      "show_if": {"aid_in_dying": [0, 1]},
+      "stem": "Under the rules you chose, should these adults also be able to get this medicine?",
+      "scope": "Answer each case separately.",
+      "options": ["Should be allowed", "Should not be allowed"],
+      "high_pole": "Should not be allowed",
+      "cases": [
+        {"id": "mad_suffering", "text": "Adults with an incurable illness causing severe suffering, who are not expected to die within 6 months"},
+        {"id": "mad_mental", "text": "Adults whose only condition is a severe mental illness that has not responded to treatment"},
+        {"id": "mad_dementia", "text": "Adults with early dementia who ask for it in advance, for when the disease is advanced"}
+      ]
+    },
+    {
+      "id": "sin_taxes",
+      "subtopic": "Public-health paternalism (sin taxes / helmet and seatbelt laws)",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "Should government put extra taxes on unhealthy products to discourage people from using them?",
+      "scope": "Taxes beyond the normal sales tax.",
+      "options": [
+        "No extra taxes to discourage use; adults should make their own choices",
+        "Only on tobacco and alcohol, as today",
+        "Yes, on sugary drinks and junk food as well as tobacco and alcohol"
+      ],
+      "high_pole": "more taxes"
+    },
+    {
+      "id": "helmet_law",
+      "subtopic": "Public-health paternalism (sin taxes / helmet and seatbelt laws)",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "Should adults be required by law to wear a helmet when riding a motorcycle?",
+      "scope": "Adult riders on public roads.",
+      "options": [
+        "No; adults should decide for themselves",
+        "Only riders under 21 or without health insurance",
+        "Yes, all riders"
+      ],
+      "high_pole": "all riders"
+    }
+  ]
+}

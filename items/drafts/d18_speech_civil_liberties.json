@@ -1,0 +1,205 @@
+{
+  "domain_id": "D18",
+  "domain": "Free speech & civil liberties",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "High pole is consistently 'more restriction of speech'. Tolerance items list targets from both sides in equal numbers, so the axis measures tolerance itself rather than which side someone dislikes.",
+  "items": [
+    {
+      "id": "hate_speech_law",
+      "subtopic": "Hate speech laws",
+      "axis": ["SPEECH"],
+      "format": "position",
+      "stem": "Should it be a crime to say hateful things in public about people because of their race, religion or sexual orientation?",
+      "scope": "Speech only. Threats and calls for violence are already crimes and are not what this asks about.",
+      "options": [
+        "No; government should not punish speech, however hateful, unless it threatens or incites violence (as today)",
+        "Yes, but only the most extreme public speech, such as calling a group subhuman",
+        "Yes, with fines or jail, as in some European countries"
+      ],
+      "high_pole": "crime"
+    },
+    {
+      "id": "hateful_speaker_response",
+      "subtopic": "Hate speech laws",
+      "axis": ["SPEECH"],
+      "format": "position",
+      "stem": "If someone says something most people consider hateful toward a racial or religious group, what response is right?",
+      "scope": "Speech that is legal. Think of a public figure speaking, not a private conversation.",
+      "options": [
+        "Answer it with more speech; don't try to silence them",
+        "Criticism and boycotts are fair, but they shouldn't lose their job or platform",
+        "Platforms, venues and employers should drop them",
+        "The law should punish it"
+      ],
+      "high_pole": "punish"
+    },
+    {
+      "id": "campus_speakers",
+      "subtopic": "Controversial speakers at public universities",
+      "axis": ["SPEECH"],
+      "format": "exceptions",
+      "stem": "A student group at a public university invites each of these speakers. Should the university allow the talk?",
+      "scope": "Assume the speaker makes their argument without threats. Answer each one separately.",
+      "options": ["Should be allowed", "Should not be allowed"],
+      "high_pole": "Should not be allowed",
+      "cases": [
+        {"id": "sp_race_iq", "text": "Someone who argues that some races are naturally less intelligent than others"},
+        {"id": "sp_abolish_police", "text": "Someone who argues that police departments should be abolished"},
+        {"id": "sp_trans_women", "text": "Someone who argues that transgender women are not women"},
+        {"id": "sp_israel", "text": "Someone who argues that Israel should not exist as a Jewish state"},
+        {"id": "sp_stolen_election", "text": "Someone who argues that a recent presidential election was stolen"},
+        {"id": "sp_abolish_property", "text": "Someone who argues that private ownership of businesses should be abolished"}
+      ],
+      "notes": "Three targets usually disliked more on the left, three more on the right. Check that pilot item difficulties don't simply track G."
+    },
+    {
+      "id": "flag_burning",
+      "subtopic": "Flag burning",
+      "axis": ["SPEECH", "NATION"],
+      "format": "position",
+      "stem": "Should burning the American flag as a political protest be legal?",
+      "scope": "Burning a flag you own, in a public place.",
+      "context": "The Supreme Court ruled in 1989 that it is protected speech.",
+      "options": [
+        "Yes, as protected speech",
+        "Yes, but cities can ban open fires in certain places for safety",
+        "No; amend the Constitution to allow a ban"
+      ],
+      "high_pole": "ban",
+      "facts": [
+        {"claim": "Texas v. Johnson (1989) held flag burning is protected expression", "source": "491 U.S. 397 (1989)", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "protest_masks",
+      "subtopic": "Protest rights and restrictions",
+      "axis": ["SPEECH", "ORDER"],
+      "format": "position",
+      "stem": "Should it be illegal to wear a mask to hide your identity at a protest?",
+      "scope": "Masks worn for health reasons would be allowed under every option.",
+      "options": [
+        "No; anonymity protects protesters from retaliation",
+        "Only while committing a crime",
+        "Yes, at any protest"
+      ],
+      "high_pole": "illegal"
+    },
+    {
+      "id": "campus_encampments",
+      "subtopic": "Protest rights and restrictions",
+      "axis": ["SPEECH", "ORDER"],
+      "format": "position",
+      "stem": "Should public universities allow students to set up protest camps on campus?",
+      "scope": "Peaceful camps, for any cause.",
+      "options": [
+        "Yes, as long as they stay peaceful",
+        "Only for a limited time, in designated areas",
+        "No; remove them right away"
+      ],
+      "high_pole": "remove"
+    },
+    {
+      "id": "gov_misinformation",
+      "subtopic": "Government action on misinformation",
+      "axis": ["SPEECH", "TECH"],
+      "format": "position",
+      "stem": "What role should the government have in dealing with false information online?",
+      "scope": "Think about false claims on topics like health and elections, under any administration.",
+      "options": [
+        "None; government shouldn't judge what's true online",
+        "Publish its own corrections only",
+        "Flag false posts, but not require removal",
+        "Require platforms to remove false information on topics like health and elections"
+      ],
+      "high_pole": "require removal"
+    },
+    {
+      "id": "misinfo_penalty",
+      "subtopic": "Government action on misinformation",
+      "axis": ["SPEECH"],
+      "format": "position",
+      "stem": "Should people be punished by law for knowingly spreading false information that causes harm?",
+      "scope": "Examples: false claims about a medicine's dangers, or about a disaster. Existing laws against fraud and defamation stay in place.",
+      "options": [
+        "No new penalties beyond existing laws",
+        "Only for false claims about when, where or how to vote",
+        "Yes, fines or jail for knowingly spreading harmful false claims"
+      ],
+      "high_pole": "punish"
+    },
+    {
+      "id": "jawboning",
+      "subtopic": "Government pressure on platforms",
+      "axis": ["SPEECH"],
+      "format": "position",
+      "stem": "Should government officials be allowed to ask social media companies to take down posts the officials consider harmful?",
+      "scope": "Officials of any party, with no court order involved. The posts are legal.",
+      "options": [
+        "No; officials should never pressure companies over legal speech",
+        "Only for clear legal violations, like threats",
+        "Yes, they can ask, and companies decide"
+      ],
+      "high_pole": "can ask"
+    },
+    {
+      "id": "library_book_decisions",
+      "subtopic": "Removing books from school libraries",
+      "axis": ["SPEECH", "EDUC"],
+      "format": "position",
+      "stem": "When a parent objects to a book in a public school library, who should decide whether it stays?",
+      "scope": "Library books students choose to read, not required class reading.",
+      "options": [
+        "School librarians, using professional standards",
+        "A committee of librarians, teachers and parents",
+        "The elected school board",
+        "The book comes off the shelves while it's reviewed, and a single objection is enough to start that"
+      ],
+      "high_pole": "remove on objection"
+    },
+    {
+      "id": "library_explicit",
+      "subtopic": "Removing books from school libraries",
+      "axis": ["SPEECH", "MORAL"],
+      "format": "position",
+      "stem": "Should high school libraries carry novels that include explicit descriptions of sex?",
+      "scope": "Books with recognized literary value, not pornography.",
+      "options": [
+        "Yes, freely available",
+        "Yes, but students need parent permission to check them out",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "employer_speech",
+      "subtopic": "Employers firing workers for speech",
+      "axis": ["SPEECH"],
+      "format": "position",
+      "stem": "Should private employers be allowed to fire workers for political views they express outside of work?",
+      "scope": "Legal speech on personal time, such as on social media. Specific cases come next.",
+      "options": [
+        "No; the law should protect workers' political speech outside work",
+        "Only if the speech directly harms the business",
+        "Yes; employers should be free to decide"
+      ],
+      "high_pole": "employer free",
+      "followup": "employer_speech_cases"
+    },
+    {
+      "id": "employer_speech_cases",
+      "subtopic": "Employers firing workers for speech",
+      "axis": ["SPEECH"],
+      "format": "exceptions",
+      "stem": "Should a private employer be able to fire someone for each of these, done outside of work?",
+      "scope": "Answer each case separately.",
+      "options": ["Firing should not be allowed", "Firing should be allowed"],
+      "high_pole": "Firing should be allowed",
+      "cases": [
+        {"id": "fire_racist_joke", "text": "Posting racist jokes on personal social media"},
+        {"id": "fire_protest", "text": "Going to a peaceful protest for a cause the employer opposes"},
+        {"id": "fire_praise_attack", "text": "Posting approval of a deadly attack on a political figure"},
+        {"id": "fire_donation", "text": "Donating to a candidate the employer opposes"}
+      ]
+    }
+  ]
+}
