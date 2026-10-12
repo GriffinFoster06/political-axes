@@ -1,0 +1,164 @@
+{
+  "domain_id": "D04",
+  "domain": "Housing & land use",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Strong cross-cutting candidate: support for building more housing ('pro-supply') appears on both left and right, as does neighborhood protection.",
+  "items": [
+    {
+      "id": "zoning_density",
+      "subtopic": "Zoning and density",
+      "axis": ["HOUSING"],
+      "format": "position",
+      "stem": "Should cities allow more homes to be built in neighborhoods now zoned only for single-family houses?",
+      "scope": "Think about neighborhoods in cities and suburbs with high housing costs.",
+      "options": [
+        "Yes, require cities to allow apartment buildings in most neighborhoods",
+        "Yes, allow duplexes and townhomes, but not large apartment buildings",
+        "Let each neighborhood decide",
+        "No; keep single-family zoning"
+      ],
+      "high_pole": "keep",
+      "definitions": [
+        {"term": "zoned", "text": "Zoning is local law that sets what can be built where, such as only one house per lot.", "source": "descriptive", "verify": false}
+      ]
+    },
+    {
+      "id": "zoning_state_override",
+      "subtopic": "Zoning and density",
+      "axis": ["HOUSING", "FED"],
+      "format": "position",
+      "stem": "Should state governments override local zoning to get more housing built?",
+      "scope": "State laws that require cities to allow more homes than local rules do.",
+      "options": [
+        "Yes, whenever cities fall short of housing goals",
+        "Only near public transit and job centers",
+        "No; zoning should stay local"
+      ],
+      "high_pole": "stay local"
+    },
+    {
+      "id": "housing_approval",
+      "subtopic": "Zoning and density",
+      "axis": ["HOUSING"],
+      "format": "position",
+      "stem": "Should new housing that already follows the zoning rules be approved without public hearings or lawsuits that can delay it?",
+      "scope": "Projects that meet every building and zoning rule.",
+      "options": [
+        "Yes, approve it automatically",
+        "Yes, after a short public comment period",
+        "No; neighbors should have a say through hearings and the right to sue"
+      ],
+      "high_pole": "neighbors' say"
+    },
+    {
+      "id": "rent_control",
+      "subtopic": "Rent control",
+      "axis": ["HOUSING", "REG"],
+      "format": "position",
+      "stem": "Should cities be allowed to limit how much landlords raise rent each year?",
+      "scope": "Limits for existing tenants in existing buildings.",
+      "options": [
+        "Yes, strict limits, such as no more than inflation",
+        "Moderate limits, such as inflation plus a few percent, with new buildings exempt",
+        "Only temporary limits during emergencies",
+        "No limits"
+      ],
+      "high_pole": "no limits"
+    },
+    {
+      "id": "eviction_cause",
+      "subtopic": "Rent control",
+      "axis": ["HOUSING", "REG"],
+      "format": "position",
+      "stem": "Should landlords need a specific reason, such as unpaid rent, to evict a tenant or refuse to renew a lease?",
+      "scope": "Ordinary rental apartments and houses.",
+      "options": [
+        "Yes, for all tenants",
+        "Only for tenants who have lived there a year or more",
+        "No; landlords can end a lease when its term ends"
+      ],
+      "high_pole": "no reason needed"
+    },
+    {
+      "id": "rent_vouchers",
+      "subtopic": "Public and subsidized housing",
+      "axis": ["HOUSING", "REDIS"],
+      "format": "position",
+      "stem": "Should every low-income family that qualifies for federal rent help receive it?",
+      "scope": "Rent vouchers that pay part of a family's rent to a private landlord.",
+      "context": "Today only about 1 in 4 eligible households gets federal rental help, because funding is limited.",
+      "options": [
+        "Yes, every eligible family",
+        "Help more families than today",
+        "Keep about today's level",
+        "Help fewer families; rely more on the private market"
+      ],
+      "high_pole": "fewer",
+      "facts": [
+        {"claim": "Only about 1 in 4 households eligible for federal rental assistance receives it", "source": "Center on Budget and Policy Priorities analysis of HUD data", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "public_housing",
+      "subtopic": "Public and subsidized housing",
+      "axis": ["HOUSING", "REDIS"],
+      "format": "position",
+      "stem": "Should government build and own more housing itself?",
+      "scope": "Housing owned and managed by a government agency.",
+      "options": [
+        "Yes, a large amount, for people of all incomes",
+        "Yes, for low-income people",
+        "No; pay private builders through tax credits to build affordable housing instead",
+        "No; leave housing to the market"
+      ],
+      "high_pole": "market"
+    },
+    {
+      "id": "encampments",
+      "subtopic": "Homelessness policy",
+      "axis": ["HOUSING", "ORDER"],
+      "format": "position",
+      "stem": "What should cities do about people camping on sidewalks and in parks?",
+      "scope": "Think of people with nowhere else to sleep that night.",
+      "context": "In 2024 the Supreme Court ruled that cities may ban public camping even when shelters are full.",
+      "options": [
+        "Allow it until enough shelter or housing is available",
+        "Clear camps only after offering each person a shelter bed",
+        "Ban camping and clear camps, even without enough shelter beds",
+        "Ban camping, with fines or jail for people who don't move"
+      ],
+      "high_pole": "stricter",
+      "facts": [
+        {"claim": "City of Grants Pass v. Johnson (2024): enforcing public camping bans is not cruel and unusual punishment", "source": "603 U.S. ___ (2024)", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "housing_first",
+      "subtopic": "Homelessness policy",
+      "axis": ["HOUSING", "ORDER"],
+      "format": "position",
+      "stem": "For homeless people with addiction or mental illness, which approach comes closest to your view?",
+      "scope": "Government-funded housing programs.",
+      "options": [
+        "Housing first, with no requirement to be sober or in treatment",
+        "Housing first, but treatment is required to keep it",
+        "Treatment or sobriety first, before getting housing"
+      ],
+      "high_pole": "treatment first"
+    },
+    {
+      "id": "involuntary_treatment",
+      "subtopic": "Homelessness policy",
+      "axis": ["HOUSING", "LIBERTY"],
+      "format": "position",
+      "stem": "Should it be easier to require treatment for people living on the street with severe mental illness who refuse help?",
+      "scope": "Today this is usually allowed only when someone is an immediate danger to themselves or others.",
+      "options": [
+        "No; keep treatment voluntary except for immediate danger",
+        "Somewhat easier: also when they can't meet basic needs like food and shelter",
+        "Much easier, including longer required hospital stays"
+      ],
+      "high_pole": "easier"
+    }
+  ]
+}

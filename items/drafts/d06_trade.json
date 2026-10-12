@@ -1,0 +1,154 @@
+{
+  "domain_id": "D06",
+  "domain": "Trade & economic nationalism",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Written about principles and amounts, with no current-administration context, because trade positions realigned recently and current-policy wording would cue party.",
+  "items": [
+    {
+      "id": "tariff_level",
+      "subtopic": "Tariffs",
+      "axis": ["TRADE"],
+      "format": "position",
+      "stem": "Which comes closest to your view of tariffs, the taxes the US charges on imported goods?",
+      "scope": "Think about trade policy in general, not one country.",
+      "options": [
+        "Few or no tariffs; free trade benefits most people",
+        "Low tariffs, used mainly against countries that break trade rules",
+        "Moderate tariffs on many goods to protect key US industries",
+        "High tariffs on most imports to bring manufacturing back, even if prices rise"
+      ],
+      "high_pole": "higher"
+    },
+    {
+      "id": "tariff_price_tradeoff",
+      "subtopic": "Tariffs",
+      "axis": ["TRADE"],
+      "format": "position",
+      "stem": "Would you support tariffs that protect US factory jobs if they raised prices of goods like cars and appliances by about 10%?",
+      "scope": "Assume both effects happen: more factory jobs and higher prices.",
+      "options": [
+        "No; lower prices matter more",
+        "Only if prices rose much less, around 2% to 3%",
+        "Yes; protecting those jobs is worth it"
+      ],
+      "high_pole": "yes"
+    },
+    {
+      "id": "tariff_authority",
+      "subtopic": "Tariffs",
+      "axis": ["TRADE", "NORMS"],
+      "format": "position",
+      "stem": "Who should decide how high tariffs are?",
+      "scope": "Answer for any president of either party.",
+      "options": [
+        "Congress only, by passing laws",
+        "Congress, but the president can add tariffs in a true emergency",
+        "The president, whenever the president judges it's in the national interest"
+      ],
+      "high_pole": "president"
+    },
+    {
+      "id": "trade_agreements",
+      "subtopic": "Trade agreements",
+      "axis": ["TRADE"],
+      "format": "position",
+      "stem": "Should the US sign more agreements with other countries to lower tariffs on both sides?",
+      "scope": "Agreements that lower trade barriers for both countries.",
+      "options": [
+        "Yes, with as many countries as possible",
+        "Yes, but only with strong labor and environmental rules",
+        "Only with close allies",
+        "No; pull out of existing ones where possible"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "trade_jobs_tradeoff",
+      "subtopic": "Trade agreements",
+      "axis": ["TRADE"],
+      "format": "position",
+      "stem": "Should the US make trade deals that open foreign markets to US companies if some US industries lose jobs to imports?",
+      "scope": "Assume the country as a whole gains, but some regions lose jobs.",
+      "options": [
+        "Yes; the overall gains outweigh the losses",
+        "Yes, but only with major help for workers who lose jobs",
+        "No; protecting existing US jobs comes first"
+      ],
+      "high_pole": "protect jobs"
+    },
+    {
+      "id": "china_trade",
+      "subtopic": "Economic decoupling from China",
+      "axis": ["TRADE", "HAWK"],
+      "format": "position",
+      "stem": "How much should the US limit trade with China?",
+      "scope": "Trade in goods and technology.",
+      "options": [
+        "Trade freely, as with other countries",
+        "Limit only sensitive technology, like advanced chips and military goods",
+        "Also move production of essentials, like medicines and electronics, out of China",
+        "Cut off most trade with China"
+      ],
+      "high_pole": "cut off"
+    },
+    {
+      "id": "china_ownership",
+      "subtopic": "Economic decoupling from China",
+      "axis": ["TRADE", "HAWK"],
+      "format": "position",
+      "stem": "Should companies based in China be allowed to own US businesses, farmland or apps?",
+      "scope": "Companies headquartered in China, whether privately or state-owned.",
+      "options": [
+        "Yes, like any foreign company",
+        "Yes, except in sensitive areas like defense and personal data",
+        "No farmland, key technology or popular apps; other businesses are fine",
+        "No; ban Chinese ownership of US businesses entirely"
+      ],
+      "high_pole": "ban"
+    },
+    {
+      "id": "industrial_policy",
+      "subtopic": "Industrial policy and buy-American",
+      "axis": ["TRADE", "REG"],
+      "format": "position",
+      "stem": "Should the government pay companies to build factories in specific industries in the US, such as computer chips and batteries?",
+      "scope": "Subsidies and tax credits for particular industries.",
+      "options": [
+        "Yes, in many industries",
+        "Only in industries vital to national security",
+        "No; the market should decide where investment goes"
+      ],
+      "high_pole": "no",
+      "notes": "Expected to cross-cut: some who favor tariffs oppose subsidies and vice versa. High pole is 'less intervention', the opposite direction from tariff_level."
+    },
+    {
+      "id": "buy_american",
+      "subtopic": "Industrial policy and buy-American",
+      "axis": ["TRADE"],
+      "format": "position",
+      "stem": "Should federal agencies be required to buy American-made goods, even if they cost more?",
+      "scope": "Everyday government purchases, like vehicles, steel and equipment.",
+      "options": [
+        "No; buy the best value",
+        "Only for military and security needs",
+        "Yes, if they cost no more than about 25% extra",
+        "Yes, always, even at much higher cost"
+      ],
+      "high_pole": "always"
+    },
+    {
+      "id": "offshoring_penalty",
+      "subtopic": "Penalties for offshoring jobs",
+      "axis": ["TRADE", "POP"],
+      "format": "position",
+      "stem": "Should companies that move US jobs to other countries face penalties?",
+      "scope": "Companies closing US operations and moving that work abroad.",
+      "options": [
+        "Yes, such as higher taxes and losing government contracts",
+        "No penalty, but end any tax breaks that make moving jobs abroad cheaper",
+        "No; companies should decide where to operate"
+      ],
+      "high_pole": "no penalty"
+    }
+  ]
+}

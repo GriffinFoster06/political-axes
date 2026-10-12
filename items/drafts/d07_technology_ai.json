@@ -1,0 +1,241 @@
+{
+  "domain_id": "D07",
+  "domain": "Technology & AI",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Fast-moving domain: re-check context lines before every release. AI attitudes crossed party lines in 2025-26 polling, so this is a strong cross-cutting candidate.",
+  "items": [
+    {
+      "id": "ai_regulation_level",
+      "subtopic": "Overall AI regulation",
+      "axis": ["TECH"],
+      "format": "position",
+      "stem": "How should the federal government regulate artificial intelligence?",
+      "scope": "Think about AI in general, including chatbots and systems that make decisions about people.",
+      "options": [
+        "Pause development of the most advanced AI until safety rules are in place",
+        "Strict rules: testing and approval before major new AI systems are released",
+        "Targeted rules for specific harms, like fraud and discrimination, through existing agencies",
+        "Few or no new rules; let the industry develop and fix problems as they arise"
+      ],
+      "high_pole": "less regulation"
+    },
+    {
+      "id": "ai_state_laws",
+      "subtopic": "Overall AI regulation",
+      "axis": ["TECH", "FED"],
+      "format": "position",
+      "stem": "Should states be able to pass their own laws regulating AI?",
+      "scope": "State laws that would apply to AI companies operating in that state.",
+      "options": [
+        "Yes, states should be free to set stricter rules than federal law",
+        "Yes, until there is a federal AI law",
+        "No; one national standard should override state AI laws"
+      ],
+      "high_pole": "national override",
+      "notes": "Federal preemption of state AI laws was debated in Congress in 2025; watch for answers tracking party positions."
+    },
+    {
+      "id": "ai_china_race",
+      "subtopic": "Overall AI regulation",
+      "axis": ["TECH", "HAWK"],
+      "format": "position",
+      "stem": "How much should competition with China shape US rules on AI?",
+      "scope": "Think about safety rules that could slow US companies down.",
+      "options": [
+        "Not at all; safety rules come first",
+        "Somewhat; avoid rules that would put US companies far behind",
+        "A lot; staying ahead of China matters more than most safety concerns"
+      ],
+      "high_pole": "race first"
+    },
+    {
+      "id": "ai_licensing",
+      "subtopic": "Licensing or testing of the most powerful AI systems",
+      "axis": ["TECH"],
+      "format": "position",
+      "stem": "Should companies need government approval to release the most powerful AI systems?",
+      "scope": "Only systems far more capable than typical chatbots, built with enormous computing power.",
+      "options": [
+        "Yes, after government safety testing",
+        "No approval, but companies must test for dangers and report results to the government",
+        "No requirements beyond existing laws"
+      ],
+      "high_pole": "no requirements"
+    },
+    {
+      "id": "ai_open_release",
+      "subtopic": "Licensing or testing of the most powerful AI systems",
+      "axis": ["TECH"],
+      "format": "position",
+      "stem": "Should companies be allowed to publish their most powerful AI models so anyone can download and change them?",
+      "scope": "Publishing lets researchers inspect the model, and also lets anyone remove its safety limits.",
+      "options": [
+        "No, not the most powerful models",
+        "Yes, but only after safety testing",
+        "Yes, freely"
+      ],
+      "high_pole": "freely"
+    },
+    {
+      "id": "ai_job_loss",
+      "subtopic": "Government response to AI job loss",
+      "axis": ["TECH", "REDIS"],
+      "format": "position",
+      "stem": "If AI replaces many jobs, what should the government mainly do?",
+      "scope": "Assume millions of jobs are affected over 10 years.",
+      "options": [
+        "Slow the use of AI to replace workers",
+        "Expand income support, such as cash payments to people who lose work",
+        "Fund retraining and help workers find new jobs",
+        "Little; new jobs will appear, as with past technology changes"
+      ],
+      "high_pole": "little"
+    },
+    {
+      "id": "ai_layoff_limits",
+      "subtopic": "Government response to AI job loss",
+      "axis": ["TECH", "REG"],
+      "format": "position",
+      "stem": "Should there be legal limits on employers replacing workers with AI?",
+      "scope": "Large employers replacing many workers at once.",
+      "options": [
+        "Yes: require notice and severance, and ban replacing people in some jobs, like teaching and nursing",
+        "Require advance notice and severance pay, but no bans",
+        "No limits"
+      ],
+      "high_pole": "no limits"
+    },
+    {
+      "id": "moderation_level",
+      "subtopic": "Social media content moderation",
+      "axis": ["TECH", "SPEECH"],
+      "format": "position",
+      "stem": "How much should social media companies remove posts that are legal but false or offensive?",
+      "scope": "Think about the largest platforms. This is about what companies choose to do, not what the law requires.",
+      "options": [
+        "Remove much more than they do now",
+        "About as much as now",
+        "Remove less; leave most legal posts up",
+        "Remove only illegal content"
+      ],
+      "high_pole": "only illegal"
+    },
+    {
+      "id": "moderation_law",
+      "subtopic": "Social media content moderation",
+      "axis": ["TECH", "SPEECH"],
+      "format": "position",
+      "stem": "Should the law limit large social media companies' ability to remove posts or ban users for political views?",
+      "scope": "Platforms with tens of millions of users. Illegal content could always be removed.",
+      "options": [
+        "No; companies should decide what they host",
+        "Require them to explain removals and let users appeal",
+        "Yes, ban the largest platforms from removing legal political posts"
+      ],
+      "high_pole": "ban removals"
+    },
+    {
+      "id": "platform_liability",
+      "subtopic": "Platform liability for user content",
+      "axis": ["TECH"],
+      "format": "position",
+      "stem": "Should social media companies be legally responsible for harmful content their users post?",
+      "scope": "Content like defamation or dangerous challenges, not illegal material such as child abuse imagery.",
+      "context": "A 1996 federal law, Section 230, generally shields them from lawsuits over what users post.",
+      "options": [
+        "Yes, for content their systems recommend or promote",
+        "Only if they're told about clearly illegal content and don't remove it",
+        "No; keep today's protection: users, not platforms, are responsible"
+      ],
+      "high_pole": "no liability",
+      "facts": [
+        {"claim": "47 U.S.C. sec. 230(c)(1): providers not treated as publisher of third-party content", "source": "Communications Decency Act of 1996, sec. 230", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "social_media_min_age",
+      "subtopic": "Children online and age verification",
+      "axis": ["TECH", "LIBERTY"],
+      "format": "position",
+      "stem": "What should the legal minimum age be for having a social media account?",
+      "scope": "Accounts on platforms like Instagram, TikTok and Snapchat.",
+      "options": [
+        "No legal minimum; parents decide",
+        "13, the age most platforms set today",
+        "16",
+        "18"
+      ],
+      "high_pole": "older"
+    },
+    {
+      "id": "age_verification",
+      "subtopic": "Children online and age verification",
+      "axis": ["TECH", "PRIVACY"],
+      "format": "position",
+      "stem": "Should websites with content for adults only be required to check users' ages?",
+      "scope": "Sites with sexual content or gambling, for example.",
+      "options": [
+        "No; parents should use controls at home",
+        "Yes, by methods that don't need ID, like estimating age from a face scan",
+        "Yes, with a government ID or similar check"
+      ],
+      "high_pole": "ID check"
+    },
+    {
+      "id": "algorithm_bias_testing",
+      "subtopic": "Algorithmic discrimination rules",
+      "axis": ["TECH", "EQUITY"],
+      "format": "position",
+      "stem": "Should companies that use AI to screen job or loan applications have to test it for bias against groups such as women or racial minorities?",
+      "scope": "Bias means the system treats equally qualified people differently because of their group.",
+      "options": [
+        "Yes, with independent audits and public results",
+        "Yes, companies must test and keep records",
+        "No; existing anti-discrimination laws are enough"
+      ],
+      "high_pole": "no requirement"
+    },
+    {
+      "id": "data_centers",
+      "subtopic": "Data centers and energy use",
+      "axis": ["TECH", "ENV"],
+      "format": "position",
+      "stem": "Large data centers for AI use a lot of electricity and water. Which comes closest to your view?",
+      "scope": "Think about new data centers being built across the country.",
+      "options": [
+        "Limit new data centers until there is enough clean power",
+        "Allow them, but make them pay the full cost of new power plants and lines",
+        "Speed up approval of data centers and power plants to keep the US ahead in AI"
+      ],
+      "high_pole": "speed up"
+    },
+    {
+      "id": "election_deepfakes",
+      "subtopic": "AI deepfakes in elections",
+      "axis": ["TECH", "SPEECH"],
+      "format": "position",
+      "stem": "Should it be illegal to share AI-made fake video or audio of a candidate without labeling it as fake?",
+      "scope": "Realistic fakes meant to look real, not obvious parody.",
+      "options": [
+        "Yes, for anyone sharing it in the months before an election",
+        "Only campaigns and paid advertisers must label; no penalties for individuals",
+        "No; existing laws against fraud and defamation are enough"
+      ],
+      "high_pole": "no new law"
+    },
+    {
+      "id": "automation_tax",
+      "subtopic": "Automation taxes",
+      "axis": ["TECH", "REDIS"],
+      "format": "position",
+      "stem": "Should companies pay a special tax when they replace workers with robots or AI?",
+      "scope": "The tax would apply only when a machine takes over work people did.",
+      "options": [
+        "Yes, and use it to support workers who lose jobs",
+        "No special tax, but end tax breaks that favor machines over workers",
+        "No; it would slow productivity growth"
+      ],
+      "high_pole": "no tax"
+    }
+  ]
+}
