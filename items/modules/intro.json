@@ -1,0 +1,39 @@
+{
+  "module": "intro",
+  "status": "DRAFT v0.1",
+  "screens": [
+    {
+      "id": "welcome",
+      "title": "Where do you actually stand?",
+      "text": "This quiz maps your views across 25 areas of US politics, from taxes to AI to foreign policy. It doesn't sort you into a party. It shows where you stand on each issue, which views you hold most firmly, and how your mix compares with other Americans. Most people's views don't line up neatly with either party, and the results are built to show that."
+    },
+    {
+      "id": "privacy",
+      "title": "Your privacy",
+      "text": "We don't collect your name, email or IP address. Your answers are stored with a random code, and you can skip any question. Questions about you come at the end, are optional, and never change your results. Full details: docs/privacy-notice.md.",
+      "consent": "I'm ready to start, and I understand my anonymous answers may be used to improve the quiz."
+    },
+    {
+      "id": "mode",
+      "title": "Choose a length",
+      "options": [
+        {"id": "full", "label": "Full map (about 60 to 75 minutes)", "text": "Every question. The most complete picture of your views, topic by topic. You can stop and come back any time."},
+        {"id": "precision", "label": "Precision mode (about 30 to 45 minutes)", "text": "The quiz picks the most informative questions for you and stops when your results are precise enough. Same scale, slightly wider error bands."}
+      ]
+    },
+    {
+      "id": "how_answers_work",
+      "title": "How the questions work",
+      "text": "There are no trick questions. Each question asks about the usual case, and when exceptions might matter to you, a follow-up asks about them. Each answer is a specific position, so pick the one closest to what you think. Tap any underlined term for a definition. If no answer fits, choose \"None of these fit my view\" and tell us why; that helps us improve the quiz. If you don't know enough about a topic, say so; it won't be counted as a middle position. After some answers you can say how settled the view is (Firm, Fairly firm, or It really depends on the details)."
+    },
+    {
+      "id": "tradeoff_example",
+      "title": "One more format",
+      "text": "Some questions show two sides, each with what it would cost. Pick Clearly or Lean toward the side closer to your view. Real choices have tradeoffs, so expect both sides to give something up."
+    },
+    {
+      "id": "breaks",
+      "text": "You'll get a short break screen about every 12 minutes, with an optional preview of your results so far. Topic order is shuffled for each person."
+    }
+  ]
+}

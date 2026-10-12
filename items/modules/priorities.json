@@ -1,0 +1,141 @@
+{
+  "module": "priorities",
+  "status": "DRAFT v0.1",
+  "method": "Best-worst scaling (MaxDiff). 15 sets of 5 topics from three parallel classes of the affine plane AG(2,5): each topic shown 3 times, no pair of topics shown together more than once. Set order and topic order within sets are randomized per person. Scored as importance weights (count best minus count worst, then a multinomial logit on pilot data). Never used to compute axis positions; used to weight the issue map and the 'what you care about most' summary.",
+  "stem": "Of these five topics, which matters MOST to you when you think about politics, and which matters LEAST?",
+  "scope": "There are no right answers. Pick one of each, even if it's a close call.",
+  "labels": {
+    "D01": "Taxes and help for low-income families",
+    "D02": "Wages, unions and rules for business",
+    "D03": "Health care, Social Security and Medicare",
+    "D04": "Housing costs and homelessness",
+    "D05": "Climate, energy and the environment",
+    "D06": "Trade, tariffs and American manufacturing",
+    "D07": "Technology, AI and social media",
+    "D08": "Privacy and government surveillance",
+    "D09": "Abortion and reproductive issues",
+    "D10": "Sexual orientation and gender identity",
+    "D11": "Religion in public life",
+    "D12": "Family, marriage and children",
+    "D13": "Race and discrimination",
+    "D14": "Immigration and national identity",
+    "D15": "Crime, policing and prisons",
+    "D16": "Guns",
+    "D17": "Drugs and personal freedom",
+    "D18": "Free speech",
+    "D19": "Limits on presidential power",
+    "D20": "Voting and elections",
+    "D21": "Honesty and competence of government and institutions",
+    "D22": "Foreign policy and the military",
+    "D23": "Schools and college costs",
+    "D24": "Federal versus state power",
+    "D25": "Moral values in society"
+  },
+  "sets": [
+    [
+      "D01",
+      "D06",
+      "D11",
+      "D16",
+      "D21"
+    ],
+    [
+      "D02",
+      "D07",
+      "D12",
+      "D17",
+      "D22"
+    ],
+    [
+      "D03",
+      "D08",
+      "D13",
+      "D18",
+      "D23"
+    ],
+    [
+      "D04",
+      "D09",
+      "D14",
+      "D19",
+      "D24"
+    ],
+    [
+      "D05",
+      "D10",
+      "D15",
+      "D20",
+      "D25"
+    ],
+    [
+      "D01",
+      "D07",
+      "D13",
+      "D19",
+      "D25"
+    ],
+    [
+      "D02",
+      "D08",
+      "D14",
+      "D20",
+      "D21"
+    ],
+    [
+      "D03",
+      "D09",
+      "D15",
+      "D16",
+      "D22"
+    ],
+    [
+      "D04",
+      "D10",
+      "D11",
+      "D17",
+      "D23"
+    ],
+    [
+      "D05",
+      "D06",
+      "D12",
+      "D18",
+      "D24"
+    ],
+    [
+      "D01",
+      "D08",
+      "D15",
+      "D17",
+      "D24"
+    ],
+    [
+      "D02",
+      "D09",
+      "D11",
+      "D18",
+      "D25"
+    ],
+    [
+      "D03",
+      "D10",
+      "D12",
+      "D19",
+      "D21"
+    ],
+    [
+      "D04",
+      "D06",
+      "D13",
+      "D20",
+      "D22"
+    ],
+    [
+      "D05",
+      "D07",
+      "D14",
+      "D16",
+      "D23"
+    ]
+  ]
+}

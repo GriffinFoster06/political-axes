@@ -1,0 +1,231 @@
+domain_id,domain,subtopic,axis_hypothesis,planned,written,items
+D01,Taxes & redistribution,Income tax structure (flat vs graduated),REDIS,3,3,income_tax_structure low_income_tax tax_burden_principle
+D01,Taxes & redistribution,Top income tax rate,REDIS,2,2,top_income_tax top_rate_number
+D01,Taxes & redistribution,Corporate tax rate,REDIS,2,2,corporate_rate corporate_minimum_tax
+D01,Taxes & redistribution,Wealth tax on very large fortunes,REDIS,2,2,wealth_tax large_fortunes
+D01,Taxes & redistribution,Estate tax,REDIS,2,2,estate_tax_level inheritance_principle
+D01,Taxes & redistribution,Capital gains vs wage income,REDIS,2,2,capital_gains_rate gains_at_death
+D01,Taxes & redistribution,Cash aid to low-income households,REDIS,2,2,cash_aid_level aid_form
+D01,Taxes & redistribution,Work requirements for aid,REDIS,2,5,work_req_rule work_req_cases
+D01,Taxes & redistribution,Universal basic income,REDIS,1,1,ubi
+D01,Taxes & redistribution,Child benefits,REDIS,2,2,child_benefit_level child_benefit_work
+D01,Taxes & redistribution,Inequality as a problem for government,REDIS,2,2,inequality_tradeoff outcomes_vs_chances
+D02,Labor & business regulation,Minimum wage,REG,2,2,min_wage min_wage_jobs
+D02,Labor & business regulation,Unions and right-to-work,REG,3,3,right_to_work union_organizing public_unions
+D02,Labor & business regulation,Mandated benefits (paid leave etc.),REG,2,2,paid_leave sick_days
+D02,Labor & business regulation,Gig worker classification,REG,1,1,gig_workers
+D02,Labor & business regulation,General business regulation,REG,2,2,regulation_tradeoff precaution_tradeoff
+D02,Labor & business regulation,Corporate size and antitrust,REG,2,2,big_company_breakup merger_rules
+D02,Labor & business regulation,Financial regulation and bailouts,REG,2,2,bank_rules bailouts
+D02,Labor & business regulation,Occupational licensing,REG,1,1,licensing
+D02,Labor & business regulation,Price controls and price-gouging laws,REG,1,1,price_controls
+D03,Health care & social insurance,Overall coverage system,SOCINS,2,2,health_coverage coverage_guarantee
+D03,Health care & social insurance,Public option / single payer details,SOCINS,2,2,medicare_age private_insurance_role
+D03,Health care & social insurance,Prescription drug prices,SOCINS,2,2,drug_prices drug_import
+D03,Health care & social insurance,Medicaid scope and work rules,SOCINS,2,2,medicaid_scope medicaid_work
+D03,Health care & social insurance,Social Security future,SOCINS,3,3,ss_shortfall ss_retirement_age ss_payroll_cap
+D03,Health care & social insurance,Medicare future,SOCINS,2,2,medicare_structure medicare_means_test
+D03,Health care & social insurance,Private retirement accounts,SOCINS,1,1,ss_private_accounts
+D03,Health care & social insurance,Insurance mandates,SOCINS,1,2,insurance_mandate preexisting_conditions
+D03,Health care & social insurance,Vaccine requirements,LIBERTY,2,4,school_vaccines vaccine_exemptions outbreak_vaccine_jobs
+D03,Health care & social insurance,Immigrants' eligibility for public health benefits,IMMIG,1,1,immigrant_health_benefits
+D04,Housing & land use,Zoning and density,HOUSING,3,3,zoning_density zoning_state_override housing_approval
+D04,Housing & land use,Rent control,HOUSING,2,2,rent_control eviction_cause
+D04,Housing & land use,Public and subsidized housing,HOUSING,2,2,rent_vouchers public_housing
+D04,Housing & land use,Homelessness policy,HOUSING,3,3,encampments housing_first involuntary_treatment
+D05,Environment & energy,Level of climate action and its cost,ENV,3,3,climate_action net_zero_target climate_willing_to_pay
+D05,Environment & energy,Carbon pricing,ENV,2,2,carbon_tax carbon_border_fee
+D05,Environment & energy,Fossil fuel production on public land,ENV,2,2,drilling_public_lands coal_plants
+D05,Environment & energy,Nuclear power,ENV,2,2,nuclear_power nuclear_funding
+D05,Environment & energy,Electric vehicle rules and subsidies,ENV,2,2,ev_requirement ev_tax_credit
+D05,Environment & energy,Environmental rules vs jobs,ENV,2,2,env_jobs_tradeoff permitting_tradeoff
+D05,Environment & energy,Conservation and public lands,ENV,2,2,land_protection sell_public_land
+D05,Environment & energy,International climate agreements,ENV,1,1,climate_agreements
+D05,Environment & energy,Beliefs about climate science,ENV,1,1,climate_belief
+D05,Environment & energy,Environmental justice,ENV,1,1,environmental_justice
+D06,Trade & economic nationalism,Tariffs,TRADE,3,3,tariff_level tariff_price_tradeoff tariff_authority
+D06,Trade & economic nationalism,Trade agreements,TRADE,2,2,trade_agreements trade_jobs_tradeoff
+D06,Trade & economic nationalism,Economic decoupling from China,TRADE,2,2,china_trade china_ownership
+D06,Trade & economic nationalism,Industrial policy and buy-American,TRADE,2,2,industrial_policy buy_american
+D06,Trade & economic nationalism,Penalties for offshoring jobs,TRADE,1,1,offshoring_penalty
+D07,Technology & AI,Overall AI regulation,TECH,3,3,ai_regulation_level ai_state_laws ai_china_race
+D07,Technology & AI,Licensing or testing of the most powerful AI systems,TECH,2,2,ai_licensing ai_open_release
+D07,Technology & AI,Government response to AI job loss,TECH,2,2,ai_job_loss ai_layoff_limits
+D07,Technology & AI,Social media content moderation,TECH,2,2,moderation_level moderation_law
+D07,Technology & AI,Platform liability for user content,TECH,1,1,platform_liability
+D07,Technology & AI,Children online and age verification,TECH,2,2,social_media_min_age age_verification
+D07,Technology & AI,Algorithmic discrimination rules,TECH,1,1,algorithm_bias_testing
+D07,Technology & AI,Data centers and energy use,TECH,1,1,data_centers
+D07,Technology & AI,AI deepfakes in elections,TECH,1,1,election_deepfakes
+D07,Technology & AI,Automation taxes,TECH,1,1,automation_tax
+D08,Privacy & surveillance,Government surveillance for security,PRIVACY,3,3,surveillance_tradeoff warrant_tradeoff cameras_tradeoff
+D08,Privacy & surveillance,Encryption access for law enforcement,PRIVACY,1,1,encryption_access
+D08,Privacy & surveillance,Police facial recognition,PRIVACY,2,4,facial_recognition facial_recognition_cases
+D08,Privacy & surveillance,Consumer data privacy law,PRIVACY,2,2,data_privacy_law gov_buys_data
+D08,Privacy & surveillance,National digital ID,PRIVACY,1,1,digital_id
+D08,Privacy & surveillance,Searches of phones at the border,PRIVACY,1,1,border_device_search
+D09,Abortion & reproduction,Legal rule,MORAL,1,1,abortion_rule
+D09,Abortion & reproduction,Exceptions (life / health / rape-incest / fatal condition),MORAL,4,4,abortion_exceptions
+D09,Abortion & reproduction,Federal vs state decision,FED,1,1,abortion_who_decides
+D09,Abortion & reproduction,Abortion pills by mail,MORAL,2,2,abortion_pills_mail abortion_shield_laws
+D09,Abortion & reproduction,Public funding of abortion,MORAL,1,1,abortion_public_funding
+D09,Abortion & reproduction,IVF and embryo status,MORAL,1,1,ivf_embryos
+D09,Abortion & reproduction,Contraception access,MORAL,1,1,contraception_access
+D09,Abortion & reproduction,Parental involvement for minors,MORAL,1,1,minors_abortion_parents
+D10,Sexuality & gender identity,Same-sex marriage,GENDERID,2,2,same_sex_marriage same_sex_adoption
+D10,Sexuality & gender identity,Religious exemptions for businesses,GENDERID,2,4,wedding_vendors religious_refusal_cases
+D10,Sexuality & gender identity,Medical transition for minors,GENDERID,2,5,minors_transition minors_transition_cases
+D10,Sexuality & gender identity,Transgender athletes,GENDERID,2,2,trans_school_sports trans_adult_sports
+D10,Sexuality & gender identity,Bathrooms and facilities,GENDERID,1,1,bathrooms
+D10,Sexuality & gender identity,Sex marker on legal documents,GENDERID,1,1,id_sex_marker
+D10,Sexuality & gender identity,School pronouns and parental notification,GENDERID,2,2,school_pronouns parent_notification
+D10,Sexuality & gender identity,LGBT nondiscrimination law,GENDERID,2,4,lgbt_nondiscrimination nondiscrimination_exemptions
+D11,Religion in public life,Church-state separation,RELIGION,2,2,church_state_tradeoff faith_based_laws
+D11,Religion in public life,Prayer and religious displays in public schools and buildings,RELIGION,2,2,school_prayer ten_commandments
+D11,Religion in public life,Public money for religious schools,RELIGION,2,2,vouchers_religious_schools religious_charter
+D11,Religion in public life,Religious exemptions from general laws,RELIGION,2,4,religious_exemptions religious_exemption_cases
+D11,Religion in public life,Religion and national identity,RELIGION,2,2,christian_nation religious_country
+D12,Family & gender roles,Traditional roles at home and work,FAMILY,2,2,family_arrangement marriage_decisions
+D12,Family & gender roles,Government support for marriage,FAMILY,2,2,promote_marriage unmarried_partner_rights
+D12,Family & gender roles,Public childcare vs family care,FAMILY,2,2,childcare_funding stay_home_support
+D12,Family & gender roles,Divorce law,FAMILY,1,1,no_fault_divorce
+D12,Family & gender roles,Gender equality policies at work,FAMILY,2,2,pay_transparency board_gender_rules
+D12,Family & gender roles,Birth rates and pro-family policy,FAMILY,1,1,birth_rate_policy
+D13,Race & equity,Causes of racial gaps,EQUITY,3,3,gap_cause_wealth gap_cause_arrests gap_cause_tests
+D13,Race & equity,Race-conscious admissions and hiring,EQUITY,3,3,college_admissions_race hiring_race contract_set_asides
+D13,Race & equity,Diversity programs at employers and agencies,EQUITY,2,2,workplace_diversity dei_offices
+D13,Race & equity,Reparations,EQUITY,2,2,reparations local_redlining_compensation
+D13,Race & equity,Hate crime laws,EQUITY,1,1,hate_crime_sentences
+D13,Race & equity,Race in voting districts,EQUITY,1,1,race_districts
+D13,Race & equity,Teaching about racism in schools,EQUITY,2,2,teach_racism_history teach_institutional_racism
+D13,Race & equity,How much discrimination exists,EQUITY,2,2,discrimination_black discrimination_white
+D13,Race & equity,Tribal sovereignty,EQUITY,1,1,tribal_sovereignty
+D13,Race & equity,Disparate impact rules,EQUITY,1,1,disparate_impact
+D14,Immigration & national identity,Legal immigration level,IMMIG,3,3,legal_immigration_level temp_workers immigration_pause
+D14,Immigration & national identity,Skills-based vs family-based selection,IMMIG,2,2,skills_vs_family sponsor_relatives
+D14,Immigration & national identity,People without legal status: main rule,IMMIG,1,1,status_policy
+D14,Immigration & national identity,People without legal status: groups follow-up,IMMIG,3,3,status_groups
+D14,Immigration & national identity,Border enforcement methods,IMMIG,2,2,border_security military_border
+D14,Immigration & national identity,Interior and workplace enforcement,IMMIG,2,2,everify local_police_cooperation
+D14,Immigration & national identity,Asylum rules,IMMIG,2,2,asylum_rules asylum_grounds
+D14,Immigration & national identity,Refugee admissions,IMMIG,1,1,refugee_cap
+D14,Immigration & national identity,Birthright citizenship,IMMIG,1,1,birthright_citizenship
+D14,Immigration & national identity,Language and assimilation,NATION,1,1,assimilation
+D14,Immigration & national identity,What makes someone American,NATION,2,6,american_criteria american_basis
+D15,Crime policing & punishment,Police funding and role,ORDER,2,2,police_spending crisis_responders
+D15,Crime policing & punishment,Police accountability and qualified immunity,ORDER,2,2,qualified_immunity misconduct_records
+D15,Crime policing & punishment,Sentence length and mandatory minimums,ORDER,2,2,mandatory_minimums violent_sentences
+D15,Crime policing & punishment,Death penalty,ORDER,2,4,death_penalty death_penalty_cases
+D15,Crime policing & punishment,Bail and pretrial detention,ORDER,2,2,cash_bail pretrial_danger
+D15,Crime policing & punishment,Prison: punishment vs rehabilitation,ORDER,2,2,prison_purpose second_chance
+D15,Crime policing & punishment,Juvenile justice,ORDER,1,1,juveniles_adult_court
+D15,Crime policing & punishment,Private prisons,ORDER,1,1,private_prisons
+D15,Crime policing & punishment,Protests and public order,ORDER,2,2,road_blocking riot_response
+D15,Crime policing & punishment,Military in domestic law enforcement,ORDER,1,1,troops_in_cities
+D15,Crime policing & punishment,Victims' rights and restitution,ORDER,1,1,victims_voice
+D16,Guns,Rules for buying a handgun,GUNS,1,1,handgun_purchase
+D16,Guns,Private-sale background checks,GUNS,1,1,private_sale_checks
+D16,Guns,Semi-automatic rifles with military-style features,GUNS,2,2,semi_auto_rifles magazine_limit
+D16,Guns,Carrying in public,GUNS,2,2,concealed_carry carry_locations
+D16,Guns,Extreme risk (red flag) orders,GUNS,2,4,red_flag red_flag_cases
+D16,Guns,Minimum age,GUNS,1,1,gun_purchase_age
+D16,Guns,Meaning of the Second Amendment,GUNS,1,1,second_amendment_meaning
+D17,Drugs & personal liberty,Marijuana,LIBERTY,2,2,marijuana_law marijuana_records
+D17,Drugs & personal liberty,Other drugs: decriminalization,LIBERTY,2,2,drug_possession psychedelics
+D17,Drugs & personal liberty,Supervised consumption sites,LIBERTY,1,1,supervised_sites
+D17,Drugs & personal liberty,Gambling and sports betting,LIBERTY,1,1,sports_betting
+D17,Drugs & personal liberty,Sex work,LIBERTY,2,2,sex_work_law adult_content
+D17,Drugs & personal liberty,Medical aid in dying,LIBERTY,2,4,aid_in_dying aid_in_dying_cases
+D17,Drugs & personal liberty,Public-health paternalism (sin taxes / helmet and seatbelt laws),LIBERTY,2,2,sin_taxes helmet_law
+D18,Free speech & civil liberties,Hate speech laws,SPEECH,2,2,hate_speech_law hateful_speaker_response
+D18,Free speech & civil liberties,Controversial speakers at public universities,SPEECH,2,6,campus_speakers
+D18,Free speech & civil liberties,Flag burning,SPEECH,1,1,flag_burning
+D18,Free speech & civil liberties,Protest rights and restrictions,SPEECH,2,2,protest_masks campus_encampments
+D18,Free speech & civil liberties,Government action on misinformation,SPEECH,2,2,gov_misinformation misinfo_penalty
+D18,Free speech & civil liberties,Government pressure on platforms,SPEECH,1,1,jawboning
+D18,Free speech & civil liberties,Removing books from school libraries,SPEECH,2,2,library_book_decisions library_explicit
+D18,Free speech & civil liberties,Employers firing workers for speech,SPEECH,2,5,employer_speech employer_speech_cases
+D19,Democratic norms & executive power,President vs court rulings,NORMS,1,1,president_court_ruling
+D19,Democratic norms & executive power,Scope of executive orders,NORMS,2,2,exec_orders_scope refuse_to_spend
+D19,Democratic norms & executive power,Emergency powers,NORMS,2,2,emergency_duration emergency_funding
+D19,Democratic norms & executive power,Independent agencies and civil service,NORMS,2,2,civil_service independent_agencies
+D19,Democratic norms & executive power,Investigating or prosecuting political opponents,NORMS,2,2,prosecute_opponents pardon_allies
+D19,Democratic norms & executive power,Accepting election results,NORMS,1,1,accept_results
+D19,Democratic norms & executive power,Checks and balances vs getting things done,NORMS,2,3,checks_vs_action courts_vs_majority filibuster
+D19,Democratic norms & executive power,Strong leader who bends rules,NORMS,1,1,rule_bending_leader
+D19,Democratic norms & executive power,Political violence,NORMS,1,1,political_violence
+D20,Elections & voting,Voter ID,VOTING,1,2,voter_id proof_of_citizenship
+D20,Elections & voting,Mail voting,VOTING,2,2,mail_voting mail_ballot_deadline
+D20,Elections & voting,Automatic registration,VOTING,1,1,auto_registration
+D20,Elections & voting,Voting after a felony conviction,VOTING,1,1,felony_voting
+D20,Elections & voting,Electoral College,VOTING,2,2,electoral_college popular_vote_loser
+D20,Elections & voting,Redistricting and gerrymandering,VOTING,1,1,redistricting
+D20,Elections & voting,Campaign finance,VOTING,2,2,campaign_spending public_financing
+D20,Elections & voting,Term limits (Congress / Supreme Court),VOTING,2,2,congress_term_limits court_term_limits
+D21,Trust & anti-establishment,Trust in the federal government,TRUST,2,2,trust_fed_motives trust_fed_honest
+D21,Trust & anti-establishment,Trust in courts,TRUST,1,1,trust_courts
+D21,Trust & anti-establishment,Trust in news media,ESTAB,2,2,trust_news_facts trust_news_fair
+D21,Trust & anti-establishment,Trust in scientists and experts,ESTAB,2,2,trust_scientists trust_expert_consensus
+D21,Trust & anti-establishment,Trust in election administration,ESTAB,1,1,trust_vote_count
+D21,Trust & anti-establishment,Whose interests government serves,POP,2,2,congress_motives hidden_power
+D21,Trust & anti-establishment,Power of large corporations,POP,1,1,corporate_power
+D21,Trust & anti-establishment,Experts vs ordinary people deciding,POP,2,2,experts_vs_voters expertise_vs_experience
+D21,Trust & anti-establishment,Trust in public health agencies,ESTAB,1,1,trust_public_health
+D22,Foreign policy & defense,Engagement vs restraint,GLOBAL,2,2,engagement_tradeoff allies_tradeoff
+D22,Foreign policy & defense,Alliance commitments,GLOBAL,2,2,ally_attacked nato
+D22,Foreign policy & defense,Defense spending,HAWK,2,2,defense_spending troops_abroad
+D22,Foreign policy & defense,When to use military force,HAWK,2,5,use_force_cases
+D22,Foreign policy & defense,Foreign aid,GLOBAL,2,2,foreign_aid_level global_health_aid
+D22,Foreign policy & defense,Israel and the Middle East,GLOBAL,2,2,israel_military_aid palestinian_state
+D22,Foreign policy & defense,Russia and Ukraine,GLOBAL,1,1,ukraine_support
+D22,Foreign policy & defense,China and Taiwan,HAWK,2,2,taiwan_defense china_posture
+D22,Foreign policy & defense,International institutions (UN / international courts),GLOBAL,2,2,united_nations international_courts
+D22,Foreign policy & defense,Human rights in foreign policy,GLOBAL,1,1,human_rights_tradeoff
+D22,Foreign policy & defense,Nuclear weapons and arms control,HAWK,1,1,nuclear_arms_control
+D22,Foreign policy & defense,Military draft or national service,HAWK,1,1,national_service
+D23,Education,School choice and vouchers,EDUC,2,2,school_choice charter_schools
+D23,Education,Who controls curriculum,EDUC,2,2,curriculum_control lesson_opt_out
+D23,Education,Teaching about race and gender,EDUC,2,2,teach_gender_identity sex_education
+D23,Education,Student loan relief,EDUC,2,2,student_loan_cancel loan_repayment
+D23,Education,Tuition-free public college,EDUC,1,1,free_college
+D23,Education,Federal role in education,EDUC,1,1,education_department
+D23,Education,School discipline and safety,EDUC,1,1,school_discipline
+D23,Education,Merit-based admissions to selective public schools,EDUC,1,1,selective_admissions
+D24,Federalism & local control,Federal vs state power in general,FED,2,2,national_vs_state_tradeoff closer_government_tradeoff
+D24,Federalism & local control,Letting states differ on contested issues,FED,2,5,states_differ
+D24,Federalism & local control,State preemption of cities,FED,1,1,state_preemption
+D24,Federalism & local control,Conditions on federal grants,FED,1,1,grant_conditions
+D24,Federalism & local control,States refusing federal law,FED,1,1,state_refusal
+D24,Federalism & local control,Size of the federal government,FED,1,1,federal_size
+D25,Values (cross-cutting),Equality vs freedom,VALUES,4,4,fair_small_gaps fair_keep_earnings security_vs_choice equal_treatment_vs_association
+D25,Values (cross-cutting),Order vs liberty,VALUES,2,2,liberty_vs_order conscience_vs_law
+D25,Values (cross-cutting),Tradition vs change,VALUES,2,2,tradition_wisdom progress_by_questioning
+D25,Values (cross-cutting),Individual vs collective responsibility,VALUES,2,2,gov_role_values gov_role_values_rev
+D25,Values (cross-cutting),Hierarchy vs equality between groups,VALUES,2,2,group_status_natural group_status_equalize
+D25,Values (cross-cutting),Authority in child-rearing,VALUES,2,2,child_independence child_discipline
+D25,Values (cross-cutting),Universal vs national loyalty,VALUES,2,2,weigh_foreigners loyalty_humanity_country
+D25,Values (cross-cutting),Views of human nature,VALUES,2,2,people_trustworthy people_selfish
+D21,Trust & anti-establishment,Trust in Congress,TRUST,2,2,trust_congress_effort trust_congress_promises
+D21,Trust & anti-establishment,Trust in state and local government,TRUST,2,2,trust_state_gov trust_local_gov
+D21,Trust & anti-establishment,Trust in the police,TRUST,1,1,trust_police_fair
+D21,Trust & anti-establishment,Trust in the military,TRUST,1,1,trust_military
+D21,Trust & anti-establishment,Government competence at big projects,TRUST,2,2,gov_big_projects gov_services_work
+D21,Trust & anti-establishment,Trust in official statistics,ESTAB,1,1,trust_statistics
+D21,Trust & anti-establishment,Trust in universities,ESTAB,1,1,trust_university_research
+D21,Trust & anti-establishment,Trust in large tech companies,ESTAB,1,1,trust_tech_companies
+D21,Trust & anti-establishment,Mainstream vs independent news sources,ESTAB,1,1,news_source_accuracy
+D21,Trust & anti-establishment,Whether officials care about people like you,POP,1,1,officials_care
+D21,Trust & anti-establishment,Whether the economy is rigged by the powerful,POP,1,1,economy_rigged
+D21,Trust & anti-establishment,Outsiders vs experienced politicians,POP,1,1,outsider_vs_experience
+D21,Trust & anti-establishment,Wall Street vs ordinary workers,POP,1,1,wall_street_vs_workers
+D21,Trust & anti-establishment,Direct democracy (ballot measures),POP,1,1,ballot_measures
+D14,Immigration & national identity,Pride and patriotic education,NATION,1,1,patriotic_education
+D14,Immigration & national identity,Respect for national symbols,NATION,1,1,anthem_kneeling
+D14,Immigration & national identity,Shared culture vs multiculturalism,NATION,1,1,culture_tradeoff
+D14,Immigration & national identity,Dual citizenship,NATION,1,1,dual_citizenship
+D14,Immigration & national identity,Is the US exceptional,NATION,1,1,us_exceptional
+D14,Immigration & national identity,English as official language,NATION,1,1,english_official
+D14,Immigration & national identity,Citizens first for jobs and benefits,NATION,1,1,citizens_first
+D22,Foreign policy & defense,Strikes on terrorist groups abroad,HAWK,1,1,strikes_on_terrorists
+D22,Foreign policy & defense,Arms sales to other countries,HAWK,1,1,arms_sales
+D24,Federalism & local control,National standards vs state experimentation,FED,1,1,experimentation_tradeoff

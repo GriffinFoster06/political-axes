@@ -1,0 +1,59 @@
+{
+  "module": "quality",
+  "status": "DRAFT v0.1",
+  "purpose": "Detect careless answering in pilot and public data, and measure within-session reliability. Quality flags never change anyone's results page; they decide which responses are used to calibrate the model.",
+  "instructed_responses": {
+    "note": "Three checks placed at random in the middle third of the quiz, each inside a different module and styled like the items around it. Each names the answer to pick, so nobody fails by disagreeing.",
+    "items": [
+      {
+        "id": "qc_position",
+        "format": "position",
+        "stem": "This question checks that answers are being read. Please choose \"About as much as today\".",
+        "scope": "There is no right opinion here; just pick the answer named above.",
+        "options": ["Much more than today", "Somewhat more than today", "About as much as today", "Somewhat less than today", "Much less than today"],
+        "correct": 2
+      },
+      {
+        "id": "qc_frequency",
+        "format": "frequency",
+        "stem": "To show you're reading carefully, please choose \"Sometimes (about 3 in 10)\" for this question.",
+        "scope": "Just pick the answer named above.",
+        "options": ["Almost always (9 or more times in 10)", "Most of the time (about 7 in 10)", "About half the time", "Sometimes (about 3 in 10)", "Rarely (1 in 10 or less)"],
+        "correct": 3
+      },
+      {
+        "id": "qc_tradeoff",
+        "format": "tradeoff",
+        "stem": "Attention check: please choose \"Lean\" toward the side labeled \"Blue\".",
+        "scope": "Just pick the answer named above.",
+        "sides": [
+          {"label": "Blue", "text": "This side is labeled Blue."},
+          {"label": "Green", "text": "This side is labeled Green."}
+        ],
+        "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+        "correct": 1
+      }
+    ]
+  },
+  "repeated_items": {
+    "note": "Asked again at the very end, shown in the opposite display direction from the first time. Agreement between the two answers estimates within-session reliability and flags random responding. Chosen to span six different families of axes.",
+    "ids": ["abortion_rule", "legal_immigration_level", "tariff_level", "trust_fed_motives", "surveillance_tradeoff", "school_choice"],
+    "flag_if": "Four or more of the six repeated answers differ from the first answer by 2 or more scale points (positions scaled to 0-1, difference >= 0.5)."
+  },
+  "timing_and_patterns": {
+    "too_fast": "Under 2 seconds on a position or tradeoff item, or under 1 second on an exception case. Flag the response if more than 30% of answered items are too fast.",
+    "straightlining": "The same on-screen position (first, last, etc.) chosen on 12 or more consecutive multi-option items. Because display direction is randomized per person, this pattern cannot come from consistent views.",
+    "breakoff": "Partial responses are kept; items answered before stopping count normally."
+  },
+  "self_report": {
+    "id": "qc_honesty",
+    "stem": "Last question about the quiz itself: how carefully did you answer?",
+    "scope": "Your honest answer helps us. It doesn't change your results.",
+    "options": [
+      "Carefully and honestly, all or almost all the way through",
+      "Mostly carefully, with some quick guesses",
+      "I clicked through a lot of it without thinking"
+    ]
+  },
+  "exclusion_rule": "For calibration, exclude a response if it fails 2 or more of the 3 instructed checks, OR it is flagged for both speed and straightlining, OR the self-report is the third option. Report how many were excluded and rerun key results with them included, to show the rule doesn't drive conclusions."
+}

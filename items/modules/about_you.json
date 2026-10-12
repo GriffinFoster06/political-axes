@@ -1,0 +1,129 @@
+{
+  "module": "about_you",
+  "status": "DRAFT v0.1",
+  "placement": "After all topic modules and before the results page. Every question can be skipped.",
+  "purpose": "None of these answers is ever used to compute a person's positions. They are used to (1) validate the axes (known-groups and vote checks), (2) test that items mean the same thing across groups (DIF), (3) weight pilot data to the national population, and (4) let people compare themselves with others like them if they choose.",
+  "privacy": "No names, emails, IP addresses or exact birth dates are collected. Age is collected in brackets. Answers are stored only with a random response ID. People under 18 can see their results, but their answers are not stored for research.",
+  "intro_text": "These last questions are about you. They're optional, and they never change your results. We use them to check that the quiz works the same way for everyone.",
+  "items": [
+    {
+      "id": "self_placement",
+      "stem": "Which of these best describes your political views?",
+      "note": "Ideology labels are allowed here, and only here, because this question measures self-labeling for validation. It comes after all position questions so labels can't prime answers.",
+      "options": ["Very liberal", "Liberal", "Slightly liberal", "Moderate, middle of the road", "Slightly conservative", "Conservative", "Very conservative", "I haven't thought much about this"]
+    },
+    {
+      "id": "self_labels",
+      "stem": "Which of these words, if any, describe your politics? Pick all that apply.",
+      "multi_select": true,
+      "options": ["Progressive", "Liberal", "Socialist or democratic socialist", "Moderate", "Centrist", "Conservative", "Libertarian", "Populist", "Nationalist", "Traditionalist", "Green", "Independent-minded", "None of these"]
+    },
+    {
+      "id": "party_id",
+      "anchor": true,
+      "source": "ANES party identification sequence (verbatim stem, used as an anchor for national comparison)",
+      "stem": "Generally speaking, do you usually think of yourself as a Democrat, a Republican, an independent, or what?",
+      "options": ["Democrat", "Republican", "Independent", "Something else", "No preference"],
+      "followups": {
+        "party_strength": {"show_if": {"party_id": [0, 1]}, "stem": "Would you call yourself a strong or a not very strong member of that party?", "options": ["Strong", "Not very strong"]},
+        "party_lean": {"show_if": {"party_id": [2, 3, 4]}, "stem": "Do you think of yourself as closer to the Republican Party or to the Democratic Party?", "options": ["Closer to the Republican Party", "Neither", "Closer to the Democratic Party"]}
+      }
+    },
+    {
+      "id": "vote_2024",
+      "stem": "In the 2024 presidential election, who did you vote for?",
+      "options": ["Kamala Harris", "Donald Trump", "Someone else", "I didn't vote", "I wasn't eligible to vote", "Prefer not to say"]
+    },
+    {
+      "id": "vote_2020",
+      "stem": "In the 2020 presidential election, who did you vote for?",
+      "options": ["Joe Biden", "Donald Trump", "Someone else", "I didn't vote", "I wasn't eligible to vote", "Prefer not to say"]
+    },
+    {
+      "id": "political_interest",
+      "stem": "How closely do you follow politics and public affairs?",
+      "options": ["Very closely", "Fairly closely", "Not very closely", "Not at all"]
+    },
+    {
+      "id": "state",
+      "stem": "Which state do you live in?",
+      "options_source": "50 states, District of Columbia, US territory, I live outside the US"
+    },
+    {
+      "id": "community_type",
+      "stem": "Which best describes where you live?",
+      "options": ["A big city", "A suburb near a big city", "A small city or town", "A rural area"]
+    },
+    {
+      "id": "age_bracket",
+      "stem": "How old are you?",
+      "options": ["Under 18", "18 to 24", "25 to 34", "35 to 44", "45 to 54", "55 to 64", "65 to 74", "75 or older"]
+    },
+    {
+      "id": "gender",
+      "stem": "What is your gender?",
+      "options": ["Woman", "Man", "Another gender", "Prefer not to say"]
+    },
+    {
+      "id": "race_ethnicity",
+      "stem": "Which of these describe you? Pick all that apply.",
+      "multi_select": true,
+      "options": ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Middle Eastern or North African", "Native Hawaiian or Pacific Islander", "White", "Another race or ethnicity", "Prefer not to say"],
+      "source": "Categories follow the 2024 federal (OMB SPD 15) standard"
+    },
+    {
+      "id": "education",
+      "stem": "What is the highest level of school you've completed?",
+      "options": ["Less than high school", "High school diploma or GED", "Some college, no degree", "Associate degree", "Bachelor's degree", "Graduate or professional degree"]
+    },
+    {
+      "id": "household_income",
+      "stem": "What was your household's total income last year, before taxes?",
+      "options": ["Under $30,000", "$30,000 to $59,999", "$60,000 to $99,999", "$100,000 to $149,999", "$150,000 to $249,999", "$250,000 or more", "Prefer not to say"]
+    },
+    {
+      "id": "religion",
+      "stem": "What is your religion, if any?",
+      "options": ["Protestant or other non-Catholic Christian", "Catholic", "Latter-day Saint (Mormon)", "Orthodox Christian", "Jewish", "Muslim", "Buddhist", "Hindu", "Something else", "Atheist", "Agnostic", "Nothing in particular", "Prefer not to say"]
+    },
+    {
+      "id": "religious_attendance",
+      "stem": "Aside from weddings and funerals, how often do you attend religious services?",
+      "options": ["More than once a week", "Once a week", "Once or twice a month", "A few times a year", "Seldom", "Never"]
+    },
+    {
+      "id": "evangelical",
+      "show_if": {"religion": [0, 1, 3]},
+      "stem": "Would you describe yourself as a born-again or evangelical Christian?",
+      "options": ["Yes", "No"]
+    },
+    {
+      "id": "military_service",
+      "stem": "Have you or anyone in your household served in the US military?",
+      "options": ["Yes, I have", "Yes, someone else in my household", "No"]
+    },
+    {
+      "id": "gun_household",
+      "stem": "Does anyone in your household own a gun?",
+      "options": ["Yes", "No", "Prefer not to say"]
+    },
+    {
+      "id": "union_household",
+      "stem": "Does anyone in your household belong to a labor union?",
+      "options": ["Yes", "No"]
+    },
+    {
+      "id": "retake",
+      "stem": "Have you taken this quiz before?",
+      "options": ["No, this is my first time", "Yes, within the last 2 months", "Yes, more than 2 months ago"],
+      "note": "People who took it before can enter their saved results code so test-retest stability can be measured without collecting any identity."
+    },
+    {
+      "id": "result_fit",
+      "placement": "On the results page, after results are shown",
+      "stem": "How well does your result describe your views?",
+      "options": ["Very well", "Fairly well", "Somewhat", "Not well", "Not at all"],
+      "free_text": "What did it get wrong? (optional)"
+    }
+  ]
+}
