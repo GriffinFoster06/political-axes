@@ -1,0 +1,242 @@
+{
+  "domain_id": "D02",
+  "domain": "Labor & business regulation",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "items": [
+    {
+      "id": "min_wage_jobs",
+      "subtopic": "Minimum wage",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "Suppose raising the federal minimum wage to $15 would raise pay for millions of workers but cost some low-wage jobs. Which comes closest to your view?",
+      "scope": "Assume both effects are real. The question is which tradeoff you'd accept.",
+      "options": [
+        "Raise it to $15 quickly; higher pay for many is worth some lost jobs",
+        "Raise it to $15 slowly, over several years, to limit job losses",
+        "Raise it only part of the way, or only in areas with high living costs",
+        "Don't raise it; lost jobs hurt the least experienced workers most"
+      ],
+      "high_pole": "don't raise"
+    },
+    {
+      "id": "right_to_work",
+      "subtopic": "Unions and right-to-work",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "Should workers covered by a union contract be required to pay fees to the union that negotiated it?",
+      "scope": "This is about private-sector jobs. Nobody can be required to join a union.",
+      "context": "26 states have right-to-work laws, which ban contracts that require these fees.",
+      "options": [
+        "Allow contracts that require fees in every state, overriding state right-to-work laws",
+        "Let each state decide, as today",
+        "Ban contracts that require fees in every state (a national right-to-work law)"
+      ],
+      "high_pole": "national right-to-work",
+      "facts": [
+        {"claim": "26 states have right-to-work laws (Michigan repealed its law effective Feb 2024)", "source": "National Conference of State Legislatures; Michigan Public Act 8 of 2023", "checked": "2026-10-12", "verify": true}
+      ],
+      "definitions": [
+        {"term": "right-to-work", "text": "A state law that bars union contracts from requiring workers to pay any fees to the union that represents them.", "source": "descriptive; 29 U.S.C. sec. 164(b)", "verify": false}
+      ]
+    },
+    {
+      "id": "union_organizing",
+      "subtopic": "Unions and right-to-work",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "How easy should it be for workers to form a union at their workplace?",
+      "scope": "Private-sector workplaces.",
+      "options": [
+        "Much easier: the union is recognized once most workers sign cards, with large fines for employers who interfere",
+        "Somewhat easier: faster votes and larger fines for illegal interference",
+        "Keep today's rules",
+        "Harder: always require a secret-ballot vote, and hold new votes every few years to keep the union"
+      ],
+      "high_pole": "harder"
+    },
+    {
+      "id": "public_unions",
+      "subtopic": "Unions and right-to-work",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "Should government employees, such as teachers and state office workers, be able to bargain as a group through unions?",
+      "scope": "Police and firefighters aside; think of most government workers.",
+      "options": [
+        "Yes, including the right to strike",
+        "Yes, but not to strike",
+        "Only over wages, not benefits or work rules",
+        "No collective bargaining for government workers"
+      ],
+      "high_pole": "no bargaining"
+    },
+    {
+      "id": "paid_leave",
+      "subtopic": "Mandated benefits (paid leave etc.)",
+      "axis": ["REG", "SOCINS"],
+      "format": "position",
+      "stem": "Which comes closest to what federal law should do about paid leave for a new child or a serious illness?",
+      "scope": "This is about leave of several weeks, not ordinary sick days.",
+      "context": "Federal law gives many workers up to 12 weeks of unpaid, job-protected leave. It does not require paid leave.",
+      "options": [
+        "Guarantee 12 weeks or more of paid leave, funded by a payroll tax",
+        "Guarantee a shorter paid leave, such as 4 to 6 weeks",
+        "No requirement, but give tax credits to employers who offer paid leave",
+        "No federal role; leave it to employers and states"
+      ],
+      "high_pole": "no federal role",
+      "facts": [
+        {"claim": "Family and Medical Leave Act (1993) provides up to 12 weeks unpaid job-protected leave to eligible employees; no federal paid-leave mandate", "source": "US Department of Labor, FMLA", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "sick_days",
+      "subtopic": "Mandated benefits (paid leave etc.)",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "Should employers be required to give workers paid sick days?",
+      "scope": "Short-term illness, like the flu.",
+      "options": [
+        "Yes, at least 7 days a year, for all employers",
+        "Yes, but only employers with more than 50 workers",
+        "No federal requirement; leave it to states",
+        "No requirement at any level; leave it to employers"
+      ],
+      "high_pole": "no requirement"
+    },
+    {
+      "id": "gig_workers",
+      "subtopic": "Gig worker classification",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "How should the law treat app-based drivers and delivery workers?",
+      "scope": "Think of people who mainly earn a living this way, not people doing it on the side.",
+      "options": [
+        "As employees, with minimum wage, overtime and benefits",
+        "A new middle category: pay floors and some benefits, with flexible hours like contractors",
+        "As independent contractors, as most are today"
+      ],
+      "high_pole": "contractors"
+    },
+    {
+      "id": "regulation_tradeoff",
+      "subtopic": "General business regulation",
+      "axis": ["REG"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view of rules on business?",
+      "scope": "Think about business regulation in general.",
+      "sides": [
+        {"label": "Stronger protections", "text": "Stronger rules to protect workers, consumers and the environment, even if prices rise and fewer businesses start."},
+        {"label": "Fewer rules", "text": "Fewer rules so businesses grow and prices stay low, even if some people are less protected."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "precaution_tradeoff",
+      "subtopic": "General business regulation",
+      "axis": ["REG", "TECH"],
+      "format": "tradeoff",
+      "stem": "When a new kind of product comes along, which approach is closer to your view?",
+      "scope": "Think of new products in general, such as new chemicals, foods or devices.",
+      "sides": [
+        {"label": "Prove it safe first", "text": "Companies should show it is safe before selling it, even if that delays useful products for years."},
+        {"label": "Sell first, fix problems", "text": "Allow it to be sold and deal with problems as they appear, even if some people are harmed first."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "big_company_breakup",
+      "subtopic": "Corporate size and antitrust",
+      "axis": ["REG", "POP"],
+      "format": "position",
+      "stem": "What should the government do about companies that control most of their market?",
+      "scope": "Think of companies with most of the business in their field, such as online search or meatpacking.",
+      "options": [
+        "Break them up, even if their prices are low",
+        "Break them up only if they are proven to hurt customers, workers or competitors",
+        "Leave existing companies alone, but block them from buying rivals",
+        "Leave them alone; large size usually reflects success, and new competitors will emerge"
+      ],
+      "high_pole": "leave alone"
+    },
+    {
+      "id": "merger_rules",
+      "subtopic": "Corporate size and antitrust",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "When two large companies want to merge, how strict should the government be?",
+      "scope": "Think of mergers between companies that sell similar things.",
+      "options": [
+        "Block most large mergers unless the companies prove they will help customers and workers",
+        "Review each case and block those likely to raise prices or cut wages",
+        "Approve most mergers unless they would clearly raise prices",
+        "Rarely interfere; let companies merge as they choose"
+      ],
+      "high_pole": "less strict"
+    },
+    {
+      "id": "bank_rules",
+      "subtopic": "Financial regulation and bailouts",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "How strict should the rules on large banks be?",
+      "scope": "Banks with more than $100 billion in assets.",
+      "options": [
+        "Much stricter: break up the largest banks",
+        "Stricter: make banks hold more of their own money as a cushion against losses",
+        "About as strict as today",
+        "Looser than today, so banks can lend more"
+      ],
+      "high_pole": "looser"
+    },
+    {
+      "id": "bailouts",
+      "subtopic": "Financial regulation and bailouts",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "If a large bank or company is about to fail and its collapse could hurt the whole economy, what should government do?",
+      "scope": "Think of a failure big enough to cause a recession.",
+      "options": [
+        "Take it over and run it until it can be sold or wound down",
+        "Lend it money to survive, with strict conditions, as in 2008",
+        "Protect customers' insured deposits only and let the company fail",
+        "Let it fail with no government help"
+      ],
+      "high_pole": "no help"
+    },
+    {
+      "id": "licensing",
+      "subtopic": "Occupational licensing",
+      "axis": ["REG", "LIBERTY"],
+      "format": "position",
+      "stem": "Which comes closest to your view of requiring a government license to work in jobs like barber, electrician or interior designer?",
+      "scope": "Think about licensing in general, not one job.",
+      "context": "About 1 in 5 US workers holds a government license needed for their job.",
+      "options": [
+        "Require licenses for more jobs, to protect customers",
+        "Keep about today's requirements",
+        "Require licenses only where health or safety is clearly at risk",
+        "Remove most license requirements; customers can rely on reviews and private certifications"
+      ],
+      "high_pole": "fewer licenses",
+      "facts": [
+        {"claim": "About 20-22% of employed people held an active professional certification or license, mostly government-required licenses", "source": "US Bureau of Labor Statistics, Current Population Survey (certification and licensing)", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "price_controls",
+      "subtopic": "Price controls and price-gouging laws",
+      "axis": ["REG"],
+      "format": "position",
+      "stem": "Should government limit how much businesses can charge for essentials like food, water and gas?",
+      "scope": "Think of essentials, not luxuries. Rent is asked about separately.",
+      "options": [
+        "Yes, including caps on prices for essentials when inflation is high",
+        "Only after disasters: ban sharp price hikes during declared emergencies",
+        "No; high prices draw in more supply and should be allowed, even after disasters"
+      ],
+      "high_pole": "no limits"
+    }
+  ]
+}

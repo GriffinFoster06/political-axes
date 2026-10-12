@@ -11,11 +11,17 @@
       "Firm",
       "Fairly firm",
       "It really depends on the details"
-    ]
+    ],
+    "axis": "axis lists candidate axes from docs/question-bank-plan.md; the first is the one the item is written for, later ones are tested. dimension_hint (core_v0 only) refers to the ANES 2024 model's dimensions.",
+    "tradeoff": "Tradeoff items show two sides (A = code 0, B = high pole) and the fixed scale Clearly A / Lean A / Lean B / Clearly B, rendered with each side's label."
   },
   "items": [
     {
       "id": "abortion_rule",
+      "subtopic": "Legal rule",
+      "axis": [
+        "MORAL"
+      ],
       "dimension_hint": [
         "G",
         "CULT"
@@ -56,6 +62,10 @@
     },
     {
       "id": "abortion_exceptions",
+      "subtopic": "Exceptions (life / health / rape-incest / fatal condition)",
+      "axis": [
+        "MORAL"
+      ],
       "dimension_hint": [
         "CULT"
       ],
@@ -104,6 +114,10 @@
     },
     {
       "id": "min_wage",
+      "subtopic": "Minimum wage",
+      "axis": [
+        "REG"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -137,6 +151,10 @@
     },
     {
       "id": "health_coverage",
+      "subtopic": "Overall coverage system",
+      "axis": [
+        "SOCINS"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -172,6 +190,10 @@
     },
     {
       "id": "top_income_tax",
+      "subtopic": "Top income tax rate",
+      "axis": [
+        "REDIS"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -196,6 +218,10 @@
     },
     {
       "id": "climate_action",
+      "subtopic": "Level of climate action and its cost",
+      "axis": [
+        "ENV"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -221,6 +247,10 @@
     },
     {
       "id": "handgun_purchase",
+      "subtopic": "Rules for buying a handgun",
+      "axis": [
+        "GUNS"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -265,6 +295,10 @@
     },
     {
       "id": "status_policy",
+      "subtopic": "People without legal status: main rule",
+      "axis": [
+        "IMMIG"
+      ],
       "dimension_hint": [
         "G",
         "EQUITY"
@@ -309,6 +343,10 @@
     },
     {
       "id": "status_groups",
+      "subtopic": "People without legal status: groups follow-up",
+      "axis": [
+        "IMMIG"
+      ],
       "dimension_hint": [
         "EQUITY"
       ],
@@ -344,6 +382,10 @@
     },
     {
       "id": "college_admissions_race",
+      "subtopic": "Race-conscious admissions and hiring",
+      "axis": [
+        "EQUITY"
+      ],
       "dimension_hint": [
         "G",
         "EQUITY"
@@ -377,6 +419,10 @@
     },
     {
       "id": "trans_school_sports",
+      "subtopic": "Transgender athletes",
+      "axis": [
+        "GENDERID"
+      ],
       "dimension_hint": [
         "G",
         "CULT"
@@ -406,6 +452,10 @@
     },
     {
       "id": "president_court_ruling",
+      "subtopic": "President vs court rulings",
+      "axis": [
+        "NORMS"
+      ],
       "dimension_hint": [
         "NORMS"
       ],
@@ -430,6 +480,11 @@
     },
     {
       "id": "congress_motives",
+      "subtopic": "Whose interests government serves",
+      "axis": [
+        "POP",
+        "TRUST"
+      ],
       "dimension_hint": [
         "TRUST"
       ],
@@ -455,6 +510,10 @@
     },
     {
       "id": "ally_attacked",
+      "subtopic": "Alliance commitments",
+      "axis": [
+        "GLOBAL"
+      ],
       "dimension_hint": [
         "FOREIGN"
       ],
@@ -486,6 +545,11 @@
     },
     {
       "id": "gov_role_values",
+      "subtopic": "Individual vs collective responsibility",
+      "axis": [
+        "VALUES",
+        "REDIS"
+      ],
       "dimension_hint": [
         "G",
         "GOV"
@@ -518,6 +582,11 @@
     },
     {
       "id": "gov_role_values_rev",
+      "subtopic": "Individual vs collective responsibility",
+      "axis": [
+        "VALUES",
+        "REDIS"
+      ],
       "dimension_hint": [
         "G",
         "GOV"

@@ -1,0 +1,327 @@
+{
+  "domain_id": "D03",
+  "domain": "Health care & social insurance",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "items": [
+    {
+      "id": "coverage_guarantee",
+      "subtopic": "Overall coverage system",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Should the federal government make sure every American has health insurance?",
+      "scope": "This is about the goal. How the system works is asked separately.",
+      "options": [
+        "Yes, through one government plan for everyone",
+        "Yes, through whatever mix of public and private coverage works",
+        "No, but it should help people with low incomes or serious health conditions get covered",
+        "No; health coverage is each person's own responsibility"
+      ],
+      "high_pole": "individual responsibility"
+    },
+    {
+      "id": "medicare_age",
+      "subtopic": "Public option / single payer details",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Who should be able to get Medicare, the federal health plan now mainly for people 65 and older?",
+      "scope": "Assume people who join would pay premiums or taxes in some form.",
+      "options": [
+        "Everyone, of any age, automatically",
+        "Anyone of any age who chooses to buy into it",
+        "People 60 and older",
+        "Keep it at 65 and older",
+        "Raise the age gradually to 67"
+      ],
+      "high_pole": "narrower"
+    },
+    {
+      "id": "private_insurance_role",
+      "subtopic": "Public option / single payer details",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Suppose the US had a government health plan open to everyone. What role should private health insurance have?",
+      "scope": "Answer even if you oppose such a plan.",
+      "options": [
+        "Only cover extras the government plan doesn't, like private rooms",
+        "Compete with the government plan; people choose either one",
+        "Stay the main system; the government plan is only for people who can't get private coverage"
+      ],
+      "high_pole": "private main"
+    },
+    {
+      "id": "drug_prices",
+      "subtopic": "Prescription drug prices",
+      "axis": ["SOCINS", "REG"],
+      "format": "position",
+      "stem": "What role should the government have in setting prescription drug prices?",
+      "scope": "Think about brand-name drugs with no cheaper generic.",
+      "context": "Medicare now negotiates prices for a limited number of high-cost drugs. The first negotiated prices took effect in January 2026.",
+      "options": [
+        "Set prices for all brand-name drugs, for everyone",
+        "Negotiate prices for many more drugs, for both Medicare and private insurance",
+        "Negotiate for a limited number of drugs in Medicare, as today",
+        "End government price negotiation; let competition set prices"
+      ],
+      "high_pole": "no government role",
+      "facts": [
+        {"claim": "Medicare Drug Price Negotiation Program: first 10 negotiated prices effective January 1, 2026", "source": "Inflation Reduction Act of 2022; CMS", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "drug_import",
+      "subtopic": "Prescription drug prices",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Should people in the US be able to buy prescription drugs imported from countries where they cost less, such as Canada?",
+      "scope": "Drugs approved in the other country, sold through licensed pharmacies.",
+      "options": [
+        "Yes, from any country with safety standards like ours",
+        "Only through limited state programs approved by the FDA",
+        "No; imported drugs are too hard to keep safe"
+      ],
+      "high_pole": "no imports",
+      "notes": "Cross-cutting candidate; may not load on SOCINS."
+    },
+    {
+      "id": "medicaid_scope",
+      "subtopic": "Medicaid scope and work rules",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Which comes closest to what should happen to Medicaid, the health program for people with low incomes?",
+      "scope": "Medicaid is paid for jointly by the federal government and states.",
+      "options": [
+        "Cover all low-income adults in every state, with federal money paying most of the cost",
+        "Keep it as is: states choose whether to cover all low-income adults",
+        "Limit federal money per person and give states more control over who is covered",
+        "Give each state a fixed amount and let it decide everything"
+      ],
+      "high_pole": "less federal",
+      "definitions": [
+        {"term": "Medicaid", "text": "A health coverage program for people with low incomes, run by states under federal rules and paid for by both.", "source": "Centers for Medicare & Medicaid Services", "verify": false}
+      ]
+    },
+    {
+      "id": "medicaid_work",
+      "subtopic": "Medicaid scope and work rules",
+      "axis": ["SOCINS", "REDIS"],
+      "format": "position",
+      "stem": "Should adults on Medicaid who are able to work be required to work, volunteer or go to school to keep their coverage?",
+      "scope": "Think of adults without disabilities or young children.",
+      "context": "A 2025 federal law requires many such adults to do about 80 hours a month of these activities, starting by 2027.",
+      "options": [
+        "No; health coverage shouldn't depend on work",
+        "Yes, about 80 hours a month, with exemptions for parents, caregivers and people in school",
+        "Yes, with more hours or fewer exemptions than that"
+      ],
+      "high_pole": "stricter",
+      "facts": [
+        {"claim": "Public Law 119-21 requires expansion adults 19-64 to show 80 hours/month of work, community service, or school, with exemptions; states must implement by Jan 1, 2027", "source": "Public Law 119-21 (2025), sec. 71119; KFF", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "ss_shortfall",
+      "subtopic": "Social Security future",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "How should Social Security's funding gap be closed?",
+      "scope": "If nothing changes, benefits would be cut automatically when the trust fund runs out.",
+      "context": "Its trust fund is projected to run out in the early 2030s. After that, incoming taxes would pay about 80% of promised benefits.",
+      "options": [
+        "Only raise taxes, mainly on high earners, and keep or increase benefits",
+        "Mostly raise taxes, with small benefit changes",
+        "An even mix of tax increases and benefit cuts",
+        "Mostly slow the growth of benefits, such as by raising the retirement age, with small tax increases",
+        "Only slow the growth of benefits; no tax increases"
+      ],
+      "high_pole": "benefit cuts only",
+      "facts": [
+        {"claim": "2025 Trustees Report: OASI trust fund depletion 2033 (77% payable); combined OASDI 2034 (81% payable)", "source": "2025 Social Security Trustees Report", "checked": "2026-10-12", "verify": true, "note": "Check whether a 2026 Trustees Report changed these dates."}
+      ]
+    },
+    {
+      "id": "ss_retirement_age",
+      "subtopic": "Social Security future",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "What should Social Security's full retirement age be for people now under 50?",
+      "scope": "Full retirement age is when someone can get their full benefit. Early, reduced benefits could still start at 62.",
+      "context": "Today it is 67 for anyone born in 1960 or later.",
+      "options": [
+        "Lower it to 65",
+        "Keep it at 67",
+        "Raise it to 68 or 69",
+        "Raise it to 70 or higher"
+      ],
+      "high_pole": "higher",
+      "facts": [
+        {"claim": "Full retirement age is 67 for people born 1960 or later", "source": "Social Security Administration", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "ss_payroll_cap",
+      "subtopic": "Social Security future",
+      "axis": ["SOCINS", "REDIS"],
+      "format": "position",
+      "stem": "Should Social Security tax apply to wages above the current limit?",
+      "scope": "The tax is 12.4% of wages, split between worker and employer.",
+      "context": "Today the tax applies only to the first $184,500 a person earns in a year (2026).",
+      "options": [
+        "Yes, on all wages, with no limit",
+        "Yes, on wages above $400,000, leaving wages in between untaxed",
+        "Raise the limit somewhat, but keep one",
+        "Keep the limit as it is"
+      ],
+      "high_pole": "keep limit",
+      "facts": [
+        {"claim": "Social Security contribution and benefit base is $184,500 for 2026", "source": "Social Security Administration, 2026 COLA fact sheet", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "medicare_structure",
+      "subtopic": "Medicare future",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Which comes closest to how Medicare should work for future retirees?",
+      "scope": "Think of people who retire 15 or more years from now.",
+      "options": [
+        "Expand it to cover dental, vision and hearing, paid for with higher taxes",
+        "Keep it as it is, adding taxes or savings to pay for it",
+        "Give retirees a set amount to choose between traditional Medicare and private plans",
+        "Gradually replace it with personal health savings accounts"
+      ],
+      "high_pole": "more private"
+    },
+    {
+      "id": "medicare_means_test",
+      "subtopic": "Medicare future",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Should retirees with higher incomes pay more for Medicare than others?",
+      "scope": "Higher-income retirees already pay somewhat higher premiums today.",
+      "options": [
+        "Yes, much more than today",
+        "Somewhat more than today",
+        "Keep it as today",
+        "No; everyone paid in and should pay the same"
+      ],
+      "high_pole": "same for all",
+      "notes": "Direction relative to G unclear; means-testing appeals to some on both sides. Keep only if it loads."
+    },
+    {
+      "id": "ss_private_accounts",
+      "subtopic": "Private retirement accounts",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Should workers be able to put part of their Social Security taxes into personal investment accounts?",
+      "scope": "Accounts the worker would own and could invest, for example in stock funds.",
+      "options": [
+        "No; Social Security should remain a guaranteed benefit",
+        "Only as an extra on top of Social Security, not taken out of it",
+        "Yes, workers could choose to put part of their tax into an account",
+        "Yes, and gradually replace Social Security with personal accounts"
+      ],
+      "high_pole": "replace"
+    },
+    {
+      "id": "insurance_mandate",
+      "subtopic": "Insurance mandates",
+      "axis": ["SOCINS", "LIBERTY"],
+      "format": "position",
+      "stem": "Should people be required to have health insurance?",
+      "scope": "Assume help paying is available for people who can't afford it.",
+      "context": "From 2014 to 2018 there was a federal penalty for having no coverage. The penalty is now $0.",
+      "options": [
+        "Yes, with a penalty for not having it",
+        "No penalty, but anyone without insurance is signed up automatically for a free basic plan",
+        "No; whether to buy insurance is a personal choice"
+      ],
+      "high_pole": "personal choice",
+      "facts": [
+        {"claim": "Individual mandate penalty reduced to $0 starting 2019", "source": "Tax Cuts and Jobs Act, Public Law 115-97, sec. 11081", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "preexisting_conditions",
+      "subtopic": "Insurance mandates",
+      "axis": ["SOCINS"],
+      "format": "position",
+      "stem": "Should health insurers be allowed to charge more or refuse coverage because of a person's past health problems?",
+      "scope": "Think of conditions like diabetes or cancer that a person had before buying insurance.",
+      "context": "Since 2014 federal law has banned both.",
+      "options": [
+        "No, never, as today",
+        "They can charge somewhat more, but not refuse coverage",
+        "Yes, with a separate government-funded plan for people insurers turn down"
+      ],
+      "high_pole": "allow",
+      "facts": [
+        {"claim": "Affordable Care Act bars denial of coverage and premium rating based on health status from 2014", "source": "42 U.S.C. sec. 300gg, 300gg-1, 300gg-3", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "school_vaccines",
+      "subtopic": "Vaccine requirements",
+      "axis": ["LIBERTY", "SOCINS"],
+      "format": "position",
+      "stem": "Should children have to be vaccinated against diseases like measles and polio to attend school?",
+      "scope": "Think of children with no medical reason to skip. You'll be asked about other exemptions next.",
+      "options": [
+        "Required for both public and private schools",
+        "Required for public schools only",
+        "Recommended, but parents decide"
+      ],
+      "high_pole": "parents decide",
+      "followup": "vaccine_exemptions"
+    },
+    {
+      "id": "vaccine_exemptions",
+      "subtopic": "Vaccine requirements",
+      "axis": ["LIBERTY"],
+      "format": "exceptions",
+      "show_if": {"school_vaccines": [0, 1]},
+      "stem": "Under the rule you picked, should these children be allowed to skip the required vaccines?",
+      "scope": "Answer each case separately.",
+      "options": ["Should not be allowed to skip", "Should be allowed to skip"],
+      "high_pole": "Should be allowed to skip",
+      "cases": [
+        {"id": "vax_religious", "text": "Children whose parents have religious objections"},
+        {"id": "vax_personal", "text": "Children whose parents have personal or philosophical objections"}
+      ]
+    },
+    {
+      "id": "outbreak_vaccine_jobs",
+      "subtopic": "Vaccine requirements",
+      "axis": ["LIBERTY"],
+      "format": "position",
+      "stem": "During a serious outbreak of a contagious disease, who should be able to require workers to be vaccinated?",
+      "scope": "Assume a vaccine is widely judged safe and effective. Medical exemptions would always apply.",
+      "options": [
+        "Government should require it for most workers",
+        "Each employer can choose to require it",
+        "Only health care employers can require it",
+        "No one should be able to require it"
+      ],
+      "high_pole": "no one"
+    },
+    {
+      "id": "immigrant_health_benefits",
+      "subtopic": "Immigrants' eligibility for public health benefits",
+      "axis": ["IMMIG", "SOCINS"],
+      "format": "position",
+      "stem": "Which immigrants should be able to get Medicaid if their incomes are low enough?",
+      "scope": "Emergency room care is always available to everyone and is not part of this question.",
+      "context": "Today most green card holders must wait 5 years. People without legal status are not eligible.",
+      "options": [
+        "Everyone living here, whatever their legal status",
+        "Legal immigrants right away, plus children whatever their status",
+        "Legal immigrants after 5 years, as today",
+        "Legal immigrants only after 10 years or more",
+        "Citizens only"
+      ],
+      "high_pole": "citizens only",
+      "facts": [
+        {"claim": "Most lawful permanent residents face a 5-year bar before federal Medicaid eligibility; unauthorized immigrants are eligible only for emergency Medicaid", "source": "Personal Responsibility and Work Opportunity Reconciliation Act of 1996; KFF", "checked": "2026-10-12", "verify": false}
+      ]
+    }
+  ]
+}

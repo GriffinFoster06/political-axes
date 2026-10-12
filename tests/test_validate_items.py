@@ -47,3 +47,30 @@ def test_catches_violations(tmp_path):
     text = "\n".join(errs)
     for iid in ["party", "blank_middle", "two_opts", "long", "agree_no_pair", "bad_def", "stale"]:
         assert f"{iid}:" in text, f"validator missed {iid}"
+
+
+TRADE = {**GOOD, "id": "tr", "format": "tradeoff", "stem": "Which matters more?",
+         "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+         "sides": [{"label": "Jobs", "text": "Protect jobs, even if prices rise"},
+                   {"label": "Prices", "text": "Keep prices low, even if some jobs are lost"}]}
+
+
+def test_tradeoff_and_frequency(tmp_path):
+    errs, _, _ = run([TRADE], tmp_path)
+    assert errs == []
+    bad = [{**TRADE, "id": "one_side", "sides": TRADE["sides"][:1]},
+           {**TRADE, "id": "free_opts", "options": ["Yes", "Mostly", "Rarely", "No"]},
+           {**GOOD, "id": "freq", "format": "frequency", "options": ["Often", "Sometimes", "Rarely"]},
+           {**GOOD, "id": "badsub", "subtopic": "Not a real subtopic"}]
+    text = "\n".join(run(bad, tmp_path)[0])
+    for iid in ["one_side", "free_opts", "freq", "badsub"]:
+        assert f"{iid}:" in text, f"validator missed {iid}"
+
+
+def test_duplicate_ids_across_files(tmp_path):
+    from validate_items import collect_ids
+    a, b = tmp_path / "a.json", tmp_path / "b.json"
+    a.write_text(json.dumps({"items": [GOOD]}))
+    b.write_text(json.dumps({"items": [GOOD]}))
+    _, dups = collect_ids([a, b])
+    assert dups

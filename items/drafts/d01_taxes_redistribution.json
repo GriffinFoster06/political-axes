@@ -1,0 +1,381 @@
+{
+  "domain_id": "D01",
+  "domain": "Taxes & redistribution",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "items": [
+    {
+      "id": "income_tax_structure",
+      "subtopic": "Income tax structure (flat vs graduated)",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Which comes closest to how federal income tax rates should be set?",
+      "scope": "Think about the overall system, not your own tax bill.",
+      "context": "Today there are seven federal income tax rates, from 10% on the first part of taxable income to 37% on income above about $640,000 for a single person.",
+      "options": [
+        "Much more graduated than today, with a top rate above 50% on the highest incomes",
+        "Somewhat more graduated: higher rates on the highest incomes, the same or lower on middle incomes",
+        "Keep today's structure of rates from 10% to 37%",
+        "Fewer rates and a lower top rate, such as two or three rates between 10% and 30%",
+        "One flat rate for everyone on income above a basic tax-free amount",
+        "No federal income tax; raise the money another way, such as a national sales tax"
+      ],
+      "high_pole": "flatter or no income tax",
+      "facts": [
+        {"claim": "Seven brackets, 10% to 37%; 37% bracket starts at $640,600 (single) for tax year 2026", "source": "IRS Rev. Proc. 2025-32 (2026 inflation adjustments)", "checked": "2026-10-12", "verify": true}
+      ],
+      "definitions": [
+        {"term": "graduated", "text": "Higher rates apply to each additional slice of income as income rises. A rate applies only to the income in its bracket, not to all of a person's income.", "source": "descriptive", "verify": false}
+      ]
+    },
+    {
+      "id": "low_income_tax",
+      "subtopic": "Income tax structure (flat vs graduated)",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Which comes closest to your view on federal income tax for households with low incomes?",
+      "scope": "Federal income tax only. Payroll taxes for Social Security and Medicare are separate.",
+      "context": "In a typical year about 4 in 10 households owe no federal income tax, often because of credits for children and low-wage work.",
+      "options": [
+        "Owe nothing, and get larger refundable credits than today",
+        "Owe nothing, with about today's refundable credits",
+        "Owe nothing, but with smaller refundable credits than today",
+        "Every household with income should pay at least a small amount of federal income tax"
+      ],
+      "high_pole": "everyone pays something",
+      "facts": [
+        {"claim": "Roughly 40% of US households owe no federal income tax in a typical year", "source": "Tax Policy Center, 'Who doesn't pay federal income tax?' (annual estimates)", "checked": "2026-10-12", "verify": true}
+      ],
+      "definitions": [
+        {"term": "refundable credits", "text": "Tax credits that can be paid out as a refund even if a household owes no income tax, such as the Earned Income Tax Credit.", "source": "IRS", "verify": false}
+      ]
+    },
+    {
+      "id": "tax_burden_principle",
+      "subtopic": "Income tax structure (flat vs graduated)",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "In principle, how should the tax burden be shared between people with high and low incomes?",
+      "scope": "Count all the taxes a person pays, not only income tax.",
+      "options": [
+        "People with high incomes should pay a much larger share of their income in taxes",
+        "People with high incomes should pay a somewhat larger share of their income",
+        "Everyone should pay the same share of their income above a basic tax-free amount",
+        "Everyone should pay the same share of all their income, with no tax-free amount"
+      ],
+      "high_pole": "same share for all"
+    },
+    {
+      "id": "top_rate_number",
+      "subtopic": "Top income tax rate",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "What should the federal income tax rate be on each dollar a person earns above $1 million a year?",
+      "scope": "This is the rate on income above $1 million only, not on all of that person's income.",
+      "context": "Today the top rate is 37%.",
+      "options": [
+        "70% or higher",
+        "About 50% to 60%",
+        "About 40% to 45%",
+        "37%, as today",
+        "About 25% to 30%",
+        "20% or lower"
+      ],
+      "high_pole": "lower",
+      "facts": [
+        {"claim": "Top federal individual income tax rate is 37%, made permanent by Public Law 119-21 (July 2025)", "source": "IRS; Public Law 119-21", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "corporate_rate",
+      "subtopic": "Corporate tax rate",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "What should the federal tax rate on corporate profits be?",
+      "scope": "Think about profitable companies in general, large and small.",
+      "context": "The rate has been 21% since 2018. Before that it was 35%.",
+      "options": [
+        "35% or higher",
+        "About 28%",
+        "21%, as today",
+        "About 15%",
+        "No tax on corporate profits; tax owners only when they receive the money as dividends or gains"
+      ],
+      "high_pole": "lower",
+      "facts": [
+        {"claim": "Federal corporate rate cut from 35% (top bracket) to a flat 21% starting 2018", "source": "Tax Cuts and Jobs Act, Public Law 115-97", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "corporate_minimum_tax",
+      "subtopic": "Corporate tax rate",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Some large, profitable companies pay little federal tax in some years because of deductions and credits. Which comes closest to your view?",
+      "scope": "Think about companies with more than $1 billion a year in profits.",
+      "context": "Since 2023, the largest companies must pay at least 15% of the profits they report to shareholders.",
+      "options": [
+        "Raise the minimum above 15% and remove most special business tax breaks",
+        "Keep the 15% minimum and today's tax breaks",
+        "Repeal the minimum tax; breaks for investment and research work as intended",
+        "Repeal the minimum tax and add more breaks to encourage investment in the US"
+      ],
+      "high_pole": "fewer limits on breaks",
+      "facts": [
+        {"claim": "Corporate alternative minimum tax of 15% of adjusted financial statement income for corporations averaging over $1 billion, effective tax years after 2022", "source": "Inflation Reduction Act of 2022, Public Law 117-169, sec. 10101", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "wealth_tax",
+      "subtopic": "Wealth tax on very large fortunes",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Should the federal government tax the total wealth of the very richest households each year?",
+      "scope": "Assume the tax applies only to wealth above $50 million, about 1 in 1,000 households.",
+      "options": [
+        "Yes, 3% or more a year on wealth above $50 million",
+        "Yes, about 1% to 2% a year",
+        "No yearly wealth tax, but tax large gains in value when wealth is passed on at death",
+        "No; tax income, not wealth"
+      ],
+      "high_pole": "no wealth tax",
+      "definitions": [
+        {"term": "wealth", "text": "Everything a household owns, such as stocks, businesses, real estate and savings, minus its debts.", "source": "descriptive", "verify": false}
+      ],
+      "facts": [
+        {"claim": "Households with net worth above $50 million are roughly 0.05%-0.1% of US households", "source": "Federal Reserve Survey of Consumer Finances; Saez & Zucman wealth tax estimates", "checked": "2026-10-12", "verify": true, "note": "Scope says 'about 1 in 1,000'; check and adjust."}
+      ]
+    },
+    {
+      "id": "large_fortunes",
+      "subtopic": "Wealth tax on very large fortunes",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Which comes closest to your view of very large fortunes, such as $1 billion or more?",
+      "scope": "Think about how taxes should treat them, not about any particular person.",
+      "options": [
+        "They are a problem in themselves; taxes should be set to shrink them over time",
+        "They are acceptable, but the richest should pay more in taxes than they do now",
+        "The richest pay about the right amount now",
+        "Taxes on the richest are already too high and discourage investment"
+      ],
+      "high_pole": "lower taxes on the richest"
+    },
+    {
+      "id": "estate_tax_level",
+      "subtopic": "Estate tax",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "What should happen to the federal tax on large estates passed on at death?",
+      "scope": "This tax is paid out of the estate, before heirs receive it.",
+      "context": "Today it applies only to the part of an estate above $15 million per person, at a 40% rate. Fewer than 1 in 1,000 estates owe it.",
+      "options": [
+        "Apply it to estates above about $1 million, with rates of 50% or more on the largest",
+        "Apply it to estates above about $3.5 million (the 2009 level), at about 45%",
+        "Keep today's rules",
+        "Raise the threshold so even fewer estates pay",
+        "Eliminate the estate tax"
+      ],
+      "high_pole": "less estate tax",
+      "facts": [
+        {"claim": "Basic exclusion amount $15 million per person for 2026, indexed after; top rate 40%", "source": "Public Law 119-21 (2025); IRS estate tax page", "checked": "2026-10-12", "verify": false},
+        {"claim": "Fewer than 0.1% of estates owe federal estate tax", "source": "Joint Committee on Taxation; Tax Policy Center estimates", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "inheritance_principle",
+      "subtopic": "Estate tax",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Which comes closest to your view of taxing very large inheritances?",
+      "scope": "Think about inheritances of several million dollars or more, not ordinary family savings.",
+      "options": [
+        "A large share should go to the public, so wealth doesn't build up across generations",
+        "A moderate tax on them is fair",
+        "Only a small tax, on the very largest",
+        "No tax at all; the money was already taxed when it was earned"
+      ],
+      "high_pole": "no tax"
+    },
+    {
+      "id": "capital_gains_rate",
+      "subtopic": "Capital gains vs wage income",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "How should profits from selling investments, such as stocks, be taxed compared with wages?",
+      "scope": "Think about investments held for more than a year.",
+      "context": "Today these profits are taxed at up to 20% (plus a 3.8% surtax on high earners). Wages are taxed at up to 37%.",
+      "options": [
+        "The same rates as wages for everyone",
+        "The same rates as wages for people with high incomes; lower rates for everyone else",
+        "Lower rates than wages, as today",
+        "Lower rates than today",
+        "Not taxed at all"
+      ],
+      "high_pole": "lower",
+      "facts": [
+        {"claim": "Long-term capital gains rates 0/15/20%; 3.8% net investment income tax above $200k single / $250k joint", "source": "IRS Topic 409; IRC sec. 1(h), 1411", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "gains_at_death",
+      "subtopic": "Capital gains vs wage income",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "When someone dies, the rise in value of what they owned is never taxed as income. Which comes closest to your view?",
+      "scope": "Example: stock bought for $100,000 is worth $1 million at death. The $900,000 gain is never taxed under today's rules.",
+      "options": [
+        "Tax those gains at death, above an exemption of about $1 million",
+        "Don't tax at death, but heirs pay tax on the full gain when they sell",
+        "Keep today's rule: heirs pay tax only on gains after they inherit"
+      ],
+      "high_pole": "keep current rule",
+      "facts": [
+        {"claim": "Inherited assets receive a basis equal to fair market value at death ('step-up'), so pre-death gains escape income tax", "source": "26 U.S.C. sec. 1014", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "cash_aid_level",
+      "subtopic": "Cash aid to low-income households",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Which comes closest to what government should do about cash and food aid for low-income households?",
+      "scope": "Programs like food stamps (SNAP), the Earned Income Tax Credit and cash welfare. Health coverage is asked separately.",
+      "options": [
+        "Guarantee every household enough to stay above the poverty line",
+        "Spend more than today, mainly for families with children and people who can't work",
+        "Keep spending at about today's level",
+        "Spend less than today; more help should come from charities, churches and families",
+        "End most federal cash and food aid; leave it to states, charities and families"
+      ],
+      "high_pole": "less aid"
+    },
+    {
+      "id": "aid_form",
+      "subtopic": "Cash aid to low-income households",
+      "axis": ["REDIS", "LIBERTY"],
+      "format": "position",
+      "stem": "How much say should people getting aid have over how they spend it?",
+      "scope": "Think about aid for basic needs such as food and housing.",
+      "options": [
+        "Mostly cash; people decide for themselves how to spend it",
+        "A mix of cash and benefits for specific needs, as today",
+        "Mostly benefits for specific needs, like food and rent, so money goes to essentials",
+        "Benefits for specific needs, with limits on what can be bought, such as no soda or candy with food aid"
+      ],
+      "high_pole": "more limits on use"
+    },
+    {
+      "id": "work_req_rule",
+      "subtopic": "Work requirements for aid",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Should adults who can work have to work, look for work, or train in order to get cash or food aid?",
+      "scope": "Think of adults aged 18 to 54 with no disability and no children at home. You'll be able to add exceptions next.",
+      "options": [
+        "No; aid should not depend on work",
+        "No requirement, but offer job training and help finding work",
+        "Yes, about 20 hours a week of work, job search or training, after a grace period of about 3 months",
+        "Yes, 30 or more hours a week from the start, and benefits end for anyone who doesn't comply"
+      ],
+      "high_pole": "stricter",
+      "followup": "work_req_cases"
+    },
+    {
+      "id": "work_req_cases",
+      "subtopic": "Work requirements for aid",
+      "axis": ["REDIS"],
+      "format": "exceptions",
+      "show_if": {"work_req_rule": [2, 3]},
+      "stem": "Should each of these people also have to meet the work requirement you chose?",
+      "scope": "Answer each case separately.",
+      "options": ["Should be exempt", "Should have to meet it"],
+      "high_pole": "Should have to meet it",
+      "cases": [
+        {"id": "wr_parents_school", "text": "Parents whose youngest child is 6 to 13 years old"},
+        {"id": "wr_caregiver", "text": "People caring full-time for a disabled family member"},
+        {"id": "wr_high_unemp", "text": "People living in an area with very high unemployment"},
+        {"id": "wr_older", "text": "Adults aged 55 to 64"}
+      ]
+    },
+    {
+      "id": "ubi",
+      "subtopic": "Universal basic income",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Should the federal government send every adult a regular cash payment, whether or not they work or need it?",
+      "scope": "Assume taxes would rise to pay for any payment.",
+      "options": [
+        "Yes, enough to live on: about $1,500 a month or more",
+        "Yes, a smaller payment of about $500 a month",
+        "No; keep cash aid limited to people with low incomes, as today",
+        "No; and reduce the cash aid that exists today"
+      ],
+      "high_pole": "no payment, less aid",
+      "definitions": [
+        {"term": "regular cash payment", "text": "Often called universal basic income: the same amount sent to every adult, with no work requirement and no income test.", "source": "descriptive", "verify": false}
+      ]
+    },
+    {
+      "id": "child_benefit_level",
+      "subtopic": "Child benefits",
+      "axis": ["REDIS", "FAMILY"],
+      "format": "position",
+      "stem": "Which comes closest to the federal support you want for families with children?",
+      "scope": "Think about support through the tax code or direct payments.",
+      "context": "Today parents can get a tax credit of up to $2,200 per child. Families with low earnings get only part of it.",
+      "options": [
+        "A monthly payment of about $300 for every child, whatever the parents' income",
+        "A larger credit than today, with the full amount for low-income families",
+        "Keep about today's credit",
+        "A smaller credit, only for families who owe income tax",
+        "No federal child credit"
+      ],
+      "high_pole": "less support",
+      "facts": [
+        {"claim": "Child Tax Credit $2,200 per child from tax year 2025, indexed for inflation; refundable portion limited and requires earned income", "source": "Public Law 119-21 (2025); IRS", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "child_benefit_work",
+      "subtopic": "Child benefits",
+      "axis": ["REDIS"],
+      "format": "position",
+      "stem": "Should parents with no earnings from work get the full child tax credit?",
+      "scope": "Think of parents who are not disabled and not retired.",
+      "options": [
+        "Yes, the full amount, whether or not they work",
+        "A partial amount",
+        "No; only parents with earnings from work should get it"
+      ],
+      "high_pole": "work required"
+    },
+    {
+      "id": "inequality_tradeoff",
+      "subtopic": "Inequality as a problem for government",
+      "axis": ["REDIS"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view?",
+      "scope": "Think about the gap between the richest and everyone else in the US.",
+      "sides": [
+        {"label": "Reduce the gap", "text": "Government should act to reduce the gap between rich and poor, even if that means higher taxes and slower growth."},
+        {"label": "Focus on growth", "text": "Government should focus on growth and not try to reduce the gap, even if it gets wider."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "outcomes_vs_chances",
+      "subtopic": "Inequality as a problem for government",
+      "axis": ["REDIS", "VALUES"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to what government should aim for?",
+      "scope": "Think about the economy as a whole.",
+      "sides": [
+        {"label": "Narrow the results", "text": "Make sure no one's living standard falls far below others', even if hard work and risk are rewarded less."},
+        {"label": "Equal chances only", "text": "Make sure everyone has a fair chance to get ahead, but don't try to even out the results."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    }
+  ]
+}

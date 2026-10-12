@@ -6,9 +6,13 @@
 
 Errors (exit code 1) are rule violations. Warnings are things a person must
 check: facts flagged for verification, reading level, long text.
+
+IDs (items and exception cases) must be unique across every file checked
+together, and show_if / followup / pair references may point into other files.
 """
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sys
@@ -16,22 +20,42 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FORMATS = {"position", "exceptions", "frequency", "agree_defined"}
-REQUIRED = ["id", "format", "stem", "scope", "options", "high_pole", "links"]
-MAX_STEM, MAX_OPT, MAX_SCOPE = 35, 30, 40
+FORMATS = {"position", "exceptions", "frequency", "agree_defined", "tradeoff", "belief"}
+REQUIRED = ["id", "format", "stem", "scope", "options", "high_pole"]
+MAX_STEM, MAX_OPT, MAX_SCOPE, MAX_SIDE = 35, 30, 40, 35
 GRADE_WARN = 9.0
+# Tradeoff items show two concrete sides (A = code 0 end, B = high pole).
+# The answer scale is fixed; the app shows each side's label after "Clearly" / "Lean".
+TRADEOFF_OPTIONS = ["Clearly A", "Lean A", "Lean B", "Clearly B"]
+FREQ_ANCHOR = re.compile(r"\d|half|never|always|every", re.I)
 BANNED = [
     # party and ideology cues (Rule 4)
-    r"democrats?", r"republicans?", r"gop", r"liberals?", r"conservatives?", r"progressives?",
-    r"maga", r"woke", r"socialis[mt]s?", r"leftists?", r"right-wing", r"left-wing", r"far[- ]right",
-    r"far[- ]left", r"trump", r"biden", r"harris", r"obama",
+    r"democrats?", r"democratic party", r"republicans?", r"gop", r"liberals?", r"conservatives?",
+    r"progressives?", r"maga", r"woke", r"socialis[mt]s?", r"communis[mt]s?", r"leftists?",
+    r"right-wing", r"left-wing", r"far[- ]right", r"far[- ]left", r"libertarians?",
+    r"trump", r"biden", r"harris", r"obama", r"vance", r"newsom",
     # loaded terms on either side
     r"illegal aliens?", r"illegals", r"undocumented", r"pro-life", r"pro-choice", r"baby killing",
     r"radical", r"extremists?", r"common[- ]sense", r"gun nuts?", r"assault weapons?",
+    r"anchor bab(y|ies)", r"death tax", r"handouts?", r"woke", r"defund", r"open borders",
+    r"gender ideology", r"anti-?choice", r"forced birth", r"weapons of war",
     # blank middles are added automatically, never written as positions (Rule 5)
     r"neutral", r"neither agree nor disagree", r"no opinion", r"not sure",
 ]
 BANNED_RE = re.compile(r"\b(" + "|".join(BANNED) + r")\b", re.I)
+
+
+def blueprint():
+    """subtopic -> (domain_id, axis_hypothesis). Subtopic names are unique."""
+    out = {}
+    with open(ROOT / "items" / "blueprint.csv", newline="") as f:
+        for r in csv.DictReader(f):
+            out[r["subtopic"]] = (r["domain_id"], r["axis_hypothesis"])
+    return out
+
+
+BLUEPRINT = blueprint()
+AXES = {v[1] for v in BLUEPRINT.values()} | {"G"}
 
 
 def words(s: str) -> int:
@@ -62,19 +86,31 @@ def all_text(it: dict) -> list[tuple[str, str]]:
     out = [("stem", it.get("stem", "")), ("scope", it.get("scope", "")), ("context", it.get("context", ""))]
     out += [(f"option {k}", o) for k, o in enumerate(it.get("options", []))]
     out += [(f"case {c['id']}", c["text"]) for c in it.get("cases", [])]
+    out += [(f"side {k}", s.get("label", "") + " " + s.get("text", ""))
+            for k, s in enumerate(it.get("sides", []))]
+    out += [(f"meaning {k}", m) for k, m in enumerate(it.get("point_meanings", []))]
     return out
 
 
-def check(path: Path):
+def collect_ids(paths):
+    ids, dups = {}, []
+    for p in paths:
+        for it in json.loads(Path(p).read_text())["items"]:
+            for c in [it] + it.get("cases", []):
+                if c["id"] in ids:
+                    dups.append(f"{c['id']}: duplicate id (also in {ids[c['id']][0].name})")
+                ids[c["id"]] = (Path(p), it)
+    return ids, dups
+
+
+def check(path: Path, ids: dict | None = None):
+    path = Path(path)
     data = json.loads(path.read_text())
     items = data["items"]
     errs, warns = [], []
-    ids = {}
-    for it in items:
-        for c in [it] + it.get("cases", []):
-            if c["id"] in ids:
-                errs.append(f"{c['id']}: duplicate id")
-            ids[c["id"]] = it
+    if ids is None:
+        ids, dups = collect_ids([path])
+        errs += dups
     today = date.today()
     for it in items:
         iid = it.get("id", "?")
@@ -84,14 +120,39 @@ def check(path: Path):
         fmt = it.get("format")
         if fmt not in FORMATS:
             errs.append(f"{iid}: unknown format {fmt}")
+        sub = it.get("subtopic")
+        if sub is not None and sub not in BLUEPRINT:
+            errs.append(f"{iid}: subtopic '{sub}' is not in items/blueprint.csv")
+        for ax in it.get("axis", []):
+            if ax not in AXES:
+                errs.append(f"{iid}: unknown axis {ax}")
         opts = it.get("options", [])
-        lo, hi = (2, 3) if fmt == "exceptions" else (3, 7)
+        lo, hi = {"exceptions": (2, 3), "tradeoff": (4, 4)}.get(fmt, (3, 7))
         if not lo <= len(opts) <= hi:
             errs.append(f"{iid}: {len(opts)} options (allowed {lo}-{hi} for {fmt})")
         if len(set(o.lower() for o in opts)) != len(opts):
             errs.append(f"{iid}: duplicate options")
-        if fmt == "exceptions" and not it.get("cases"):
-            errs.append(f"{iid}: exceptions item has no cases")
+        if fmt == "exceptions":
+            if not it.get("cases"):
+                errs.append(f"{iid}: exceptions item has no cases")
+            for c in it.get("cases", []):
+                if words(c["text"]) > MAX_OPT:
+                    errs.append(f"{iid}: case {c['id']} has {words(c['text'])} words (max {MAX_OPT})")
+        if fmt == "tradeoff":
+            sides = it.get("sides", [])
+            if len(sides) != 2 or not all(s.get("label") and s.get("text") for s in sides):
+                errs.append(f"{iid}: tradeoff needs exactly 2 sides, each with label and text")
+            if opts != TRADEOFF_OPTIONS:
+                errs.append(f"{iid}: tradeoff options must be {TRADEOFF_OPTIONS}")
+            for k, s in enumerate(sides):
+                if words(s.get("text", "")) > MAX_SIDE:
+                    errs.append(f"{iid}: side {k} has {words(s['text'])} words (max {MAX_SIDE})")
+                if words(s.get("label", "")) > 6:
+                    errs.append(f"{iid}: side {k} label longer than 6 words")
+        if fmt == "frequency":
+            for k, o in enumerate(opts):
+                if not FREQ_ANCHOR.search(o):
+                    errs.append(f"{iid}: frequency option {k} has no numeric anchor (Rule 6)")
         if fmt == "agree_defined":
             pm = it.get("point_meanings", [])
             if len(pm) != len(opts):
@@ -99,7 +160,7 @@ def check(path: Path):
             pair = it.get("pair")
             if pair not in ids:
                 errs.append(f"{iid}: agree/disagree items need a reverse-keyed pair (Rule 6)")
-            elif ids[pair]["options"] != list(reversed(opts)):
+            elif ids[pair][1]["options"] != list(reversed(opts)):
                 errs.append(f"{iid}: pair {pair} must use the same scale in reverse order")
         if words(it.get("stem", "")) > MAX_STEM:
             errs.append(f"{iid}: stem has {words(it['stem'])} words (max {MAX_STEM})")
@@ -130,7 +191,8 @@ def check(path: Path):
                 warns.append(f"{iid}: verify fact: {fct['claim']} ({fct['source']})")
         if it.get("context") and not it.get("facts") and fmt != "agree_defined":
             warns.append(f"{iid}: has context text but no recorded fact source")
-        for ref in list(it.get("show_if", {})) + ([it["followup"]] if it.get("followup") else []):
+        refs = list(it.get("show_if", {})) + ([it["followup"]] if it.get("followup") else [])
+        for ref in refs:
             if ref not in ids:
                 errs.append(f"{iid}: refers to unknown item {ref}")
         if " and/or " in it.get("stem", ""):
@@ -138,18 +200,24 @@ def check(path: Path):
     return errs, warns, len(items)
 
 
-def main(paths):
-    paths = [Path(p) for p in paths] or sorted((ROOT / "items" / "drafts").glob("*.json"))
-    total_err = 0
+def main(argv):
+    paths = [Path(p) for p in argv] or sorted((ROOT / "items" / "drafts").glob("*.json"))
+    ids, dups = collect_ids(paths)
+    total_err, total_items, total_warn = len(dups), 0, 0
+    for d in dups:
+        print("ERROR  ", d)
     for p in paths:
-        errs, warns, n = check(p)
-        print(f"{p.relative_to(ROOT) if p.is_absolute() else p}: {n} items, "
-              f"{len(errs)} errors, {len(warns)} warnings")
+        errs, warns, n = check(p, ids)
+        total_items += n
+        total_warn += len(warns)
+        shown = p.relative_to(ROOT) if p.is_absolute() else p
+        print(f"{shown}: {n} items, {len(errs)} errors, {len(warns)} warnings")
         for e in errs:
             print("  ERROR  ", e)
         for w in warns:
             print("  warning", w)
         total_err += len(errs)
+    print(f"TOTAL: {total_items} items in {len(paths)} files, {total_err} errors, {total_warn} warnings")
     return 1 if total_err else 0
 
 
