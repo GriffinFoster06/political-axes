@@ -651,7 +651,7 @@
       }).join("") + '</div><label for="fittext" class="scope">' + esc(fit.free_text) + '</label><textarea id="fittext" maxlength="800">' + esc(S.resultFitText || "") + "</textarea>";
     }
     html += '<h2>Your answers</h2><p class="scope">A copy of everything you answered, without anything that identifies you.</p>' +
-      '<div class="nav" style="justify-content:flex-start"><button class="btn ghost" id="copy">Copy my answers</button><button class="btn ghost" id="dl">Download</button></div>' +
+      '<div class="nav" style="justify-content:flex-start"><button class="btn ghost" id="copy">Copy my answers</button>' + (window.claude ? "" : '<button class="btn ghost" id="dl">Download</button>') + '</div>' +
       '<textarea id="raw" readonly hidden></textarea>' +
       '<div class="nav"><span></span><button class="link" id="restart">Start over</button></div><div id="confirm"></div>';
     show(html);
