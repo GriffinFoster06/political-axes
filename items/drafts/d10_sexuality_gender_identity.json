@@ -1,0 +1,223 @@
+{
+  "domain_id": "D10",
+  "domain": "Sexuality & gender identity",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "High pole is consistently 'more traditional definitions / fewer protections'. Uses 'sex at birth' and 'gender identity' as descriptive terms, each defined.",
+  "items": [
+    {
+      "id": "same_sex_marriage",
+      "subtopic": "Same-sex marriage",
+      "axis": ["GENDERID", "MORAL"],
+      "format": "position",
+      "stem": "What should the law be on same-sex couples getting married?",
+      "scope": "Civil marriage under the law, not religious ceremonies.",
+      "context": "Same-sex marriage has been legal nationwide since 2015.",
+      "options": [
+        "Legal marriage in every state, as today",
+        "Civil unions with the same legal rights, but not called marriage",
+        "Each state should decide",
+        "No legal recognition"
+      ],
+      "high_pole": "no recognition",
+      "facts": [
+        {"claim": "Obergefell v. Hodges (2015); Respect for Marriage Act (2022) requires recognition of marriages from other states", "source": "576 U.S. 644 (2015); Public Law 117-228", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "same_sex_adoption",
+      "subtopic": "Same-sex marriage",
+      "axis": ["GENDERID", "RELIGION"],
+      "format": "position",
+      "stem": "Should same-sex couples be able to adopt children on the same terms as other couples?",
+      "scope": "Adoption and foster care through state-funded agencies.",
+      "options": [
+        "Yes, through every agency",
+        "Yes, but religious agencies can decline to place children with them",
+        "No"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "wedding_vendors",
+      "subtopic": "Religious exemptions for businesses",
+      "axis": ["GENDERID", "RELIGION"],
+      "format": "position",
+      "stem": "Should a business be allowed to refuse to serve a same-sex wedding because of the owner's religious beliefs?",
+      "scope": "Businesses like bakeries, florists and photographers. Other cases come next.",
+      "options": [
+        "No; it must serve all customers equally",
+        "Only businesses creating custom expressive work, like a designed cake or photographs",
+        "Yes, any business"
+      ],
+      "high_pole": "any business"
+    },
+    {
+      "id": "religious_refusal_cases",
+      "subtopic": "Religious exemptions for businesses",
+      "axis": ["GENDERID", "RELIGION"],
+      "format": "exceptions",
+      "stem": "Should each of these be allowed to refuse because of their religious beliefs?",
+      "scope": "Answer each case separately.",
+      "options": ["Should not be allowed to refuse", "Should be allowed to refuse"],
+      "high_pole": "Should be allowed to refuse",
+      "cases": [
+        {"id": "rr_landlord", "text": "A landlord refusing to rent an apartment to a same-sex couple"},
+        {"id": "rr_pharmacist", "text": "A pharmacist refusing to fill a prescription for birth control"},
+        {"id": "rr_counselor", "text": "A counselor refusing to help a client with a gender transition"}
+      ]
+    },
+    {
+      "id": "minors_transition",
+      "subtopic": "Medical transition for minors",
+      "axis": ["GENDERID"],
+      "format": "position",
+      "stem": "What should the law be on medical treatments for minors who identify as transgender?",
+      "scope": "Treatments like puberty blockers, hormones and surgery for people under 18. Specific treatments come next.",
+      "context": "About half the states ban these treatments for minors. The Supreme Court upheld such a ban in 2025.",
+      "options": [
+        "Allowed when the young person, parents and doctors agree",
+        "Allowed only after extended evaluation by specialists, and no surgery before 18",
+        "Banned under 18, except in research studies",
+        "Banned under 18"
+      ],
+      "high_pole": "banned",
+      "followup": "minors_transition_cases",
+      "facts": [
+        {"claim": "United States v. Skrmetti (June 2025) upheld Tennessee's ban; about 27 states restrict gender-transition care for minors", "source": "605 U.S. ___ (2025); KFF / Movement Advancement Project tracking", "checked": "2026-10-12", "verify": true}
+      ],
+      "definitions": [
+        {"term": "puberty blockers", "text": "Medicines that pause the physical changes of puberty while they are taken.", "source": "Endocrine Society clinical guideline (2017)", "verify": false}
+      ]
+    },
+    {
+      "id": "minors_transition_cases",
+      "subtopic": "Medical transition for minors",
+      "axis": ["GENDERID"],
+      "format": "exceptions",
+      "stem": "For a 16-year-old who identifies as transgender, with parental consent, should each of these be allowed?",
+      "scope": "Answer each case separately.",
+      "options": ["Allowed", "Not allowed"],
+      "high_pole": "Not allowed",
+      "cases": [
+        {"id": "mt_social", "text": "Using a new name and dressing as the other gender, with no medical treatment"},
+        {"id": "mt_blockers", "text": "Puberty blockers"},
+        {"id": "mt_hormones", "text": "Hormones of the other sex (testosterone or estrogen)"},
+        {"id": "mt_surgery", "text": "Breast removal surgery"}
+      ]
+    },
+    {
+      "id": "trans_adult_sports",
+      "subtopic": "Transgender athletes",
+      "axis": ["GENDERID"],
+      "format": "position",
+      "stem": "In college and professional sports, should transgender women compete in women's events?",
+      "scope": "Competitive events with titles, records or prize money.",
+      "options": [
+        "Yes",
+        "Yes, if they meet hormone-level rules",
+        "Only if they did not go through male puberty",
+        "No; they should compete in men's or open categories"
+      ],
+      "high_pole": "no",
+      "definitions": [
+        {"term": "transgender women", "text": "People who were identified as male at birth and identify as women.", "source": "descriptive", "verify": false}
+      ]
+    },
+    {
+      "id": "bathrooms",
+      "subtopic": "Bathrooms and facilities",
+      "axis": ["GENDERID"],
+      "format": "position",
+      "stem": "Which public restrooms and locker rooms should transgender people use?",
+      "scope": "Shared facilities in schools and government buildings.",
+      "options": [
+        "Those matching their gender identity",
+        "Those matching their gender identity, with private single-person options available to anyone",
+        "Private single-person facilities, or those matching their sex at birth",
+        "Only those matching their sex at birth"
+      ],
+      "high_pole": "sex at birth",
+      "definitions": [
+        {"term": "gender identity", "text": "A person's inner sense of being a man, a woman, or something else, which may differ from the sex recorded at birth.", "source": "American Psychological Association", "verify": false}
+      ]
+    },
+    {
+      "id": "id_sex_marker",
+      "subtopic": "Sex marker on legal documents",
+      "axis": ["GENDERID"],
+      "format": "position",
+      "stem": "What should the sex shown on passports and driver's licenses be based on?",
+      "scope": "Government-issued ID documents.",
+      "options": [
+        "Gender identity, including an \"X\" option",
+        "Gender identity, male or female only",
+        "Sex at birth, but changes allowed after medical transition",
+        "Sex at birth only"
+      ],
+      "high_pole": "sex at birth"
+    },
+    {
+      "id": "school_pronouns",
+      "subtopic": "School pronouns and parental notification",
+      "axis": ["GENDERID", "EDUC"],
+      "format": "position",
+      "stem": "Should teachers use a student's chosen name and pronouns when they don't match the student's sex at birth?",
+      "scope": "Public K-12 schools.",
+      "options": [
+        "Yes, whenever the student asks",
+        "Yes, but only with a parent's consent",
+        "No; use names and pronouns matching sex at birth"
+      ],
+      "high_pole": "no"
+    },
+    {
+      "id": "parent_notification",
+      "subtopic": "School pronouns and parental notification",
+      "axis": ["GENDERID", "EDUC"],
+      "format": "position",
+      "stem": "If a student tells school staff they identify as a different gender, should the school tell the student's parents?",
+      "scope": "Public K-12 schools.",
+      "options": [
+        "Only if the student agrees",
+        "Yes, unless staff believe the student would be at risk of abuse",
+        "Yes, always"
+      ],
+      "high_pole": "always"
+    },
+    {
+      "id": "lgbt_nondiscrimination",
+      "subtopic": "LGBT nondiscrimination law",
+      "axis": ["GENDERID"],
+      "format": "position",
+      "stem": "Should federal law ban discrimination against gay and transgender people in housing, public services and businesses open to the public?",
+      "scope": "Employment is already covered under a 2020 Supreme Court ruling. Exemptions come next.",
+      "options": [
+        "Yes, for both sexual orientation and gender identity",
+        "Yes, for sexual orientation, but not gender identity",
+        "No federal law; leave it to states",
+        "No such protections at any level"
+      ],
+      "high_pole": "no protections",
+      "followup": "nondiscrimination_exemptions",
+      "facts": [
+        {"claim": "Bostock v. Clayton County (2020): Title VII employment protections cover sexual orientation and gender identity", "source": "590 U.S. 644 (2020)", "checked": "2026-10-12", "verify": false}
+      ]
+    },
+    {
+      "id": "nondiscrimination_exemptions",
+      "subtopic": "LGBT nondiscrimination law",
+      "axis": ["GENDERID", "RELIGION"],
+      "format": "exceptions",
+      "show_if": {"lgbt_nondiscrimination": [0, 1]},
+      "stem": "Under such a law, should each of these be exempt?",
+      "scope": "Answer each case separately.",
+      "options": ["Should not be exempt", "Should be exempt"],
+      "high_pole": "Should be exempt",
+      "cases": [
+        {"id": "nd_church_staff", "text": "Churches, when hiring staff who don't lead worship"},
+        {"id": "nd_religious_school", "text": "Religious schools, for admissions and hiring"},
+        {"id": "nd_home_rental", "text": "Owners renting out a room in their own home"}
+      ]
+    }
+  ]
+}

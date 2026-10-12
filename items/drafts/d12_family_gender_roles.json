@@ -1,0 +1,155 @@
+{
+  "domain_id": "D12",
+  "domain": "Family & gender roles",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "Uses concrete household arrangements instead of agree/disagree statements (the ANES gender items split by keying). High pole is consistently 'more traditional / more family responsibility'.",
+  "items": [
+    {
+      "id": "family_arrangement",
+      "subtopic": "Traditional roles at home and work",
+      "axis": ["FAMILY"],
+      "format": "position",
+      "stem": "For a married couple with young children, which arrangement do you think is usually best?",
+      "scope": "Assume either arrangement is affordable for them.",
+      "options": [
+        "Both parents work and share childcare equally",
+        "Both work, and whoever earns less does more childcare",
+        "One parent stays home; it doesn't matter which",
+        "The father works and the mother stays home"
+      ],
+      "high_pole": "traditional"
+    },
+    {
+      "id": "marriage_decisions",
+      "subtopic": "Traditional roles at home and work",
+      "axis": ["FAMILY", "RELIGION"],
+      "format": "position",
+      "stem": "In a marriage between a man and a woman, how should major family decisions be made?",
+      "scope": "Decisions like where to live or how to spend large sums.",
+      "options": [
+        "Equally by both spouses",
+        "Equally, but each spouse leads in different areas",
+        "The husband should have the final say"
+      ],
+      "high_pole": "husband"
+    },
+    {
+      "id": "promote_marriage",
+      "subtopic": "Government support for marriage",
+      "axis": ["FAMILY"],
+      "format": "position",
+      "stem": "Should government policies encourage people to marry?",
+      "scope": "Through taxes, benefits or public messages.",
+      "options": [
+        "No; government should not favor married people over unmarried people",
+        "Only remove tax and benefit rules that penalize marriage",
+        "Yes, actively, such as with bonuses for married couples"
+      ],
+      "high_pole": "actively"
+    },
+    {
+      "id": "unmarried_partner_rights",
+      "subtopic": "Government support for marriage",
+      "axis": ["FAMILY"],
+      "format": "position",
+      "stem": "Should unmarried couples who live together have the same legal rights as married couples, such as inheritance and hospital visits?",
+      "scope": "Couples who have not signed any legal agreement.",
+      "options": [
+        "Yes, the same rights",
+        "Some rights after living together several years",
+        "No; those rights come with marriage"
+      ],
+      "high_pole": "marriage only"
+    },
+    {
+      "id": "childcare_funding",
+      "subtopic": "Public childcare vs family care",
+      "axis": ["FAMILY", "REDIS"],
+      "format": "position",
+      "stem": "How should childcare for children under 5 be paid for?",
+      "scope": "Think about families of all incomes.",
+      "options": [
+        "Free public childcare for every family",
+        "Government help so no family pays more than about 7% of its income",
+        "Help only for low-income families, as today",
+        "Give parents money directly, whether they use childcare or stay home",
+        "No government role"
+      ],
+      "high_pole": "family responsibility"
+    },
+    {
+      "id": "stay_home_support",
+      "subtopic": "Public childcare vs family care",
+      "axis": ["FAMILY"],
+      "format": "position",
+      "stem": "Should parents who stay home with young children get the same government support as parents who pay for childcare?",
+      "scope": "Support like tax credits or subsidies.",
+      "options": [
+        "No; support should go to childcare so parents can work",
+        "Some support for both, but more for childcare",
+        "Yes, the same support either way"
+      ],
+      "high_pole": "same"
+    },
+    {
+      "id": "no_fault_divorce",
+      "subtopic": "Divorce law",
+      "axis": ["FAMILY", "MORAL"],
+      "format": "position",
+      "stem": "Should one spouse be able to get a divorce without the other's agreement or proof of wrongdoing?",
+      "scope": "Today every state allows this.",
+      "options": [
+        "Yes, as today",
+        "Yes, but with a longer waiting period when there are children",
+        "No; require agreement or proof of fault, such as abuse or adultery"
+      ],
+      "high_pole": "require fault"
+    },
+    {
+      "id": "pay_transparency",
+      "subtopic": "Gender equality policies at work",
+      "axis": ["FAMILY", "REG"],
+      "format": "position",
+      "stem": "Should large employers be required to post pay ranges for jobs and report pay by gender to the government?",
+      "scope": "Employers with 100 or more workers.",
+      "options": [
+        "Yes, both",
+        "Post pay ranges only",
+        "Neither"
+      ],
+      "high_pole": "neither"
+    },
+    {
+      "id": "board_gender_rules",
+      "subtopic": "Gender equality policies at work",
+      "axis": ["FAMILY", "EQUITY"],
+      "format": "position",
+      "stem": "Should large public companies be required to have a minimum share of women on their boards?",
+      "scope": "Companies listed on stock exchanges.",
+      "options": [
+        "Yes, at least 40%",
+        "No requirement, but they must report the numbers",
+        "No requirement or reporting"
+      ],
+      "high_pole": "none"
+    },
+    {
+      "id": "birth_rate_policy",
+      "subtopic": "Birth rates and pro-family policy",
+      "axis": ["FAMILY"],
+      "format": "position",
+      "stem": "US birth rates are at a record low. What should government do about it?",
+      "scope": "Policies aimed at families having children.",
+      "options": [
+        "Nothing; it's a personal choice, not a government concern",
+        "Make raising children more affordable, but not aim at raising birth rates",
+        "Aim to raise birth rates, with large payments or tax breaks for each child born"
+      ],
+      "high_pole": "raise births",
+      "facts": [
+        {"claim": "US total fertility rate reached a record low of about 1.6 births per woman (2024-2025)", "source": "CDC National Center for Health Statistics", "checked": "2026-10-12", "verify": true}
+      ],
+      "notes": "Cross-cutting candidate; direction relative to G unclear."
+    }
+  ]
+}

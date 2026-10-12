@@ -1,0 +1,156 @@
+{
+  "domain_id": "D11",
+  "domain": "Religion in public life",
+  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+  "notes": "High pole is consistently 'more room for religion in public institutions'.",
+  "items": [
+    {
+      "id": "church_state_tradeoff",
+      "subtopic": "Church-state separation",
+      "axis": ["RELIGION"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view of religion and government?",
+      "scope": "Think about government at every level.",
+      "sides": [
+        {"label": "Strict separation", "text": "Keep them strictly separate, even if public life has less room for religious expression."},
+        {"label": "Room for religion", "text": "Let government support and reflect religion, even if people of other faiths or none feel left out."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "faith_based_laws",
+      "subtopic": "Church-state separation",
+      "axis": ["RELIGION"],
+      "format": "tradeoff",
+      "stem": "Which comes closer to your view of how lawmakers should decide?",
+      "scope": "Lawmakers of any faith.",
+      "sides": [
+        {"label": "Shared reasons only", "text": "Laws should rest on reasons everyone can share, not on religious teaching, even for lawmakers of deep faith."},
+        {"label": "Faith can guide law", "text": "Lawmakers should be free to base laws on their religious beliefs, even if others don't share them."}
+      ],
+      "options": ["Clearly A", "Lean A", "Lean B", "Clearly B"],
+      "high_pole": "Clearly B"
+    },
+    {
+      "id": "school_prayer",
+      "subtopic": "Prayer and religious displays in public schools and buildings",
+      "axis": ["RELIGION"],
+      "format": "position",
+      "stem": "Should public schools lead students in prayer?",
+      "scope": "Prayer organized by the school, not students praying on their own, which is always allowed.",
+      "options": [
+        "No; schools should not sponsor prayer in any form",
+        "A moment of silence, but no led prayer",
+        "Teacher-led prayer that students can choose to skip",
+        "Daily prayer led by the school"
+      ],
+      "high_pole": "daily prayer"
+    },
+    {
+      "id": "ten_commandments",
+      "subtopic": "Prayer and religious displays in public schools and buildings",
+      "axis": ["RELIGION"],
+      "format": "position",
+      "stem": "Should the Ten Commandments be displayed in public school classrooms?",
+      "scope": "Public K-12 classrooms.",
+      "context": "Several states have recently passed laws requiring this; courts are divided on them.",
+      "options": [
+        "No",
+        "Only as part of a display on the history of law, alongside other documents",
+        "Yes, in every classroom"
+      ],
+      "high_pole": "every classroom",
+      "facts": [
+        {"claim": "Louisiana (2024), Arkansas and Texas (2025) passed classroom display laws; federal courts have blocked some", "source": "State statutes; Roake v. Brumley (5th Cir.)", "checked": "2026-10-12", "verify": true}
+      ]
+    },
+    {
+      "id": "vouchers_religious_schools",
+      "subtopic": "Public money for religious schools",
+      "axis": ["RELIGION", "EDUC"],
+      "format": "position",
+      "stem": "If public money can pay private school tuition, should families be able to use it at religious schools?",
+      "scope": "Answer even if you oppose public money for private schools.",
+      "options": [
+        "No; only at non-religious private schools",
+        "Yes, if religious classes are optional for those students",
+        "Yes, on equal terms with any other school"
+      ],
+      "high_pole": "equal terms"
+    },
+    {
+      "id": "religious_charter",
+      "subtopic": "Public money for religious schools",
+      "axis": ["RELIGION", "EDUC"],
+      "format": "position",
+      "stem": "Should a religious group be allowed to run a publicly funded, tuition-free charter school that teaches its faith?",
+      "scope": "Charter schools are public schools run independently of the school district.",
+      "options": [
+        "No",
+        "Yes, if students can opt out of religious instruction",
+        "Yes, like any other charter school"
+      ],
+      "high_pole": "yes"
+    },
+    {
+      "id": "religious_exemptions",
+      "subtopic": "Religious exemptions from general laws",
+      "axis": ["RELIGION"],
+      "format": "position",
+      "stem": "When a law that applies to everyone conflicts with someone's religious beliefs, should they get an exemption?",
+      "scope": "Think of laws in general. Specific cases come next.",
+      "options": [
+        "Rarely; everyone should follow the same laws",
+        "Only when the exemption doesn't harm anyone else",
+        "Yes, in most cases, unless the government has a very strong reason"
+      ],
+      "high_pole": "most cases",
+      "followup": "religious_exemption_cases"
+    },
+    {
+      "id": "religious_exemption_cases",
+      "subtopic": "Religious exemptions from general laws",
+      "axis": ["RELIGION"],
+      "format": "exceptions",
+      "stem": "Should each of these get a religious exemption?",
+      "scope": "Answer each case separately.",
+      "options": ["Should not be exempt", "Should be exempt"],
+      "high_pole": "Should be exempt",
+      "cases": [
+        {"id": "rex_employer_bc", "text": "An employer that doesn't want its health plan to cover birth control"},
+        {"id": "rex_ceremonial_drug", "text": "A church that uses a banned drug in its ceremonies"},
+        {"id": "rex_child_medical", "text": "Parents who refuse medical treatment for their seriously ill child"}
+      ]
+    },
+    {
+      "id": "christian_nation",
+      "subtopic": "Religion and national identity",
+      "axis": ["RELIGION", "NATION"],
+      "format": "position",
+      "stem": "Should the US government officially declare the US a Christian nation?",
+      "scope": "An official declaration by law, not a description of history.",
+      "options": [
+        "No; government should favor no religion",
+        "No declaration, but government can recognize the nation's Christian heritage",
+        "Yes"
+      ],
+      "high_pole": "yes"
+    },
+    {
+      "id": "religious_country",
+      "subtopic": "Religion and national identity",
+      "axis": ["RELIGION", "VALUES"],
+      "format": "position",
+      "stem": "How important is it for the country that most Americans are religious?",
+      "scope": "Any religion. This is about the country, not you personally.",
+      "options": [
+        "Not important",
+        "Somewhat important",
+        "Very important",
+        "Essential; the country's success depends on it"
+      ],
+      "high_pole": "essential"
+    }
+  ]
+}
