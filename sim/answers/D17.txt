@@ -1,0 +1,33 @@
+# D17 Drugs & personal liberty (17; Q10 has 3 cases, only if Q9 is 0 or 1)
+@DL 0 0 1 1 0 1 2 1 1 011 2 2 2 2 2 1 2
+@DS 0 0 0 1 0 1 0 0 1 011 2 2 2 2 2 1 2
+@DM 0 0 2 2 1 1 3 1 1 011 1 2 2 2 2 1 2
+@DC 1 1 2 2 2 1 3 1 2 - 1 1 2 1 2 1 2
+@RM 2 1 2 2 2 1 3 1 2 - 1 1 2 1 2 1 2
+@RE 3 2 2 2 2 1 3 1 2 - 1 1 2 1 2 0 2
+@RT 2 1 2 2 2 1 3 1 2 - 0 1 2 0 2 0 1
+@RF 3 2 3 3 2 1 3 1 2 - 0 0 2 0 2 0 0
+@RR 4 2 3 3 2 2 3 2 2 - 1 1 2 1 2 0 1
+@LB 0 0 0 0 1 0 0 0 0 000 0 0 0 0 0 0 0
+@PO 0 0 1 1 1 1 3 1 1 011 2 1 2 1 2 0 0
+aoc: 7=0
+mamdani: 7=0
+biden: 1=1
+polis: 3=1 4=1 5=1 11=0 16=0 17=1
+fetterman: 3=1
+bloomberg: 1=2 3=2 14=2
+sinema: 1=0
+cuellar: 1=2
+bclinton: 1=3 3=3
+pscott: 1=0
+murkowski: 1=0
+schwarzenegger: 1=0 9=1 10=011
+christie: 1=3 3=3
+cotton: 1=4 3=3
+mcconnell: 1=3
+trump: 1=0
+gaetz: 1=0 2=0 3=2
+desantis: 1=3
+rpaul: 9=2 10=-
+rpaul_sr: 9=2 10=-
+yang: 4=1 11=1 17=2

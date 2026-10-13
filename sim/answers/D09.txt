@@ -1,0 +1,57 @@
+# D09 Abortion & reproduction (11; Q2 has 4 cases, only if Q1 is 2-5)
+@DL 1 - 0 0 0 0 0 0 0 0 0
+@DS 0 - 0 0 0 0 0 0 0 0 0
+@DM 1 - 0 1 0 0 0 1 0 1 0
+@DC 1 - 1 2 1 1 1 1 1 1 0
+@RM 1 - 1 2 1 1 1 1 1 1 0
+@RE 3 0101 2 2 2 1 1 1 2 3 0
+@RT 3 0101 2 2 2 1 0 1 2 2 0
+@RF 4 0111 2 3 2 2 2 2 3 3 0
+@RR 4 0111 1 3 2 2 2 2 3 3 2
+@LB 1 - 2 0 2 2 1 2 1 1 0
+@PO 2 0000 1 1 1 1 0 1 1 1 0
+bclinton: 3=0 6=1
+biden: 6=0
+newsom: 4=0
+pritzker: 4=0
+hochul: 4=0
+walz: 1=0 4=0
+manchin: 1=2 2=0000
+cuellar: 1=3 2=0000 3=2 6=2 9=2 10=2
+golden: 3=0
+mgp: 3=0
+gottheimer: 3=0 6=0
+adams: 3=0
+sinema: 3=0
+tester: 3=0
+cox: 1=3 2=0000 3=2 10=2
+kasich: 1=3 2=0101 3=2 10=3
+graham: 1=2 3=1
+ryan: 1=4 2=0111
+rubio: 1=4 2=0111
+cotton: 1=4 2=0111
+tscott: 1=2 3=1
+youngkin: 1=2
+jindal: 1=4 2=0111
+pompeo: 1=4 2=0111
+hutchinson: 1=4 2=0111
+vance: 4=2 10=3
+hawley: 1=4 2=0111 4=3 6=2 7=1 10=3
+mtg: 1=4 2=0111 6=2 10=3
+hsanders: 1=4 2=0111
+noem: 1=4 2=0111
+abbott: 1=4 2=0111 10=3
+tuberville: 1=4 2=0111 10=3
+hegseth: 1=4 2=0111 10=3
+bannon: 1=4 2=0111 10=3
+desantis: 1=3 2=0101 10=2
+rscott: 1=2 2=0101
+pence: 3=1 7=1
+huckabee: 7=1
+rpaul: 1=5 2=- 3=1 4=3 6=2 9=3 10=3
+massie: 1=5 2=- 4=3 6=2 9=3 10=3
+rpaul_sr: 1=5 2=- 4=3 6=2 9=3 10=3
+amash: 1=4 2=0111 4=2 10=3
+chase_oliver: 1=0 10=0
+yang: 1=1 2=- 3=0 6=0
+rfk: 1=1 2=- 3=0

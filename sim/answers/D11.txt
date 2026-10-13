@@ -1,0 +1,35 @@
+# D11 Religion in public life (12; Q8 has 3 cases)
+@DL 0 0 0 0 0 0 0 000 0 0 0 1
+@DS 0 0 0 0 0 0 0 010 0 0 0 1
+@DM 1 1 1 0 0 0 1 010 0 1 0 1
+@DC 1 1 1 1 1 0 1 010 0 1 1 1
+@RM 1 1 1 1 2 1 1 110 0 1 1 2
+@RE 2 2 1 1 2 1 2 110 1 2 1 2
+@RT 2 2 2 2 2 2 2 110 1 2 1 2
+@RF 3 2 2 2 2 2 2 110 1 2 2 2
+@RR 3 3 2 2 2 2 2 111 1 3 2 2
+@LB 0 0 0 0 2 1 2 111 0 0 0 2
+@PO 1 1 1 0 1 0 1 010 0 1 0 1
+warnock: 2=2 10=2 12=2
+beshear: 2=2 12=2
+raskin: 1=0 2=0 3=0 7=0
+cuellar: 5=2 12=2
+adams: 1=2 2=2 3=2 4=1 10=2 12=2
+bclinton: 5=0 12=2
+schwarzenegger: 4=0 5=1
+pscott: 4=0
+gwbush: 2=2 10=2 12=2
+romney: 2=1 4=1 10=2
+jindal: 3=1 11=2
+huckabee: 11=2
+carson: 11=2
+santorum: 11=2
+mjohnson: 9=1 11=2
+mtg: 1=3 2=3 9=2
+boebert: 1=3 9=2
+hegseth: 1=3 2=3
+ramaswamy: 2=1 9=0
+hawley: 2=3 10=3
+rpaul_sr: 11=2
+rpaul: 2=1 10=1 11=1
+massie: 10=1 11=1

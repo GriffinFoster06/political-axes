@@ -1,0 +1,30 @@
+# D18 Free speech & civil liberties (16; Q3 has 9 cases coded 0=allow 1=don't; Q13 has 4 cases coded 0=no firing 1=firing ok)
+@DL 0 2 000000110 0 0 0 2 1 2 0 0 0 1010 0 0 1
+@DS 0 2 000000110 0 0 0 2 1 2 0 0 0 1010 0 0 1
+@DM 0 1 000000110 0 1 1 2 1 2 1 1 1 1010 0 0 1
+@DC 0 1 000000110 0 1 1 1 1 2 1 1 1 1010 0 1 1
+@RM 0 1 000000110 1 1 1 1 0 1 2 1 1 1010 0 1 2
+@RE 0 1 000000110 1 1 2 1 0 1 2 2 2 1010 0 1 2
+@RT 0 1 000001110 2 2 2 0 0 0 2 2 1 0010 2 2 2
+@RF 0 0 000001110 1 2 2 0 0 0 2 2 1 0010 1 2 2
+@RR 0 1 000001110 2 2 2 0 0 0 3 2 1 0010 1 2 2
+@LB 0 0 000000000 0 0 1 0 0 0 1 1 2 1111 0 2 2
+@PO 0 0 000000110 1 1 1 0 0 0 1 1 0 0010 0 1 2
+klobuchar: 7=3
+hochul: 5=2
+adams: 5=2 6=2
+bloomberg: 6=2
+emanuel: 6=2 16=2
+phillips: 16=2
+fetterman: 3=000001110 6=2
+torres: 3=000001110 6=2
+gottheimer: 3=000001110 6=2
+schumer: 6=2
+shapiro: 6=2
+cuomo: 6=2
+khanna: 7=1 9=0 16=2
+cox: 2=0 16=2
+mcconnell: 4=0
+romney: 4=0
+ramaswamy: 12=0 13=0010
+desantis: 5=2

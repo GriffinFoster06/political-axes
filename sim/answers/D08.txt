@@ -1,0 +1,35 @@
+# D08 Privacy & surveillance (12; Q6 has 3 cases, only if Q5 is 0 or 1)
+@DL 0 0 0 0 1 100 0 0 0 0 1 0
+@DS 0 0 0 0 0 100 0 0 0 0 0 0
+@DM 1 1 1 1 1 110 0 1 0 1 1 1
+@DC 2 2 2 1 2 - 1 1 0 2 2 1
+@RM 2 2 2 1 2 - 1 1 0 2 2 1
+@RE 3 2 2 2 2 - 2 1 0 2 2 2
+@RT 2 1 2 1 2 - 2 1 0 2 2 2
+@RF 1 0 1 1 2 - 2 0 0 2 2 2
+@RR 2 1 2 1 2 - 2 1 0 2 2 2
+@LB 0 0 0 0 0 100 3 0 0 0 0 2
+@PO 0 0 1 0 1 100 0 0 0 1 1 0
+wyden: 1=0 2=0 3=1 4=0 8=0 10=0
+obama: 1=2 2=2
+hclinton: 1=2 2=2
+biden: 2=2
+schiff: 1=2 2=2
+adams: 3=3 5=3
+bloomberg: 1=2 3=3 5=2 6=- 11=2
+dcheney: 1=3 2=3 3=3 4=2 5=3 8=2
+gwbush: 1=3 2=3 8=2
+mcconnell: 1=3 2=2
+graham: 1=3 2=3 4=2
+cotton: 1=3 2=3 4=2 8=2
+pompeo: 1=3 2=3 8=2
+christie: 1=3 2=3 4=2
+lcheney: 1=3
+vance: 2=0
+gaetz: 1=0 2=0 8=0
+mtg: 1=1 2=0 8=0
+bannon: 1=1 2=0
+jordan: 1=0 2=0
+mlee: 1=0 2=0
+roy: 2=0
+gabbard: 2=1

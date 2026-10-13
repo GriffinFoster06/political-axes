@@ -1,0 +1,50 @@
+# D05 Environment & energy (21)
+@DL 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0
+@DS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+@DM 1 1 1 1 0 1 1 1 2 1 1 0 1 1 0 0 1 0 0 1 1
+@DC 2 1 2 2 2 1 2 2 3 1 2 1 2 2 1 0 1 1 1 2 2
+@RM 2 1 2 2 2 1 2 2 3 1 2 2 2 2 1 0 1 1 1 2 2
+@RE 2 2 3 2 2 2 3 2 3 1 2 2 2 3 2 1 1 2 2 2 2
+@RT 4 3 3 2 2 2 3 3 3 2 2 2 3 3 3 1 2 2 2 3 2
+@RF 4 3 3 2 2 2 3 3 3 1 2 2 3 3 3 2 2 2 2 3 2
+@RR 3 3 3 2 2 2 3 2 3 1 2 2 2 3 2 1 2 2 2 3 2
+@LB 3 3 3 2 2 2 3 2 3 0 2 2 3 3 3 2 2 2 2 3 2
+@PO 1 1 2 2 1 1 2 2 2 1 1 1 1 2 1 0 1 0 1 2 1
+sanders: 9=0
+warren: 9=1
+khanna: 9=2 14=2
+obama: 1=1 7=2
+bclinton: 1=1 7=2 17=0
+gore: 1=0 2=0 3=0 4=0 17=0
+kerry: 1=0 17=0
+newsom: 1=0 11=0
+whitehouse: 1=0
+polis: 14=2
+buttigieg: 14=2
+phillips: 14=2
+bloomberg: 8=0
+fetterman: 7=2 13=2
+shapiro: 7=2 13=2
+manchin: 1=2 7=3 8=3 12=2 13=2 14=3
+cuellar: 7=3 13=2
+murkowski: 7=3 14=3 18=1
+schwarzenegger: 1=1 2=1 3=1 4=1 11=0 13=1 15=1 17=0 18=0 19=1
+pscott: 1=1 17=1 18=0
+hogan: 18=1
+romney: 18=1
+mccain: 1=1 18=1
+gwbush: 17=2
+graham: 18=1
+burgum: 7=3 14=3
+cassidy: 6=0 18=1
+trump: 1=4 17=2 18=3
+ramaswamy: 18=3
+mtg: 18=3
+tuberville: 18=3
+gaetz: 1=2 18=1
+desantis: 15=1
+gjohnson: 1=2 4=1 18=1
+chase_oliver: 1=2 18=1
+yang: 1=1 4=1 5=1 9=3 10=2 18=0
+rfk: 9=1 7=1
+gabbard: 9=1 18=1
