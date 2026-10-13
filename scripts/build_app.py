@@ -55,7 +55,7 @@ def bank():
         "design": json.loads((ROOT / "items" / "pilot_design.json").read_text()),
         "intro": mods["intro"], "priorities": mods["priorities"], "quality": mods["quality"],
         "about": mods["about_you"],
-        "axes": mods["axes"], "profiles": mods["profiles"]["profiles"], "profileCats": mods["profiles"]["categories"], "quick": mods["quick"]["ids"],
+        "axes": mods["axes"], "profiles": [{k: v for k, v in p.items() if k != "hand_pos"} for p in mods["profiles"]["profiles"]], "profileCats": mods["profiles"]["categories"], "quick": mods["quick"]["ids"],
         "keying": keying(items, mods["axes"]),
     }
 
@@ -97,7 +97,7 @@ def main():
         shutil.copy(f, DIST / f.name)
     body = (SRC / "body.html").read_text()
     site = os.environ.get("URL", "").rstrip("/")  # Netlify sets URL at build time
-    desc = ("A deeper map of your US politics: real positions on 25 topics, up to 29 dimensions, "
+    desc = ("A deeper map of your US politics: real positions on 25 topics, up to 31 dimensions, "
             "and the parties past and present you're closest to.")
     head = ('<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, '
             'viewport-fit=cover">\n'

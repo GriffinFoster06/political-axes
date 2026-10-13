@@ -1,6 +1,6 @@
 {
  "module": "axes",
- "note": "Display names and poles for provisional scores. Scores run from -100 (minus pole) to +100 (plus pole). These are the 29 candidate axes from docs/question-bank-plan.md; which ones are real is still an open question, so the results page labels them provisional.",
+ "note": "Display names and poles for the scores. Scores run from -100 (minus pole) to +100 (plus pole). 'balanced' axes weight left-coded and right-coded questions equally; see scripts/revisions/rev_2026_10_14_sim_fixes.py.",
  "overall": {
   "id": "G",
   "name": "Overall",
@@ -279,16 +279,30 @@
     },
     {
      "id": "LIBERTY",
-     "name": "Personal freedom",
-     "minus": "Adults decide for themselves",
-     "plus": "Protective rules",
-     "about": "Whether adults should make their own choices about drugs, gambling and health risks, or be protected by law.",
+     "name": "Drugs and vice laws",
+     "minus": "Legalize; adults choose",
+     "plus": "Prohibit",
+     "about": "Whether drugs, gambling, sex work and assisted dying should be legal for adults or prohibited.",
      "bands": [
-      "Adults decide for themselves on drugs, gambling and health risks.",
-      "Mostly personal freedom, with some protective rules.",
-      "Mixed: free on some choices, protective on others.",
-      "Protective rules are often worth limits on personal freedom.",
-      "Law should protect people from harmful choices like drugs and gambling."
+      "Adults should be free to use drugs, gamble, sell sex or end their lives as they choose.",
+      "Mostly legal and regulated, with limits on the riskiest choices.",
+      "Mixed: legal for some choices, prohibited for others.",
+      "Mostly prohibited, with room for medical use and narrow exceptions.",
+      "Drugs, gambling, sex work and assisted dying should stay illegal and be enforced."
+     ]
+    },
+    {
+     "id": "PUBHEALTH",
+     "name": "Health and safety rules",
+     "minus": "Individual choice",
+     "plus": "Public-health rules",
+     "about": "Whether government should require or discourage things for health and safety: vaccines, helmets, vapes, sugary drinks.",
+     "bands": [
+      "Adults and parents decide about vaccines, helmets, raw milk and other health risks; no mandates.",
+      "Mostly individual choice, with a few rules like school vaccines.",
+      "Mixed: some health and safety mandates make sense, others go too far.",
+      "Health and safety rules are usually worth it, from school vaccines to vape limits.",
+      "Strong public-health rules: mandates, bans and taxes that steer people away from health risks."
      ]
     },
     {
@@ -296,7 +310,7 @@
      "name": "Free speech",
      "minus": "Protect all speech",
      "plus": "Limit harmful speech",
-     "about": "How far to protect offensive, false or hateful speech.",
+     "about": "How far to protect offensive, false or hateful speech, counted evenly across speech the left dislikes and speech the right dislikes.",
      "bands": [
       "Protect almost all speech, including offensive, false and hateful speech.",
       "Strong free speech, with narrow limits.",
@@ -385,7 +399,7 @@
      "name": "Federalism",
      "minus": "National standards",
      "plus": "State and local control",
-     "about": "Whether big decisions should be made nationally or left to states and cities.",
+     "about": "Whether big decisions should be made nationally or left to states and cities, counted evenly across cases where state power helps the left and where it helps the right.",
      "bands": [
       "National standards on most big issues; states shouldn't set their own rules on rights.",
       "Lean toward national rules, with state flexibility on details.",
@@ -432,13 +446,27 @@
      "name": "Use of force",
      "minus": "Restraint",
      "plus": "Use force readily",
-     "about": "How readily to use military force and how big a military to keep.",
+     "about": "How readily to use military force abroad and how big a military to keep.",
      "bands": [
       "Military restraint: smaller military, force only as a last resort.",
       "Cautious about force, with a strong enough defense.",
       "Use force when clearly needed, keep a strong military.",
       "Ready to use force to protect interests and allies; a big military.",
       "Use force readily and keep overwhelming military power."
+     ]
+    },
+    {
+     "id": "CHINA",
+     "name": "China",
+     "minus": "Engage",
+     "plus": "Confront",
+     "about": "How hard to compete with and confront China: trade, ownership, technology and Taiwan.",
+     "bands": [
+      "Treat China like any other country: trade freely and cooperate on shared problems.",
+      "Engage China, with limits on sensitive technology.",
+      "Compete with China and protect key industries, but keep talking and trading.",
+      "Treat China as a serious rival: limit trade, ownership and technology sales.",
+      "China is the main adversary: cut ties, block investment and confront it on every front."
      ]
     }
    ]
@@ -468,5 +496,65 @@
   -0.2,
   0.2,
   0.6
- ]
+ ],
+ "balanced": {
+  "SPEECH": {
+   "sides": {
+    "election_deepfakes": "N",
+    "road_blocking": "L",
+    "hate_speech_law": "R",
+    "hateful_speaker_response": "R",
+    "flag_burning": "L",
+    "protest_masks": "N",
+    "campus_encampments": "L",
+    "gov_misinformation": "R",
+    "misinfo_penalty": "R",
+    "jawboning": "R",
+    "library_book_decisions": "L",
+    "library_explicit": "L",
+    "defamation_public_figures": "L",
+    "campus_speech_codes": "R",
+    "sp_abortion_illegal": "R",
+    "sp_abortion_any": "L",
+    "sp_trans_women": "R",
+    "sp_abolish_police": "L",
+    "sp_stolen_election": "R",
+    "sp_israel": "L",
+    "sp_race_iq": "R",
+    "sp_revolution": "L",
+    "sp_expert_rule": "N"
+   },
+   "protect": -1,
+   "note_L": "speech the right objects to",
+   "note_R": "speech the left objects to"
+  },
+  "FED": {
+   "sides": {
+    "gc_immigration": "L",
+    "gc_sports_allow": "L",
+    "gc_police_cuts": "L",
+    "sr_immigration": "L",
+    "sr_marijuana": "L",
+    "ai_state_laws": "L",
+    "state_preemption": "L",
+    "grant_conditions": "L",
+    "state_refusal": "L",
+    "gc_abortion": "R",
+    "gc_sports_ban": "R",
+    "sr_guns": "R",
+    "sd_guns": "R",
+    "sd_min_wage": "R",
+    "sd_voting": "R",
+    "sd_marriage": "R",
+    "abortion_who_decides": "R",
+    "education_department": "R",
+    "federal_size": "R",
+    "sell_public_land": "R",
+    "closer_government_tradeoff": "R"
+   },
+   "protect": 1,
+   "note_L": "states and cities pursuing left-leaning policies",
+   "note_R": "states pursuing right-leaning policies"
+  }
+ }
 }

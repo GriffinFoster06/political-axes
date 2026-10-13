@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "sim"))
-from load import load_all, BANK  # noqa: E402
+from load import load_all, load_records, BANK  # noqa: E402
 from roster import R, ORDER  # noqa: E402
 from archetypes import G as GROUP  # noqa: E402
 
@@ -77,8 +77,11 @@ def item_values(ans):
     return vals
 
 
+BAL = BANK["axes"].get("balanced", {})
+
+
 def scores(ans):
-    acc = defaultdict(lambda: [0.0, 0.0, 0])
+    acc = defaultdict(lambda: [0.0, 0.0, 0, []])
     for i, cid, x, w in item_values(ans):
         k = KEY.get(cid) if cid and cid in KEY else KEY.get(i)
         if not k:
@@ -88,7 +91,23 @@ def scores(ans):
                 continue
             o = acc[ax]
             o[0] += s * x * w; o[1] += w; o[2] += 1
-    return {ax: {"v": s / w, "n": n} for ax, (s, w, n) in acc.items()}
+            o[3].append((cid or i, s * x, w))
+    out = {ax: {"v": s / w, "n": n} for ax, (s, w, n, _) in acc.items()}
+    for ax, cfg in BAL.items():  # port of balance() in app.js
+        if ax not in acc:
+            continue
+        g = {"L": [0.0, 0.0, 0], "R": [0.0, 0.0, 0], "N": [0.0, 0.0, 0]}
+        for pid, s, w in acc[ax][3]:
+            a = g[cfg["sides"].get(pid, "N")]
+            a[0] += s * w; a[1] += w; a[2] += 1
+        if not g["L"][1] or not g["R"][1]:
+            continue
+        mL, mR = g["L"][0] / g["L"][1], g["R"][0] / g["R"][1]
+        W = (g["L"][1] + g["R"][1]) / 2
+        out[ax]["raw"] = out[ax]["v"]
+        out[ax]["v"] = (mL * W + mR * W + g["N"][0]) / (2 * W + g["N"][1])
+        out[ax]["lop"] = {"L": cfg["protect"] * mL, "R": cfg["protect"] * mR, "nL": g["L"][2], "nR": g["R"][2]}
+    return out
 
 
 def ok(sc, ax):
@@ -112,13 +131,37 @@ def match_one(sc, pos):
     return max(0, round(100 * (1 - rms / 2)))
 
 
-def matches(sc):
+def matches(sc, profiles=None):
     out = []
-    for p in PROFILES:
+    for p in profiles or PROFILES:
         m = match_one(sc, p["pos"])
         if m is not None:
             out.append((m, p["id"]))
     return [pid for m, pid in sorted(out, key=lambda t: -t[0])], dict((pid, m) for m, pid in out)
+
+
+def loo_profiles(pid, SC):
+    """Profiles as the app has them, except groups built from simulated members are
+    re-placed without this politician (and without a record set made from their answers),
+    so nobody is matched against an average that includes themselves. A group whose
+    only member is this politician is dropped."""
+    from records import RECORDS
+    own = {pid} | {rid for rid, r in RECORDS.items() if r["base"] == pid}
+    out = []
+    for p in PROFILES:
+        b = p.get("basis")
+        if not b or not own & set(b["ids"]):
+            out.append(p); continue
+        rest = [i for i in b["ids"] if i not in own]
+        if not rest:
+            continue
+        pos = {}
+        for ax in AXES:
+            vs = [SC[i][ax]["v"] for i in rest if ok(SC[i], ax)]
+            if vs and len(vs) * 2 >= len(rest):
+                pos[ax] = sum(vs) / len(vs)
+        out.append(dict(p, pos=pos))
+    return out
 
 
 def mean(xs):
@@ -131,12 +174,23 @@ def userpos(sc, axes):
 
 
 def archetype(sc):
+    """Port of archetype() in app.js (core label only, no modifiers)."""
     e, c = userpos(sc, ECON), userpos(sc, CULT)
     if e is None or c is None:
         return None
     E = 0 if e < -0.2 else 2 if e > 0.2 else 1
     C = 0 if c < -0.2 else 2 if c > 0.2 else 1
-    core = [["Progressive", "Economic progressive", "Communitarian"], ["Liberal", "Moderate", "Traditionalist"], ["Libertarian", "Free-market moderate", "Conservative"]][E][C]
+    s = (e + c) / 2
+    free = userpos(sc, ["LIBERTY", "PUBHEALTH"])
+    core = [["", "Economic progressive", "Communitarian"], ["Social liberal", "Moderate", "Traditionalist"], ["Libertarian", "Free-market moderate", ""]][E][C]
+    if E == 0 and C == 0:
+        core = "Progressive" if s <= -0.65 else "Liberal" if s <= -0.35 else "Center-left"
+    elif E == 2 and C == 2:
+        core = "Very conservative" if s >= 0.65 else "Conservative" if s >= 0.35 else "Center-right"
+    elif core != "Moderate" and max(abs(e), abs(c)) > 0.65:
+        core = "Committed " + core.lower()
+    if e > 0.5 and free is not None and free < -0.5:
+        core = "Libertarian"
     return core
 
 
@@ -179,12 +233,15 @@ def main():
     for pid, ans in people.items():
         VIS[pid] = visible_answers(ans)
         SC[pid] = scores(VIS[pid])
+    SC_ALL = dict(SC)  # plus record-in-office sets, used only to place groups
+    for rid, ans in load_records(people).items():
+        SC_ALL[rid] = scores(visible_answers(ans))
 
     # ---------- per-politician table ----------
     rows, topm = [], {}
     for r in R:
         sc = SC[r["id"]]
-        order, mm = matches(sc)
+        order, mm = matches(sc, loo_profiles(r["id"], SC_ALL))
         topm[r["id"]] = (order, mm)
         row = {"id": r["id"], "name": r["name"], "party": r["party"], "group": GROUP[r["id"]],
                "archetype": archetype(sc), "consistency": consistency(sc),
@@ -249,25 +306,31 @@ def main():
         else: miss5.append((r["name"], order[:3]))
     res["match_top1"], res["match_top3"], res["match_top5"] = hit1, hit3, hit5
     res["match_miss5"] = miss5
-    # the five presidents and VPs with their own profile
-    selfp = {"biden": "pres_biden", "obama": "pres_obama", "trump": "pres_trump", "gwbush": "pres_bush43", "bclinton": "pres_clinton"}
-    res["president_self_rank"] = {k: topm[k][0].index(v) + 1 for k, v in selfp.items()}
+    # past presidents' views today against their own record in office (a drift check, not a
+    # validation: the record sets start from the same answers). Trump and Biden are placed from
+    # their own answers, so they have no separate check.
+    selfp = {"obama": "pres_obama", "gwbush": "pres_bush43", "bclinton": "pres_clinton"}
+    allm = {k: matches(SC[k])[0] for k in selfp}
+    res["president_today_vs_record_rank"] = {k: allm[k].index(v) + 1 for k, v in selfp.items()}
     # does the top match come from the politician's own side?
     side = {"dem_progressive": "L", "dem_mainstream": "L", "blue_dog": "L", "abundance": "L", "dem_socialist": "L", "green": "L", "civil_libertarian": "L",
-            "pew_progressive": "L", "pew_estlib": "L", "pew_mainstays": "L", "pew_outsider": "L"}
+            "pew_progressive": "L", "pew_estlib": "L", "pew_mainstays": "L", "pew_outsider": "L", "gop_moderate": "R"}
     for p in PROFILES:
         if p["id"] not in side:
             gp = p["pos"].get("G")
             side[p["id"]] = None if gp is None else ("L" if gp < -0.15 else "R" if gp > 0.15 else "C")
     same = cross = 0
+    cross_list = []
     for r in R:
         if r["party"] not in ("D", "R"):
             continue
         s = side.get(topm[r["id"]][0][0])
         want = "L" if r["party"] == "D" else "R"
         if s == want: same += 1
-        elif s and s != "C": cross += 1
+        elif s and s != "C":
+            cross += 1; cross_list.append((r["name"], topm[r["id"]][0][0]))
     res["top_match_same_side"], res["top_match_cross_side"] = same, cross
+    res["top_match_cross_list"] = cross_list
 
     # ---------- labels ----------
     res["archetypes_by_group"] = {g: dict(Counter(archetype(SC[r["id"]]) for r in R if GROUP[r["id"]] == g)) for g in sorted(set(GROUP.values()))}
@@ -373,25 +436,34 @@ def main():
             spread[ax] = {"min": round(min(vs), 2), "max": round(max(vs), 2), "sd": round(math.sqrt(sum((x - mean(vs)) ** 2 for x in vs) / len(vs)), 3)}
     res["spread"] = spread
 
-    # ---------- calibration: hand-placed profiles vs the politicians who belong to them ----------
+    # ---------- placement: how far simulated placement moved each rebuilt group from its hand placement ----------
+    hand = {p["id"]: p.get("hand_pos") for p in json.loads((ROOT / "items/modules/profiles.json").read_text())["profiles"]}
     calib = {}
-    fam = {"maga": ["trump", "vance", "stefanik", "noem", "hsanders", "hegseth", "lake", "tuberville", "gaetz", "mtg"],
-           "dem_mainstream": ["biden", "harris", "schumer", "pelosi", "jeffries", "klobuchar", "whitmer", "walz", "kaine", "ossoff"],
-           "dem_progressive": ["aoc", "omar", "tlaib", "pressley", "jayapal", "crockett", "warren"],
-           "freedom_caucus": ["jordan", "roy", "donalds", "boebert", "mlee", "cruz"],
-           "libertarian": ["gjohnson", "amash", "chase_oliver", "rpaul", "massie"],
-           "gop_establishment": ["romney", "mccain", "jeb", "ryan", "haley", "mcconnell"],
-           "blue_dog": ["manchin", "golden", "cuellar", "mgp", "gottheimer", "tester"]}
-    for prof, members in fam.items():
-        p = next(x for x in PROFILES if x["id"] == prof)
-        diffs = {}
-        for ax, v in p["pos"].items():
-            vs = [SC[m][ax]["v"] for m in members if ok(SC[m], ax)]
-            if vs:
-                diffs[ax] = round(mean(vs) - v, 2)
-        big = {ax: d for ax, d in diffs.items() if abs(d) >= 0.35}
-        calib[prof] = {"mean_abs_gap": round(mean(abs(d) for d in diffs.values()), 3), "big_gaps": big}
-    res["profile_calibration"] = calib
+    for p in PROFILES:
+        h = hand.get(p["id"])
+        if not h or not p.get("basis"):
+            continue
+        diffs = {ax: round(p["pos"][ax] - v, 2) for ax, v in h.items() if ax in p["pos"]}
+        calib[p["id"]] = {"mean_abs_move": round(mean(abs(d) for d in diffs.values()), 3),
+                          "big_moves": {ax: d for ax, d in diffs.items() if abs(d) >= 0.35}}
+    res["hand_vs_sim_placement"] = calib
+
+    # ---------- balanced axes: lopsidedness by group ----------
+    lop = {}
+    for ax in BAL:
+        by = defaultdict(list)
+        for r in R:
+            o = SC[r["id"]].get(ax, {}).get("lop")
+            if o:
+                by[GROUP[r["id"]]].append(o["L"] - o["R"])
+        lop[ax] = {g: {"mean_gap": round(mean(v), 2), "even_handed": sum(abs(x) < 0.4 for x in v), "n": len(v)} for g, v in sorted(by.items())}
+    res["lopsidedness"] = lop
+
+    # ---------- map dimensions ----------
+    dims = {"econ": ECON, "cult": CULT, "auth": ["SPEECH", "LIBERTY", "PUBHEALTH", "PRIVACY", "HAWK"],
+            "popu": ["POP", "ESTAB", "TRUST", "NORMS", "TRADE"]}
+    gs = [SC[p]["G"]["v"] for p in pids]
+    res["map_dim_corr_with_G"] = {k: round(corr(gs, [userpos(SC[p], ax) for p in pids]), 3) for k, ax in dims.items()}
 
     # ---------- missing axes ----------
     res["axes_missing"] = {ax: sum(not ok(SC[p], ax) for p in pids) for ax in AXES if sum(not ok(SC[p], ax) for p in pids)}
@@ -412,7 +484,8 @@ if __name__ == "__main__":
     p("misses:"); [p("  ", m) for m in res["sig_misses"]]
     p(f"expected match top1 {res['match_top1']} top3 {res['match_top3']} top5 {res['match_top5']} of {res['n']}")
     p("miss top5:"); [p("  ", m) for m in res["match_miss5"]]
-    p("president self rank:", res["president_self_rank"], "same/cross side:", res["top_match_same_side"], res["top_match_cross_side"])
+    p("past presidents, views today vs record-in-office group (rank):", res["president_today_vs_record_rank"])
+    p("top match same/cross side:", res["top_match_same_side"], res["top_match_cross_side"], res["top_match_cross_list"])
     p("archetypes:", json.dumps(res["archetypes_by_group"]))
     p("consistency:", json.dumps(res["consistency_by_group"]))
     p("reliability:", json.dumps(res["reliability"]))
@@ -423,5 +496,7 @@ if __name__ == "__main__":
     p("most correlated:", res["most_correlated_pairs"])
     p("eigen share:", res["eigen_share"])
     p("spread:", res["spread"])
-    p("calibration:", json.dumps(res["profile_calibration"], indent=0))
+    p("hand vs simulated placement:", json.dumps(res["hand_vs_sim_placement"]))
+    p("lopsidedness:", json.dumps(res["lopsidedness"]))
+    p("map dimensions, correlation with G:", res["map_dim_corr_with_G"])
     p("missing axes:", res["axes_missing"])

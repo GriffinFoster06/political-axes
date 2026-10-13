@@ -121,6 +121,23 @@ def load_all():
     return people, done
 
 
+def load_records(people):
+    """Record-in-office answer sets (sim/records.py): each is a copy of a politician's
+    answers with the overrides applied."""
+    from records import RECORDS
+    out = {}
+    for rid, rec in RECORDS.items():
+        ans = {k: dict(v) for k, v in people[rec["base"]].items()}
+        case_parent = {c["id"]: i for i, it in BANK["items"].items() for c in it.get("cases", [])}
+        for k, code in rec["set"].items():
+            it = BANK["items"].get(k) or BANK["items"][case_parent[k]]
+            if not 0 <= code < len(it["options"]):
+                raise SystemExit(f"records.py {rid}: {k}={code} out of range")
+            ans[k] = {"c": code}
+        out[rid] = ans
+    return out
+
+
 if __name__ == "__main__":
     people, done = load_all()
     print("topics answered:", len(done), done)

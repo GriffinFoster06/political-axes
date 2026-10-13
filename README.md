@@ -39,14 +39,14 @@ Known gaps (no foreign policy, trade, AI, democratic norms or populism yet)
 are in [`docs/limitations.md`](docs/limitations.md).
 
 **Question bank (drafted 2026-10-12).** The quiz's own questions are written:
-469 questions in `items/drafts/`, covering 294 subtopics and 29 candidate
+469 questions in `items/drafts/`, covering 294 subtopics and 31 candidate
 axes, each one a concrete position with a scope line, definitions, sourced
 facts and exception follow-ups where edge cases matter. They are drafts: the
 next step is two-sided review and think-aloud interviews (kit in `review/`),
 then pilots ([`docs/question-bank-plan.md`](docs/question-bank-plan.md) §8–9).
 The quiz site (`app/`, "Where You Stand") is ready to deploy on Netlify:
-home page with three lengths, provisional scores on 29 axes, a 2D map,
-closest of 83 parties, presidents, movements and ideologies, share/compare links and an About page
+home page with three lengths, provisional scores on 31 axes, a 2D map,
+closest of 84 parties, presidents, movements and ideologies, share/compare links and an About page
 (details in [`app/README.md`](app/README.md)).
 
 ## Layout
@@ -66,7 +66,7 @@ closest of 83 parties, presidents, movements and ideologies, share/compare links
 | `tests/` | Simulation recovery test |
 | `reports/` | All outputs, including `RESULTS.md` |
 | `scripts/` + `.github/workflows/fetch-data.yml` | Data fetching (see `DATA.md`) |
-| `docs/question-bank-plan.md`, `items/blueprint.csv` | The full plan: 25 topic areas, 294 subtopics, 469 draft questions, 29 candidate axes, pilot design and decision rules |
+| `docs/question-bank-plan.md`, `items/blueprint.csv` | The full plan: 25 topic areas, 294 subtopics, 469 draft questions, 29 candidate axes (31 after the October 2026 simulation fixes), pilot design and decision rules |
 | `docs/item-writing-standard.md` | How every quiz question must be written: positions not agreement, scope + exceptions, definitions, no party cues |
 | `docs/how-many-dimensions.md` | The rule for deciding how many axes to report |
 | `items/drafts/` | **The full draft question bank**: 469 original questions (555 scored units), revised after a full review (`reports/question_review.md`) across all 25 topic areas, one file per area |

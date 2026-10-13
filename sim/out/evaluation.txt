@@ -1,34 +1,33 @@
 135 politicians, 25 topics
-party AUC on G: 0.9997 {'D_min': -0.82, 'D_max': -0.023, 'R_min': -0.032, 'R_max': 0.787, 'D_mean': -0.46, 'R_mean': 0.513}
-overlap: [('Henry Cuellar', 'D', -0.023), ('Tulsi Gabbard', 'R', -0.032)]
+party AUC on G: 0.9997 {'D_min': -0.824, 'D_max': -0.023, 'R_min': -0.035, 'R_max': 0.791, 'D_mean': -0.461, 'R_mean': 0.518}
+overlap: [('Henry Cuellar', 'D', -0.023), ('Tulsi Gabbard', 'R', -0.035)]
 orderings: 20/20 []
-signatures: 397/442 (non-G 275/314), unscored 0
-by axis: {'LIBERTY': '5/9', 'TECH': '5/8', 'RELIGION': '8/12', 'POP': '10/14', 'MORAL': '14/19', 'HAWK': '36/43', 'TRADE': '22/25', 'ESTAB': '16/18', 'REDIS': '17/19', 'ENV': '9/10', 'EDUC': '10/11', 'GUNS': '12/13', 'GLOBAL': '14/15', 'G': '122/128', 'NORMS': '23/24', 'ORDER': '15/15', 'SOCINS': '5/5', 'REG': '3/3', 'IMMIG': '18/18', 'EQUITY': '7/7', 'GENDERID': '6/6', 'HOUSING': '3/3', 'VOTING': '4/4', 'PRIVACY': '7/7', 'SPEECH': '1/1', 'FED': '4/4', 'FAMILY': '1/1'}
+signatures: 397/442 (non-G 276/314), unscored 0
+by axis: {'LIBERTY': '5/9', 'TECH': '5/8', 'RELIGION': '8/12', 'POP': '10/14', 'MORAL': '14/19', 'HAWK': '37/43', 'TRADE': '22/25', 'ESTAB': '16/18', 'REDIS': '17/19', 'ENV': '9/10', 'EDUC': '10/11', 'GUNS': '12/13', 'GLOBAL': '14/15', 'G': '121/128', 'NORMS': '23/24', 'ORDER': '15/15', 'SOCINS': '5/5', 'REG': '3/3', 'IMMIG': '18/18', 'EQUITY': '7/7', 'GENDERID': '6/6', 'HOUSING': '3/3', 'VOTING': '4/4', 'PRIVACY': '7/7', 'SPEECH': '1/1', 'FED': '4/4', 'FAMILY': '1/1'}
 misses:
    ('Barack Obama', 'POP', '-', -0.065)
    ('Bill Clinton', 'G', '-', -0.046)
-   ('Bernie Sanders', 'HAWK', '-', -0.179)
-   ('Ro Khanna', 'HAWK', '-', -0.13)
    ('Jon Tester', 'G', '-', -0.051)
    ('Jon Tester', 'TRADE', '+', 0.182)
    ('Amy Klobuchar', 'TECH', '-', 0.1)
    ('Andy Beshear', 'RELIGION', '0', -0.51)
-   ('Cory Booker', 'LIBERTY', '-', 0.27)
+   ('Cory Booker', 'LIBERTY', '-', 0.143)
    ('Chris Murphy', 'POP', '+', 0.0)
-   ('John Fetterman', 'LIBERTY', '-', 0.245)
+   ('John Fetterman', 'LIBERTY', '-', 0.079)
    ('Raphael Warnock', 'RELIGION', '0', -0.471)
-   ('Jared Polis', 'LIBERTY', '-', 0.006)
+   ('Jared Polis', 'LIBERTY', '-', 0.016)
    ('Jared Golden', 'GUNS', '+', 0.051)
    ('Henry Cuellar', 'MORAL', '+', -0.042)
    ('Marie Gluesenkamp Perez', 'POP', '+', 0.074)
    ('Marie Gluesenkamp Perez', 'TECH', '-', -0.033)
    ('Josh Gottheimer', 'G', '-', -0.056)
-   ('Chris Van Hollen', 'HAWK', '-', 0.244)
+   ('Chris Van Hollen', 'HAWK', '-', 0.217)
    ('Jim Clyburn', 'RELIGION', '0', -0.608)
    ('Eric Adams', 'RELIGION', '+', -0.059)
+   ('Michael Bloomberg', 'G', '0', -0.35)
    ('Dean Phillips', 'ESTAB', '0', -0.637)
    ('Michael Bennet', 'EDUC', '0', -0.361)
-   ('JD Vance', 'HAWK', '-', 0.358)
+   ('JD Vance', 'HAWK', '-', 0.362)
    ('JD Vance', 'REDIS', '0', 0.535)
    ('Mike Pence', 'TRADE', '-', -0.061)
    ('Nikki Haley', 'GLOBAL', '-', 0.167)
@@ -36,96 +35,38 @@ misses:
    ('Dick Cheney', 'NORMS', '+', -0.433)
    ('Susan Collins', 'MORAL', '-', -0.114)
    ('Lisa Murkowski', 'MORAL', '-', -0.114)
-   ('Marjorie Taylor Greene', 'HAWK', '-', 0.195)
-   ('Matt Gaetz', 'HAWK', '-', 0.325)
-   ('Matt Gaetz', 'LIBERTY', '-', -0.097)
+   ('Marjorie Taylor Greene', 'HAWK', '-', 0.188)
+   ('Matt Gaetz', 'HAWK', '-', 0.304)
+   ('Matt Gaetz', 'LIBERTY', '-', 0.333)
    ('Brian Kemp', 'MORAL', '+', 0.186)
-   ('Spencer Cox', 'G', '+', 0.136)
+   ('Spencer Cox', 'G', '+', 0.139)
    ('Spencer Cox', 'POP', '-', -0.194)
    ('Phil Scott', 'MORAL', '-', -0.114)
-   ('Chris Sununu', 'G', '+', 0.13)
+   ('Chris Sununu', 'G', '+', 0.132)
    ('Bill Cassidy', 'ESTAB', '0', -0.412)
-   ('Steve Bannon', 'HAWK', '-', 0.228)
+   ('Steve Bannon', 'HAWK', '-', 0.188)
+   ('Robert F. Kennedy Jr.', 'HAWK', '0', -0.435)
    ('Arnold Schwarzenegger', 'ENV', '-', -0.142)
-   ('John Kasich', 'G', '+', 0.137)
+   ('John Kasich', 'G', '+', 0.14)
    ('Andrew Yang', 'REDIS', '-', -0.132)
    ('Andrew Yang', 'TECH', '-', -0.15)
-expected match top1 107 top3 130 top5 132 of 135
+expected match top1 110 top3 126 top5 133 of 135
 miss top5:
-   ('Dean Phillips', ['dem_mainstream', 'pres_biden', 'pew_estlib'])
-   ('Tom Cotton', ['pew_committed', 'gop_establishment', 'pew_ambivalent'])
+   ('Michael Bloomberg', ['dem_mainstream', 'pres_obama', 'pres_jfk'])
    ('Tulsi Gabbard', ['centrist', 'pew_sideliners', 'blue_dog'])
-president self rank: {'biden': 2, 'obama': 4, 'trump': 4, 'gwbush': 8, 'bclinton': 7} same/cross side: 114 0
-archetypes: {"DC": {"Moderate": 8, "Liberal": 1}, "DL": {"Progressive": 12}, "DM": {"Progressive": 41, "Liberal": 1}, "DS": {"Progressive": 3}, "LB": {"Free-market moderate": 4, "Libertarian": 2}, "PO": {"Economic progressive": 2, "Progressive": 1}, "RE": {"Conservative": 25}, "RF": {"Conservative": 8}, "RM": {"Free-market moderate": 7, "Moderate": 1}, "RR": {"Conservative": 5}, "RT": {"Conservative": 14}}
+past presidents, views today vs record-in-office group (rank): {'obama': 2, 'gwbush': 2, 'bclinton': 1}
+top match same/cross side: 122 0 []
+archetypes: {"DC": {"Moderate": 8, "Social liberal": 1}, "DL": {"Progressive": 12}, "DM": {"Liberal": 41, "Social liberal": 1}, "DS": {"Progressive": 3}, "LB": {"Libertarian": 6}, "PO": {"Economic progressive": 2, "Center-left": 1}, "RE": {"Conservative": 25}, "RF": {"Very conservative": 8}, "RM": {"Free-market moderate": 7, "Moderate": 1}, "RR": {"Conservative": 1, "Very conservative": 4}, "RT": {"Conservative": 14}}
 consistency: {"DC": {"Mostly consistent": 5, "Cross-pressured": 4}, "DL": {"Consistent": 12}, "DM": {"Consistent": 42}, "DS": {"Consistent": 3}, "LB": {"Mostly consistent": 4, "Cross-pressured": 2}, "PO": {"Mostly consistent": 2, "Consistent": 1}, "RE": {"Consistent": 25}, "RF": {"Consistent": 8}, "RM": {"Mostly consistent": 5, "Cross-pressured": 2, "Consistent": 1}, "RR": {"Consistent": 5}, "RT": {"Consistent": 14}}
-reliability: {"G": {"items": 377, "alpha": 0.998}, "REDIS": {"items": 47, "alpha": 0.982}, "REG": {"items": 33, "alpha": 0.986}, "SOCINS": {"items": 15, "alpha": 0.983}, "HOUSING": {"items": 4, "alpha": 0.706}, "TRADE": {"items": 11, "alpha": 0.862}, "ENV": {"items": 20, "alpha": 0.986}, "TECH": {"items": 20, "alpha": 0.919}, "PRIVACY": {"items": 13, "alpha": 0.902}, "MORAL": {"items": 17, "alpha": 0.954}, "GENDERID": {"items": 20, "alpha": 0.979}, "RELIGION": {"items": 19, "alpha": 0.966}, "FAMILY": {"items": 14, "alpha": 0.974}, "EQUITY": {"items": 30, "alpha": 0.989}, "IMMIG": {"items": 27, "alpha": 0.973}, "NATION": {"items": 22, "alpha": 0.977}, "ORDER": {"items": 30, "alpha": 0.988}, "GUNS": {"items": 21, "alpha": 0.978}, "LIBERTY": {"items": 26, "alpha": 0.433}, "SPEECH": {"items": 31, "alpha": 0.053}, "NORMS": {"items": 36, "alpha": 0.916}, "VOTING": {"items": 17, "alpha": 0.974}, "TRUST": {"items": 15, "alpha": 0.943}, "ESTAB": {"items": 17, "alpha": 0.974}, "POP": {"items": 18, "alpha": 0.865}, "FED": {"items": 25, "alpha": 0.738}, "EDUC": {"items": 12, "alpha": 0.979}, "GLOBAL": {"items": 12, "alpha": 0.935}, "HAWK": {"items": 23, "alpha": 0.931}, "VALUES": {"items": 24, "alpha": 0.984}}
-low item-rest: [('SPEECH', 'fire_protest', -0.662), ('SPEECH', 'fire_donation', -0.662), ('FED', 'state_preemption', -0.608), ('PRIVACY', 'digital_dollar', -0.607), ('FED', 'gc_immigration', -0.598), ('FED', 'gc_police_cuts', -0.598), ('FED', 'sr_immigration', -0.598), ('FED', 'sr_marijuana', -0.598), ('G', 'conscience_vs_law', -0.565), ('FED', 'ai_state_laws', -0.486), ('LIBERTY', 'marijuana_records', -0.458), ('G', 'data_centers', -0.457), ('TECH', 'age_verification', -0.428), ('LIBERTY', 'marijuana_law', -0.378), ('NORMS', 'fb_abortion_protect', -0.347), ('NORMS', 'fb_mail_voting', -0.347), ('FED', 'gc_sports_allow', -0.326), ('NORMS', 'em_student_debt', -0.321), ('NORMS', 'political_violence', -0.314), ('NORMS', 'court_expansion', -0.284), ('LIBERTY', 'supervised_sites', -0.281), ('TECH', 'moderation_law', -0.253), ('SPEECH', 'flag_burning', -0.186), ('SPEECH', 'sp_israel', -0.183), ('LIBERTY', 'aid_in_dying', -0.182), ('G', 'sin_taxes', -0.152), ('SPEECH', 'fire_racist_joke', -0.141), ('LIBERTY', 'social_media_min_age', -0.118), ('NORMS', 'em_clean', -0.116), ('SPEECH', 'defamation_public_figures', -0.113), ('LIBERTY', 'aid_form', -0.081), ('FED', 'sr_abortion_pills', -0.055), ('SPEECH', 'moderation_law', -0.051), ('REG', 'farm_subsidies', -0.05), ('G', 'cameras_tradeoff', -0.04), ('G', 'wr_older', -0.014), ('G', 'carbon_tax', -0.003), ('TRADE', 'export_controls', 0.0), ('LIBERTY', 'ai_companions_minors', 0.008), ('LIBERTY', 'plastic_bags', 0.021)]
-flat items: 56
+reliability: {"G": {"items": 373, "alpha": 0.998}, "REDIS": {"items": 47, "alpha": 0.982}, "REG": {"items": 33, "alpha": 0.986}, "SOCINS": {"items": 15, "alpha": 0.983}, "HOUSING": {"items": 4, "alpha": 0.706}, "TRADE": {"items": 11, "alpha": 0.862}, "ENV": {"items": 20, "alpha": 0.986}, "TECH": {"items": 20, "alpha": 0.919}, "PRIVACY": {"items": 13, "alpha": 0.902}, "MORAL": {"items": 17, "alpha": 0.954}, "GENDERID": {"items": 20, "alpha": 0.979}, "RELIGION": {"items": 19, "alpha": 0.966}, "FAMILY": {"items": 14, "alpha": 0.974}, "EQUITY": {"items": 30, "alpha": 0.989}, "IMMIG": {"items": 27, "alpha": 0.973}, "NATION": {"items": 22, "alpha": 0.977}, "ORDER": {"items": 30, "alpha": 0.988}, "GUNS": {"items": 21, "alpha": 0.978}, "LIBERTY": {"items": 9, "alpha": 0.898}, "PUBHEALTH": {"items": 12, "alpha": 0.888}, "SPEECH": {"items": 23, "alpha": 0.587}, "NORMS": {"items": 36, "alpha": 0.916}, "VOTING": {"items": 17, "alpha": 0.974}, "TRUST": {"items": 15, "alpha": 0.943}, "ESTAB": {"items": 17, "alpha": 0.974}, "POP": {"items": 18, "alpha": 0.865}, "FED": {"items": 25, "alpha": 0.738}, "EDUC": {"items": 12, "alpha": 0.979}, "GLOBAL": {"items": 12, "alpha": 0.935}, "HAWK": {"items": 14, "alpha": 0.889}, "CHINA": {"items": 6, "alpha": 0.776}, "VALUES": {"items": 24, "alpha": 0.984}}
+low item-rest: [('FED', 'state_preemption', -0.608), ('PRIVACY', 'digital_dollar', -0.607), ('FED', 'gc_immigration', -0.598), ('FED', 'gc_police_cuts', -0.598), ('FED', 'sr_immigration', -0.598), ('FED', 'sr_marijuana', -0.598), ('FED', 'ai_state_laws', -0.486), ('TECH', 'age_verification', -0.428), ('NORMS', 'fb_abortion_protect', -0.347), ('NORMS', 'fb_mail_voting', -0.347), ('FED', 'gc_sports_allow', -0.326), ('NORMS', 'em_student_debt', -0.321), ('NORMS', 'political_violence', -0.314), ('SPEECH', 'gov_misinformation', -0.303), ('SPEECH', 'jawboning', -0.297), ('NORMS', 'court_expansion', -0.284), ('SPEECH', 'misinfo_penalty', -0.262), ('TECH', 'moderation_law', -0.253), ('SPEECH', 'campus_speech_codes', -0.235), ('SPEECH', 'election_deepfakes', -0.181), ('G', 'sin_taxes', -0.152), ('NORMS', 'em_clean', -0.116), ('PUBHEALTH', 'involuntary_treatment', -0.109), ('FED', 'sr_abortion_pills', -0.055), ('REG', 'farm_subsidies', -0.05), ('G', 'cameras_tradeoff', -0.04), ('SPEECH', 'hateful_speaker_response', -0.022), ('G', 'wr_older', -0.012), ('G', 'carbon_tax', -0.003), ('TRADE', 'export_controls', 0.0), ('TECH', 'social_media_min_age', 0.053), ('G', 'wealth_tax', 0.059), ('TRUST', 'trust_courts', 0.083), ('POP', 'legacy_admissions', 0.095)]
+flat items: 55
 near-unanimous: [('digital_id', 1.0), ('hate_speech_law', 1.0), ('surrogacy', 0.96), ('marriage_decisions', 0.96), ('drinking_age', 0.96), ('kidney_payment', 0.96), ('political_violence', 0.96), ('sports_betting', 0.92), ('housing_approval', 0.91), ('no_fault_divorce', 0.9), ('dual_citizenship', 0.9), ('adult_content', 0.9), ('mortgage_deduction', 0.89), ('nuclear_arms_control', 0.89), ('ubi', 0.88), ('voting_age', 0.87), ('licensing', 0.86), ('gun_registry', 0.85), ('courts_vs_majority', 0.85)]
-corr with G: {'REDIS': 0.959, 'REG': 0.939, 'SOCINS': 0.919, 'HOUSING': 0.512, 'TRADE': -0.229, 'ENV': 0.983, 'TECH': 0.771, 'PRIVACY': 0.694, 'MORAL': 0.963, 'GENDERID': 0.966, 'RELIGION': 0.978, 'FAMILY': 0.974, 'EQUITY': 0.993, 'IMMIG': 0.936, 'NATION': 0.944, 'ORDER': 0.907, 'GUNS': 0.966, 'LIBERTY': -0.343, 'SPEECH': 0.018, 'NORMS': 0.577, 'VOTING': 0.98, 'TRUST': 0.666, 'ESTAB': 0.79, 'POP': -0.111, 'FED': 0.769, 'EDUC': 0.991, 'GLOBAL': 0.799, 'HAWK': 0.512, 'VALUES': 0.99}
+corr with G: {'REDIS': 0.959, 'REG': 0.938, 'SOCINS': 0.919, 'HOUSING': 0.513, 'TRADE': -0.229, 'ENV': 0.982, 'TECH': 0.77, 'PRIVACY': 0.697, 'MORAL': 0.964, 'GENDERID': 0.967, 'RELIGION': 0.979, 'FAMILY': 0.974, 'EQUITY': 0.993, 'IMMIG': 0.936, 'NATION': 0.944, 'ORDER': 0.908, 'GUNS': 0.966, 'LIBERTY': 0.598, 'PUBHEALTH': -0.876, 'SPEECH': 0.391, 'NORMS': 0.577, 'VOTING': 0.98, 'TRUST': 0.663, 'ESTAB': 0.788, 'POP': -0.115, 'FED': 0.651, 'EDUC': 0.991, 'GLOBAL': 0.796, 'HAWK': 0.521, 'CHINA': 0.525, 'VALUES': 0.991}
 most correlated: [('REG', 'SOCINS', 0.989), ('REDIS', 'REG', 0.988), ('EQUITY', 'EDUC', 0.985), ('IMMIG', 'NATION', 0.985), ('EQUITY', 'VALUES', 0.983), ('FAMILY', 'EQUITY', 0.982), ('ENV', 'EDUC', 0.981), ('RELIGION', 'FAMILY', 0.981), ('REDIS', 'ENV', 0.98), ('EDUC', 'VALUES', 0.98), ('REDIS', 'SOCINS', 0.977), ('GENDERID', 'RELIGION', 0.977)]
-eigen share: [0.664, 0.161, 0.111, 0.03, 0.008]
-spread: {'G': {'min': -0.84, 'max': 0.79, 'sd': 0.531}, 'REDIS': {'min': -0.96, 'max': 0.93, 'sd': 0.563}, 'REG': {'min': -0.9, 'max': 0.94, 'sd': 0.57}, 'SOCINS': {'min': -0.93, 'max': 1.0, 'sd': 0.603}, 'HOUSING': {'min': -0.83, 'max': 0.67, 'sd': 0.33}, 'TRADE': {'min': -0.88, 'max': 0.91, 'sd': 0.399}, 'ENV': {'min': -0.97, 'max': 0.95, 'sd': 0.628}, 'TECH': {'min': -0.77, 'max': 0.9, 'sd': 0.379}, 'PRIVACY': {'min': -0.86, 'max': 0.59, 'sd': 0.368}, 'MORAL': {'min': -0.87, 'max': 0.79, 'sd': 0.422}, 'GENDERID': {'min': -0.97, 'max': 1.0, 'sd': 0.659}, 'RELIGION': {'min': -0.94, 'max': 0.85, 'sd': 0.541}, 'FAMILY': {'min': -0.93, 'max': 0.92, 'sd': 0.573}, 'EQUITY': {'min': -0.88, 'max': 0.9, 'sd': 0.579}, 'IMMIG': {'min': -0.84, 'max': 0.79, 'sd': 0.508}, 'NATION': {'min': -0.9, 'max': 0.77, 'sd': 0.488}, 'ORDER': {'min': -0.95, 'max': 0.87, 'sd': 0.56}, 'GUNS': {'min': -0.7, 'max': 1.0, 'sd': 0.653}, 'LIBERTY': {'min': -0.96, 'max': 0.37, 'sd': 0.253}, 'SPEECH': {'min': -0.58, 'max': -0.05, 'sd': 0.116}, 'NORMS': {'min': -0.86, 'max': 0.57, 'sd': 0.369}, 'VOTING': {'min': -0.91, 'max': 0.88, 'sd': 0.637}, 'TRUST': {'min': -0.38, 'max': 0.7, 'sd': 0.352}, 'ESTAB': {'min': -0.7, 'max': 0.77, 'sd': 0.47}, 'POP': {'min': -0.6, 'max': 0.7, 'sd': 0.308}, 'FED': {'min': -0.44, 'max': 0.94, 'sd': 0.317}, 'EDUC': {'min': -0.92, 'max': 0.94, 'sd': 0.62}, 'GLOBAL': {'min': -0.68, 'max': 0.78, 'sd': 0.472}, 'HAWK': {'min': -0.75, 'max': 0.8, 'sd': 0.357}, 'VALUES': {'min': -0.89, 'max': 0.64, 'sd': 0.455}}
-calibration: {
-"maga": {
-"mean_abs_gap": 0.171,
-"big_gaps": {
-"MORAL": -0.39,
-"NORMS": -0.39,
-"POP": -0.47,
-"HAWK": 0.47
-}
-},
-"dem_mainstream": {
-"mean_abs_gap": 0.139,
-"big_gaps": {
-"LIBERTY": 0.37
-}
-},
-"dem_progressive": {
-"mean_abs_gap": 0.186,
-"big_gaps": {
-"TRADE": 0.42,
-"LIBERTY": 0.59,
-"SPEECH": -0.56,
-"GLOBAL": -0.37,
-"HAWK": 0.35
-}
-},
-"freedom_caucus": {
-"mean_abs_gap": 0.2,
-"big_gaps": {
-"TRADE": -0.42,
-"NORMS": -0.56,
-"ESTAB": -0.46,
-"POP": -0.5,
-"FED": -0.36,
-"GLOBAL": -0.38,
-"HAWK": 0.57
-}
-},
-"libertarian": {
-"mean_abs_gap": 0.169,
-"big_gaps": {
-"MORAL": 0.52,
-"RELIGION": 0.41,
-"SPEECH": 0.36,
-"ESTAB": -0.45
-}
-},
-"gop_establishment": {
-"mean_abs_gap": 0.151,
-"big_gaps": {
-"MORAL": -0.35,
-"ESTAB": -0.58
-}
-},
-"blue_dog": {
-"mean_abs_gap": 0.18,
-"big_gaps": {
-"ENV": 0.39,
-"IMMIG": -0.36
-}
-}
-}
+eigen share: [0.663, 0.158, 0.113, 0.027, 0.011]
+spread: {'G': {'min': -0.85, 'max': 0.79, 'sd': 0.535}, 'REDIS': {'min': -0.96, 'max': 0.93, 'sd': 0.563}, 'REG': {'min': -0.9, 'max': 0.94, 'sd': 0.57}, 'SOCINS': {'min': -0.93, 'max': 1.0, 'sd': 0.603}, 'HOUSING': {'min': -0.83, 'max': 0.67, 'sd': 0.33}, 'TRADE': {'min': -0.88, 'max': 0.91, 'sd': 0.399}, 'ENV': {'min': -0.97, 'max': 0.95, 'sd': 0.628}, 'TECH': {'min': -0.77, 'max': 0.9, 'sd': 0.379}, 'PRIVACY': {'min': -0.86, 'max': 0.59, 'sd': 0.368}, 'MORAL': {'min': -0.87, 'max': 0.79, 'sd': 0.422}, 'GENDERID': {'min': -0.97, 'max': 1.0, 'sd': 0.659}, 'RELIGION': {'min': -0.94, 'max': 0.85, 'sd': 0.541}, 'FAMILY': {'min': -0.93, 'max': 0.92, 'sd': 0.573}, 'EQUITY': {'min': -0.88, 'max': 0.9, 'sd': 0.579}, 'IMMIG': {'min': -0.84, 'max': 0.79, 'sd': 0.508}, 'NATION': {'min': -0.9, 'max': 0.77, 'sd': 0.488}, 'ORDER': {'min': -0.95, 'max': 0.87, 'sd': 0.56}, 'GUNS': {'min': -0.7, 'max': 1.0, 'sd': 0.653}, 'LIBERTY': {'min': -0.9, 'max': 0.85, 'sd': 0.352}, 'PUBHEALTH': {'min': -1.0, 'max': 0.76, 'sd': 0.519}, 'SPEECH': {'min': -0.82, 'max': -0.03, 'sd': 0.167}, 'NORMS': {'min': -0.86, 'max': 0.57, 'sd': 0.369}, 'VOTING': {'min': -0.91, 'max': 0.88, 'sd': 0.637}, 'TRUST': {'min': -0.38, 'max': 0.7, 'sd': 0.352}, 'ESTAB': {'min': -0.7, 'max': 0.77, 'sd': 0.47}, 'POP': {'min': -0.6, 'max': 0.7, 'sd': 0.308}, 'FED': {'min': -0.37, 'max': 0.94, 'sd': 0.271}, 'EDUC': {'min': -0.92, 'max': 0.94, 'sd': 0.62}, 'GLOBAL': {'min': -0.68, 'max': 0.78, 'sd': 0.472}, 'HAWK': {'min': -0.8, 'max': 0.8, 'sd': 0.389}, 'CHINA': {'min': -0.56, 'max': 1.0, 'sd': 0.346}, 'VALUES': {'min': -0.89, 'max': 0.64, 'sd': 0.455}}
+hand vs simulated placement: {"dem_progressive": {"mean_abs_move": 0.172, "big_moves": {"TRADE": 0.44, "SPEECH": -0.68, "GLOBAL": -0.37}}, "dem_mainstream": {"mean_abs_move": 0.141, "big_moves": {"SPEECH": -0.35}}, "blue_dog": {"mean_abs_move": 0.183, "big_moves": {"ENV": 0.38, "IMMIG": -0.37}}, "dem_socialist": {"mean_abs_move": 0.187, "big_moves": {"HOUSING": 0.52, "GUNS": -0.39, "ESTAB": -0.99, "HAWK": 0.39}}, "green": {"mean_abs_move": 0.133, "big_moves": {"PRIVACY": -0.36, "ESTAB": -0.72}}, "libertarian": {"mean_abs_move": 0.157, "big_moves": {"MORAL": 0.47, "RELIGION": 0.36, "ESTAB": -0.48}}, "never_trump": {"mean_abs_move": 0.184, "big_moves": {"TRADE": 0.35, "LIBERTY": 0.5, "VOTING": 0.68, "GLOBAL": 0.51}}, "gop_current": {"mean_abs_move": 0.297, "big_moves": {"TRADE": -0.73, "PRIVACY": 0.39, "MORAL": -0.36, "IMMIG": -0.38, "NATION": -0.45, "LIBERTY": 0.64, "NORMS": -0.45, "TRUST": -0.55, "ESTAB": -0.68, "POP": -0.73, "GLOBAL": -0.35, "HAWK": 0.51}}, "maga": {"mean_abs_move": 0.185, "big_moves": {"MORAL": -0.39, "LIBERTY": 0.42, "NORMS": -0.39, "POP": -0.45, "HAWK": 0.47}}, "freedom_caucus": {"mean_abs_move": 0.217, "big_moves": {"TRADE": -0.42, "LIBERTY": 0.55, "NORMS": -0.56, "ESTAB": -0.46, "POP": -0.5, "FED": -0.45, "GLOBAL": -0.38, "HAWK": 0.46}}, "natcon": {"mean_abs_move": 0.189, "big_moves": {"MORAL": -0.52, "HAWK": 0.42}}, "religious_right": {"mean_abs_move": 0.207, "big_moves": {"NORMS": -0.51}}, "pres_clinton": {"mean_abs_move": 0.243, "big_moves": {"ENV": 0.48, "IMMIG": -0.38}}, "pres_bush43": {"mean_abs_move": 0.26, "big_moves": {"MORAL": -0.44, "RELIGION": -0.37, "NATION": -0.35, "PRIVACY": -0.41, "NORMS": -1.03, "FED": 0.36}}, "pres_obama": {"mean_abs_move": 0.2, "big_moves": {"TRADE": 0.65, "PRIVACY": -0.39, "FED": 0.36}}, "pres_trump": {"mean_abs_move": 0.166, "big_moves": {"TRADE": -0.36, "MORAL": -0.35, "NORMS": -0.47, "POP": -0.43, "HAWK": 0.48}}, "pres_biden": {"mean_abs_move": 0.162, "big_moves": {"TECH": 0.37, "FED": 0.36}}, "gop_establishment": {"mean_abs_move": 0.16, "big_moves": {"NATION": -0.36, "ESTAB": -0.67}}}
+lopsidedness: {"SPEECH": {"DC": {"mean_gap": 0.12, "even_handed": 9, "n": 9}, "DL": {"mean_gap": 0.71, "even_handed": 1, "n": 12}, "DM": {"mean_gap": 0.22, "even_handed": 42, "n": 42}, "DS": {"mean_gap": 0.75, "even_handed": 0, "n": 3}, "LB": {"mean_gap": -0.42, "even_handed": 0, "n": 6}, "PO": {"mean_gap": -0.54, "even_handed": 0, "n": 3}, "RE": {"mean_gap": -0.92, "even_handed": 0, "n": 25}, "RF": {"mean_gap": -1.29, "even_handed": 0, "n": 8}, "RM": {"mean_gap": -0.39, "even_handed": 7, "n": 8}, "RR": {"mean_gap": -1.33, "even_handed": 0, "n": 5}, "RT": {"mean_gap": -1.46, "even_handed": 0, "n": 14}}, "FED": {"DC": {"mean_gap": 1.07, "even_handed": 0, "n": 9}, "DL": {"mean_gap": 1.53, "even_handed": 0, "n": 12}, "DM": {"mean_gap": 1.33, "even_handed": 0, "n": 42}, "DS": {"mean_gap": 1.54, "even_handed": 0, "n": 3}, "LB": {"mean_gap": -0.13, "even_handed": 6, "n": 6}, "PO": {"mean_gap": 0.76, "even_handed": 0, "n": 3}, "RE": {"mean_gap": -1.31, "even_handed": 0, "n": 25}, "RF": {"mean_gap": -1.54, "even_handed": 0, "n": 8}, "RM": {"mean_gap": 0.36, "even_handed": 8, "n": 8}, "RR": {"mean_gap": -1.05, "even_handed": 0, "n": 5}, "RT": {"mean_gap": -1.52, "even_handed": 0, "n": 14}}}
+map dimensions, correlation with G: {'econ': 0.943, 'cult': 0.985, 'auth': 0.23, 'popu': 0.472}
 missing axes: {}

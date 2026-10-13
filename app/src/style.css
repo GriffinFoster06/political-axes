@@ -470,6 +470,7 @@ button.standout:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
 .axis-card .axis-n { display: inline-block; margin-bottom: 8px; }
 .axis-body { padding: 4px 0 16px; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); }
 .axis-body > p:first-child { padding-top: 10px; }
+.lop { background: var(--soft); border-left: 3px solid var(--you); border-radius: 0 8px 8px 0; padding: 8px 12px; font-size: .92rem; }
 .ladder { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .ladder li { display: grid; grid-template-columns: 9.5em 1fr; gap: 10px; font-size: 0.88rem; padding: 6px 10px; border-radius: 8px; color: var(--ink-2); }
 .ladder li b { color: var(--ink); font-weight: 650; }

@@ -42,6 +42,40 @@
    "cat": "today",
    "about": "The party's left wing: Medicare for All, Green New Deal, criminal justice reform, a smaller military budget.",
    "pos": {
+    "G": -0.81,
+    "REDIS": -0.91,
+    "REG": -0.82,
+    "SOCINS": -0.93,
+    "HOUSING": -0.05,
+    "TRADE": 0.54,
+    "ENV": -0.88,
+    "TECH": -0.66,
+    "PRIVACY": -0.72,
+    "MORAL": -0.74,
+    "GENDERID": -0.94,
+    "RELIGION": -0.94,
+    "FAMILY": -0.93,
+    "EQUITY": -0.87,
+    "IMMIG": -0.79,
+    "NATION": -0.77,
+    "ORDER": -0.82,
+    "GUNS": -0.69,
+    "LIBERTY": -0.16,
+    "PUBHEALTH": 0.58,
+    "SPEECH": -0.48,
+    "NORMS": -0.41,
+    "VOTING": -0.84,
+    "TRUST": -0.01,
+    "ESTAB": -0.51,
+    "POP": 0.45,
+    "FED": -0.31,
+    "EDUC": -0.86,
+    "GLOBAL": -0.57,
+    "HAWK": -0.33,
+    "CHINA": 0.15,
+    "VALUES": -0.75
+   },
+   "hand_pos": {
     "G": -0.85,
     "REDIS": -0.8,
     "REG": -0.7,
@@ -69,6 +103,31 @@
     "GLOBAL": -0.2,
     "HAWK": -0.6,
     "VALUES": -0.8
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Bernie Sanders",
+     "Alexandria Ocasio-Cortez",
+     "Ilhan Omar",
+     "Rashida Tlaib",
+     "Ayanna Pressley",
+     "Pramila Jayapal",
+     "Ro Khanna",
+     "Elizabeth Warren",
+     "Jasmine Crockett"
+    ],
+    "ids": [
+     "sanders",
+     "aoc",
+     "omar",
+     "tlaib",
+     "pressley",
+     "jayapal",
+     "khanna",
+     "warren",
+     "crockett"
+    ]
    }
   },
   {
@@ -79,6 +138,40 @@
    "cat": "today",
    "about": "The party's center: protect and expand the ACA, climate investment, abortion rights, alliances abroad.",
    "pos": {
+    "G": -0.44,
+    "REDIS": -0.35,
+    "REG": -0.39,
+    "SOCINS": -0.58,
+    "HOUSING": -0.22,
+    "TRADE": 0.17,
+    "ENV": -0.39,
+    "TECH": -0.02,
+    "PRIVACY": -0.2,
+    "MORAL": -0.49,
+    "GENDERID": -0.62,
+    "RELIGION": -0.61,
+    "FAMILY": -0.67,
+    "EQUITY": -0.41,
+    "IMMIG": -0.38,
+    "NATION": -0.51,
+    "ORDER": -0.26,
+    "GUNS": -0.56,
+    "LIBERTY": 0.14,
+    "PUBHEALTH": 0.66,
+    "SPEECH": -0.25,
+    "NORMS": -0.45,
+    "VOTING": -0.63,
+    "TRUST": -0.38,
+    "ESTAB": -0.64,
+    "POP": -0.04,
+    "FED": -0.14,
+    "EDUC": -0.41,
+    "GLOBAL": -0.6,
+    "HAWK": 0.27,
+    "CHINA": 0.4,
+    "VALUES": -0.31
+   },
+   "hand_pos": {
     "G": -0.55,
     "REDIS": -0.5,
     "REG": -0.45,
@@ -108,6 +201,97 @@
     "GLOBAL": -0.6,
     "HAWK": 0.0,
     "VALUES": -0.5
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Joe Biden",
+     "Kamala Harris",
+     "Barack Obama",
+     "Hillary Clinton",
+     "Chuck Schumer",
+     "Nancy Pelosi",
+     "Hakeem Jeffries",
+     "Amy Klobuchar",
+     "Pete Buttigieg",
+     "Gavin Newsom",
+     "Josh Shapiro",
+     "Gretchen Whitmer",
+     "JB Pritzker",
+     "Andy Beshear",
+     "Cory Booker",
+     "Chris Murphy",
+     "John Fetterman",
+     "Raphael Warnock",
+     "Jared Polis",
+     "Tim Walz",
+     "Jamie Raskin",
+     "Adam Schiff",
+     "Ritchie Torres",
+     "Mark Kelly",
+     "Ruben Gallego",
+     "Chris Van Hollen",
+     "Sheldon Whitehouse",
+     "Jim Clyburn",
+     "Andrew Cuomo",
+     "Al Gore",
+     "John Kerry",
+     "Michael Bloomberg",
+     "Wes Moore",
+     "Dean Phillips",
+     "Tim Kaine",
+     "Ron Wyden",
+     "Rahm Emanuel",
+     "Kathy Hochul",
+     "Jon Ossoff",
+     "Abigail Spanberger",
+     "Michael Bennet",
+     "Angus King"
+    ],
+    "ids": [
+     "biden",
+     "harris",
+     "obama",
+     "hclinton",
+     "schumer",
+     "pelosi",
+     "jeffries",
+     "klobuchar",
+     "buttigieg",
+     "newsom",
+     "shapiro",
+     "whitmer",
+     "pritzker",
+     "beshear",
+     "booker",
+     "cmurphy",
+     "fetterman",
+     "warnock",
+     "polis",
+     "walz",
+     "raskin",
+     "schiff",
+     "torres",
+     "kelly",
+     "gallego",
+     "vanhollen",
+     "whitehouse",
+     "clyburn",
+     "cuomo",
+     "gore",
+     "kerry",
+     "bloomberg",
+     "moore",
+     "phillips",
+     "kaine",
+     "wyden",
+     "emanuel",
+     "hochul",
+     "ossoff",
+     "spanberger",
+     "mbennet",
+     "aking"
+    ]
    }
   },
   {
@@ -118,6 +302,40 @@
    "cat": "today",
    "about": "Blue Dogs and swing-district Democrats: fiscal caution, energy production, tougher on the border and crime than the party's base.",
    "pos": {
+    "G": -0.05,
+    "REDIS": 0.05,
+    "REG": 0.11,
+    "SOCINS": -0.14,
+    "HOUSING": 0.25,
+    "TRADE": 0.09,
+    "ENV": 0.18,
+    "TECH": -0.03,
+    "PRIVACY": 0.1,
+    "MORAL": -0.12,
+    "GENDERID": -0.05,
+    "RELIGION": -0.27,
+    "FAMILY": -0.31,
+    "EQUITY": -0.08,
+    "IMMIG": -0.17,
+    "NATION": -0.21,
+    "ORDER": 0.09,
+    "GUNS": 0.19,
+    "LIBERTY": 0.39,
+    "PUBHEALTH": 0.39,
+    "SPEECH": -0.28,
+    "NORMS": -0.59,
+    "VOTING": -0.09,
+    "TRUST": -0.31,
+    "ESTAB": -0.4,
+    "POP": -0.01,
+    "FED": -0.16,
+    "EDUC": -0.04,
+    "GLOBAL": -0.4,
+    "HAWK": 0.32,
+    "CHINA": 0.33,
+    "VALUES": 0.02
+   },
+   "hand_pos": {
     "G": -0.2,
     "REDIS": -0.2,
     "REG": -0.2,
@@ -143,6 +361,27 @@
     "GLOBAL": -0.5,
     "HAWK": 0.2,
     "VALUES": -0.1
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Joe Manchin",
+     "Kyrsten Sinema",
+     "Jon Tester",
+     "Jared Golden",
+     "Henry Cuellar",
+     "Marie Gluesenkamp Perez",
+     "Josh Gottheimer"
+    ],
+    "ids": [
+     "manchin",
+     "sinema",
+     "tester",
+     "golden",
+     "cuellar",
+     "mgp",
+     "gottheimer"
+    ]
    }
   },
   {
@@ -179,7 +418,9 @@
     "EDUC": -0.1,
     "GLOBAL": -0.7,
     "HAWK": 0.1,
-    "VALUES": -0.4
+    "VALUES": -0.4,
+    "PUBHEALTH": 0.3,
+    "CHINA": 0.2
    }
   },
   {
@@ -190,6 +431,40 @@
    "cat": "today",
    "about": "Democratic Socialists of America: public ownership of key industries, strong unions, sharply reduced inequality, anti-war.",
    "pos": {
+    "G": -0.82,
+    "REDIS": -0.94,
+    "REG": -0.87,
+    "SOCINS": -0.93,
+    "HOUSING": 0.12,
+    "TRADE": 0.54,
+    "ENV": -0.91,
+    "TECH": -0.7,
+    "PRIVACY": -0.74,
+    "MORAL": -0.79,
+    "GENDERID": -0.94,
+    "RELIGION": -0.87,
+    "FAMILY": -0.91,
+    "EQUITY": -0.87,
+    "IMMIG": -0.78,
+    "NATION": -0.8,
+    "ORDER": -0.85,
+    "GUNS": -0.69,
+    "LIBERTY": -0.24,
+    "PUBHEALTH": 0.58,
+    "SPEECH": -0.47,
+    "NORMS": -0.45,
+    "VOTING": -0.88,
+    "TRUST": 0.06,
+    "ESTAB": -0.39,
+    "POP": 0.48,
+    "FED": -0.29,
+    "EDUC": -0.88,
+    "GLOBAL": -0.5,
+    "HAWK": -0.46,
+    "CHINA": -0.0,
+    "VALUES": -0.78
+   },
+   "hand_pos": {
     "G": -0.95,
     "REDIS": -1.0,
     "REG": -0.95,
@@ -216,6 +491,21 @@
     "GLOBAL": -0.2,
     "HAWK": -0.85,
     "VALUES": -0.9
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Zohran Mamdani",
+     "Rashida Tlaib",
+     "Bernie Sanders",
+     "Cornel West"
+    ],
+    "ids": [
+     "mamdani",
+     "tlaib",
+     "sanders",
+     "cornel_west"
+    ]
    }
   },
   {
@@ -226,6 +516,40 @@
    "cat": "today",
    "about": "Environment first, nonviolence, grassroots democracy, social justice, ranked-choice voting.",
    "pos": {
+    "G": -0.84,
+    "REDIS": -0.95,
+    "REG": -0.9,
+    "SOCINS": -0.93,
+    "HOUSING": 0.67,
+    "TRADE": 0.42,
+    "ENV": -0.97,
+    "TECH": -0.65,
+    "PRIVACY": -0.86,
+    "MORAL": -0.87,
+    "GENDERID": -0.97,
+    "RELIGION": -0.81,
+    "FAMILY": -0.86,
+    "EQUITY": -0.88,
+    "IMMIG": -0.82,
+    "NATION": -0.9,
+    "ORDER": -0.95,
+    "GUNS": -0.7,
+    "LIBERTY": -0.4,
+    "PUBHEALTH": 0.58,
+    "SPEECH": -0.46,
+    "NORMS": -0.56,
+    "VOTING": -0.91,
+    "TRUST": 0.27,
+    "ESTAB": -0.12,
+    "POP": 0.6,
+    "FED": -0.27,
+    "EDUC": -0.92,
+    "GLOBAL": -0.29,
+    "HAWK": -0.8,
+    "CHINA": -0.5,
+    "VALUES": -0.89
+   },
+   "hand_pos": {
     "G": -0.9,
     "REDIS": -0.85,
     "REG": -0.9,
@@ -250,6 +574,19 @@
     "HAWK": -0.95,
     "GLOBAL": -0.4,
     "VALUES": -0.85
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Jill Stein",
+     "Ralph Nader",
+     "Cornel West"
+    ],
+    "ids": [
+     "stein",
+     "nader",
+     "cornel_west"
+    ]
    }
   },
   {
@@ -280,7 +617,9 @@
     "NORMS": -0.9,
     "VOTING": -0.7,
     "HAWK": -0.6,
-    "VALUES": -0.6
+    "VALUES": -0.6,
+    "PUBHEALTH": -0.1,
+    "CHINA": -0.2
    }
   },
   {
@@ -318,7 +657,9 @@
     "EDUC": 0.0,
     "GLOBAL": 0.0,
     "HAWK": 0.0,
-    "VALUES": 0.0
+    "VALUES": 0.0,
+    "PUBHEALTH": 0.1,
+    "CHINA": 0.3
    }
   },
   {
@@ -329,6 +670,40 @@
    "cat": "today",
    "about": "Minimal government in both the economy and personal life; free trade; restraint abroad.",
    "pos": {
+    "G": 0.29,
+    "REDIS": 0.91,
+    "REG": 0.94,
+    "SOCINS": 1.0,
+    "HOUSING": -0.75,
+    "TRADE": -0.8,
+    "ENV": 0.85,
+    "TECH": 0.9,
+    "PRIVACY": -0.66,
+    "MORAL": -0.13,
+    "GENDERID": -0.3,
+    "RELIGION": -0.14,
+    "FAMILY": 0.0,
+    "EQUITY": 0.4,
+    "IMMIG": -0.47,
+    "NATION": -0.45,
+    "ORDER": -0.61,
+    "GUNS": 1.0,
+    "LIBERTY": -0.85,
+    "PUBHEALTH": -0.98,
+    "SPEECH": -0.82,
+    "NORMS": -0.84,
+    "VOTING": 0.07,
+    "TRUST": 0.7,
+    "ESTAB": 0.22,
+    "POP": 0.43,
+    "FED": 0.94,
+    "EDUC": 0.64,
+    "GLOBAL": 0.75,
+    "HAWK": -0.68,
+    "CHINA": -0.42,
+    "VALUES": 0.16
+   },
+   "hand_pos": {
     "G": 0.3,
     "REDIS": 0.9,
     "REG": 0.9,
@@ -357,6 +732,21 @@
     "GLOBAL": 0.5,
     "HAWK": -0.75,
     "VALUES": 0.0
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Gary Johnson",
+     "Justin Amash",
+     "Chase Oliver",
+     "Ron Paul"
+    ],
+    "ids": [
+     "gjohnson",
+     "amash",
+     "chase_oliver",
+     "rpaul_sr"
+    ]
    }
   },
   {
@@ -394,7 +784,9 @@
     "EDUC": 0.95,
     "GLOBAL": 0.8,
     "HAWK": -0.9,
-    "VALUES": 0.4
+    "VALUES": 0.4,
+    "PUBHEALTH": -0.9,
+    "CHINA": -0.4
    }
   },
   {
@@ -405,6 +797,40 @@
    "cat": "today",
    "about": "Pre-Trump conservatives who broke with the party: free trade, alliances, institutional checks, moderate social conservatism.",
    "pos": {
+    "G": 0.36,
+    "REDIS": 0.49,
+    "REG": 0.58,
+    "SOCINS": 0.44,
+    "HOUSING": 0.25,
+    "TRADE": -0.45,
+    "ENV": 0.47,
+    "TECH": 0.24,
+    "PRIVACY": 0.35,
+    "MORAL": 0.17,
+    "GENDERID": 0.49,
+    "RELIGION": 0.21,
+    "FAMILY": 0.12,
+    "EQUITY": 0.42,
+    "IMMIG": 0.12,
+    "NATION": 0.02,
+    "ORDER": 0.48,
+    "GUNS": 0.46,
+    "LIBERTY": 0.5,
+    "PUBHEALTH": -0.0,
+    "SPEECH": -0.29,
+    "NORMS": -0.67,
+    "VOTING": 0.48,
+    "TRUST": -0.06,
+    "ESTAB": -0.45,
+    "POP": -0.41,
+    "FED": 0.19,
+    "EDUC": 0.52,
+    "GLOBAL": -0.39,
+    "HAWK": 0.64,
+    "CHINA": 0.65,
+    "VALUES": 0.37
+   },
+   "hand_pos": {
     "G": 0.3,
     "REDIS": 0.5,
     "REG": 0.5,
@@ -433,6 +859,25 @@
     "GLOBAL": -0.9,
     "HAWK": 0.7,
     "VALUES": 0.3
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Mitt Romney",
+     "Liz Cheney",
+     "Adam Kinzinger",
+     "Asa Hutchinson",
+     "Chris Christie",
+     "John Kasich"
+    ],
+    "ids": [
+     "romney",
+     "lcheney",
+     "kinzinger",
+     "hutchinson",
+     "christie",
+     "kasich"
+    ]
    }
   },
   {
@@ -443,6 +888,40 @@
    "cat": "today",
    "about": "Today's party: border enforcement, tariffs, tax cuts, traditional social views, skeptical of institutions.",
    "pos": {
+    "G": 0.54,
+    "REDIS": 0.59,
+    "REG": 0.64,
+    "SOCINS": 0.6,
+    "HOUSING": 0.26,
+    "TRADE": -0.03,
+    "ENV": 0.7,
+    "TECH": 0.33,
+    "PRIVACY": 0.39,
+    "MORAL": 0.24,
+    "GENDERID": 0.62,
+    "RELIGION": 0.3,
+    "FAMILY": 0.26,
+    "EQUITY": 0.5,
+    "IMMIG": 0.47,
+    "NATION": 0.3,
+    "ORDER": 0.66,
+    "GUNS": 0.73,
+    "LIBERTY": 0.54,
+    "PUBHEALTH": -0.21,
+    "SPEECH": -0.22,
+    "NORMS": 0.05,
+    "VOTING": 0.6,
+    "TRUST": 0.05,
+    "ESTAB": 0.07,
+    "POP": -0.23,
+    "FED": 0.19,
+    "EDUC": 0.74,
+    "GLOBAL": 0.15,
+    "HAWK": 0.71,
+    "CHINA": 0.95,
+    "VALUES": 0.49
+   },
+   "hand_pos": {
     "G": 0.7,
     "REDIS": 0.6,
     "REG": 0.5,
@@ -473,6 +952,37 @@
     "GLOBAL": 0.5,
     "HAWK": 0.2,
     "VALUES": 0.6
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "John Thune",
+     "Brian Kemp",
+     "Glenn Youngkin",
+     "Tim Scott",
+     "Doug Burgum",
+     "Marco Rubio",
+     "Nikki Haley",
+     "Bill Cassidy",
+     "Kevin McCarthy",
+     "Lindsey Graham",
+     "Tom Cotton",
+     "Mike Johnson"
+    ],
+    "ids": [
+     "thune",
+     "kemp",
+     "youngkin",
+     "tscott",
+     "burgum",
+     "rubio",
+     "haley",
+     "cassidy",
+     "mccarthy",
+     "graham",
+     "cotton",
+     "mjohnson"
+    ]
    }
   },
   {
@@ -483,6 +993,40 @@
    "cat": "today",
    "about": "The movement around Trump: mass deportation, high tariffs, a strong presidency, fighting the 'deep state', no new foreign wars.",
    "pos": {
+    "G": 0.69,
+    "REDIS": 0.53,
+    "REG": 0.41,
+    "SOCINS": 0.19,
+    "HOUSING": 0.42,
+    "TRADE": 0.67,
+    "ENV": 0.88,
+    "TECH": 0.41,
+    "PRIVACY": 0.13,
+    "MORAL": 0.21,
+    "GENDERID": 0.75,
+    "RELIGION": 0.54,
+    "FAMILY": 0.7,
+    "EQUITY": 0.88,
+    "IMMIG": 0.77,
+    "NATION": 0.7,
+    "ORDER": 0.86,
+    "GUNS": 0.88,
+    "LIBERTY": 0.42,
+    "PUBHEALTH": -0.47,
+    "SPEECH": -0.03,
+    "NORMS": 0.51,
+    "VOTING": 0.83,
+    "TRUST": 0.54,
+    "ESTAB": 0.7,
+    "POP": 0.45,
+    "FED": -0.03,
+    "EDUC": 0.83,
+    "GLOBAL": 0.61,
+    "HAWK": 0.37,
+    "CHINA": 0.49,
+    "VALUES": 0.56
+   },
+   "hand_pos": {
     "G": 0.8,
     "REDIS": 0.4,
     "REG": 0.4,
@@ -513,6 +1057,35 @@
     "GLOBAL": 0.9,
     "HAWK": -0.1,
     "VALUES": 0.7
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Donald Trump",
+     "JD Vance",
+     "Elise Stefanik",
+     "Kristi Noem",
+     "Sarah Huckabee Sanders",
+     "Pete Hegseth",
+     "Kari Lake",
+     "Tommy Tuberville",
+     "Matt Gaetz",
+     "Marjorie Taylor Greene",
+     "Steve Bannon"
+    ],
+    "ids": [
+     "trump",
+     "vance",
+     "stefanik",
+     "noem",
+     "hsanders",
+     "hegseth",
+     "lake",
+     "tuberville",
+     "gaetz",
+     "mtg",
+     "bannon"
+    ]
    }
   },
   {
@@ -523,6 +1096,40 @@
    "cat": "today",
    "about": "The House's hard-right bloc: deep spending cuts, border hawks, social conservatives, willing to buck party leaders.",
    "pos": {
+    "G": 0.79,
+    "REDIS": 0.84,
+    "REG": 0.9,
+    "SOCINS": 0.77,
+    "HOUSING": 0.42,
+    "TRADE": -0.02,
+    "ENV": 0.95,
+    "TECH": 0.5,
+    "PRIVACY": -0.07,
+    "MORAL": 0.54,
+    "GENDERID": 0.89,
+    "RELIGION": 0.68,
+    "FAMILY": 0.68,
+    "EQUITY": 0.9,
+    "IMMIG": 0.7,
+    "NATION": 0.58,
+    "ORDER": 0.69,
+    "GUNS": 1.0,
+    "LIBERTY": 0.65,
+    "PUBHEALTH": -0.67,
+    "SPEECH": -0.23,
+    "NORMS": 0.04,
+    "VOTING": 0.81,
+    "TRUST": 0.47,
+    "ESTAB": 0.44,
+    "POP": 0.3,
+    "FED": 0.35,
+    "EDUC": 0.89,
+    "GLOBAL": 0.42,
+    "HAWK": 0.26,
+    "CHINA": 0.69,
+    "VALUES": 0.64
+   },
+   "hand_pos": {
     "G": 0.85,
     "REDIS": 0.85,
     "REG": 0.8,
@@ -552,6 +1159,25 @@
     "GLOBAL": 0.8,
     "HAWK": -0.2,
     "VALUES": 0.8
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Jim Jordan",
+     "Chip Roy",
+     "Byron Donalds",
+     "Lauren Boebert",
+     "Mike Lee",
+     "Ted Cruz"
+    ],
+    "ids": [
+     "jordan",
+     "roy",
+     "donalds",
+     "boebert",
+     "mlee",
+     "cruz"
+    ]
    }
   },
   {
@@ -562,6 +1188,40 @@
    "cat": "today",
    "about": "NatCon intellectuals: restrict immigration, protect industry, use government for families and workers, skeptical of foreign wars.",
    "pos": {
+    "G": 0.66,
+    "REDIS": 0.42,
+    "REG": 0.26,
+    "SOCINS": 0.15,
+    "HOUSING": 0.42,
+    "TRADE": 0.82,
+    "ENV": 0.85,
+    "TECH": -0.12,
+    "PRIVACY": 0.13,
+    "MORAL": 0.28,
+    "GENDERID": 0.74,
+    "RELIGION": 0.54,
+    "FAMILY": 0.7,
+    "EQUITY": 0.88,
+    "IMMIG": 0.78,
+    "NATION": 0.69,
+    "ORDER": 0.87,
+    "GUNS": 0.88,
+    "LIBERTY": 0.44,
+    "PUBHEALTH": -0.47,
+    "SPEECH": -0.03,
+    "NORMS": 0.54,
+    "VOTING": 0.83,
+    "TRUST": 0.53,
+    "ESTAB": 0.7,
+    "POP": 0.58,
+    "FED": 0.02,
+    "EDUC": 0.83,
+    "GLOBAL": 0.67,
+    "HAWK": 0.32,
+    "CHINA": 0.39,
+    "VALUES": 0.51
+   },
+   "hand_pos": {
     "G": 0.8,
     "REDIS": 0.2,
     "REG": 0.1,
@@ -587,6 +1247,19 @@
     "GLOBAL": 0.8,
     "HAWK": -0.1,
     "VALUES": 0.8
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Josh Hawley",
+     "JD Vance",
+     "Steve Bannon"
+    ],
+    "ids": [
+     "hawley",
+     "vance",
+     "bannon"
+    ]
    }
   },
   {
@@ -597,6 +1270,40 @@
    "cat": "today",
    "about": "Faith and family first: ending abortion, religious liberty, traditional marriage, parental rights in schools.",
    "pos": {
+    "G": 0.7,
+    "REDIS": 0.61,
+    "REG": 0.57,
+    "SOCINS": 0.47,
+    "HOUSING": 0.42,
+    "TRADE": 0.16,
+    "ENV": 0.78,
+    "TECH": 0.1,
+    "PRIVACY": 0.18,
+    "MORAL": 0.74,
+    "GENDERID": 1.0,
+    "RELIGION": 0.85,
+    "FAMILY": 0.87,
+    "EQUITY": 0.8,
+    "IMMIG": 0.58,
+    "NATION": 0.54,
+    "ORDER": 0.72,
+    "GUNS": 0.88,
+    "LIBERTY": 0.85,
+    "PUBHEALTH": -0.24,
+    "SPEECH": -0.08,
+    "NORMS": -0.21,
+    "VOTING": 0.75,
+    "TRUST": 0.32,
+    "ESTAB": 0.32,
+    "POP": -0.01,
+    "FED": 0.08,
+    "EDUC": 0.94,
+    "GLOBAL": 0.04,
+    "HAWK": 0.68,
+    "CHINA": 0.78,
+    "VALUES": 0.58
+   },
+   "hand_pos": {
     "G": 0.7,
     "REDIS": 0.4,
     "REG": 0.3,
@@ -618,6 +1325,23 @@
     "GLOBAL": 0.3,
     "HAWK": 0.4,
     "VALUES": 0.9
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Mike Pence",
+     "Mike Huckabee",
+     "Rick Santorum",
+     "Mike Johnson",
+     "Ben Carson"
+    ],
+    "ids": [
+     "pence",
+     "huckabee",
+     "santorum",
+     "mjohnson",
+     "carson"
+    ]
    }
   },
   {
@@ -655,7 +1379,9 @@
     "EDUC": 0.8,
     "GLOBAL": 0.5,
     "HAWK": 0.3,
-    "VALUES": 0.3
+    "VALUES": 0.3,
+    "PUBHEALTH": -0.5,
+    "CHINA": 0.7
    }
   },
   {
@@ -691,7 +1417,108 @@
     "EDUC": 0.7,
     "GLOBAL": 0.6,
     "HAWK": -0.2,
-    "VALUES": 1.0
+    "VALUES": 1.0,
+    "PUBHEALTH": 0.4,
+    "CHINA": 0.6
+   }
+  },
+  {
+   "id": "gop_moderate",
+   "name": "Moderate Republicans",
+   "short": "Moderate GOP",
+   "era": "2020s",
+   "cat": "today",
+   "about": "Northeastern governors and swing-state senators: fiscally conservative, socially moderate to liberal, pro-institution and pro-trade, often at odds with the national party.",
+   "pos": {
+    "G": 0.12,
+    "REDIS": 0.25,
+    "REG": 0.27,
+    "SOCINS": 0.12,
+    "HOUSING": 0.2,
+    "TRADE": -0.5,
+    "ENV": 0.17,
+    "TECH": 0.04,
+    "PRIVACY": 0.1,
+    "MORAL": -0.11,
+    "GENDERID": 0.21,
+    "RELIGION": 0.03,
+    "FAMILY": -0.23,
+    "EQUITY": 0.17,
+    "IMMIG": -0.04,
+    "NATION": -0.09,
+    "ORDER": 0.12,
+    "GUNS": 0.14,
+    "LIBERTY": 0.39,
+    "PUBHEALTH": 0.12,
+    "SPEECH": -0.36,
+    "NORMS": -0.62,
+    "VOTING": 0.39,
+    "TRUST": -0.17,
+    "ESTAB": -0.35,
+    "POP": -0.19,
+    "FED": 0.21,
+    "EDUC": 0.07,
+    "GLOBAL": -0.36,
+    "HAWK": 0.33,
+    "CHINA": 0.11,
+    "VALUES": 0.12
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Susan Collins",
+     "Lisa Murkowski",
+     "Phil Scott",
+     "Larry Hogan",
+     "Chris Sununu",
+     "Spencer Cox",
+     "John Kasich",
+     "Arnold Schwarzenegger"
+    ],
+    "ids": [
+     "collins",
+     "murkowski",
+     "pscott",
+     "hogan",
+     "sununu",
+     "cox",
+     "kasich",
+     "schwarzenegger"
+    ]
+   },
+   "hand_pos": {
+    "G": 0.12,
+    "REDIS": 0.25,
+    "REG": 0.27,
+    "SOCINS": 0.12,
+    "HOUSING": 0.2,
+    "TRADE": -0.5,
+    "ENV": 0.17,
+    "TECH": 0.04,
+    "PRIVACY": 0.1,
+    "MORAL": -0.11,
+    "GENDERID": 0.21,
+    "RELIGION": 0.03,
+    "FAMILY": -0.23,
+    "EQUITY": 0.17,
+    "IMMIG": -0.04,
+    "NATION": -0.09,
+    "ORDER": 0.12,
+    "GUNS": 0.14,
+    "LIBERTY": 0.39,
+    "PUBHEALTH": 0.12,
+    "SPEECH": -0.36,
+    "NORMS": -0.62,
+    "VOTING": 0.39,
+    "TRUST": -0.17,
+    "ESTAB": -0.35,
+    "POP": -0.19,
+    "FED": 0.21,
+    "EDUC": 0.07,
+    "GLOBAL": -0.36,
+    "HAWK": 0.33,
+    "CHINA": 0.11,
+    "VALUES": 0.12
    }
   },
   {
@@ -724,7 +1551,9 @@
     "EDUC": -0.6,
     "GLOBAL": -0.5,
     "HAWK": -0.6,
-    "VALUES": -0.9
+    "VALUES": -0.9,
+    "PUBHEALTH": 0.5,
+    "CHINA": -0.1
    }
   },
   {
@@ -758,7 +1587,9 @@
     "EDUC": -0.5,
     "GLOBAL": -0.8,
     "HAWK": 0.0,
-    "VALUES": -0.6
+    "VALUES": -0.6,
+    "PUBHEALTH": 0.5,
+    "CHINA": 0.2
    }
   },
   {
@@ -790,7 +1621,9 @@
     "POP": 0.1,
     "GLOBAL": -0.4,
     "HAWK": 0.1,
-    "VALUES": -0.2
+    "VALUES": -0.2,
+    "PUBHEALTH": 0.4,
+    "CHINA": 0.2
    }
   },
   {
@@ -821,7 +1654,9 @@
     "POP": 0.7,
     "HAWK": -0.5,
     "GLOBAL": 0.0,
-    "VALUES": -0.6
+    "VALUES": -0.6,
+    "PUBHEALTH": 0.3,
+    "CHINA": -0.1
    }
   },
   {
@@ -851,7 +1686,9 @@
     "ESTAB": 0.6,
     "POP": 0.7,
     "GLOBAL": 0.3,
-    "VALUES": 0.1
+    "VALUES": 0.1,
+    "PUBHEALTH": 0,
+    "CHINA": 0.2
    }
   },
   {
@@ -883,7 +1720,9 @@
     "EDUC": 0.4,
     "GLOBAL": 0.3,
     "HAWK": 0.1,
-    "VALUES": 0.3
+    "VALUES": 0.3,
+    "PUBHEALTH": -0.2,
+    "CHINA": 0.3
    }
   },
   {
@@ -917,7 +1756,9 @@
     "EDUC": 0.5,
     "GLOBAL": 0.8,
     "HAWK": 0.0,
-    "VALUES": 0.7
+    "VALUES": 0.7,
+    "PUBHEALTH": -0.6,
+    "CHINA": 0.5
    }
   },
   {
@@ -949,7 +1790,9 @@
     "EDUC": 0.6,
     "GLOBAL": -0.2,
     "HAWK": 0.6,
-    "VALUES": 0.6
+    "VALUES": 0.6,
+    "PUBHEALTH": -0.4,
+    "CHINA": 0.6
    }
   },
   {
@@ -983,7 +1826,9 @@
     "EDUC": 0.7,
     "GLOBAL": 0.7,
     "HAWK": 0.4,
-    "VALUES": 0.9
+    "VALUES": 0.9,
+    "PUBHEALTH": -0.6,
+    "CHINA": 0.6
    }
   },
   {
@@ -1279,6 +2124,40 @@
    "cat": "president",
    "about": "Balanced budgets, welfare reform, NAFTA, the 1994 crime bill and assault weapons ban, DOMA.",
    "pos": {
+    "G": -0.05,
+    "REDIS": 0.01,
+    "REG": 0.22,
+    "SOCINS": -0.14,
+    "HOUSING": 0.25,
+    "TRADE": -0.73,
+    "ENV": 0.08,
+    "TECH": -0.03,
+    "PRIVACY": 0.1,
+    "MORAL": -0.11,
+    "GENDERID": 0.11,
+    "RELIGION": -0.27,
+    "FAMILY": -0.31,
+    "EQUITY": -0.1,
+    "IMMIG": -0.08,
+    "NATION": -0.26,
+    "ORDER": 0.35,
+    "GUNS": -0.34,
+    "LIBERTY": 0.63,
+    "PUBHEALTH": 0.39,
+    "SPEECH": -0.26,
+    "NORMS": -0.55,
+    "VOTING": -0.08,
+    "TRUST": -0.31,
+    "ESTAB": -0.41,
+    "POP": -0.14,
+    "FED": -0.15,
+    "EDUC": -0.14,
+    "GLOBAL": -0.47,
+    "HAWK": 0.29,
+    "CHINA": -0.5,
+    "VALUES": 0.02
+   },
+   "hand_pos": {
     "G": -0.3,
     "REDIS": -0.2,
     "REG": 0.0,
@@ -1298,6 +2177,15 @@
     "GLOBAL": -0.7,
     "HAWK": 0.3,
     "VALUES": -0.2
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Bill Clinton (record in office, 1993–2001)"
+    ],
+    "ids": [
+     "bclinton_rec"
+    ]
    }
   },
   {
@@ -1308,6 +2196,40 @@
    "cat": "president",
    "about": "Tax cuts, No Child Left Behind, Medicare drug benefit, the Patriot Act, and the Iraq and Afghanistan wars.",
    "pos": {
+    "G": 0.41,
+    "REDIS": 0.49,
+    "REG": 0.65,
+    "SOCINS": 0.54,
+    "HOUSING": 0.25,
+    "TRADE": -0.42,
+    "ENV": 0.57,
+    "TECH": 0.28,
+    "PRIVACY": 0.49,
+    "MORAL": 0.26,
+    "GENDERID": 0.71,
+    "RELIGION": 0.33,
+    "FAMILY": 0.27,
+    "EQUITY": 0.44,
+    "IMMIG": 0.1,
+    "NATION": 0.05,
+    "ORDER": 0.54,
+    "GUNS": 0.52,
+    "LIBERTY": 0.5,
+    "PUBHEALTH": -0.06,
+    "SPEECH": -0.26,
+    "NORMS": -0.43,
+    "VOTING": 0.49,
+    "TRUST": -0.03,
+    "ESTAB": -0.47,
+    "POP": -0.45,
+    "FED": 0.06,
+    "EDUC": 0.5,
+    "GLOBAL": -0.36,
+    "HAWK": 0.68,
+    "CHINA": 0.67,
+    "VALUES": 0.42
+   },
+   "hand_pos": {
     "G": 0.6,
     "REDIS": 0.6,
     "REG": 0.5,
@@ -1330,6 +2252,15 @@
     "GLOBAL": -0.1,
     "HAWK": 0.95,
     "VALUES": 0.6
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "George W. Bush (record in office, 2001–2009)"
+    ],
+    "ids": [
+     "gwbush_rec"
+    ]
    }
   },
   {
@@ -1340,6 +2271,40 @@
    "cat": "president",
    "about": "The ACA, Wall Street reform, the Paris climate deal, DACA, same-sex marriage support, drone strikes.",
    "pos": {
+    "G": -0.41,
+    "REDIS": -0.3,
+    "REG": -0.37,
+    "SOCINS": -0.4,
+    "HOUSING": -0.17,
+    "TRADE": 0.15,
+    "ENV": -0.38,
+    "TECH": -0.03,
+    "PRIVACY": 0.01,
+    "MORAL": -0.51,
+    "GENDERID": -0.63,
+    "RELIGION": -0.61,
+    "FAMILY": -0.67,
+    "EQUITY": -0.4,
+    "IMMIG": -0.33,
+    "NATION": -0.53,
+    "ORDER": -0.27,
+    "GUNS": -0.55,
+    "LIBERTY": 0.29,
+    "PUBHEALTH": 0.67,
+    "SPEECH": -0.26,
+    "NORMS": -0.47,
+    "VOTING": -0.62,
+    "TRUST": -0.38,
+    "ESTAB": -0.64,
+    "POP": -0.06,
+    "FED": -0.14,
+    "EDUC": -0.42,
+    "GLOBAL": -0.6,
+    "HAWK": 0.28,
+    "CHINA": 0.22,
+    "VALUES": -0.32
+   },
+   "hand_pos": {
     "G": -0.55,
     "REDIS": -0.5,
     "REG": -0.5,
@@ -1366,6 +2331,15 @@
     "GLOBAL": -0.8,
     "HAWK": 0.1,
     "VALUES": -0.5
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Barack Obama (record in office, 2009–2017)"
+    ],
+    "ids": [
+     "obama_rec"
+    ]
    }
   },
   {
@@ -1376,6 +2350,40 @@
    "cat": "president",
    "about": "Tariffs, tax cuts, border enforcement and deportations, deregulation, an expansive view of presidential power.",
    "pos": {
+    "G": 0.69,
+    "REDIS": 0.53,
+    "REG": 0.42,
+    "SOCINS": 0.2,
+    "HOUSING": 0.42,
+    "TRADE": 0.64,
+    "ENV": 0.93,
+    "TECH": 0.52,
+    "PRIVACY": 0.18,
+    "MORAL": 0.15,
+    "GENDERID": 0.72,
+    "RELIGION": 0.52,
+    "FAMILY": 0.7,
+    "EQUITY": 0.88,
+    "IMMIG": 0.77,
+    "NATION": 0.73,
+    "ORDER": 0.87,
+    "GUNS": 0.88,
+    "LIBERTY": 0.33,
+    "PUBHEALTH": -0.47,
+    "SPEECH": -0.03,
+    "NORMS": 0.53,
+    "VOTING": 0.83,
+    "TRUST": 0.57,
+    "ESTAB": 0.75,
+    "POP": 0.47,
+    "FED": -0.06,
+    "EDUC": 0.83,
+    "GLOBAL": 0.56,
+    "HAWK": 0.48,
+    "CHINA": 0.5,
+    "VALUES": 0.58
+   },
+   "hand_pos": {
     "G": 0.75,
     "REDIS": 0.5,
     "REG": 0.6,
@@ -1403,6 +2411,15 @@
     "GLOBAL": 0.9,
     "HAWK": 0.0,
     "VALUES": 0.6
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Donald Trump"
+    ],
+    "ids": [
+     "trump"
+    ]
    }
   },
   {
@@ -1413,6 +2430,40 @@
    "cat": "president",
    "about": "Infrastructure and climate spending, kept and added tariffs on China, union support, student debt relief, aid to Ukraine.",
    "pos": {
+    "G": -0.45,
+    "REDIS": -0.41,
+    "REG": -0.41,
+    "SOCINS": -0.58,
+    "HOUSING": -0.17,
+    "TRADE": 0.21,
+    "ENV": -0.41,
+    "TECH": -0.03,
+    "PRIVACY": -0.17,
+    "MORAL": -0.51,
+    "GENDERID": -0.63,
+    "RELIGION": -0.61,
+    "FAMILY": -0.67,
+    "EQUITY": -0.42,
+    "IMMIG": -0.35,
+    "NATION": -0.53,
+    "ORDER": -0.31,
+    "GUNS": -0.55,
+    "LIBERTY": 0.19,
+    "PUBHEALTH": 0.67,
+    "SPEECH": -0.26,
+    "NORMS": -0.46,
+    "VOTING": -0.62,
+    "TRUST": -0.38,
+    "ESTAB": -0.64,
+    "POP": -0.06,
+    "FED": -0.14,
+    "EDUC": -0.47,
+    "GLOBAL": -0.6,
+    "HAWK": 0.33,
+    "CHINA": 0.44,
+    "VALUES": -0.32
+   },
+   "hand_pos": {
     "G": -0.55,
     "REDIS": -0.55,
     "REG": -0.55,
@@ -1439,6 +2490,15 @@
     "GLOBAL": -0.8,
     "HAWK": 0.2,
     "VALUES": -0.5
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "Joe Biden"
+    ],
+    "ids": [
+     "biden"
+    ]
    }
   },
   {
@@ -1878,6 +2938,40 @@
    "cat": "history",
    "about": "Lower taxes, free trade, an active foreign policy, compassionate conservatism and respect for institutions.",
    "pos": {
+    "G": 0.4,
+    "REDIS": 0.52,
+    "REG": 0.66,
+    "SOCINS": 0.52,
+    "HOUSING": 0.25,
+    "TRADE": -0.43,
+    "ENV": 0.53,
+    "TECH": 0.28,
+    "PRIVACY": 0.43,
+    "MORAL": 0.21,
+    "GENDERID": 0.58,
+    "RELIGION": 0.25,
+    "FAMILY": 0.2,
+    "EQUITY": 0.46,
+    "IMMIG": 0.14,
+    "NATION": 0.04,
+    "ORDER": 0.55,
+    "GUNS": 0.52,
+    "LIBERTY": 0.5,
+    "PUBHEALTH": -0.03,
+    "SPEECH": -0.28,
+    "NORMS": -0.51,
+    "VOTING": 0.49,
+    "TRUST": -0.04,
+    "ESTAB": -0.47,
+    "POP": -0.47,
+    "FED": 0.16,
+    "EDUC": 0.61,
+    "GLOBAL": -0.38,
+    "HAWK": 0.7,
+    "CHINA": 0.75,
+    "VALUES": 0.42
+   },
+   "hand_pos": {
     "G": 0.55,
     "REDIS": 0.7,
     "REG": 0.6,
@@ -1900,6 +2994,27 @@
     "GLOBAL": -0.6,
     "HAWK": 0.65,
     "VALUES": 0.5
+   },
+   "basis": {
+    "kind": "sim",
+    "members": [
+     "George W. Bush (record in office, 2001–2009)",
+     "Dick Cheney",
+     "John McCain",
+     "Mitt Romney",
+     "Paul Ryan",
+     "Jeb Bush",
+     "Mitch McConnell"
+    ],
+    "ids": [
+     "gwbush_rec",
+     "dcheney",
+     "mccain",
+     "romney",
+     "ryan",
+     "jeb",
+     "mcconnell"
+    ]
    }
   },
   {
@@ -1994,7 +3109,9 @@
     "FED": 1.0,
     "EDUC": 1.0,
     "GLOBAL": 0.9,
-    "HAWK": -1.0
+    "HAWK": -1.0,
+    "PUBHEALTH": -1,
+    "CHINA": -0.6
    }
   },
   {
@@ -2032,7 +3149,9 @@
     "EDUC": 0.6,
     "GLOBAL": -0.6,
     "HAWK": -0.3,
-    "VALUES": -0.2
+    "VALUES": -0.2,
+    "PUBHEALTH": -0.6,
+    "CHINA": -0.3
    }
   },
   {
@@ -2068,7 +3187,9 @@
     "EDUC": 0.4,
     "GLOBAL": -1.0,
     "HAWK": 0.3,
-    "VALUES": -0.3
+    "VALUES": -0.3,
+    "PUBHEALTH": 0.1,
+    "CHINA": -0.2
    }
   },
   {
@@ -2105,7 +3226,9 @@
     "EDUC": -0.8,
     "GLOBAL": -0.8,
     "HAWK": -0.3,
-    "VALUES": -0.6
+    "VALUES": -0.6,
+    "PUBHEALTH": 0.5,
+    "CHINA": 0
    }
   },
   {
@@ -2133,7 +3256,9 @@
     "POP": 0.8,
     "GLOBAL": -0.3,
     "HAWK": -0.9,
-    "VALUES": -0.9
+    "VALUES": -0.9,
+    "PUBHEALTH": 0.6,
+    "CHINA": -0.4
    }
   },
   {
@@ -2168,7 +3293,9 @@
     "EDUC": -1.0,
     "GLOBAL": 0.3,
     "HAWK": -0.5,
-    "VALUES": -0.5
+    "VALUES": -0.5,
+    "PUBHEALTH": 0.8,
+    "CHINA": -0.8
    }
   },
   {
@@ -2204,7 +3331,9 @@
     "FED": 0.7,
     "GLOBAL": -0.2,
     "HAWK": -1.0,
-    "VALUES": -1.0
+    "VALUES": -1.0,
+    "PUBHEALTH": -0.6,
+    "CHINA": -0.7
    }
   },
   {
@@ -2236,7 +3365,9 @@
     "POP": -0.5,
     "GLOBAL": -0.7,
     "HAWK": 0.2,
-    "VALUES": 0.6
+    "VALUES": 0.6,
+    "PUBHEALTH": 0.4,
+    "CHINA": 0.2
    }
   },
   {
@@ -2266,7 +3397,9 @@
     "POP": -0.5,
     "GLOBAL": -0.4,
     "HAWK": 1.0,
-    "VALUES": 0.5
+    "VALUES": 0.5,
+    "PUBHEALTH": 0,
+    "CHINA": 0.8
    }
   },
   {
@@ -2299,7 +3432,9 @@
     "EDUC": 0.8,
     "GLOBAL": 1.0,
     "HAWK": -0.8,
-    "VALUES": 0.9
+    "VALUES": 0.9,
+    "PUBHEALTH": -0.3,
+    "CHINA": 0.3
    }
   },
   {
@@ -2333,7 +3468,9 @@
     "ESTAB": -0.5,
     "GLOBAL": -0.6,
     "HAWK": 0.3,
-    "VALUES": -0.4
+    "VALUES": -0.4,
+    "PUBHEALTH": 0.6,
+    "CHINA": 0.1
    }
   },
   {
@@ -2363,7 +3500,9 @@
     "NORMS": 0.0,
     "GLOBAL": -0.2,
     "HAWK": 0.5,
-    "VALUES": 0.4
+    "VALUES": 0.4,
+    "PUBHEALTH": 0.3,
+    "CHINA": 0.3
    }
   },
   {
@@ -2394,7 +3533,9 @@
     "POP": 0.9,
     "GLOBAL": 0.9,
     "HAWK": 0.1,
-    "VALUES": 0.7
+    "VALUES": 0.7,
+    "PUBHEALTH": -0.4,
+    "CHINA": 0.5
    }
   },
   {
@@ -2425,7 +3566,9 @@
     "NORMS": -0.5,
     "GLOBAL": -0.9,
     "HAWK": 0.0,
-    "VALUES": -0.5
+    "VALUES": -0.5,
+    "PUBHEALTH": 0.6,
+    "CHINA": 0.1
    }
   },
   {
@@ -2457,7 +3600,9 @@
     "POP": 0.4,
     "GLOBAL": -0.3,
     "HAWK": 0.4,
-    "VALUES": 0.4
+    "VALUES": 0.4,
+    "PUBHEALTH": -0.1,
+    "CHINA": 0.5
    }
   },
   {
@@ -2491,7 +3636,9 @@
     "EDUC": -0.6,
     "GLOBAL": -0.8,
     "HAWK": 0.0,
-    "VALUES": -0.6
+    "VALUES": -0.6,
+    "PUBHEALTH": 0.6,
+    "CHINA": 0.1
    }
   },
   {
@@ -2523,7 +3670,9 @@
     "POP": -0.6,
     "GLOBAL": -0.9,
     "HAWK": 0.2,
-    "VALUES": 0.3
+    "VALUES": 0.3,
+    "PUBHEALTH": 0.4,
+    "CHINA": 0.2
    }
   },
   {
@@ -2555,7 +3704,9 @@
     "NORMS": -0.7,
     "GLOBAL": -1.0,
     "HAWK": 0.2,
-    "VALUES": -0.8
+    "VALUES": -0.8,
+    "PUBHEALTH": 0.6,
+    "CHINA": 0.4
    }
   },
   {
@@ -2587,7 +3738,9 @@
     "POP": 0.9,
     "GLOBAL": 0.8,
     "HAWK": -0.2,
-    "VALUES": 0.7
+    "VALUES": 0.7,
+    "PUBHEALTH": 0.1,
+    "CHINA": 0.2
    }
   },
   {
@@ -2621,7 +3774,9 @@
     "POP": -0.8,
     "GLOBAL": -0.9,
     "HAWK": 0.3,
-    "VALUES": -0.1
+    "VALUES": -0.1,
+    "PUBHEALTH": 0.5,
+    "CHINA": 0.1
    }
   }
  ]

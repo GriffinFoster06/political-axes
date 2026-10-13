@@ -257,10 +257,10 @@
   function renderHome() {
     var last = lastResult(), lastSc = last ? decodeScores(last.c) : null;
     var modes = MODES.filter(function (m) { return m.id !== "full" || CFG.allowFullMode !== false; });
-    var lastPt = lastSc ? { x: userPos(lastSc, ECON), y: userPos(lastSc, CULT) } : null;
+    var lastPt = lastSc ? { x: userPos(lastSc, dimAxes(MAP_X)), y: userPos(lastSc, dimAxes(MAP_Y)) } : null;
     var html = '<div class="home-grid"><section class="hero">' +
       "<h1>Where do you stand?</h1>" +
-      '<p class="lede">Answer real policy questions, one issue at a time. Get your position on 29 dimensions and see which of ' + B.profiles.length + " parties, presidents, movements and ideologies you're closest to.</p>" +
+      '<p class="lede">Answer real policy questions, one issue at a time. Get your position on ' + (AXES.length - 1) + ' dimensions and see which of ' + B.profiles.length + " parties, presidents, movements and ideologies you're closest to.</p>" +
       "</section>" +
       '<section class="field-wrap">' + plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) + '<button type="button" class="link" id="browse">Browse all ' + B.profiles.length + " groups and " + (AXES.length - 1) + " axes</button></section>" +
       '<section class="start" aria-labelledby="pick"><h2 id="pick">Pick a length</h2>' +
@@ -752,23 +752,45 @@
     });
     var out = {};
     Object.keys(acc).forEach(function (ax) { out[ax] = { v: acc[ax].s / acc[ax].w, n: acc[ax].n, parts: acc[ax].parts }; });
+    Object.keys(BAL).forEach(function (ax) { if (out[ax]) balance(ax, out[ax]); });
     return out;
   }
-  // share codes: version "1", then one byte per axis in AXES order (0-200 = -1..+1, 255 = no score)
+  // Balanced axes (free speech, federalism): questions are tagged by which side the protective
+  // answer helps. Left-coded and right-coded questions get equal total weight, so protecting only
+  // your own side's speech doesn't read as protecting all speech. The gap is kept as `lop`.
+  var BAL = B.axes.balanced || {};
+  function balance(ax, o) {
+    var cfg = BAL[ax], g = { L: [0, 0, 0], R: [0, 0, 0], N: [0, 0, 0] };
+    o.parts.forEach(function (p) {
+      var side = cfg.sides[p.cid || p.id] || "N", a = g[side];
+      a[0] += p.s * p.w; a[1] += p.w; a[2]++;
+    });
+    if (!g.L[1] || !g.R[1]) return;
+    var mL = g.L[0] / g.L[1], mR = g.R[0] / g.R[1], W = (g.L[1] + g.R[1]) / 2;
+    o.raw = o.v;
+    o.v = (mL * W + mR * W + g.N[0]) / (2 * W + g.N[1]);
+    o.lop = { L: cfg.protect * mL, R: cfg.protect * mR, nL: g.L[2], nR: g.R[2] };
+  }
+  // Share codes: a version digit, then one byte per axis (0-200 = -1..+1, 255 = no score).
+  // Version 2 uses the current AXES order. Version 1 (before the October 2026 split of personal
+  // freedom and the new China axis) is still read, so old links and saved history keep working.
+  var V1_AXES = ["G", "REDIS", "REG", "SOCINS", "HOUSING", "TRADE", "ENV", "TECH", "PRIVACY", "MORAL", "GENDERID", "RELIGION", "FAMILY",
+    "EQUITY", "IMMIG", "NATION", "ORDER", "GUNS", "LIBERTY", "SPEECH", "NORMS", "VOTING", "TRUST", "ESTAB", "POP", "FED", "EDUC", "GLOBAL", "HAWK", "VALUES"];
   function encodeScores(sc) {
     var bytes = AXES.map(function (ax) { return sc[ax] && sc[ax].n >= MIN_N ? Math.round((Math.max(-1, Math.min(1, sc[ax].v)) + 1) * 100) : 255; });
     var bin = String.fromCharCode.apply(null, bytes);
-    return "1" + btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    return "2" + btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }
   function decodeScores(code) {
-    if (!code || code.charAt(0) !== "1") return null;
+    var ver = code && code.charAt(0), order = ver === "2" ? AXES : ver === "1" ? V1_AXES : null;
+    if (!order) return null;
     try {
       var b64 = code.slice(1).replace(/-/g, "+").replace(/_/g, "/");
       while (b64.length % 4) b64 += "=";
       var bin = atob(b64), out = {};
-      AXES.forEach(function (ax, i) {
+      order.forEach(function (ax, i) {
         var c = bin.charCodeAt(i);
-        if (!isNaN(c) && c <= 200) out[ax] = { v: c / 100 - 1, n: MIN_N, parts: [] };
+        if (META[ax] && !isNaN(c) && c <= 200) out[ax] = { v: c / 100 - 1, n: MIN_N, parts: [] };
       });
       return Object.keys(out).length ? out : null;
     } catch (e) { return null; }
@@ -852,6 +874,13 @@
     if (p.cat === "world") return p.era + ", outside the US";
     return "US, " + p.era;
   }
+  // How a group was placed: simulated members (escaped text) or hand placement ("").
+  function basisText(p) {
+    if (!p.basis || p.basis.kind !== "sim") return "";
+    var m = p.basis.members;
+    return esc(m.length === 1 ? " Placed by answering the whole quiz as " + m[0] + "." :
+      " Placed from the average of simulated answers for " + m.slice(0, -1).join(", ") + " and " + m[m.length - 1] + ".");
+  }
   var PROFILE = {}; B.profiles.forEach(function (p) { PROFILE[p.id] = p; });
   function profileScores(p) { var o = {}; Object.keys(p.pos).forEach(function (ax) { o[ax] = { v: p.pos[ax], n: MIN_N, parts: [] }; }); return o; }
 
@@ -912,17 +941,29 @@
     return (they ? "They're " : "You're ") + overallLean(sc) + (breaks.length ? ", but " + (they ? "they break" : "you break") + " from that lean on " + axisList(breaks) + "." : ".");
   }
   // A short label from the economic and cultural summaries plus the strongest cross-cutting views.
+  // Same-side cells are tiered by intensity (the simulation put 41 of 42 mainstream Democrats in
+  // "Progressive" without tiers), and strong economic plus personal-freedom views read as libertarian
+  // whatever the cultural summary says (immigration and equity questions pull libertarians right).
+  var TIER = 0.65, CENTER_TIER = 0.35;
   function archetype(sc) {
     var e = userPos(sc, ECON), c = userPos(sc, CULT);
     if (e == null || c == null) return null;
-    var E = e < -0.2 ? 0 : e > 0.2 ? 2 : 1, C = c < -0.2 ? 0 : c > 0.2 ? 2 : 1;
-    var core = [["Progressive", "Economic progressive", "Communitarian"], ["Liberal", "Moderate", "Traditionalist"], ["Libertarian", "Free-market moderate", "Conservative"]][E][C];
+    var E = e < -0.2 ? 0 : e > 0.2 ? 2 : 1, C = c < -0.2 ? 0 : c > 0.2 ? 2 : 1, s = (e + c) / 2;
+    var free = userPos(sc, ["LIBERTY", "PUBHEALTH"]);
+    var core = [["", "Economic progressive", "Communitarian"], ["Social liberal", "Moderate", "Traditionalist"], ["Libertarian", "Free-market moderate", ""]][E][C];
     var coreWhy = [
       ["left on both economics and culture", "left on economics, in the middle on culture", "left on economics but traditional on culture"],
       ["in the middle on economics, left on culture", "near the middle on both economics and culture", "in the middle on economics, traditional on culture"],
       ["pro-market on economics, left on culture", "pro-market on economics, in the middle on culture", "pro-market on economics and traditional on culture"],
     ][E][C];
-    if (core !== "Moderate" && Math.max(Math.abs(e), Math.abs(c)) > 0.65) core = "Committed " + core.toLowerCase();
+    if (E === 0 && C === 0) core = s <= -TIER ? "Progressive" : s <= -CENTER_TIER ? "Liberal" : "Center-left";
+    else if (E === 2 && C === 2) core = s >= TIER ? "Very conservative" : s >= CENTER_TIER ? "Conservative" : "Center-right";
+    else if (core !== "Moderate" && Math.max(Math.abs(e), Math.abs(c)) > TIER) core = "Committed " + core.toLowerCase();
+    if (e > 0.5 && free != null && free < -0.5) {
+      core = "Libertarian";
+      coreWhy = "pro-market on economics and for leaving personal choices to adults";
+    }
+    if (core === "Center-left" || core === "Center-right") coreWhy = "mildly " + coreWhy.replace("left on both", "left of center on both").replace("pro-market on economics and traditional on culture", "right of center on both economics and culture");
     var mods = [];
     function v(ax) { return ok(sc, ax) ? sc[ax].v : 0; }
     var cand = [
@@ -930,9 +971,10 @@
       { w: -Math.min(v("POP"), v("ESTAB")), t: 0.45, word: "institutionalist", why: "you trust institutions and experts" },
       { w: -v("HAWK"), t: 0.5, word: "anti-war", why: "you favor military restraint" },
       { w: v("HAWK"), t: 0.5, word: "hawkish", why: "you're ready to use military force" },
+      { w: v("CHINA"), t: 0.65, word: "China-hawk", why: "you'd confront China on trade, technology and security" },
       { w: v("TRADE"), t: 0.5, word: "protectionist", why: "you favor tariffs to protect industry" },
       { w: -v("TRADE"), t: 0.55, word: "free-trade", why: "you favor open trade" },
-      { w: -(v("LIBERTY") + v("SPEECH") + v("PRIVACY")) / 3, t: 0.5, word: "civil-libertarian", why: "you protect speech, privacy and personal choices" },
+      { w: -(v("LIBERTY") + v("PUBHEALTH") + v("SPEECH") + v("PRIVACY")) / 4, t: 0.5, word: "civil-libertarian", why: "you protect speech, privacy and personal choices" },
       { w: -v("ENV"), t: 0.65, word: "green", why: "climate is a top concern for you" },
       { w: v("NORMS"), t: 0.5, word: "strong-executive", why: "you'd give presidents more room to act" },
       { w: v("FED"), t: 0.55, word: "states'-rights", why: "you want most decisions made locally" },
@@ -993,25 +1035,41 @@
   function topicName(d) { return domain(d).name.replace(/\s*\(.*\)$/, ""); }
 
   // ---------- the field (any two axes) ----------
+  // Map dimensions: single axes, or composites averaged over several axes. The default map is
+  // overall left-right against liberty vs. authority: in the 135-politician simulation that was the
+  // largest dimension left once left-right was removed (47% of the remaining variance), with
+  // establishment vs. populist second (33%). The economic and cultural summaries correlated .94
+  // and .99 with overall left-right, so a map of the two is mostly a diagonal.
+  var DIMS = {
+    auth: { name: "Liberty vs. authority", axes: ["SPEECH", "LIBERTY", "PUBHEALTH", "PRIVACY", "HAWK"], poles: ["Liberty", "Authority"],
+      about: "How far government should go in policing speech, personal choices, health risks and privacy, and in using force abroad." },
+    popu: { name: "Establishment vs. populist", axes: ["POP", "ESTAB", "TRUST", "NORMS", "TRADE"], poles: ["Establishment", "Populist"],
+      about: "Trust in institutions, experts and the system, versus a sense that elites rig it, plus support for a strong president and tariffs." },
+    econ: { name: "Economic summary", axes: ECON, poles: ["Public economy", "Market economy"], about: "" },
+    cult: { name: "Cultural summary", axes: CULT, poles: ["Change", "Tradition"], about: "" },
+  };
+  var MAP_X = "G", MAP_Y = "auth";
   var MAP_PRESETS = [
+    { id: "main", name: "Left–right × liberty", x: "G", y: "auth" },
+    { id: "popu", name: "Left–right × populism", x: "G", y: "popu" },
     { id: "ec", name: "Economy × culture", x: "econ", y: "cult" },
     { id: "power", name: "Presidential power × populism", x: "NORMS", y: "POP" },
     { id: "world", name: "Engagement × force", x: "GLOBAL", y: "HAWK" },
-    { id: "trade", name: "Trade × immigration", x: "TRADE", y: "IMMIG" },
+    { id: "china", name: "China × trade", x: "TRADE", y: "CHINA" },
     { id: "trust", name: "Trust in experts × government", x: "ESTAB", y: "TRUST" },
-    { id: "liberty", name: "Speech × personal freedom", x: "SPEECH", y: "LIBERTY" },
+    { id: "liberty", name: "Vice laws × health rules", x: "LIBERTY", y: "PUBHEALTH" },
   ];
-  function dimAxes(k) { return k === "econ" ? ECON : k === "cult" ? CULT : [k]; }
-  function dimPoles(k) {
-    if (k === "econ") return ["Public economy", "Market economy"];
-    if (k === "cult") return ["Change", "Tradition"];
-    return [META[k].minus, META[k].plus];
+  function dimAxes(k) { return DIMS[k] ? DIMS[k].axes : [k]; }
+  function dimPoles(k) { return DIMS[k] ? DIMS[k].poles : [META[k].minus, META[k].plus]; }
+  function dimName(k) { return DIMS[k] ? DIMS[k].name : k === "G" ? "Overall left–right" : META[k].name; }
+  function dimAbout(k) {
+    if (!DIMS[k]) return META[k].about;
+    return (DIMS[k].about ? DIMS[k].about + " " : "") + "The average of " + DIMS[k].axes.map(function (a) { return lc(META[a].name); }).join(", ") + ".";
   }
-  function dimName(k) { return k === "econ" ? "Economic summary" : k === "cult" ? "Cultural summary" : META[k].name; }
   function textW(t) { var w = 2; for (var i = 0; i < t.length; i++) w += /[A-Z]/.test(t[i]) ? 6.4 : /[ .il']/.test(t[i]) ? 2.8 : 5; return w; }
   // o: {cat, label: {id:1} or null for all, xk, yk, user:{x,y}, userLabel, other:{x,y}, otherLabel, hero}
   function plotHtml(o) {
-    var W = 360, P = 30, R = W - 2 * P, xk = o.xk || "econ", yk = o.yk || "cult";
+    var W = 360, P = 30, R = W - 2 * P, xk = o.xk || MAP_X, yk = o.yk || MAP_Y;
     var xs = dimAxes(xk), ys = dimAxes(yk), xp = dimPoles(xk), yp = dimPoles(yk);
     function X(v) { return +(P + (v + 1) / 2 * R).toFixed(1); }
     function Y(v) { return +(P + (1 - (v + 1) / 2) * R).toFixed(1); }
@@ -1111,7 +1169,7 @@
     { id: "topics", name: "Topics", own: true },
     { id: "answers", name: "Answers", own: true },
   ];
-  var resTab = "summary", resCat = "all", showAll = false, mapX = "econ", mapY = "cult", openGroup = null, ctx = null;
+  var resTab = "summary", resCat = "all", showAll = false, mapX = MAP_X, mapY = MAP_Y, openGroup = null, ctx = null;
 
   // ctx: {sc, they, own, other, otherLabel, prev, prevRec, kicker}
   function reportHeadHtml(c) {
@@ -1273,7 +1331,7 @@
       '<ol class="profiles">' + list.slice(0, lim).map(function (m, k) {
         var open = openGroup === m.p.id;
         return '<li><details' + (open ? " open" : "") + '><summary><span class="prof-rank">' + (k + 1) + '</span><span class="prof-main"><span class="prof-head"><b>' + esc(m.p.name) + '</b><span class="era">' + esc(profileMeta(m.p)) + '</span></span><span class="matchbar"><span style="width:' + m.match + '%"></span></span></span><span class="match">' + m.match + "%</span></summary>" +
-          '<div class="prof-body"><p>' + esc(m.p.about) + "</p>" +
+          '<div class="prof-body"><p>' + esc(m.p.about) + basisText(m.p) + "</p>" +
           "<p><b>Closest on</b> " + esc(axisList(m.agree)) + ". <b>Furthest on</b> " + esc(axisList(m.differ)) + ".</p>" +
           "<p class=\"scope\">Compared on " + m.n + " axes, closest first:</p>" + h2hHtml(c, m) +
           '<button type="button" class="link" data-open-group="' + m.p.id + '">Full profile of ' + esc(m.p.name) + "</button></div></details></li>";
@@ -1291,23 +1349,23 @@
     var xs = dimAxes(mapX), ys = dimAxes(mapY);
     var ux = userPos(sc, xs), uy = userPos(sc, ys);
     var ox = c.other ? userPos(c.other, xs) : null, oy = c.other ? userPos(c.other, ys) : null;
-    var opts = [["econ", "Economic summary"], ["cult", "Cultural summary"]].concat(AXES.filter(function (a) { return a !== "G"; }).map(function (a) { return [a, META[a].name]; }));
+    var opts = ["G", "auth", "popu", "econ", "cult"].concat(AXES.filter(function (a) { return a !== "G"; })).map(function (k) { return [k, dimName(k)]; });
     function sel(id, cur) {
       return '<select id="' + id + '">' + opts.map(function (o) {
         var has = userPos(sc, dimAxes(o[0])) != null;
         return '<option value="' + o[0] + '"' + (o[0] === cur ? " selected" : "") + (has ? "" : " disabled") + ">" + esc(o[1] + (has ? "" : " (not enough answers)")) + "</option>";
       }).join("") + "</select>";
     }
-    if (userPos(sc, xs) == null || userPos(sc, ys) == null) { mapX = "econ"; mapY = "cult"; xs = ECON; ys = CULT; ux = userPos(sc, xs); uy = userPos(sc, ys); }
+    if (userPos(sc, xs) == null || userPos(sc, ys) == null) { mapX = MAP_X; mapY = MAP_Y; xs = dimAxes(mapX); ys = dimAxes(mapY); if (userPos(sc, ys) == null) { mapY = "econ"; ys = ECON; } ux = userPos(sc, xs); uy = userPos(sc, ys); }
     var html = '<section class="block"><h2>The map</h2><p class="scope">Pick any two axes. Each dot is a comparison group; ' + you(c) + "'re the yellow dot.</p>" +
       '<div class="presets">' + MAP_PRESETS.filter(function (p) { return userPos(sc, dimAxes(p.x)) != null && userPos(sc, dimAxes(p.y)) != null; }).map(function (p) { return '<button type="button" class="chip pill" data-preset="' + p.id + '" aria-pressed="' + (p.x === mapX && p.y === mapY) + '">' + esc(p.name) + "</button>"; }).join("") + "</div>" +
       '<div class="map-controls"><label>Across ' + sel("mapx", mapX) + '</label><button type="button" class="link" id="mapswap" aria-label="Swap axes">Swap</button><label>Up and down ' + sel("mapy", mapY) + "</label></div>" +
       chipsHtml() +
       '<div class="compare-grid"><div>' + (ux != null && uy != null ? plotHtml({ cat: resCat, label: resCat === "all" ? top : null, xk: mapX, yk: mapY, user: { x: ux, y: uy }, userLabel: c.they ? "Them" : "You", other: ox != null && oy != null ? { x: ox, y: oy } : null, otherLabel: c.otherLabel }) : '<p class="scope">' + esc(You(c)) + " don't have a score on one of these axes yet.</p>") + "</div>" +
-      '<div class="map-notes">' + (ux != null && uy != null ? "<h3>" + esc(dimName(mapX)) + "</h3><p>" + esc(mapX === "econ" || mapX === "cult" ? "The average of " + xs.map(function (a) { return lc(META[a].name); }).join(", ") + "." : META[mapX].about) + "</p>" +
-        (mapX !== "econ" && mapX !== "cult" ? "<p><b>" + esc(You(c)) + ":</b> " + esc(bandText(META[mapX], ux)) + "</p>" : "") +
-        "<h3>" + esc(dimName(mapY)) + "</h3><p>" + esc(mapY === "econ" || mapY === "cult" ? "The average of " + ys.map(function (a) { return lc(META[a].name); }).join(", ") + "." : META[mapY].about) + "</p>" +
-        (mapY !== "econ" && mapY !== "cult" ? "<p><b>" + esc(You(c)) + ":</b> " + esc(bandText(META[mapY], uy)) + "</p>" : "") +
+      '<div class="map-notes">' + (ux != null && uy != null ? "<h3>" + esc(dimName(mapX)) + "</h3><p>" + esc(dimAbout(mapX)) + "</p>" +
+        (!DIMS[mapX] ? "<p><b>" + esc(You(c)) + ":</b> " + esc(bandText(META[mapX], ux)) + "</p>" : "") +
+        "<h3>" + esc(dimName(mapY)) + "</h3><p>" + esc(dimAbout(mapY)) + "</p>" +
+        (!DIMS[mapY] ? "<p><b>" + esc(You(c)) + ":</b> " + esc(bandText(META[mapY], uy)) + "</p>" : "") +
         "<h3>Nearest on this map</h3><ol class=\"mini-list\">" + B.profiles.filter(function (p) { return (resCat === "all" || p.cat === resCat) && profilePos(p, xs) != null && profilePos(p, ys) != null; })
           .map(function (p) { return { p: p, d: Math.hypot(profilePos(p, xs) - ux, profilePos(p, ys) - uy) }; })
           .sort(function (a, b) { return a.d - b.d; }).slice(0, 5)
@@ -1328,6 +1386,7 @@
         var v = sc[a.id].v, near = nearestOnAxis(a.id, v, resCat, 3), oth = c.other && c.other[a.id] ? c.other[a.id].v : null;
         return '<details class="axis-card" id="ax-' + a.id + '"><summary>' + barHtml(a, sc[a.id], { other: c.other && c.other[a.id], otherLabel: c.otherLabel, prev: c.prev && !c.other && c.prev[a.id] ? c.prev[a.id].v : null }) + '<span class="axis-n">More about this axis</span></summary>' +
           '<div class="axis-body"><p><b>' + esc(You(c)) + ":</b> " + esc(bandText(a, v)) + "</p>" +
+          lopHtml(a.id, sc[a.id], c) +
           '<p class="scope">' + esc(a.about) + (c.own ? " " + confText(sc[a.id].n) : "") + "</p>" +
           "<h4>The range on this axis</h4>" + bandLadderHtml(a, v, oth) +
           "<h4>Where the groups stand</h4>" + stripHtml(a.id, v, resCat, oth) +
@@ -1337,6 +1396,19 @@
       }).join("") + "</section>";
     });
     return html;
+  }
+
+  // For balanced axes: how evenly the protective answers fall across the two sides.
+  function lopHtml(ax, o, c) {
+    var cfg = BAL[ax];
+    if (!cfg || !o || !o.lop || o.lop.nL < 2 || o.lop.nR < 2) return "";
+    var pL = Math.round(50 * (o.lop.L + 1)), pR = Math.round(50 * (o.lop.R + 1)), d = o.lop.L - o.lop.R;
+    var more = d > 0 ? cfg.note_L : cfg.note_R, less = d > 0 ? cfg.note_R : cfg.note_L;
+    var head = Math.abs(d) < 0.4 ? "Even-handed." : "Lopsided.";
+    var body = Math.abs(d) < 0.4
+      ? You(c) + " protect " + cfg.note_L + " and " + cfg.note_R + " about equally"
+      : You(c) + " protect " + more + " much more than " + less;
+    return '<p class="lop"><b>' + head + "</b> " + esc(body + ": " + (d > 0 ? pL : pR) + " vs " + (d > 0 ? pR : pL) + " on a 0–100 protection scale. The score above counts both sides equally.") + "</p>";
   }
 
   // --- topics ---
@@ -1539,7 +1611,7 @@
     html += '<nav class="tabs" role="tablist"><button type="button" class="tab" role="tab" data-ex="groups" aria-selected="' + (exTab === "groups") + '">' + B.profiles.length + ' groups</button><button type="button" class="tab" role="tab" data-ex="axes" aria-selected="' + (exTab === "axes") + '">' + (AXES.length - 1) + " axes</button></nav>";
     if (exTab === "groups" && exSel && PROFILE[exSel]) {
       var p = PROFILE[exSel], m = me ? matchOne(me, p.pos, null) : null, sims = similarGroups(p, 6);
-      html += '<header class="res-head"><p class="topic">' + esc(catName(p.cat)) + "</p><h1>" + esc(p.name) + '</h1><p class="res-sub">' + esc(profileMeta(p)) + ". " + esc(p.about) + "</p>" +
+      html += '<header class="res-head"><p class="topic">' + esc(catName(p.cat)) + "</p><h1>" + esc(p.name) + '</h1><p class="res-sub">' + esc(profileMeta(p)) + ". " + esc(p.about) + basisText(p) + "</p>" +
         (m ? '<p class="summary">You and ' + esc(p.name) + " are a " + m.match + "% match.</p>" : "") + "</header>";
       html += '<section class="block"><h2>Positions</h2><p class="scope">Placed on ' + Object.keys(p.pos).length + " of " + AXES.length + " axes (the rest weren't live issues for this group or it took no clear stand)." +
         (me ? ' <span class="legend"><span class="dot-key grp"></span>' + esc(p.short) + ' <span class="dot-key you"></span>You</span>' : "") + "</p>";
@@ -1557,9 +1629,9 @@
       }).join("") + "</ol></section>";
       html += '<div class="nav"><button type="button" class="link" data-ex-list="1">All groups</button></div>';
     } else if (exTab === "groups") {
-      html += "<h1>Comparison groups</h1><p class=\"lede\">" + B.profiles.length + " parties, factions, voter types, presidents, historical movements, ideologies and parties abroad, each placed by hand on the quiz's axes from platforms, voting records and historians' accounts.</p>" +
+      html += "<h1>Comparison groups</h1><p class=\"lede\">" + B.profiles.length + " parties, factions, voter types, presidents, historical movements, ideologies and parties abroad, placed on the quiz's axes. Today's factions and recent presidents come from simulated answers for their leading politicians; the rest are placed by hand from platforms, voting records, surveys and historians' accounts.</p>" +
         '<div class="chips" role="tablist">' + [{ id: "all", name: "All" }].concat(CATS).map(function (c) { return '<button type="button" class="chip" role="tab" data-excat="' + c.id + '" aria-selected="' + (exCat === c.id) + '">' + esc(c.name) + "</button>"; }).join("") + "</div>";
-      html += plotHtml({ cat: exCat, label: exCat === "all" ? HERO_LABELS : null, user: me && userPos(me, ECON) != null && userPos(me, CULT) != null ? { x: userPos(me, ECON), y: userPos(me, CULT) } : null });
+      html += plotHtml({ cat: exCat, label: exCat === "all" ? HERO_LABELS : null, user: me && userPos(me, dimAxes(MAP_X)) != null && userPos(me, dimAxes(MAP_Y)) != null ? { x: userPos(me, dimAxes(MAP_X)), y: userPos(me, dimAxes(MAP_Y)) } : null });
       CATS.filter(function (c) { return exCat === "all" || c.id === exCat; }).forEach(function (c) {
         html += '<section class="block"><h2>' + esc(c.name) + '</h2><p class="scope">' + esc(c.about) + '</p><ul class="group-list">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
           var m = me ? matchOne(me, p.pos, null) : null;
@@ -1608,25 +1680,26 @@
       "<li><b>Scope lines and exceptions.</b> Each question says what case to picture. Edge cases (rape and incest exceptions, say, or which groups of immigrants) are asked separately, so a strict rule with exceptions isn't confused with either extreme.</li>" +
       "<li><b>Honest ways out.</b> “None of these fit” and “I don't know enough” are never scored as a middle position.</li>" +
       "<li><b>No party cues.</b> No party or politician names, and rules about power are asked for any president of either party. Some rules are asked twice, once with each side benefiting, to separate principle from partisanship.</li>" +
-      "<li><b>29 candidate dimensions.</b> Trust, populism, free speech, presidential power, federalism and more get their own axes, because they cut across left and right.</li>" +
+      "<li><b>" + (AXES.length - 1) + " candidate dimensions.</b> Trust, populism, free speech, presidential power, federalism and more get their own axes, because they cut across left and right.</li>" +
       "</ul><h2>How scoring works</h2>" +
       "<p>Each answer becomes a number from −1 (one end of the answer list) to +1 (the other end). Every question is keyed to the axes it measures and to overall left–right, with a direction. An axis score is the average of the answers keyed to it, shown as −100 to +100 once it has at least 3 answers. Follow-up cases count half as much as full questions.</p>" +
+      "<p>Free speech and federalism are scored for consistency. Each of their questions is tagged by whose speech, or which side's state policies, the protective answer helps, and the left-coded and right-coded questions count equally. Protecting only the speech your own side likes doesn't count as protecting free speech. If your answers lean hard one way, the report says so.</p>" +
       "<p>These weights are set by hand for now. As more people take the quiz, the plan is to check which questions are the best measuring sticks and let those count more. That's why results are labeled early scoring.</p>" +
-      "<p>The party comparisons are hand-placed from platforms, voting records and historians' accounts. Historical parties are only compared on issues they took positions on. Treat the match percentages as a fun guide, not a measurement.</p>" +
+      "<p>Today's parties and factions, and the last five presidents, are placed by answering the whole quiz as each of their leading politicians would, from their records and public statements, and averaging the results. Past presidents are answered from their record in office. Voter types, older parties, ideologies and parties abroad are hand-placed from platforms, voting records, surveys and historians' accounts, and are only compared on issues they took positions on. Treat the match percentages as a fun guide, not a measurement.</p>" +
       "<h2>How the report reads your scores</h2><ul>" +
       "<li><b>Bands.</b> Each axis is split into five bands (strongly one way, leaning, middle, leaning, strongly the other way) at −60, −20, +20 and +60. Each band has a plain-language description, so you can see what your number means.</li>" +
-      "<li><b>Your label.</b> The economic summary (the average of taxes, business rules and social programs) and the cultural summary (abortion, gender identity, religion, family roles, race, immigration and national identity) each count as left, middle or right at ±20. The nine combinations give the core label: progressive, economic progressive, communitarian, liberal, moderate, traditionalist, libertarian, free-market moderate or conservative. “Committed” is added past ±65. Up to two strong cross-cutting views are added in front, such as anti-establishment, anti-war, hawkish, protectionist, free-trade, civil-libertarian, green or states'-rights.</li>" +
+      "<li><b>Your label.</b> The economic summary (the average of taxes, business rules and social programs) and the cultural summary (abortion, gender identity, religion, family roles, race, immigration and national identity) each count as left, middle or right at ±20. The nine combinations give the core label: left on both, economic progressive, communitarian, social liberal, moderate, traditionalist, libertarian, free-market moderate, or right on both. Left on both is split by strength into center-left, liberal and progressive (cuts at −35 and −65, averaging the two summaries); right on both into center-right, conservative and very conservative at +35 and +65. Anyone above +50 on economics and below −50 on drugs and health rules combined is labeled libertarian. “Committed” is added to the other labels past ±65. Up to two strong cross-cutting views are added in front, such as anti-establishment, anti-war, hawkish, China-hawk, protectionist, free-trade, civil-libertarian, green or states'-rights.</li>" +
       "<li><b>Consistency.</b> Over the axes that split along today's left–right line, the report counts how many you took the left side on, the right, or the middle (within ±10). If the smaller side is under 12% of the total you're consistent, under 30% mostly consistent, otherwise cross-pressured.</li>" +
       "<li><b>Priorities.</b> When you rank your top issues, a second match weights the axes behind those issues (found from which questions feed which axes) by your ranking.</li>" +
       "<li><b>Topics.</b> A topic's lean is the average of your answers in that topic that count toward the overall left–right score.</li>" +
-      "<li><b>Map.</b> Any two axes can be plotted. The economic and cultural summaries are averages of their axes, for you and for each group.</li></ul>" +
+      "<li><b>Map.</b> The default map is overall left–right against liberty versus authority. That second dimension was chosen because it was the biggest thing left over once left–right was accounted for, in a test with 135 simulated politicians. The economic and cultural summaries track overall left–right so closely that a map of the two is mostly a diagonal line. Any two axes or summaries can still be plotted. Summaries are averages of their axes, for you and for each group.</li></ul>" +
       "<h2>The axes</h2><dl class=\"glossary\">" +
       [B.axes.overall].concat([].concat.apply([], B.axes.families.map(function (f) { return f.axes; }))).map(function (a) {
         return "<dt>" + esc(a.name) + ' <span class="era">' + esc(a.minus) + " ↔ " + esc(a.plus) + "</span></dt><dd>" + esc(a.about || "") + "</dd>";
       }).join("") + "</dl>" +
       "<h2>The " + B.profiles.length + " comparison groups</h2>" + CATS.map(function (c) {
         return "<h3>" + esc(c.name) + '</h3><p class="scope">' + esc(c.about) + '</p><dl class="glossary">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
-          return "<dt>" + esc(p.name) + ' <span class="era">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + "</dd>";
+          return "<dt>" + esc(p.name) + ' <span class="era">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + basisText(p) + "</dd>";
         }).join("") + "</dl>";
       }).join("") +
       "<h2>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
@@ -1699,7 +1772,7 @@
   }
   window.__wys = {
     state: function () { return S; }, bank: B, render: function () { render(); }, payload: function () { return payload(); },
-    scores: function () { return computeScores(S.ans); }, encode: function (sc) { return encodeScores(sc); }, decode: decodeScores,
+    scores: function () { return computeScores(S.ans); }, score: computeScores, archetype: archetype, encode: function (sc) { return encodeScores(sc); }, decode: decodeScores,
   };
   start();
 })();

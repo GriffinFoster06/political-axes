@@ -34,7 +34,7 @@ inheritance_principle + REDIS+
 capital_gains_rate + REDIS+
 gains_at_death + REDIS+
 cash_aid_level + REDIS+
-aid_form + LIBERTY+
+aid_form +
 work_req_rule + REDIS+
 work_req_cases + REDIS+
 ubi + REDIS+
@@ -81,11 +81,11 @@ ss_retirement_age + SOCINS+
 ss_payroll_cap + SOCINS+
 medicare_structure + SOCINS+
 ss_private_accounts + SOCINS+
-insurance_mandate + SOCINS+ LIBERTY-
+insurance_mandate + SOCINS+ PUBHEALTH-
 preexisting_conditions + SOCINS+
-school_vaccines + LIBERTY-
-vaccine_exemptions + LIBERTY-
-outbreak_gov_mandate + LIBERTY-
+school_vaccines + PUBHEALTH-
+vaccine_exemptions + PUBHEALTH-
+outbreak_gov_mandate + PUBHEALTH-
 outbreak_employer +
 immigrant_health_benefits + IMMIG+
 water_fluoride + ESTAB+
@@ -100,7 +100,7 @@ rent_vouchers + REDIS+
 public_housing + REDIS+
 encampments + ORDER+
 housing_first + ORDER+
-involuntary_treatment 0 LIBERTY+
+involuntary_treatment 0 PUBHEALTH+
 investor_homes 0 POP-
 short_term_rentals 0 HOUSING- REG+
 mortgage_deduction 0 REDIS+
@@ -124,41 +124,41 @@ climate_agreements + ENV+ GLOBAL+
 climate_belief + ENV+
 environmental_justice + ENV+ EQUITY+
 adaptation_tradeoff + ENV+
-plastic_bags + ENV+ LIBERTY-
+plastic_bags + ENV+
 tariff_level 0 TRADE+
 tariff_price_tradeoff 0 TRADE+
 tariff_authority 0 NORMS+
 tariff_authority_cases 0 NORMS+
 trade_agreements 0 TRADE+
 trade_jobs_tradeoff 0 TRADE+
-china_trade 0 TRADE+ HAWK+
-china_ownership 0 TRADE+ HAWK+
+china_trade 0 TRADE+ CHINA+
+china_ownership 0 TRADE+ CHINA+
 industrial_policy 0 TRADE- REG+
 buy_american 0 TRADE+
 offshoring_penalty 0 TRADE- REG+
-export_controls 0 HAWK+ TRADE+
+export_controls 0 CHINA+ TRADE+
 friend_shoring 0 TRADE+ GLOBAL+
 ai_regulation_level 0 TECH+
 ai_state_laws 0 FED- TECH+
-ai_china_race 0 TECH+ HAWK+
+ai_china_race 0 TECH+ CHINA+
 ai_licensing 0 TECH+
 ai_open_release 0 TECH+
 ai_job_loss + TECH+ REDIS+
 ai_layoff_limits + TECH+ REG+
-moderation_false + SPEECH- TECH+
-moderation_offensive + SPEECH-
-moderation_law + SPEECH- TECH-
+moderation_false + TECH+
+moderation_offensive +
+moderation_law + TECH-
 platform_liability 0 TECH+
-social_media_min_age 0 TECH- LIBERTY+
+social_media_min_age 0 TECH-
 age_verification + TECH- PRIVACY+
 algorithm_bias_testing + TECH+ EQUITY+
-data_centers + TECH+ ENV+
+data_centers 0 TECH+ ENV+
 election_deepfakes 0 SPEECH- TECH+
 automation_tax + TECH+ REDIS+
 crypto_rules + TECH+
 digital_dollar + PRIVACY-
 ai_copyright 0 TECH+
-ai_companions_minors 0 TECH+ LIBERTY-
+ai_companions_minors 0 TECH+
 surveillance_tradeoff 0 PRIVACY+
 warrant_tradeoff 0 PRIVACY+
 cameras_tradeoff + PRIVACY+ ORDER+
@@ -302,7 +302,7 @@ gun_maker_liability + GUNS+
 gun_registry + GUNS+
 suppressors + GUNS+
 marijuana_law + LIBERTY+
-marijuana_records + LIBERTY+ ORDER+
+marijuana_records + ORDER+
 drug_possession + LIBERTY+ ORDER+
 psychedelics 0 LIBERTY+
 supervised_sites + LIBERTY+
@@ -311,13 +311,13 @@ sex_work_law + LIBERTY+ MORAL+
 adult_content + LIBERTY+ MORAL+
 aid_in_dying + LIBERTY+ MORAL+
 aid_in_dying_cases + LIBERTY+
-sin_taxes - LIBERTY+
-helmet_law - LIBERTY+
-drinking_age 0 LIBERTY+
-vape_flavors - LIBERTY+
+sin_taxes - PUBHEALTH+
+helmet_law - PUBHEALTH+
+drinking_age 0 PUBHEALTH+
+vape_flavors - PUBHEALTH+
 kidney_payment 0 LIBERTY+
-right_to_try - LIBERTY+
-raw_milk - LIBERTY+
+right_to_try - PUBHEALTH+
+raw_milk - PUBHEALTH+
 hate_speech_law - SPEECH+
 hateful_speaker_response - SPEECH+
 campus_speakers 0 SPEECH+
@@ -337,10 +337,10 @@ misinfo_penalty - SPEECH+
 jawboning - SPEECH+
 library_book_decisions + SPEECH+ EDUC+
 library_explicit + SPEECH+ EDUC+
-employer_speech 0 SPEECH+ REG+
-employer_speech_cases 0 SPEECH+
-fire_racist_joke - SPEECH+
-fire_praise_attack + SPEECH+
+employer_speech 0 REG+
+employer_speech_cases 0
+fire_racist_joke -
+fire_praise_attack +
 defamation_public_figures + SPEECH+
 public_broadcasting + ESTAB+ REDIS+
 campus_speech_codes + SPEECH-
@@ -400,7 +400,7 @@ trust_congress_promises 0 TRUST+
 trust_state_gov 0 TRUST+
 trust_local_gov 0 TRUST+
 trust_police_fair - TRUST+ ORDER-
-trust_military - TRUST+ HAWK-
+trust_military - TRUST+
 gov_big_projects 0 TRUST+
 gov_services_work 0 TRUST+
 trust_statistics 0 ESTAB+
@@ -420,24 +420,24 @@ science_vs_officials + ESTAB+
 congress_stock_ban 0 POP-
 engagement_tradeoff 0 GLOBAL+
 allies_tradeoff + GLOBAL+
-nato + GLOBAL+
+nato 0 GLOBAL+
 defense_spending + HAWK+
 troops_abroad 0 HAWK+
 use_force_cases 0 HAWK+
 foreign_aid_level + GLOBAL+
 global_health_aid + GLOBAL+
-israel_military_aid - HAWK-
+israel_military_aid -
 palestinian_state +
-ukraine_support + GLOBAL+ HAWK-
-taiwan_defense 0 HAWK+
-china_posture 0 HAWK+
+ukraine_support 0 GLOBAL+ HAWK-
+taiwan_defense 0 CHINA+ HAWK+
+china_posture 0 CHINA+
 united_nations + GLOBAL+
 international_courts + GLOBAL+
 human_rights_tradeoff 0 GLOBAL+
 nuclear_arms_control + HAWK+
-national_service 0 HAWK+
+national_service 0
 strikes_on_terrorists 0 HAWK+
-arms_sales 0 HAWK+
+arms_sales 0
 iran_nuclear + HAWK+
 acquire_territory + HAWK+ NATION+
 school_choice + EDUC+
@@ -468,7 +468,7 @@ fair_keep_earnings + VALUES+ REDIS+
 security_vs_choice + VALUES+ REDIS+
 equal_treatment_vs_association + VALUES+
 liberty_vs_order + VALUES+ ORDER+
-conscience_vs_law + VALUES+
+conscience_vs_law 0 VALUES+
 tradition_wisdom + VALUES+
 progress_by_questioning + VALUES+
 group_status_natural + VALUES+
