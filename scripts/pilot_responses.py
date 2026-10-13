@@ -3,8 +3,8 @@
 
     python3 scripts/pilot_responses.py data/pilot/responses.csv [more.csv | answers.json ...]
 
-Inputs: CSV exports of the Google Sheet (server/README.md) and/or JSON files
-people downloaded from the results page. Writes to data/pilot/ (git-ignored):
+Inputs: the Netlify export (responses.jsonl from /api/export), CSV exports of
+the Google Sheet (server/README.md), and/or JSON files people downloaded. Writes to data/pilot/ (git-ignored):
 
   answers_long.csv   one row per answer: rid, item, case, code, escape,
                      firmness, ms, screen_pos, display_dir, side_swap,
@@ -42,6 +42,9 @@ def read_payloads(paths):
     for p in map(Path, paths):
         if p.suffix == ".json":
             out.append(json.loads(p.read_text()))
+            continue
+        if p.suffix in (".jsonl", ".ndjson"):  # Netlify export (/api/export)
+            out += [json.loads(l) for l in p.read_text().splitlines() if l.strip()]
             continue
         with open(p, newline="") as f:
             for r in csv.DictReader(f):
@@ -83,11 +86,13 @@ def main(paths):
                 "none_fit_text": a.get("x", ""), "firmness": a.get("f"), "ms": a.get("ms"),
                 "screen_pos": a.get("p"), "display_dir": a.get("d"), "side_swap": a.get("s"),
                 "defs_opened": "|".join(a.get("df", [])), "repeat": int(rep),
-                "torn": int(bool(a.get("t"))), "context_shown": a.get("cx", ""),
+                "torn": int(bool(a.get("t"))), "context_shown": a.get("cx", ""), "flag": a.get("flag", ""),
                 "order_index": pos_in_order.get(item if base in case_parent else key),
             })
         # assigned questions
-        if P.get("mode") == "pilot" and P.get("form") is not None:
+        if P.get("mode") == "quick":
+            assigned = set(json.loads((ROOT / "items" / "modules" / "quick.json").read_text())["ids"])
+        elif P.get("mode") == "pilot" and P.get("form") is not None:
             assigned = set(design["link"]) | {i for b in P["form"] for i in design["blocks"][b]}
         else:
             assigned = set(items)

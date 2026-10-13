@@ -54,7 +54,35 @@ def bank():
         "design": json.loads((ROOT / "items" / "pilot_design.json").read_text()),
         "intro": mods["intro"], "priorities": mods["priorities"], "quality": mods["quality"],
         "about": mods["about_you"],
+        "axes": mods["axes"], "profiles": mods["profiles"]["profiles"], "quick": mods["quick"]["ids"],
+        "keying": keying(items, mods["axes"]),
     }
+
+
+def keying(items, axes):
+    """Parse items/keying.txt -> {id: {"G": sign, AXIS: sign}} and check it covers the bank."""
+    valid = {a["id"] for f in axes["families"] for a in f["axes"]}
+    case_ids = {c["id"] for it in items.values() for c in it.get("cases", [])}
+    out = {}
+    for n, line in enumerate((ROOT / "items" / "keying.txt").read_text().splitlines(), 1):
+        line = line.split("#", 1)[0].strip()
+        if not line:
+            continue
+        parts = line.split()
+        iid, g = parts[0], parts[1]
+        if iid not in items and iid not in case_ids:
+            raise SystemExit(f"keying.txt line {n}: unknown id {iid}")
+        k = {"G": {"+": 1, "-": -1, "0": 0}[g]}
+        for tok in parts[2:]:
+            ax, sign = tok[:-1], tok[-1]
+            if ax not in valid or sign not in "+-":
+                raise SystemExit(f"keying.txt line {n}: bad axis token {tok}")
+            k[ax] = 1 if sign == "+" else -1
+        out[iid] = k
+    missing = [i for i, it in items.items() if i not in out and not it.get("issue_map_only")]
+    if missing:
+        raise SystemExit(f"keying.txt is missing: {missing}")
+    return out
 
 
 def main():

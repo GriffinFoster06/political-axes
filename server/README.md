@@ -1,4 +1,9 @@
-# Collecting pilot responses (free, about 10 minutes to set up)
+# Collecting responses with Google Sheets (alternative)
+
+If you deploy on Netlify you don't need this: the built-in `/api/submit`
+function saves responses (see `app/README.md`). This is for other hosts.
+
+## Google Sheets (free, about 10 minutes to set up)
 
 The app is static files, so it needs somewhere to send finished responses.
 The simplest free option is a Google Sheet with a small Apps Script.

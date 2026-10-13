@@ -80,11 +80,11 @@ def walk(page, rng, mode):
     page.click("#go")
     page.click('[data-k="0"]')
     page.click("#go")
-    page.wait_for_selector(".map")
+    page.wait_for_selector(".map", state="attached")
     return errors
 
 
-@pytest.mark.parametrize("mode,seed", [("pilot", 1), ("pilot", 2), ("full", 3)])
+@pytest.mark.parametrize("mode,seed", [("quick", 4), ("pilot", 1), ("pilot", 2), ("full", 3)])
 def test_click_through(built, mode, seed):
     with pw.sync_playwright() as p:
         browser = p.chromium.launch()
@@ -95,12 +95,20 @@ def test_click_through(built, mode, seed):
         S = page.evaluate("window.__wys.state()")
         bank = page.evaluate("window.__wys.bank")
         payload = page.evaluate("window.__wys.payload()")
+        n_axes = len(page.query_selector_all(".axis"))
+        n_profiles = len(page.query_selector_all(".profiles li"))
+        scores = page.evaluate("window.__wys.scores()")
         browser.close()
     assert errors == []
     assert S["done"] and S["submitted"] == "local"
     items = bank["items"]
     shown = {e["id"] for e in S["queue"] if e["k"] == "item"}
-    if mode == "pilot":
+    # results page: overall bar plus axis bars and closest groups
+    assert n_axes >= 10 and n_profiles >= 3
+    assert all(-1.0001 <= v["v"] <= 1.0001 for v in scores.values())
+    if mode == "quick":
+        assert shown == set(bank["quick"])
+    elif mode == "pilot":
         d = bank["design"]
         expect = set(d["link"]) | {i for b in S["form"] for i in d["blocks"][b]}
         assert shown == expect

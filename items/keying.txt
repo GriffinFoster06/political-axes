@@ -1,0 +1,489 @@
+# Provisional scoring key (hand-set). One line per question or exception case:
+#   id  G  AXIS+ AXIS-
+# G = direction of the question's HIGH end (last option / side B) on overall left-right:
+#   + right, - left, 0 not a left-right question.
+# AXIS+ = the high end points toward that axis's + pole (poles in items/modules/axes.json).
+# A case line overrides its parent question for that case. Questions marked
+# issue_map_only in the bank are never scored, whatever this file says.
+# Scores: each answer becomes -1 (first option) ... +1 (last option); "Torn" = 0.
+abortion_rule + MORAL+
+abortion_exceptions + MORAL+
+min_wage + REG+
+health_coverage + SOCINS+
+top_income_tax + REDIS+
+climate_action + ENV+
+handgun_purchase + GUNS+
+status_policy + IMMIG+
+status_groups + IMMIG+
+college_admissions_race + EQUITY+
+trans_school_sports + GENDERID+
+president_court_ruling 0 NORMS+
+congress_motives 0 TRUST+ POP+
+ally_attacked 0 GLOBAL+ HAWK-
+gov_role_values + VALUES+ REDIS+
+gov_role_values_rev + VALUES+ REDIS+
+income_tax_structure + REDIS+
+low_income_tax + REDIS+
+tax_burden_principle + REDIS+
+top_rate_number + REDIS+
+corporate_rate + REDIS+
+wealth_tax + REDIS+
+large_fortunes + REDIS+
+estate_tax_level + REDIS+
+inheritance_principle + REDIS+
+capital_gains_rate + REDIS+
+gains_at_death + REDIS+
+cash_aid_level + REDIS+
+aid_form + LIBERTY+
+work_req_rule + REDIS+
+work_req_cases + REDIS+
+ubi + REDIS+
+child_benefit_level + REDIS+
+child_benefit_work + REDIS+
+inequality_tradeoff + REDIS+
+deficit_approach + REDIS+
+balanced_budget_amendment + REDIS+
+poverty_cause + REDIS+
+job_guarantee + REDIS+
+tips_overtime_tax 0 POP+
+min_wage_jobs + REG+
+right_to_work + REG+
+union_organizing + REG+
+public_unions + REG+
+paid_leave + REG+
+sick_days + REG+
+gig_workers + REG+
+regulation_tradeoff + REG+
+precaution_tradeoff + REG+ TECH+
+big_company_breakup 0 REG+
+merger_rules + REG+
+bank_rules + REG+
+bailouts 0 REG+
+licensing 0 REG+
+price_controls + REG+
+economic_system + REG+ REDIS+
+public_ownership + REG+
+workers_on_boards + REG+
+noncompetes 0 REG+
+right_to_repair 0 REG+
+farm_subsidies 0 REG+
+business_incentives 0 POP+
+fed_independence 0 NORMS+
+infrastructure + REDIS+
+coverage_guarantee + SOCINS+
+medicare_age + SOCINS+
+private_insurance_role + SOCINS+
+drug_prices + SOCINS+
+medicaid_scope + SOCINS+
+medicaid_work + SOCINS+
+ss_shortfall + SOCINS+
+ss_retirement_age + SOCINS+
+ss_payroll_cap + SOCINS+
+medicare_structure + SOCINS+
+ss_private_accounts + SOCINS+
+insurance_mandate + SOCINS+ LIBERTY-
+preexisting_conditions + SOCINS+
+school_vaccines + LIBERTY-
+vaccine_exemptions + LIBERTY-
+outbreak_gov_mandate + LIBERTY-
+outbreak_employer +
+immigrant_health_benefits + IMMIG+
+water_fluoride + ESTAB+
+food_additives 0 ESTAB-
+long_term_care + SOCINS+
+zoning_density 0 HOUSING+
+zoning_state_override 0 HOUSING+
+housing_approval 0 HOUSING+
+rent_control + REG+
+eviction_cause + REG+
+rent_vouchers + REDIS+
+public_housing + REDIS+
+encampments + ORDER+
+housing_first + ORDER+
+involuntary_treatment 0 LIBERTY+
+investor_homes 0 POP-
+short_term_rentals 0 HOUSING- REG+
+mortgage_deduction 0 REDIS+
+transit_vs_roads + ENV+
+net_zero_target + ENV+
+climate_willing_to_pay + ENV+
+carbon_tax + ENV+
+carbon_tax_use + REDIS+
+carbon_border_fee + ENV+
+drilling_public_lands + ENV+
+coal_plants + ENV+
+nuclear_power +
+nuclear_funding 0
+ev_requirement + ENV+
+ev_tax_credit + ENV+
+env_jobs_tradeoff + ENV+
+permitting_tradeoff 0 ENV+
+land_protection + ENV+
+sell_public_land + ENV+ FED+
+climate_agreements + ENV+ GLOBAL+
+climate_belief + ENV+
+environmental_justice + ENV+ EQUITY+
+adaptation_tradeoff + ENV+
+plastic_bags + ENV+ LIBERTY-
+tariff_level 0 TRADE+
+tariff_price_tradeoff 0 TRADE+
+tariff_authority 0 NORMS+
+tariff_authority_cases 0 NORMS+
+trade_agreements 0 TRADE+
+trade_jobs_tradeoff 0 TRADE+
+china_trade 0 TRADE+ HAWK+
+china_ownership 0 TRADE+ HAWK+
+industrial_policy 0 TRADE- REG+
+buy_american 0 TRADE+
+offshoring_penalty 0 TRADE- REG+
+export_controls 0 HAWK+ TRADE+
+friend_shoring 0 TRADE+ GLOBAL+
+ai_regulation_level 0 TECH+
+ai_state_laws 0 FED- TECH+
+ai_china_race 0 TECH+ HAWK+
+ai_licensing 0 TECH+
+ai_open_release 0 TECH+
+ai_job_loss + TECH+ REDIS+
+ai_layoff_limits + TECH+ REG+
+moderation_false + SPEECH- TECH+
+moderation_offensive + SPEECH-
+moderation_law + SPEECH- TECH-
+platform_liability 0 TECH+
+social_media_min_age 0 TECH- LIBERTY+
+age_verification + TECH- PRIVACY+
+algorithm_bias_testing + TECH+ EQUITY+
+data_centers + TECH+ ENV+
+election_deepfakes 0 SPEECH- TECH+
+automation_tax + TECH+ REDIS+
+crypto_rules + TECH+
+digital_dollar + PRIVACY-
+ai_copyright 0 TECH+
+ai_companions_minors 0 TECH+ LIBERTY-
+surveillance_tradeoff 0 PRIVACY+
+warrant_tradeoff 0 PRIVACY+
+cameras_tradeoff + PRIVACY+ ORDER+
+encryption_access 0 PRIVACY+
+facial_recognition 0 PRIVACY+ ORDER+
+facial_recognition_cases 0 PRIVACY+
+data_privacy_law + PRIVACY+ REG+
+gov_buys_data 0 PRIVACY+
+digital_id 0 PRIVACY+
+border_device_search + PRIVACY+
+dna_databases 0 PRIVACY+ ORDER+
+workplace_monitoring + PRIVACY+ REG+
+abortion_who_decides + FED+
+abortion_pills_mail + MORAL+
+abortion_shield_laws + MORAL+
+abortion_public_funding + MORAL+
+ivf_embryos + MORAL+
+contraception_access + MORAL+
+minors_abortion_parents + MORAL+
+life_begins + MORAL+
+surrogacy 0 MORAL+
+same_sex_marriage + GENDERID+
+same_sex_adoption + GENDERID+
+wedding_vendors + GENDERID+ RELIGION+
+religious_refusal_cases + GENDERID+ RELIGION+
+minors_transition + GENDERID+
+minors_transition_cases + GENDERID+
+trans_adult_sports + GENDERID+
+bathrooms + GENDERID+
+id_sex_marker + GENDERID+
+school_pronouns + GENDERID+
+parent_notification + GENDERID+ EDUC+
+lgbt_nondiscrimination + GENDERID+
+nondiscrimination_exemptions + GENDERID+ RELIGION+
+gender_belief + GENDERID+
+church_state_tradeoff + RELIGION+
+faith_based_laws + RELIGION+
+school_prayer + RELIGION+
+ten_commandments + RELIGION+
+vouchers_religious_schools + RELIGION+ EDUC+
+religious_charter + RELIGION+
+religious_exemptions + RELIGION+
+religious_exemption_cases + RELIGION+
+rex_ceremonial_drug 0 RELIGION+
+christian_nation + RELIGION+ NATION+
+religious_country + RELIGION+
+evolution_class + RELIGION+
+faith_charities + RELIGION+
+work_arrangement + FAMILY+
+caregiver_parent + FAMILY+
+promote_marriage + FAMILY+
+unmarried_partner_rights + FAMILY+
+childcare_spending + REDIS+ FAMILY+
+childcare_form + FAMILY+
+stay_home_support + FAMILY+
+no_fault_divorce + FAMILY+ MORAL+
+pay_transparency + FAMILY+ REG+
+board_gender_rules + FAMILY+
+birth_rate_policy 0 FAMILY+
+workplace_gender_programs + FAMILY+
+women_draft + FAMILY+
+natural_roles + FAMILY+
+gap_cause_wealth + EQUITY+
+gap_cause_arrests + EQUITY+
+gap_cause_tests + EQUITY+
+hiring_race + EQUITY+
+contract_set_asides + EQUITY+
+workplace_diversity + EQUITY+
+dei_offices + EQUITY+
+reparations + EQUITY+
+local_redlining_compensation + EQUITY+
+hate_crime_sentences + EQUITY+
+race_districts + EQUITY+
+teach_racism_history + EQUITY+
+teach_institutional_racism + EQUITY+
+discrimination_black + EQUITY+
+discrimination_white + EQUITY+
+discrimination_groups - EQUITY-
+dg_men + EQUITY+
+dg_christians + EQUITY+
+dg_rural + EQUITY+
+tribal_sovereignty + EQUITY+
+disparate_impact + EQUITY+
+confederate_monuments + EQUITY+ NATION+
+legal_immigration_level + IMMIG+
+temp_workers_seasonal + IMMIG+
+temp_workers_skilled 0 IMMIG+
+skills_vs_family + IMMIG+
+sponsor_relatives + IMMIG+
+border_security + IMMIG+
+military_border + IMMIG+
+everify + IMMIG+
+local_police_cooperation + IMMIG+
+asylum_rules + IMMIG+
+asylum_grounds + IMMIG+
+refugee_cap + IMMIG+
+birthright_citizenship + IMMIG+ NATION+
+assimilation + NATION+
+american_criteria + NATION+
+am_laws 0 NATION+
+am_christian + NATION+ RELIGION+
+american_basis + NATION+
+patriotic_education + NATION+
+anthem_kneeling + NATION+
+culture_tradeoff + NATION+
+us_exceptional + NATION+
+english_official + NATION+
+citizens_first + NATION+ IMMIG+
+immigrant_selection_culture + NATION+ IMMIG+
+enforcement_limits + IMMIG+
+police_spending + ORDER+
+crisis_responders + ORDER+
+qualified_immunity + ORDER+
+misconduct_records + ORDER+
+mandatory_minimums + ORDER+
+violent_sentences + ORDER+
+death_penalty + ORDER+
+death_penalty_cases + ORDER+
+cash_bail + ORDER+
+prison_purpose + ORDER+
+second_chance + ORDER+
+juveniles_adult_court + ORDER+
+private_prisons + REG+ ORDER+
+road_blocking + ORDER+ SPEECH+
+riot_response + ORDER+
+troops_in_cities + ORDER+ NORMS+
+victims_voice + ORDER+
+asset_forfeiture 0 ORDER+
+stop_and_frisk + ORDER+
+private_sale_checks + GUNS+
+semi_auto_rifles + GUNS+
+magazine_limit + GUNS+
+concealed_carry + GUNS+
+carry_locations + GUNS+
+red_flag + GUNS+
+red_flag_cases + GUNS+
+gun_purchase_age + GUNS+
+second_amendment_meaning + GUNS+
+self_defense_law + GUNS+
+gun_maker_liability + GUNS+
+gun_registry + GUNS+
+suppressors + GUNS+
+marijuana_law + LIBERTY+
+marijuana_records + LIBERTY+ ORDER+
+drug_possession + LIBERTY+ ORDER+
+psychedelics 0 LIBERTY+
+supervised_sites + LIBERTY+
+sports_betting 0 LIBERTY+
+sex_work_law + LIBERTY+ MORAL+
+adult_content + LIBERTY+ MORAL+
+aid_in_dying + LIBERTY+ MORAL+
+aid_in_dying_cases + LIBERTY+
+sin_taxes - LIBERTY+
+helmet_law - LIBERTY+
+drinking_age 0 LIBERTY+
+vape_flavors - LIBERTY+
+kidney_payment 0 LIBERTY+
+right_to_try - LIBERTY+
+raw_milk - LIBERTY+
+hate_speech_law - SPEECH+
+hateful_speaker_response - SPEECH+
+campus_speakers 0 SPEECH+
+sp_abortion_illegal - SPEECH+
+sp_trans_women - SPEECH+
+sp_stolen_election - SPEECH+
+sp_race_iq - SPEECH+
+sp_abortion_any + SPEECH+
+sp_abolish_police + SPEECH+
+sp_israel + SPEECH+
+sp_revolution + SPEECH+
+flag_burning + SPEECH+ NATION+
+protest_masks 0 SPEECH+ ORDER+
+campus_encampments + SPEECH+ ORDER+
+gov_misinformation - SPEECH+
+misinfo_penalty - SPEECH+
+jawboning - SPEECH+
+library_book_decisions + SPEECH+ EDUC+
+library_explicit + SPEECH+ EDUC+
+employer_speech 0 SPEECH+ REG+
+employer_speech_cases 0 SPEECH+
+fire_racist_joke - SPEECH+
+fire_praise_attack + SPEECH+
+defamation_public_figures + SPEECH+
+public_broadcasting + ESTAB+ REDIS+
+campus_speech_codes + SPEECH-
+exec_orders_scope 0 NORMS+
+refuse_to_spend 0 NORMS+
+refuse_to_spend_cases 0 NORMS+
+emergency_duration 0 NORMS+
+emergency_funding 0 NORMS+
+emergency_funding_cases 0 NORMS+
+civil_service 0 NORMS+
+independent_agencies 0 NORMS+
+prosecute_opponents 0 NORMS+
+pardon_allies 0 NORMS+
+accept_results 0 NORMS+
+checks_vs_action 0 NORMS+
+courts_vs_majority 0 NORMS+
+filibuster 0 NORMS+
+filibuster_cases 0 NORMS+
+rule_bending_leader 0 NORMS+
+political_violence 0 NORMS+
+court_expansion 0 NORMS-
+presidential_immunity 0 NORMS+
+press_retaliation 0 NORMS+
+agency_deference + TRUST+
+voter_id + VOTING+
+proof_of_citizenship + VOTING+
+mail_voting + VOTING+
+mail_ballot_deadline + VOTING+
+auto_registration + VOTING+
+felony_voting + VOTING+
+electoral_college + VOTING+
+popular_vote_loser + VOTING+
+redistricting 0 VOTING+
+campaign_spending + VOTING+
+public_financing + VOTING+
+congress_term_limits 0 POP-
+court_term_limits + VOTING+
+ranked_choice 0 VOTING+
+statehood + VOTING+
+voting_age + VOTING+
+noncitizen_local_voting + VOTING+ IMMIG+
+trust_fed_motives 0 TRUST+
+trust_fed_honest 0 TRUST+
+trust_courts 0 TRUST+
+trust_news_facts + ESTAB+
+trust_news_fair + ESTAB+
+trust_scientists + ESTAB+
+trust_expert_consensus + ESTAB+
+trust_vote_count + ESTAB+
+hidden_power 0 POP+
+corporate_power + POP-
+experts_vs_voters 0 POP+ ESTAB+
+expertise_vs_experience 0 POP+
+trust_public_health + ESTAB+
+trust_congress_effort 0 TRUST+
+trust_congress_promises 0 TRUST+
+trust_state_gov 0 TRUST+
+trust_local_gov 0 TRUST+
+trust_police_fair - TRUST+ ORDER-
+trust_military - TRUST+ HAWK-
+gov_big_projects 0 TRUST+
+gov_services_work 0 TRUST+
+trust_statistics 0 ESTAB+
+trust_university_research + ESTAB+
+trust_tech_companies 0 ESTAB+
+news_source_accuracy + ESTAB+
+officials_care 0 POP+
+economy_rigged 0 POP+
+outsider_vs_experience 0 POP+
+wall_street_vs_workers 0 POP+
+ballot_measures 0 POP-
+recall_response + ESTAB+
+budget_office_reliance 0 TRUST+
+more_power_outcome + TRUST+
+accept_certified_loss 0 ESTAB+
+science_vs_officials + ESTAB+
+congress_stock_ban 0 POP-
+engagement_tradeoff 0 GLOBAL+
+allies_tradeoff + GLOBAL+
+nato + GLOBAL+
+defense_spending + HAWK+
+troops_abroad 0 HAWK+
+use_force_cases 0 HAWK+
+foreign_aid_level + GLOBAL+
+global_health_aid + GLOBAL+
+israel_military_aid - HAWK-
+palestinian_state +
+ukraine_support + GLOBAL+ HAWK-
+taiwan_defense 0 HAWK+
+china_posture 0 HAWK+
+united_nations + GLOBAL+
+international_courts + GLOBAL+
+human_rights_tradeoff 0 GLOBAL+
+nuclear_arms_control + HAWK+
+national_service 0 HAWK+
+strikes_on_terrorists 0 HAWK+
+arms_sales 0 HAWK+
+iran_nuclear + HAWK+
+acquire_territory + HAWK+ NATION+
+school_choice + EDUC+
+charter_schools + EDUC+
+curriculum_control + EDUC+
+lesson_opt_out + EDUC+
+teach_gender_identity + EDUC+ GENDERID+
+sex_education + EDUC+ MORAL+
+student_loan_cancel + REDIS+
+loan_repayment + REDIS+
+free_college + REDIS+
+education_department + EDUC+ FED+
+school_discipline + ORDER+ EDUC+
+selective_admissions + EQUITY+
+legacy_admissions 0 POP-
+national_vs_state_tradeoff 0 FED+
+closer_government_tradeoff + FED+
+states_differ 0 FED+
+state_preemption 0 FED+
+grant_conditions 0 FED+
+grant_conditions_cases 0 FED-
+state_refusal 0 FED+
+state_refusal_cases 0 FED+
+federal_size + FED+ REDIS+
+experimentation_tradeoff 0 FED+
+fair_small_gaps + VALUES+ REDIS+
+fair_keep_earnings + VALUES+ REDIS+
+security_vs_choice + VALUES+ REDIS+
+equal_treatment_vs_association + VALUES+
+liberty_vs_order + VALUES+ ORDER+
+conscience_vs_law + VALUES+
+tradition_wisdom + VALUES+
+progress_by_questioning + VALUES+
+group_status_natural + VALUES+
+group_status_equalize + VALUES+
+child_independence + VALUES+
+child_discipline + VALUES+
+weigh_foreigners + VALUES+ NATION+
+loyalty_humanity_country + VALUES+ NATION+
+people_trustworthy + VALUES+
+people_selfish + VALUES+
+sacred_limits + VALUES+ MORAL+
+harm_only + VALUES+ MORAL+
+zero_sum 0 POP+
+positive_sum 0 POP+
+proportional_vs_need + VALUES+ REDIS+
+get_ahead + VALUES+ REDIS+
+moral_rules + VALUES+ MORAL+
+pace_of_change + VALUES+

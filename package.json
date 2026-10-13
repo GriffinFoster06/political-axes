@@ -3,7 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test scorer/scorer.test.ts"
+    "test": "node --test scorer/scorer.test.ts tests/netlify_functions.test.mjs"
   },
-  "engines": { "node": ">=22.18" }
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.2.0"
+  }
 }

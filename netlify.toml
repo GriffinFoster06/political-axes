@@ -1,0 +1,15 @@
+# Netlify: connect the GitHub repo and deploy; these settings do the rest.
+[build]
+  command = "python3 scripts/build_app.py"
+  publish = "app/dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+  NODE_VERSION = "22"
+
+# Cache the question bank briefly so updates show up quickly.
+[[headers]]
+  for = "/bank.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

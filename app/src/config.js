@@ -3,9 +3,11 @@ window.QUIZ_CONFIG = {
   // Where finished responses are sent (POST, text/plain JSON). Leave empty to keep
   // answers on the device only (people can still copy or download them).
   // See server/README.md for a free Google Sheets endpoint.
-  submitUrl: "",
+  // "auto" = save to this site's own /api/submit endpoint (Netlify function) when hosted,
+  // and keep answers on the device when opened as a local file.
+  submitUrl: "auto",
   // "pilot": link block + 3 of 9 blocks (about 45 min). "full": every question.
-  defaultMode: "pilot",
+  defaultMode: "quick",
   allowFullMode: true,
   // Pilot A experiments (preregistration section 12): background lines shown or hidden at
   // random, a "Torn" option on tradeoffs for half of people, top-tax question order.

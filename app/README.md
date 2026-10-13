@@ -46,17 +46,38 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
   would contradict the accuracy goal.
 - **Save and resume**: progress is saved on the device after every answer.
 
-## Sending responses
+## Modes and results
 
-Set `submitUrl` in `app/src/config.js`. `server/README.md` sets up a free
-Google Sheet collector in about 10 minutes. With no URL, answers stay on
-the device.
+- **Quick** (~30 min, the default): `items/modules/quick.json`, about 100
+  questions covering every axis. **Standard** (~50 min): the link block plus 3
+  of 9 balanced blocks. **Full map** (~2 hours): everything.
+- **Results** are provisional scores from hand-set keys in
+  `items/keying.txt`: each answer runs from −1 (first option) to +1 (last),
+  times the key's direction for each axis it touches; an axis shows once it
+  has 3+ answers. The page shows the overall left–right bar, where you stand
+  out (strongest views, and topics where you break from your overall lean),
+  the closest of 15 hand-placed parties and movements past and present
+  (`items/modules/profiles.json`), every axis by family
+  (`items/modules/axes.json`), your top priorities, and your full answers.
+- A **"Flag this question"** box on every question lets testers note
+  anything confusing or slanted; flags come through with the answers.
 
-## Hosting
+## Deploying on Netlify
 
-`.github/workflows/pages.yml` publishes `app/dist` with GitHub Pages: turn on
-Pages (Settings → Pages → Source: GitHub Actions) and run "Publish quiz
-app" from the Actions tab. Any static host works too.
+`netlify.toml` has everything: connect the GitHub repo in Netlify and deploy.
+Netlify runs `scripts/build_app.py`, publishes `app/dist`, and deploys two
+functions:
+
+- `/api/submit` saves each finished quiz to Netlify Blobs (on by default:
+  `submitUrl: "auto"` in `app/src/config.js`).
+- `/api/export?key=…` downloads all responses as JSON lines. Set an
+  `EXPORT_KEY` environment variable in Netlify first (Site configuration →
+  Environment variables); add `&what=feedback` for results-page feedback.
+  Then: `python3 scripts/pilot_responses.py responses.jsonl`.
+
+Opened as a local file, the app keeps answers on the device.
+Set `experiments: false` in `config.js` to turn off the built-in experiments
+(random hiding of background lines, the "Torn" option for half of people).
 
 ## Data it records
 

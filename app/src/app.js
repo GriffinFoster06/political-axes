@@ -72,7 +72,7 @@
   function newState() {
     return {
       v: 1, bank: B.version, rid: randId(12), code: randId(8), started: new Date().toISOString().slice(0, 10),
-      phase: "intro", introStep: 0, mode: null, form: null, queue: [], pos: 0,
+      phase: "intro", introStep: 0, mode: CFG.defaultMode || null, form: null, queue: [], pos: 0,
       ans: {}, qc: {}, pri: {}, priOrder: [], priPos: 0, about: {}, honesty: null,
       activeMs: 0, lastBreak: 0, consent: false, minor: false, done: false, submitted: null,
     };
@@ -81,7 +81,9 @@
   function buildQueue() {
     var rnd = mulberry32(hash(S.rid + "order"));
     var ids = {};
-    if (S.mode === "pilot") {
+    if (S.mode === "quick") {
+      B.quick.forEach(function (i) { ids[i] = 1; });
+    } else if (S.mode === "pilot") {
       var d = B.design;
       S.form = d.forms[Math.floor(rnd() * d.forms.length)];
       d.link.forEach(function (i) { ids[i] = 1; });
@@ -214,14 +216,14 @@
     }
     if (step === 2) {
       var opts = [
-        { id: "pilot", title: "Pilot version", time: "about 50 minutes", text: "A balanced share of the questions. Everyone gets a different share, so together the answers cover every question. This is the version for the pilot study." },
+        { id: "quick", title: "Quick", time: "about 30 minutes", text: "Around 100 questions across every topic. The best place to start." },
+        { id: "pilot", title: "Standard", time: "about 50 minutes", text: "A bigger share of the questions, for sharper results. Everyone gets a different mix, which also helps improve the quiz." },
       ];
       if (CFG.allowFullMode !== false) opts.push({ id: "full", title: "Full map", time: "about 2 hours", text: "Every question in every topic. Take it in as many sittings as you like; your answers are saved on this device." });
       var html = '<h2>Choose a length</h2><div class="mode">';
       opts.forEach(function (o) {
         html += '<button class="opt" data-mode="' + o.id + '" aria-pressed="' + (S.mode === o.id) + '"><b>' + esc(o.title) + "</b> <span class=\"mono\">" + esc(o.time) + "</span><small>" + esc(o.text) + "</small></button>";
       });
-      html += '<div class="opt" aria-disabled="true" style="opacity:.55;cursor:default"><b>Precision mode</b> <span class="mono">about 40–60 minutes</span><small>Picks the most informative questions for you. Available once the pilot has calibrated the questions.</small></div>';
       html += '</div><div class="nav"><button class="link" id="bk">Back</button><button class="btn" id="go"' + (S.mode ? "" : " disabled") + ">Continue</button></div>";
       show(html);
       screen.querySelectorAll("[data-mode]").forEach(function (b) {
@@ -237,7 +239,7 @@
     if (step === 3) {
       var how = introScreen("how_answers_work"), tr = introScreen("tradeoff_example"), br = introScreen("breaks");
       show("<h2>" + esc(how.title) + "</h2><p>" + esc(how.text) + "</p><h2>" + esc(tr.title) + "</h2><p>" + esc(tr.text) + "</p><p>" + esc(br.text) + "</p>" +
-        '<div class="notice">Your code is <span class="code">' + esc(S.code) + "</span><br>Write it down if you want to come back on another device later or take the quiz again for the follow-up study. It isn't linked to your name.</div>" +
+        '<div class="notice">Your code is <span class="code">' + esc(S.code) + "</span><br>Your progress saves on this device, so you can stop and come back. The code isn't linked to your name.</div>" +
         '<div class="nav"><button class="link" id="bk">Back</button><button class="btn" id="go">Begin</button></div>');
       bind("#bk", function () { S.introStep = 2; render(); });
       return bind("#go", function () {
@@ -326,9 +328,12 @@
           FIRMNESS.map(function (f, k) { return '<button type="button" class="chip" data-firm="' + k + '" aria-pressed="' + (a.f === k) + '">' + esc(f) + "</button>"; }).join("") + "</div>";
       }
     }
+    if (!isRep) html += '<details class="flag"' + (a.flag ? " open" : "") + '><summary>Flag this question</summary><label for="flagtext" class="scope">What\'s confusing, slanted or missing?</label><textarea id="flagtext" maxlength="300">' + esc(a.flag || "") + "</textarea></details>";
     html += navHtml(answered(it, a));
     show(html);
     wireDefs(it, a);
+    var fl = document.getElementById("flagtext");
+    if (fl) fl.addEventListener("input", function () { a.flag = fl.value.slice(0, 300); save(); });
     if (it.format === "exceptions") wireCases(it);
     else wireOptions(it, a);
     wireNav(function () { a.ms = (a.ms || 0) + spend(); });
@@ -594,11 +599,21 @@
       result_fit: S.resultFit == null ? null : S.resultFit, result_fit_text: S.resultFitText || null,
     };
   }
+  function submitUrl() {
+    var u = CFG.submitUrl || "";
+    if (u === "auto") return (window.claude || !/^https?:$/.test(location.protocol)) ? "" : "/api/submit";
+    return u;
+  }
+  function post(body) {
+    var url = submitUrl(), opts = { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: body };
+    if (/^https?:\/\//.test(url)) opts.mode = "no-cors"; // other origins (e.g. Google Apps Script)
+    return fetch(url, opts).then(function (res) { if (res.type !== "opaque" && !res.ok) throw new Error("HTTP " + res.status); });
+  }
   function submit() {
     if (S.minor) { S.submitted = "minor"; save(); return Promise.resolve(); }
-    if (!CFG.submitUrl) { S.submitted = "local"; save(); return Promise.resolve(); }
+    if (!submitUrl()) { S.submitted = "local"; save(); return Promise.resolve(); }
     S.submitted = "sending";
-    return fetch(CFG.submitUrl, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload()) })
+    return post(JSON.stringify(payload()))
       .then(function () { S.submitted = "sent"; save(); })
       .catch(function () { S.submitted = "failed"; save(); });
   }
@@ -630,22 +645,125 @@
     });
     return Object.keys(score).sort(function (a, b) { return score[b] - score[a]; }).map(function (d) { return { d: d, s: score[d] }; });
   }
+  // ---------- provisional scores ----------
+  var MIN_N = 3;
+  // axes whose + pole is the conventionally right-of-center side (used for "where you break from your side")
+  var LR_AXES = ["REDIS", "REG", "SOCINS", "ENV", "MORAL", "GENDERID", "RELIGION", "FAMILY", "EQUITY", "IMMIG", "NATION", "ORDER", "GUNS", "EDUC", "VOTING", "VALUES"];
+  function computeScores() {
+    var acc = {};
+    function apply(k, x, w) {
+      if (!k) return;
+      Object.keys(k).forEach(function (ax) {
+        if (!k[ax]) return;
+        var o = acc[ax] || (acc[ax] = { s: 0, w: 0, n: 0 });
+        o.s += k[ax] * x * w; o.w += w; o.n++;
+      });
+    }
+    Object.keys(B.items).forEach(function (id) {
+      var it = B.items[id];
+      if (it.issue_map_only) return;
+      if (it.format === "exceptions") {
+        var K = it.options.length;
+        it.cases.forEach(function (c) {
+          var ca = S.ans[c.id];
+          if (ca && ca.c != null) apply(B.keying[c.id] || B.keying[id], 2 * ca.c / (K - 1) - 1, 0.5);
+        });
+        return;
+      }
+      var a = S.ans[id], x;
+      if (!a) return;
+      if (a.t) x = 0; else if (a.c != null) x = 2 * a.c / (it.options.length - 1) - 1; else return;
+      apply(B.keying[id], x, 1);
+    });
+    var out = {};
+    Object.keys(acc).forEach(function (ax) { out[ax] = { v: acc[ax].s / acc[ax].w, n: acc[ax].n }; });
+    return out;
+  }
+  function axisMeta() {
+    var m = { G: B.axes.overall };
+    B.axes.families.forEach(function (f) { f.axes.forEach(function (a) { m[a.id] = a; }); });
+    return m;
+  }
+  function leanText(v, meta) {
+    var p = Math.abs(v), side = v < 0 ? meta.minus : meta.plus;
+    if (p < 0.1) return "Near the center";
+    var word = p < 0.3 ? "Leans" : p < 0.6 ? "Moderately" : p < 0.85 ? "Strongly" : "Very strongly";
+    return word + (word === "Leans" ? " " : ": ") + side;
+  }
+  function barHtml(meta, sc, big) {
+    var v = Math.max(-1, Math.min(1, sc.v)), pos = ((v + 1) * 50).toFixed(1);
+    return '<div class="axis' + (big ? " big" : "") + '"><div class="axis-head"><span class="axis-name">' + esc(meta.name) + "</span>" +
+      '<span class="axis-val">' + esc(leanText(v, meta)) + ' <span class="mono">' + (v > 0 ? "+" : "") + Math.round(100 * v) + "</span></span></div>" +
+      '<div class="track" role="img" aria-label="' + esc(meta.name + ": " + leanText(v, meta)) + '"><span class="mid"></span><span class="dot" style="left:' + pos + '%"></span></div>' +
+      '<div class="poles"><span>' + esc(meta.minus) + "</span><span>" + esc(meta.plus) + "</span></div>" +
+      (big ? "" : '<div class="axis-n">' + sc.n + " answers</div>") + "</div>";
+  }
+  function profileMatches(sc) {
+    return B.profiles.map(function (p) {
+      var sum = 0, k = 0;
+      Object.keys(p.pos).forEach(function (ax) {
+        if (sc[ax] && sc[ax].n >= MIN_N) { var d = sc[ax].v - p.pos[ax]; sum += d * d; k++; }
+      });
+      if (k < 4) return null;
+      return { p: p, match: Math.max(0, Math.round(100 * (1 - Math.sqrt(sum / k) / 2))), k: k };
+    }).filter(Boolean).sort(function (a, b) { return b.match - a.match; });
+  }
+  function resultsHtml() {
+    var sc = computeScores(), meta = axisMeta(), html = "";
+    if (sc.G && sc.G.n >= MIN_N) html += '<section class="results-block">' + barHtml(B.axes.overall, sc.G, true) + "</section>";
+    var shown = Object.keys(sc).filter(function (ax) { return ax !== "G" && sc[ax].n >= MIN_N && meta[ax]; });
+    // standouts
+    var strongest = shown.slice().sort(function (a, b) { return Math.abs(sc[b].v) - Math.abs(sc[a].v); }).slice(0, 3);
+    var g = sc.G ? sc.G.v : 0;
+    var breaks = shown.filter(function (ax) { return LR_AXES.indexOf(ax) >= 0 && Math.abs(g) > 0.15 && sc[ax].v * g < 0 && Math.abs(sc[ax].v) > 0.2; });
+    if (strongest.length) {
+      html += '<section class="results-block"><h2>Where you stand out</h2><ul class="standout">' +
+        strongest.map(function (ax) { return "<li><b>" + esc(meta[ax].name) + ":</b> " + esc(leanText(sc[ax].v, meta[ax]).toLowerCase()) + "</li>"; }).join("") + "</ul>";
+      if (breaks.length) {
+        html += "<p>You break from your overall " + (g < 0 ? "left" : "right") + " lean on " +
+          breaks.map(function (ax) { return "<b>" + esc(meta[ax].name.toLowerCase()) + "</b>"; }).join(", ").replace(/, ([^,]*)$/, " and $1") +
+          ". Most two-axis quizzes would hide that.</p>";
+      } else if (Math.abs(g) > 0.15) {
+        html += "<p>Your views line up with your overall lean on every major topic.</p>";
+      }
+      html += "</section>";
+    }
+    var matches = profileMatches(sc);
+    if (matches.length) {
+      html += '<section class="results-block"><h2>Who you\'re closest to</h2><p class="scope">Compared with hand-placed positions of parties and movements, past and present.</p><ol class="profiles">' +
+        matches.slice(0, 4).map(function (m) {
+          return '<li><div class="prof-head"><b>' + esc(m.p.name) + '</b> <span class="mono">' + esc(m.p.era) + '</span><span class="match mono">' + m.match + "% match</span></div><small>" + esc(m.p.about) + "</small></li>";
+        }).join("") + "</ol>";
+      var far = matches[matches.length - 1];
+      html += '<p class="scope">Furthest from: <b>' + esc(far.p.name) + "</b> (" + esc(far.p.era) + ", " + far.match + "% match).</p></section>";
+    }
+    html += '<section class="results-block"><h2>All your axes</h2>';
+    B.axes.families.forEach(function (f) {
+      var rows = f.axes.filter(function (a) { return sc[a.id] && sc[a.id].n >= MIN_N; });
+      if (!rows.length) return;
+      html += '<div class="family"><h3>' + esc(f.name) + "</h3>" + rows.map(function (a) { return barHtml(a, sc[a.id], false); }).join("") + "</div>";
+    });
+    html += "</section>";
+    return html;
+  }
+
   function renderResults() {
     var status = {
-      sent: "Your anonymous answers were sent to the study. Thank you.",
-      sending: "Sending your answers…",
-      failed: "Your answers couldn't be sent (no connection?). They're still saved on this device; reload this page later to try again, or copy them below.",
-      local: "This copy of the quiz isn't connected to a study, so your answers stay on this device. You can copy them below.",
-      minor: "Thanks for taking it. Because you're under 18, your answers were not stored for research.",
+      sent: "Your anonymous answers were saved. Thanks for helping improve the quiz.",
+      sending: "Saving your answers…",
+      failed: "Your answers couldn't be saved (no connection?). They're still on this device; reload later to try again, or copy them below.",
+      local: "This copy isn't connected to a server, so your answers stay on this device.",
+      minor: "Thanks for taking it. Because you're under 18, your answers weren't saved.",
     }[S.submitted] || "";
-    var html = '<div class="eyebrow"><span>Finished</span><span class="mono">code ' + esc(S.code) + "</span></div><h1>Your issue map</h1>" +
-      '<p class="lede">These are your positions, topic by topic, in your own answers. Scores on each axis, with comparisons to the country, need the pilot data to calibrate the questions first. Keep your code to look them up once they\'re ready.</p>' +
-      '<div class="notice' + (S.submitted === "failed" ? " warn" : "") + '">' + esc(status) + (S.submitted === "failed" ? ' <button class="link" id="retry">Try sending again</button>' : "") + "</div>";
+    var html = '<div class="eyebrow"><span>Your results</span><span>Provisional</span></div><h1>Where you stand</h1>' +
+      '<p class="lede">Scores run from −100 to +100 on each axis. They use hand-set weights for now and will sharpen as more people take the quiz.</p>' +
+      resultsHtml();
     var rank = priorityRanking();
     if (rank.length) {
-      html += "<h2>What matters most to you</h2><ol class=\"rank\">" + rank.slice(0, 5).map(function (r) { return "<li>" + esc(B.priorities.labels[r.d]) + "</li>"; }).join("") + "</ol>";
+      html += '<section class="results-block"><h2>What matters most to you</h2><ol class="rank">' + rank.slice(0, 5).map(function (r) { return "<li>" + esc(B.priorities.labels[r.d]) + "</li>"; }).join("") + "</ol></section>";
     }
-    html += '<div class="map">';
+    html += '<div class="notice' + (S.submitted === "failed" ? " warn" : "") + '">' + esc(status) + (S.submitted === "failed" ? ' <button class="link" id="retry">Try again</button>' : "") + "</div>";
+    html += '<details class="issue-map"><summary>Your answers, topic by topic</summary><div class="map">';
     B.domains.forEach(function (dm) {
       var rows = "";
       B.order[dm.id].forEach(function (id) {
@@ -664,7 +782,7 @@
       });
       if (rows) html += "<section><h3>" + esc(dm.name) + "</h3><dl>" + rows + "</dl></section>";
     });
-    html += "</div>";
+    html += "</div></details>";
     var fit = B.about.items.filter(function (q) { return q.id === "result_fit"; })[0];
     if (fit) {
       html += "<h2>" + esc(fit.stem) + '</h2><div class="escapes">' + fit.options.map(function (o, k) {
@@ -708,11 +826,10 @@
   }
   var fbTimer = null;
   function sendFeedback() {
-    if (!CFG.submitUrl || S.minor) return;
+    if (!submitUrl() || S.minor) return;
     clearTimeout(fbTimer);
     fbTimer = setTimeout(function () {
-      fetch(CFG.submitUrl, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ v: S.v, rid: S.rid, feedback: true, result_fit: S.resultFit, result_fit_text: S.resultFitText || null }) }).catch(function () {});
+      post(JSON.stringify({ v: S.v, rid: S.rid, feedback: true, result_fit: S.resultFit, result_fit_text: S.resultFitText || null })).catch(function () {});
     }, 1500);
   }
 
@@ -733,6 +850,6 @@
     }
     S = newState(); save(); render();
   }
-  window.__wys = { state: function () { return S; }, bank: B, payload: function () { return payload(); } };
+  window.__wys = { state: function () { return S; }, bank: B, payload: function () { return payload(); }, scores: function () { return computeScores(); } };
   start();
 })();

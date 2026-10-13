@@ -167,3 +167,33 @@ legend { font-family: var(--font-q); font-size: 1.1rem; font-weight: 500; margin
   .pmat td.c { width: 3.4rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* results */
+.results-block { display: flex; flex-direction: column; gap: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.axis { display: flex; flex-direction: column; gap: 0.3rem; }
+.axis-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.axis-name { font-family: var(--font-q); font-size: 1.05rem; font-weight: 500; }
+.axis.big .axis-name { font-size: 1.5rem; }
+.axis-val { font-size: 0.9rem; color: var(--muted); }
+.axis.big .axis-val { font-size: 1.05rem; color: var(--ink); }
+.track { position: relative; height: 8px; border-radius: 999px; background: var(--line); margin: 0.35rem 0; }
+.axis.big .track { height: 12px; }
+.track .mid { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--muted); opacity: 0.5; transform: translateX(-50%); }
+.track .dot { position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--paper); transform: translate(-50%, -50%); box-shadow: 0 0 0 1px var(--accent); }
+.axis.big .track .dot { width: 22px; height: 22px; }
+.poles { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.8rem; color: var(--muted); }
+.poles span:last-child { text-align: right; }
+.axis-n { font-size: 0.72rem; color: var(--muted); font-family: var(--font-data); }
+.family { display: flex; flex-direction: column; gap: 1rem; padding-block: 0.4rem; }
+.family h3 { font-family: var(--font-ui); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0.6rem 0 0; }
+.standout { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.profiles { margin: 0; padding-left: 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.prof-head { display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
+.prof-head b { font-family: var(--font-q); font-size: 1.08rem; }
+.prof-head .match { margin-left: auto; color: var(--accent); }
+.profiles small { color: var(--muted); font-size: 0.88rem; }
+details summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+details.flag summary { font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+details.flag { display: flex; flex-direction: column; gap: 0.4rem; }
+details.issue-map { border-top: 1px solid var(--line); padding-top: 0.8rem; }
+details.issue-map .map { margin-top: 1rem; }

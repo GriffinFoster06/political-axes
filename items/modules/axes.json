@@ -1,0 +1,44 @@
+{
+  "module": "axes",
+  "note": "Display names and poles for provisional scores. Scores run from -100 (minus pole) to +100 (plus pole). These are the 29 candidate axes from docs/question-bank-plan.md; which ones are real is still an open question, so the results page labels them provisional.",
+  "overall": {"id": "G", "name": "Overall", "minus": "Left", "plus": "Right"},
+  "families": [
+    {"name": "Economy", "axes": [
+      {"id": "REDIS", "name": "Taxes and redistribution", "minus": "Redistribute", "plus": "Leave it to markets"},
+      {"id": "REG", "name": "Business and labor rules", "minus": "Regulate business", "plus": "Free markets"},
+      {"id": "SOCINS", "name": "Health care and retirement", "minus": "Public programs", "plus": "Private provision"},
+      {"id": "HOUSING", "name": "Housing and growth", "minus": "Build more housing", "plus": "Protect neighborhoods"},
+      {"id": "TRADE", "name": "Trade", "minus": "Free trade", "plus": "Protect industry"}]},
+    {"name": "Environment and technology", "axes": [
+      {"id": "ENV", "name": "Environment and energy", "minus": "Act on climate", "plus": "Prioritize cost and growth"},
+      {"id": "TECH", "name": "Technology and AI", "minus": "Regulate tech", "plus": "Let it develop freely"},
+      {"id": "PRIVACY", "name": "Privacy", "minus": "Protect privacy", "plus": "Allow surveillance"}]},
+    {"name": "Morals and culture", "axes": [
+      {"id": "MORAL", "name": "Abortion and moral issues", "minus": "Personal choice", "plus": "Traditional morality"},
+      {"id": "GENDERID", "name": "Sexuality and gender identity", "minus": "Recognize gender identity", "plus": "Traditional sex categories"},
+      {"id": "RELIGION", "name": "Religion in public life", "minus": "Separate church and state", "plus": "Religion in public life"},
+      {"id": "FAMILY", "name": "Family and gender roles", "minus": "Egalitarian roles", "plus": "Traditional roles"}]},
+    {"name": "Identity and nation", "axes": [
+      {"id": "EQUITY", "name": "Race and equity", "minus": "Group remedies", "plus": "Colorblind rules"},
+      {"id": "IMMIG", "name": "Immigration", "minus": "Open", "plus": "Restrictive"},
+      {"id": "NATION", "name": "National identity", "minus": "Pluralist", "plus": "Shared culture"}]},
+    {"name": "Order and liberty", "axes": [
+      {"id": "ORDER", "name": "Crime and policing", "minus": "Reform and rehabilitation", "plus": "Policing and punishment"},
+      {"id": "GUNS", "name": "Guns", "minus": "Gun control", "plus": "Gun rights"},
+      {"id": "LIBERTY", "name": "Personal freedom", "minus": "Adults decide for themselves", "plus": "Protective rules"},
+      {"id": "SPEECH", "name": "Free speech", "minus": "Protect all speech", "plus": "Limit harmful speech"}]},
+    {"name": "Government and trust", "axes": [
+      {"id": "NORMS", "name": "Presidential power", "minus": "Checks and balances", "plus": "Strong executive"},
+      {"id": "VOTING", "name": "Elections", "minus": "Expand access and reform", "plus": "Security and tradition"},
+      {"id": "TRUST", "name": "Trust in government", "minus": "Trusting", "plus": "Distrusting"},
+      {"id": "ESTAB", "name": "Trust in experts and media", "minus": "Trusting", "plus": "Distrusting"},
+      {"id": "POP", "name": "Populism", "minus": "System mostly works", "plus": "Rigged by elites"},
+      {"id": "FED", "name": "Federalism", "minus": "National standards", "plus": "State and local control"},
+      {"id": "EDUC", "name": "Education", "minus": "Public system, professional control", "plus": "School choice, parental control"}]},
+    {"name": "The world", "axes": [
+      {"id": "GLOBAL", "name": "Global engagement", "minus": "Work with the world", "plus": "Go it alone"},
+      {"id": "HAWK", "name": "Use of force", "minus": "Restraint", "plus": "Use force readily"}]},
+    {"name": "Values", "axes": [
+      {"id": "VALUES", "name": "Underlying values", "minus": "Equality and change", "plus": "Order and tradition"}]}
+  ]
+}
