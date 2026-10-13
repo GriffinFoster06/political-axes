@@ -8,6 +8,8 @@ window.QUIZ_CONFIG = {
   submitUrl: "auto",
   // "pilot": link block + 3 of 9 blocks (about 45 min). "full": every question.
   defaultMode: "quick",
+  // Move to the next question as soon as an answer is tapped (false = always press Next).
+  autoAdvance: true,
   allowFullMode: true,
   // Pilot A experiments (preregistration section 12): background lines shown or hidden at
   // random, a "Torn" option on tradeoffs for half of people, top-tax question order.

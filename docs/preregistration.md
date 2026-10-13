@@ -81,7 +81,7 @@ revised before v1 and excluded from the structural models in this round:
 | Check | Threshold |
 |---|---|
 | "None fit" + "Don't know" | > 15% of people shown the question |
-| "It really depends" firmness | > 40% of those who answered (a sign the scope line isn't working) |
+| "It really depends" firmness | > 40% of those who answered (a sign the scope line isn't working). *Not run: the firmness follow-up was dropped from the app on 2026-10-13 to make the quiz quicker to take.* |
 | Free-text "none fit" | Coded; any missing position named by ≥ 3% of people shown the question is added |
 | Category use | Any option chosen by < 1% → merge with its neighbor for estimation (reported, not a flag by itself) |
 | Option order | Nominal response model: an option's estimated slope out of its written order with 95% CI excluding the written order → flag |

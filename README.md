@@ -46,7 +46,7 @@ next step is two-sided review and think-aloud interviews (kit in `review/`),
 then pilots ([`docs/question-bank-plan.md`](docs/question-bank-plan.md) §8–9).
 The quiz site (`app/`, "Where You Stand") is ready to deploy on Netlify:
 home page with three lengths, provisional scores on 29 axes, a 2D map,
-closest of 15 parties and movements, share/compare links and an About page
+closest of 83 parties, presidents, movements and ideologies, share/compare links and an About page
 (details in [`app/README.md`](app/README.md)).
 
 ## Layout
@@ -70,7 +70,7 @@ closest of 15 parties and movements, share/compare links and an About page
 | `docs/item-writing-standard.md` | How every quiz question must be written: positions not agreement, scope + exceptions, definitions, no party cues |
 | `docs/how-many-dimensions.md` | The rule for deciding how many axes to report |
 | `items/drafts/` | **The full draft question bank**: 469 original questions (555 scored units), revised after a full review (`reports/question_review.md`) across all 25 topic areas, one file per area |
-| `items/modules/` | Intro, priorities (best–worst design), quality checks and optional about-you questions |
+| `items/modules/` | Intro, priorities, comparison groups, quality checks and optional about-you questions |
 | `scripts/validate_items.py`, `scripts/coverage.py`, `scripts/audit_items.py` | Rule checker, coverage against the blueprint, balance audit (`reports/item_audit.md`) |
 | `review/` | Reviewer kit for the two-sided review and think-aloud interviews: readable packet, fill-in sheet, protocol |
 | `items/pilot_design.json` | Planned-missing pilot design: link block + 3 of 9 balanced blocks per person |

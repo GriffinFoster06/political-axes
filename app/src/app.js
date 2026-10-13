@@ -19,6 +19,7 @@
   var sharedCode = null;    // decoded from ?r=
   var compare = null;       // {label, scores} overlaid on results
   var keyHandler = null;
+  var advTimer = null;
 
   // ---------- utilities ----------
   function esc(s) {
@@ -57,6 +58,8 @@
   function el(html) { var d = document.createElement("div"); d.innerHTML = html; return d.firstChild; }
   function show(html) {
     keyHandler = null;
+    clearTimeout(advTimer);
+    screen.classList.remove("leaving");
     screen.innerHTML = html;
     window.scrollTo(0, 0);
     try { screen.focus({ preventScroll: true }); } catch (e) { screen.focus(); }
@@ -208,51 +211,66 @@
     for (var i = S.pos; i < S.queue.length; i++) if (S.queue[i].k !== "repeat") left++;
     return Math.max(1, Math.round((left * SEC_PER_SCREEN + 300) / 60));
   }
+  // question counter: visible screens so far / visible screens in total (follow-ups join as they unlock)
+  function counter() {
+    var n = 0, at = 0;
+    for (var i = 0; i < S.queue.length; i++) {
+      var e = S.queue[i];
+      if (e.k === "repeat" ? i > S.pos && !S.ans[e.id] : !visible(e)) continue;
+      n++;
+      if (i <= S.pos) at = n;
+    }
+    return { at: Math.max(1, at), n: n };
+  }
   function updateMeta() {
     var frac = 0, label = "";
     if (view) { label = ""; frac = S && S.phase === "done" ? 1 : 0; }
     else if (S.phase === "quiz" || S.phase === "break") {
-      frac = 0.03 + 0.85 * (S.pos / Math.max(1, S.queue.length));
-      var e = S.queue[Math.min(S.pos, S.queue.length - 1)], tops = topicsInQueue();
-      var ti = e && e.d ? tops.indexOf(e.d) + 1 : 0;
-      label = (ti ? "Topic " + ti + " of " + tops.length + " · " : "") + "about " + minutesLeft() + " min left";
-    } else if (S.phase === "pri") { frac = 0.88 + 0.07 * (S.priPos / B.priorities.sets.length); label = "Almost done"; }
-    else if (S.phase === "aboutyou" || S.phase === "honesty") { frac = 0.97; label = "Last step"; }
+      var c = counter();
+      frac = 0.02 + 0.9 * ((c.at - 1) / Math.max(1, c.n));
+      label = S.phase === "break" ? "Break" : c.at + " of " + c.n;
+    } else if (S.phase === "pri" || S.phase === "aboutyou" || S.phase === "honesty") { frac = 0.95; label = "Almost done"; }
     else if (S.phase === "done") { frac = 1; label = ""; }
+    screen.classList.toggle("wide", !!view || S.phase === "home" || S.phase === "done");
+    document.body.classList.toggle("in-quiz", !view && /quiz|break|pri|aboutyou|honesty/.test(S.phase));
     progEl.style.width = (100 * frac).toFixed(1) + "%";
     metaEl.textContent = label;
   }
 
   // ---------- home and instructions ----------
   var MODES = [
-    { id: "quick", title: "Quick", time: "about 30 min", n: function () { return B.quick.length; }, text: "Every topic, the most telling questions. Start here." },
-    { id: "pilot", title: "Standard", time: "about 50 min", n: function () { return B.design.link.length + 3 * Math.round(B.design.blocks.reduce(function (s, b) { return s + b.length; }, 0) / B.design.blocks.length); }, text: "Sharper scores. Everyone gets a different mix, which helps improve the quiz." },
-    { id: "full", title: "Full map", time: "about 2 hours", n: function () { return Object.keys(B.items).length; }, text: "Every question. Take it in as many sittings as you like." },
+    { id: "quick", title: "Quick", time: "about 25 min", n: function () { return B.quick.length; }, text: "The most telling questions on every topic." },
+    { id: "pilot", title: "Standard", time: "about 45 min", n: function () { return B.design.link.length + 3 * Math.round(B.design.blocks.reduce(function (s, b) { return s + b.length; }, 0) / B.design.blocks.length); }, text: "Sharper scores. Everyone gets a different mix of questions." },
+    { id: "full", title: "Everything", time: "about 2 hours", n: function () { return Object.keys(B.items).length; }, text: "Every question, in as many sittings as you like." },
   ];
+  var HERO_LABELS = {};
+  ["dem_mainstream", "gop_current", "libertarian", "dem_socialist", "maga", "centrist", "pres_fdr", "pres_reagan", "pres_obama", "green", "religious_right", "ancap", "abundance", "rockefeller", "postliberal", "fr_rn"].forEach(function (id) { HERO_LABELS[id] = 1; });
   function lastResult() { var h = lsGet(HIST, []); return h.length ? h[h.length - 1] : null; }
   function renderHome() {
-    var last = lastResult();
+    var last = lastResult(), lastSc = last ? decodeScores(last.c) : null;
     var modes = MODES.filter(function (m) { return m.id !== "full" || CFG.allowFullMode !== false; });
-    var html = '<section class="hero">' +
-      '<p class="eyebrow"><span>US politics</span><span>25 topics</span><span>29 dimensions</span></p>' +
-      "<h1>Where do you <em>actually</em> stand?</h1>" +
-      '<p class="lede">Most political quizzes squeeze you onto two axes with vague statements. This one asks about real positions, one issue at a time, maps you on up to 29 dimensions, and shows which parties and movements, past and present, you\'re closest to.</p>' +
+    var lastPt = lastSc ? { x: userPos(lastSc, ECON), y: userPos(lastSc, CULT) } : null;
+    var html = '<div class="home-grid"><section class="hero">' +
+      "<h1>Where do you stand?</h1>" +
+      '<p class="lede">Answer real policy questions, one issue at a time. Get your position on 29 dimensions and see which of ' + B.profiles.length + " parties, presidents, movements and ideologies you're closest to.</p>" +
       "</section>" +
-      '<div class="modes" role="radiogroup" aria-label="Quiz length">' + modes.map(function (m) {
-        return '<button type="button" class="mode-card" role="radio" data-mode="' + m.id + '" aria-checked="' + (S.mode === m.id) + '">' +
-          '<span class="mode-top"><b>' + esc(m.title) + '</b><span class="mono">' + esc(m.time) + "</span></span>" +
-          "<span>" + esc(m.text) + '</span><span class="mono mode-n">' + m.n() + " questions</span></button>";
+      '<section class="field-wrap">' + plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) + "</section>" +
+      '<section class="start" aria-labelledby="pick"><h2 id="pick">Pick a length</h2>' +
+      '<div class="ballot" role="radiogroup" aria-labelledby="pick">' + modes.map(function (m) {
+        return '<button type="button" class="ballot-row" role="radio" data-mode="' + m.id + '" aria-checked="' + (S.mode === m.id) + '">' +
+          '<span class="oval" aria-hidden="true"></span><span class="ballot-text"><b>' + esc(m.title) + "</b><span>" + esc(m.text) + "</span></span>" +
+          '<span class="ballot-meta">' + "<span>" + m.n() + " questions</span><span>" + esc(m.time) + "</span></span></button>";
       }).join("") + "</div>" +
-      '<div class="cta-row"><button class="btn big" id="go">Start</button>' +
-      (last ? '<button class="btn ghost" id="last">See your last results</button>' : "") + "</div>" +
-      '<ul class="features">' +
-      "<li><b>Real positions, not vibes.</b> Each answer is a specific policy, with dollar amounts, weeks and numbers where they exist.</li>" +
-      "<li><b>Edge cases asked separately.</b> Pick the rule you want in most cases, then say where you'd make exceptions.</li>" +
-      "<li><b>More than left and right.</b> Trust, populism, free speech, presidential power and more get their own axes, because they cut across parties.</li>" +
-      "<li><b>No party cues.</b> Questions never name parties or politicians, and rules about power apply to presidents of either party.</li>" +
-      "</ul>" +
-      '<p class="fine">No account. No names, emails or IP addresses. Answers are saved anonymously to improve the quiz. <button type="button" class="link" id="how">How it works</button></p>';
+      '<div class="cta-row"><button class="btn big" id="go">Start the quiz</button>' +
+      (last ? '<button class="btn ghost" id="last">Your last results</button>' : "") + "</div>" +
+      '<p class="fine">Progress saves on this device, so you can stop and come back. No account, no names or emails. <button type="button" class="link" id="how">How it works</button></p></section></div>' +
+      '<section class="pitch"><h2>What makes it different</h2><dl>' +
+      "<div><dt>Real positions</dt><dd>Pick the policy you actually want, with real numbers, instead of agreeing with a vague slogan.</dd></div>" +
+      "<div><dt>More than left and right</dt><dd>Trust, populism, free speech, presidential power and 25 more get their own scores, because they cut across parties.</dd></div>" +
+      "<div><dt>No party cues</dt><dd>Questions never name parties or politicians, so you answer the issue, not the team.</dd></div>" +
+      "<div><dt>" + B.profiles.length + " comparisons</dt><dd>From FDR and the Whigs to the tech right, Reform UK and anarcho-capitalists.</dd></div></dl></section>";
     show(html);
+    wirePlot();
     screen.querySelectorAll("[data-mode]").forEach(function (b) {
       b.addEventListener("click", function () {
         S.mode = b.getAttribute("data-mode");
@@ -266,18 +284,17 @@
   }
   function renderHowTo() {
     var m = MODES.filter(function (x) { return x.id === S.mode; })[0] || MODES[0];
-    show('<div class="eyebrow"><span>' + esc(m.title) + " quiz</span><span>" + esc(m.time) + "</span></div>" +
-      "<h2>Before you start</h2>" +
-      '<ol class="howto">' +
-      "<li><b>Pick the answer closest to your view.</b> Each one is a specific position. There are no trick questions.</li>" +
-      "<li><b>Think about the usual case.</b> A short line under each question says what to picture. When exceptions matter, a follow-up asks about them.</li>" +
-      "<li><b>Tap underlined words</b> for a definition.</li>" +
-      "<li><b>Nothing fits, or not sure?</b> Say so. Those answers never count as a middle position.</li>" +
-      "<li><b>Some questions show two sides,</b> each with its cost. Pick Clearly or Lean toward one.</li>" +
-      "<li><b>Spot something off?</b> Use “Flag this question” to tell us.</li>" +
-      "</ol>" +
-      '<p class="scope">Your progress saves on this device, so you can close the page and come back. On a keyboard: number keys pick answers, Enter goes on, ← goes back.</p>' +
-      '<div class="nav"><button class="link" id="bk">Back</button><button class="btn" id="go">Begin</button></div>');
+    show("<h1>How to answer</h1>" +
+      '<div class="demo" aria-hidden="true"><div class="opt demo-opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div><div class="opt demo-opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div></div>' +
+      '<ul class="howto">' +
+      "<li><b>Tap the answer closest to your view.</b> The quiz moves on by itself. Go back any time to change it.</li>" +
+      "<li><b>Picture the usual case.</b> The grey line under each question says what to think about. Exceptions get their own follow-up.</li>" +
+      "<li><b>Some questions are a tug-of-war</b> between two goals. Tap how far you lean toward one side.</li>" +
+      "<li><b>Not sure? Say so.</b> “I don't know” and “None of these fit” are under every question, and never count as a middle answer.</li>" +
+      "<li><b>Underlined words</b> have a definition. Tap them.</li>" +
+      "</ul>" +
+      '<p class="scope">' + esc(m.title) + " quiz, " + m.n() + " questions, " + esc(m.time) + ". On a keyboard: number keys answer, ← goes back.</p>" +
+      '<div class="nav"><button class="link" id="bk">Back</button><button class="btn big" id="go">Begin</button></div>');
     bind("#bk", function () { S.phase = "home"; save(); render(); });
     bind("#go", function () {
       if (!S.queue.length || S.queueMode !== S.mode) { buildQueue(); S.queueMode = S.mode; }
@@ -318,12 +335,14 @@
 
   // ---------- one question ----------
   var FIRMNESS = ["Firm", "Fairly firm", "It really depends on the details"];
-  var ESCAPES = [null, "None of these fit my view", "I don't know enough about this to say"];
+  var ESCAPES = [null, "None of these fit", "I don't know"];
+  var ADVANCE_MS = 320;
 
+  // One answer direction per person for the whole quiz (recorded with each answer),
+  // so scales never flip between questions.
   function displayDir(it, isRepeat) {
-    var d = hash(S.rid + "|" + it.id) % 2;
-    if (isRepeat) { var first = S.ans[it.id]; d = 1 - (first && first.d != null ? first.d : d); }
-    return d;
+    if (isRepeat) { var first = S.ans[it.id]; if (first && first.d != null) return first.d; }
+    return hash(S.rid + "|dir") % 2;
   }
   function firstOfTopic() {
     var e = S.queue[S.pos];
@@ -333,14 +352,11 @@
     }
     return true;
   }
-  function topicBanner(e) {
-    if (e.k !== "item" || !firstOfTopic()) return "";
-    var n = S.queue.filter(function (q) { return q.k === "item" && q.d === e.d; }).length;
-    var tops = topicsInQueue();
-    return '<div class="topic-banner"><span class="mono">Topic ' + (tops.indexOf(e.d) + 1) + " of " + tops.length + "</span><b>" + esc(domain(e.d).name) + '</b><span class="mono">' + plural(n, "question") + "</span></div>";
-  }
-  function header(it, extra) {
-    return '<div class="eyebrow"><span>' + esc(it.domain ? domain(it.domain).name : "") + "</span>" + (extra ? "<span>" + esc(extra) + "</span>" : "") + "</div>";
+  function topicLine(e, it, isRep) {
+    if (isRep) return '<p class="topic">One more look: you saw this earlier. Answer it as you see it now.</p>';
+    var name = domain(e.d || it.domain).name.replace(/\s*\(.*\)$/, "");
+    if (e.k === "item" && firstOfTopic()) return '<p class="topic is-new"><span class="tag">New topic</span>' + esc(name) + "</p>";
+    return '<p class="topic">' + esc(name) + "</p>";
   }
 
   function renderItem(e) {
@@ -350,43 +366,38 @@
     var dir = displayDir(it, isRep);
     a.d = dir;
     var rich = richFactory(it);
-    var banner = topicBanner(e);
-    var html = banner + (banner ? (isRep ? header(it, "One more look") : "") : header(it, isRep ? "One more look" : ""));
-    if (isRep) html += '<p class="scope">You saw this question earlier. Please answer it again as you see it now.</p>';
+    var html = '<article class="q q-' + it.format + '">' + topicLine(e, it, isRep);
+    html += '<h2 class="stem">' + rich(it.stem) + "</h2>";
+    if (it.scope) html += '<p class="scope">' + rich(it.scope) + "</p>";
     if (it.context) {
       if (a.cx == null) a.cx = (S.exp && S.exp.context && !isRep) ? hash(S.rid + "|cx|" + it.id) % 2 : 1;
       if (isRep) a.cx = (S.ans[it.id] && S.ans[it.id].cx != null) ? S.ans[it.id].cx : 1;
-      if (a.cx) html += '<div class="context">' + rich(it.context) + "</div>";
+      if (a.cx) html += '<p class="context"><b>Background.</b> ' + rich(it.context) + "</p>";
     }
-    html += '<p class="stem">' + rich(it.stem) + "</p>";
-    html += '<p class="scope">' + rich(it.scope) + "</p>";
     html += '<div id="defs"></div>';
     if (it.format === "exceptions") html += casesHtml(it, dir, rich);
     else if (it.format === "tradeoff") html += tradeoffHtml(it, dir, rich);
     else html += optionsHtml(it, dir, rich);
     if (it.format !== "exceptions") {
-      html += '<div class="escapes">' + ESCAPES.slice(1).map(function (t, k) {
-        return '<button type="button" class="esc" data-esc="' + (k + 1) + '" aria-pressed="' + (a.e === k + 1) + '">' + esc(t) + "</button>";
-      }).join("") + "</div>";
-      html += '<div id="nf" ' + (a.e === 1 ? "" : "hidden") + '><label for="nftext" class="scope">Optional: what would your answer be?</label><textarea id="nftext" maxlength="500">' + esc(a.x || "") + "</textarea></div>";
-      if (it.format === "position" || it.format === "tradeoff") {
-        html += '<div class="firm" id="firm" ' + (a.c != null || a.t ? "" : "hidden") + "><span>How settled is this view?</span>" +
-          FIRMNESS.map(function (f, k) { return '<button type="button" class="chip" data-firm="' + k + '" aria-pressed="' + (a.f === k) + '">' + esc(f) + "</button>"; }).join("") + "</div>";
-      }
+      html += '<div class="outs">' + [2, 1].map(function (k) {
+        return '<button type="button" class="esc" data-esc="' + k + '" aria-pressed="' + (a.e === k) + '">' + esc(ESCAPES[k]) + "</button>";
+      }).join("") + '<button type="button" class="esc" id="skip">Skip</button></div>';
+      html += '<div id="nf" class="nf" ' + (a.e === 1 ? "" : "hidden") + '><label for="nftext">What would your answer be? (optional)</label><textarea id="nftext" maxlength="500" rows="2">' + esc(a.x || "") + "</textarea></div>";
     }
-    if (!isRep) html += '<details class="flag"' + (a.flag ? " open" : "") + '><summary>Flag this question</summary><label for="flagtext" class="scope">What\'s confusing, slanted or missing?</label><textarea id="flagtext" maxlength="300">' + esc(a.flag || "") + "</textarea></details>";
-    html += navHtml(answered(it, a));
+    html += "</article>";
+    html += navHtml(answered(it, a), it.format === "exceptions" || a.e === 1);
+    if (!isRep) html += '<details class="flag"' + (a.flag ? " open" : "") + '><summary>Report a problem with this question</summary><label for="flagtext">What\'s confusing, slanted or missing?</label><textarea id="flagtext" maxlength="300" rows="2">' + esc(a.flag || "") + "</textarea></details>";
     show(html);
     wireDefs(it, a);
     var fl = document.getElementById("flagtext");
     if (fl) fl.addEventListener("input", function () { a.flag = fl.value.slice(0, 300); save(); });
+    var leave = function () { a.ms = (a.ms || 0) + spend(); };
     if (it.format === "exceptions") wireCases(it);
-    else wireOptions(it, a);
-    wireNav(function () { a.ms = (a.ms || 0) + spend(); });
+    else wireOptions(it, a, leave);
+    wireNav(leave);
     keyHandler = function (ev) {
       if (it.format !== "exceptions" && /^[1-9]$/.test(ev.key)) {
-        var opts = screen.querySelectorAll(".options .opt");
-        var b = opts[+ev.key - 1];
+        var b = screen.querySelectorAll(".options .opt")[+ev.key - 1];
         if (b) { b.click(); ev.preventDefault(); }
       }
     };
@@ -395,33 +406,40 @@
   function optionsHtml(it, dir, rich) {
     var codes = it.options.map(function (_, k) { return k; });
     if (dir) codes.reverse();
-    return '<div class="options" role="group">' + codes.map(function (c, p) {
+    return '<div class="options" role="radiogroup">' + codes.map(function (c, p) {
       var meaning = it.point_meanings ? "<small>" + esc(it.point_meanings[c]) + "</small>" : "";
-      return '<button type="button" class="opt" data-code="' + c + '" data-pos="' + p + '"><span class="key mono">' + (p + 1) + "</span><span>" + rich(it.options[c]) + meaning + "</span></button>";
+      return '<button type="button" class="opt" role="radio" data-code="' + c + '" data-pos="' + p + '"><span class="oval" aria-hidden="true"></span><span class="otext">' + rich(it.options[c]) + meaning + "</span></button>";
     }).join("") + "</div>";
   }
+  // Tradeoffs: the two goals side by side, then one row of ovals running from one to the other.
   function tradeoffHtml(it, swap, rich) {
     var A = it.sides[0], Bs = it.sides[1];
     var left = swap ? Bs : A, right = swap ? A : Bs;
     var codes = swap ? [3, 2, 1, 0] : [0, 1, 2, 3];
-    var labels = ["Clearly " + left.label, "Lean " + left.label, "Lean " + right.label, "Clearly " + right.label];
     var torn = S.exp && S.exp.torn && it.id.indexOf("qc_") !== 0;
-    var btns = codes.map(function (c, p) {
-      return '<button type="button" class="opt" data-code="' + c + '" data-pos="' + (torn && p > 1 ? p + 1 : p) + '">' + esc(labels[p]) + "</button>";
+    var caps = ["Strongly", "Somewhat", "Somewhat", "Strongly"];
+    var cells = codes.map(function (c, p) {
+      var side = p < 2 ? left.label : right.label;
+      return '<button type="button" class="opt pip" role="radio" data-code="' + c + '" data-pos="' + (torn && p > 1 ? p + 1 : p) + '" aria-label="' + esc(caps[p] + " " + side) + '"><span class="oval" aria-hidden="true"></span><span class="cap">' + caps[p] + "</span></button>";
     });
-    if (torn) btns.splice(2, 0, '<button type="button" class="opt" data-torn="1" data-pos="2">Torn between them</button>');
+    if (torn) cells.splice(2, 0, '<button type="button" class="opt pip" role="radio" data-torn="1" data-pos="2" aria-label="Torn between them"><span class="oval" aria-hidden="true"></span><span class="cap">Torn</span></button>');
     return '<div class="sides"><div class="side"><b>' + esc(left.label) + "</b><span>" + rich(left.text) + '</span></div><div class="side"><b>' + esc(right.label) + "</b><span>" + rich(right.text) + "</span></div></div>" +
-      '<div class="scale options' + (torn ? " five" : "") + '" role="group">' + btns.join("") + "</div>";
+      '<div class="tug"><div class="tug-ends"><span>← ' + esc(left.label) + "</span><span>" + esc(right.label) + ' →</span></div>' +
+      '<div class="options pips' + (torn ? " five" : "") + '" role="radiogroup" aria-label="How far you lean">' + cells.join("") + "</div></div>";
   }
-  function wireOptions(it, a) {
+  function wireOptions(it, a, leave) {
     function paint() {
-      screen.querySelectorAll(".opt[data-code]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.c != null && +b.getAttribute("data-code") === a.c)); });
-      screen.querySelectorAll(".opt[data-torn]").forEach(function (b) { b.setAttribute("aria-pressed", String(!!a.t)); });
-      screen.querySelectorAll(".esc").forEach(function (b) { b.setAttribute("aria-pressed", String(a.e === +b.getAttribute("data-esc"))); });
+      screen.querySelectorAll(".opt[data-code]").forEach(function (b) { b.setAttribute("aria-checked", String(a.c != null && +b.getAttribute("data-code") === a.c)); });
+      screen.querySelectorAll(".opt[data-torn]").forEach(function (b) { b.setAttribute("aria-checked", String(!!a.t)); });
+      screen.querySelectorAll(".esc[data-esc]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.e === +b.getAttribute("data-esc"))); });
       var nf = document.getElementById("nf"); if (nf) nf.hidden = a.e !== 1;
-      var fm = document.getElementById("firm"); if (fm) fm.hidden = a.c == null && !a.t;
-      screen.querySelectorAll("[data-firm]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.f === +b.getAttribute("data-firm"))); });
-      var nx = document.getElementById("next"); if (nx) nx.disabled = !answered(it, a);
+      var nx = document.getElementById("next"); if (nx) { nx.disabled = !answered(it, a); nx.hidden = !(a.e === 1 || answered(it, a)); }
+    }
+    function advance() {
+      clearTimeout(advTimer);
+      var here = S.pos;
+      screen.classList.add("leaving");
+      advTimer = setTimeout(function () { screen.classList.remove("leaving"); if (S.phase === "quiz" && S.pos === here && !view) { if (leave) leave(); next(); } }, ADVANCE_MS);
     }
     paint();
     screen.querySelectorAll(".opt[data-code]").forEach(function (b) {
@@ -429,20 +447,20 @@
         a.c = +b.getAttribute("data-code"); a.p = +b.getAttribute("data-pos"); a.e = null; a.t = null;
         if (it.format === "tradeoff") a.s = a.d;
         save(); paint();
+        if (CFG.autoAdvance !== false) advance();
       });
     });
     screen.querySelectorAll(".opt[data-torn]").forEach(function (b) {
-      b.addEventListener("click", function () { a.t = 1; a.c = null; a.p = 2; a.e = null; a.s = a.d; save(); paint(); });
+      b.addEventListener("click", function () { a.t = 1; a.c = null; a.p = 2; a.e = null; a.s = a.d; save(); paint(); if (CFG.autoAdvance !== false) advance(); });
     });
-    screen.querySelectorAll(".esc").forEach(function (b) {
+    screen.querySelectorAll(".esc[data-esc]").forEach(function (b) {
       b.addEventListener("click", function () {
         var v = +b.getAttribute("data-esc");
         a.e = a.e === v ? null : v; a.c = null; a.p = null; a.f = null; a.t = null;
         save(); paint();
+        if (a.e === 2 && CFG.autoAdvance !== false) advance();
+        if (a.e === 1) { var ta = document.getElementById("nftext"); if (ta) ta.focus(); }
       });
-    });
-    screen.querySelectorAll("[data-firm]").forEach(function (b) {
-      b.addEventListener("click", function () { var v = +b.getAttribute("data-firm"); a.f = a.f === v ? null : v; save(); paint(); });
     });
     var ta = document.getElementById("nftext");
     if (ta) ta.addEventListener("input", function () { a.x = ta.value.slice(0, 500); save(); });
@@ -451,10 +469,10 @@
   function casesHtml(it, dir, rich) {
     var codes = it.options.map(function (_, k) { return k; });
     if (dir) codes.reverse();
-    return '<div class="cases">' + it.cases.map(function (c) {
-      return '<div class="case" data-case="' + esc(c.id) + '"><div class="case-text">' + rich(c.text) + '</div><div class="case-opts">' +
-        codes.map(function (code, p) { return '<button type="button" class="chip" data-code="' + code + '" data-pos="' + p + '">' + esc(it.options[code]) + "</button>"; }).join("") +
-        '<button type="button" class="esc" data-esc="2">Don\'t know</button></div></div>';
+    return '<p class="hint">Answer each line.</p><div class="cases">' + it.cases.map(function (c) {
+      return '<div class="case" data-case="' + esc(c.id) + '"><div class="case-text">' + rich(c.text) + '</div><div class="case-opts" role="radiogroup">' +
+        codes.map(function (code, p) { return '<button type="button" class="chip" role="radio" data-code="' + code + '" data-pos="' + p + '"><span class="oval" aria-hidden="true"></span>' + esc(it.options[code]) + "</button>"; }).join("") +
+        '<button type="button" class="chip esc" data-esc="2"><span class="oval" aria-hidden="true"></span>Not sure</button></div></div>';
     }).join("") + "</div>";
   }
   function wireCases(it) {
@@ -462,8 +480,8 @@
     function paint() {
       screen.querySelectorAll(".case").forEach(function (row) {
         var ca = S.ans[row.getAttribute("data-case")] || {};
-        row.querySelectorAll("[data-code]").forEach(function (b) { b.setAttribute("aria-pressed", String(ca.c != null && +b.getAttribute("data-code") === ca.c)); });
-        row.querySelectorAll(".esc").forEach(function (b) { b.setAttribute("aria-pressed", String(ca.e === 2)); });
+        row.querySelectorAll("[data-code]").forEach(function (b) { b.setAttribute("aria-checked", String(ca.c != null && +b.getAttribute("data-code") === ca.c)); });
+        row.querySelectorAll(".esc").forEach(function (b) { b.setAttribute("aria-checked", String(ca.e === 2)); });
         row.classList.toggle("done", ca.c != null || ca.e === 2);
       });
       var nx = document.getElementById("next"); if (nx) nx.disabled = !answered(it, null);
@@ -491,14 +509,14 @@
     }
     return !!(a && (a.c != null || a.e || a.t));
   }
-  function navHtml(ok) {
-    return '<div class="nav"><button class="link" id="bk"' + (S.pos === 0 ? " hidden" : "") + '>Back</button>' +
-      '<span class="nav-right"><button class="link" id="skip">Skip</button><button class="btn" id="next"' + (ok ? "" : " disabled") + ">Next</button></span></div>";
+  function navHtml(ok, showNext) {
+    return '<div class="nav qnav"><button class="link back" id="bk"' + (S.pos === 0 ? " hidden" : "") + '>← Back</button>' +
+      '<button class="btn" id="next"' + (ok ? "" : " disabled") + (ok || showNext ? "" : " hidden") + ">Next</button></div>";
   }
   function wireNav(onLeave) {
-    bind("#next", function () { onLeave(); next(); });
+    bind("#next", function () { clearTimeout(advTimer); onLeave(); next(); });
     bind("#skip", function () { onLeave(); next(); });
-    bind("#bk", function () { onLeave(); back(); });
+    bind("#bk", function () { clearTimeout(advTimer); onLeave(); back(); });
   }
 
   // ---------- attention checks ----------
@@ -507,61 +525,71 @@
     var rec = S.qc[q.id] || (S.qc[q.id] = {});
     var fake = { id: q.id, format: q.format, options: q.options, sides: q.sides, stem: q.stem, scope: q.scope, domain: e.d };
     var dir = displayDir(fake, false);
-    show(header(fake, "") + '<p class="stem">' + esc(q.stem) + '</p><p class="scope">' + esc(q.scope) + "</p>" +
-      (q.format === "tradeoff" ? tradeoffHtml(fake, dir, esc) : optionsHtml(fake, dir, esc)) + navHtml(rec.c != null));
+    show('<article class="q q-' + q.format + '"><p class="topic">' + esc(domain(e.d).name) + '</p><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + "</p>" +
+      (q.format === "tradeoff" ? tradeoffHtml(fake, dir, esc) : optionsHtml(fake, dir, esc)) + "</article>" + navHtml(rec.c != null, false));
+    function leave() { rec.ms = (rec.ms || 0) + spend(); }
     screen.querySelectorAll(".opt[data-code]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(rec.c != null && +b.getAttribute("data-code") === rec.c));
+      b.setAttribute("aria-checked", String(rec.c != null && +b.getAttribute("data-code") === rec.c));
       b.addEventListener("click", function () {
         rec.c = +b.getAttribute("data-code"); rec.ok = rec.c === q.correct;
-        screen.querySelectorAll(".opt[data-code]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        document.getElementById("next").disabled = false; save();
+        screen.querySelectorAll(".opt[data-code]").forEach(function (x) { x.setAttribute("aria-checked", String(x === b)); });
+        var nx = document.getElementById("next"); nx.disabled = false; nx.hidden = false; save();
+        if (CFG.autoAdvance !== false) {
+          clearTimeout(advTimer); var here = S.pos;
+          advTimer = setTimeout(function () { if (S.phase === "quiz" && S.pos === here && !view) { leave(); next(); } }, ADVANCE_MS);
+        }
       });
     });
-    wireNav(function () { rec.ms = (rec.ms || 0) + spend(); });
+    wireNav(leave);
+    keyHandler = function (ev) {
+      if (/^[1-9]$/.test(ev.key)) { var b = screen.querySelectorAll(".options .opt")[+ev.key - 1]; if (b) { b.click(); ev.preventDefault(); } }
+    };
   }
 
   // ---------- break ----------
   function renderBreak() {
-    var pct = Math.round(100 * S.pos / Math.max(1, S.queue.length));
-    var sc = computeScores(S.ans), preview = "";
-    if (sc.G && sc.G.n >= MIN_N) preview = '<div class="results-block">' + barHtml(META.G, sc.G, { big: true }) + '<p class="scope">An early look. It will shift as you answer more.</p></div>';
-    show('<div class="eyebrow"><span>Short break</span></div><h2>You\'re about ' + pct + "% of the way through.</h2>" +
-      "<p>About " + minutesLeft() + " minutes to go. Stretch, grab a drink, or keep going. Your answers are saved on this device.</p>" + preview +
-      '<div class="nav"><span></span><button class="btn" id="go">Keep going</button></div>');
+    var c = counter(), pct = Math.round(100 * (c.at - 1) / Math.max(1, c.n));
+    var sc = computeScores(S.ans), preview = "", top = profileMatches(sc)[0];
+    if (sc.G && sc.G.n >= MIN_N) preview = '<div class="results-block">' + barHtml(META.G, sc.G, { big: true }) +
+      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b>. It will shift as you answer more.</p>" : "") + "</div>";
+    show("<h1>" + pct + "% done. Take a breather.</h1>" +
+      "<p>About " + minutesLeft() + " minutes to go. Your answers are saved on this device, so you can also close the page and come back later.</p>" + preview +
+      '<div class="nav"><span></span><button class="btn big" id="go">Keep going</button></div>');
     bind("#go", function () { spend(); S.phase = "quiz"; save(); render(); });
   }
 
-  // ---------- priorities (best-worst) ----------
+  // ---------- priorities: pick up to five topics, in order ----------
+  var PRI_MAX = 5;
   function renderPriorities() {
-    var P = B.priorities, k = S.priOrder[S.priPos], set = P.sets[k];
-    var rec = S.pri[k] || (S.pri[k] = {});
-    if (!rec.o) rec.o = shuffle(set, mulberry32(hash(S.rid + "pri" + k)));
-    var html = (S.priPos === 0 ? '<div class="topic-banner"><span class="mono">Almost done</span><b>What matters most to you</b><span class="mono">' + P.sets.length + " quick sets</span></div>" : "") +
-      '<div class="eyebrow"><span>What matters most</span><span class="mono">' + (S.priPos + 1) + " of " + P.sets.length + "</span></div>" +
-      '<p class="stem">' + esc(P.stem) + '</p><p class="scope">' + esc(P.scope) + "</p>" +
-      '<table class="pmat"><thead><tr><th class="c">Most</th><th></th><th class="c">Least</th></tr></thead><tbody>' +
-      rec.o.map(function (d) {
-        return '<tr><td class="c"><input type="radio" name="best" id="b-' + d + '" value="' + d + '"' + (rec.b === d ? " checked" : "") + ' aria-label="Most: ' + esc(P.labels[d]) + '"></td>' +
-          '<td class="topic"><label for="b-' + d + '">' + esc(P.labels[d]) + "</label></td>" +
-          '<td class="c"><input type="radio" name="worst" id="w-' + d + '" value="' + d + '"' + (rec.w === d ? " checked" : "") + ' aria-label="Least: ' + esc(P.labels[d]) + '"></td></tr>';
-      }).join("") + "</tbody></table>" +
-      '<div class="nav"><button class="link" id="bk"' + (S.priPos === 0 ? " hidden" : "") + '>Back</button><span class="nav-right"><button class="link" id="skip">Skip</button><button class="btn" id="next"' + (rec.b && rec.w ? "" : " disabled") + ">Next</button></span></div>";
-    show(html);
-    function upd(name, val) {
-      if (name === "best") { rec.b = val; if (rec.w === val) { rec.w = null; document.getElementById("w-" + val).checked = false; } }
-      else { rec.w = val; if (rec.b === val) { rec.b = null; document.getElementById("b-" + val).checked = false; } }
-      document.getElementById("next").disabled = !(rec.b && rec.w);
-      save();
+    var P = B.priorities;
+    if (!S.pri || !Array.isArray(S.pri.top)) S.pri = { top: [] };
+    var top = S.pri.top;
+    var labels = Object.keys(P.labels).sort(function (a, b) { return P.labels[a].localeCompare(P.labels[b]); });
+    show("<h1>Which issues matter most to you?</h1>" +
+      '<p class="scope">Tap up to ' + PRI_MAX + ", most important first. Tap again to remove one.</p>" +
+      '<div class="pri-grid">' + labels.map(function (d) {
+        var r = top.indexOf(d);
+        return '<button type="button" class="pri" data-d="' + esc(d) + '" aria-pressed="' + (r >= 0) + '"><span class="rank" aria-hidden="true">' + (r >= 0 ? r + 1 : "") + "</span>" + esc(P.labels[d]) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="nav"><span class="scope" id="pricount">' + top.length + " of " + PRI_MAX + ' picked</span><button class="btn" id="next">' + (top.length ? "Continue" : "Skip") + "</button></div>");
+    function paint() {
+      screen.querySelectorAll(".pri").forEach(function (b) {
+        var r = top.indexOf(b.getAttribute("data-d"));
+        b.setAttribute("aria-pressed", String(r >= 0)); b.querySelector(".rank").textContent = r >= 0 ? r + 1 : "";
+        b.disabled = r < 0 && top.length >= PRI_MAX;
+      });
+      document.getElementById("pricount").textContent = top.length + " of " + PRI_MAX + " picked";
+      document.getElementById("next").textContent = top.length ? "Continue" : "Skip";
     }
-    screen.querySelectorAll("input[type=radio]").forEach(function (r) { r.addEventListener("change", function () { upd(r.name, r.value); }); });
-    function leave() { rec.ms = (rec.ms || 0) + spend(); }
-    function adv() {
-      leave(); S.priPos++;
-      if (S.priPos >= P.sets.length) S.phase = "aboutyou";
-      save(); render();
-    }
-    bind("#next", adv); bind("#skip", adv);
-    bind("#bk", function () { leave(); S.priPos = Math.max(0, S.priPos - 1); save(); render(); });
+    paint();
+    screen.querySelectorAll(".pri").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var d = b.getAttribute("data-d"), r = top.indexOf(d);
+        if (r >= 0) top.splice(r, 1); else if (top.length < PRI_MAX) top.push(d);
+        save(); paint();
+      });
+    });
+    bind("#next", function () { S.pri.ms = (S.pri.ms || 0) + spend(); S.phase = "aboutyou"; save(); render(); });
   }
 
   // ---------- about you ----------
@@ -585,7 +613,7 @@
   }
   function renderAboutYou() {
     var qs = aboutItems();
-    var html = '<div class="eyebrow"><span>About you</span><span>Optional</span></div><h2>A few questions about you</h2><p>' + esc(B.about.intro_text) + ' Skip any or all of them.</p><div class="form">';
+    var html = '<h1>A few questions about you</h1><p class="scope">' + esc(B.about.intro_text) + ' All optional, and they never change your results.</p><div class="form">';
     qs.forEach(function (q) {
       html += '<fieldset id="fs-' + q.id + '"' + (aboutVisible(q) ? "" : " hidden") + "><legend>" + esc(q.stem) + "</legend>";
       if (q.id === "state") {
@@ -600,7 +628,7 @@
       }
       html += "</fieldset>";
     });
-    html += '</div><div class="nav"><span></span><button class="btn" id="go">Continue</button></div>';
+    html += '</div><div class="nav"><span></span><button class="btn big" id="go">Continue</button></div>';
     show(html);
     function refresh() { qs.forEach(function (q) { var fs = document.getElementById("fs-" + q.id); if (fs) fs.hidden = !aboutVisible(q); }); }
     screen.querySelectorAll("fieldset input").forEach(function (inp) {
@@ -625,13 +653,13 @@
   }
   function renderHonesty() {
     var q = B.quality.self_report;
-    show('<div class="eyebrow"><span>Last question</span></div><p class="stem">' + esc(q.stem) + '</p><p class="scope">' + esc(q.scope) + '</p><div class="options">' +
-      q.options.map(function (o, k) { return '<button type="button" class="opt" data-k="' + k + '" aria-pressed="' + (S.honesty === k) + '">' + esc(o) + "</button>"; }).join("") +
-      '</div><div class="nav"><span></span><button class="btn" id="go"' + (S.honesty == null ? " disabled" : "") + ">See my results</button></div>");
+    show('<article class="q"><p class="topic">Last question</p><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + '</p><div class="options" role="radiogroup">' +
+      q.options.map(function (o, k) { return '<button type="button" class="opt" role="radio" data-k="' + k + '" aria-checked="' + (S.honesty === k) + '"><span class="oval" aria-hidden="true"></span><span class="otext">' + esc(o) + "</span></button>"; }).join("") +
+      '</div></article><div class="nav"><span></span><button class="btn big" id="go"' + (S.honesty == null ? " disabled" : "") + ">See my results</button></div>");
     screen.querySelectorAll("[data-k]").forEach(function (b) {
       b.addEventListener("click", function () {
         S.honesty = +b.getAttribute("data-k");
-        screen.querySelectorAll("[data-k]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        screen.querySelectorAll("[data-k]").forEach(function (x) { x.setAttribute("aria-checked", String(x === b)); });
         document.getElementById("go").disabled = false; save();
       });
     });
@@ -761,11 +789,11 @@
     var other = opt.other && opt.other.v != null ? '<span class="dot other" style="left:' + pct(opt.other.v) + '%" title="' + esc(opt.otherLabel || "") + '"></span>' : "";
     var prev = opt.prev != null ? '<span class="dot prev" style="left:' + pct(opt.prev) + '%"></span>' : "";
     var inner = '<div class="axis-head"><span class="axis-name">' + esc(meta.name) + "</span>" +
-      '<span class="axis-val">' + esc(leanText(v, meta)) + ' <span class="mono">' + signed(v) + "</span></span></div>" +
+      '<span class="axis-val">' + esc(leanText(v, meta)) + ' <span class="num">' + signed(v) + "</span></span></div>" +
       '<div class="track" role="img" aria-label="' + esc(meta.name + ": " + leanText(v, meta)) + '"><span class="mid"></span>' + prev + other + '<span class="dot" style="left:' + pct(v) + '%"></span></div>' +
       '<div class="poles"><span>' + esc(meta.minus) + "</span><span>" + esc(meta.plus) + "</span></div>";
     if (opt.drill && sc.parts && sc.parts.length) {
-      return '<details class="axis' + (opt.big ? " big" : "") + '"><summary>' + inner + '<span class="axis-n">' + plural(sc.n, "answer") + " · why?</span></summary>" + drillHtml(meta, sc) + "</details>";
+      return '<details class="axis' + (opt.big ? " big" : "") + '"><summary>' + inner + '<span class="axis-n">' + "Which answers moved this? (" + sc.n + ")</span></summary>" + drillHtml(meta, sc) + "</details>";
     }
     return '<div class="axis' + (opt.big ? " big" : "") + '">' + inner + "</div>";
   }
@@ -782,7 +810,7 @@
     return '<div class="drill"><p class="scope">' + esc(meta.about || "") + ' The answers below moved this score, strongest first.</p><ul>' +
       parts.slice(0, 12).map(function (p) {
         var t = partText(p), toward = p.s > 0.05 ? meta.plus : p.s < -0.05 ? meta.minus : "the center";
-        return "<li><span class=\"dq\">" + esc(t.q) + "</span><span class=\"da\">" + esc(t.a) + '</span><span class="dt mono">→ ' + esc(toward) + "</span></li>";
+        return "<li><span class=\"dq\">" + esc(t.q) + "</span><span class=\"da\">" + esc(t.a) + '</span><span class="dt">→ ' + esc(toward) + "</span></li>";
       }).join("") + "</ul>" + (parts.length > 12 ? '<p class="scope">…and ' + (parts.length - 12) + " more.</p>" : "") + "</div>";
   }
   function profilePos(p, axes) {
@@ -793,51 +821,101 @@
     var vals = axes.filter(function (a) { return sc[a] && sc[a].n >= MIN_N; }).map(function (a) { return sc[a].v; });
     return vals.length ? vals.reduce(function (s, x) { return s + x; }, 0) / vals.length : null;
   }
-  function mapHtml(sc, other, otherLabel) {
-    var ux = userPos(sc, ECON), uy = userPos(sc, CULT);
-    if (ux == null || uy == null) return "";
-    var W = 360, P = 34, R = W - 2 * P;
-    function X(v) { return (P + (v + 1) / 2 * R).toFixed(1); }
-    function Y(v) { return (P + (1 - (v + 1) / 2) * R).toFixed(1); }
-    // place labels greedily, nudging down any that would overlap an earlier one
+  var CATS = B.profileCats || [];
+  function catName(id) { var c = CATS.filter(function (x) { return x.id === id; })[0]; return c ? c.name : "All"; }
+  function profileMeta(p) {
+    if (p.cat === "typology") return "Pew voter type";
+    if (p.cat === "ideology") return "Ideology";
+    if (p.cat === "president") return "President, " + p.era;
+    if (p.cat === "world") return p.era + ", outside the US";
+    return "US, " + p.era;
+  }
+  var PROFILE = {}; B.profiles.forEach(function (p) { PROFILE[p.id] = p; });
+
+  // The field: every comparison group on the economic (across) and cultural (up) summary axes.
+  // o: {cat, label: {id:1} or null for all, user:{x,y}, userLabel, other:{x,y}, otherLabel, hero, match:{id:%}}
+  function textW(t) { var w = 2; for (var i = 0; i < t.length; i++) w += /[A-Z]/.test(t[i]) ? 6.4 : /[ .il']/.test(t[i]) ? 2.8 : 5; return w; }
+  function plotHtml(o) {
+    var W = 360, P = 30, R = W - 2 * P;
+    function X(v) { return +(P + (v + 1) / 2 * R).toFixed(1); }
+    function Y(v) { return +(P + (1 - (v + 1) / 2) * R).toFixed(1); }
     var placed = [];
+    if (o.user) {
+      var ux0 = X(o.user.x), uy0 = Y(o.user.y), uw = 7.5 * (o.userLabel || "You").length / 2 + 5;
+      placed.push({ x0: ux0 - uw, x1: ux0 + uw, y: uy0 - 17 }, { x0: ux0 - 13, x1: ux0 + 13, y: uy0 - 3 }, { x0: ux0 - 13, x1: ux0 + 13, y: uy0 + 7 });
+    }
     var pts = B.profiles.map(function (p) {
       var x = profilePos(p, ECON), y = profilePos(p, CULT);
-      return x == null || y == null ? null : { p: p, cx: +X(x), cy: +Y(y), right: x > 0.45 };
-    }).filter(Boolean).sort(function (a, b) { return a.cy - b.cy; });
-    var dots = pts.map(function (o) {
-      var w = 4.9 * o.p.short.length, x0 = o.right ? o.cx - 7 - w : o.cx + 7, ty = o.cy + 3.5;
-      for (var guard = 0; guard < 12; guard++) {
-        var hit = placed.some(function (b) { return x0 < b.x1 && x0 + w > b.x0 && Math.abs(ty - b.y) < 10.5; });
-        if (!hit) break;
-        ty += 10.5;
+      if (x == null || y == null) return null;
+      var inCat = o.cat === "all" || p.cat === o.cat;
+      return { p: p, cx: X(x), cy: Y(y), right: x > 0.4, on: inCat, lab: inCat && (!o.label || o.label[p.id]) };
+    }).filter(Boolean).sort(function (a, b) { return (a.lab - b.lab) || (a.cy - b.cy); });
+    pts.forEach(function (q) { if (q.on) placed.push({ x0: q.cx - 3.5, x1: q.cx + 3.5, y: q.cy + 3.5, dot: 1 }); });
+    function free(x0, w, ty) { return !placed.some(function (b) { return x0 < b.x1 && x0 + w > b.x0 && Math.abs(ty - b.y) < (b.dot ? 7 : 10); }); }
+    var dots = pts.map(function (q) {
+      var label = "";
+      if (q.lab) {
+        var w = textW(q.p.short), ty = q.cy + 3.5, x0 = null, right = q.right;
+        // try both sides at the dot's height, then step up and down
+        for (var g = 0; g < 15 && x0 == null; g++) {
+          var dy = g === 0 ? 0 : (g % 2 ? 1 : -1) * 10 * Math.ceil(g / 2);
+          var sides = [right, !right];
+          for (var k = 0; k < 2; k++) {
+            var cand = sides[k] ? q.cx - 6 - w : q.cx + 6;
+            if (cand < 2 || cand + w > W - 2) continue;
+            if (free(cand, w, q.cy + 3.5 + dy)) { x0 = cand; ty = q.cy + 3.5 + dy; right = sides[k]; break; }
+          }
+        }
+        if (x0 == null) { x0 = right ? q.cx - 6 - w : q.cx + 6; }
+        placed.push({ x0: x0, x1: x0 + w, y: ty });
+        var lead = Math.abs(ty - q.cy - 3.5) > 1 ? '<line x1="' + q.cx + '" y1="' + q.cy + '" x2="' + (right ? x0 + w : x0).toFixed(1) + '" y2="' + (ty - 3).toFixed(1) + '"/>' : "";
+        label = lead + '<text x="' + x0.toFixed(1) + '" y="' + ty.toFixed(1) + '">' + esc(q.p.short) + "</text>";
       }
-      placed.push({ x0: x0, x1: x0 + w, y: ty });
-      var lead = Math.abs(ty - o.cy - 3.5) > 1 ? '<line x1="' + o.cx + '" y1="' + o.cy + '" x2="' + (o.right ? x0 + w : x0) + '" y2="' + (ty - 3) + '"/>' : "";
-      return '<g class="pdot"><circle cx="' + o.cx + '" cy="' + o.cy + '" r="3.5"/>' + lead + '<text x="' + x0.toFixed(1) + '" y="' + ty.toFixed(1) + '">' + esc(o.p.short) + "</text></g>";
+      return '<g class="pdot' + (q.on ? "" : " off") + (q.lab ? " lab" : "") + '" data-pid="' + q.p.id + '" tabindex="' + (q.on ? 0 : -1) + '" role="button" aria-label="' + esc(q.p.name) + '"><title>' + esc(q.p.name + " (" + q.p.era + ")") + '</title><circle class="hit" cx="' + q.cx + '" cy="' + q.cy + '" r="9"/><circle cx="' + q.cx + '" cy="' + q.cy + '" r="' + (q.lab ? 3.6 : 3) + '"/>' + label + "</g>";
     }).join("");
-    var ox = other ? userPos(other, ECON) : null, oy = other ? userPos(other, CULT) : null;
-    var odot = ox != null && oy != null ? '<g class="odot"><circle cx="' + X(ox) + '" cy="' + Y(oy) + '" r="8"/><text x="' + X(ox) + '" y="' + (+Y(oy) - 13) + '" text-anchor="middle">' + esc(otherLabel || "Them") + "</text></g>" : "";
-    return '<figure class="map2d"><svg viewBox="0 0 ' + W + " " + W + '" role="img" aria-label="Two-dimensional summary: economic and cultural position, with parties for comparison">' +
-      '<rect class="field" x="' + P + '" y="' + P + '" width="' + R + '" height="' + R + '" rx="6"/>' +
-      '<line class="axisline" x1="' + (W / 2) + '" y1="' + P + '" x2="' + (W / 2) + '" y2="' + (W - P) + '"/><line class="axisline" x1="' + P + '" y1="' + (W / 2) + '" x2="' + (W - P) + '" y2="' + (W / 2) + '"/>' +
-      '<text class="axlabel" x="' + (W / 2) + '" y="' + (P - 12) + '" text-anchor="middle">Tradition</text>' +
-      '<text class="axlabel" x="' + (W / 2) + '" y="' + (W - P + 22) + '" text-anchor="middle">Change</text>' +
-      '<text class="axlabel" x="' + (P - 8) + '" y="' + (W / 2) + '" text-anchor="middle" transform="rotate(-90 ' + (P - 8) + " " + (W / 2) + ')">Collective economy</text>' +
-      '<text class="axlabel" x="' + (W - P + 14) + '" y="' + (W / 2) + '" text-anchor="middle" transform="rotate(90 ' + (W - P + 14) + " " + (W / 2) + ')">Market economy</text>' +
-      dots + odot + '<g class="udot"><circle cx="' + X(ux) + '" cy="' + Y(uy) + '" r="9"/><text x="' + X(ux) + '" y="' + (+Y(uy) - 14) + '" text-anchor="middle">You</text></g></svg>' +
-      '<figcaption>A two-dimensional summary. Across: taxes, business rules and social programs. Up and down: moral, cultural and identity issues. The axes below are the fuller picture.</figcaption></figure>';
+    var odot = o.other ? '<g class="odot"><circle cx="' + X(o.other.x) + '" cy="' + Y(o.other.y) + '" r="7.5"/><text x="' + X(o.other.x) + '" y="' + (Y(o.other.y) + 20) + '" text-anchor="middle">' + esc(o.otherLabel || "Them") + "</text></g>" : "";
+    var udot = o.user ? '<g class="udot"><circle class="ring" cx="' + X(o.user.x) + '" cy="' + Y(o.user.y) + '" r="13"/><circle cx="' + X(o.user.x) + '" cy="' + Y(o.user.y) + '" r="8"/><text x="' + X(o.user.x) + '" y="' + (Y(o.user.y) - 17) + '" text-anchor="middle">' + esc(o.userLabel || "You") + "</text></g>" : "";
+    var M = W / 2;
+    return '<figure class="plot' + (o.hero ? " hero-plot" : "") + '"><svg viewBox="0 0 ' + W + " " + W + '" role="group" aria-label="Map of parties, presidents, movements and ideologies: economics across, culture up and down">' +
+      '<rect class="field" x="' + P + '" y="' + P + '" width="' + R + '" height="' + R + '"/>' +
+      '<line class="axisline" x1="' + M + '" y1="' + P + '" x2="' + M + '" y2="' + (W - P) + '"/><line class="axisline" x1="' + P + '" y1="' + M + '" x2="' + (W - P) + '" y2="' + M + '"/>' +
+      '<text class="axlabel" x="' + M + '" y="' + (P - 9) + '" text-anchor="middle">Tradition</text>' +
+      '<text class="axlabel" x="' + M + '" y="' + (W - P + 18) + '" text-anchor="middle">Change</text>' +
+      '<text class="axlabel" x="' + (P - 9) + '" y="' + M + '" text-anchor="middle" transform="rotate(-90 ' + (P - 9) + " " + M + ')">Public economy</text>' +
+      '<text class="axlabel" x="' + (W - P + 9) + '" y="' + M + '" text-anchor="middle" transform="rotate(90 ' + (W - P + 9) + " " + M + ')">Market economy</text>' +
+      dots + odot + udot + "</svg>" +
+      '<figcaption class="plotcap" aria-live="polite">' + (o.hero ? "Each dot is a party, president, movement or ideology. Tap one to see who it is." : "Tap any dot to see who it is.") + "</figcaption></figure>";
+  }
+  var plotMatch = null; // id -> match %, for captions on the results page
+  function wirePlot() {
+    screen.querySelectorAll(".plot").forEach(function (fig) {
+      var cap = fig.querySelector(".plotcap");
+      function pick(g) {
+        fig.querySelectorAll(".pdot.sel").forEach(function (x) { x.classList.remove("sel"); });
+        g.classList.add("sel");
+        var p = PROFILE[g.getAttribute("data-pid")];
+        cap.innerHTML = "<b>" + esc(p.name) + "</b> <span class=\"era\">" + esc(profileMeta(p)) + (plotMatch && plotMatch[p.id] != null ? ", " + plotMatch[p.id] + "% match" : "") + "</span><br>" + esc(p.about);
+      }
+      fig.querySelectorAll(".pdot").forEach(function (g) {
+        g.addEventListener("click", function () { pick(g); });
+        g.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pick(g); } });
+      });
+    });
   }
   function profileMatches(sc) {
     return B.profiles.map(function (p) {
-      var diffs = [];
+      var sum = 0, wsum = 0, diffs = [];
       Object.keys(p.pos).forEach(function (ax) {
-        if (ax !== "G" && sc[ax] && sc[ax].n >= MIN_N) diffs.push({ ax: ax, d: Math.abs(sc[ax].v - p.pos[ax]) });
+        if (!sc[ax] || sc[ax].n < MIN_N) return;
+        var w = ax === "G" ? 2 : 1, d = Math.abs(sc[ax].v - p.pos[ax]);
+        sum += w * d * d; wsum += w;
+        if (ax !== "G") diffs.push({ ax: ax, d: d });
       });
-      if (diffs.length < 4) return null;
-      var rms = Math.sqrt(diffs.reduce(function (s, x) { return s + x.d * x.d; }, 0) / diffs.length);
+      if (diffs.length < 6) return null;
+      // a small prior keeps groups placed on only a few axes from matching too easily
+      var rms = Math.sqrt((sum + 0.25) / (wsum + 1));
       diffs.sort(function (a, b) { return a.d - b.d; });
-      return { p: p, match: Math.max(0, Math.round(100 * (1 - rms / 2))), agree: diffs.slice(0, 3), differ: diffs.slice(-3).reverse() };
+      return { p: p, match: Math.max(0, Math.round(100 * (1 - rms / 2))), agree: diffs.slice(0, 3), differ: diffs.slice(-3).reverse(), n: diffs.length };
     }).filter(Boolean).sort(function (a, b) { return b.match - a.match; });
   }
   function axisList(arr) {
@@ -853,37 +931,71 @@
     return "You're " + lean + (breaks.length ? ", but you break from that lean on " + axisList(breaks) + "." : ".");
   }
 
+  var resCat = "all", showAll = false, lastCmp = null;
+  function afterResults() { if (lastCmp) wireCompare(lastCmp.sc, lastCmp.matches, lastCmp.o); }
+  function matchListHtml(matches, cat) {
+    var list = cat === "all" ? matches : matches.filter(function (m) { return m.p.cat === cat; });
+    var lim = showAll ? list.length : cat === "all" ? 8 : 6;
+    return '<ol class="profiles">' + list.slice(0, lim).map(function (m, k) {
+      return '<li><details><summary><span class="prof-rank">' + (k + 1) + '</span><span class="prof-main"><span class="prof-head"><b>' + esc(m.p.name) + '</b><span class="era">' + esc(profileMeta(m.p)) + '</span></span><span class="matchbar"><span style="width:' + m.match + '%"></span></span></span><span class="match">' + m.match + "%</span></summary>" +
+        '<div class="prof-body"><p>' + esc(m.p.about) + "</p><p><b>Closest on</b> " + esc(axisList(m.agree)) + ".<br><b>Furthest on</b> " + esc(axisList(m.differ)) + ".</p></div></details></li>";
+    }).join("") + "</ol>" +
+      (list.length > lim ? '<button type="button" class="link" id="showall">Show all ' + list.length + "</button>" : "") +
+      (showAll && list.length > 8 ? '<button type="button" class="link" id="showless">Show fewer</button>' : "");
+  }
+  function chipsHtml() {
+    return '<div class="chips" role="tablist" aria-label="Filter comparisons">' + [{ id: "all", name: "All" }].concat(CATS).map(function (c) {
+      return '<button type="button" class="chip" role="tab" data-cat="' + c.id + '" aria-selected="' + (resCat === c.id) + '">' + esc(c.name) + "</button>";
+    }).join("") + "</div>";
+  }
+  function compareBlockHtml(sc, matches, o) {
+    var top = {}; matches.slice(0, 5).forEach(function (m) { top[m.p.id] = 1; });
+    var ux = userPos(sc, ECON), uy = userPos(sc, CULT);
+    var ox = o.other ? userPos(o.other, ECON) : null, oy = o.other ? userPos(o.other, CULT) : null;
+    var catAbout = resCat === "all" ? "Everyone on the map; the five closest to " + (o.they ? "them" : "you") + " are labeled." : (CATS.filter(function (c) { return c.id === resCat; })[0] || {}).about || "";
+    return chipsHtml() + '<p class="scope cat-about">' + esc(catAbout) + "</p>" +
+      '<div class="compare-grid"><div>' + (ux != null && uy != null ? plotHtml({ cat: resCat, label: resCat === "all" ? top : null, user: { x: ux, y: uy }, userLabel: o.they ? "Them" : "You", other: ox != null && oy != null ? { x: ox, y: oy } : null, otherLabel: o.otherLabel }) : "") + "</div>" +
+      "<div>" + matchListHtml(matches, resCat) + "</div></div>";
+  }
+  function wireCompare(sc, matches, o) {
+    var box = screen.querySelector("#compare-box");
+    if (!box) return;
+    plotMatch = {}; matches.forEach(function (m) { plotMatch[m.p.id] = m.match; });
+    function rerender() { box.innerHTML = compareBlockHtml(sc, matches, o); wireCompare(sc, matches, o); }
+    box.querySelectorAll("[data-cat]").forEach(function (b) {
+      b.addEventListener("click", function () { resCat = b.getAttribute("data-cat"); showAll = false; rerender(); });
+    });
+    var sa = box.querySelector("#showall"); if (sa) sa.addEventListener("click", function () { showAll = true; rerender(); });
+    var sl = box.querySelector("#showless"); if (sl) sl.addEventListener("click", function () { showAll = false; rerender(); });
+    wirePlot();
+  }
+
   function resultsSections(sc, opt) {
     opt = opt || {};
     var other = opt.other, otherLabel = opt.otherLabel || "Them", prev = opt.prev, html = "";
-    var g = sc.G;
-    if (g && g.n >= MIN_N) {
-      html += '<section class="results-block hero-result">' + barHtml(META.G, g, { big: true, other: other && other.G, otherLabel: otherLabel }) +
-        '<p class="summary">' + esc(summarySentence(sc)) + "</p></section>";
+    var g = sc.G, matches = profileMatches(sc), top = matches[0];
+    lastCmp = { sc: sc, matches: matches, o: { other: other, otherLabel: otherLabel, they: opt.they } };
+    html += '<header class="res-head">' + (opt.kicker ? '<p class="topic">' + esc(opt.kicker) + "</p>" : "") +
+      (top ? "<h1>" + (opt.they ? "Their" : "Your") + " closest match is " + esc(top.p.name) + "</h1>" : "<h1>" + (opt.they ? "Where they stand" : "Where you stand") + "</h1>") +
+      (top ? '<p class="res-sub"><b>' + top.match + "% match.</b> " + esc(profileMeta(top.p)) + ". " + esc(top.p.about) + "</p>" : "") +
+      (g && g.n >= MIN_N ? '<p class="summary">' + esc(opt.they ? summarySentence(sc).replace(/^You're/, "They're").replace(/you break/, "they break") : summarySentence(sc)) + "</p>" + barHtml(META.G, g, { big: true, other: other && other.G, otherLabel: otherLabel, prev: prev && prev.G ? prev.G.v : null }) : "") +
+      "</header>";
+    if (matches.length) {
+      html += '<section class="results-block"><h2>' + (opt.they ? "Who they're" : "Who you're") + " closest to</h2>" +
+        '<div id="compare-box">' + compareBlockHtml(sc, matches, { other: other, otherLabel: otherLabel, they: opt.they }) + "</div>" +
+        '<p class="scope">The map squeezes everything into two summary dimensions (economics across, culture up and down). The match percentages use every axis you have a score on, so they can disagree with the map.</p></section>';
     }
-    var map = mapHtml(sc, other, otherLabel);
-    if (map) html += '<section class="results-block"><h2>Your map</h2>' + map + "</section>";
     var shown = AXES.filter(function (ax) { return ax !== "G" && sc[ax] && sc[ax].n >= MIN_N; });
-    var strongest = shown.slice().sort(function (a, b) { return Math.abs(sc[b].v) - Math.abs(sc[a].v); }).slice(0, 3);
+    var strongest = shown.slice().sort(function (a, b) { return Math.abs(sc[b].v) - Math.abs(sc[a].v); }).slice(0, 4);
     if (strongest.length) {
-      html += '<section class="results-block"><h2>Where you stand out</h2><div class="standouts">' +
+      html += '<section class="results-block"><h2>Strongest views</h2><div class="standouts">' +
         strongest.map(function (ax) {
-          return '<div class="standout"><span class="mono">' + signed(sc[ax].v) + "</span><b>" + esc(META[ax].name) + "</b><span>" + esc(leanText(sc[ax].v, META[ax])) + "</span></div>";
+          return '<div class="standout"><span class="num">' + signed(sc[ax].v) + "</span><b>" + esc(META[ax].name) + "</b><span>" + esc(leanText(sc[ax].v, META[ax])) + "</span></div>";
         }).join("") + "</div></section>";
     }
-    var matches = profileMatches(sc);
-    if (matches.length) {
-      html += '<section class="results-block"><h2>Who you\'re closest to</h2><p class="scope">Compared with hand-placed positions of parties and movements, past and present. Tap one for details.</p><ol class="profiles">' +
-        matches.slice(0, 5).map(function (m) {
-          return '<li><details><summary><span class="prof-head"><b>' + esc(m.p.name) + '</b><span class="mono era">' + esc(m.p.era) + '</span><span class="match mono">' + m.match + '%</span></span><span class="matchbar"><span style="width:' + m.match + '%"></span></span></summary>' +
-            "<p>" + esc(m.p.about) + "</p><p><b>Closest on:</b> " + esc(axisList(m.agree)) + ".<br><b>Furthest on:</b> " + esc(axisList(m.differ)) + ".</p></details></li>";
-        }).join("") + "</ol>";
-      var far = matches[matches.length - 1];
-      html += '<p class="scope">Furthest from: <b>' + esc(far.p.name) + "</b> (" + esc(far.p.era) + ", " + far.match + "%).</p></section>";
-    }
-    html += '<section class="results-block"><h2>All your axes</h2><p class="scope">' + (opt.drill ? "Tap any axis to see which answers moved it. " : "") +
-      (other ? '<span class="legend"><span class="dot-key you"></span>You <span class="dot-key other"></span>' + esc(otherLabel) + "</span>" : "") +
-      (prev ? '<span class="legend"><span class="dot-key you"></span>Now <span class="dot-key prev"></span>Last time</span>' : "") + "</p>";
+    html += '<section class="results-block"><h2>All ' + shown.length + " axes</h2><p class=\"scope\">" + (opt.drill ? "Tap any axis to see which answers moved it. " : "") + "Scores run from −100 to +100." +
+      (other ? ' <span class="legend"><span class="dot-key you"></span>' + (opt.they ? "Them" : "You") + ' <span class="dot-key other"></span>' + esc(otherLabel) + "</span>" : "") +
+      (prev ? ' <span class="legend"><span class="dot-key you"></span>Now <span class="dot-key prev"></span>Last time</span>' : "") + "</p>";
     B.axes.families.forEach(function (f) {
       var rows = f.axes.filter(function (a) { return sc[a.id] && sc[a.id].n >= MIN_N; });
       if (!rows.length) return;
@@ -904,18 +1016,12 @@
     if (a.c == null) return null;
     if (it.format === "tradeoff") {
       var side = a.c <= 1 ? it.sides[0] : it.sides[1];
-      return (a.c === 0 || a.c === 3 ? "Clearly: " : "Leaning: ") + side.label + ". " + side.text;
+      return (a.c === 0 || a.c === 3 ? "Strongly: " : "Somewhat: ") + side.label + ". " + side.text;
     }
     return it.options[a.c];
   }
   function priorityRanking() {
-    var score = {};
-    Object.keys(S.pri).forEach(function (k) {
-      var r = S.pri[k];
-      if (r.b) score[r.b] = (score[r.b] || 0) + 1;
-      if (r.w) score[r.w] = (score[r.w] || 0) - 1;
-    });
-    return Object.keys(score).sort(function (a, b) { return score[b] - score[a]; }).map(function (d) { return { d: d, s: score[d] }; });
+    return S.pri && Array.isArray(S.pri.top) ? S.pri.top.map(function (d) { return { d: d }; }) : [];
   }
   function previousResult() {
     var h = lsGet(HIST, []).filter(function (x) { return x.rid !== S.rid; });
@@ -931,9 +1037,8 @@
       local: "This copy isn't connected to a server, so your answers stay on this device.",
       minor: "Thanks for taking it. Because you're under 18, your answers weren't saved.",
     }[S.submitted] || "";
-    var html = '<div class="eyebrow"><span>Your results</span><span>' + esc((MODES.filter(function (m) { return m.id === S.mode; })[0] || {}).title || "") + ' quiz</span><span>Early scoring</span></div><h1>Where you stand</h1>' +
-      '<p class="lede">Scores run from −100 to +100 on each axis. They use hand-set weights for now and will sharpen as more people take the quiz. <button type="button" class="link" id="method">How scoring works</button></p>' +
-      resultsSections(sc, { drill: true, other: compare && compare.scores, otherLabel: compare && compare.label, prev: compare ? null : prev });
+    var html = resultsSections(sc, { drill: true, kicker: "Your results", other: compare && compare.scores, otherLabel: compare && compare.label, prev: compare ? null : prev }) +
+      '<p class="scope">Early scoring: hand-set weights that will sharpen as more people take the quiz. <button type="button" class="link" id="method">How scoring works</button></p>';
     if (prev && !compare) {
       var moves = AXES.filter(function (ax) { return sc[ax] && sc[ax].n >= MIN_N && prev[ax]; })
         .map(function (ax) { return { ax: ax, d: sc[ax].v - prev[ax].v }; })
@@ -941,7 +1046,7 @@
         .sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); }).slice(0, 5);
       html += '<section class="results-block"><h2>Since last time</h2><p class="scope">Compared with your result from ' + esc(prevRec.d) + " (shown as a hollow dot on the bars).</p>" +
         (moves.length ? '<ul class="moves">' + moves.map(function (m) {
-          return "<li><b>" + esc(META[m.ax].name) + '</b> <span class="mono">' + (m.d > 0 ? "+" : "") + Math.round(100 * m.d) + "</span> toward " + esc(m.d > 0 ? META[m.ax].plus : META[m.ax].minus) + "</li>";
+          return "<li><b>" + esc(META[m.ax].name) + '</b> <span class="num">' + (m.d > 0 ? "+" : "") + Math.round(100 * m.d) + "</span> toward " + esc(m.d > 0 ? META[m.ax].plus : META[m.ax].minus) + "</li>";
         }).join("") + "</ul>" : "<p>Nothing moved by more than 10 points.</p>") + "</section>";
     }
     html += '<section class="results-block share"><h2>Share and compare</h2>' +
@@ -984,6 +1089,7 @@
     html += '<div class="nav results-actions"><span class="nav-right"><button class="btn ghost" id="copy">Copy my answers</button>' + (window.claude ? "" : '<button class="btn ghost" id="dl">Download</button>') + '</span><span class="nav-right"><button class="btn" id="retake">Take it again</button></span></div>' +
       '<textarea id="raw" readonly hidden></textarea><div id="confirm"></div>';
     show(html);
+    afterResults();
     screen.querySelectorAll("[data-fit]").forEach(function (b) {
       b.addEventListener("click", function () {
         S.resultFit = +b.getAttribute("data-fit");
@@ -1038,14 +1144,13 @@
       return bind("#home", goHome);
     }
     var cmpOn = !isMine && compare && compare.shared;
-    var html = '<div class="eyebrow"><span>' + (isMine ? "Your last results" : "Shared results") + "</span><span>Early scoring</span></div>" +
-      "<h1>" + (isMine ? "Where you stood" : "Where they stand") + "</h1>" +
-      (isMine ? '<p class="lede">From ' + esc(mine.d) + ". Only scores are saved, not answers, so this view can't show which answers moved each axis.</p>"
-        : '<p class="lede">Someone shared their quiz results with you. Only their scores are in the link, never their answers.</p>') +
-      resultsSections(sc, { other: cmpOn ? mineSc : null, otherLabel: "You" }) +
+    var html = resultsSections(sc, { kicker: isMine ? "Your results from " + mine.d : "Shared results", they: !isMine, other: cmpOn ? mineSc : null, otherLabel: "You" }) +
+      (isMine ? '<p class="scope">Only scores are saved on this device, not answers, so this view can\'t show which answers moved each axis.</p>'
+        : '<p class="scope">Someone shared their quiz results with you. Only their scores are in the link, never their answers.</p>') +
       '<div class="nav"><span class="nav-right">' + (!isMine && mineSc ? '<button class="btn ghost" id="cmp">' + (cmpOn ? "Hide my results" : "Compare with mine") + "</button>" : "") +
       '</span><span class="nav-right"><button class="btn" id="home">' + (isMine ? "Back" : "Take the quiz yourself") + "</button></span></div>";
     show(html);
+    afterResults();
     bind("#cmp", function () { compare = cmpOn ? null : { shared: true }; render(); });
     bind("#home", goHome);
   }
@@ -1060,7 +1165,7 @@
   var returnTo = null;
   function openAbout() { returnTo = { view: view, y: window.scrollY }; view = "about"; render(); }
   function renderAboutPage() {
-    var html = '<div class="eyebrow"><span>About</span></div><h1>How this quiz works</h1>' +
+    var html = '<h1>How this quiz works</h1>' +
       '<p class="lede">A personal project to build a more honest political quiz for the US: more dimensions, clearer questions, and no thumb on the scale.</p>' +
       '<section class="prose"><h2>What makes it different</h2><ul>' +
       "<li><b>Answers are positions.</b> Instead of “agree or disagree” with a vague statement, you pick the policy you actually want, with real numbers where they exist.</li>" +
@@ -1074,13 +1179,15 @@
       "<p>The party comparisons are hand-placed from platforms, voting records and historians' accounts. Historical parties are only compared on issues they took positions on. Treat the match percentages as a fun guide, not a measurement.</p>" +
       "<h2>The axes</h2><dl class=\"glossary\">" +
       [B.axes.overall].concat([].concat.apply([], B.axes.families.map(function (f) { return f.axes; }))).map(function (a) {
-        return "<dt>" + esc(a.name) + ' <span class="mono">' + esc(a.minus) + " ↔ " + esc(a.plus) + "</span></dt><dd>" + esc(a.about || "") + "</dd>";
+        return "<dt>" + esc(a.name) + ' <span class="era">' + esc(a.minus) + " ↔ " + esc(a.plus) + "</span></dt><dd>" + esc(a.about || "") + "</dd>";
       }).join("") + "</dl>" +
-      "<h2>The comparison groups</h2><dl class=\"glossary\">" + B.profiles.map(function (p) {
-        return "<dt>" + esc(p.name) + ' <span class="mono">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + "</dd>";
-      }).join("") + "</dl>" +
+      "<h2>The " + B.profiles.length + " comparison groups</h2>" + CATS.map(function (c) {
+        return "<h3>" + esc(c.name) + '</h3><p class="scope">' + esc(c.about) + '</p><dl class="glossary">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
+          return "<dt>" + esc(p.name) + ' <span class="era">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + "</dd>";
+        }).join("") + "</dl>";
+      }).join("") +
       "<h2>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
-      "<h2>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Flag this question” box goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
+      "<h2>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Report a problem” link under each question goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
       '<h2>Open source</h2><p>The questions, scoring keys and code are public: <a href="https://github.com/GriffinFoster06/political-axes" target="_blank" rel="noopener">github.com/GriffinFoster06/political-axes</a>.</p></section>' +
       '<div class="nav"><span></span><button class="btn" id="back">Back</button></div>';
     show(html);
@@ -1110,8 +1217,8 @@
   // ---------- start ----------
   function resumeScreen(saved) {
     var tops = 0, done = Object.keys(saved.ans || {}).length;
-    show('<div class="eyebrow"><span>Welcome back</span></div><h2>Pick up where you left off?</h2>' +
-      "<p>You have " + plural(done, "answer") + " saved on this device.</p>" +
+    show('<h1>Welcome back</h1>' +
+      "<p>You have " + plural(done, "answer") + " saved on this device. Pick up where you left off?</p>" +
       '<div class="cta-row"><button class="btn" id="cont">Continue</button><button class="btn ghost" id="fresh">Start over</button></div>');
     bind("#cont", function () { S = saved; render(); });
     bind("#fresh", function () { lsDel(KEY); S = newState(); save(); render(); });
@@ -1144,7 +1251,7 @@
     render();
   }
   window.__wys = {
-    state: function () { return S; }, bank: B, payload: function () { return payload(); },
+    state: function () { return S; }, bank: B, render: function () { render(); }, payload: function () { return payload(); },
     scores: function () { return computeScores(S.ans); }, encode: function (sc) { return encodeScores(sc); }, decode: decodeScores,
   };
   start();

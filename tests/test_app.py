@@ -21,12 +21,16 @@ def built():
     return (ROOT / "app" / "dist" / "index.html").as_uri()
 
 
+def wait_moved(page, pos):
+    page.wait_for_function(f"(() => {{ const S = window.__wys.state(); return S.pos !== {pos} || S.phase !== 'quiz'; }})()", timeout=5000)
+
+
 def walk(page, rng, mode):
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.click(f'[data-mode="{mode}"]')     # home: pick length
     page.click("#go")                       # start
-    page.click("#go")                       # instructions -> begin
+    page.click("#go")                       # how to answer -> begin
     screens = 0
     while True:
         st = page.evaluate("window.__wys.state().phase")
@@ -37,38 +41,37 @@ def walk(page, rng, mode):
         if st == "break":
             page.click("#go")
             continue
+        pos = page.evaluate("window.__wys.state().pos")
         cases = page.query_selector_all(".case")
         if cases:
             for c in cases:
                 chips = c.query_selector_all("[data-code]")
                 (c.query_selector(".esc") if rng.random() < 0.05 else rng.choice(chips)).click()
+            assert not page.is_disabled("#next")
+            page.click("#next")
+            continue
+        r = rng.random()
+        if not page.query_selector('[data-esc="1"]'):
+            r = 1.0  # attention-check screens have no escape options
+        if r < 0.04:
+            page.click('[data-esc="1"]')
+            page.fill("#nftext", "my own view")
+            page.click("#next")
+        elif r < 0.07:
+            page.click('[data-esc="2"]')         # "I don't know" moves on by itself
+            wait_moved(page, pos)
+        elif r < 0.09:
+            page.click("#skip")
         else:
-            r = rng.random()
-            if not page.query_selector('[data-esc="1"]'):
-                r = 1.0  # attention-check screens have no escape options
-            if r < 0.04:
-                page.click('[data-esc="1"]')
-                page.fill("#nftext", "my own view")
-            elif r < 0.07:
-                page.click('[data-esc="2"]')
-            elif r < 0.09:
-                page.click("#skip")
-                continue
-            else:
-                rng.choice(page.query_selector_all(".opt[data-code]")).click()
-                firm = page.query_selector_all("[data-firm]")
-                if firm and rng.random() < 0.5:
-                    rng.choice(firm).click()
-        assert not page.is_disabled("#next")
-        page.click("#next")
-    # priorities
-    for _ in range(15):
-        assert page.evaluate("window.__wys.state().phase") == "pri"
-        rows = page.query_selector_all('input[name="best"]')
-        b, w = rng.sample(range(len(rows)), 2)
-        rows[b].check()
-        page.query_selector_all('input[name="worst"]')[w].check()
-        page.click("#next")
+            rng.choice(page.query_selector_all(".opt[data-code], .opt[data-torn]")).click()
+            wait_moved(page, pos)
+    # priorities: one screen, pick up to five
+    assert page.evaluate("window.__wys.state().phase") == "pri"
+    pris = page.query_selector_all(".pri")
+    for b in rng.sample(pris, 6):
+        if not b.is_disabled():
+            b.click()
+    page.click("#next")
     assert page.evaluate("window.__wys.state().phase") == "aboutyou"
     page.check('input[name="age_bracket"][value="3"]')
     page.check('input[name="party_id"][value="2"]')
@@ -77,7 +80,7 @@ def walk(page, rng, mode):
     page.click("#go")
     page.click('[data-k="0"]')
     page.click("#go")
-    page.wait_for_selector(".map", state="attached")
+    page.wait_for_selector(".profiles")
     return errors
 
 
@@ -132,12 +135,10 @@ def test_click_through(built, mode, seed):
             if any(c["id"] in S["ans"] for c in it["cases"]):
                 assert pa.get("c") in codes
     assert len(S["qc"]) == 3
-    assert sum(1 for r in S["pri"].values() if r.get("b") and r.get("w")) == 15
+    assert len(S["pri"]["top"]) == 5 and len(set(S["pri"]["top"])) == 5
     assert S["about"]["party_lean"] == 1 and S["about"]["state"] == 15
-    # repeats asked in the opposite display direction
-    for k, a in S["ans"].items():
-        if k.endswith("#r"):
-            assert a["d"] == 1 - S["ans"][k[:-2]]["d"]
+    # one display direction per person, repeats included
+    assert len({a["d"] for a in S["ans"].values() if a.get("d") is not None}) == 1
     assert S["activeMs"] > 0
     # the analysis script reads the payload and applies the exclusion rule
     import os, csv as _csv, tempfile
@@ -160,12 +161,15 @@ def test_resume(built):
         page.route("**/fonts.g*/**", lambda r: r.abort())
         page.goto(built)
         page.click('[data-mode="pilot"]'); page.click("#go"); page.click("#go")
-        page.query_selector_all(".opt[data-code]")[0].click() if not page.query_selector(".case") else None
         first = page.evaluate("window.__wys.state().queue[0].id")
+        if not page.query_selector(".case"):
+            page.query_selector_all(".opt[data-code]")[0].click()
+            wait_moved(page, 0)
         page.reload()
         page.click("#cont")
         assert page.evaluate("window.__wys.state().queue[0].id") == first
         assert page.evaluate("window.__wys.state().phase") == "quiz"
+        assert page.evaluate("window.__wys.state().ans")
         browser.close()
 
 
@@ -188,16 +192,16 @@ def test_experiments(built):
             page.evaluate(f"""(() => {{ const S = window.__wys.state(), B = window.__wys.bank;
                 S.exp.torn = {str(torn).lower()};
                 S.pos = S.queue.findIndex(e => e.k === 'item' && B.items[e.id].format === 'tradeoff'); }})()""")
-            page.click("#skip"); page.click("#bk")
+            page.evaluate("window.__wys.render()")
             assert bool(page.query_selector("[data-torn]")) == torn
             if torn:
+                k = page.evaluate("window.__wys.state().queue[window.__wys.state().pos].id")
                 page.click("[data-torn]")
-                assert not page.is_disabled("#next")
-                a = page.evaluate("(() => { const S = window.__wys.state(); return S.ans[S.queue[S.pos].id]; })()")
+                a = page.evaluate(f"window.__wys.state().ans['{k}']")
                 assert a["t"] == 1 and a.get("c") is None
         page.evaluate("""(() => { const S = window.__wys.state(), B = window.__wys.bank;
             S.pos = S.queue.findIndex(e => e.k === 'item' && B.items[e.id].context && !B.items[e.id].show_if); })()""")
-        page.click("#skip"); page.click("#bk")
+        page.evaluate("window.__wys.render()")
         a = page.evaluate("(() => { const S = window.__wys.state(); return S.ans[S.queue[S.pos].id]; })()")
         assert a["cx"] in (0, 1)
         assert bool(page.query_selector(".context")) == bool(a["cx"])
@@ -231,16 +235,16 @@ def test_share_compare_and_about(built):
         page.click("#nav-about")
         assert "How this quiz works" in page.inner_text("h1")
         page.click("#back")
-        assert page.query_selector(".hero-result")
+        assert page.query_selector(".res-head")
         # theme toggle sets an explicit theme
         page.click("#nav-theme")
         assert page.evaluate("document.documentElement.getAttribute('data-theme')") in ("dark", "light")
         # shared view through a ?r= link (same origin, so it can compare with the saved result)
         page.goto(built + "?r=" + fcode)
-        assert "Where they stand" in page.inner_text("h1")
+        assert "Their closest match" in page.inner_text("h1")
         page.click("#cmp")
         assert page.query_selector(".dot.other")
         page.click("#home")
-        assert page.query_selector(".hero-result") or page.query_selector(".hero")
+        assert page.query_selector(".res-head") or page.query_selector(".hero")
         browser.close()
     assert errors == []

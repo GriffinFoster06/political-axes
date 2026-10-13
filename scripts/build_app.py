@@ -55,7 +55,7 @@ def bank():
         "design": json.loads((ROOT / "items" / "pilot_design.json").read_text()),
         "intro": mods["intro"], "priorities": mods["priorities"], "quality": mods["quality"],
         "about": mods["about_you"],
-        "axes": mods["axes"], "profiles": mods["profiles"]["profiles"], "quick": mods["quick"]["ids"],
+        "axes": mods["axes"], "profiles": mods["profiles"]["profiles"], "profileCats": mods["profiles"]["categories"], "quick": mods["quick"]["ids"],
         "keying": keying(items, mods["axes"]),
     }
 
@@ -102,16 +102,17 @@ def main():
     head = ('<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, '
             'viewport-fit=cover">\n'
             f'<meta name="description" content="{desc}">\n'
-            '<meta name="theme-color" content="#1d5d66">\n'
+            '<meta name="theme-color" content="#eceef2">\n'
             '<link rel="icon" href="favicon.svg" type="image/svg+xml">\n'
             '<meta property="og:type" content="website">\n'
             '<meta property="og:title" content="Where You Stand">\n'
             f'<meta property="og:description" content="{desc}">\n'
             f'<meta property="og:image" content="{site}/og.png">\n'
             '<meta name="twitter:card" content="summary_large_image">\n')
-    fonts = (SRC / "fonts.html").read_text()
+    fonts = (SRC / "fonts.html").read_text()  # Google Fonts, for the single-file preview
+    fonts_local = (SRC / "fonts-local.html").read_text()  # self-hosted copies for the real site (no third-party requests)
     (DIST / "index.html").write_text(
-        "<!doctype html>\n<html lang=\"en\">\n<head>\n" + head + "<title>Where You Stand</title>\n" + fonts
+        "<!doctype html>\n<html lang=\"en\">\n<head>\n" + head + "<title>Where You Stand</title>\n" + fonts_local
         + '<link rel="stylesheet" href="style.css">\n</head>\n<body>\n' + body
         + '<script src="config.js"></script>\n<script src="bank.js"></script>\n<script src="app.js"></script>\n'
         + "</body>\n</html>\n")
