@@ -59,14 +59,32 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
   `items/modules/profiles.json`. Match = 100 × (1 − RMS distance / 2) over the
   axes both sides have (overall counted double, at least 6 shared axes, plus
   a small prior so sparsely placed groups don't win too easily).
-- **Results page**: "Your closest match is …" with the overall bar and a
-  one-line summary; a filterable map and ranked list of the comparison
-  groups (All or one category, "Show all"); strongest views; every axis by
-  family, each opening to the answers that moved it; "since last time"
-  (last 10 results kept on the device); share link (`?r=` code, scores only)
-  that opens a "Their closest match" page and can be overlaid on yours;
-  priorities; your full answers; and a "how well does this describe you"
-  rating.
+- **Results report**, in six tabs:
+  - *Summary*: closest match, a label built from the economic and cultural
+    summaries plus up to two strong cross-cutting views ("anti-establishment
+    communitarian"), a written profile for each family of axes using each
+    axis's plain-language bands, a consistency meter (left/middle/right
+    count over the left–right axes, labeled consistent, mostly consistent or
+    cross-pressured), where you break from your side, views that cut across
+    left and right, the closest group in each of the six categories, a
+    second match weighted by your top issues, strongest views and "since last
+    time".
+  - *Matches*: every group ranked, filterable by category, each opening to a
+    head-to-head on every shared axis (agree / close / differ / opposed).
+  - *Map*: any two axes (or the economic and cultural summaries), six presets,
+    category filter, nearest groups on that map.
+  - *Axes*: each axis opens to your band, the full five-band range, a strip
+    of every group's position, the nearest groups, and the answers that moved
+    it with a confidence note.
+  - *Topics*: your lean and every answer on each of the 25 topics, with the
+    axes each topic feeds.
+  - *Answers*: your ranked issues, answer counts, copy/download.
+  Shared links get the same report (minus Topics and Answers, which need the
+  answers themselves).
+- **Explore** (header link, no quiz needed): all 83 groups with a full
+  position profile, plain-language reading of every position, most similar
+  groups and your match; all 29 axes with the five bands, every group ranked
+  along it, and the questions that measure it.
 - **Site**: About page (how scoring works, every axis, every comparison
   group, privacy), light/dark toggle, keyboard shortcuts (number keys
   answer, ← back), self-hosted fonts (Archivo and Public Sans, OFL), favicon

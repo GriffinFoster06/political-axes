@@ -80,7 +80,7 @@ def walk(page, rng, mode):
     page.click("#go")
     page.click('[data-k="0"]')
     page.click("#go")
-    page.wait_for_selector(".profiles")
+    page.wait_for_selector("#panel .block")
     return errors
 
 
@@ -95,8 +95,14 @@ def test_click_through(built, mode, seed):
         S = page.evaluate("window.__wys.state()")
         bank = page.evaluate("window.__wys.bank")
         payload = page.evaluate("window.__wys.payload()")
-        n_axes = len(page.query_selector_all(".axis"))
+        # every report tab renders without errors
+        for tab in ("matches", "map", "axes", "topics", "answers", "summary"):
+            page.click(f'[data-tab="{tab}"]')
+            assert page.query_selector("#panel .block, #panel .topic-card"), tab
+        page.click('[data-tab="matches"]')
         n_profiles = len(page.query_selector_all(".profiles li"))
+        page.click('[data-tab="axes"]')
+        n_axes = len(page.query_selector_all(".axis-card"))
         scores = page.evaluate("window.__wys.scores()")
         browser.close()
     assert errors == []
@@ -221,9 +227,23 @@ def test_share_compare_and_about(built):
         back = page.evaluate(f"window.__wys.decode('{code}')")
         for ax, v in back.items():
             assert abs(v["v"] - sc[ax]["v"]) <= 0.006
-        # drill-down opens and lists answers
-        page.click("details.axis summary")
-        assert page.query_selector("details.axis[open] .drill li")
+        # axis cards open to bands, the group strip and the answers that moved it
+        page.click('[data-tab="axes"]')
+        page.click(".axis-card summary")
+        assert page.query_selector(".axis-card[open] .drill li")
+        assert page.query_selector(".axis-card[open] .ladder li.here")
+        assert page.query_selector(".axis-card[open] .strip .tick")
+        # matches open to a head-to-head comparison
+        page.click('[data-tab="matches"]')
+        page.click(".profiles details summary")
+        assert len(page.query_selector_all(".profiles details[open] .h2h li")) >= 6
+        # the map can plot any two axes
+        page.click('[data-tab="map"]')
+        avail = page.eval_on_selector_all("#mapx option:not([disabled])", "os => os.map(o => o.value).filter(v => v.length > 4)")
+        page.select_option("#mapx", avail[0]); page.select_option("#mapy", avail[1])
+        names = page.evaluate(f"[window.__wys.bank.axes.families.flatMap(f => f.axes).find(a => a.id === '{avail[0]}').name]")
+        assert names[0] in page.inner_text(".map-notes")
+        page.click('[data-tab="summary"]')
         # compare with a made-up friend
         friend = {k: {"v": -v["v"], "n": 3} for k, v in sc.items()}
         fcode = page.evaluate(f"window.__wys.encode({json.dumps(friend)})")
@@ -231,6 +251,15 @@ def test_share_compare_and_about(built):
         page.click("#cmpgo")
         assert page.query_selector(".dot.other")
         page.fill("#cmpin", "garbage") if page.query_selector("#cmpin") else None
+        # explore: a group page and an axis page
+        page.click("#nav-explore")
+        page.click('[data-ex-group="pres_fdr"]')
+        assert "Roosevelt" in page.inner_text("h1")
+        page.click('[data-ex="axes"]'); page.click('[data-ex-axis="IMMIG"]')
+        assert "Immigration" in page.inner_text("h1")
+        assert len(page.query_selector_all(".axis-rank li")) > 50
+        page.click("#ex-back")
+        assert page.query_selector(".res-head")
         # about page
         page.click("#nav-about")
         assert "How this quiz works" in page.inner_text("h1")
