@@ -44,8 +44,10 @@ axes, each one a concrete position with a scope line, definitions, sourced
 facts and exception follow-ups where edge cases matter. They are drafts: the
 next step is two-sided review and think-aloud interviews (kit in `review/`),
 then pilots ([`docs/question-bank-plan.md`](docs/question-bank-plan.md) §8–9).
-The pilot app (`app/`), pilot design and pre-registered analysis plan are
-ready.
+The quiz site (`app/`, "Where You Stand") is ready to deploy on Netlify:
+home page with three lengths, provisional scores on 29 axes, a 2D map,
+closest of 15 parties and movements, share/compare links and an About page
+(details in [`app/README.md`](app/README.md)).
 
 ## Layout
 

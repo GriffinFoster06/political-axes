@@ -24,12 +24,9 @@ def built():
 def walk(page, rng, mode):
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
-    page.click("#go")                       # welcome
-    page.check("#consent")
-    page.click("#go")                       # privacy
-    page.click(f'[data-mode="{mode}"]')
-    page.click("#go")                       # mode
-    page.click("#go")                       # how answers work -> begin
+    page.click(f'[data-mode="{mode}"]')     # home: pick length
+    page.click("#go")                       # start
+    page.click("#go")                       # instructions -> begin
     screens = 0
     while True:
         st = page.evaluate("window.__wys.state().phase")
@@ -72,7 +69,7 @@ def walk(page, rng, mode):
         rows[b].check()
         page.query_selector_all('input[name="worst"]')[w].check()
         page.click("#next")
-    assert page.evaluate("window.__wys.state().phase") == "about"
+    assert page.evaluate("window.__wys.state().phase") == "aboutyou"
     page.check('input[name="age_bracket"][value="3"]')
     page.check('input[name="party_id"][value="2"]')
     page.check('input[name="party_lean"][value="1"]')
@@ -162,7 +159,6 @@ def test_resume(built):
         page = browser.new_page()
         page.route("**/fonts.g*/**", lambda r: r.abort())
         page.goto(built)
-        page.click("#go"); page.check("#consent"); page.click("#go")
         page.click('[data-mode="pilot"]'); page.click("#go"); page.click("#go")
         page.query_selector_all(".opt[data-code]")[0].click() if not page.query_selector(".case") else None
         first = page.evaluate("window.__wys.state().queue[0].id")
@@ -187,7 +183,6 @@ def test_experiments(built):
         page = browser.new_page()
         page.route("**/fonts.g*/**", lambda r: r.abort())
         page.goto(built)
-        page.click("#go"); page.check("#consent"); page.click("#go")
         page.click('[data-mode="full"]'); page.click("#go"); page.click("#go")
         for torn in (True, False):
             page.evaluate(f"""(() => {{ const S = window.__wys.state(), B = window.__wys.bank;
@@ -207,3 +202,45 @@ def test_experiments(built):
         assert a["cx"] in (0, 1)
         assert bool(page.query_selector(".context")) == bool(a["cx"])
         browser.close()
+
+
+def test_share_compare_and_about(built):
+    """Share code round-trips, a shared link renders, comparing works, About opens and closes."""
+    with pw.sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": 390, "height": 844})
+        page.route("**/fonts.g*/**", lambda r: r.abort())
+        page.goto(built)
+        errors = walk(page, random.Random(11), "quick")
+        sc = page.evaluate("window.__wys.scores()")
+        code = page.evaluate("window.__wys.encode(window.__wys.scores())")
+        back = page.evaluate(f"window.__wys.decode('{code}')")
+        for ax, v in back.items():
+            assert abs(v["v"] - sc[ax]["v"]) <= 0.006
+        # drill-down opens and lists answers
+        page.click("details.axis summary")
+        assert page.query_selector("details.axis[open] .drill li")
+        # compare with a made-up friend
+        friend = {k: {"v": -v["v"], "n": 3} for k, v in sc.items()}
+        fcode = page.evaluate(f"window.__wys.encode({json.dumps(friend)})")
+        page.fill("#cmpin", "https://example.com/?r=" + fcode)
+        page.click("#cmpgo")
+        assert page.query_selector(".dot.other")
+        page.fill("#cmpin", "garbage") if page.query_selector("#cmpin") else None
+        # about page
+        page.click("#nav-about")
+        assert "How this quiz works" in page.inner_text("h1")
+        page.click("#back")
+        assert page.query_selector(".hero-result")
+        # theme toggle sets an explicit theme
+        page.click("#nav-theme")
+        assert page.evaluate("document.documentElement.getAttribute('data-theme')") in ("dark", "light")
+        # shared view through a ?r= link (same origin, so it can compare with the saved result)
+        page.goto(built + "?r=" + fcode)
+        assert "Where they stand" in page.inner_text("h1")
+        page.click("#cmp")
+        assert page.query_selector(".dot.other")
+        page.click("#home")
+        assert page.query_selector(".hero-result") or page.query_selector(".hero")
+        browser.close()
+    assert errors == []

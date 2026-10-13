@@ -12,8 +12,9 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
 
 ## What it does
 
-- **Intro**: what the quiz is, privacy and consent, length choice, how
-  answers work, and a random resume code (not linked to any identity).
+- **Home page**: pick a length (Quick / Standard / Full), see what you
+  get, privacy note, "continue where you left off" and your last result if
+  there is one. A short how-to screen follows before the first question.
 - **Pilot form**: the link block plus 3 of 9 blocks, assigned by the
   balanced design in `items/pilot_design.json` (about 35 minutes of
   questions, ~50 in total). **Full map** asks everything. Precision mode is
@@ -39,11 +40,6 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
 - **Priorities**: 15 best–worst sets (each topic shown 3 times).
 - **About you**: optional, after the questions; party lean and evangelical
   follow-ups appear only when relevant. Under-18 answers are never sent.
-- **Results**: the person's issue map (every answer by topic, with
-  firmness), their top priorities, a "how well does this describe you"
-  rating, and copy/download of their answers. Axis scores are not shown:
-  they need the pilot calibration first, and showing uncalibrated numbers
-  would contradict the accuracy goal.
 - **Save and resume**: progress is saved on the device after every answer.
 
 ## Modes and results
@@ -59,6 +55,14 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
   the closest of 15 hand-placed parties and movements past and present
   (`items/modules/profiles.json`), every axis by family
   (`items/modules/axes.json`), your top priorities, and your full answers.
+- **Results extras**: a 2D map (economic × cultural) with the comparison
+  groups, tap any axis to see which answers moved it, a one-line summary,
+  "since last time" markers if you've taken it before (last 10 results kept
+  on the device), and a share link (`?r=` code, no answers in it) that
+  opens a "Where they stand" page and can be overlaid on your own result.
+- **Site**: About page (how scoring works, glossary, privacy), light/dark
+  toggle, keyboard shortcuts (1–9 to answer, Enter next, ← back), topic
+  banners, favicon and a social preview image.
 - A **"Flag this question"** box on every question lets testers note
   anything confusing or slanted; flags come through with the answers.
 

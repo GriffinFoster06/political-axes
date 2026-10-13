@@ -1,10 +1,18 @@
 <div id="app" class="shell">
   <header class="bar">
-    <span class="brand">Where You Stand</span>
+    <button type="button" class="brand" id="nav-home" aria-label="Where You Stand, home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 1.5v21M1.5 12h21" stroke="currentColor" stroke-width="1" opacity=".45"/><circle cx="15.5" cy="8.5" r="3" fill="currentColor"/></svg>
+      <span>Where You Stand</span>
+    </button>
     <span class="meta" id="meta"></span>
+    <nav class="nav-links">
+      <button type="button" class="navbtn" id="nav-about">About</button>
+      <button type="button" class="navbtn" id="nav-theme" aria-label="Switch light or dark theme">Dark</button>
+    </nav>
   </header>
   <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress"></div></div>
   <main id="screen" class="screen" tabindex="-1">
     <p class="lede">Loading the questions…</p>
   </main>
+  <footer class="foot"><span>A personal project. Not affiliated with any party, campaign or institution.</span></footer>
 </div>

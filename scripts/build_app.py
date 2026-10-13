@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import shutil
 import hashlib
 from pathlib import Path
@@ -92,9 +93,22 @@ def main():
     (DIST / "bank.js").write_text(bank_js)
     for f in ("app.js", "style.css", "config.js"):
         shutil.copy(SRC / f, DIST / f)
+    for f in (SRC / "static").glob("*"):
+        shutil.copy(f, DIST / f.name)
     body = (SRC / "body.html").read_text()
+    site = os.environ.get("URL", "").rstrip("/")  # Netlify sets URL at build time
+    desc = ("A deeper map of your US politics: real positions on 25 topics, up to 29 dimensions, "
+            "and the parties past and present you're closest to.")
     head = ('<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, '
-            'viewport-fit=cover">\n')
+            'viewport-fit=cover">\n'
+            f'<meta name="description" content="{desc}">\n'
+            '<meta name="theme-color" content="#1d5d66">\n'
+            '<link rel="icon" href="favicon.svg" type="image/svg+xml">\n'
+            '<meta property="og:type" content="website">\n'
+            '<meta property="og:title" content="Where You Stand">\n'
+            f'<meta property="og:description" content="{desc}">\n'
+            f'<meta property="og:image" content="{site}/og.png">\n'
+            '<meta name="twitter:card" content="summary_large_image">\n')
     fonts = (SRC / "fonts.html").read_text()
     (DIST / "index.html").write_text(
         "<!doctype html>\n<html lang=\"en\">\n<head>\n" + head + "<title>Where You Stand</title>\n" + fonts
