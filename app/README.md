@@ -10,18 +10,33 @@ open app/dist/index.html              # works straight from the file, no server 
 python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a headless browser
 ```
 
+## Design
+
+Built to look like a printed sample ballot rather than a web template:
+white stock and black ink, square corners, ruled rows instead of card
+grids, a black contest bar over each question, timing marks down the left
+edge of each question box, and answers as ovals you fill in. Headings use
+Archivo set condensed; body text uses Public Sans. A single highlighter
+yellow marks you and magenta marks a friend you compare with. There's no
+red or blue, so color never hints at a party. Light and dark themes share
+the same tokens (`app/src/style.css`).
+
 ## What it does
 
-- **Home page**: the headline, a map of all the comparison groups (tap a
-  dot to see who it is), a length picker (Quick / Standard / Everything)
-  and your last result if there is one. A short how-to screen follows.
+- **Home page**: the headline, the length picker (Quick / Standard /
+  Everything), a map of all the comparison groups (tap a dot to see who it
+  is), and a live sample question that shows which way an answer moves you.
+  A short before-you-start screen follows.
 - **Answering**: tap an oval and the quiz moves on by itself (set
   `autoAdvance: false` in `config.js` to require Next). Back is always
   there. Every format in the bank is supported: position ladders, belief,
   frequency, defined agree/disagree scales (each point's meaning shown),
   tradeoffs (the two goals side by side, then one row of ovals from
   "Strongly" one side to "Strongly" the other) and exception follow-ups
-  (one line per case, with "Not sure").
+  (a ballot-measure grid: answer names across the top, one row per case,
+  with "Not sure"; stacked on phones). Defined words are dotted; inside an
+  answer they're listed under the answers so the answer stays one button.
+  Number keys pick answers (key hints show on mouse-and-keyboard devices).
 - **Ways out**: "I don't know", "None of these fit" (with an optional text
   box) and "Skip" under every question, all scored as missing.
 - **Answer direction**: forward or reversed once per person, for the whole
@@ -30,7 +45,8 @@ python3 -m pytest -q tests/test_app.py   # clicks through the whole quiz in a he
 - **Order**: topic areas in random order per person; follow-ups right
   after their question and only when the earlier answer calls for them;
   the second half of each agree/disagree pair placed later in its topic.
-  The header shows "12 of 107"; the first question of each topic is marked.
+  The header shows "12 of 107 · about 20 min left"; the progress bar has one
+  segment per topic; the contest bar shows "Question 2 of 4" in the topic.
 - **Quality**: three attention checks in the middle third, six repeated
   questions at the end (same direction as the first time), per-screen
   timing (capped at 5 minutes), and a last "how carefully did you answer"

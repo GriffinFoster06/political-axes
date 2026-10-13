@@ -1,19 +1,21 @@
 <div id="app" class="shell">
   <header class="bar">
     <button type="button" class="brand" id="nav-home" aria-label="Where You Stand, home">
-      <svg class="mark" viewBox="0 0 32 22" aria-hidden="true"><ellipse cx="16" cy="11" rx="14" ry="9" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6.5 12.5c3-4.5 6.5-6 9.5-5.5 3.5.5 6 3 9.5 2.5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+      <svg class="mark" viewBox="0 0 32 22" aria-hidden="true"><ellipse cx="16" cy="11" rx="14" ry="9" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse class="fill" cx="16" cy="11" rx="9.5" ry="5.2"/></svg>
       <span>Where You Stand</span>
     </button>
     <span class="meta" id="meta" aria-live="polite"></span>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Site">
       <button type="button" class="navbtn" id="nav-explore">Explore</button>
-      <button type="button" class="navbtn" id="nav-about">About</button>
+      <button type="button" class="navbtn" id="nav-about">How it works</button>
       <button type="button" class="navbtn" id="nav-theme" aria-label="Switch light or dark theme"></button>
     </nav>
   </header>
-  <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress"></div></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <main id="screen" class="screen" tabindex="-1">
     <p class="lede">Loading the questions…</p>
   </main>
-  <footer class="foot"><span>A personal project. Not affiliated with any party, campaign or institution.</span></footer>
+  <footer class="foot">
+    <p>Where You Stand is a personal project by Griffin Foster. It isn't affiliated with any party, campaign or school. <a href="https://github.com/GriffinFoster06/political-axes" target="_blank" rel="noopener">Questions, scoring and code on GitHub</a>.</p>
+  </footer>
 </div>

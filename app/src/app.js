@@ -230,19 +230,41 @@
     }
     return { at: Math.max(1, at), n: n };
   }
+  // Progress bar: one segment per topic, sized by its number of questions, so you can see
+  // how far into this topic you are as well as the whole quiz.
+  var segKey = "";
+  function paintProgress(inQuiz) {
+    if (!inQuiz) { progEl.innerHTML = ""; segKey = ""; return; }
+    var segs = [];
+    S.queue.forEach(function (e, i) {
+      if (e.k === "repeat") return;
+      var last = segs[segs.length - 1];
+      if (last && last.d === e.d) last.end = i; else segs.push({ d: e.d, start: i, end: i });
+    });
+    var key = S.rid + S.mode + S.queue.length;
+    if (key !== segKey) {
+      segKey = key;
+      progEl.innerHTML = segs.map(function (s) { return '<span class="seg" style="flex:' + (s.end - s.start + 1) + '"><i></i></span>'; }).join("");
+    }
+    var pos = S.phase === "quiz" || S.phase === "break" ? S.pos : S.queue.length;
+    progEl.querySelectorAll(".seg").forEach(function (el2, k) {
+      var s = segs[k], f = pos > s.end ? 1 : pos < s.start ? 0 : (pos - s.start) / (s.end - s.start + 1);
+      el2.firstChild.style.width = (100 * f).toFixed(1) + "%";
+      el2.classList.toggle("now", pos >= s.start && pos <= s.end);
+    });
+  }
   function updateMeta() {
-    var frac = 0, label = "";
-    if (view) { label = ""; frac = S && S.phase === "done" ? 1 : 0; }
-    else if (S.phase === "quiz" || S.phase === "break") {
+    var label = "", inQuiz = false;
+    if (!view && (S.phase === "quiz" || S.phase === "break")) {
       var c = counter();
-      frac = 0.02 + 0.9 * ((c.at - 1) / Math.max(1, c.n));
-      label = S.phase === "break" ? "Break" : c.at + " of " + c.n;
-    } else if (S.phase === "pri" || S.phase === "aboutyou" || S.phase === "honesty") { frac = 0.95; label = "Almost done"; }
-    else if (S.phase === "done") { frac = 1; label = ""; }
+      label = S.phase === "break" ? "Break" : c.at + " of " + c.n + "|about " + minutesLeft() + " min left";
+      inQuiz = true;
+    } else if (!view && (S.phase === "pri" || S.phase === "aboutyou" || S.phase === "honesty")) { label = "Almost done"; inQuiz = true; }
     screen.classList.toggle("wide", !!view || S.phase === "home" || S.phase === "done");
     document.body.classList.toggle("in-quiz", !view && /quiz|break|pri|aboutyou|honesty/.test(S.phase));
-    progEl.style.width = (100 * frac).toFixed(1) + "%";
-    metaEl.textContent = label;
+    paintProgress(inQuiz);
+    var parts = label.split("|");
+    metaEl.innerHTML = esc(parts[0]) + (parts[1] ? '<span class="meta-more"> · ' + esc(parts[1]) + "</span>" : "");
   }
 
   // ---------- home and instructions ----------
@@ -254,29 +276,36 @@
   var HERO_LABELS = {};
   ["dem_mainstream", "gop_current", "libertarian", "dem_socialist", "maga", "centrist", "pres_fdr", "pres_reagan", "pres_obama", "green", "religious_right", "ancap", "abundance", "rockefeller", "postliberal", "fr_rn"].forEach(function (id) { HERO_LABELS[id] = 1; });
   function lastResult() { var h = lsGet(HIST, []); return h.length ? h[h.length - 1] : null; }
+  var SAMPLE_ID = "min_wage";
   function renderHome() {
     var last = lastResult(), lastSc = last ? decodeScores(last.c) : null;
     var modes = MODES.filter(function (m) { return m.id !== "full" || CFG.allowFullMode !== false; });
     var lastPt = lastSc ? { x: userPos(lastSc, dimAxes(MAP_X)), y: userPos(lastSc, dimAxes(MAP_Y)) } : null;
+    var sample = B.items[SAMPLE_ID];
     var html = '<div class="home-grid"><section class="hero">' +
       "<h1>Where do you stand?</h1>" +
-      '<p class="lede">Answer real policy questions, one issue at a time. Get your position on ' + (AXES.length - 1) + ' dimensions and see which of ' + B.profiles.length + " parties, presidents, movements and ideologies you're closest to.</p>" +
+      '<p class="lede">A US politics quiz where you pick actual policies (a $15 minimum wage, a 37% top tax rate, 500,000 green cards a year) instead of agreeing with slogans. You get a score on ' + (AXES.length - 1) + " separate issues and a match against " + B.profiles.length + " parties, factions, presidents and ideologies.</p>" +
       "</section>" +
-      '<section class="field-wrap">' + plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) + '<button type="button" class="link" id="browse">Browse all ' + B.profiles.length + " groups and " + (AXES.length - 1) + " axes</button></section>" +
-      '<section class="start" aria-labelledby="pick"><h2 id="pick">Pick a length</h2>' +
+      '<section class="start" aria-labelledby="pick"><h2 id="pick" class="contest">Choose a length</h2>' +
       '<div class="ballot" role="radiogroup" aria-labelledby="pick">' + modes.map(function (m) {
         return '<button type="button" class="ballot-row" role="radio" data-mode="' + m.id + '" aria-checked="' + (S.mode === m.id) + '">' +
           '<span class="oval" aria-hidden="true"></span><span class="ballot-text"><b>' + esc(m.title) + "</b><span>" + esc(m.text) + "</span></span>" +
-          '<span class="ballot-meta">' + "<span>" + m.n() + " questions</span><span>" + esc(m.time) + "</span></span></button>";
+          '<span class="ballot-meta num"><span>' + m.n() + " questions</span> <span>" + esc(m.time) + "</span></span></button>";
       }).join("") + "</div>" +
       '<div class="cta-row"><button class="btn big" id="go">Start the quiz</button>' +
-      (last ? '<button class="btn ghost" id="last">Your last results</button>' : "") + "</div>" +
-      '<p class="fine">Progress saves on this device, so you can stop and come back. No account, no names or emails. <button type="button" class="link" id="how">How it works</button></p></section></div>' +
-      '<section class="pitch"><h2>What makes it different</h2><dl>' +
-      "<div><dt>Real positions</dt><dd>Pick the policy you actually want, with real numbers, instead of agreeing with a vague slogan.</dd></div>" +
-      "<div><dt>More than left and right</dt><dd>Trust, populism, free speech, presidential power and 25 more get their own scores, because they cut across parties.</dd></div>" +
-      "<div><dt>No party cues</dt><dd>Questions never name parties or politicians, so you answer the issue, not the team.</dd></div>" +
-      "<div><dt>" + B.profiles.length + " comparisons</dt><dd>From FDR and the Whigs to the tech right, Reform UK and anarcho-capitalists.</dd></div></dl></section>";
+      (last ? '<button class="btn ghost" id="last">Your results from ' + esc(last.d) + "</button>" : "") + "</div>" +
+      '<p class="fine">Your progress saves on this device, so you can stop and come back. There\'s no account, and the quiz never asks for your name or email.</p></section>' +
+      '<section class="field-wrap" aria-label="Map of comparison groups"><h2 class="field-title">' + B.profiles.length + ' groups on two of the axes</h2>' +
+      plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) +
+      '<button type="button" class="link" id="browse">See every group and axis</button></section></div>' +
+      '<section class="sample" aria-labelledby="sample-h"><div class="sample-text"><h2 id="sample-h">What the questions look like</h2>' +
+      "<p>This one is from the labor topic. Every question gives you concrete choices, a line saying which case to picture, and a way out if none of them fit.</p>" +
+      "<p>No question names a party or a politician. Rules about presidential power are asked about any president, and a few are asked twice with each side benefiting, which separates principle from team loyalty.</p>" +
+      '<p id="sample-say" class="sample-say" aria-live="polite">Try it: pick an answer to see which way it moves you.</p></div>' +
+      '<div class="sample-q"><p class="contest">' + esc(topicName(sample.domain)) + '</p><div class="q-box"><p class="stem">' + esc(sample.stem) + '</p><p class="scope">' + esc(sample.scope) + "</p>" +
+      '<div class="options" role="radiogroup" aria-label="Sample answers">' + sample.options.map(function (o, k) {
+        return '<button type="button" class="opt" role="radio" data-sample="' + k + '" aria-checked="false"><span class="oval" aria-hidden="true"></span><span class="otext">' + esc(o) + "</span></button>";
+      }).join("") + "</div></div></div></section>";
     show(html);
     wirePlot();
     screen.querySelectorAll("[data-mode]").forEach(function (b) {
@@ -286,24 +315,38 @@
         save();
       });
     });
+    screen.querySelectorAll("[data-sample]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var c = +b.getAttribute("data-sample"), K = sample.options.length, x = 2 * c / (K - 1) - 1, k = B.keying[SAMPLE_ID];
+        screen.querySelectorAll("[data-sample]").forEach(function (y) { y.setAttribute("aria-checked", String(y === b)); });
+        var says = Object.keys(k).filter(function (ax) { return ax !== "G" && k[ax]; }).map(function (ax) {
+          var v = k[ax] * x;
+          return Math.abs(v) < 0.01 ? "the middle of " + lc(META[ax].name) : "“" + (v < 0 ? META[ax].minus : META[ax].plus) + "” on " + lc(META[ax].name) + " (" + signed(v) + ")";
+        });
+        var g = k.G * x;
+        document.getElementById("sample-say").textContent = "That answer counts toward " + says.join(" and ") +
+          (Math.abs(g) < 0.01 ? ", and sits in the middle overall." : ", and " + (g < 0 ? "left" : "right") + " overall (" + signed(g) + "). Your scores average every answer like this.");
+      });
+    });
     bind("#go", function () { S.phase = "howto"; save(); render(); });
-    bind("#how", function () { openAbout(); });
     bind("#browse", function () { openExplore("groups"); });
     bind("#last", function () { sharedCode = last.c; view = "shared"; render(); });
   }
   function renderHowTo() {
     var m = MODES.filter(function (x) { return x.id === S.mode; })[0] || MODES[0];
-    show("<h1>How to answer</h1>" +
-      '<div class="demo" aria-hidden="true"><div class="opt demo-opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div><div class="opt demo-opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div></div>' +
-      '<ul class="howto">' +
-      "<li><b>Tap the answer closest to your view.</b> The quiz moves on by itself. Go back any time to change it.</li>" +
-      "<li><b>Picture the usual case.</b> The grey line under each question says what to think about. Exceptions get their own follow-up.</li>" +
-      "<li><b>Some questions are a tug-of-war</b> between two goals. Tap how far you lean toward one side.</li>" +
-      "<li><b>Not sure? Say so.</b> “I don't know” and “None of these fit” are under every question, and never count as a middle answer.</li>" +
-      "<li><b>Underlined words</b> have a definition. Tap them.</li>" +
-      "</ul>" +
-      '<p class="scope">' + esc(m.title) + " quiz, " + m.n() + " questions, " + esc(m.time) + ". On a keyboard: number keys answer, ← goes back.</p>" +
-      '<div class="nav"><button class="link" id="bk">Back</button><button class="btn big" id="go">Begin</button></div>');
+    show('<h1>Before you start</h1>' +
+      '<p class="lede">' + esc(m.title) + " quiz: " + m.n() + " questions across " + B.domains.length + " topics, " + esc(m.time) + ".</p>" +
+      '<div class="howto-grid"><ol class="howto">' +
+      "<li><b>Fill in the answer closest to your view.</b> The quiz moves on by itself. Use Back to change an answer.</li>" +
+      "<li><b>Picture the usual case.</b> The grey line under each question says which case to think about. Exceptions get their own follow-up.</li>" +
+      "<li><b>Some questions set two goals against each other.</b> Pick how far you lean toward one.</li>" +
+      "<li><b>You don't have to have an opinion.</b> “I don't know” and “None of these fit” are under every question, and neither counts as a middle answer.</li>" +
+      "<li><b>Dotted words have a definition.</b> Tap one to read it.</li>" +
+      "</ol>" +
+      '<div class="demo" aria-hidden="true"><p class="contest">Example</p><div class="q-box"><p class="stem">Overall, how big should the federal government be?</p>' +
+      '<div class="options"><div class="opt"><span class="oval"></span><span class="otext">Somewhat bigger</span></div><div class="opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div><div class="opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div></div></div></div></div>' +
+      '<p class="scope keys-hint">On a keyboard, number keys pick an answer and ← goes back.</p>' +
+      '<div class="nav"><button class="link" id="bk">← Back</button><button class="btn big" id="go">Begin</button></div>');
     bind("#bk", function () { S.phase = "home"; save(); render(); });
     bind("#go", function () {
       if (!S.queue.length || S.queueMode !== S.mode) { buildQueue(); S.queueMode = S.mode; }
@@ -312,19 +355,32 @@
   }
 
   // ---------- question text with tappable definitions ----------
+  // Question text with definitions. In the stem and scope, a defined term is a button that shows
+  // its definition. Inside an answer (itself a button) it can't be, so it's underlined and the
+  // definition buttons are listed under the answers instead.
   function richFactory(it) {
     var defs = (it.definitions || []).slice(), used = {};
-    return function (text) {
+    function mark(text, inOption) {
       var out = esc(text);
       defs.forEach(function (d, k) {
         if (used[k]) return;
         var t = esc(d.term), i = out.toLowerCase().indexOf(t.toLowerCase());
         if (i < 0) return;
         used[k] = 1;
-        out = out.slice(0, i) + '<button type="button" class="term" data-def="' + k + '">' + out.slice(i, i + t.length) + "</button>" + out.slice(i + t.length);
+        var open = inOption ? '<span class="term-in">' : '<button type="button" class="term" data-def="' + k + '">';
+        if (inOption) fn.optTerms.push(k);
+        out = out.slice(0, i) + open + out.slice(i, i + t.length) + (inOption ? "</span>" : "</button>") + out.slice(i + t.length);
       });
       return out;
+    }
+    var fn = function (text) { return mark(text, false); };
+    fn.opt = function (text) { return mark(text, true); };
+    fn.optTerms = [];
+    fn.optDefs = function () {
+      if (!fn.optTerms.length) return "";
+      return '<p class="optdefs">Defined: ' + fn.optTerms.map(function (k) { return '<button type="button" class="term" data-def="' + k + '">' + esc(defs[k].term) + "</button>"; }).join(", ") + "</p>";
     };
+    return fn;
   }
   function wireDefs(it, a) {
     var box = screen.querySelector("#defs");
@@ -361,11 +417,21 @@
     }
     return true;
   }
+  // Where this question sits in its topic: [number in topic, visible questions in topic]
+  function topicPos(e) {
+    var n = 0, at = 0;
+    S.queue.forEach(function (q, i) {
+      if (q.k !== "item" || q.d !== e.d || !visible(q)) return;
+      n++; if (i <= S.pos) at = n;
+    });
+    return [Math.max(1, at), n];
+  }
+  // The contest header: a black bar like the one over each race on a paper ballot.
   function topicLine(e, it, isRep) {
-    if (isRep) return '<p class="topic">One more look: you saw this earlier. Answer it as you see it now.</p>';
-    var name = domain(e.d || it.domain).name.replace(/\s*\(.*\)$/, "");
-    if (e.k === "item" && firstOfTopic()) return '<p class="topic is-new"><span class="tag">New topic</span>' + esc(name) + "</p>";
-    return '<p class="topic">' + esc(name) + "</p>";
+    if (isRep) return '<p class="contest"><span>Second look</span><span class="contest-n">You saw this one earlier. Answer it as you see it now.</span></p>';
+    var name = domain(e.d || it.domain).name.replace(/\s*\(.*\)$/, ""), tp = topicPos(e);
+    var note = e.k === "item" && firstOfTopic() ? "New topic · " + plural(tp[1], "question") : "Question " + tp[0] + " of " + tp[1];
+    return '<p class="contest"><span>' + esc(name) + '</span><span class="contest-n">' + esc(note) + "</span></p>";
   }
 
   function renderItem(e) {
@@ -375,18 +441,16 @@
     var dir = displayDir(it, isRep);
     a.d = dir;
     var rich = richFactory(it);
-    var html = '<article class="q q-' + it.format + '">' + topicLine(e, it, isRep);
+    var html = '<article class="q q-' + it.format + '">' + topicLine(e, it, isRep) + '<div class="q-box">';
     html += '<h2 class="stem">' + rich(it.stem) + "</h2>";
     if (it.scope) html += '<p class="scope">' + rich(it.scope) + "</p>";
     if (it.context) {
       if (a.cx == null) a.cx = (S.exp && S.exp.context && !isRep) ? hash(S.rid + "|cx|" + it.id) % 2 : 1;
       if (isRep) a.cx = (S.ans[it.id] && S.ans[it.id].cx != null) ? S.ans[it.id].cx : 1;
-      if (a.cx) html += '<p class="context"><b>Background.</b> ' + rich(it.context) + "</p>";
+      if (a.cx) html += '<p class="context"><b>Background:</b> ' + rich(it.context) + "</p>";
     }
-    html += '<div id="defs"></div>';
-    if (it.format === "exceptions") html += casesHtml(it, dir, rich);
-    else if (it.format === "tradeoff") html += tradeoffHtml(it, dir, rich);
-    else html += optionsHtml(it, dir, rich);
+    var body = it.format === "exceptions" ? casesHtml(it, dir, rich) : it.format === "tradeoff" ? tradeoffHtml(it, dir, rich) : optionsHtml(it, dir, rich);
+    html += body + rich.optDefs() + '<div id="defs" class="defs"></div></div>';
     if (it.format !== "exceptions") {
       html += '<div class="outs">' + [2, 1].map(function (k) {
         return '<button type="button" class="esc" data-esc="' + k + '" aria-pressed="' + (a.e === k) + '">' + esc(ESCAPES[k]) + "</button>";
@@ -415,9 +479,10 @@
   function optionsHtml(it, dir, rich) {
     var codes = it.options.map(function (_, k) { return k; });
     if (dir) codes.reverse();
+    var r = rich.opt || rich;
     return '<div class="options" role="radiogroup">' + codes.map(function (c, p) {
       var meaning = it.point_meanings ? "<small>" + esc(it.point_meanings[c]) + "</small>" : "";
-      return '<button type="button" class="opt" role="radio" data-code="' + c + '" data-pos="' + p + '"><span class="oval" aria-hidden="true"></span><span class="otext">' + rich(it.options[c]) + meaning + "</span></button>";
+      return '<button type="button" class="opt" role="radio" data-code="' + c + '" data-pos="' + p + '"><span class="oval" aria-hidden="true"></span><span class="otext">' + r(it.options[c]) + meaning + "</span>" + (p < 9 ? '<kbd class="key" aria-hidden="true">' + (p + 1) + "</kbd>" : "") + "</button>";
     }).join("") + "</div>";
   }
   // Tradeoffs: the two goals side by side, then one row of ovals running from one to the other.
@@ -433,7 +498,7 @@
     });
     if (torn) cells.splice(2, 0, '<button type="button" class="opt pip" role="radio" data-torn="1" data-pos="2" aria-label="Torn between them"><span class="oval" aria-hidden="true"></span><span class="cap">Torn</span></button>');
     return '<div class="sides"><div class="side"><b>' + esc(left.label) + "</b><span>" + rich(left.text) + '</span></div><div class="side"><b>' + esc(right.label) + "</b><span>" + rich(right.text) + "</span></div></div>" +
-      '<div class="tug"><div class="tug-ends"><span>← ' + esc(left.label) + "</span><span>" + esc(right.label) + ' →</span></div>' +
+      '<div class="tug"><div class="tug-ends" aria-hidden="true"><span>' + esc(left.label) + "</span><span>" + esc(right.label) + "</span></div>" +
       '<div class="options pips' + (torn ? " five" : "") + '" role="radiogroup" aria-label="How far you lean">' + cells.join("") + "</div></div>";
   }
   function wireOptions(it, a, leave) {
@@ -475,14 +540,18 @@
     if (ta) ta.addEventListener("input", function () { a.x = ta.value.slice(0, 500); save(); });
   }
 
+  // Exceptions: a grid like a ballot's yes/no measures. Answer names across the top, one row per case.
   function casesHtml(it, dir, rich) {
     var codes = it.options.map(function (_, k) { return k; });
     if (dir) codes.reverse();
-    return '<p class="hint">Answer each line.</p><div class="cases">' + it.cases.map(function (c) {
-      return '<div class="case" data-case="' + esc(c.id) + '"><div class="case-text">' + rich(c.text) + '</div><div class="case-opts" role="radiogroup">' +
-        codes.map(function (code, p) { return '<button type="button" class="chip" role="radio" data-code="' + code + '" data-pos="' + p + '"><span class="oval" aria-hidden="true"></span>' + esc(it.options[code]) + "</button>"; }).join("") +
-        '<button type="button" class="chip esc" data-esc="2"><span class="oval" aria-hidden="true"></span>Not sure</button></div></div>';
-    }).join("") + "</div>";
+    var cols = codes.length + 1;
+    return '<div class="grid-q" style="--cols:' + cols + '"><div class="grid-head" aria-hidden="true"><span>Fill in one oval on each line</span>' +
+      codes.map(function (code) { return "<span>" + esc(it.options[code]) + "</span>"; }).join("") + "<span>Not sure</span></div>" +
+      '<div class="cases">' + it.cases.map(function (c) {
+        return '<div class="case" data-case="' + esc(c.id) + '"><div class="case-text">' + rich(c.text) + '</div><div class="case-opts" role="radiogroup" aria-label="' + esc(c.text) + '">' +
+          codes.map(function (code, p) { return '<button type="button" class="chip" role="radio" data-code="' + code + '" data-pos="' + p + '" aria-label="' + esc(it.options[code]) + '"><span class="oval" aria-hidden="true"></span><span class="chip-l">' + esc(it.options[code]) + "</span></button>"; }).join("") +
+          '<button type="button" class="chip esc" data-esc="2" aria-label="Not sure"><span class="oval" aria-hidden="true"></span><span class="chip-l">Not sure</span></button></div></div>';
+      }).join("") + "</div></div>";
   }
   function wireCases(it) {
     var dir = displayDir(it, false);
@@ -534,8 +603,8 @@
     var rec = S.qc[q.id] || (S.qc[q.id] = {});
     var fake = { id: q.id, format: q.format, options: q.options, sides: q.sides, stem: q.stem, scope: q.scope, domain: e.d };
     var dir = displayDir(fake, false);
-    show('<article class="q q-' + q.format + '"><p class="topic">' + esc(domain(e.d).name) + '</p><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + "</p>" +
-      (q.format === "tradeoff" ? tradeoffHtml(fake, dir, esc) : optionsHtml(fake, dir, esc)) + "</article>" + navHtml(rec.c != null, false));
+    show('<article class="q q-' + q.format + '"><p class="contest"><span>' + esc(domain(e.d).name.replace(/\s*\(.*\)$/, "")) + '</span></p><div class="q-box"><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + "</p>" +
+      (q.format === "tradeoff" ? tradeoffHtml(fake, dir, esc) : optionsHtml(fake, dir, esc)) + "</div></article>" + navHtml(rec.c != null, false));
     function leave() { rec.ms = (rec.ms || 0) + spend(); }
     screen.querySelectorAll(".opt[data-code]").forEach(function (b) {
       b.setAttribute("aria-checked", String(rec.c != null && +b.getAttribute("data-code") === rec.c));
@@ -559,10 +628,12 @@
   function renderBreak() {
     var c = counter(), pct = Math.round(100 * (c.at - 1) / Math.max(1, c.n));
     var sc = computeScores(S.ans), preview = "", top = profileMatches(sc)[0];
-    if (sc.G && sc.G.n >= MIN_N) preview = '<div class="results-block">' + barHtml(META.G, sc.G, { big: true }) +
-      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b>. It will shift as you answer more.</p>" : "") + "</div>";
-    show("<h1>" + pct + "% done. Take a breather.</h1>" +
-      "<p>About " + minutesLeft() + " minutes to go. Your answers are saved on this device, so you can also close the page and come back later.</p>" + preview +
+    var done = topicsInQueue().filter(function (d) { return S.queue.slice(S.pos).every(function (e) { return e.d !== d || e.k !== "item"; }); }).length;
+    if (sc.G && sc.G.n >= MIN_N) preview = '<div class="break-preview">' + barHtml(META.G, sc.G, { big: true }) +
+      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b>. That will shift as you answer more.</p>" : "") + "</div>";
+    show("<h1>" + pct + "% done</h1>" +
+      '<p class="lede">You\'ve finished ' + done + " of " + topicsInQueue().length + " topics. About " + minutesLeft() + " minutes to go.</p>" +
+      "<p>Your answers are saved on this device, so you can close the page and pick up later.</p>" + preview +
       '<div class="nav"><span></span><button class="btn big" id="go">Keep going</button></div>');
     bind("#go", function () { spend(); S.phase = "quiz"; save(); render(); });
   }
@@ -574,8 +645,8 @@
     if (!S.pri || !Array.isArray(S.pri.top)) S.pri = { top: [] };
     var top = S.pri.top;
     var labels = Object.keys(P.labels).sort(function (a, b) { return P.labels[a].localeCompare(P.labels[b]); });
-    show("<h1>Which issues matter most to you?</h1>" +
-      '<p class="scope">Tap up to ' + PRI_MAX + ", most important first. Tap again to remove one.</p>" +
+    show('<p class="contest"><span>Almost done</span><span class="contest-n">Optional</span></p><h1>Which issues matter most to you?</h1>' +
+      '<p class="scope">Pick up to ' + PRI_MAX + ", most important first. Tap one again to take it off. Your results will include a second match that weights these issues.</p>" +
       '<div class="pri-grid">' + labels.map(function (d) {
         var r = top.indexOf(d);
         return '<button type="button" class="pri" data-d="' + esc(d) + '" aria-pressed="' + (r >= 0) + '"><span class="rank" aria-hidden="true">' + (r >= 0 ? r + 1 : "") + "</span>" + esc(P.labels[d]) + "</button>";
@@ -622,7 +693,7 @@
   }
   function renderAboutYou() {
     var qs = aboutItems();
-    var html = '<h1>A few questions about you</h1><p class="scope">' + esc(B.about.intro_text) + ' All optional, and they never change your results.</p><div class="form">';
+    var html = '<p class="contest"><span>About you</span><span class="contest-n">Optional</span></p><h1>A few questions about you</h1><p class="scope">' + esc(B.about.intro_text) + ' All optional, and they never change your results.</p><div class="form">';
     qs.forEach(function (q) {
       html += '<fieldset id="fs-' + q.id + '"' + (aboutVisible(q) ? "" : " hidden") + "><legend>" + esc(q.stem) + "</legend>";
       if (q.id === "state") {
@@ -662,9 +733,9 @@
   }
   function renderHonesty() {
     var q = B.quality.self_report;
-    show('<article class="q"><p class="topic">Last question</p><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + '</p><div class="options" role="radiogroup">' +
+    show('<article class="q"><p class="contest"><span>Last question</span></p><div class="q-box"><h2 class="stem">' + esc(q.stem) + '</h2><p class="scope">' + esc(q.scope) + '</p><div class="options" role="radiogroup">' +
       q.options.map(function (o, k) { return '<button type="button" class="opt" role="radio" data-k="' + k + '" aria-checked="' + (S.honesty === k) + '"><span class="oval" aria-hidden="true"></span><span class="otext">' + esc(o) + "</span></button>"; }).join("") +
-      '</div></article><div class="nav"><span></span><button class="btn big" id="go"' + (S.honesty == null ? " disabled" : "") + ">See my results</button></div>");
+      '</div></div></article><div class="nav"><span></span><button class="btn big" id="go"' + (S.honesty == null ? " disabled" : "") + ">See my results</button></div>");
     screen.querySelectorAll("[data-k]").forEach(function (b) {
       b.addEventListener("click", function () {
         S.honesty = +b.getAttribute("data-k");
@@ -1014,7 +1085,7 @@
       if (!axes.length) return null;
       var strong = axes.slice().sort(function (a, b) { return Math.abs(sc[b.id].v) - Math.abs(sc[a.id].v); });
       var lines = strong.slice(0, 2).filter(function (a) { return Math.abs(sc[a.id].v) > 0.2; }).map(function (a) {
-        return "<b>" + esc(a.name) + ":</b> " + esc(bandText(a, sc[a.id].v));
+        return '<button type="button" class="link strong" data-goto="axes#ax-' + a.id + '">' + esc(a.name) + "</button> " + esc(bandText(a, sc[a.id].v));
       });
       var mid = axes.filter(function (a) { return Math.abs(sc[a.id].v) <= 0.2; }).map(function (a) { return lc(a.name); });
       if (mid.length) lines.push(esc(you + (they ? " sit" : " sit") + " near the middle on " + (mid.length > 1 ? mid.slice(0, -1).join(", ") + " and " + mid[mid.length - 1] : mid[0]) + "."));
@@ -1174,11 +1245,11 @@
   // ctx: {sc, they, own, other, otherLabel, prev, prevRec, kicker}
   function reportHeadHtml(c) {
     var sc = c.sc, matches = profileMatches(sc), top = matches[0], arch = archetype(sc), g = sc.G;
-    return '<header class="res-head">' + (c.kicker ? '<p class="topic">' + esc(c.kicker) + "</p>" : "") +
+    return '<header class="res-head">' + (c.kicker ? '<p class="kicker">' + esc(c.kicker) + "</p>" : "") +
       (top ? "<h1>" + (c.they ? "Their" : "Your") + " closest match is " + esc(top.p.name) + "</h1>" : "<h1>" + (c.they ? "Where they stand" : "Where you stand") + "</h1>") +
-      (arch ? '<p class="archetype"><span class="tag">' + esc(arch.label) + "</span></p>" : "") +
-      (top ? '<p class="res-sub"><b>' + top.match + "% match.</b> " + esc(profileMeta(top.p)) + ". " + esc(top.p.about) + "</p>" : "") +
-      (ok(sc, "G") ? '<p class="summary">' + esc(summarySentence(sc, c.they)) + "</p>" + barHtml(META.G, g, { big: true, other: c.other && c.other.G, otherLabel: c.otherLabel, prev: c.prev && c.prev.G ? c.prev.G.v : null }) : "") +
+      (arch ? '<p class="label-line">' + (c.they ? "They come" : "You come") + ' out as <mark class="hl">' + esc(arch.label.toLowerCase()) + "</mark></p>" : "") +
+      (top ? '<p class="res-sub"><b class="num">' + top.match + "% match.</b> " + esc(profileMeta(top.p)) + ". " + esc(top.p.about) + "</p>" : "") +
+      (ok(sc, "G") ? '<div class="res-overall"><p class="summary">' + esc(summarySentence(sc, c.they)) + "</p>" + barHtml(META.G, g, { big: true, other: c.other && c.other.G, otherLabel: c.otherLabel, prev: c.prev && c.prev.G ? c.prev.G.v : null }) + "</div>" : "") +
       "</header>";
   }
   function tabsHtml(c) {
@@ -1252,16 +1323,16 @@
     var matches = profileMatches(sc);
     if (arch) {
       html += '<section class="block"><h2>' + (c.they ? "Their" : "Your") + " political profile</h2>" +
-        '<p class="lede">' + esc(You(c)) + " come out as <b>" + esc(arch.label.toLowerCase()) + "</b>: " + esc(arch.why) +
+        '<p class="lede">The label means ' + esc(c.they ? "they're " : "you're ") + esc(arch.why) +
         (arch.mods.length ? ", and " + esc(arch.mods.map(function (m) { return c.they ? m.why.replace(/\byou're\b/g, "they're").replace(/\byou\b/g, "they").replace(/\byour\b/g, "their") : m.why; }).join(", and ")) : "") + ".</p>" +
-        '<div class="profile-grid">' + familyParagraphs(sc, c.they).map(function (f) {
-          return '<div class="fam-card"><h3>' + esc(f.name) + "</h3><p>" + f.html + "</p></div>";
-        }).join("") + "</div></section>";
+        '<dl class="fam-list">' + familyParagraphs(sc, c.they).map(function (f) {
+          return "<div><dt>" + esc(f.name) + "</dt><dd>" + f.html + "</dd></div>";
+        }).join("") + "</dl></section>";
     }
     if (con.total) {
       var segs = [["l", con.L], ["m", con.M], ["r", con.R]].map(function (s) { return s[1] ? '<span class="seg ' + s[0] + '" style="flex:' + s[1] + '"></span>' : ""; }).join("");
       html += '<section class="block"><h2>How consistent ' + you(c) + " are</h2>" +
-        '<p class="kpi">' + esc(con.label) + "</p><p>" + esc(con.about) + "</p>" +
+        '<p class="kpi">' + esc(con.label) + '</p><p class="kpi-about">' + esc(con.about) + "</p>" +
         '<div class="meter" aria-hidden="true">' + segs + "</div>" +
         '<p class="meter-key"><span><i class="k l"></i>Left side: ' + con.L + "</span><span><i class=\"k m\"></i>Middle: " + con.M + '</span><span><i class="k r"></i>Right side: ' + con.R + "</span></p>" +
         '<p class="scope">Counted over the ' + con.total + " axes that split along today's left–right line.</p>";
@@ -1278,13 +1349,13 @@
       html += "</section>";
     }
     if (matches.length) {
-      html += '<section class="block"><h2>Closest in each category</h2><div class="cat-cards">' + CATS.map(function (cat) {
+      html += '<section class="block"><h2>Closest in each category</h2><table class="cat-table"><tbody>' + CATS.map(function (cat) {
         var m = matches.filter(function (x) { return x.p.cat === cat.id; });
         if (!m.length) return "";
-        return '<div class="cat-card"><p class="topic">' + esc(cat.name) + '</p><button type="button" class="cat-top" data-open-group="' + m[0].p.id + '"><b>' + esc(m[0].p.name) + '</b><span class="match">' + m[0].match + "%</span></button>" +
-          (m[1] ? '<p class="scope">Then ' + esc(m[1].p.name) + " (" + m[1].match + "%)" + (m[2] ? ", " + esc(m[2].p.name) + " (" + m[2].match + "%)" : "") + "</p>" : "") + "</div>";
-      }).join("") + "</div>" +
-        '<p class="scope">Furthest from ' + you(c) + ": <b>" + esc(matches[matches.length - 1].p.name) + "</b> (" + matches[matches.length - 1].match + "%). <button type=\"button\" class=\"link\" data-goto=\"matches\">All matches and head-to-head comparisons</button></p></section>";
+        return '<tr><th scope="row">' + esc(cat.name) + '</th><td><button type="button" class="link strong" data-open-group="' + m[0].p.id + '">' + esc(m[0].p.name) + '</button><span class="then">' +
+          (m[1] ? "then " + esc(m[1].p.name) + " " + m[1].match + "%" + (m[2] ? ", " + esc(m[2].p.name) + " " + m[2].match + "%" : "") : "") + '</span></td><td class="num pct">' + m[0].match + "%</td></tr>";
+      }).join("") + "</tbody></table>" +
+        '<p class="scope">Furthest from ' + you(c) + ": <b>" + esc(matches[matches.length - 1].p.name) + "</b> (" + matches[matches.length - 1].match + "%). <button type=\"button\" class=\"link\" data-goto=\"matches\">All " + matches.length + " matches, with head-to-head comparisons</button></p></section>";
     }
     var weights = !c.they && c.own ? priorityWeights(S.pri && S.pri.top) : null;
     if (weights) {
@@ -1294,9 +1365,9 @@
     }
     var strongest = shownAxes(sc).sort(function (a, b) { return Math.abs(sc[b].v) - Math.abs(sc[a].v); }).slice(0, 4);
     if (strongest.length) {
-      html += '<section class="block"><h2>Strongest views</h2><div class="standouts">' + strongest.map(function (ax) {
-        return '<button type="button" class="standout" data-goto="axes#ax-' + ax + '"><span class="num">' + signed(sc[ax].v) + "</span><b>" + esc(META[ax].name) + "</b><span>" + esc(leanText(sc[ax].v, META[ax])) + "</span></button>";
-      }).join("") + "</div></section>";
+      html += '<section class="block"><h2>Strongest views</h2><ol class="strong-list">' + strongest.map(function (ax) {
+        return '<li><span class="num sv">' + signed(sc[ax].v) + '</span><span><button type="button" class="link strong" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + "</button> " + esc(bandText(META[ax], sc[ax].v)) + "</span></li>";
+      }).join("") + "</ol></section>";
     }
     if (c.prev && !c.other) {
       var moves = AXES.filter(function (ax) { return ok(sc, ax) && c.prev[ax]; })
@@ -1374,9 +1445,19 @@
   }
 
   // --- axes ---
+  // One dense row per axis (name, track, value), each opening to the full explanation.
+  function axisRowHtml(a, o, c) {
+    var v = clamp(o.v), oth = c.other && c.other[a.id] ? c.other[a.id].v : null, prev = c.prev && !c.other && c.prev[a.id] ? c.prev[a.id].v : null;
+    return '<span class="ar-name">' + esc(a.name) + '</span>' +
+      '<span class="ar-track"><span class="track" role="img" aria-label="' + esc(a.name + ": " + leanText(v, a)) + '"><span class="mid"></span>' +
+      (prev != null ? '<span class="dot prev" style="left:' + pct(prev) + '%"></span>' : "") +
+      (oth != null ? '<span class="dot other" style="left:' + pct(oth) + '%"></span>' : "") +
+      '<span class="dot" style="left:' + pct(v) + '%"></span></span><span class="poles"><span>' + esc(a.minus) + "</span><span>" + esc(a.plus) + "</span></span></span>" +
+      '<span class="ar-val"><span class="num">' + signed(v) + "</span> " + esc(leanText(v, a).replace(/^(Leans|Moderately:|Strongly:|Very strongly:) ?/, "")) + "</span>";
+  }
   function panelAxes(c) {
     var sc = c.sc, html = '<section class="block"><h2>All ' + shownAxes(sc).length + " axes</h2>" +
-      '<p class="scope">Open any axis for what the score means, where every group stands on it' + (c.own ? ", and which of your answers moved it" : "") + ". Scores run from −100 to +100." +
+      '<p class="scope">Scores run from −100 to +100. Open an axis for what the score means, where every group stands' + (c.own ? ", and which of your answers moved it" : "") + "." +
       (c.other ? ' <span class="legend"><span class="dot-key you"></span>' + esc(You(c)) + ' <span class="dot-key other"></span>' + esc(c.otherLabel) + "</span>" : "") +
       (c.prev && !c.other ? ' <span class="legend"><span class="dot-key you"></span>Now <span class="dot-key prev"></span>Last time</span>' : "") + "</p>" + chipsHtml() + "</section>";
     B.axes.families.forEach(function (f) {
@@ -1384,15 +1465,16 @@
       if (!rows.length) return;
       html += '<section class="family"><h3>' + esc(f.name) + "</h3>" + rows.map(function (a) {
         var v = sc[a.id].v, near = nearestOnAxis(a.id, v, resCat, 3), oth = c.other && c.other[a.id] ? c.other[a.id].v : null;
-        return '<details class="axis-card" id="ax-' + a.id + '"><summary>' + barHtml(a, sc[a.id], { other: c.other && c.other[a.id], otherLabel: c.otherLabel, prev: c.prev && !c.other && c.prev[a.id] ? c.prev[a.id].v : null }) + '<span class="axis-n">More about this axis</span></summary>' +
-          '<div class="axis-body"><p><b>' + esc(You(c)) + ":</b> " + esc(bandText(a, v)) + "</p>" +
+        return '<details class="axis-card" id="ax-' + a.id + '"><summary class="axis-row">' + axisRowHtml(a, sc[a.id], c) + "</summary>" +
+          '<div class="axis-body"><p class="band-now"><b>' + esc(You(c)) + ":</b> " + esc(bandText(a, v)) + "</p>" +
           lopHtml(a.id, sc[a.id], c) +
           '<p class="scope">' + esc(a.about) + (c.own ? " " + confText(sc[a.id].n) : "") + "</p>" +
-          "<h4>The range on this axis</h4>" + bandLadderHtml(a, v, oth) +
-          "<h4>Where the groups stand</h4>" + stripHtml(a.id, v, resCat, oth) +
+          '<div class="axis-cols"><div><h4>The range on this axis</h4>' + bandLadderHtml(a, v, oth) + "</div>" +
+          "<div><h4>Where the groups stand</h4>" + stripHtml(a.id, v, resCat, oth) +
           '<p class="scope">Nearest to ' + you(c) + ": " + near.map(function (p) { return '<button type="button" class="link" data-open-group="' + p.id + '">' + esc(p.name) + "</button> (" + signed(p.pos[a.id]) + ")"; }).join(", ") + ".</p>" +
+          '<button type="button" class="link" data-open-axis="' + a.id + '">Every group on this axis</button></div></div>' +
           (c.own && sc[a.id].parts && sc[a.id].parts.length ? "<h4>The answers that moved it, strongest first</h4>" + drillHtml(a, sc[a.id], 15) : "") +
-          '<button type="button" class="link" data-open-axis="' + a.id + '">Every group on this axis</button></div></details>';
+          "</div></details>";
       }).join("") + "</section>";
     });
     return html;
@@ -1500,17 +1582,17 @@
       minor: "Thanks for taking it. Because you're under 18, your answers weren't saved.",
     }[S.submitted] || "";
     var html = reportHeadHtml(ctx) + tabsHtml(ctx) + '<div id="panel" class="panel" role="tabpanel"></div>';
-    html += '<section class="results-block share"><h2>Share and compare</h2>' +
-      (link ? '<p>Send this link to show your results. It contains only your scores, not your answers.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(link) + '"><button class="btn ghost" id="copylink">Copy link</button></div>'
-        : '<p>Your share code (paste it into the quiz site to show your results):</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(code) + '"><button class="btn ghost" id="copylink">Copy code</button></div>') +
-      '<label for="cmpin" class="scope">Compare with a friend: paste their link or code. Their scores show as pink dots throughout the report.</label><div class="copyrow"><input type="text" id="cmpin" placeholder="Their link or code" value=""><button class="btn ghost" id="cmpgo">Compare</button></div>' +
+    html += '<section class="results-block share"><div class="share-grid"><div class="share-col"><h2>Share your results</h2>' +
+      (link ? '<p class="scope">The link carries your scores only, never your answers.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(link) + '"><button class="btn ghost" id="copylink">Copy link</button></div>'
+        : '<p class="scope">Paste this code into the quiz site to show your results. It carries your scores only.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(code) + '"><button class="btn ghost" id="copylink">Copy code</button></div>') +
+      '</div><div class="share-col"><h2>Compare with a friend</h2><label for="cmpin" class="scope">Paste their link or code. Their scores show as magenta dots throughout the report.</label><div class="copyrow"><input type="text" id="cmpin" placeholder="Their link or code" value=""><button class="btn ghost" id="cmpgo">Compare</button></div></div></div>' +
       (compare ? '<p class="scope">Comparing with ' + esc(compare.label) + ". " + (function () { var m = matchOne(sc, scoresToPos(compare.scores)); return m ? "You two are a " + m.match + "% match." : ""; })() + ' <button class="link" id="cmpclear">Stop comparing</button></p>' : "") +
       '<p class="scope" id="cmpmsg"></p></section>';
-    html += '<div class="notice' + (S.submitted === "failed" ? " warn" : "") + '">' + esc(status) + (S.submitted === "failed" ? ' <button class="link" id="retry">Try again</button>' : "") + "</div>";
+    if (status) html += '<p class="notice' + (S.submitted === "failed" ? " warn" : "") + '">' + esc(status) + (S.submitted === "failed" ? ' <button class="link" id="retry">Try again</button>' : "") + "</p>";
     var fit = B.about.items.filter(function (q) { return q.id === "result_fit"; })[0];
     if (fit) {
-      html += '<section class="results-block"><h2>' + esc(fit.stem) + '</h2><div class="escapes">' + fit.options.map(function (o, k) {
-        return '<button type="button" class="chip" data-fit="' + k + '" aria-pressed="' + (S.resultFit === k) + '">' + esc(o) + "</button>";
+      html += '<section class="results-block feedback"><h2>' + esc(fit.stem) + '</h2><div class="fit-row" role="radiogroup">' + fit.options.map(function (o, k) {
+        return '<button type="button" class="chip" role="radio" data-fit="' + k + '" aria-pressed="' + (S.resultFit === k) + '"><span class="oval" aria-hidden="true"></span>' + esc(o) + "</button>";
       }).join("") + '</div><label for="fittext" class="scope">' + esc(fit.free_text) + '</label><textarea id="fittext" maxlength="800">' + esc(S.resultFitText || "") + "</textarea></section>";
     }
     html += '<p class="scope">Early scoring: hand-set weights that will sharpen as more people take the quiz. <button type="button" class="link" id="method">How scoring works</button></p>' +
@@ -1613,14 +1695,16 @@
       var p = PROFILE[exSel], m = me ? matchOne(me, p.pos, null) : null, sims = similarGroups(p, 6);
       html += '<header class="res-head"><p class="topic">' + esc(catName(p.cat)) + "</p><h1>" + esc(p.name) + '</h1><p class="res-sub">' + esc(profileMeta(p)) + ". " + esc(p.about) + basisText(p) + "</p>" +
         (m ? '<p class="summary">You and ' + esc(p.name) + " are a " + m.match + "% match.</p>" : "") + "</header>";
-      html += '<section class="block"><h2>Positions</h2><p class="scope">Placed on ' + Object.keys(p.pos).length + " of " + AXES.length + " axes (the rest weren't live issues for this group or it took no clear stand)." +
+      html += '<section class="block"><h2>Positions</h2><p class="scope">Placed on ' + Object.keys(p.pos).filter(function (k) { return k !== "G"; }).length + " of " + (AXES.length - 1) + " axes (the rest weren't live issues for this group or it took no clear stand)." +
         (me ? ' <span class="legend"><span class="dot-key grp"></span>' + esc(p.short) + ' <span class="dot-key you"></span>You</span>' : "") + "</p>";
       [{ name: "Overall", axes: [B.axes.overall] }].concat(B.axes.families).forEach(function (f) {
         var rows = f.axes.filter(function (a) { return p.pos[a.id] != null; });
         if (!rows.length) return;
         html += '<div class="family">' + (f.name === "Overall" ? "" : "<h3>" + esc(f.name) + "</h3>") + rows.map(function (a) {
           var v = p.pos[a.id], mine = me && ok(me, a.id) ? me[a.id].v : null;
-          return '<div class="ex-axis">' + barHtml(a, { v: v }, { noYou: true, group: v, groupLabel: p.short, mine: mine }) + '<p class="scope">' + esc(bandText(a, v)) + "</p></div>";
+          return '<div class="ex-axis axis-row"><span class="ar-name">' + esc(a.name) + '</span><span class="ar-track"><span class="track"><span class="mid"></span><span class="dot grp" style="left:' + pct(v) + '%" title="' + esc(p.short) + '"></span>' +
+            (mine != null ? '<span class="dot" style="left:' + pct(mine) + '%"></span>' : "") + '</span><span class="poles"><span>' + esc(a.minus) + "</span><span>" + esc(a.plus) + "</span></span></span>" +
+            '<span class="ar-val"><span class="num">' + signed(v) + '</span></span><p class="ar-band">' + esc(bandText(a, v)) + "</p></div>";
         }).join("") + "</div>";
       });
       html += "</section>";
@@ -1630,7 +1714,8 @@
       html += '<div class="nav"><button type="button" class="link" data-ex-list="1">All groups</button></div>';
     } else if (exTab === "groups") {
       html += "<h1>Comparison groups</h1><p class=\"lede\">" + B.profiles.length + " parties, factions, voter types, presidents, historical movements, ideologies and parties abroad, placed on the quiz's axes. Today's factions and recent presidents come from simulated answers for their leading politicians; the rest are placed by hand from platforms, voting records, surveys and historians' accounts.</p>" +
-        '<div class="chips" role="tablist">' + [{ id: "all", name: "All" }].concat(CATS).map(function (c) { return '<button type="button" class="chip" role="tab" data-excat="' + c.id + '" aria-selected="' + (exCat === c.id) + '">' + esc(c.name) + "</button>"; }).join("") + "</div>";
+        '<div class="chips" role="tablist">' + [{ id: "all", name: "All" }].concat(CATS).map(function (c) { return '<button type="button" class="chip" role="tab" data-excat="' + c.id + '" aria-selected="' + (exCat === c.id) + '">' + esc(c.name) + "</button>"; }).join("") + "</div>" +
+        '<div class="search"><label for="ex-q">Find a group</label><input type="search" id="ex-q" placeholder="Try Whigs, Obama or Labour" autocomplete="off"><p class="scope" id="ex-none" hidden>No group matches that.</p></div>';
       html += plotHtml({ cat: exCat, label: exCat === "all" ? HERO_LABELS : null, user: me && userPos(me, dimAxes(MAP_X)) != null && userPos(me, dimAxes(MAP_Y)) != null ? { x: userPos(me, dimAxes(MAP_X)), y: userPos(me, dimAxes(MAP_Y)) } : null });
       CATS.filter(function (c) { return exCat === "all" || c.id === exCat; }).forEach(function (c) {
         html += '<section class="block"><h2>' + esc(c.name) + '</h2><p class="scope">' + esc(c.about) + '</p><ul class="group-list">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
@@ -1651,7 +1736,8 @@
       html += '<section class="block"><h2>Questions that measure it</h2><p class="scope">' + plural(qs.length, "question") + " in the full bank feed this axis. A sample:</p><ul class=\"qlist\">" + qs.slice(0, 12).map(function (id) { return "<li>" + esc(B.items[id].stem) + "</li>"; }).join("") + "</ul></section>";
       html += '<div class="nav"><button type="button" class="link" data-ex-list="1">All axes</button></div>';
     } else {
-      html += "<h1>The axes</h1><p class=\"lede\">The quiz measures " + (AXES.length - 1) + " separate dimensions, plus an overall left–right score. Many of them cut across the usual left–right line.</p>";
+      html += "<h1>The axes</h1><p class=\"lede\">The quiz measures " + (AXES.length - 1) + " separate dimensions, plus an overall left–right score. Many of them cut across the usual left–right line.</p>" +
+        '<div class="search"><label for="ex-q">Find an axis</label><input type="search" id="ex-q" placeholder="Try speech, guns or China" autocomplete="off"><p class="scope" id="ex-none" hidden>No axis matches that.</p></div>';
       [{ name: "Overall", axes: [B.axes.overall] }].concat(B.axes.families).forEach(function (f) {
         html += '<section class="block"><h2>' + esc(f.name) + '</h2><ul class="group-list">' + f.axes.map(function (a) {
           var mv = me && ok(me, a.id) ? me[a.id].v : null;
@@ -1667,6 +1753,18 @@
     screen.querySelectorAll("[data-ex-axis]").forEach(function (b) { b.addEventListener("click", function () { exTab = "axes"; exSel = b.getAttribute("data-ex-axis"); render(); }); });
     screen.querySelectorAll("[data-ex-list]").forEach(function (b) { b.addEventListener("click", function () { exSel = null; render(); }); });
     plotMatch = null; wirePlot();
+    var q = document.getElementById("ex-q");
+    if (q) q.addEventListener("input", function () {
+      var t = q.value.trim().toLowerCase(), any = false;
+      screen.querySelectorAll(".group-list li").forEach(function (li) {
+        var hit = !t || li.textContent.toLowerCase().indexOf(t) >= 0;
+        li.hidden = !hit; any = any || hit;
+      });
+      screen.querySelectorAll(".group-list").forEach(function (ul) {
+        var sec = ul.closest(".block"); if (sec) sec.hidden = !Array.prototype.some.call(ul.children, function (li) { return !li.hidden; });
+      });
+      document.getElementById("ex-none").hidden = any;
+    });
   }
 
   // ---------- about page ----------
@@ -1675,36 +1773,37 @@
   function renderAboutPage() {
     var html = '<h1>How this quiz works</h1>' +
       '<p class="lede">A personal project to build a more honest political quiz for the US: more dimensions, clearer questions, and no thumb on the scale.</p>' +
-      '<section class="prose"><h2>What makes it different</h2><ul>' +
+      '<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#ab-diff">What makes it different</a></li><li><a href="#ab-scoring">How scoring works</a></li><li><a href="#ab-report">Reading the report</a></li><li><a href="#ab-axes">The axes</a></li><li><a href="#ab-groups">The groups</a></li><li><a href="#ab-privacy">Privacy</a></li><li><a href="#ab-limits">Limits</a></li></ul></nav>' +
+      '<section class="prose"><h2 id=ab-diff>What makes it different</h2><ul>' +
       "<li><b>Answers are positions.</b> Instead of “agree or disagree” with a vague statement, you pick the policy you actually want, with real numbers where they exist.</li>" +
       "<li><b>Scope lines and exceptions.</b> Each question says what case to picture. Edge cases (rape and incest exceptions, say, or which groups of immigrants) are asked separately, so a strict rule with exceptions isn't confused with either extreme.</li>" +
       "<li><b>Honest ways out.</b> “None of these fit” and “I don't know enough” are never scored as a middle position.</li>" +
       "<li><b>No party cues.</b> No party or politician names, and rules about power are asked for any president of either party. Some rules are asked twice, once with each side benefiting, to separate principle from partisanship.</li>" +
       "<li><b>" + (AXES.length - 1) + " candidate dimensions.</b> Trust, populism, free speech, presidential power, federalism and more get their own axes, because they cut across left and right.</li>" +
-      "</ul><h2>How scoring works</h2>" +
+      "</ul><h2 id=ab-scoring>How scoring works</h2>" +
       "<p>Each answer becomes a number from −1 (one end of the answer list) to +1 (the other end). Every question is keyed to the axes it measures and to overall left–right, with a direction. An axis score is the average of the answers keyed to it, shown as −100 to +100 once it has at least 3 answers. Follow-up cases count half as much as full questions.</p>" +
       "<p>Free speech and federalism are scored for consistency. Each of their questions is tagged by whose speech, or which side's state policies, the protective answer helps, and the left-coded and right-coded questions count equally. Protecting only the speech your own side likes doesn't count as protecting free speech. If your answers lean hard one way, the report says so.</p>" +
       "<p>These weights are set by hand for now. As more people take the quiz, the plan is to check which questions are the best measuring sticks and let those count more. That's why results are labeled early scoring.</p>" +
       "<p>Today's parties and factions, and the last five presidents, are placed by answering the whole quiz as each of their leading politicians would, from their records and public statements, and averaging the results. Past presidents are answered from their record in office. Voter types, older parties, ideologies and parties abroad are hand-placed from platforms, voting records, surveys and historians' accounts, and are only compared on issues they took positions on. Treat the match percentages as a fun guide, not a measurement.</p>" +
-      "<h2>How the report reads your scores</h2><ul>" +
+      "<h2 id=ab-report>How the report reads your scores</h2><ul>" +
       "<li><b>Bands.</b> Each axis is split into five bands (strongly one way, leaning, middle, leaning, strongly the other way) at −60, −20, +20 and +60. Each band has a plain-language description, so you can see what your number means.</li>" +
       "<li><b>Your label.</b> The economic summary (the average of taxes, business rules and social programs) and the cultural summary (abortion, gender identity, religion, family roles, race, immigration and national identity) each count as left, middle or right at ±20. The nine combinations give the core label: left on both, economic progressive, communitarian, social liberal, moderate, traditionalist, libertarian, free-market moderate, or right on both. Left on both is split by strength into center-left, liberal and progressive (cuts at −35 and −65, averaging the two summaries); right on both into center-right, conservative and very conservative at +35 and +65. Anyone above +50 on economics and below −50 on drugs and health rules combined is labeled libertarian. “Committed” is added to the other labels past ±65. Up to two strong cross-cutting views are added in front, such as anti-establishment, anti-war, hawkish, China-hawk, protectionist, free-trade, civil-libertarian, green or states'-rights.</li>" +
       "<li><b>Consistency.</b> Over the axes that split along today's left–right line, the report counts how many you took the left side on, the right, or the middle (within ±10). If the smaller side is under 12% of the total you're consistent, under 30% mostly consistent, otherwise cross-pressured.</li>" +
       "<li><b>Priorities.</b> When you rank your top issues, a second match weights the axes behind those issues (found from which questions feed which axes) by your ranking.</li>" +
       "<li><b>Topics.</b> A topic's lean is the average of your answers in that topic that count toward the overall left–right score.</li>" +
       "<li><b>Map.</b> The default map is overall left–right against liberty versus authority. That second dimension was chosen because it was the biggest thing left over once left–right was accounted for, in a test with 135 simulated politicians. The economic and cultural summaries track overall left–right so closely that a map of the two is mostly a diagonal line. Any two axes or summaries can still be plotted. Summaries are averages of their axes, for you and for each group.</li></ul>" +
-      "<h2>The axes</h2><dl class=\"glossary\">" +
+      "<h2 id=ab-axes>The axes</h2><dl class=\"glossary\">" +
       [B.axes.overall].concat([].concat.apply([], B.axes.families.map(function (f) { return f.axes; }))).map(function (a) {
         return "<dt>" + esc(a.name) + ' <span class="era">' + esc(a.minus) + " ↔ " + esc(a.plus) + "</span></dt><dd>" + esc(a.about || "") + "</dd>";
       }).join("") + "</dl>" +
-      "<h2>The " + B.profiles.length + " comparison groups</h2>" + CATS.map(function (c) {
+      '<h2 id=ab-groups>The ' + B.profiles.length + " comparison groups</h2>" + CATS.map(function (c) {
         return "<h3>" + esc(c.name) + '</h3><p class="scope">' + esc(c.about) + '</p><dl class="glossary">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
           return "<dt>" + esc(p.name) + ' <span class="era">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + basisText(p) + "</dd>";
         }).join("") + "</dl>";
       }).join("") +
-      "<h2>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
-      "<h2>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Report a problem” link under each question goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
-      '<h2>Open source</h2><p>The questions, scoring keys and code are public: <a href="https://github.com/GriffinFoster06/political-axes" target="_blank" rel="noopener">github.com/GriffinFoster06/political-axes</a>.</p></section>' +
+      "<h2 id=ab-privacy>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
+      "<h2 id=ab-limits>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Report a problem” link under each question goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
+      '<h2 id=ab-source>Open source</h2><p>The questions, scoring keys and code are public: <a href="https://github.com/GriffinFoster06/political-axes" target="_blank" rel="noopener">github.com/GriffinFoster06/political-axes</a>.</p></section>' +
       '<div class="nav"><span></span><button class="btn" id="back">Back</button></div>';
     show(html);
     bind("#back", closeAbout);
