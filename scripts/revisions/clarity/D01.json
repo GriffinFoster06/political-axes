@@ -1,0 +1,25 @@
+{
+ "top_income_tax": {
+  "why": "'A lot' and 'somewhat' had no numbers.",
+  "scope": "Today the top rate is 37%. Raising or lowering a lot means by about 10 percentage points or more; somewhat means by a few points. Assume the money raised or lost changes the federal budget, not your own taxes."
+ },
+ "large_fortunes": {
+  "why": "'Much more' and 'somewhat more' had no scale.",
+  "scope": "Think about taxes, not any particular person. “Much more” means something like a wealth tax or top rates near 50%; “somewhat more” means closing a few tax breaks or raising rates a few points."
+ },
+ "cash_aid_level": {
+  "why": "'Enough to stay above the poverty line' had no figure.",
+  "context": "The federal poverty line is about $32,000 a year for a family of four."
+ },
+ "inequality_tradeoff": {
+  "why": "'The gap' and the ways to reduce it were abstract.",
+  "scope": "Today the top 10% of earners take home nearly half of all income. Reducing the gap would mean things like higher taxes on top earners and more aid for low earners."
+ },
+ "poverty_cause": {
+  "why": "'An unfair economic system' and 'circumstances' had no examples.",
+  "options": {
+   "0": "An economic system that is unfair to them, such as low wages, too few good jobs, or discrimination",
+   "1": "Circumstances they didn't choose, such as where they grew up, illness in the family, or bad luck"
+  }
+ }
+}

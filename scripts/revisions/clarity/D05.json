@@ -1,0 +1,16 @@
+{
+ "env_jobs_tradeoff": {
+  "why": "No examples of the rules or jobs at stake.",
+  "scope": "Industries like coal and metal mining, oil and gas, and manufacturing. Rules like limits on mine runoff, smokestack emissions and drilling near water supplies."
+ },
+ "permitting_tradeoff": {
+  "why": "'Thorough review' and 'harms' were undefined.",
+  "scope": "Projects of any kind of energy. Reviews study effects on wildlife, water, air and nearby residents, and today can take 4 years or more for major projects."
+ },
+ "climate_action": {
+  "why": "'Fast, deep' and 'noticeably' had no scale.",
+  "options": {
+   "0": "Require fast, deep cuts in greenhouse gas emissions, such as halving them within 10 years, even if energy prices rise noticeably"
+  }
+ }
+}

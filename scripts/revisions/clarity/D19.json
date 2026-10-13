@@ -1,0 +1,10 @@
+{
+ "checks_vs_action": {
+  "why": "'Checks' and 'act quickly' had no examples.",
+  "scope": "The federal government in general, whichever party is in charge. Checks include Congress approving laws and spending, courts reviewing actions, and the Senate confirming appointments."
+ },
+ "courts_vs_majority": {
+  "why": "'Takes away some people's rights' had no examples.",
+  "scope": "Laws in general, including ones you like and dislike: for example, popular laws on gun limits, school prayer, policing powers or speech that courts say violate the Constitution."
+ }
+}

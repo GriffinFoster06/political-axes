@@ -1,0 +1,10 @@
+{
+ "hate_crime_sentences": {
+  "why": "'Much longer' and 'somewhat longer' had no scale.",
+  "scope": "Crimes like assault or vandalism, compared with the same crime without that motive. “Much longer” means something like double; “somewhat longer” means a modest addition."
+ },
+ "teach_institutional_racism": {
+  "why": "'Built into laws and institutions' had no examples.",
+  "scope": "High school classes. For example, the claim that lending, policing, school funding or hiring practices disadvantage Black Americans today even when no one intends it."
+ }
+}

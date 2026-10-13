@@ -228,6 +228,12 @@ mark.hl { color: inherit; background: linear-gradient(transparent 52%, var(--you
 .say-h { font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-bottom: 3px; }
 .say p:not(.say-h) { font-size: 1rem; line-height: 1.45; }
 .say ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 0.95rem; }
+.say p.say-t { font-weight: 600; }
+.say-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; margin-top: 10px; }
+.say-cols + .say-l { margin-top: 10px; }
+.say p.say-k { font-family: var(--display); font-stretch: var(--cond); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; padding-bottom: 3px; border-bottom: 1px solid var(--rule); line-height: 1.2; }
+.say-l ul { font-size: 0.92rem; line-height: 1.4; }
+@media (max-width: 640px) { .say-cols { grid-template-columns: 1fr; gap: 10px; } }
 
 /* the ways out */
 .outs { display: flex; flex-wrap: wrap; gap: 4px 20px; }

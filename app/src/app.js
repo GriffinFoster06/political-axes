@@ -313,7 +313,7 @@
     screen.querySelectorAll("[data-sample]").forEach(function (b) {
       b.addEventListener("click", function () {
         screen.querySelectorAll("[data-sample]").forEach(function (y) { y.setAttribute("aria-checked", String(y === b)); });
-        showSay("<p>" + esc(statementFor(sample, { c: +b.getAttribute("data-sample") })) + "</p>");
+        showSay(statementHtml(statementFor(sample, { c: +b.getAttribute("data-sample") })));
       });
     });
     bind("#go", function () { S.phase = "howto"; save(); render(); });
@@ -332,7 +332,7 @@
       "</ol>" +
       '<div class="demo" aria-hidden="true"><p class="contest">Example</p><div class="q-box"><p class="stem">Overall, how big should the federal government be?</p>' +
       '<div class="options"><div class="opt"><span class="oval"></span><span class="otext">Somewhat bigger</span></div><div class="opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div><div class="opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div></div>' +
-      '<div class="say"><p class="say-h">What you\'d be saying</p><p>' + esc(statementFor(B.items.federal_size, { c: 2 })) + '</p></div></div></div></div>' +
+      '<div class="say"><p class="say-h">What you\'d be saying</p>' + statementHtml(statementFor(B.items.federal_size, { c: 2 })) + '</div></div></div></div>' +
       '<p class="scope keys-hint">On a keyboard, number keys pick an answer and ← goes back.</p>' +
       '<div class="nav"><button class="link" id="bk">← Back</button><button class="btn big" id="go">Begin</button></div>');
     bind("#bk", function () { S.phase = "home"; save(); render(); });
@@ -467,6 +467,8 @@
   // What an answer means, in plain words, shown under the answers so people can check it before
   // pressing Next. Written per answer in items/statements/; never says how an answer is scored.
   var ST = B.statements || {};
+  // A statement is a plain string, or {t: headline, yes: [things you'd support], no: [things you'd
+  // oppose], means: [what it implies]} for answers whose meaning needs spelling out.
   function statementFor(it, a) {
     if (!a) return "";
     if (a.e === 2) return "You don't know enough about this to say.";
@@ -475,6 +477,13 @@
     if (a.t) return st && st.torn ? st.torn : "You're torn between the two goals.";
     if (a.c == null) return "";
     return list && list[a.c] ? list[a.c] : answerText(it, a);
+  }
+  function statementHtml(v) {
+    if (!v) return "";
+    if (typeof v === "string") return "<p>" + esc(v) + "</p>";
+    function list(h, xs, cls) { return xs && xs.length ? '<div class="say-l ' + cls + '"><p class="say-k">' + h + "</p><ul>" + xs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : ""; }
+    var cols = list("You\u2019d support", v.yes, "yes") + list("You\u2019d oppose", v.no, "no");
+    return (v.t ? '<p class="say-t">' + esc(v.t) + "</p>" : "") + (cols ? '<div class="say-cols">' + cols + "</div>" : "") + list("That means", v.means, "means");
   }
   function caseStatement(it, cs, ca) {
     if (!ca) return "";
@@ -522,8 +531,7 @@
       screen.querySelectorAll(".esc[data-esc]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.e === +b.getAttribute("data-esc"))); });
       var nf = document.getElementById("nf"); if (nf) nf.hidden = a.e !== 1;
       var nx = document.getElementById("next"); if (nx) { nx.disabled = !answered(it, a); nx.hidden = false; }
-      var t = statementFor(it, a);
-      showSay(t ? "<p>" + esc(t) + "</p>" : "");
+      showSay(statementHtml(statementFor(it, a)));
     }
     function advance() {
       clearTimeout(advTimer);

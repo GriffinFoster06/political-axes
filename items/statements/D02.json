@@ -1,153 +1,989 @@
 {
- "min_wage": [
-  "The federal minimum wage should be $20 an hour or more and rise with inflation every year.",
-  "The federal minimum wage should be about $15 an hour and rise with inflation every year.",
-  "The federal minimum wage should be raised to about $10 to $12 an hour.",
-  "The federal minimum wage should stay at $7.25 an hour.",
-  "There should be no federal minimum wage; states and employers should set pay."
- ],
  "min_wage_jobs": [
-  "Raise the minimum wage to $15 quickly. Higher pay for millions is worth losing some low-wage jobs.",
-  "Raise the minimum wage to $15 over several years, accepting some job losses but trying to keep them small.",
-  "Raise the minimum wage only part of the way to $15, or only in places where living costs are high.",
-  "Don't raise the minimum wage, because the lost jobs fall hardest on the least experienced workers."
+  {
+   "t": "Raise the minimum wage to $15 quickly; higher pay for many is worth some lost jobs.",
+   "yes": [
+    "Going from $7.25 to $15 within a year or two",
+    "Accepting that some low-wage jobs disappear"
+   ],
+   "no": [
+    "A slow phase-in",
+    "Leaving the minimum where it is"
+   ]
+  },
+  {
+   "t": "Raise the minimum wage to $15 over several years to limit job losses.",
+   "yes": [
+    "Phasing in $15 step by step over several years"
+   ],
+   "no": [
+    "Jumping straight to $15",
+    "Leaving the minimum at $7.25"
+   ]
+  },
+  {
+   "t": "Raise the minimum wage only part of the way, or only where living costs are high.",
+   "yes": [
+    "A smaller raise, such as $10–12",
+    "Higher minimums only in high-cost areas"
+   ],
+   "no": [
+    "$15 nationwide",
+    "No raise at all"
+   ]
+  },
+  {
+   "t": "Don't raise the minimum wage; lost jobs would hurt the least experienced workers most.",
+   "yes": [
+    "Keeping the federal minimum at $7.25"
+   ],
+   "no": [
+    "Raising it to $15, quickly or slowly"
+   ]
+  }
  ],
  "right_to_work": [
-  "Union contracts that require every covered worker to pay fees should be allowed everywhere, overriding state right-to-work laws.",
-  "Each state should keep deciding whether union contracts can require fees.",
-  "Union contracts that require fees should be banned in every state."
+  {
+   "t": "Union contracts should be able to require fees in every state.",
+   "yes": [
+    "Overriding the 26 state right-to-work laws",
+    "Letting contracts require covered workers to pay the union"
+   ],
+   "no": [
+    "State right-to-work laws"
+   ]
+  },
+  {
+   "t": "Each state should decide whether union contracts can require fees, as today.",
+   "yes": [
+    "Keeping today's state-by-state right-to-work laws"
+   ],
+   "no": [
+    "A national right-to-work law",
+    "Overriding state right-to-work laws"
+   ]
+  },
+  {
+   "t": "No union contract anywhere should be able to require fees.",
+   "yes": [
+    "A national right-to-work law covering every state"
+   ],
+   "no": [
+    "Contracts that require covered workers to pay the union"
+   ]
+  }
  ],
  "union_organizing": [
-  "A union should be recognized as soon as most workers sign cards, and employers who interfere should face large fines.",
-  "Union votes should happen faster, and employers who break the rules should pay bigger fines.",
-  "The rules for forming a union should stay as they are.",
-  "Unions should be harder to keep: workers should have to vote again every few years to keep their union."
+  {
+   "t": "Make forming a union much easier.",
+   "yes": [
+    "Recognizing a union once most workers sign cards, without a separate vote",
+    "Large fines for employers who interfere"
+   ],
+   "no": [
+    "Keeping today's election process",
+    "Requiring unions to win new votes regularly"
+   ]
+  },
+  {
+   "t": "Make forming a union somewhat easier.",
+   "yes": [
+    "Faster union votes",
+    "Larger fines for illegal interference by employers"
+   ],
+   "no": [
+    "Recognition by signed cards alone",
+    "Making it harder to form or keep a union"
+   ]
+  },
+  {
+   "t": "Keep today's rules for forming a union.",
+   "yes": [
+    "Today's election process and penalties"
+   ],
+   "no": [
+    "Making it easier or harder"
+   ]
+  },
+  {
+   "t": "Make it harder to keep a union.",
+   "yes": [
+    "New votes every few years for workers to keep their union"
+   ],
+   "no": [
+    "Card-check recognition",
+    "Faster union elections"
+   ]
+  }
  ],
  "public_unions": [
-  "Government workers like teachers should be able to bargain through unions and to go on strike.",
-  "Government workers should be able to bargain through unions, but not to strike.",
-  "Government workers' unions should bargain only over wages, not benefits or work rules.",
-  "Government workers shouldn't be able to bargain as a group at all."
+  {
+   "t": "Teachers and other government workers should bargain through unions and be able to strike.",
+   "yes": [
+    "Collective bargaining over pay, benefits and work rules",
+    "The right to strike for most government workers"
+   ],
+   "no": [
+    "Banning strikes by teachers and state workers",
+    "Limiting what unions can bargain over"
+   ]
+  },
+  {
+   "t": "Government workers should bargain through unions, but not strike.",
+   "yes": [
+    "Collective bargaining for teachers and state workers",
+    "Banning strikes by government workers"
+   ],
+   "no": [
+    "The right to strike",
+    "Ending public-sector bargaining"
+   ]
+  },
+  {
+   "t": "Government workers' unions should bargain over wages only.",
+   "yes": [
+    "Limiting bargaining to pay, as Wisconsin did in 2011"
+   ],
+   "no": [
+    "Bargaining over pensions, health benefits or work rules"
+   ]
+  },
+  {
+   "t": "Government workers shouldn't bargain through unions at all.",
+   "yes": [
+    "Ending collective bargaining for teachers and state workers"
+   ],
+   "no": [
+    "Any union bargaining for government workers"
+   ]
+  }
  ],
  "paid_leave": [
-  "Federal law should guarantee 12 weeks or more of paid leave for a new child or serious illness, paid for with a payroll tax.",
-  "Federal law should guarantee a shorter paid leave, about 4 to 6 weeks.",
-  "Paid leave shouldn't be required, but employers who offer it should get a tax credit.",
-  "The federal government should stay out of paid leave and leave it to employers and states."
+  {
+   "t": "Federal law should guarantee 12 weeks or more of paid leave, funded by a payroll tax.",
+   "yes": [
+    "A national paid leave program for a new child or serious illness",
+    "A payroll tax on workers and employers to fund it"
+   ],
+   "no": [
+    "Leaving paid leave to employers and states"
+   ]
+  },
+  {
+   "t": "Federal law should guarantee a shorter paid leave, such as 4 to 6 weeks.",
+   "yes": [
+    "A national paid leave of 4–6 weeks"
+   ],
+   "no": [
+    "12+ weeks of paid leave",
+    "No federal paid leave"
+   ]
+  },
+  {
+   "t": "No requirement, but tax credits for employers who offer paid leave.",
+   "yes": [
+    "Tax credits to encourage employers to offer paid leave"
+   ],
+   "no": [
+    "A national paid leave requirement"
+   ]
+  },
+  {
+   "t": "No federal role in paid leave.",
+   "yes": [
+    "Leaving paid leave to employers and states"
+   ],
+   "no": [
+    "A federal paid leave program",
+    "Federal tax credits for it"
+   ]
+  }
  ],
  "sick_days": [
-  "Every employer should have to give workers at least 7 paid sick days a year.",
-  "Employers with more than 50 workers should have to give paid sick days; smaller ones shouldn't.",
-  "Paid sick days shouldn't be required; states and employers should decide."
+  {
+   "t": "All employers should give at least 7 paid sick days a year.",
+   "yes": [
+    "A national paid sick day requirement covering every employer, including small ones"
+   ],
+   "no": [
+    "Exempting small businesses"
+   ]
+  },
+  {
+   "t": "Employers with more than 50 workers should give paid sick days.",
+   "yes": [
+    "A paid sick day requirement for larger employers",
+    "Exempting small businesses"
+   ],
+   "no": [
+    "Requiring it of all employers",
+    "No requirement"
+   ]
+  },
+  {
+   "t": "No federal requirement for paid sick days.",
+   "yes": [
+    "Leaving sick days to states and employers"
+   ],
+   "no": [
+    "A national paid sick day law"
+   ]
+  }
  ],
  "gig_workers": [
-  "App-based drivers and delivery workers should count as employees, with minimum wage, overtime and benefits.",
-  "App-based workers should be a new category, with guaranteed minimum pay and some benefits but flexible hours.",
-  "App-based workers should stay independent contractors, without employee pay rules or benefits."
+  {
+   "t": "App-based drivers and delivery workers should be employees.",
+   "yes": [
+    "Minimum wage, overtime and benefits for full-time app drivers"
+   ],
+   "no": [
+    "Treating them as independent contractors"
+   ]
+  },
+  {
+   "t": "Create a new middle category for app-based workers.",
+   "yes": [
+    "Pay floors and some benefits",
+    "Keeping flexible, set-your-own hours"
+   ],
+   "no": [
+    "Full employee status",
+    "Leaving them as contractors with no floor"
+   ]
+  },
+  {
+   "t": "Keep app-based workers as independent contractors.",
+   "yes": [
+    "Today's contractor status, with no required minimum wage or benefits"
+   ],
+   "no": [
+    "Making app drivers employees",
+    "Required pay floors or benefits"
+   ]
+  }
  ],
  "regulation_tradeoff": {
   "s": [
-   "Strong rules to protect workers, consumers and the environment come first, even if prices rise and fewer businesses start.",
-   "I lean toward stronger protections, even at some cost to prices and new businesses.",
-   "I lean toward fewer rules, even if more workers and consumers get hurt by unsafe practices.",
-   "Fewer rules come first, so businesses grow and prices stay low, even if more people are harmed by unsafe practices."
+   {
+    "t": "Business rules protecting workers, consumers and the environment should be stronger, even if prices rise and fewer businesses start.",
+    "yes": [
+     "Tougher workplace safety, food inspection and pollution rules",
+     "Rules against hidden fees and overdraft charges"
+    ],
+    "no": [
+     "Rolling back safety or pollution rules to lower costs"
+    ]
+   },
+   {
+    "t": "On balance, business rules protecting workers, consumers and the environment should be stronger, even if prices rise and fewer businesses start.",
+    "yes": [
+     "Tougher workplace safety, food inspection and pollution rules",
+     "Rules against hidden fees and overdraft charges"
+    ],
+    "no": [
+     "Rolling back safety or pollution rules to lower costs"
+    ]
+   },
+   {
+    "t": "On balance, there should be fewer rules on business so it grows and prices stay low, even if more people are harmed by unsafe practices.",
+    "yes": [
+     "Cutting paperwork and licensing for new businesses",
+     "Rolling back safety, fee and pollution rules that raise costs"
+    ],
+    "no": [
+     "New rules that raise prices or slow business growth"
+    ]
+   },
+   {
+    "t": "There should be fewer rules on business so it grows and prices stay low, even if more people are harmed by unsafe practices.",
+    "yes": [
+     "Cutting paperwork and licensing for new businesses",
+     "Rolling back safety, fee and pollution rules that raise costs"
+    ],
+    "no": [
+     "New rules that raise prices or slow business growth"
+    ]
+   }
   ],
-  "torn": "I weigh stronger protections and fewer rules about equally."
+  "torn": {
+   "t": "You weigh protections and fewer rules about equally.",
+   "means": [
+    "You'd judge each rule, like a safety standard or fee limit, by whether its protection is worth its cost"
+   ]
+  }
  },
  "precaution_tradeoff": {
   "s": [
-   "New products should be proven safe before they're sold, even if useful ones are delayed for years.",
-   "I lean toward proving new products safe first, even with some delays.",
-   "I lean toward allowing new products and fixing problems as they come up.",
-   "New products should be allowed on sale and problems dealt with later, even if some people are harmed first."
+   {
+    "t": "Companies should prove new products are safe before selling them, even if useful products are delayed for years.",
+    "yes": [
+     "Safety testing and approval before new chemicals, additives, devices or self-driving cars go on sale"
+    ],
+    "no": [
+     "Selling first and pulling products only after harm shows up"
+    ]
+   },
+   {
+    "t": "On balance, companies should prove new products are safe before selling them, even if useful products are delayed for years.",
+    "yes": [
+     "Safety testing and approval before new chemicals, additives, devices or self-driving cars go on sale"
+    ],
+    "no": [
+     "Selling first and pulling products only after harm shows up"
+    ]
+   },
+   {
+    "t": "On balance, new products should be allowed on sale and problems fixed as they appear, even if some people are harmed first.",
+    "yes": [
+     "Letting new chemicals, devices and self-driving cars on the market without long pre-approval",
+     "Recalls and lawsuits after problems appear"
+    ],
+    "no": [
+     "Long approval processes before sale"
+    ]
+   },
+   {
+    "t": "New products should be allowed on sale and problems fixed as they appear, even if some people are harmed first.",
+    "yes": [
+     "Letting new chemicals, devices and self-driving cars on the market without long pre-approval",
+     "Recalls and lawsuits after problems appear"
+    ],
+    "no": [
+     "Long approval processes before sale"
+    ]
+   }
   ],
-  "torn": "I weigh testing first and allowing first about equally."
+  "torn": {
+   "t": "You weigh caution and speed about equally.",
+   "means": [
+    "You'd want pre-approval for products with serious risks and fast approval for the rest"
+   ]
+  }
  },
  "big_company_breakup": [
-  "Companies that control most of their market should be broken up, even if their prices are low.",
-  "Dominant companies should be broken up only when it's proven they hurt consumers, workers or competitors.",
-  "Leave dominant companies as they are, but stop them from buying their rivals.",
-  "Leave dominant companies alone; being big usually means they're good at what they do, and new competitors will come."
+  {
+   "t": "Break up companies that control most of their market, even if their prices are low.",
+   "yes": [
+    "Splitting up dominant firms in fields like online search or meatpacking"
+   ],
+   "no": [
+    "Leaving dominant firms alone because prices are low"
+   ]
+  },
+  {
+   "t": "Break up dominant companies only if they're proven to hurt consumers, workers or competitors.",
+   "yes": [
+    "Antitrust cases against firms shown to cause harm"
+   ],
+   "no": [
+    "Breaking up firms just for being big",
+    "Leaving harmful monopolies alone"
+   ]
+  },
+  {
+   "t": "Leave dominant companies as they are, but block them from buying rivals.",
+   "yes": [
+    "Blocking acquisitions by the biggest firms"
+   ],
+   "no": [
+    "Breaking up existing companies"
+   ]
+  },
+  {
+   "t": "Leave dominant companies alone; size usually reflects success.",
+   "yes": [
+    "Leaving market leaders and their acquisitions alone"
+   ],
+   "no": [
+    "Antitrust break-ups",
+    "Blocking their mergers"
+   ]
+  }
  ],
  "merger_rules": [
-  "Most large mergers should be blocked unless the companies prove the merger will help customers and workers.",
-  "Each large merger should be reviewed, and blocked if it's likely to raise prices or cut wages.",
-  "Most mergers should be approved unless they'd clearly raise prices.",
-  "The government should rarely step in; companies should be free to merge."
+  {
+   "t": "Block most large mergers unless the companies prove they'll help customers and workers.",
+   "yes": [
+    "Making merging companies prove the benefits first"
+   ],
+   "no": [
+    "Approving mergers unless the government proves harm"
+   ]
+  },
+  {
+   "t": "Review each merger and block those likely to raise prices or cut wages.",
+   "yes": [
+    "Case-by-case review that weighs prices and wages"
+   ],
+   "no": [
+    "Blocking most mergers by default",
+    "Waving most mergers through"
+   ]
+  },
+  {
+   "t": "Approve most mergers unless they'd clearly raise prices.",
+   "yes": [
+    "A high bar for blocking a merger"
+   ],
+   "no": [
+    "Blocking mergers over wages or size alone"
+   ]
+  },
+  {
+   "t": "Rarely interfere with mergers.",
+   "yes": [
+    "Letting companies merge as they choose"
+   ],
+   "no": [
+    "Most government merger reviews and challenges"
+   ]
+  }
  ],
  "bank_rules": [
-  "The rules should be much stricter, including breaking up the largest banks.",
-  "Large banks should have to keep more of their own money as a cushion against losses.",
-  "Rules on large banks should stay about as strict as today.",
-  "Rules on large banks should be looser than today so they can lend more."
+  {
+   "t": "Break up the largest banks.",
+   "yes": [
+    "Splitting up banks with more than $100 billion in assets"
+   ],
+   "no": [
+    "Leaving the largest banks intact"
+   ]
+  },
+  {
+   "t": "Make large banks hold more of their own money as a cushion against losses.",
+   "yes": [
+    "Higher capital requirements for the largest banks"
+   ],
+   "no": [
+    "Breaking banks up",
+    "Loosening today's rules"
+   ]
+  },
+  {
+   "t": "Keep rules on large banks about as strict as today.",
+   "yes": [
+    "Today's capital and oversight rules"
+   ],
+   "no": [
+    "Tightening or loosening them"
+   ]
+  },
+  {
+   "t": "Loosen rules on large banks so they can lend more.",
+   "yes": [
+    "Lower capital requirements and lighter oversight"
+   ],
+   "no": [
+    "Stricter rules on big banks"
+   ]
+  }
  ],
  "bailouts": [
-  "If a company's collapse would cause a recession, the government should take it over and run it until it can be sold or closed down.",
-  "The government should lend a failing giant money to survive, with strict conditions, as in 2008.",
-  "The government should protect customers' insured deposits and let the company itself fail.",
-  "The government should let it fail with no help at all, even if that causes a recession."
+  {
+   "t": "Government should take over a failing giant and run it until it can be sold or wound down.",
+   "yes": [
+    "Temporary government ownership of a failing bank or company"
+   ],
+   "no": [
+    "Letting the company collapse",
+    "Loans with no government control"
+   ]
+  },
+  {
+   "t": "Government should lend a failing giant money to survive, with strict conditions.",
+   "yes": [
+    "Rescue loans like those in 2008, with conditions"
+   ],
+   "no": [
+    "Letting the company fail",
+    "Taking it over outright"
+   ]
+  },
+  {
+   "t": "Protect insured deposits only and let the company fail.",
+   "yes": [
+    "Covering insured bank deposits",
+    "Letting shareholders and lenders take the losses"
+   ],
+   "no": [
+    "Rescue loans or takeovers"
+   ]
+  },
+  {
+   "t": "Let a failing giant collapse with no government help.",
+   "yes": [
+    "No bailout, even if it causes a recession"
+   ],
+   "no": [
+    "Any rescue, loan or takeover"
+   ]
+  }
  ],
  "licensing": [
-  "More jobs should require a government license, to protect customers.",
-  "Job licensing should stay about where it is.",
-  "Licenses should be required only where health or safety is clearly at risk, like electricians, not interior designers.",
-  "Most license requirements should go; customers can rely on reviews and private certifications."
+  {
+   "t": "Require a government license for more jobs, to protect customers.",
+   "yes": [
+    "New licensing requirements for more occupations"
+   ],
+   "no": [
+    "Removing license requirements"
+   ]
+  },
+  {
+   "t": "Keep about today's licensing requirements.",
+   "yes": [
+    "Today's licenses for jobs like barbers and electricians"
+   ],
+   "no": [
+    "Adding or removing license requirements"
+   ]
+  },
+  {
+   "t": "Require licenses only where health or safety is clearly at risk.",
+   "yes": [
+    "Licenses for jobs like electricians",
+    "Dropping licenses for jobs like interior designers"
+   ],
+   "no": [
+    "Licensing jobs with little safety risk"
+   ]
+  },
+  {
+   "t": "Remove most license requirements.",
+   "yes": [
+    "Relying on reviews and private certifications instead of government licenses"
+   ],
+   "no": [
+    "Most government licensing for jobs"
+   ]
+  }
  ],
  "price_controls": [
-  "The government should cap prices on essentials like food and gas when inflation is high, not just after disasters.",
-  "Sharp price hikes on essentials should be banned only during declared emergencies, like after a hurricane.",
-  "Businesses should be free to raise prices on essentials, even after disasters, because high prices draw in more supply."
+  {
+   "t": "Government should cap prices on essentials like food, water and gas when inflation is high.",
+   "yes": [
+    "Price caps on essentials during high inflation",
+    "Bans on price gouging after disasters"
+   ],
+   "no": [
+    "Letting prices rise freely"
+   ]
+  },
+  {
+   "t": "Ban sharp price hikes only during declared emergencies.",
+   "yes": [
+    "Anti-gouging laws after disasters"
+   ],
+   "no": [
+    "Price caps during ordinary inflation",
+    "Letting prices spike after disasters"
+   ]
+  },
+  {
+   "t": "Don't limit prices for essentials, even after disasters.",
+   "yes": [
+    "Letting high prices draw in more supply"
+   ],
+   "no": [
+    "Price caps",
+    "Anti-gouging laws"
+   ]
+  }
  ],
  "economic_system": [
-  "Most major industries should be owned by the public or by the people who work in them.",
-  "Businesses should be mostly private, but government should run key industries like energy and health care.",
-  "Businesses should be private, with strong government rules and a large safety net.",
-  "Businesses should be private, with modest rules and a basic safety net.",
-  "Businesses should be private and markets free, with as little government as possible."
+  {
+   "t": "Most major industries should be owned by the public or by their workers.",
+   "yes": [
+    "Public or worker ownership of most big industries"
+   ],
+   "no": [
+    "An economy run mainly by private companies"
+   ]
+  },
+  {
+   "t": "Private businesses, but government should run key industries like energy and health care.",
+   "yes": [
+    "Government-run energy and health care",
+    "Private businesses elsewhere"
+   ],
+   "no": [
+    "Public ownership of most industries",
+    "Private energy and health care"
+   ]
+  },
+  {
+   "t": "Markets with strong rules and a large safety net, as in much of Western Europe.",
+   "yes": [
+    "Strong labor, consumer and environmental rules",
+    "Universal health care and generous benefits"
+   ],
+   "no": [
+    "Government running whole industries",
+    "Shrinking rules and benefits to US levels or below"
+   ]
+  },
+  {
+   "t": "Markets with modest rules and a basic safety net, roughly like the US today.",
+   "yes": [
+    "Today's mix of regulation and safety-net programs"
+   ],
+   "no": [
+    "European-style benefits and rules",
+    "Cutting government to the minimum"
+   ]
+  },
+  {
+   "t": "Free markets with as little government as possible.",
+   "yes": [
+    "Cutting business rules and safety-net programs to a minimum"
+   ],
+   "no": [
+    "Government-run industries",
+    "A large safety net"
+   ]
+  }
  ],
  "public_ownership": [
-  "Government should own and run most utilities like electricity, railroads and internet service.",
-  "Government should run some utilities, where private companies haven't provided good, affordable service.",
-  "Government should run utilities only where no private company provides them.",
-  "Private companies, not government, should run utilities like electricity, railroads and internet service."
+  {
+   "t": "Government should own and run most utilities like electricity, railroads and internet service.",
+   "yes": [
+    "Public ownership of most power, rail and internet systems"
+   ],
+   "no": [
+    "Leaving them mostly to private companies"
+   ]
+  },
+  {
+   "t": "Government should run some of them, where private companies haven't served people well.",
+   "yes": [
+    "City-owned power or internet where private service is poor or costly"
+   ],
+   "no": [
+    "Public ownership of most utilities",
+    "Barring public ownership"
+   ]
+  },
+  {
+   "t": "Government should run them only where there's no private provider.",
+   "yes": [
+    "Public utilities only as a last resort"
+   ],
+   "no": [
+    "Public ownership competing with private companies"
+   ]
+  },
+  {
+   "t": "Private companies should run them.",
+   "yes": [
+    "Leaving electricity, rail and internet to private companies"
+   ],
+   "no": [
+    "Government-owned utilities"
+   ]
+  }
  ],
  "workers_on_boards": [
-  "Workers at companies with over 1,000 employees should elect about half of the board.",
-  "Workers at companies with over 1,000 employees should elect about a third of the board.",
-  "Companies can choose to put elected workers on their board, but it shouldn't be required.",
-  "Workers shouldn't elect board members."
+  {
+   "t": "Workers should elect about half the board at large companies.",
+   "yes": [
+    "Requiring companies with 1,000+ workers to give employees half the board seats, as Germany does for its largest firms"
+   ],
+   "no": [
+    "Boards elected only by shareholders"
+   ]
+  },
+  {
+   "t": "Workers should elect about a third of the board at large companies.",
+   "yes": [
+    "Requiring a third of board seats be elected by employees"
+   ],
+   "no": [
+    "Half the board",
+    "No requirement"
+   ]
+  },
+  {
+   "t": "Allow worker board seats if companies choose, but don't require them.",
+   "yes": [
+    "Voluntary worker representation"
+   ],
+   "no": [
+    "Requiring worker-elected board members"
+   ]
+  },
+  {
+   "t": "Workers shouldn't elect board members.",
+   "yes": [
+    "Boards chosen by shareholders only"
+   ],
+   "no": [
+    "Any worker-elected board seats"
+   ]
+  }
  ],
  "noncompetes": [
-  "Employers shouldn't be able to stop any worker from taking a job with a competitor.",
-  "Only top executives can be bound by agreements not to work for a competitor.",
-  "Agreements not to work for a competitor are fine, but should last a year or less.",
-  "Agreements not to work for a competitor are fine; both sides signed the contract."
+  {
+   "t": "Ban noncompete agreements for all workers.",
+   "yes": [
+    "Letting any worker take a job with a competitor"
+   ],
+   "no": [
+    "Noncompetes, even for executives"
+   ]
+  },
+  {
+   "t": "Allow noncompetes only for top executives.",
+   "yes": [
+    "Banning noncompetes for ordinary workers"
+   ],
+   "no": [
+    "Noncompetes for ordinary workers",
+    "Banning them for executives"
+   ]
+  },
+  {
+   "t": "Allow noncompetes, but limit them to a year or less.",
+   "yes": [
+    "Noncompetes capped at one year"
+   ],
+   "no": [
+    "Banning noncompetes outright",
+    "Noncompetes longer than a year"
+   ]
+  },
+  {
+   "t": "Allow noncompetes; both sides agreed to the contract.",
+   "yes": [
+    "Enforcing noncompetes as written"
+   ],
+   "no": [
+    "Bans or limits on noncompetes"
+   ]
+  }
  ],
  "right_to_repair": [
-  "Makers of most products should have to make parts, tools and manuals available to owners and independent repair shops.",
-  "Makers should have to provide repair parts and information only for products where repair matters most, like cars and farm equipment.",
-  "Companies should decide for themselves whether to provide repair parts and information."
+  {
+   "t": "Companies should make parts, tools and manuals available for most products.",
+   "yes": [
+    "Right-to-repair laws for phones, cars, farm equipment and more"
+   ],
+   "no": [
+    "Letting companies restrict who can repair their products"
+   ]
+  },
+  {
+   "t": "Require repair access only where it matters most, like cars and farm equipment.",
+   "yes": [
+    "Right-to-repair for cars and farm equipment"
+   ],
+   "no": [
+    "Requiring it for phones and most products",
+    "No requirement"
+   ]
+  },
+  {
+   "t": "Companies should decide whether to share parts and manuals.",
+   "yes": [
+    "Letting manufacturers control repairs"
+   ],
+   "no": [
+    "Right-to-repair laws"
+   ]
+  }
  ],
  "farm_subsidies": [
-  "Federal payments and subsidized insurance for farmers should be expanded.",
-  "Federal payments and subsidized insurance for farmers should stay about as they are.",
-  "Farm payments and subsidized insurance should go only to small and mid-size farms.",
-  "Federal payments and subsidized insurance for farmers should be phased out."
+  {
+   "t": "Expand farm payments and subsidized crop insurance.",
+   "yes": [
+    "More federal support when prices or harvests fall"
+   ],
+   "no": [
+    "Cutting or capping farm programs"
+   ]
+  },
+  {
+   "t": "Keep farm payments and crop insurance about as they are.",
+   "yes": [
+    "Today's farm programs"
+   ],
+   "no": [
+    "Expanding or cutting them"
+   ]
+  },
+  {
+   "t": "Limit farm payments to small and mid-size farms.",
+   "yes": [
+    "Cutting off large farms and agribusiness"
+   ],
+   "no": [
+    "Payments to the biggest farms"
+   ]
+  },
+  {
+   "t": "Phase out farm payments and subsidized insurance.",
+   "yes": [
+    "Ending federal farm subsidies over time"
+   ],
+   "no": [
+    "Keeping them for any farm size"
+   ]
+  }
  ],
  "business_incentives": [
-  "States and cities should offer tax breaks to bring in factories and offices, because they bring jobs.",
-  "Tax breaks for companies are fine only with firm job guarantees and repayment if the company leaves.",
-  "States and cities should be banned from offering tax breaks to attract companies."
+  {
+   "t": "States and cities should offer tax breaks to attract factories and offices.",
+   "yes": [
+    "Tax-break deals to bring jobs"
+   ],
+   "no": [
+    "Banning these deals"
+   ]
+  },
+  {
+   "t": "Allow these tax breaks only with strict job guarantees and repayment if the company leaves.",
+   "yes": [
+    "Clawbacks if promised jobs don't appear"
+   ],
+   "no": [
+    "Deals with no guarantees",
+    "Banning deals outright"
+   ]
+  },
+  {
+   "t": "Ban tax-break deals for individual companies.",
+   "yes": [
+    "Ending special tax deals to lure companies"
+   ],
+   "no": [
+    "Any company-specific incentives"
+   ]
+  }
  ],
  "fed_independence": [
-  "The Federal Reserve should set interest rates on its own, with no pressure from the president or Congress.",
-  "The Federal Reserve should set interest rates, but Congress should review its decisions more closely.",
-  "A president should be able to tell the Federal Reserve what interest rates to set."
+  {
+   "t": "The Federal Reserve alone should set interest rates, free of pressure from elected officials.",
+   "yes": [
+    "Fed independence from the president and Congress"
+   ],
+   "no": [
+    "Presidents or Congress pressuring the Fed"
+   ]
+  },
+  {
+   "t": "The Fed should set rates, but Congress should review its decisions more closely.",
+   "yes": [
+    "More congressional oversight and audits of the Fed"
+   ],
+   "no": [
+    "Presidential control of rates",
+    "Leaving the Fed unchecked"
+   ]
+  },
+  {
+   "t": "The president should be able to direct the Federal Reserve.",
+   "yes": [
+    "Letting the president tell the Fed where to set rates, under either party"
+   ],
+   "no": [
+    "Fed independence"
+   ]
+  }
  ],
  "infrastructure": [
-  "The federal government should spend much more than today on roads, bridges, water systems and the power grid, paid for by borrowing or taxes.",
-  "The federal government should spend somewhat more than today on infrastructure.",
-  "Federal infrastructure spending should stay about the same.",
-  "The federal government should spend less on infrastructure and leave more to states and private companies."
+  {
+   "t": "Spend much more on roads, bridges, water systems and the power grid.",
+   "yes": [
+    "Raising federal infrastructure spending by about half or more",
+    "Borrowing or taxing to pay for it"
+   ],
+   "no": [
+    "Keeping spending flat",
+    "Shifting it to states"
+   ]
+  },
+  {
+   "t": "Spend somewhat more on infrastructure.",
+   "yes": [
+    "A modest increase in federal infrastructure spending"
+   ],
+   "no": [
+    "A large increase",
+    "Cutting infrastructure spending"
+   ]
+  },
+  {
+   "t": "Keep infrastructure spending about the same.",
+   "yes": [
+    "Today's federal infrastructure budget"
+   ],
+   "no": [
+    "Raising or cutting it"
+   ]
+  },
+  {
+   "t": "Spend less on infrastructure; leave more to states and private companies.",
+   "yes": [
+    "Cutting federal infrastructure spending",
+    "More toll roads and private investment"
+   ],
+   "no": [
+    "New federal infrastructure spending"
+   ]
+  }
+ ],
+ "min_wage": [
+  {
+   "t": "A federal minimum wage of $20 an hour or more, rising with inflation.",
+   "yes": [
+    "Raising the federal minimum from $7.25 to $20+",
+    "Automatic yearly raises tied to inflation"
+   ],
+   "no": [
+    "A $15 minimum",
+    "Keeping $7.25"
+   ]
+  },
+  {
+   "t": "A federal minimum wage of about $15 an hour, rising with inflation.",
+   "yes": [
+    "Raising the federal minimum from $7.25 to about $15",
+    "Automatic yearly raises tied to inflation"
+   ],
+   "no": [
+    "Going as high as $20",
+    "Keeping $7.25",
+    "Ending the federal minimum"
+   ]
+  },
+  {
+   "t": "A federal minimum wage of about $10 to $12 an hour.",
+   "yes": [
+    "A modest raise from $7.25"
+   ],
+   "no": [
+    "$15 or more",
+    "Keeping $7.25"
+   ]
+  },
+  {
+   "t": "Keep the federal minimum wage at $7.25 an hour.",
+   "yes": [
+    "Leaving it where it's been since 2009",
+    "Letting states set higher minimums"
+   ],
+   "no": [
+    "Any federal increase",
+    "Ending the federal minimum"
+   ]
+  },
+  {
+   "t": "No federal minimum wage; leave it to states and employers.",
+   "yes": [
+    "Repealing the federal minimum wage"
+   ],
+   "no": [
+    "Any national wage floor"
+   ]
+  }
  ]
 }

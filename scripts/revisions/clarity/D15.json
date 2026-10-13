@@ -1,0 +1,17 @@
+{
+ "police_spending": {
+  "why": "'A lot' and 'somewhat' had no scale.",
+  "scope": "Think about cities in general, not only your own. “A lot” means a quarter or more; “somewhat” means about 5% to 10%. Social services means things like mental health crisis teams, addiction treatment and youth programs."
+ },
+ "prison_purpose": {
+  "why": "'Rehabilitation' and 'punishment' had no examples.",
+  "sides": {
+   "0": {
+    "text": "Education, job training, and drug and mental health treatment to prepare people for release, even if it costs more."
+   },
+   "1": {
+    "text": "Punishing crime and keeping offenders away from the public, with fewer programs and comforts, even if fewer people change their ways."
+   }
+  }
+ }
+}

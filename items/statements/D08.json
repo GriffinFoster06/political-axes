@@ -1,76 +1,419 @@
 {
  "surveillance_tradeoff": {
   "s": [
-   "Government monitoring of phone and internet records should be tightly limited, even if some attacks become harder to stop.",
-   "I lean toward limiting monitoring to protect privacy, even at some cost to security.",
-   "I lean toward allowing broad monitoring for security, even if innocent people's records are collected.",
-   "Broad monitoring to catch terrorists and spies should be allowed, even if many innocent people's records are collected."
+   {
+    "t": "Limit government monitoring of phone and internet records, even if some attacks are harder to stop.",
+    "yes": [
+     "Collecting records only on specific suspects",
+     "Ending bulk collection of Americans' call and email records"
+    ],
+    "no": [
+     "Programs that sweep up millions of innocent people's records"
+    ]
+   },
+   {
+    "t": "On balance, limit government monitoring of phone and internet records, even if some attacks are harder to stop.",
+    "yes": [
+     "Collecting records only on specific suspects",
+     "Ending bulk collection of Americans' call and email records"
+    ],
+    "no": [
+     "Programs that sweep up millions of innocent people's records"
+    ]
+   },
+   {
+    "t": "On balance, allow broad monitoring of phone and internet records, even if many innocent people's records are collected.",
+    "yes": [
+     "Bulk collection of call and email records to search for terrorists and spies"
+    ],
+    "no": [
+     "Limiting collection to named suspects"
+    ]
+   },
+   {
+    "t": "Allow broad monitoring of phone and internet records, even if many innocent people's records are collected.",
+    "yes": [
+     "Bulk collection of call and email records to search for terrorists and spies"
+    ],
+    "no": [
+     "Limiting collection to named suspects"
+    ]
+   }
   ],
-  "torn": "I weigh privacy and security about equally here."
+  "torn": {
+   "t": "You weigh privacy and security about equally.",
+   "means": [
+    "You'd accept some bulk collection with strict limits on who can search it and why"
+   ]
+  }
  },
  "warrant_tradeoff": {
   "s": [
-   "Intelligence agencies should always need a judge's warrant before reading Americans' messages, even if it slows investigations.",
-   "I lean toward requiring a warrant first, even if investigations slow down.",
-   "I lean toward letting agencies collect first and get approval later.",
-   "Agencies should be able to collect Americans' messages first and get approval afterward, so threats aren't missed."
+   {
+    "t": "Intelligence agencies should get a judge's warrant before reading Americans' messages, even if it slows investigations.",
+    "yes": [
+     "A warrant requirement for searching Americans' messages"
+    ],
+    "no": [
+     "Reading messages first and getting approval later"
+    ]
+   },
+   {
+    "t": "On balance, intelligence agencies should get a judge's warrant before reading Americans' messages, even if it slows investigations.",
+    "yes": [
+     "A warrant requirement for searching Americans' messages"
+    ],
+    "no": [
+     "Reading messages first and getting approval later"
+    ]
+   },
+   {
+    "t": "On balance, agencies should be able to collect Americans' messages first and get approval later, so threats aren't missed.",
+    "yes": [
+     "Collecting and reading first, with after-the-fact review"
+    ],
+    "no": [
+     "Requiring a warrant up front"
+    ]
+   },
+   {
+    "t": "Agencies should be able to collect Americans' messages first and get approval later, so threats aren't missed.",
+    "yes": [
+     "Collecting and reading first, with after-the-fact review"
+    ],
+    "no": [
+     "Requiring a warrant up front"
+    ]
+   }
   ],
-  "torn": "I weigh getting a warrant first and moving fast about equally."
+  "torn": {
+   "t": "You weigh warrants and speed about equally.",
+   "means": [
+    "You'd allow collecting first only in urgent cases, with a warrant required soon after"
+   ]
+  }
  },
  "cameras_tradeoff": {
   "s": [
-   "Police and city cameras and plate readers should be kept to a minimum, even if some crimes go unsolved.",
-   "I lean toward fewer public cameras, even if some crimes go unsolved.",
-   "I lean toward more public cameras, even if more of people's movements are recorded.",
-   "Police and city cameras and plate readers should be used widely, even if everyone's movements are recorded."
+   {
+    "t": "Limit city and police cameras and license plate readers, even if some crimes go unsolved.",
+    "yes": [
+     "Fewer public cameras and plate readers",
+     "Short limits on how long footage is kept"
+    ],
+    "no": [
+     "Camera networks recording everyone's movements"
+    ]
+   },
+   {
+    "t": "On balance, limit city and police cameras and license plate readers, even if some crimes go unsolved.",
+    "yes": [
+     "Fewer public cameras and plate readers",
+     "Short limits on how long footage is kept"
+    ],
+    "no": [
+     "Camera networks recording everyone's movements"
+    ]
+   },
+   {
+    "t": "On balance, use cameras and license plate readers widely, even if everyone's movements are recorded.",
+    "yes": [
+     "More cameras on streets and in parks",
+     "Plate readers tracking cars citywide"
+    ],
+    "no": [
+     "Limits that leave crimes unsolved"
+    ]
+   },
+   {
+    "t": "Use cameras and license plate readers widely, even if everyone's movements are recorded.",
+    "yes": [
+     "More cameras on streets and in parks",
+     "Plate readers tracking cars citywide"
+    ],
+    "no": [
+     "Limits that leave crimes unsolved"
+    ]
+   }
   ],
-  "torn": "I weigh fewer cameras and more cameras about equally."
+  "torn": {
+   "t": "You weigh privacy and solving crimes about equally.",
+   "means": [
+    "You'd allow cameras in high-crime spots with limits on how long footage is kept"
+   ]
+  }
  },
  "encryption_access": [
-  "Tech companies shouldn't have to build a way for police to unlock encrypted phones or messages, even with a court order.",
-  "Companies should have to help police unlock encrypted devices only in the most serious cases, like terrorism or child exploitation, with a court order.",
-  "Companies should have to give police a way to unlock encrypted devices in any criminal case with a court order."
+  {
+   "t": "Tech companies shouldn't build a way to unlock encrypted phones and messages, even with a court order.",
+   "yes": [
+    "Strong encryption that no one, including the company, can unlock"
+   ],
+   "no": [
+    "Required back doors for police"
+   ]
+  },
+  {
+   "t": "Require a way to unlock encrypted data only in the most serious cases, like terrorism or child exploitation.",
+   "yes": [
+    "Court-ordered access for terrorism and child exploitation cases"
+   ],
+   "no": [
+    "Access in ordinary criminal cases",
+    "No access at all"
+   ]
+  },
+  {
+   "t": "Tech companies should give police a way to unlock encrypted data in any criminal case with a court order.",
+   "yes": [
+    "Required unlock methods for any court order"
+   ],
+   "no": [
+    "Encryption no one can unlock"
+   ]
+  }
  ],
  "facial_recognition": [
-  "Police should be banned from using facial recognition.",
-  "Police can use facial recognition only to identify suspects in serious crimes, and only with a warrant.",
-  "Police can use facial recognition in any criminal investigation.",
-  "Police can use facial recognition in any investigation, including scanning crowds live in public places."
+  {
+   "t": "Ban police from using facial recognition.",
+   "yes": [
+    "A ban on facial recognition by police"
+   ],
+   "no": [
+    "Using it even for serious crimes"
+   ]
+  },
+  {
+   "t": "Allow police facial recognition only for serious crimes, with a warrant.",
+   "yes": [
+    "Warrant-based use to identify suspects in serious crimes"
+   ],
+   "no": [
+    "Use in any investigation",
+    "Live crowd scanning"
+   ]
+  },
+  {
+   "t": "Allow police facial recognition in any criminal investigation.",
+   "yes": [
+    "Running suspects' photos against image databases"
+   ],
+   "no": [
+    "A warrant requirement",
+    "Live scanning of crowds"
+   ]
+  },
+  {
+   "t": "Allow police facial recognition, including live scanning of crowds.",
+   "yes": [
+    "Real-time face scanning in public places"
+   ],
+   "no": [
+    "Limits on police use of facial recognition"
+   ]
+  }
  ],
  "facial_recognition_cases": [
   "Police shouldn't be able to use facial recognition for this: {case}.",
   "Police should be able to use facial recognition for this: {case}."
  ],
  "data_privacy_law": [
-  "A strict federal law should require companies to get your permission before collecting or selling your data.",
-  "A federal law should let you tell companies not to sell your data.",
-  "There shouldn't be a federal data privacy law; states should decide.",
-  "There shouldn't be any new data privacy laws; people can choose which services to use."
+  {
+   "t": "A strict federal privacy law: companies need your permission before collecting or selling your data.",
+   "yes": [
+    "Opt-in consent for collecting location, browsing and purchase data"
+   ],
+   "no": [
+    "Collecting data by default"
+   ]
+  },
+  {
+   "t": "A moderate federal privacy law: you can tell companies not to sell your data.",
+   "yes": [
+    "A national right to opt out of data sales"
+   ],
+   "no": [
+    "Opt-in consent",
+    "No federal law"
+   ]
+  },
+  {
+   "t": "No federal privacy law; leave it to states.",
+   "yes": [
+    "State privacy laws like California's"
+   ],
+   "no": [
+    "A national privacy law"
+   ]
+  },
+  {
+   "t": "No new privacy laws; people can choose which services to use.",
+   "yes": [
+    "Leaving data practices to companies and customers"
+   ],
+   "no": [
+    "Federal or state privacy rules"
+   ]
+  }
  ],
  "gov_buys_data": [
-  "Government agencies should never buy people's personal data, like location history, without a warrant.",
-  "Agencies can buy personal data without a warrant only for national security investigations.",
-  "Agencies can buy any personal data that companies sell to anyone, without a warrant."
+  {
+   "t": "Government should never buy Americans' personal data without a warrant.",
+   "yes": [
+    "A warrant requirement for buying location and other data"
+   ],
+   "no": [
+    "Agencies buying data from brokers"
+   ]
+  },
+  {
+   "t": "Government can buy personal data without a warrant only for national security.",
+   "yes": [
+    "Purchases for intelligence and terrorism cases"
+   ],
+   "no": [
+    "Purchases for ordinary police work",
+    "A total ban"
+   ]
+  },
+  {
+   "t": "Government can buy any personal data that's for sale to anyone.",
+   "yes": [
+    "Agencies buying phone location histories from data brokers"
+   ],
+   "no": [
+    "A warrant requirement for purchased data"
+   ]
+  }
  ],
  "digital_id": [
-  "There shouldn't be a national digital ID; state IDs and passports are enough.",
-  "There should be a federal digital ID on your phone, but only for people who want one.",
-  "Everyone should be required to have a federal digital ID."
+  {
+   "t": "No national digital ID; keep state IDs and passports.",
+   "yes": [
+    "Sticking with driver's licenses and passports"
+   ],
+   "no": [
+    "A federal digital ID"
+   ]
+  },
+  {
+   "t": "A voluntary national digital ID.",
+   "yes": [
+    "A federal phone-based ID people can choose to use"
+   ],
+   "no": [
+    "Requiring a digital ID",
+    "No digital ID"
+   ]
+  },
+  {
+   "t": "A national digital ID required for everyone.",
+   "yes": [
+    "A mandatory federal digital ID"
+   ],
+   "no": [
+    "Relying on state IDs"
+   ]
+  }
  ],
  "border_device_search": [
-  "Border agents should need a warrant to search anyone's phone or laptop, including citizens coming home.",
-  "Border agents should need reasonable suspicion of a crime to search a traveler's devices.",
-  "Border agents should be able to search any traveler's devices, as current rules mostly allow."
+  {
+   "t": "Border agents should need a warrant to search travelers' phones and laptops.",
+   "yes": [
+    "A warrant requirement for device searches, including for citizens"
+   ],
+   "no": [
+    "Suspicionless searches"
+   ]
+  },
+  {
+   "t": "Border agents should need reasonable suspicion of a crime to search devices.",
+   "yes": [
+    "Requiring suspicion before any device search"
+   ],
+   "no": [
+    "Suspicionless searches",
+    "A full warrant requirement"
+   ]
+  },
+  {
+   "t": "Border agents should be able to search any traveler's devices, as current rules mostly allow.",
+   "yes": [
+    "Searches without suspicion at the border"
+   ],
+   "no": [
+    "Warrant or suspicion requirements"
+   ]
+  }
  ],
  "dna_databases": [
-  "Police should never search consumer DNA sites to find suspects through their relatives.",
-  "Police can search consumer DNA sites only for violent crimes, and only with a warrant.",
-  "Police can search consumer DNA sites for violent crimes without a warrant.",
-  "Police can search consumer DNA sites to solve any crime."
+  {
+   "t": "Police should never search consumer DNA databases for suspects.",
+   "yes": [
+    "Barring police from ancestry-site DNA"
+   ],
+   "no": [
+    "Using relatives' DNA to find suspects"
+   ]
+  },
+  {
+   "t": "Police can search consumer DNA databases only with a warrant, for violent crimes.",
+   "yes": [
+    "Warrant-based searches in murder and rape cases"
+   ],
+   "no": [
+    "Searches without a warrant",
+    "Searches for lesser crimes"
+   ]
+  },
+  {
+   "t": "Police can search consumer DNA databases for violent crimes.",
+   "yes": [
+    "DNA database searches in violent cases, without a warrant"
+   ],
+   "no": [
+    "Searches for nonviolent crimes",
+    "A ban"
+   ]
+  },
+  {
+   "t": "Police can search consumer DNA databases for any crime.",
+   "yes": [
+    "DNA searches in any case, including property crimes"
+   ],
+   "no": [
+    "Limits on police DNA searches"
+   ]
+  }
  ],
  "workplace_monitoring": [
-  "Employers can monitor workers' computers, keystrokes and locations only with the worker's agreement, for specific reasons.",
-  "Employers can monitor workers during work hours, but must tell them exactly what's being monitored.",
-  "Employers can monitor workers freely on company devices and time."
+  {
+   "t": "Employers shouldn't monitor workers' computers, keystrokes or locations without agreement for specific reasons.",
+   "yes": [
+    "Monitoring only with worker consent and a stated reason"
+   ],
+   "no": [
+    "Routine keystroke and location tracking"
+   ]
+  },
+  {
+   "t": "Employers can monitor workers, but must say exactly what is monitored.",
+   "yes": [
+    "Disclosure of what's tracked"
+   ],
+   "no": [
+    "Secret monitoring",
+    "Banning monitoring"
+   ]
+  },
+  {
+   "t": "Employers can monitor freely; it's their equipment and time.",
+   "yes": [
+    "Keystroke, screen and location tracking on work devices and time"
+   ],
+   "no": [
+    "Limits or notice rules on workplace monitoring"
+   ]
+  }
  ]
 }

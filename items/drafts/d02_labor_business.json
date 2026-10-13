@@ -154,7 +154,7 @@
    ],
    "format": "tradeoff",
    "stem": "Which comes closer to your view of rules on business?",
-   "scope": "Think about business regulation in general.",
+   "scope": "Rules like workplace safety standards, food and drug inspections, limits on pollution, overdraft and hidden-fee rules, and licensing and paperwork for new businesses.",
    "sides": [
     {
      "label": "Stronger protections",
@@ -182,7 +182,7 @@
    ],
    "format": "tradeoff",
    "stem": "When a new kind of product comes along, which approach is closer to your view?",
-   "scope": "Think of new products in general, such as new chemicals, foods or devices.",
+   "scope": "New products in general, such as new chemicals in household goods, new food additives, medical devices, e-cigarettes and self-driving cars.",
    "sides": [
     {
      "label": "Prove it safe first",
@@ -327,8 +327,8 @@
    "options": [
     "Most major industries owned by the public or by their workers",
     "Private businesses, but with government running key industries like energy and health care",
-    "Private businesses and markets, with strong government rules and a large safety net",
-    "Private businesses and markets, with modest rules and a basic safety net",
+    "Private businesses and markets, with strong government rules and a large safety net, as in much of Western Europe",
+    "Private businesses and markets, with modest rules and a basic safety net, roughly like the US today",
     "Private businesses and free markets, with as little government as possible"
    ],
    "high_pole": "free markets"
@@ -462,7 +462,7 @@
    ],
    "format": "position",
    "stem": "How much should the federal government spend on roads, bridges, water systems and the power grid?",
-   "scope": "Compared with today. Assume the money is borrowed or comes from taxes.",
+   "scope": "Compared with today. “Much more” means about half again or more; “somewhat more” means a modest increase. Assume the money is borrowed or comes from taxes.",
    "options": [
     "Much more",
     "Somewhat more",

@@ -1,84 +1,463 @@
 {
  "hate_speech_law": [
-  "Hateful public speech about a group shouldn't be a crime unless it threatens or incites violence, as now.",
-  "Only the most extreme hateful public speech, like calling a group subhuman, should be a crime.",
-  "Hateful public speech about people's race, religion, sexual orientation or gender identity should be punishable with fines or jail."
+  {
+   "t": "Government shouldn't punish speech, however hateful, unless it threatens or incites violence, as today.",
+   "yes": [
+    "Protecting hateful speech under the First Amendment"
+   ],
+   "no": [
+    "Fines or jail for hateful speech"
+   ]
+  },
+  {
+   "t": "Only the most extreme public hateful speech should be a crime, such as calling a group subhuman.",
+   "yes": [
+    "Narrow hate speech laws for the most extreme speech"
+   ],
+   "no": [
+    "Broad hate speech laws",
+    "Protecting all non-threatening speech"
+   ]
+  },
+  {
+   "t": "Hateful public speech about race, religion, sexual orientation or gender identity should bring fines or jail.",
+   "yes": [
+    "Hate speech laws like those in much of Europe"
+   ],
+   "no": [
+    "Protecting hateful speech"
+   ]
+  }
  ],
  "hateful_speaker_response": [
-  "The right response to legal but hateful speech is more speech, not trying to silence the speaker.",
-  "Criticism and boycotts are fair responses, but the speaker shouldn't lose their job or platform.",
-  "Platforms, venues and employers should drop people who say hateful things, even when it's legal.",
-  "The law should punish hateful speech toward a racial or religious group."
+  {
+   "t": "Answer hateful speech with more speech; don't try to silence the speaker.",
+   "yes": [
+    "Rebutting and debating"
+   ],
+   "no": [
+    "Boycotts, firings or deplatforming"
+   ]
+  },
+  {
+   "t": "Criticism and boycotts are fair, but the speaker shouldn't lose their job or platform.",
+   "yes": [
+    "Public criticism and boycotts"
+   ],
+   "no": [
+    "Firing or deplatforming",
+    "Legal penalties"
+   ]
+  },
+  {
+   "t": "Platforms, venues and employers should drop the speaker.",
+   "yes": [
+    "Deplatforming, canceled events and firings"
+   ],
+   "no": [
+    "Legal penalties",
+    "Leaving them in place"
+   ]
+  },
+  {
+   "t": "The law should punish hateful speech.",
+   "yes": [
+    "Legal penalties for hateful speech"
+   ],
+   "no": [
+    "Leaving it to public response alone"
+   ]
+  }
  ],
  "campus_speakers": [
   "A public university should allow this talk: {case}.",
   "A public university shouldn't allow this talk: {case}."
  ],
  "flag_burning": [
-  "Burning the American flag in protest should be legal, as protected speech.",
-  "Flag burning should be legal, but cities can ban open fires in certain places for safety.",
-  "The Constitution should be amended so flag burning can be banned."
+  {
+   "t": "Burning the flag in protest should stay legal as protected speech.",
+   "yes": [
+    "The 1989 Supreme Court ruling as it stands"
+   ],
+   "no": [
+    "A flag-burning ban"
+   ]
+  },
+  {
+   "t": "Flag burning should be legal, but cities can ban open fires in some places for safety.",
+   "yes": [
+    "Fire-safety rules that apply to all fires"
+   ],
+   "no": [
+    "Bans aimed at flag burning itself"
+   ]
+  },
+  {
+   "t": "Amend the Constitution to allow a flag-burning ban.",
+   "yes": [
+    "A constitutional amendment banning flag burning"
+   ],
+   "no": [
+    "Treating flag burning as protected speech"
+   ]
+  }
  ],
  "protest_masks": [
-  "Wearing a mask to hide your identity at a protest should be legal.",
-  "Wearing a mask at a protest should be illegal only while committing a crime.",
-  "Wearing a mask to hide your identity at any protest should be illegal."
+  {
+   "t": "Masks at protests should be legal; anonymity protects protesters from retaliation.",
+   "yes": [
+    "Allowing masked protest"
+   ],
+   "no": [
+    "Mask bans at protests"
+   ]
+  },
+  {
+   "t": "Masks at protests should be illegal only while committing a crime.",
+   "yes": [
+    "Added penalties for masked crimes"
+   ],
+   "no": [
+    "Banning masks at all protests"
+   ]
+  },
+  {
+   "t": "Wearing a mask to hide your identity at any protest should be illegal.",
+   "yes": [
+    "Protest mask bans"
+   ],
+   "no": [
+    "Anonymous protest"
+   ]
+  }
  ],
  "campus_encampments": [
-  "Public universities should allow peaceful protest camps on campus.",
-  "Public universities should allow protest camps only for a limited time, in designated areas.",
-  "Public universities should remove protest camps right away, even peaceful ones."
+  {
+   "t": "Public universities should allow protest camps as long as they stay peaceful.",
+   "yes": [
+    "Letting peaceful camps stay"
+   ],
+   "no": [
+    "Removing peaceful camps"
+   ]
+  },
+  {
+   "t": "Allow protest camps only for a limited time in designated areas.",
+   "yes": [
+    "Time and place limits on camps"
+   ],
+   "no": [
+    "Unlimited camps",
+    "Immediate removal"
+   ]
+  },
+  {
+   "t": "Remove protest camps right away.",
+   "yes": [
+    "Clearing encampments immediately"
+   ],
+   "no": [
+    "Allowing campus encampments"
+   ]
+  }
  ],
  "gov_misinformation": [
-  "Government shouldn't judge what's true online at all.",
-  "Government can publish its own corrections to false claims, but nothing more.",
-  "Government can flag posts it considers false, but can't require platforms to remove them.",
-  "Government agencies should decide what's false on topics like health and elections, and platforms should have to remove it."
+  {
+   "t": "Government shouldn't judge what's true online.",
+   "yes": [
+    "No government role on false claims"
+   ],
+   "no": [
+    "Government corrections, flags or removal demands"
+   ]
+  },
+  {
+   "t": "Government should only publish its own corrections.",
+   "yes": [
+    "Official corrections on health and election claims"
+   ],
+   "no": [
+    "Flagging or removing posts"
+   ]
+  },
+  {
+   "t": "Government should flag false posts, but not require removal.",
+   "yes": [
+    "Government flags on false health and election posts"
+   ],
+   "no": [
+    "Required removal",
+    "Staying silent"
+   ]
+  },
+  {
+   "t": "Government should require platforms to remove posts its agencies find false on topics like health and elections.",
+   "yes": [
+    "Required removal of posts agencies judge false"
+   ],
+   "no": [
+    "Leaving false posts up"
+   ]
+  }
  ],
  "misinfo_penalty": [
-  "There shouldn't be new penalties for spreading false information beyond existing fraud and defamation laws.",
-  "Knowingly spreading false claims about when, where or how to vote should be punishable, but nothing else new.",
-  "Knowingly spreading harmful false claims should be punishable with fines or jail."
+  {
+   "t": "No new penalties for spreading false information beyond fraud and defamation law.",
+   "yes": [
+    "Relying on existing law"
+   ],
+   "no": [
+    "New fines or jail for false claims"
+   ]
+  },
+  {
+   "t": "Penalties only for knowingly false claims about when, where or how to vote.",
+   "yes": [
+    "Laws against false voting information"
+   ],
+   "no": [
+    "Penalties for other false claims"
+   ]
+  },
+  {
+   "t": "Fines or jail for knowingly spreading harmful false claims.",
+   "yes": [
+    "Penalties for false claims about medicines, disasters and similar topics"
+   ],
+   "no": [
+    "Leaving harmful false claims unpunished"
+   ]
+  }
  ],
  "jawboning": [
-  "Government officials should never pressure social media companies over legal speech.",
-  "Officials can ask platforms to remove posts only for clear legal violations, like threats.",
-  "Officials can ask platforms to remove legal posts, but every request must be made public.",
-  "Officials can ask platforms to remove legal posts they consider harmful, and the companies decide."
+  {
+   "t": "Officials should never pressure social media companies over legal speech.",
+   "yes": [
+    "Barring officials from takedown requests over legal posts"
+   ],
+   "no": [
+    "Officials asking for removals"
+   ]
+  },
+  {
+   "t": "Officials can ask for takedowns only for clear legal violations, like threats.",
+   "yes": [
+    "Requests limited to illegal content"
+   ],
+   "no": [
+    "Requests about legal posts"
+   ]
+  },
+  {
+   "t": "Officials can ask for takedowns, but every request must be public.",
+   "yes": [
+    "Public logs of every government takedown request"
+   ],
+   "no": [
+    "Secret requests",
+    "Banning requests"
+   ]
+  },
+  {
+   "t": "Officials can ask for takedowns, and companies decide.",
+   "yes": [
+    "Officials flagging posts they consider harmful"
+   ],
+   "no": [
+    "Limits on officials' requests"
+   ]
+  }
  ],
  "library_book_decisions": [
-  "School librarians, using professional standards, should decide whether a challenged book stays.",
-  "A committee of librarians, teachers and parents should decide whether a challenged book stays.",
-  "The elected school board should decide whether a challenged book stays.",
-  "One parent's objection should be enough to pull a book from the shelves while it's reviewed."
+  {
+   "t": "School librarians should decide on challenged books, using professional standards.",
+   "yes": [
+    "Leaving challenges to librarians"
+   ],
+   "no": [
+    "Board votes or automatic removal"
+   ]
+  },
+  {
+   "t": "A committee of librarians, teachers and parents should decide.",
+   "yes": [
+    "Mixed review committees"
+   ],
+   "no": [
+    "Librarians alone",
+    "Automatic removal"
+   ]
+  },
+  {
+   "t": "The elected school board should decide.",
+   "yes": [
+    "School board votes on challenged books"
+   ],
+   "no": [
+    "Leaving it to librarians"
+   ]
+  },
+  {
+   "t": "A challenged book should come off the shelves during review; one objection is enough.",
+   "yes": [
+    "Pulling books on a single objection pending review"
+   ],
+   "no": [
+    "Keeping books available during review"
+   ]
+  }
  ],
  "library_explicit": [
-  "High school libraries should freely carry literary novels with explicit sex scenes.",
-  "High school libraries can carry those novels, but students need a parent's permission to check them out.",
-  "High school libraries shouldn't carry novels with explicit descriptions of sex."
+  {
+   "t": "High school libraries should carry literary novels with explicit sex, freely available.",
+   "yes": [
+    "Open access to these books"
+   ],
+   "no": [
+    "Permission slips or removal"
+   ]
+  },
+  {
+   "t": "Students should need parent permission to check out novels with explicit sex.",
+   "yes": [
+    "Parental permission for these books"
+   ],
+   "no": [
+    "Open access",
+    "Removing these novels"
+   ]
+  },
+  {
+   "t": "High school libraries shouldn't carry novels with explicit sex.",
+   "yes": [
+    "Removing these books"
+   ],
+   "no": [
+    "Keeping them on shelves"
+   ]
+  }
  ],
  "employer_speech": [
-  "The law should stop private employers from firing workers for legal political speech outside work.",
-  "Employers can fire workers for political speech outside work only if it directly harms the business.",
-  "Private employers should be free to fire workers for political views they express outside work."
+  {
+   "t": "The law should protect workers from being fired for political views expressed outside work.",
+   "yes": [
+    "Laws protecting off-duty political speech"
+   ],
+   "no": [
+    "Firing over personal posts or views"
+   ]
+  },
+  {
+   "t": "Employers can fire over outside political speech only if it directly harms the business.",
+   "yes": [
+    "Firing only when the business is harmed"
+   ],
+   "no": [
+    "Firing for views alone",
+    "Full protection"
+   ]
+  },
+  {
+   "t": "Employers should be free to fire workers for political views.",
+   "yes": [
+    "At-will firing over political speech"
+   ],
+   "no": [
+    "Laws protecting off-duty speech"
+   ]
+  }
  ],
  "employer_speech_cases": [
   "An employer shouldn't be able to fire someone for this: {case}.",
   "An employer should be able to fire someone for this: {case}."
  ],
  "defamation_public_figures": [
-  "Public figures should keep needing to prove an outlet knew a story was false or recklessly ignored the truth.",
-  "It should be somewhat easier for public figures to sue news outlets over false stories.",
-  "Public figures should only have to prove a story was false and harmful to win a lawsuit."
+  {
+   "t": "Keep today's high bar for public figures suing news outlets.",
+   "yes": [
+    "The actual-malice standard"
+   ],
+   "no": [
+    "Easier defamation suits"
+   ]
+  },
+  {
+   "t": "Make it somewhat easier for public figures to sue news outlets.",
+   "yes": [
+    "Lowering the bar somewhat"
+   ],
+   "no": [
+    "Today's high bar",
+    "Liability for any false story"
+   ]
+  },
+  {
+   "t": "Make it much easier: proving a story was false and harmful should be enough.",
+   "yes": [
+    "Dropping the actual-malice standard"
+   ],
+   "no": [
+    "Today's high bar"
+   ]
+  }
  ],
  "public_broadcasting": [
-  "The federal government should fund public radio and TV more than it has in the past.",
-  "The federal government should fund public radio and TV about as it has in the past.",
-  "The federal government shouldn't fund public broadcasting."
+  {
+   "t": "Fund public radio and TV more than in the past.",
+   "yes": [
+    "Increased federal funding for public broadcasting"
+   ],
+   "no": [
+    "Ending federal funding"
+   ]
+  },
+  {
+   "t": "Fund public radio and TV about as in the past.",
+   "yes": [
+    "Restoring past federal funding levels"
+   ],
+   "no": [
+    "Ending or increasing funding"
+   ]
+  },
+  {
+   "t": "No federal funding for public broadcasting.",
+   "yes": [
+    "Ending federal money for public radio and TV"
+   ],
+   "no": [
+    "Any federal funding"
+   ]
+  }
  ],
  "campus_speech_codes": [
-  "Public universities should be able to discipline students for offensive speech, even when it isn't a threat or harassment.",
-  "Public universities can discipline offensive speech only when it's repeated and aimed at a specific person.",
-  "Public universities shouldn't discipline students for offensive speech that isn't a threat or harassment."
+  {
+   "t": "Public universities should be able to discipline students for offensive speech.",
+   "yes": [
+    "Speech codes covering offensive remarks"
+   ],
+   "no": [
+    "Protecting offensive speech on campus"
+   ]
+  },
+  {
+   "t": "Discipline only for repeated offensive speech aimed at a specific person.",
+   "yes": [
+    "Rules against targeted, repeated remarks"
+   ],
+   "no": [
+    "Broad speech codes",
+    "No limits at all"
+   ]
+  },
+  {
+   "t": "Public universities shouldn't discipline students for offensive speech.",
+   "yes": [
+    "Protecting all non-threatening speech"
+   ],
+   "no": [
+    "Campus speech codes"
+   ]
+  }
  ]
 }

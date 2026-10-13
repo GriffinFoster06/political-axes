@@ -259,7 +259,7 @@
    ],
    "format": "tradeoff",
    "stem": "Which kind of system is closer to what you want?",
-   "scope": "Think about the federal government in general, whichever party is in charge.",
+   "scope": "The federal government in general, whichever party is in charge. Checks include Congress approving laws and spending, courts reviewing actions, and the Senate confirming appointments.",
    "sides": [
     {
      "label": "Strong checks",
@@ -286,7 +286,7 @@
    ],
    "format": "tradeoff",
    "stem": "Which comes closer to your view of courts?",
-   "scope": "Think about laws in general, including ones you like and dislike.",
+   "scope": "Laws in general, including ones you like and dislike: for example, popular laws on gun limits, school prayer, policing powers or speech that courts say violate the Constitution.",
    "sides": [
     {
      "label": "Courts can overrule",

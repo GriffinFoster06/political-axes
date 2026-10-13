@@ -1,272 +1,272 @@
 {
-  "domain_id": "D08",
-  "domain": "Privacy & surveillance",
-  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
-  "notes": "High pole is consistently 'more collection / less privacy protection'.",
-  "items": [
+ "domain_id": "D08",
+ "domain": "Privacy & surveillance",
+ "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+ "notes": "High pole is consistently 'more collection / less privacy protection'.",
+ "items": [
+  {
+   "id": "surveillance_tradeoff",
+   "subtopic": "Government surveillance for security",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "tradeoff",
+   "stem": "Which comes closer to your view of government monitoring of phone and internet records?",
+   "scope": "Monitoring to find terrorists and spies, under any administration: for example, collecting records of who calls or emails whom, when and for how long, for millions of Americans at once.",
+   "sides": [
     {
-      "id": "surveillance_tradeoff",
-      "subtopic": "Government surveillance for security",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to your view of government monitoring of phone and internet records?",
-      "scope": "Think about monitoring to find terrorists and spies, under any administration.",
-      "sides": [
-        {
-          "label": "Protect privacy",
-          "text": "Limit monitoring, even if it makes some attacks harder to stop."
-        },
-        {
-          "label": "Prioritize security",
-          "text": "Allow broad monitoring, even if many innocent people's records are collected."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
+     "label": "Protect privacy",
+     "text": "Limit monitoring, even if it makes some attacks harder to stop."
     },
     {
-      "id": "warrant_tradeoff",
-      "subtopic": "Government surveillance for security",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "tradeoff",
-      "stem": "When intelligence agencies want to read Americans' messages, which comes closer to your view?",
-      "scope": "Messages of people in the US, collected in security investigations.",
-      "sides": [
-        {
-          "label": "Warrant first",
-          "text": "They should get a judge's warrant first, even if that slows investigations."
-        },
-        {
-          "label": "Collect, then check",
-          "text": "They should be able to collect first and get approval later, so threats aren't missed."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "cameras_tradeoff",
-      "subtopic": "Government surveillance for security",
-      "axis": [
-        "PRIVACY",
-        "ORDER"
-      ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to your view of security cameras and license plate readers run by cities and police?",
-      "scope": "Cameras in public places like streets and parks.",
-      "sides": [
-        {
-          "label": "Fewer cameras",
-          "text": "Limit them, even if some crimes go unsolved."
-        },
-        {
-          "label": "More cameras",
-          "text": "Use them widely, even if everyone's movements are recorded."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "encryption_access",
-      "subtopic": "Encryption access for law enforcement",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "position",
-      "stem": "Should tech companies be required to give police a way to unlock encrypted phones and messages when a court orders it?",
-      "scope": "Encryption scrambles data so only the owner can read it. Any unlock method could also be found by hackers.",
-      "options": [
-        "No; strong encryption that no one can unlock protects everyone",
-        "Only in the most serious cases, such as terrorism or child exploitation",
-        "Yes, in any criminal case with a court order"
-      ],
-      "high_pole": "required",
-      "knowledge_heavy": true
-    },
-    {
-      "id": "facial_recognition",
-      "subtopic": "Police facial recognition",
-      "axis": [
-        "PRIVACY",
-        "ORDER"
-      ],
-      "format": "position",
-      "stem": "Should police be allowed to use facial recognition software to identify people from photos and video?",
-      "scope": "Think of ordinary police work. Specific situations come next.",
-      "options": [
-        "No, ban it for police",
-        "Only to identify suspects in serious crimes, with a warrant",
-        "Yes, in any criminal investigation",
-        "Yes, including live scanning of crowds in public places"
-      ],
-      "high_pole": "more use",
-      "followup": "facial_recognition_cases"
-    },
-    {
-      "id": "facial_recognition_cases",
-      "subtopic": "Police facial recognition",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "exceptions",
-      "show_if": {
-        "facial_recognition": [
-          0,
-          1
-        ]
-      },
-      "stem": "Under the rule you chose, should police be able to use it in each of these situations?",
-      "scope": "Answer each case separately.",
-      "options": [
-        "Not allowed",
-        "Allowed"
-      ],
-      "high_pole": "Allowed",
-      "cases": [
-        {
-          "id": "fr_missing_child",
-          "text": "Finding a missing child"
-        },
-        {
-          "id": "fr_terror",
-          "text": "Identifying a suspect in a terrorist attack, without a warrant"
-        },
-        {
-          "id": "fr_protest",
-          "text": "Identifying people at a protest where some property was damaged"
-        }
-      ]
-    },
-    {
-      "id": "data_privacy_law",
-      "subtopic": "Consumer data privacy law",
-      "axis": [
-        "PRIVACY",
-        "REG"
-      ],
-      "format": "position",
-      "stem": "Should there be a federal law limiting what companies can do with personal data they collect online?",
-      "scope": "Data like location, browsing and purchases.",
-      "options": [
-        "Yes, strict: companies need your permission before collecting or selling it",
-        "Yes, moderate: you can tell companies not to sell it",
-        "No federal law; leave it to states",
-        "No new laws; people can choose which services to use"
-      ],
-      "high_pole": "no law"
-    },
-    {
-      "id": "gov_buys_data",
-      "subtopic": "Consumer data privacy law",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "position",
-      "stem": "Should government agencies be allowed to buy personal data, such as phone location history, from companies without a warrant?",
-      "scope": "Data about people in the US that companies sell commercially.",
-      "options": [
-        "No, never without a warrant",
-        "Only for national security investigations",
-        "Yes, if the data is for sale to anyone"
-      ],
-      "high_pole": "allowed"
-    },
-    {
-      "id": "digital_id",
-      "subtopic": "National digital ID",
-      "axis": [
-        "PRIVACY"
-      ],
-      "format": "position",
-      "stem": "Should the US create a national digital ID that people use to prove who they are online and in person?",
-      "scope": "It would be issued by the federal government and work on a phone.",
-      "options": [
-        "No; keep using state IDs and passports",
-        "Yes, but voluntary",
-        "Yes, required for everyone"
-      ],
-      "high_pole": "required"
-    },
-    {
-      "id": "border_device_search",
-      "subtopic": "Searches of phones at the border",
-      "axis": [
-        "PRIVACY",
-        "IMMIG"
-      ],
-      "format": "position",
-      "stem": "Should border agents be able to search the phones and laptops of people entering the US?",
-      "scope": "Applies to US citizens coming home and to visitors.",
-      "context": "Under current rules, agents can look through a device without any suspicion; copying its data requires reasonable suspicion.",
-      "options": [
-        "Only with a warrant",
-        "Only with reasonable suspicion of a crime",
-        "Yes, for any traveler, as current rules mostly allow"
-      ],
-      "high_pole": "any traveler",
-      "facts": [
-        {
-          "claim": "CBP basic device searches need no suspicion; advanced (forensic) searches need reasonable suspicion or national security concern",
-          "source": "CBP Directive 3340-049A (2018)",
-          "checked": "2026-10-12",
-          "verify": true
-        }
-      ]
-    },
-    {
-      "id": "dna_databases",
-      "subtopic": "DNA databases",
-      "axis": [
-        "PRIVACY",
-        "ORDER"
-      ],
-      "format": "position",
-      "stem": "Should police be able to search consumer DNA databases, like ancestry sites, to find suspects through their relatives?",
-      "scope": "Sites where people upload their DNA to find family.",
-      "options": [
-        "No, never",
-        "Only with a warrant, for violent crimes",
-        "Only for violent crimes",
-        "Yes, for any crime"
-      ],
-      "high_pole": "any crime"
-    },
-    {
-      "id": "workplace_monitoring",
-      "subtopic": "Workplace monitoring",
-      "axis": [
-        "PRIVACY",
-        "REG"
-      ],
-      "format": "position",
-      "stem": "Should employers be allowed to monitor workers' computers, keystrokes and locations during work hours?",
-      "scope": "Company devices and work time.",
-      "options": [
-        "No, only with the worker's agreement for specific reasons",
-        "Yes, but they must tell workers exactly what is monitored",
-        "Yes, freely; it's the employer's equipment and time"
-      ],
-      "high_pole": "freely"
+     "label": "Prioritize security",
+     "text": "Allow broad monitoring, even if many innocent people's records are collected."
     }
-  ]
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "warrant_tradeoff",
+   "subtopic": "Government surveillance for security",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "tradeoff",
+   "stem": "When intelligence agencies want to read Americans' messages, which comes closer to your view?",
+   "scope": "Messages of people in the US, collected in security investigations.",
+   "sides": [
+    {
+     "label": "Warrant first",
+     "text": "They should get a judge's warrant first, even if that slows investigations."
+    },
+    {
+     "label": "Collect, then check",
+     "text": "They should be able to collect first and get approval later, so threats aren't missed."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "cameras_tradeoff",
+   "subtopic": "Government surveillance for security",
+   "axis": [
+    "PRIVACY",
+    "ORDER"
+   ],
+   "format": "tradeoff",
+   "stem": "Which comes closer to your view of security cameras and license plate readers run by cities and police?",
+   "scope": "Cameras in public places like streets and parks.",
+   "sides": [
+    {
+     "label": "Fewer cameras",
+     "text": "Limit them, even if some crimes go unsolved."
+    },
+    {
+     "label": "More cameras",
+     "text": "Use them widely, even if everyone's movements are recorded."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "encryption_access",
+   "subtopic": "Encryption access for law enforcement",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "position",
+   "stem": "Should tech companies be required to give police a way to unlock encrypted phones and messages when a court orders it?",
+   "scope": "Encryption scrambles data so only the owner can read it. Any unlock method could also be found by hackers.",
+   "options": [
+    "No; strong encryption that no one can unlock protects everyone",
+    "Only in the most serious cases, such as terrorism or child exploitation",
+    "Yes, in any criminal case with a court order"
+   ],
+   "high_pole": "required",
+   "knowledge_heavy": true
+  },
+  {
+   "id": "facial_recognition",
+   "subtopic": "Police facial recognition",
+   "axis": [
+    "PRIVACY",
+    "ORDER"
+   ],
+   "format": "position",
+   "stem": "Should police be allowed to use facial recognition software to identify people from photos and video?",
+   "scope": "Think of ordinary police work. Specific situations come next.",
+   "options": [
+    "No, ban it for police",
+    "Only to identify suspects in serious crimes, with a warrant",
+    "Yes, in any criminal investigation",
+    "Yes, including live scanning of crowds in public places"
+   ],
+   "high_pole": "more use",
+   "followup": "facial_recognition_cases"
+  },
+  {
+   "id": "facial_recognition_cases",
+   "subtopic": "Police facial recognition",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "exceptions",
+   "show_if": {
+    "facial_recognition": [
+     0,
+     1
+    ]
+   },
+   "stem": "Under the rule you chose, should police be able to use it in each of these situations?",
+   "scope": "Answer each case separately.",
+   "options": [
+    "Not allowed",
+    "Allowed"
+   ],
+   "high_pole": "Allowed",
+   "cases": [
+    {
+     "id": "fr_missing_child",
+     "text": "Finding a missing child"
+    },
+    {
+     "id": "fr_terror",
+     "text": "Identifying a suspect in a terrorist attack, without a warrant"
+    },
+    {
+     "id": "fr_protest",
+     "text": "Identifying people at a protest where some property was damaged"
+    }
+   ]
+  },
+  {
+   "id": "data_privacy_law",
+   "subtopic": "Consumer data privacy law",
+   "axis": [
+    "PRIVACY",
+    "REG"
+   ],
+   "format": "position",
+   "stem": "Should there be a federal law limiting what companies can do with personal data they collect online?",
+   "scope": "Data like location, browsing and purchases.",
+   "options": [
+    "Yes, strict: companies need your permission before collecting or selling it",
+    "Yes, moderate: you can tell companies not to sell it",
+    "No federal law; leave it to states",
+    "No new laws; people can choose which services to use"
+   ],
+   "high_pole": "no law"
+  },
+  {
+   "id": "gov_buys_data",
+   "subtopic": "Consumer data privacy law",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "position",
+   "stem": "Should government agencies be allowed to buy personal data, such as phone location history, from companies without a warrant?",
+   "scope": "Data about people in the US that companies sell commercially.",
+   "options": [
+    "No, never without a warrant",
+    "Only for national security investigations",
+    "Yes, if the data is for sale to anyone"
+   ],
+   "high_pole": "allowed"
+  },
+  {
+   "id": "digital_id",
+   "subtopic": "National digital ID",
+   "axis": [
+    "PRIVACY"
+   ],
+   "format": "position",
+   "stem": "Should the US create a national digital ID that people use to prove who they are online and in person?",
+   "scope": "It would be issued by the federal government and work on a phone.",
+   "options": [
+    "No; keep using state IDs and passports",
+    "Yes, but voluntary",
+    "Yes, required for everyone"
+   ],
+   "high_pole": "required"
+  },
+  {
+   "id": "border_device_search",
+   "subtopic": "Searches of phones at the border",
+   "axis": [
+    "PRIVACY",
+    "IMMIG"
+   ],
+   "format": "position",
+   "stem": "Should border agents be able to search the phones and laptops of people entering the US?",
+   "scope": "Applies to US citizens coming home and to visitors.",
+   "context": "Under current rules, agents can look through a device without any suspicion; copying its data requires reasonable suspicion.",
+   "options": [
+    "Only with a warrant",
+    "Only with reasonable suspicion of a crime",
+    "Yes, for any traveler, as current rules mostly allow"
+   ],
+   "high_pole": "any traveler",
+   "facts": [
+    {
+     "claim": "CBP basic device searches need no suspicion; advanced (forensic) searches need reasonable suspicion or national security concern",
+     "source": "CBP Directive 3340-049A (2018)",
+     "checked": "2026-10-12",
+     "verify": true
+    }
+   ]
+  },
+  {
+   "id": "dna_databases",
+   "subtopic": "DNA databases",
+   "axis": [
+    "PRIVACY",
+    "ORDER"
+   ],
+   "format": "position",
+   "stem": "Should police be able to search consumer DNA databases, like ancestry sites, to find suspects through their relatives?",
+   "scope": "Sites where people upload their DNA to find family.",
+   "options": [
+    "No, never",
+    "Only with a warrant, for violent crimes",
+    "Only for violent crimes",
+    "Yes, for any crime"
+   ],
+   "high_pole": "any crime"
+  },
+  {
+   "id": "workplace_monitoring",
+   "subtopic": "Workplace monitoring",
+   "axis": [
+    "PRIVACY",
+    "REG"
+   ],
+   "format": "position",
+   "stem": "Should employers be allowed to monitor workers' computers, keystrokes and locations during work hours?",
+   "scope": "Company devices and work time.",
+   "options": [
+    "No, only with the worker's agreement for specific reasons",
+    "Yes, but they must tell workers exactly what is monitored",
+    "Yes, freely; it's the employer's equipment and time"
+   ],
+   "high_pole": "freely"
+  }
+ ]
 }

@@ -1,162 +1,1072 @@
 {
  "income_tax_structure": [
-  "Income tax rates should rise much more steeply with income, with a top rate above 50% on the highest earners.",
-  "The highest earners should pay higher rates than today, while middle incomes pay the same or less.",
-  "Keep today's seven rates, from 10% to 37%.",
-  "There should be only two or three income tax rates, with the top one at 30% or less.",
-  "Everyone should pay one flat rate on income above a basic tax-free amount.",
-  "There should be no federal income tax; the money should come from something else, such as a national sales tax."
+  {
+   "t": "Income tax should rise much more steeply with income than today.",
+   "yes": [
+    "A top income tax rate above 50% on the highest incomes",
+    "New brackets above today's 37% rate"
+   ],
+   "no": [
+    "Keeping the top rate at 37%",
+    "A flat tax or fewer brackets"
+   ]
+  },
+  {
+   "t": "The highest incomes should be taxed more; middle incomes no more than now.",
+   "yes": [
+    "Raising rates on the highest incomes above 37%",
+    "Keeping or cutting rates on middle incomes"
+   ],
+   "no": [
+    "A top rate above 50%",
+    "Flattening the rates"
+   ]
+  },
+  {
+   "t": "Keep today's seven rates, from 10% to 37%.",
+   "yes": [
+    "Today's brackets and top rate of 37%"
+   ],
+   "no": [
+    "Raising the top rate",
+    "Cutting to two or three rates or a flat tax"
+   ]
+  },
+  {
+   "t": "Simplify to a few rates with a lower top rate.",
+   "yes": [
+    "Two or three rates between about 10% and 30%",
+    "Cutting the top rate below 37%"
+   ],
+   "no": [
+    "Raising rates on high incomes",
+    "Keeping seven brackets"
+   ]
+  },
+  {
+   "t": "Everyone should pay one flat rate on income above a tax-free amount.",
+   "yes": [
+    "A single income tax rate for everyone",
+    "A basic tax-free amount so the lowest earners pay nothing"
+   ],
+   "no": [
+    "Higher rates for higher incomes",
+    "Today's seven brackets"
+   ]
+  },
+  {
+   "t": "Abolish the federal income tax and raise the money another way.",
+   "yes": [
+    "Ending the federal income tax",
+    "Replacing it with something like a national sales tax"
+   ],
+   "no": [
+    "Any federal tax on income, flat or graduated"
+   ]
+  }
  ],
  "low_income_tax": [
-  "Low-income households should owe no federal income tax and get bigger refundable credits than they do today.",
-  "Low-income households should owe no federal income tax and keep about today's refundable credits.",
-  "Low-income households should owe no federal income tax, but their refundable credits should be smaller than today.",
-  "Every household, including low-income ones, should pay at least a small income tax, such as $100 a year.",
-  "Low-income households should pay the same flat rate as everyone else, starting from their first dollar."
+  {
+   "t": "Low-income households should owe no income tax and get bigger credits.",
+   "yes": [
+    "Larger refundable credits like the Earned Income Tax Credit",
+    "No federal income tax for low-income households"
+   ],
+   "no": [
+    "Any minimum income tax for the lowest earners"
+   ]
+  },
+  {
+   "t": "Keep today's setup: low-income households owe no income tax and keep today's credits.",
+   "yes": [
+    "No federal income tax for low-income households",
+    "Refundable credits at about today's size"
+   ],
+   "no": [
+    "Bigger credits",
+    "Cutting credits or adding a minimum tax"
+   ]
+  },
+  {
+   "t": "Low-income households should owe no income tax, but credits paid out as refunds should shrink.",
+   "yes": [
+    "Smaller refundable credits than today",
+    "Still no income tax owed for low-income households"
+   ],
+   "no": [
+    "Larger credits",
+    "A minimum tax on the lowest earners"
+   ]
+  },
+  {
+   "t": "Everyone should pay at least a small income tax.",
+   "yes": [
+    "A minimum income tax of about $100 a year, even for the lowest earners"
+   ],
+   "no": [
+    "Households paying no income tax at all",
+    "Refund payouts beyond what a household owes"
+   ]
+  },
+  {
+   "t": "Low-income households should pay the same flat rate as everyone, with no tax-free amount.",
+   "yes": [
+    "One rate on every dollar of income, starting with the first"
+   ],
+   "no": [
+    "Tax-free amounts and refundable credits for low earners"
+   ]
+  }
  ],
  "tax_burden_principle": [
-  "People with high incomes should pay a much bigger share of their income in taxes than people with low incomes.",
-  "People with high incomes should pay a somewhat bigger share of their income in taxes.",
-  "Everyone should pay the same share of their income, after a basic amount that isn't taxed.",
-  "Everyone should pay the same share of all their income, with no amount left untaxed."
+  {
+   "t": "High earners should pay a much larger share of their income in taxes.",
+   "yes": [
+    "Tax rates that climb steeply with income",
+    "Higher taxes on top earners' investment income too"
+   ],
+   "no": [
+    "A flat tax",
+    "Cutting top rates"
+   ]
+  },
+  {
+   "t": "High earners should pay a somewhat larger share of their income.",
+   "yes": [
+    "Rates that rise moderately with income"
+   ],
+   "no": [
+    "Steep rates on top earners",
+    "A flat tax"
+   ]
+  },
+  {
+   "t": "Everyone should pay the same share of income above a basic tax-free amount.",
+   "yes": [
+    "A flat tax with a tax-free allowance"
+   ],
+   "no": [
+    "Higher rates for higher incomes",
+    "Taxing the first dollar of income"
+   ]
+  },
+  {
+   "t": "Everyone should pay the same share of every dollar they earn.",
+   "yes": [
+    "One flat rate starting with the first dollar, for everyone"
+   ],
+   "no": [
+    "Tax-free amounts",
+    "Higher rates for higher incomes"
+   ]
+  }
  ],
  "top_income_tax": [
-  "Income taxes on people earning over $1 million a year should go up a lot.",
-  "Income taxes on people earning over $1 million a year should go up somewhat.",
-  "Income taxes on people earning over $1 million a year should stay about where they are.",
-  "Income taxes on people earning over $1 million a year should come down somewhat.",
-  "Income taxes on people earning over $1 million a year should come down a lot."
+  {
+   "t": "Raise income taxes on people earning over $1 million a year a lot.",
+   "yes": [
+    "A top rate around 47% or higher on income over $1 million"
+   ],
+   "no": [
+    "Keeping 37%",
+    "Cutting taxes on million-dollar earners"
+   ]
+  },
+  {
+   "t": "Raise income taxes on people earning over $1 million a year somewhat.",
+   "yes": [
+    "A top rate a few points above 37%, around 40%"
+   ],
+   "no": [
+    "A top rate near 50% or more",
+    "Cutting taxes on million-dollar earners"
+   ]
+  },
+  {
+   "t": "Keep income taxes on people earning over $1 million a year about where they are.",
+   "yes": [
+    "A top rate of about 37%"
+   ],
+   "no": [
+    "Raising or cutting the top rate"
+   ]
+  },
+  {
+   "t": "Lower income taxes on people earning over $1 million a year somewhat.",
+   "yes": [
+    "A top rate a few points below 37%, around 33%"
+   ],
+   "no": [
+    "Raising taxes on top earners",
+    "A top rate below 30%"
+   ]
+  },
+  {
+   "t": "Lower income taxes on people earning over $1 million a year a lot.",
+   "yes": [
+    "A top rate around 27% or lower"
+   ],
+   "no": [
+    "Keeping 37%",
+    "Raising taxes on top earners"
+   ]
+  }
  ],
  "top_rate_number": [
-  "Each dollar earned above $1 million should be taxed at 70% or more.",
-  "Each dollar earned above $1 million should be taxed at about 50% to 60%.",
-  "Each dollar earned above $1 million should be taxed at about 40% to 45%.",
-  "Each dollar earned above $1 million should be taxed at 37%, as it is today.",
-  "Each dollar earned above $1 million should be taxed at about 25% to 30%.",
-  "Each dollar earned above $1 million should be taxed at 20% or less."
+  {
+   "t": "Income above $1 million a year should be taxed at 70% or more.",
+   "yes": [
+    "A 70%+ rate on each dollar above $1 million, like the top rates of the 1950s to 1970s"
+   ],
+   "no": [
+    "Any top rate near today's 37%"
+   ]
+  },
+  {
+   "t": "Income above $1 million a year should be taxed at about 50% to 60%.",
+   "yes": [
+    "A new top rate of 50% to 60% on income over $1 million"
+   ],
+   "no": [
+    "Keeping 37%",
+    "Going to 70% or more"
+   ]
+  },
+  {
+   "t": "Income above $1 million a year should be taxed at about 40% to 45%.",
+   "yes": [
+    "A modest increase from 37% to 40–45% on income over $1 million"
+   ],
+   "no": [
+    "A rate of 50% or more",
+    "Cutting the top rate"
+   ]
+  },
+  {
+   "t": "Keep the top rate at 37%.",
+   "yes": [
+    "Today's 37% top rate"
+   ],
+   "no": [
+    "Raising or lowering it"
+   ]
+  },
+  {
+   "t": "Cut the top rate to about 25% to 30%.",
+   "yes": [
+    "A top rate of 25–30% on income over $1 million"
+   ],
+   "no": [
+    "Keeping 37%",
+    "Raising rates on top earners"
+   ]
+  },
+  {
+   "t": "Cut the top rate to 20% or lower.",
+   "yes": [
+    "A top rate of 20% or less, even for the highest earners"
+   ],
+   "no": [
+    "Keeping 37%",
+    "Any rate above about 20%"
+   ]
+  }
  ],
  "corporate_rate": [
-  "Corporate profits should be taxed at 35% or more, at least as high as before 2018.",
-  "Corporate profits should be taxed at about 28%, between today's rate and the old one.",
-  "Corporate profits should be taxed at 21%, as they are today.",
-  "Corporate profits should be taxed at about 15%, lower than today."
+  {
+   "t": "Raise the corporate tax rate back to 35% or higher.",
+   "yes": [
+    "Undoing the 2017 cut from 35% to 21%"
+   ],
+   "no": [
+    "Keeping 21%",
+    "Cutting the corporate rate below 21%"
+   ]
+  },
+  {
+   "t": "Raise the corporate tax rate to about 28%.",
+   "yes": [
+    "A partial increase, from 21% to about 28%"
+   ],
+   "no": [
+    "Going back to 35%",
+    "Keeping 21% or cutting it"
+   ]
+  },
+  {
+   "t": "Keep the corporate tax rate at 21%.",
+   "yes": [
+    "The 21% rate set in 2018"
+   ],
+   "no": [
+    "Raising the corporate rate",
+    "Cutting the corporate rate"
+   ]
+  },
+  {
+   "t": "Cut the corporate tax rate to about 15%.",
+   "yes": [
+    "Lowering the rate from 21% to about 15%"
+   ],
+   "no": [
+    "Keeping 21%",
+    "Raising the corporate rate"
+   ]
+  }
  ],
  "wealth_tax": [
-  "Households worth over $50 million should pay 3% or more of their wealth above that amount in tax every year.",
-  "Households worth over $50 million should pay about 1% to 2% of their wealth above that amount in tax every year.",
-  "There shouldn't be a yearly wealth tax, but big gains in value should be taxed when wealth is passed on at death.",
-  "Wealth itself shouldn't be taxed; only income should be."
+  {
+   "t": "Tax wealth above $50 million at 3% or more every year.",
+   "yes": [
+    "A yearly tax of 3%+ on stocks, businesses, property and savings above $50 million"
+   ],
+   "no": [
+    "Taxing only income, not wealth"
+   ]
+  },
+  {
+   "t": "Tax wealth above $50 million at about 1% to 2% every year.",
+   "yes": [
+    "A yearly 1–2% tax on fortunes above $50 million"
+   ],
+   "no": [
+    "A rate of 3% or more",
+    "No yearly wealth tax"
+   ]
+  },
+  {
+   "t": "No yearly wealth tax, but tax big gains in value when the owner dies.",
+   "yes": [
+    "Taxing untaxed investment gains on large estates at death"
+   ],
+   "no": [
+    "A yearly tax on total wealth"
+   ]
+  },
+  {
+   "t": "Tax income, not wealth.",
+   "yes": [
+    "Taxing money only when it's earned or an investment is sold"
+   ],
+   "no": [
+    "Any yearly tax on total wealth",
+    "Taxing gains at death"
+   ]
+  }
  ],
  "large_fortunes": [
-  "Fortunes of $1 billion or more are a problem in themselves, and taxes should be set to shrink them over time.",
-  "Billionaires should pay much more in taxes than they do now.",
-  "Billionaires should pay somewhat more in taxes than they do now.",
-  "Billionaires pay about the right amount in taxes now.",
-  "Taxes on billionaires are already too high and hold back investment."
+  {
+   "t": "Billion-dollar fortunes are a problem in themselves, and taxes should shrink them over time.",
+   "yes": [
+    "Taxes designed to break up fortunes of $1 billion or more",
+    "A steep yearly wealth tax or a heavy tax on large inheritances"
+   ],
+   "no": [
+    "Leaving very large fortunes alone"
+   ]
+  },
+  {
+   "t": "Billionaires should pay much more in taxes than now.",
+   "yes": [
+    "A wealth tax or top rates near 50% or more",
+    "Taxing investment gains like wages for the richest"
+   ],
+   "no": [
+    "Today's tax levels for the richest"
+   ]
+  },
+  {
+   "t": "Billionaires should pay somewhat more than now.",
+   "yes": [
+    "Closing tax breaks the richest use",
+    "Raising their rates a few points"
+   ],
+   "no": [
+    "A wealth tax aimed at shrinking fortunes",
+    "Leaving their taxes as they are"
+   ]
+  },
+  {
+   "t": "The richest pay about the right amount now.",
+   "yes": [
+    "Today's taxes on the richest"
+   ],
+   "no": [
+    "New taxes aimed at billionaires",
+    "Tax cuts for them"
+   ]
+  },
+  {
+   "t": "Taxes on the richest are already too high and discourage investment.",
+   "yes": [
+    "Cutting taxes on top incomes, investment gains and estates"
+   ],
+   "no": [
+    "Wealth taxes or higher rates on billionaires"
+   ]
+  }
  ],
  "estate_tax_level": [
-  "Estates worth more than about $1 million should be taxed at death, with rates of 50% or more on the largest.",
-  "Estates worth more than about $3.5 million should be taxed at death, at about 45%.",
-  "Keep today's estate tax: 40% on the part of an estate above $15 million.",
-  "Raise the $15 million threshold so even fewer estates owe the tax.",
-  "There should be no tax on estates at death."
+  {
+   "t": "Tax estates above about $1 million, at 50% or more on the largest.",
+   "yes": [
+    "Lowering the exemption from $15 million to about $1 million",
+    "Rates of 50% or more on the biggest estates"
+   ],
+   "no": [
+    "Today's $15 million exemption",
+    "Ending the estate tax"
+   ]
+  },
+  {
+   "t": "Tax estates above about $3.5 million, at about 45%.",
+   "yes": [
+    "Returning to the 2009 rules: a $3.5 million exemption and a 45% rate"
+   ],
+   "no": [
+    "Today's $15 million exemption",
+    "Going down to $1 million"
+   ]
+  },
+  {
+   "t": "Keep today's estate tax: 40% on the part above $15 million.",
+   "yes": [
+    "Today's exemption and 40% rate"
+   ],
+   "no": [
+    "Taxing more estates",
+    "Exempting more or ending the tax"
+   ]
+  },
+  {
+   "t": "Raise the threshold so even fewer estates pay.",
+   "yes": [
+    "An exemption above $15 million per person"
+   ],
+   "no": [
+    "Taxing more estates",
+    "Ending the tax outright"
+   ]
+  },
+  {
+   "t": "Eliminate the estate tax.",
+   "yes": [
+    "No federal tax on estates of any size"
+   ],
+   "no": [
+    "Any estate tax, even on the largest fortunes"
+   ]
+  }
  ],
  "inheritance_principle": [
-  "A large share of inheritances of several million dollars should go to the public, so wealth doesn't pile up across generations.",
-  "A moderate tax on inheritances of several million dollars or more is fair.",
-  "Only the very largest inheritances should be taxed, and only a little.",
-  "Inheritances shouldn't be taxed at all, because the money was already taxed when it was earned."
+  {
+   "t": "A large share of very big inheritances should go to the public.",
+   "yes": [
+    "Heavy taxes on inheritances of several million dollars or more",
+    "Stopping fortunes from building up across generations"
+   ],
+   "no": [
+    "Letting heirs keep most of a large inheritance"
+   ]
+  },
+  {
+   "t": "A moderate tax on very large inheritances is fair.",
+   "yes": [
+    "A tax on inheritances of several million dollars or more at moderate rates"
+   ],
+   "no": [
+    "Taking most of a large inheritance",
+    "No inheritance tax"
+   ]
+  },
+  {
+   "t": "Only a small tax, and only on the very largest inheritances.",
+   "yes": [
+    "A low tax rate that applies only to the biggest inheritances"
+   ],
+   "no": [
+    "Moderate or heavy taxes on inheritances"
+   ]
+  },
+  {
+   "t": "Inheritances shouldn't be taxed at all; the money was already taxed when it was earned.",
+   "yes": [
+    "Ending taxes on inheritances and estates"
+   ],
+   "no": [
+    "Any tax on what heirs receive"
+   ]
+  }
  ],
  "capital_gains_rate": [
-  "Profits from selling investments should be taxed at the same rates as wages, for everyone.",
-  "High earners should pay wage rates on investment profits; everyone else should keep lower rates.",
-  "Investment profits should keep being taxed at lower rates than wages, as they are now.",
-  "Investment profits should be taxed at even lower rates than today.",
-  "Profits from selling investments shouldn't be taxed at all."
+  {
+   "t": "Profits from selling investments should be taxed at the same rates as wages, for everyone.",
+   "yes": [
+    "Taxing stock sale profits at up to 37%, like wages"
+   ],
+   "no": [
+    "Today's lower 20% top rate on investment profits"
+   ]
+  },
+  {
+   "t": "High earners should pay wage rates on investment profits; others should keep lower rates.",
+   "yes": [
+    "Up to 37% on investment profits for people with high incomes",
+    "Lower rates for middle-income investors"
+   ],
+   "no": [
+    "Today's 20% top rate for the wealthy",
+    "Raising rates on middle-income investors"
+   ]
+  },
+  {
+   "t": "Keep investment profits taxed at lower rates than wages, as today.",
+   "yes": [
+    "Today's top rate of 20% (plus the 3.8% surtax)"
+   ],
+   "no": [
+    "Taxing them like wages",
+    "Cutting investment tax rates further"
+   ]
+  },
+  {
+   "t": "Tax investment profits at lower rates than today.",
+   "yes": [
+    "A top rate below 20% on profits from selling stocks and other investments"
+   ],
+   "no": [
+    "Raising those rates"
+   ]
+  },
+  {
+   "t": "Don't tax profits from selling investments at all.",
+   "yes": [
+    "Ending the tax on gains from selling stocks, property and businesses"
+   ],
+   "no": [
+    "Any tax on investment profits"
+   ]
+  }
  ],
  "gains_at_death": [
-  "Gains on investments should be taxed when the owner dies, for gains above about $1 million.",
-  "Gains shouldn't be taxed at death, but heirs should owe tax on the whole gain, including the part before they inherited, when they sell.",
-  "Keep today's rule: heirs owe tax only on gains made after they inherit, so earlier gains are never taxed."
+  {
+   "t": "Tax the untaxed gains at death, above about $1 million.",
+   "yes": [
+    "Taxing the $900,000 gain in the example when the owner dies"
+   ],
+   "no": [
+    "Letting gains like that go untaxed forever"
+   ]
+  },
+  {
+   "t": "Don't tax at death, but heirs should pay tax on the whole gain when they sell.",
+   "yes": [
+    "Heirs paying tax on the full $900,000 when they sell"
+   ],
+   "no": [
+    "Taxing at death",
+    "Wiping the gain off the books at death, as today"
+   ]
+  },
+  {
+   "t": "Keep today's rule: the gain before death is never taxed.",
+   "yes": [
+    "Heirs paying tax only on gains after they inherit"
+   ],
+   "no": [
+    "Taxing the $900,000 at death or when heirs sell"
+   ]
+  }
  ],
  "cash_aid_level": [
-  "The government should guarantee every household enough to stay above the poverty line.",
-  "The government should spend more than today on cash and food aid, mainly for families with children and people who can't work.",
-  "Cash and food aid should stay at about today's level.",
-  "The government should spend less than today on cash and food aid, with charities, churches and families doing more.",
-  "The federal government should end most cash and food aid and leave it to states, charities and families."
+  {
+   "t": "Guarantee every household enough to stay above the poverty line.",
+   "yes": [
+    "Cash and food aid topping up any household below about $32,000 a year for a family of four"
+   ],
+   "no": [
+    "Leaving any household below the poverty line",
+    "Cutting today's aid"
+   ]
+  },
+  {
+   "t": "Spend more on cash and food aid, mainly for families with children and people who can't work.",
+   "yes": [
+    "Larger food stamps, Earned Income Tax Credit and cash welfare for these groups"
+   ],
+   "no": [
+    "A guaranteed income for all",
+    "Cutting aid"
+   ]
+  },
+  {
+   "t": "Keep cash and food aid at about today's level.",
+   "yes": [
+    "Today's SNAP, Earned Income Tax Credit and cash welfare"
+   ],
+   "no": [
+    "Expanding food and cash aid",
+    "Cutting food and cash aid"
+   ]
+  },
+  {
+   "t": "Spend less on cash and food aid, with charities, churches and families doing more.",
+   "yes": [
+    "Smaller food stamps and welfare budgets",
+    "More help from charities, churches and families"
+   ],
+   "no": [
+    "Expanding aid"
+   ]
+  },
+  {
+   "t": "End most federal cash and food aid.",
+   "yes": [
+    "Ending most federal food stamps and cash welfare",
+    "Leaving it to states, charities and families"
+   ],
+   "no": [
+    "Keeping today's federal aid"
+   ]
+  }
  ],
  "aid_form": [
-  "Aid should come mostly as cash, and people decide for themselves how to spend it.",
-  "Aid should be a mix of cash and benefits tied to specific needs, as it is today.",
-  "Aid should come mostly as benefits for specific needs, like food and rent, so it goes to essentials.",
-  "Aid should come as benefits for specific needs, with limits on what can be bought, such as no soda or candy with food aid."
+  {
+   "t": "Aid should be mostly cash that people spend as they choose.",
+   "yes": [
+    "Replacing food and housing benefits with cash"
+   ],
+   "no": [
+    "Limits on what aid can buy"
+   ]
+  },
+  {
+   "t": "Keep today's mix of cash and benefits for specific needs.",
+   "yes": [
+    "Cash aid alongside food stamps and housing vouchers"
+   ],
+   "no": [
+    "All cash",
+    "More restrictions on what aid can buy"
+   ]
+  },
+  {
+   "t": "Aid should mostly be for specific needs like food and rent.",
+   "yes": [
+    "Food stamps and housing vouchers rather than cash"
+   ],
+   "no": [
+    "Turning benefits into cash",
+    "Banning specific foods"
+   ]
+  },
+  {
+   "t": "Aid should be for specific needs, with limits on what can be bought.",
+   "yes": [
+    "Banning soda and candy purchases with food aid",
+    "Benefits that can only be spent on essentials"
+   ],
+   "no": [
+    "Cash aid people can spend freely"
+   ]
+  }
  ],
  "work_req_rule": [
-  "Adults who can work should get cash and food aid whether or not they work.",
-  "Aid shouldn't require work, but the government should offer job training and help finding work.",
-  "Adults who can work should have to work, look for work or train about 20 hours a week to keep aid, after a grace period of about 3 months.",
-  "Adults who can work should have to work, look for work or train 30 or more hours a week from the start, or lose their aid."
+  {
+   "t": "Cash and food aid shouldn't depend on working.",
+   "yes": [
+    "Aid for adults who can work but aren't working"
+   ],
+   "no": [
+    "Any work, job search or training requirement"
+   ]
+  },
+  {
+   "t": "No work requirement, but offer job training and help finding work.",
+   "yes": [
+    "Voluntary job training and job search help"
+   ],
+   "no": [
+    "Cutting off aid for not working"
+   ]
+  },
+  {
+   "t": "Require about 20 hours a week of work, job search or training after about 3 months.",
+   "yes": [
+    "A 20-hour weekly requirement for adults 18 to 54 with no disability or children at home",
+    "A grace period of about 3 months"
+   ],
+   "no": [
+    "No requirement",
+    "Requiring 30+ hours from day one"
+   ]
+  },
+  {
+   "t": "Require 30 or more hours a week from the start, and cut off anyone who doesn't comply.",
+   "yes": [
+    "A 30-hour weekly requirement with no grace period",
+    "Ending benefits for those who don't meet it"
+   ],
+   "no": [
+    "Grace periods",
+    "Aid without work"
+   ]
+  }
  ],
  "work_req_cases": [
   "These people should be exempt from the work requirement: {case}.",
   "These people should have to meet the work requirement: {case}."
  ],
  "ubi": [
-  "Every adult should get about $1,500 a month or more from the government, enough to live on, whether or not they work.",
-  "Every adult should get about $500 a month from the government, whether or not they work.",
-  "Not every adult should get a payment, but anyone whose income falls below a set level should be topped up to it.",
-  "The government shouldn't guarantee anyone an income."
+  {
+   "t": "Every adult should get about $1,500 a month or more, enough to live on.",
+   "yes": [
+    "A universal basic income for every adult, working or not",
+    "Higher taxes to pay for it"
+   ],
+   "no": [
+    "Means-tested aid only"
+   ]
+  },
+  {
+   "t": "Every adult should get about $500 a month.",
+   "yes": [
+    "A smaller universal payment to every adult",
+    "Higher taxes to pay for it"
+   ],
+   "no": [
+    "A full living income for all",
+    "No universal payment"
+   ]
+  },
+  {
+   "t": "No payment to everyone, but a guaranteed minimum income for anyone below a set level.",
+   "yes": [
+    "Topping up incomes below a set floor"
+   ],
+   "no": [
+    "Sending checks to every adult regardless of income"
+   ]
+  },
+  {
+   "t": "No guaranteed income of any kind.",
+   "yes": [
+    "Ending or avoiding any guaranteed income"
+   ],
+   "no": [
+    "Universal payments",
+    "A guaranteed minimum income"
+   ]
+  }
  ],
  "child_benefit_level": [
-  "Every family should get about $300 a month per child, whatever the parents earn.",
-  "The child tax credit should be bigger than today, and low-income families should get the full amount.",
-  "The child tax credit should stay at about today's level, up to $2,200 per child.",
-  "The child tax credit should be smaller than today, and only for families who owe income tax.",
-  "There shouldn't be a federal child tax credit."
+  {
+   "t": "Every child should bring about $300 a month, whatever the parents earn.",
+   "yes": [
+    "A monthly payment of about $300 per child, for all families"
+   ],
+   "no": [
+    "Linking child support to parents' income or taxes"
+   ]
+  },
+  {
+   "t": "A bigger child credit than today, with the full amount for low-income families.",
+   "yes": [
+    "Raising the $2,200 credit",
+    "Paying the full credit to families with low earnings"
+   ],
+   "no": [
+    "Keeping or cutting today's credit"
+   ]
+  },
+  {
+   "t": "Keep about today's child tax credit of up to $2,200.",
+   "yes": [
+    "Today's credit and rules"
+   ],
+   "no": [
+    "Expanding the child credit",
+    "Cutting the child credit"
+   ]
+  },
+  {
+   "t": "A smaller child credit, and only for families who owe income tax.",
+   "yes": [
+    "Shrinking the credit",
+    "Ending refunds to families who owe no income tax"
+   ],
+   "no": [
+    "Expanding the credit"
+   ]
+  },
+  {
+   "t": "No federal child credit.",
+   "yes": [
+    "Ending the child tax credit"
+   ],
+   "no": [
+    "Any federal child benefit"
+   ]
+  }
  ],
  "child_benefit_work": [
-  "Parents should get the full child tax credit whether or not they earn anything from work.",
-  "Parents with no earnings should get part of the child tax credit.",
-  "Only parents who earn money from work should get the child tax credit."
+  {
+   "t": "Parents with no earnings should get the full child tax credit.",
+   "yes": [
+    "The full credit for every child, whether or not parents work"
+   ],
+   "no": [
+    "Requiring earnings to get the credit"
+   ]
+  },
+  {
+   "t": "Parents with no earnings should get part of the child tax credit.",
+   "yes": [
+    "A partial credit for non-working parents, the rest tied to earnings"
+   ],
+   "no": [
+    "The full credit without work",
+    "Nothing for non-working parents"
+   ]
+  },
+  {
+   "t": "Only parents with earnings from work should get the child tax credit.",
+   "yes": [
+    "Tying the credit to earnings from work"
+   ],
+   "no": [
+    "Paying the credit to parents who don't work"
+   ]
+  }
  ],
  "inequality_tradeoff": {
   "s": [
-   "Reducing the gap between rich and poor matters most to me, even if it means higher taxes and slower growth.",
-   "I lean toward reducing the gap between rich and poor, even at some cost to growth.",
-   "I lean toward focusing on growth, even if the gap between rich and poor widens.",
-   "Growth matters most to me; government shouldn't try to shrink the gap between rich and poor, even if it gets wider."
+   {
+    "t": "Government should act to narrow the gap between rich and poor, even at the cost of higher taxes and slower growth.",
+    "yes": [
+     "Higher taxes on top earners and large fortunes",
+     "More aid and services for low earners"
+    ],
+    "no": [
+     "Tax cuts aimed at growth that widen the gap"
+    ]
+   },
+   {
+    "t": "On balance, government should act to narrow the gap between rich and poor, even at the cost of higher taxes and slower growth.",
+    "yes": [
+     "Higher taxes on top earners and large fortunes",
+     "More aid and services for low earners"
+    ],
+    "no": [
+     "Tax cuts aimed at growth that widen the gap"
+    ]
+   },
+   {
+    "t": "On balance, government should focus on growth and leave the gap alone, even if it widens.",
+    "yes": [
+     "Lower taxes and fewer rules aimed at growth",
+     "Judging policy by overall growth, not by the gap"
+    ],
+    "no": [
+     "Higher taxes or new programs mainly to narrow the gap"
+    ]
+   },
+   {
+    "t": "Government should focus on growth and leave the gap alone, even if it widens.",
+    "yes": [
+     "Lower taxes and fewer rules aimed at growth",
+     "Judging policy by overall growth, not by the gap"
+    ],
+    "no": [
+     "Higher taxes or new programs mainly to narrow the gap"
+    ]
+   }
   ],
-  "torn": "I weigh reducing the gap and focusing on growth about equally."
+  "torn": {
+   "t": "You weigh narrowing the gap and growth about equally.",
+   "means": [
+    "You'd back steps to narrow the gap only when they cost little growth"
+   ]
+  }
  },
  "deficit_approach": [
-  "Borrowing is fine for now; the deficit shouldn't be a priority over the next ten years.",
-  "The deficit should be closed mainly by raising taxes on high earners and corporations.",
-  "The deficit should be closed with about equal parts tax increases and spending cuts.",
-  "The deficit should be closed mainly by cutting spending, with some tax increases.",
-  "The deficit should be closed entirely by cutting spending, with no tax increases."
+  {
+   "t": "Borrowing is fine for now; the deficit isn't the priority.",
+   "yes": [
+    "Running deficits to pay for other priorities"
+   ],
+   "no": [
+    "Spending cuts or tax increases aimed at the deficit"
+   ]
+  },
+  {
+   "t": "Close the deficit mainly by raising taxes on high earners and corporations.",
+   "yes": [
+    "Higher taxes on top earners and corporations to close the gap"
+   ],
+   "no": [
+    "Closing it mainly with spending cuts"
+   ]
+  },
+  {
+   "t": "Close the deficit with an even mix of tax increases and spending cuts.",
+   "yes": [
+    "A deal with tax increases and spending cuts in about equal parts"
+   ],
+   "no": [
+    "Closing it with taxes alone or cuts alone"
+   ]
+  },
+  {
+   "t": "Close the deficit mainly by cutting spending.",
+   "yes": [
+    "Spending cuts as most of the fix",
+    "Only small tax increases, if any"
+   ],
+   "no": [
+    "Large tax increases"
+   ]
+  },
+  {
+   "t": "Close the deficit entirely with spending cuts, no tax increases.",
+   "yes": [
+    "Cutting about $1.8 trillion a year in spending over time"
+   ],
+   "no": [
+    "Any tax increase"
+   ]
+  }
  ],
  "balanced_budget_amendment": [
-  "The Constitution shouldn't require a balanced budget; the government needs to be able to borrow.",
-  "The Constitution should require a balanced budget in normal years, with exceptions for wars and recessions.",
-  "The Constitution should require a balanced budget every year, with no exceptions, even in a war or recession."
+  {
+   "t": "No balanced-budget amendment; the government needs to be able to borrow.",
+   "yes": [
+    "Leaving borrowing decisions to Congress each year"
+   ],
+   "no": [
+    "A constitutional balanced-budget rule"
+   ]
+  },
+  {
+   "t": "Require a balanced budget in normal times, with exceptions for wars and recessions.",
+   "yes": [
+    "A balanced-budget amendment with war and recession exceptions"
+   ],
+   "no": [
+    "No rule at all",
+    "A rule with no exceptions"
+   ]
+  },
+  {
+   "t": "Require a balanced budget every year, no exceptions.",
+   "yes": [
+    "A strict balanced-budget amendment, even in wars and recessions"
+   ],
+   "no": [
+    "Exceptions that allow borrowing"
+   ]
+  }
  ],
  "poverty_cause": [
-  "Most working-age adults who are poor are poor mainly because the economic system is unfair to them.",
-  "Most working-age adults who are poor are poor mainly because of circumstances they didn't choose, like where they grew up or bad luck.",
-  "Poverty usually comes from a mix of people's circumstances and their own choices.",
-  "Most working-age adults who are poor are poor mainly because of their own choices, like dropping out of school or not working.",
-  "Most working-age adults who are poor are poor mainly because they don't try hard enough."
+  {
+   "t": "Poverty is mainly caused by an unfair economic system.",
+   "means": [
+    "Low wages, too few good jobs and discrimination keep most poor adults poor, more than their own choices"
+   ]
+  },
+  {
+   "t": "Poverty is mainly caused by circumstances people didn't choose.",
+   "means": [
+    "Where people grew up, family illness or bad luck explain most poverty, more than their own choices"
+   ]
+  },
+  {
+   "t": "Poverty comes from a mix of circumstances and choices.",
+   "means": [
+    "Both what happens to people and what they decide, like schooling and work, matter about equally"
+   ]
+  },
+  {
+   "t": "Poverty is mainly caused by people's own choices.",
+   "means": [
+    "Choices like dropping out of school, not working or having children early explain most poverty among able adults"
+   ]
+  },
+  {
+   "t": "Poverty is mainly caused by lack of effort.",
+   "means": [
+    "Most able adults who are poor could get out of poverty if they tried harder"
+   ]
+  }
  ],
  "job_guarantee": [
-  "The government should offer a public job, paying at least the minimum wage, to anyone who wants one.",
-  "The government should guarantee jobs only in areas with high unemployment.",
-  "The government shouldn't guarantee jobs, but it should help with job searches and training.",
-  "The government shouldn't provide jobs; jobs should come from private employers."
+  {
+   "t": "The federal government should guarantee a job to anyone who wants one.",
+   "yes": [
+    "Public jobs in care work or infrastructure for anyone who can't find work, paid at least minimum wage"
+   ],
+   "no": [
+    "Leaving job creation to private employers"
+   ]
+  },
+  {
+   "t": "Guarantee jobs only where unemployment is high.",
+   "yes": [
+    "Public jobs programs in high-unemployment areas"
+   ],
+   "no": [
+    "A nationwide job guarantee",
+    "No public jobs"
+   ]
+  },
+  {
+   "t": "No job guarantee, but help with job searches and training.",
+   "yes": [
+    "Job training and placement help"
+   ],
+   "no": [
+    "Government-created jobs for the unemployed"
+   ]
+  },
+  {
+   "t": "Jobs should come from the private sector.",
+   "yes": [
+    "Leaving job creation to businesses"
+   ],
+   "no": [
+    "Government jobs programs",
+    "Federal job training programs"
+   ]
+  }
  ],
  "tips_overtime_tax": [
-  "Tips and overtime pay should be taxed like any other wages.",
-  "Tips and overtime should be free of federal income tax for low- and middle-income workers only.",
-  "Tips and overtime should be free of federal income tax for everyone."
+  {
+   "t": "Tips and overtime should be taxed like any other pay.",
+   "yes": [
+    "Taxing all pay the same way"
+   ],
+   "no": [
+    "Special tax breaks for tips or overtime"
+   ]
+  },
+  {
+   "t": "Exempt tips and overtime from income tax for low- and middle-income workers only.",
+   "yes": [
+    "A tax break on tips and overtime with an income limit"
+   ],
+   "no": [
+    "The break for high earners",
+    "Taxing them like other wages for everyone"
+   ]
+  },
+  {
+   "t": "Exempt tips and overtime from income tax for everyone.",
+   "yes": [
+    "No income tax on tips or overtime, at any income"
+   ],
+   "no": [
+    "Income limits on the break"
+   ]
+  }
  ]
 }

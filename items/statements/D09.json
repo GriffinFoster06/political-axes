@@ -1,64 +1,375 @@
 {
  "abortion_rule": [
-  "Abortion should be legal for any reason at any point in pregnancy.",
-  "Abortion should be legal for any reason until about 24 weeks; after that, only when the woman's health is at serious risk.",
-  "Abortion should be legal for any reason in about the first 12 to 15 weeks; after that, only in specific circumstances.",
-  "Abortion should be legal only in specific circumstances, such as rape, incest, or a threat to the woman's life or health.",
-  "Abortion should be legal only to save the woman's life.",
-  "Abortion should never be legal, even to save the woman's life."
+  {
+   "t": "Abortion should be legal for any reason at any point in pregnancy.",
+   "yes": [
+    "No legal limit on abortion at any stage"
+   ],
+   "no": [
+    "Bans after viability or after 15 weeks",
+    "Limiting abortion to specific circumstances"
+   ]
+  },
+  {
+   "t": "Abortion should be legal for any reason until about 24 weeks; after that, only for serious health risks.",
+   "yes": [
+    "Abortion on request through about viability",
+    "Later abortions for serious risks to the woman's health"
+   ],
+   "no": [
+    "Limits at 12–15 weeks",
+    "No limits at all"
+   ]
+  },
+  {
+   "t": "Abortion should be legal for any reason in about the first 12 to 15 weeks; after that, only in specific circumstances.",
+   "yes": [
+    "Abortion on request in the first trimester or so",
+    "Limits after about 15 weeks"
+   ],
+   "no": [
+    "Abortion on request up to viability",
+    "Bans in early pregnancy"
+   ]
+  },
+  {
+   "t": "Abortion should be legal only in specific circumstances, like rape, incest or a threat to the woman's life or health.",
+   "yes": [
+    "Abortion for rape, incest, and risks to the woman's life or health"
+   ],
+   "no": [
+    "Abortion on request at any stage"
+   ]
+  },
+  {
+   "t": "Abortion should be legal only to save the woman's life.",
+   "yes": [
+    "A ban with a life-of-the-woman exception"
+   ],
+   "no": [
+    "Exceptions for rape, incest or health",
+    "Abortion on request"
+   ]
+  },
+  {
+   "t": "Abortion should never be legal.",
+   "yes": [
+    "A total ban, with no exceptions"
+   ],
+   "no": [
+    "Any legal abortion"
+   ]
+  }
  ],
  "abortion_exceptions": [
   "Abortion should be legal in this case, at any point in pregnancy: {case}.",
   "Abortion should not be legal in this case: {case}."
  ],
  "abortion_who_decides": [
-  "Congress should set one abortion law for the whole country.",
-  "Congress should set the main abortion rules, with room for states to adjust details.",
-  "Each state should set its own abortion law, as now."
+  {
+   "t": "Abortion law should be the same nationwide, set by Congress.",
+   "yes": [
+    "A national abortion law that overrides state laws"
+   ],
+   "no": [
+    "Each state setting its own law"
+   ]
+  },
+  {
+   "t": "Congress should mostly set abortion law, with room for states to adjust details.",
+   "yes": [
+    "A national baseline with state adjustments"
+   ],
+   "no": [
+    "Leaving it fully to states",
+    "No state role at all"
+   ]
+  },
+  {
+   "t": "Each state should decide its abortion law, as today.",
+   "yes": [
+    "State-by-state abortion laws"
+   ],
+   "no": [
+    "A national abortion law, either protecting or banning it"
+   ]
+  }
  ],
  "abortion_pills_mail": [
-  "Doctors should be able to mail abortion pills after an online visit to patients anywhere, including states where abortion is banned.",
-  "Doctors can mail abortion pills after an online visit, but only to patients in states where abortion is legal.",
-  "Abortion pills should require an in-person visit with a doctor.",
-  "Abortion pills should not be available at all."
+  {
+   "t": "Doctors should be able to prescribe abortion pills online and mail them anywhere, including states with bans.",
+   "yes": [
+    "Telehealth prescriptions and mail delivery to any state"
+   ],
+   "no": [
+    "Requiring in-person visits"
+   ]
+  },
+  {
+   "t": "Doctors can prescribe abortion pills online and mail them, but only to states where abortion is legal.",
+   "yes": [
+    "Telehealth abortion in states where it's legal"
+   ],
+   "no": [
+    "Mailing pills into states with bans",
+    "Requiring in-person visits"
+   ]
+  },
+  {
+   "t": "Abortion pills should require an in-person doctor visit.",
+   "yes": [
+    "In-person dispensing only"
+   ],
+   "no": [
+    "Telehealth prescriptions and mail delivery"
+   ]
+  },
+  {
+   "t": "Abortion pills shouldn't be available at all.",
+   "yes": [
+    "Pulling abortion pills from the market"
+   ],
+   "no": [
+    "Any legal access to abortion pills"
+   ]
+  }
  ],
  "abortion_shield_laws": [
-  "A state should be able to fully shield its doctors from other states' prosecution and lawsuits for mailing abortion pills there.",
-  "A state can shield its doctors only for care given in person in that state, not pills mailed elsewhere.",
-  "Doctors who send abortion pills into a state should face that state's laws."
+  {
+   "t": "States should fully protect their doctors from other states' prosecution for mailing abortion pills.",
+   "yes": [
+    "Shield laws blocking extradition and out-of-state lawsuits"
+   ],
+   "no": [
+    "Doctors facing the patient's state's laws"
+   ]
+  },
+  {
+   "t": "Protect doctors only for care given in person in their own state.",
+   "yes": [
+    "Shielding in-person care",
+    "No protection for mailing pills into ban states"
+   ],
+   "no": [
+    "Full shield laws",
+    "No protection at all"
+   ]
+  },
+  {
+   "t": "Doctors should face the laws of the patient's state.",
+   "yes": [
+    "Letting ban states prosecute or sue out-of-state doctors who mail pills"
+   ],
+   "no": [
+    "Shield laws"
+   ]
+  }
  ],
  "abortion_public_funding": [
-  "Programs like Medicaid should pay for legal abortions like any other medical care.",
-  "Medicaid should pay for abortions only in cases of rape, incest or a threat to the woman's life, as now.",
-  "Government health programs should never pay for abortions."
+  {
+   "t": "Medicaid and other government health programs should pay for abortions like other care.",
+   "yes": [
+    "Repealing the Hyde Amendment's limits"
+   ],
+   "no": [
+    "Limiting coverage to rape, incest and life"
+   ]
+  },
+  {
+   "t": "Government health programs should pay for abortions only for rape, incest or a threat to life, as now.",
+   "yes": [
+    "Today's Hyde Amendment rules"
+   ],
+   "no": [
+    "Full coverage",
+    "No coverage at all"
+   ]
+  },
+  {
+   "t": "Government health programs should never pay for abortions.",
+   "yes": [
+    "Ending even the rape, incest and life exceptions"
+   ],
+   "no": [
+    "Any public funding for abortion"
+   ]
+  }
  ],
  "ivf_embryos": [
-  "IVF should be legal, and insurance should have to cover it.",
-  "IVF should be legal under today's rules.",
-  "IVF should be legal, but with limits so unused embryos aren't destroyed.",
-  "IVF should be banned because it destroys embryos."
+  {
+   "t": "IVF should be legal and insurance should have to cover it.",
+   "yes": [
+    "Required insurance coverage of IVF",
+    "Freezing or discarding unused embryos as patients choose"
+   ],
+   "no": [
+    "Limits on what happens to unused embryos"
+   ]
+  },
+  {
+   "t": "IVF should be legal under today's rules.",
+   "yes": [
+    "Today's IVF rules"
+   ],
+   "no": [
+    "Required coverage",
+    "Limits on discarding embryos"
+   ]
+  },
+  {
+   "t": "IVF should be legal, with limits so unused embryos aren't destroyed.",
+   "yes": [
+    "Rules against discarding embryos, such as creating fewer or requiring them to be kept or donated"
+   ],
+   "no": [
+    "Discarding unused embryos"
+   ]
+  },
+  {
+   "t": "IVF should be banned because it destroys embryos.",
+   "yes": [
+    "A ban on IVF"
+   ],
+   "no": [
+    "Legal IVF"
+   ]
+  }
  ],
  "contraception_access": [
-  "Birth control should be free to anyone, with no prescription needed.",
-  "Insurance should have to cover birth control at no extra cost, as now.",
-  "Birth control should be legal, but employers and insurers shouldn't have to cover it.",
-  "Some kinds of birth control, like emergency contraception, should be restricted."
+  {
+   "t": "Birth control should be free to anyone, with no prescription needed.",
+   "yes": [
+    "Free, over-the-counter birth control for adults"
+   ],
+   "no": [
+    "Prescription requirements or cost barriers"
+   ]
+  },
+  {
+   "t": "Insurance must cover birth control at no extra cost, as today.",
+   "yes": [
+    "Today's no-cost coverage requirement"
+   ],
+   "no": [
+    "Dropping the requirement",
+    "Restricting any type"
+   ]
+  },
+  {
+   "t": "Birth control should be legal, but employers and insurers shouldn't have to cover it.",
+   "yes": [
+    "Ending the coverage requirement"
+   ],
+   "no": [
+    "Required no-cost coverage",
+    "Restrictions on legal methods"
+   ]
+  },
+  {
+   "t": "Some types of birth control, such as emergency contraception, should be restricted.",
+   "yes": [
+    "Limits on emergency contraception and some other methods"
+   ],
+   "no": [
+    "Unrestricted access to all methods"
+   ]
+  }
  ],
  "minors_abortion_parents": [
-  "A girl under 18 should decide about an abortion with her doctor, without involving her parents.",
-  "A parent should be told before a minor's abortion, but their permission shouldn't be required.",
-  "A minor should need a parent's permission for an abortion, unless a judge grants an exception.",
-  "A minor should always need a parent's permission for an abortion, with no exceptions."
+  {
+   "t": "A girl under 18 should decide on abortion with her doctor, without parents.",
+   "yes": [
+    "No parental notice or consent laws"
+   ],
+   "no": [
+    "Requiring parents to be told or to agree"
+   ]
+  },
+  {
+   "t": "A parent must be told before a minor's abortion, but needn't give permission.",
+   "yes": [
+    "Parental notification laws"
+   ],
+   "no": [
+    "Parental consent requirements",
+    "No notice at all"
+   ]
+  },
+  {
+   "t": "A parent must give permission for a minor's abortion, but a judge can make an exception.",
+   "yes": [
+    "Parental consent with a court bypass"
+   ],
+   "no": [
+    "Notice only",
+    "Consent with no exceptions"
+   ]
+  },
+  {
+   "t": "A parent must give permission for a minor's abortion, with no exceptions.",
+   "yes": [
+    "Parental consent with no court bypass"
+   ],
+   "no": [
+    "Letting a judge waive consent"
+   ]
+  }
  ],
  "life_begins": [
-  "A developing human has the same right to life as anyone else only once it's born.",
-  "A developing human has an equal right to life once it could survive outside the womb, around 22 to 24 weeks.",
-  "A developing human has an equal right to life once cardiac activity can be detected, about 6 weeks.",
-  "A developing human has an equal right to life from conception."
+  {
+   "t": "A developing human gets the same right to life as a born person only at birth.",
+   "means": [
+    "Before birth, a fetus doesn't have the right to life a born baby has"
+   ]
+  },
+  {
+   "t": "A developing human gets the same right to life around viability, about 22 to 24 weeks.",
+   "means": [
+    "After it could survive outside the womb, a fetus has the same right to life as a born person"
+   ]
+  },
+  {
+   "t": "A developing human gets the same right to life once cardiac activity can be detected, about 6 weeks.",
+   "means": [
+    "From about 6 weeks on, a developing human has the same right to life as a born person"
+   ]
+  },
+  {
+   "t": "A developing human has the same right to life from conception.",
+   "means": [
+    "A fertilized egg has the same right to life as a born person"
+   ]
+  }
  ],
  "surrogacy": [
-  "Paid surrogacy should be legal and regulated.",
-  "Surrogacy should be legal only if unpaid, with the surrogate's expenses covered.",
-  "Surrogacy should be banned."
+  {
+   "t": "Paid surrogacy should be legal and regulated.",
+   "yes": [
+    "Paid surrogacy contracts with legal rules"
+   ],
+   "no": [
+    "Banning paid surrogacy"
+   ]
+  },
+  {
+   "t": "Only unpaid surrogacy should be allowed, with expenses covered.",
+   "yes": [
+    "Covering a surrogate's expenses",
+    "Banning payment beyond expenses"
+   ],
+   "no": [
+    "Paid surrogacy",
+    "A total ban"
+   ]
+  },
+  {
+   "t": "Surrogacy should be banned.",
+   "yes": [
+    "Banning paid and unpaid surrogacy"
+   ],
+   "no": [
+    "Any legal surrogacy"
+   ]
+  }
  ]
 }

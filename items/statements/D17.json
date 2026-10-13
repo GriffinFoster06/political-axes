@@ -1,94 +1,564 @@
 {
  "marijuana_law": [
-  "Marijuana should be legal for adults to grow and buy in stores, regulated like alcohol.",
-  "Adults should be able to have small amounts of marijuana, but stores shouldn't sell it.",
-  "Marijuana should be legal only for medical use, with a doctor's recommendation.",
-  "Marijuana should be illegal, but having small amounts should mean a fine, not jail.",
-  "Marijuana should be illegal, and having it can mean jail."
+  {
+   "t": "Marijuana should be legal to grow and sell to adults, regulated like alcohol.",
+   "yes": [
+    "Licensed marijuana stores in every state",
+    "Ending the federal ban"
+   ],
+   "no": [
+    "Fines or jail for adult use"
+   ]
+  },
+  {
+   "t": "Adults should be able to have small amounts of marijuana, but not buy it in stores.",
+   "yes": [
+    "Legal possession and home growing"
+   ],
+   "no": [
+    "Commercial marijuana stores",
+    "Penalties for small amounts"
+   ]
+  },
+  {
+   "t": "Marijuana should be legal only for medical use with a doctor's recommendation.",
+   "yes": [
+    "Medical marijuana programs"
+   ],
+   "no": [
+    "Recreational marijuana sales or possession"
+   ]
+  },
+  {
+   "t": "Marijuana should be illegal, with fines but no jail for small amounts.",
+   "yes": [
+    "Civil fines for possession"
+   ],
+   "no": [
+    "Legal recreational use",
+    "Jail for small amounts"
+   ]
+  },
+  {
+   "t": "Marijuana should be illegal, with jail possible for having it.",
+   "yes": [
+    "Criminal penalties, including jail, for possession"
+   ],
+   "no": [
+    "Legal or decriminalized marijuana"
+   ]
+  }
  ],
  "marijuana_records": [
-  "Past convictions for having small amounts of marijuana should be cleared automatically where it's now legal.",
-  "Those convictions should be cleared if the person applies.",
-  "Those convictions should stay on people's records."
+  {
+   "t": "Clear past convictions for small amounts of marijuana automatically.",
+   "yes": [
+    "Automatic expungement"
+   ],
+   "no": [
+    "Making people apply"
+   ]
+  },
+  {
+   "t": "Clear past marijuana possession convictions if the person applies.",
+   "yes": [
+    "Expungement on application"
+   ],
+   "no": [
+    "Automatic clearing",
+    "Keeping all records"
+   ]
+  },
+  {
+   "t": "Keep past marijuana possession convictions on record.",
+   "yes": [
+    "Leaving old convictions in place"
+   ],
+   "no": [
+    "Expunging old marijuana convictions"
+   ]
+  }
  ],
  "drug_possession": [
-  "Having a small amount of a drug like cocaine or heroin for personal use should be legal and regulated, like alcohol.",
-  "Having a small amount for personal use should mean a civil fine or referral to treatment, not a crime.",
-  "Having a small amount should be a crime, but first offenses should get treatment instead of jail.",
-  "Having a small amount should be a crime, with jail possible even the first time."
+  {
+   "t": "Having small amounts of drugs like cocaine or heroin should be legal and regulated.",
+   "yes": [
+    "Legal, regulated sale of hard drugs to adults"
+   ],
+   "no": [
+    "Fines or arrests for possession"
+   ]
+  },
+  {
+   "t": "Possession of small amounts should get a civil fine or a referral to treatment, not a criminal charge.",
+   "yes": [
+    "Decriminalization with fines or treatment referrals"
+   ],
+   "no": [
+    "Legal sales",
+    "Criminal charges"
+   ]
+  },
+  {
+   "t": "Possession should be a crime, but first offenses get treatment instead of jail.",
+   "yes": [
+    "Drug courts and diversion for first offenses"
+   ],
+   "no": [
+    "Decriminalizing possession",
+    "Jail for first offenses"
+   ]
+  },
+  {
+   "t": "Possession should be a crime, with jail possible even for first offenses.",
+   "yes": [
+    "Jail as an option for any possession charge"
+   ],
+   "no": [
+    "Treatment-only or decriminalized approaches"
+   ]
+  }
  ],
  "psychedelics": [
-  "Psilocybin should be legal for any adult.",
-  "Psilocybin should be legal only in supervised settings, like a licensed center.",
-  "Psilocybin should be legal only as a prescribed treatment, if approved as a medicine.",
-  "Psilocybin should be illegal."
+  {
+   "t": "Psilocybin should be legal for any adult.",
+   "yes": [
+    "Legal sales of magic mushrooms to adults"
+   ],
+   "no": [
+    "Limiting it to clinics or prescriptions"
+   ]
+  },
+  {
+   "t": "Psilocybin should be legal only in supervised settings, like a licensed center.",
+   "yes": [
+    "Licensed centers, as in Oregon and Colorado"
+   ],
+   "no": [
+    "Open sales",
+    "A total ban"
+   ]
+  },
+  {
+   "t": "Psilocybin should be legal only as a prescribed treatment, if approved as a medicine.",
+   "yes": [
+    "FDA-approved psilocybin therapy"
+   ],
+   "no": [
+    "Recreational or center-based use"
+   ]
+  },
+  {
+   "t": "Psilocybin should be illegal.",
+   "yes": [
+    "Keeping psilocybin banned"
+   ],
+   "no": [
+    "Any legal psilocybin use"
+   ]
+  }
  ],
  "supervised_sites": [
-  "Cities should be allowed to run supervised drug-use sites, with federal funding.",
-  "Cities can run supervised drug-use sites if they choose, but without federal money.",
-  "Supervised drug-use sites should be illegal, because they encourage drug use."
+  {
+   "t": "Cities should be able to run supervised drug use sites, with federal funding.",
+   "yes": [
+    "Overdose prevention sites",
+    "Federal money for them"
+   ],
+   "no": [
+    "Banning these sites"
+   ]
+  },
+  {
+   "t": "Cities can run supervised drug use sites if they choose, without federal funding.",
+   "yes": [
+    "Local choice on overdose prevention sites"
+   ],
+   "no": [
+    "Federal funding",
+    "A federal ban"
+   ]
+  },
+  {
+   "t": "Supervised drug use sites should be illegal.",
+   "yes": [
+    "Shutting down sites like New York's"
+   ],
+   "no": [
+    "Any supervised use sites"
+   ]
+  }
  ],
  "sports_betting": [
-  "Sports betting on phone apps should be legal everywhere, with few limits.",
-  "States should decide whether to allow sports betting apps, with limits on advertising and bet sizes.",
-  "Sports betting should be legal only in person at casinos and licensed places, not on phones.",
-  "Sports betting should be illegal."
+  {
+   "t": "Phone sports betting should be legal everywhere, with few limits.",
+   "yes": [
+    "Nationwide legal betting apps"
+   ],
+   "no": [
+    "Limits on ads or bet sizes"
+   ]
+  },
+  {
+   "t": "Phone sports betting should be legal where states choose, with limits on ads and bet sizes.",
+   "yes": [
+    "State-legalized betting apps",
+    "Ad and bet-size limits"
+   ],
+   "no": [
+    "Few limits",
+    "Banning apps"
+   ]
+  },
+  {
+   "t": "Sports betting should be legal only in person, not on phones.",
+   "yes": [
+    "Betting at casinos and licensed locations"
+   ],
+   "no": [
+    "Phone betting apps"
+   ]
+  },
+  {
+   "t": "Sports betting should be illegal.",
+   "yes": [
+    "Banning sports betting"
+   ],
+   "no": [
+    "Any legal sports betting"
+   ]
+  }
  ],
  "sex_work_law": [
-  "Neither adult should face criminal penalties when one pays the other for sex.",
-  "Paying for sex should be legal only in licensed, regulated businesses.",
-  "Paying for sex should be illegal, but selling it shouldn't be.",
-  "Both paying for and selling sex should be illegal, as in most states."
+  {
+   "t": "No criminal penalties for paying or being paid for sex between adults.",
+   "yes": [
+    "Decriminalizing sex work for both sides"
+   ],
+   "no": [
+    "Arresting buyers or sellers"
+   ]
+  },
+  {
+   "t": "Paid sex should be legal only in licensed, regulated businesses, as in some Nevada counties.",
+   "yes": [
+    "Licensed brothels"
+   ],
+   "no": [
+    "Unlicensed sex work",
+    "Full criminal bans"
+   ]
+  },
+  {
+   "t": "Paying for sex should be illegal, but selling it shouldn't be.",
+   "yes": [
+    "Penalties for buyers only, as in Sweden"
+   ],
+   "no": [
+    "Arresting sellers",
+    "Legal paid sex"
+   ]
+  },
+  {
+   "t": "Paying and selling sex should both be illegal, as in most states.",
+   "yes": [
+    "Penalties for buyers and sellers"
+   ],
+   "no": [
+    "Legal or decriminalized sex work"
+   ]
+  }
  ],
  "adult_content": [
-  "Sexually explicit content made by consenting adults should be legal, with no special limits.",
-  "It should be legal, but websites should have to verify viewers are adults.",
-  "It should be legal, but kept off most websites and sold only through restricted channels.",
-  "Making or selling sexually explicit content should be illegal."
+  {
+   "t": "Explicit content made by consenting adults should be legal with no special limits.",
+   "yes": [
+    "No age checks or special rules for porn sites"
+   ],
+   "no": [
+    "Bans or verification laws"
+   ]
+  },
+  {
+   "t": "Explicit content should be legal, but websites must verify viewers are adults.",
+   "yes": [
+    "Age-verification laws for porn sites"
+   ],
+   "no": [
+    "No checks",
+    "Banning pornography"
+   ]
+  },
+  {
+   "t": "Explicit content should be legal but banned from most websites and sold only through restricted channels.",
+   "yes": [
+    "Restricting porn to limited, controlled outlets"
+   ],
+   "no": [
+    "Open access online"
+   ]
+  },
+  {
+   "t": "Making or selling explicit content should be illegal.",
+   "yes": [
+    "Banning pornography"
+   ],
+   "no": [
+    "Any legal pornography"
+   ]
+  }
  ],
  "aid_in_dying": [
-  "Doctors should be able to prescribe medicine a dying adult can take to end their life, after a short waiting period.",
-  "Doctors should be able to prescribe it only with strict safeguards, like two doctors' approval and a longer wait.",
-  "Doctors shouldn't be allowed to prescribe medicine to end a patient's life."
+  {
+   "t": "Doctors should be able to prescribe life-ending medicine to a dying, mentally capable adult, with a short wait.",
+   "yes": [
+    "Medical aid in dying with a brief waiting period"
+   ],
+   "no": [
+    "Banning medical aid in dying"
+   ]
+  },
+  {
+   "t": "Allow medical aid in dying only with strict safeguards, like two doctors' approval and a longer wait.",
+   "yes": [
+    "Strict safeguards and longer waits"
+   ],
+   "no": [
+    "Short waits",
+    "A ban"
+   ]
+  },
+  {
+   "t": "Doctors shouldn't be allowed to prescribe life-ending medicine.",
+   "yes": [
+    "Banning medical aid in dying"
+   ],
+   "no": [
+    "Any legal aid in dying"
+   ]
+  }
  ],
  "aid_in_dying_cases": [
   "These adults should also be able to get the medicine: {case}.",
   "These adults shouldn't be able to get the medicine: {case}."
  ],
  "sin_taxes": [
-  "There shouldn't be extra taxes meant to discourage unhealthy products; adults should make their own choices.",
-  "Extra taxes to discourage use should stay limited to tobacco and alcohol, as now.",
-  "Sugary drinks and junk food should carry extra taxes too, along with tobacco and alcohol."
+  {
+   "t": "No extra taxes to discourage use; adults should make their own choices.",
+   "yes": [
+    "Ending extra taxes on tobacco and alcohol"
+   ],
+   "no": [
+    "Soda or junk food taxes"
+   ]
+  },
+  {
+   "t": "Extra taxes only on tobacco and alcohol, as today.",
+   "yes": [
+    "Today's tobacco and alcohol taxes"
+   ],
+   "no": [
+    "Soda and junk food taxes",
+    "Ending these taxes"
+   ]
+  },
+  {
+   "t": "Extra taxes on sugary drinks and junk food as well as tobacco and alcohol.",
+   "yes": [
+    "Soda and junk food taxes"
+   ],
+   "no": [
+    "Leaving those products untaxed"
+   ]
+  }
  ],
  "helmet_law": [
-  "Adult motorcycle riders should decide for themselves whether to wear a helmet.",
-  "Only riders under 21 or without health insurance should have to wear a helmet.",
-  "All motorcycle riders should have to wear a helmet."
+  {
+   "t": "Adults should decide for themselves whether to wear a motorcycle helmet.",
+   "yes": [
+    "Repealing adult helmet laws"
+   ],
+   "no": [
+    "Required helmets for adults"
+   ]
+  },
+  {
+   "t": "Require helmets only for riders under 21 or without health insurance.",
+   "yes": [
+    "Helmet rules for young or uninsured riders"
+   ],
+   "no": [
+    "Requiring all riders",
+    "No requirement"
+   ]
+  },
+  {
+   "t": "All motorcycle riders should have to wear helmets.",
+   "yes": [
+    "Universal helmet laws"
+   ],
+   "no": [
+    "Exemptions for adult riders"
+   ]
+  }
  ],
  "drinking_age": [
-  "The legal drinking age should be 18.",
-  "The drinking age should be 18 for beer and wine and 21 for liquor.",
-  "The drinking age should stay at 21.",
-  "The drinking age should be older than 21."
+  {
+   "t": "The drinking age should be 18.",
+   "yes": [
+    "Lowering the drinking age to 18"
+   ],
+   "no": [
+    "Keeping it at 21"
+   ]
+  },
+  {
+   "t": "18 for beer and wine, 21 for liquor.",
+   "yes": [
+    "Beer and wine at 18"
+   ],
+   "no": [
+    "Liquor at 18",
+    "21 for everything"
+   ]
+  },
+  {
+   "t": "The drinking age should stay 21.",
+   "yes": [
+    "Today's drinking age of 21"
+   ],
+   "no": [
+    "Lowering or raising it"
+   ]
+  },
+  {
+   "t": "The drinking age should be older than 21.",
+   "yes": [
+    "Raising the drinking age above 21"
+   ],
+   "no": [
+    "Drinking at 21"
+   ]
+  }
  ],
  "vape_flavors": [
-  "Adults should be able to buy flavored vapes and cigarettes.",
-  "Flavored vapes and cigarettes should be allowed for adults, with higher taxes.",
-  "Flavored vapes and cigarettes should be banned, even for adults."
+  {
+   "t": "Adults should be able to buy flavored vapes and cigarettes.",
+   "yes": [
+    "Legal flavored products for adults"
+   ],
+   "no": [
+    "Flavor bans"
+   ]
+  },
+  {
+   "t": "Allow flavored vapes and cigarettes, with higher taxes.",
+   "yes": [
+    "Extra taxes on flavored products"
+   ],
+   "no": [
+    "Flavor bans",
+    "No extra tax"
+   ]
+  },
+  {
+   "t": "Flavored vapes and cigarettes should be banned.",
+   "yes": [
+    "Bans on flavored vapes and menthol cigarettes"
+   ],
+   "no": [
+    "Sales to adults"
+   ]
+  }
  ],
  "kidney_payment": [
-  "People should be able to sell a kidney in a regulated market.",
-  "Kidney donors should get a fixed payment from the government, but not in an open market.",
-  "Paying people for kidneys should stay banned."
+  {
+   "t": "People should be able to be paid for donating a kidney, in a regulated market.",
+   "yes": [
+    "A legal, regulated market for kidneys"
+   ],
+   "no": [
+    "Today's ban on payment"
+   ]
+  },
+  {
+   "t": "Kidney donors should get only a fixed government payment, not a market price.",
+   "yes": [
+    "A set government payment to living donors"
+   ],
+   "no": [
+    "A market for kidneys",
+    "Keeping the ban"
+   ]
+  },
+  {
+   "t": "Keep the ban on paying for kidneys.",
+   "yes": [
+    "Today's federal ban"
+   ],
+   "no": [
+    "Any payment for organs"
+   ]
+  }
  ],
  "right_to_try": [
-  "Seriously ill patients should be able to use any treatment that has passed early safety testing.",
-  "Seriously ill patients should get unapproved treatments only through FDA-supervised programs.",
-  "Patients should wait for treatments to get full FDA approval."
+  {
+   "t": "Seriously ill patients should be able to use any treatment that passed early safety testing.",
+   "yes": [
+    "Access to unapproved drugs after early trials"
+   ],
+   "no": [
+    "Requiring FDA programs or full approval"
+   ]
+  },
+  {
+   "t": "Unapproved treatments only through FDA-supervised programs.",
+   "yes": [
+    "FDA expanded-access programs"
+   ],
+   "no": [
+    "Access outside FDA supervision",
+    "No access before approval"
+   ]
+  },
+  {
+   "t": "Patients should wait for full FDA approval.",
+   "yes": [
+    "Requiring full approval first"
+   ],
+   "no": [
+    "Early access to unapproved drugs"
+   ]
+  }
  ],
  "raw_milk": [
-  "Any store should be able to sell raw milk, with a warning label.",
-  "Raw milk should be sold only directly from farms.",
-  "Selling raw milk should be banned."
+  {
+   "t": "Stores should be able to sell raw milk anywhere, with a warning label.",
+   "yes": [
+    "Raw milk sales in stores"
+   ],
+   "no": [
+    "Bans on raw milk"
+   ]
+  },
+  {
+   "t": "Raw milk should be sold only directly from farms.",
+   "yes": [
+    "Farm-direct raw milk sales"
+   ],
+   "no": [
+    "Raw milk in stores",
+    "A total ban"
+   ]
+  },
+  {
+   "t": "Raw milk sales should be banned.",
+   "yes": [
+    "Banning unpasteurized milk sales"
+   ],
+   "no": [
+    "Any legal raw milk sales"
+   ]
+  }
  ]
 }

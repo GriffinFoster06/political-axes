@@ -1,63 +1,293 @@
 {
  "national_vs_state_tradeoff": {
   "s": [
-   "Major policies should be set nationally so rules are the same everywhere, even if some states disagree.",
-   "I lean toward national standards.",
-   "I lean toward letting states decide.",
-   "States should decide most policies, even if rules differ from state to state."
+   {
+    "t": "Major policies should be set nationally so rules are the same everywhere, even if some states disagree.",
+    "yes": [
+     "National laws on issues like abortion, guns and the minimum wage"
+    ],
+    "no": [
+     "Rules that change at each state line"
+    ]
+   },
+   {
+    "t": "On balance, major policies should be set nationally so rules are the same everywhere, even if some states disagree.",
+    "yes": [
+     "National laws on issues like abortion, guns and the minimum wage"
+    ],
+    "no": [
+     "Rules that change at each state line"
+    ]
+   },
+   {
+    "t": "On balance, States should decide most policies, even if rules differ from state to state.",
+    "yes": [
+     "Each state setting its own rules on abortion, guns, wages and schools"
+    ],
+    "no": [
+     "National rules overriding states"
+    ]
+   },
+   {
+    "t": "States should decide most policies, even if rules differ from state to state.",
+    "yes": [
+     "Each state setting its own rules on abortion, guns, wages and schools"
+    ],
+    "no": [
+     "National rules overriding states"
+    ]
+   }
   ],
-  "torn": "I weigh national standards and state control about equally."
+  "torn": {
+   "t": "You weigh national standards and state control about equally.",
+   "means": [
+    "You'd set some issues nationally and leave others to states"
+   ]
+  }
  },
  "closer_government_tradeoff": {
   "s": [
-   "The federal government solves problems like roads, schools and public health better, even if it's far from local conditions.",
-   "I lean toward the federal government solving these problems.",
-   "I lean toward state and local governments solving these problems.",
-   "State and local governments solve these problems better, even if some lack money or expertise."
+   {
+    "t": "The federal government solves problems like roads, schools and public health better.",
+    "yes": [
+     "Federal money and rules for roads, schools and public health"
+    ],
+    "no": [
+     "Shifting these jobs to states and cities"
+    ]
+   },
+   {
+    "t": "On balance, the federal government solves problems like roads, schools and public health better.",
+    "yes": [
+     "Federal money and rules for roads, schools and public health"
+    ],
+    "no": [
+     "Shifting these jobs to states and cities"
+    ]
+   },
+   {
+    "t": "On balance, state and local governments solve these problems better, even if some lack money or expertise.",
+    "yes": [
+     "Handing roads, schools and public health to states and cities"
+    ],
+    "no": [
+     "Federal control of these jobs"
+    ]
+   },
+   {
+    "t": "State and local governments solve these problems better, even if some lack money or expertise.",
+    "yes": [
+     "Handing roads, schools and public health to states and cities"
+    ],
+    "no": [
+     "Federal control of these jobs"
+    ]
+   }
   ],
-  "torn": "I'd trust federal and state or local government about equally."
+  "torn": {
+   "t": "You'd trust federal and state or local government about equally.",
+   "means": [
+    "Which level is better depends on the problem"
+   ]
+  }
  },
  "states_differ": [
   "This should be the same nationwide: {case}.",
   "Each state should decide this: {case}."
  ],
  "state_preemption": [
-  "States should be able to stop cities from passing their own laws on things like minimum wage, guns or plastic bags.",
-  "States should override city laws only where one statewide rule is clearly needed.",
-  "Cities should be able to set their own rules on these things, without states overriding them."
+  {
+   "t": "States should be able to stop cities from passing their own laws on things like minimum wage, guns or plastic bags.",
+   "yes": [
+    "State laws overriding city ordinances"
+   ],
+   "no": [
+    "Cities setting their own rules"
+   ]
+  },
+  {
+   "t": "States should override city laws only where one statewide rule is clearly needed.",
+   "yes": [
+    "Limited state overrides"
+   ],
+   "no": [
+    "Blanket preemption",
+    "No state overrides"
+   ]
+  },
+  {
+   "t": "Cities should set their own rules on these things without states overriding them.",
+   "yes": [
+    "Local control over wages, guns and bags"
+   ],
+   "no": [
+    "State preemption laws"
+   ]
+  }
  ],
  "grant_conditions": [
-  "The federal government should be able to withhold money from states over any policy it chooses.",
-  "The federal government can attach conditions only about how that money is spent.",
-  "Federal money to states should come with no conditions; states spend it as they see fit."
+  {
+   "t": "The federal government should be able to withhold money from states over any policy it chooses.",
+   "yes": [
+    "Cutting funds to states that don't follow federal policy, under any administration"
+   ],
+   "no": [
+    "Limits on funding conditions"
+   ]
+  },
+  {
+   "t": "The federal government can attach conditions only about how that money is spent.",
+   "yes": [
+    "Conditions tied to the program being funded"
+   ],
+   "no": [
+    "Cutting funds over unrelated policies"
+   ]
+  },
+  {
+   "t": "Federal money to states should come with no conditions.",
+   "yes": [
+    "No-strings federal grants"
+   ],
+   "no": [
+    "Any funding conditions"
+   ]
+  }
  ],
  "grant_conditions_cases": [
   "The federal government shouldn't be able to cut a state's or city's funding for this: {case}.",
   "The federal government should be able to cut a state's or city's funding for this: {case}."
  ],
  "state_refusal": [
-  "States must help enforce federal laws, even ones they disagree with.",
-  "States can decline to use their own police and resources on federal laws, but can't block federal agents.",
-  "States can refuse to help and pass laws blocking federal enforcement within their borders."
+  {
+   "t": "States must help enforce federal laws, even ones they disagree with.",
+   "yes": [
+    "Requiring state police to help with federal laws"
+   ],
+   "no": [
+    "States refusing to cooperate"
+   ]
+  },
+  {
+   "t": "States can decline to use their own police and resources on federal laws, but can't block federal agents.",
+   "yes": [
+    "States declining to help",
+    "Federal agents still enforcing"
+   ],
+   "no": [
+    "States blocking federal agents"
+   ]
+  },
+  {
+   "t": "States can refuse to help and pass laws blocking federal enforcement within their borders.",
+   "yes": [
+    "State laws blocking federal enforcement"
+   ],
+   "no": [
+    "Federal enforcement over state objections"
+   ]
+  }
  ],
  "state_refusal_cases": [
   "States must help enforce this: {case}.",
   "States should be able to refuse to help enforce this: {case}."
  ],
  "federal_size": [
-  "The federal government should be much bigger, doing much more.",
-  "The federal government should be somewhat bigger.",
-  "The federal government should stay about the size it is now.",
-  "The federal government should be somewhat smaller.",
-  "The federal government should be much smaller, doing far less."
+  {
+   "t": "The federal government should be much bigger, doing much more.",
+   "yes": [
+    "Large new federal programs in areas like health care, childcare and housing",
+    "Federal spending well above today's level"
+   ],
+   "no": [
+    "Cutting federal programs or agencies"
+   ]
+  },
+  {
+   "t": "The federal government should be somewhat bigger.",
+   "yes": [
+    "Some new or expanded federal programs"
+   ],
+   "no": [
+    "Large new programs",
+    "Cutting programs"
+   ]
+  },
+  {
+   "t": "The federal government should stay about the size it is now.",
+   "yes": [
+    "Federal spending and programs at about today's level"
+   ],
+   "no": [
+    "Major expansion",
+    "Major cuts"
+   ]
+  },
+  {
+   "t": "The federal government should be somewhat smaller.",
+   "yes": [
+    "Trimming federal spending and some programs"
+   ],
+   "no": [
+    "New federal programs",
+    "Closing major agencies"
+   ]
+  },
+  {
+   "t": "The federal government should be much smaller, doing far less.",
+   "yes": [
+    "Closing agencies and ending many programs",
+    "Leaving more to states, charities and markets"
+   ],
+   "no": [
+    "New or expanded federal programs"
+   ]
+  }
  ],
  "experimentation_tradeoff": {
   "s": [
-   "When it's unclear what works, the country should pick one national approach based on the best evidence, even if states can't try alternatives.",
-   "I lean toward one national approach.",
-   "I lean toward letting states experiment.",
-   "States should try different approaches, even if some get it wrong and people there are worse off."
+   {
+    "t": "When it's unclear what works, pick one national approach based on the best evidence.",
+    "yes": [
+     "One national health, school or welfare policy"
+    ],
+    "no": [
+     "Each state trying its own approach"
+    ]
+   },
+   {
+    "t": "On balance, when it's unclear what works, pick one national approach based on the best evidence.",
+    "yes": [
+     "One national health, school or welfare policy"
+    ],
+    "no": [
+     "Each state trying its own approach"
+    ]
+   },
+   {
+    "t": "On balance, let states try different approaches, even if some get it wrong.",
+    "yes": [
+     "States testing ideas like single-payer, vouchers or work requirements"
+    ],
+    "no": [
+     "One national approach for everyone"
+    ]
+   },
+   {
+    "t": "Let states try different approaches, even if some get it wrong.",
+    "yes": [
+     "States testing ideas like single-payer, vouchers or work requirements"
+    ],
+    "no": [
+     "One national approach for everyone"
+    ]
+   }
   ],
-  "torn": "I weigh one national approach and state experiments about equally."
+  "torn": {
+   "t": "You weigh one national approach and state experiments about equally.",
+   "means": [
+    "You'd let states experiment, then adopt what works nationally"
+   ]
+  }
  }
 }

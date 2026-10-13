@@ -1,407 +1,407 @@
 {
-  "domain_id": "D05",
-  "domain": "Environment & energy",
-  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
-  "notes": "Each action item names its cost. The climate belief item is reported separately and tested for whether it belongs on ENV. Nuclear and permitting are cross-cutting candidates.",
-  "items": [
+ "domain_id": "D05",
+ "domain": "Environment & energy",
+ "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+ "notes": "Each action item names its cost. The climate belief item is reported separately and tested for whether it belongs on ENV. Nuclear and permitting are cross-cutting candidates.",
+ "items": [
+  {
+   "id": "net_zero_target",
+   "subtopic": "Level of climate action and its cost",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "By when should the US aim to stop adding to the overall amount of greenhouse gases in the atmosphere (net zero)?",
+   "scope": "Net zero means any emissions left are balanced by removing the same amount.",
+   "options": [
+    "By 2035",
+    "By 2050",
+    "Later than 2050",
+    "No target"
+   ],
+   "high_pole": "no target"
+  },
+  {
+   "id": "climate_willing_to_pay",
+   "subtopic": "Level of climate action and its cost",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "How much more per month would you accept paying in energy costs for policies that fight climate change?",
+   "scope": "Think of your own household's electricity and fuel bills.",
+   "options": [
+    "$50 or more",
+    "About $20",
+    "About $5",
+    "Nothing"
+   ],
+   "high_pole": "nothing"
+  },
+  {
+   "id": "carbon_tax",
+   "subtopic": "Carbon pricing",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should there be a federal tax on the carbon pollution from fossil fuels?",
+   "scope": "A tax of $100 per ton would add about 90 cents to a gallon of gasoline.",
+   "options": [
+    "Yes, a high and rising tax, around $100 a ton",
+    "Yes, a moderate tax, around $25 to $50 a ton",
+    "No carbon tax"
+   ],
+   "high_pole": "no tax",
+   "facts": [
     {
-      "id": "net_zero_target",
-      "subtopic": "Level of climate action and its cost",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "By when should the US aim to stop adding to the overall amount of greenhouse gases in the atmosphere (net zero)?",
-      "scope": "Net zero means any emissions left are balanced by removing the same amount.",
-      "options": [
-        "By 2035",
-        "By 2050",
-        "Later than 2050",
-        "No target"
-      ],
-      "high_pole": "no target"
-    },
-    {
-      "id": "climate_willing_to_pay",
-      "subtopic": "Level of climate action and its cost",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "How much more per month would you accept paying in energy costs for policies that fight climate change?",
-      "scope": "Think of your own household's electricity and fuel bills.",
-      "options": [
-        "$50 or more",
-        "About $20",
-        "About $5",
-        "Nothing"
-      ],
-      "high_pole": "nothing"
-    },
-    {
-      "id": "carbon_tax",
-      "subtopic": "Carbon pricing",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should there be a federal tax on the carbon pollution from fossil fuels?",
-      "scope": "A tax of $100 per ton would add about 90 cents to a gallon of gasoline.",
-      "options": [
-        "Yes, a high and rising tax, around $100 a ton",
-        "Yes, a moderate tax, around $25 to $50 a ton",
-        "No carbon tax"
-      ],
-      "high_pole": "no tax",
-      "facts": [
-        {
-          "claim": "Burning a gallon of gasoline emits about 8.9 kg CO2, so $100/ton is about $0.89/gallon",
-          "source": "US EPA greenhouse gas equivalencies",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "carbon_tax_use",
-      "subtopic": "Carbon pricing",
-      "axis": [
-        "ENV",
-        "REDIS"
-      ],
-      "format": "position",
-      "stem": "If there were a federal carbon tax, what should the money mainly be used for?",
-      "scope": "Answer even if you oppose a carbon tax.",
-      "options": [
-        "Clean energy and climate programs",
-        "Equal rebates paid to every household",
-        "Cutting other taxes, such as income or payroll taxes"
-      ],
-      "high_pole": "cut other taxes"
-    },
-    {
-      "id": "carbon_border_fee",
-      "subtopic": "Carbon pricing",
-      "axis": [
-        "ENV",
-        "TRADE"
-      ],
-      "format": "position",
-      "stem": "Should imports from countries with weaker pollution rules pay a fee based on the carbon pollution from making them?",
-      "scope": "Goods like steel, cement and aluminum.",
-      "options": [
-        "Yes",
-        "Only if US producers also pay for their own carbon pollution",
-        "No"
-      ],
-      "high_pole": "no",
-      "knowledge_heavy": true
-    },
-    {
-      "id": "drilling_public_lands",
-      "subtopic": "Fossil fuel production on public land",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should new oil and gas drilling be allowed on federal lands and in federal waters offshore?",
-      "scope": "Land and waters owned by the federal government.",
-      "options": [
-        "No new drilling, and phase out existing leases",
-        "No new leases, but existing ones can continue",
-        "Allow new drilling with strict environmental review",
-        "Expand drilling and speed up approvals"
-      ],
-      "high_pole": "expand"
-    },
-    {
-      "id": "coal_plants",
-      "subtopic": "Fossil fuel production on public land",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "What should happen to coal-fired power plants?",
-      "scope": "Plants that make electricity by burning coal.",
-      "options": [
-        "Close them all by about 2035",
-        "Phase them out gradually as they age",
-        "Keep them running as long as they make economic sense",
-        "Use government help to keep plants open"
-      ],
-      "high_pole": "keep open"
-    },
-    {
-      "id": "nuclear_power",
-      "subtopic": "Nuclear power",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should the US build more nuclear power plants?",
-      "scope": "Plants that make electricity from nuclear energy.",
-      "options": [
-        "Phase out nuclear power",
-        "No new plants, but keep existing ones running",
-        "Some new plants, under current safety rules",
-        "Many new plants, with faster approvals"
-      ],
-      "high_pole": "many more",
-      "notes": "Cross-cutting candidate: support is high among both climate hawks and fossil-fuel supporters.",
-      "testlet": "nuclear"
-    },
-    {
-      "id": "nuclear_funding",
-      "subtopic": "Nuclear power",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should government help pay to build new nuclear plants?",
-      "scope": "Federal money, loans or tax credits.",
-      "options": [
-        "No government money",
-        "Loan guarantees only",
-        "Yes, large direct support"
-      ],
-      "high_pole": "large support",
-      "testlet": "nuclear"
-    },
-    {
-      "id": "ev_requirement",
-      "subtopic": "Electric vehicle rules and subsidies",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should government require most new cars sold to be electric by a set date?",
-      "scope": "New passenger cars and SUVs.",
-      "options": [
-        "Yes, by 2035",
-        "No requirement, but keep tightening pollution limits for new cars",
-        "No requirement and no tighter limits"
-      ],
-      "high_pole": "no requirement"
-    },
-    {
-      "id": "ev_tax_credit",
-      "subtopic": "Electric vehicle rules and subsidies",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "Should buyers of new electric vehicles get a federal tax credit?",
-      "scope": "Credits for individual buyers.",
-      "context": "There is currently no federal tax credit for buying an electric vehicle.",
-      "options": [
-        "Yes, $7,500 or more",
-        "Yes, a smaller credit, only for lower- and middle-income buyers",
-        "No credit, as now"
-      ],
-      "high_pole": "no credit",
-      "facts": [
-        {
-          "claim": "Clean vehicle credit (IRC 30D) terminated for vehicles acquired after September 30, 2025",
-          "source": "Public Law 119-21 (2025); IRS",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "env_jobs_tradeoff",
-      "subtopic": "Environmental rules vs jobs",
-      "axis": [
-        "ENV"
-      ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to your view?",
-      "scope": "Think of industries like mining, oil and manufacturing.",
-      "sides": [
-        {
-          "label": "Protect the environment",
-          "text": "Stricter environmental rules, even if some jobs in those industries are lost."
-        },
-        {
-          "label": "Protect the jobs",
-          "text": "Keep those jobs, even if the environment is less protected."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "permitting_tradeoff",
-      "subtopic": "Environmental rules vs jobs",
-      "axis": [
-        "ENV",
-        "HOUSING"
-      ],
-      "format": "tradeoff",
-      "stem": "For big projects like pipelines, power lines and solar farms, which comes closer to your view?",
-      "scope": "Projects of any kind of energy.",
-      "sides": [
-        {
-          "label": "Thorough review",
-          "text": "Keep thorough environmental reviews, even if projects take many years to build."
-        },
-        {
-          "label": "Build faster",
-          "text": "Speed up approvals, even if some environmental harms are missed."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B",
-      "notes": "Cross-cutting candidate: clean-energy builders and fossil-fuel producers both favor speed."
-    },
-    {
-      "id": "land_protection",
-      "subtopic": "Conservation and public lands",
-      "axis": [
-        "ENV"
-      ],
-      "format": "position",
-      "stem": "How much land should be protected from development like mining, drilling and logging?",
-      "scope": "Land and waters in the US.",
-      "options": [
-        "Much more, such as 30% of US land by 2030",
-        "Somewhat more than today",
-        "About as much as today",
-        "Less; open more for development"
-      ],
-      "high_pole": "less"
-    },
-    {
-      "id": "sell_public_land",
-      "subtopic": "Conservation and public lands",
-      "axis": [
-        "ENV",
-        "FED"
-      ],
-      "format": "position",
-      "stem": "Should the federal government sell some of its land to states or private owners?",
-      "scope": "Federal land such as national forests and grazing land, not national parks.",
-      "options": [
-        "No; keep it all public",
-        "Only small parcels near towns, for housing",
-        "Yes, large amounts"
-      ],
-      "high_pole": "large amounts"
-    },
-    {
-      "id": "climate_agreements",
-      "subtopic": "International climate agreements",
-      "axis": [
-        "ENV",
-        "GLOBAL"
-      ],
-      "format": "position",
-      "stem": "Should the US take part in international agreements to cut greenhouse gas emissions, like the Paris Agreement?",
-      "scope": "Agreements among most countries of the world.",
-      "context": "The US is not currently part of the Paris Agreement.",
-      "options": [
-        "Yes, with binding targets for each country",
-        "Yes, with voluntary targets, as in the Paris Agreement",
-        "No"
-      ],
-      "high_pole": "no",
-      "facts": [
-        {
-          "claim": "US withdrawal from the Paris Agreement took effect in January 2026, one year after notification",
-          "source": "E&E News, 'So long, Paris: US officially leaves landmark climate pact' (Jan 2026); UNFCCC",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "climate_belief",
-      "subtopic": "Beliefs about climate science",
-      "axis": [
-        "ENV"
-      ],
-      "format": "belief",
-      "stem": "Which comes closest to your view of climate change?",
-      "scope": "Changes in the Earth's average temperature over recent decades.",
-      "options": [
-        "Mostly caused by humans, and a serious threat",
-        "Mostly caused by humans, but a manageable problem",
-        "Partly human, partly natural, with uncertain effects",
-        "Mostly natural, not caused by humans",
-        "Not happening"
-      ],
-      "high_pole": "skeptical"
-    },
-    {
-      "id": "environmental_justice",
-      "subtopic": "Environmental justice",
-      "axis": [
-        "ENV",
-        "EQUITY"
-      ],
-      "format": "position",
-      "stem": "Should pollution cleanup give extra priority to low-income and minority neighborhoods?",
-      "scope": "Federal cleanup money and enforcement.",
-      "options": [
-        "Yes, with a set share of funding for those areas",
-        "Prioritize the most polluted areas, whoever lives there",
-        "No special priority"
-      ],
-      "high_pole": "no priority"
-    },
-    {
-      "id": "adaptation_tradeoff",
-      "subtopic": "Adaptation vs emissions cuts",
-      "axis": [
-        "ENV"
-      ],
-      "format": "tradeoff",
-      "stem": "For climate change, where should government money mainly go?",
-      "scope": "Answer even if you doubt climate change matters much.",
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B",
-      "sides": [
-        {
-          "label": "Cut emissions",
-          "text": "Cutting emissions, even if less is spent protecting communities from floods and heat."
-        },
-        {
-          "label": "Prepare for effects",
-          "text": "Protecting communities from floods and heat, even if emissions are cut more slowly."
-        }
-      ]
-    },
-    {
-      "id": "plastic_bags",
-      "subtopic": "Local environmental rules",
-      "axis": [
-        "ENV",
-        "LIBERTY"
-      ],
-      "format": "position",
-      "stem": "Should single-use plastic bags be banned or charged for in stores?",
-      "scope": "Bags given out at checkout.",
-      "options": [
-        "Banned",
-        "Allowed, with a fee per bag",
-        "Allowed, free, as each store chooses"
-      ],
-      "high_pole": "allowed free"
+     "claim": "Burning a gallon of gasoline emits about 8.9 kg CO2, so $100/ton is about $0.89/gallon",
+     "source": "US EPA greenhouse gas equivalencies",
+     "checked": "2026-10-12",
+     "verify": false
     }
-  ]
+   ]
+  },
+  {
+   "id": "carbon_tax_use",
+   "subtopic": "Carbon pricing",
+   "axis": [
+    "ENV",
+    "REDIS"
+   ],
+   "format": "position",
+   "stem": "If there were a federal carbon tax, what should the money mainly be used for?",
+   "scope": "Answer even if you oppose a carbon tax.",
+   "options": [
+    "Clean energy and climate programs",
+    "Equal rebates paid to every household",
+    "Cutting other taxes, such as income or payroll taxes"
+   ],
+   "high_pole": "cut other taxes"
+  },
+  {
+   "id": "carbon_border_fee",
+   "subtopic": "Carbon pricing",
+   "axis": [
+    "ENV",
+    "TRADE"
+   ],
+   "format": "position",
+   "stem": "Should imports from countries with weaker pollution rules pay a fee based on the carbon pollution from making them?",
+   "scope": "Goods like steel, cement and aluminum.",
+   "options": [
+    "Yes",
+    "Only if US producers also pay for their own carbon pollution",
+    "No"
+   ],
+   "high_pole": "no",
+   "knowledge_heavy": true
+  },
+  {
+   "id": "drilling_public_lands",
+   "subtopic": "Fossil fuel production on public land",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should new oil and gas drilling be allowed on federal lands and in federal waters offshore?",
+   "scope": "Land and waters owned by the federal government.",
+   "options": [
+    "No new drilling, and phase out existing leases",
+    "No new leases, but existing ones can continue",
+    "Allow new drilling with strict environmental review",
+    "Expand drilling and speed up approvals"
+   ],
+   "high_pole": "expand"
+  },
+  {
+   "id": "coal_plants",
+   "subtopic": "Fossil fuel production on public land",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "What should happen to coal-fired power plants?",
+   "scope": "Plants that make electricity by burning coal.",
+   "options": [
+    "Close them all by about 2035",
+    "Phase them out gradually as they age",
+    "Keep them running as long as they make economic sense",
+    "Use government help to keep plants open"
+   ],
+   "high_pole": "keep open"
+  },
+  {
+   "id": "nuclear_power",
+   "subtopic": "Nuclear power",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should the US build more nuclear power plants?",
+   "scope": "Plants that make electricity from nuclear energy.",
+   "options": [
+    "Phase out nuclear power",
+    "No new plants, but keep existing ones running",
+    "Some new plants, under current safety rules",
+    "Many new plants, with faster approvals"
+   ],
+   "high_pole": "many more",
+   "notes": "Cross-cutting candidate: support is high among both climate hawks and fossil-fuel supporters.",
+   "testlet": "nuclear"
+  },
+  {
+   "id": "nuclear_funding",
+   "subtopic": "Nuclear power",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should government help pay to build new nuclear plants?",
+   "scope": "Federal money, loans or tax credits.",
+   "options": [
+    "No government money",
+    "Loan guarantees only",
+    "Yes, large direct support"
+   ],
+   "high_pole": "large support",
+   "testlet": "nuclear"
+  },
+  {
+   "id": "ev_requirement",
+   "subtopic": "Electric vehicle rules and subsidies",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should government require most new cars sold to be electric by a set date?",
+   "scope": "New passenger cars and SUVs.",
+   "options": [
+    "Yes, by 2035",
+    "No requirement, but keep tightening pollution limits for new cars",
+    "No requirement and no tighter limits"
+   ],
+   "high_pole": "no requirement"
+  },
+  {
+   "id": "ev_tax_credit",
+   "subtopic": "Electric vehicle rules and subsidies",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "Should buyers of new electric vehicles get a federal tax credit?",
+   "scope": "Credits for individual buyers.",
+   "context": "There is currently no federal tax credit for buying an electric vehicle.",
+   "options": [
+    "Yes, $7,500 or more",
+    "Yes, a smaller credit, only for lower- and middle-income buyers",
+    "No credit, as now"
+   ],
+   "high_pole": "no credit",
+   "facts": [
+    {
+     "claim": "Clean vehicle credit (IRC 30D) terminated for vehicles acquired after September 30, 2025",
+     "source": "Public Law 119-21 (2025); IRS",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "env_jobs_tradeoff",
+   "subtopic": "Environmental rules vs jobs",
+   "axis": [
+    "ENV"
+   ],
+   "format": "tradeoff",
+   "stem": "Which comes closer to your view?",
+   "scope": "Industries like coal and metal mining, oil and gas, and manufacturing. Rules like limits on mine runoff, smokestack emissions and drilling near water supplies.",
+   "sides": [
+    {
+     "label": "Protect the environment",
+     "text": "Stricter environmental rules, even if some jobs in those industries are lost."
+    },
+    {
+     "label": "Protect the jobs",
+     "text": "Keep those jobs, even if the environment is less protected."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "permitting_tradeoff",
+   "subtopic": "Environmental rules vs jobs",
+   "axis": [
+    "ENV",
+    "HOUSING"
+   ],
+   "format": "tradeoff",
+   "stem": "For big projects like pipelines, power lines and solar farms, which comes closer to your view?",
+   "scope": "Projects of any kind of energy. Reviews study effects on wildlife, water, air and nearby residents, and today can take 4 years or more for major projects.",
+   "sides": [
+    {
+     "label": "Thorough review",
+     "text": "Keep thorough environmental reviews, even if projects take many years to build."
+    },
+    {
+     "label": "Build faster",
+     "text": "Speed up approvals, even if some environmental harms are missed."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B",
+   "notes": "Cross-cutting candidate: clean-energy builders and fossil-fuel producers both favor speed."
+  },
+  {
+   "id": "land_protection",
+   "subtopic": "Conservation and public lands",
+   "axis": [
+    "ENV"
+   ],
+   "format": "position",
+   "stem": "How much land should be protected from development like mining, drilling and logging?",
+   "scope": "Land and waters in the US.",
+   "options": [
+    "Much more, such as 30% of US land by 2030",
+    "Somewhat more than today",
+    "About as much as today",
+    "Less; open more for development"
+   ],
+   "high_pole": "less"
+  },
+  {
+   "id": "sell_public_land",
+   "subtopic": "Conservation and public lands",
+   "axis": [
+    "ENV",
+    "FED"
+   ],
+   "format": "position",
+   "stem": "Should the federal government sell some of its land to states or private owners?",
+   "scope": "Federal land such as national forests and grazing land, not national parks.",
+   "options": [
+    "No; keep it all public",
+    "Only small parcels near towns, for housing",
+    "Yes, large amounts"
+   ],
+   "high_pole": "large amounts"
+  },
+  {
+   "id": "climate_agreements",
+   "subtopic": "International climate agreements",
+   "axis": [
+    "ENV",
+    "GLOBAL"
+   ],
+   "format": "position",
+   "stem": "Should the US take part in international agreements to cut greenhouse gas emissions, like the Paris Agreement?",
+   "scope": "Agreements among most countries of the world.",
+   "context": "The US is not currently part of the Paris Agreement.",
+   "options": [
+    "Yes, with binding targets for each country",
+    "Yes, with voluntary targets, as in the Paris Agreement",
+    "No"
+   ],
+   "high_pole": "no",
+   "facts": [
+    {
+     "claim": "US withdrawal from the Paris Agreement took effect in January 2026, one year after notification",
+     "source": "E&E News, 'So long, Paris: US officially leaves landmark climate pact' (Jan 2026); UNFCCC",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "climate_belief",
+   "subtopic": "Beliefs about climate science",
+   "axis": [
+    "ENV"
+   ],
+   "format": "belief",
+   "stem": "Which comes closest to your view of climate change?",
+   "scope": "Changes in the Earth's average temperature over recent decades.",
+   "options": [
+    "Mostly caused by humans, and a serious threat",
+    "Mostly caused by humans, but a manageable problem",
+    "Partly human, partly natural, with uncertain effects",
+    "Mostly natural, not caused by humans",
+    "Not happening"
+   ],
+   "high_pole": "skeptical"
+  },
+  {
+   "id": "environmental_justice",
+   "subtopic": "Environmental justice",
+   "axis": [
+    "ENV",
+    "EQUITY"
+   ],
+   "format": "position",
+   "stem": "Should pollution cleanup give extra priority to low-income and minority neighborhoods?",
+   "scope": "Federal cleanup money and enforcement.",
+   "options": [
+    "Yes, with a set share of funding for those areas",
+    "Prioritize the most polluted areas, whoever lives there",
+    "No special priority"
+   ],
+   "high_pole": "no priority"
+  },
+  {
+   "id": "adaptation_tradeoff",
+   "subtopic": "Adaptation vs emissions cuts",
+   "axis": [
+    "ENV"
+   ],
+   "format": "tradeoff",
+   "stem": "For climate change, where should government money mainly go?",
+   "scope": "Answer even if you doubt climate change matters much.",
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B",
+   "sides": [
+    {
+     "label": "Cut emissions",
+     "text": "Cutting emissions, even if less is spent protecting communities from floods and heat."
+    },
+    {
+     "label": "Prepare for effects",
+     "text": "Protecting communities from floods and heat, even if emissions are cut more slowly."
+    }
+   ]
+  },
+  {
+   "id": "plastic_bags",
+   "subtopic": "Local environmental rules",
+   "axis": [
+    "ENV",
+    "LIBERTY"
+   ],
+   "format": "position",
+   "stem": "Should single-use plastic bags be banned or charged for in stores?",
+   "scope": "Bags given out at checkout.",
+   "options": [
+    "Banned",
+    "Allowed, with a fee per bag",
+    "Allowed, free, as each store chooses"
+   ],
+   "high_pole": "allowed free"
+  }
+ ]
 }

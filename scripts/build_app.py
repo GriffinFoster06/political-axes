@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import os
 import shutil
 import hashlib
@@ -63,8 +64,22 @@ def bank():
 
 def statements(items):
     """items/statements/*.json: what each answer means, in plain words, shown after it's picked.
-    {id: [one per option, in code order]} or, for tradeoffs, {id: {"s": [4 statements], "torn": "..."}}.
-    Exception follow-ups take one template per option with {case} where the case text goes."""
+    {id: [one per option, in code order]} or, for tradeoffs, {id: {"s": [4 statements], "torn": ...}}.
+    Each statement is {"t": headline, "yes": [...], "no": [...], "means": [...]}: the specific
+    things that answer means you'd support, oppose or believe. Exception follow-ups take one
+    template string per option with {case} where the case text goes."""
+    def check(name, iid, st):
+        if not isinstance(st, dict) or not isinstance(st.get("t"), str) or not st["t"].strip():
+            raise SystemExit(f"{name}: {iid} needs {{t, yes/no/means}} statements, got {st!r:.80}")
+        lists = [st.get(k) for k in ("yes", "no", "means") if k in st]
+        if not lists or set(st) - {"t", "yes", "no", "means"}:
+            raise SystemExit(f"{name}: {iid} statement needs yes, no or means lists: {st['t']}")
+        for xs in lists:
+            if not isinstance(xs, list) or not xs or not all(isinstance(x, str) and len(x.split()) >= 2 for x in xs):
+                raise SystemExit(f"{name}: {iid} has an empty or too-short list entry: {xs!r:.80}")
+            vague = [x for x in xs if len(x.split()) < 4 and re.search(r"\b(it|them|this|that)\b", x, re.I)]
+            if vague:
+                raise SystemExit(f"{name}: {iid} list entry needs to name what it means: {vague[0]!r}")
     out = {}
     for p in sorted((ROOT / "items" / "statements").glob("*.json")):
         for iid, v in json.loads(p.read_text()).items():
@@ -75,8 +90,12 @@ def statements(items):
             lst = v["s"] if isinstance(v, dict) else v
             if len(lst) != len(items[iid]["options"]):
                 raise SystemExit(f"{p.name}: {iid} has {len(lst)} statements for {len(items[iid]['options'])} options")
-            if items[iid]["format"] == "exceptions" and not all("{case}" in t for t in lst):
-                raise SystemExit(f"{p.name}: {iid} statements need a {{case}} slot")
+            if items[iid]["format"] == "exceptions":
+                if not all(isinstance(t, str) and "{case}" in t for t in lst):
+                    raise SystemExit(f"{p.name}: {iid} statements need a {{case}} slot")
+            else:
+                for st in lst + ([v["torn"]] if isinstance(v, dict) and "torn" in v else []):
+                    check(p.name, iid, st)
             out[iid] = v
     missing = [i for i in items if i not in out and not items[i].get("issue_map_only")]
     if missing:

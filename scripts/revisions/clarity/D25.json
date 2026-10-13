@@ -1,0 +1,169 @@
+{
+ "fair_small_gaps": {
+  "why": "'Small' and the means of keeping gaps small were undefined.",
+  "scope": "The richest 1% of US households own about 30% of all wealth; the bottom half own about 2.5%. Small gaps would take much higher taxes on large incomes, fortunes and inheritances, spent on everyone else."
+ },
+ "fair_keep_earnings": {
+  "why": "'Keep what they earn' didn't say what earnings or what keeping means.",
+  "scope": "“What they earn” means pay, business profits and investment gains. Keeping it means low taxes on it, even for the highest earners, such as a founder whose company makes them a billionaire."
+ },
+ "security_vs_choice": {
+  "why": "'Basic needs' and 'fewer choices' were undefined.",
+  "sides": {
+   "0": {
+    "text": "Everyone is guaranteed health care, enough food, a place to live and a basic income, even if taxes are high for most workers and people have less say over their doctor, health plan or pension."
+   },
+   "1": {
+    "text": "People keep more of what they earn and choose their own health plan, savings and housing, even if some can't afford health care or a home and go without."
+   }
+  }
+ },
+ "equal_treatment_vs_association": {
+  "why": "'Turned away unfairly' and the kinds of businesses were undefined.",
+  "scope": "Businesses open to the public, such as shops, restaurants, hotels, landlords and wedding vendors.",
+  "sides": {
+   "0": {
+    "text": "Laws that bar them from turning people away over race, religion, sex, sexual orientation, disability or similar traits, even if owners must serve people or events they object to."
+   },
+   "1": {
+    "text": "Owners' freedom to choose whom they serve or rent to, even if some people are turned away over traits like these."
+   }
+  }
+ },
+ "liberty_vs_order": {
+  "why": "'Freedoms' and 'order' were abstract.",
+  "scope": "Think of things like police stopping and searching people in high-crime areas, curfews during riots, clearing homeless camps from parks, cameras in public places, and limits on protests that block roads.",
+  "sides": {
+   "0": {
+    "text": "Protecting rights like not being stopped and searched without cause, protesting, and living as you choose in public, even if crime and disorder are harder to control."
+   },
+   "1": {
+    "text": "Keeping streets safe and orderly with steps like stop-and-search, curfews, public cameras and clearing camps, even if some people's freedoms are limited."
+   }
+  }
+ },
+ "conscience_vs_law": {
+  "why": "No examples of what breaking a law out of conscience looks like.",
+  "scope": "Examples: refusing to fight in a war you think is unjust, hiding someone from deportation, a clerk refusing marriage licenses they object to, blocking a road in protest. Think about laws in general."
+ },
+ "tradition_wisdom": {
+  "why": "No examples of which customs and traditions.",
+  "scope": "Customs such as marriage before having children, regular religious worship, respect for elders, family meals, traditional roles for men and women, and national rituals like the Pledge of Allegiance."
+ },
+ "progress_by_questioning": {
+  "why": "No examples of progress or of traditional ways.",
+  "scope": "Changes such as ending slavery, women voting and working outside the home, modern medicine replacing folk remedies, same-sex marriage, and new industries replacing old ones."
+ },
+ "pace_of_change": {
+  "why": "Didn't say what kind of change.",
+  "scope": "Changes of any kind and in any direction, such as legalizing or banning drugs, changing who can marry, raising or cutting taxes and programs, new rules on immigration or guns, and new technology at school and work."
+ },
+ "moral_rules": {
+  "why": "No examples of basic moral questions.",
+  "scope": "Basic moral questions, like whether lying, stealing, killing or breaking a promise is wrong; not matters of taste."
+ },
+ "group_status_natural": {
+  "why": "'Power and status' was undefined.",
+  "scope": "Groups such as races, religions, social classes or regions. “Power and status” means wealth, top jobs, seats in Congress and on company boards, influence and respect."
+ },
+ "group_status_equalize": {
+  "why": "'Power and status' was undefined.",
+  "scope": "Groups such as races, religions, social classes or regions. “Power and status” means wealth, top jobs, seats in Congress and on company boards, influence and respect."
+ },
+ "zero_sum": {
+  "why": "No examples of groups or of getting ahead.",
+  "scope": "Groups such as rich and poor, workers and owners, races, men and women, immigrants and people born here, cities and rural areas. Getting ahead means more income, jobs, college seats or political power."
+ },
+ "positive_sum": {
+  "why": "No examples of groups or of getting ahead.",
+  "scope": "Groups such as rich and poor, workers and owners, races, men and women, immigrants and people born here, cities and rural areas. Getting ahead means more income, jobs, college seats or political power."
+ },
+ "proportional_vs_need": {
+  "why": "'Something valuable', 'need' and 'contribution' were abstract.",
+  "scope": "Things like pay raises at work, public benefits, college aid and help after a disaster.",
+  "sides": {
+   "0": {
+    "text": "Those who need it most get more, like a struggling single parent or the family hit hardest, even if they worked less or paid less in taxes."
+   },
+   "1": {
+    "text": "Those who contributed more get more, like the hardest workers or those who paid more in taxes, even if some in greater need get less."
+   }
+  }
+ },
+ "get_ahead": {
+  "why": "'Gets ahead' was undefined.",
+  "scope": "Getting ahead means earning a good income, owning a home, or doing better than your parents. Think about people in general, not any one person."
+ },
+ "child_independence": {
+  "why": "'Question rules' and 'respect authority' had no concrete behavior.",
+  "scope": "Children of elementary and middle school age, at home and at school.",
+  "sides": {
+   "0": {
+    "text": "To ask why a rule exists, say when they disagree with a parent or teacher, and make some choices of their own, even if they argue more and are harder to manage."
+   },
+   "1": {
+    "text": "To follow rules from parents, teachers and other adults without arguing, and accept “because I said so,” even if they question things less."
+   }
+  }
+ },
+ "child_discipline": {
+  "why": "'Express themselves', 'behave badly', 'discipline' and 'good manners' were undefined.",
+  "scope": "Children of elementary school age, about 5 to 11.",
+  "sides": {
+   "0": {
+    "text": "Let children show strong feelings, speak up, dress and play as they like, and handle misbehavior by talking it through, even if they're sometimes loud, rude or defiant."
+   },
+   "1": {
+    "text": "Expect please and thank you, sitting still at meals and in class, and obeying the first time, with time-outs or lost privileges when they don't, even if that means stricter parenting."
+   }
+  }
+ },
+ "weigh_foreigners": {
+  "why": "No examples of the decisions or tradeoffs involved.",
+  "scope": "Decisions like trade deals that cost some US jobs but raise incomes abroad, aid for disease and famine, how many refugees to take in, and climate rules that mostly help other countries."
+ },
+ "loyalty_humanity_country": {
+  "why": "Abstract; no example of what each loyalty looks like.",
+  "scope": "Your own sense of loyalty: for example, whether you'd sooner call yourself a citizen of the world or an American first."
+ },
+ "people_trustworthy": {
+  "why": "'The right thing' had no examples.",
+  "scope": "Everyday situations such as returning a lost wallet, paying taxes honestly, not littering, telling the truth on a form, and waiting your turn."
+ },
+ "people_selfish": {
+  "why": "'Act selfishly' had no examples.",
+  "scope": "Everyday situations such as returning a lost wallet, paying taxes honestly, not littering, telling the truth on a form, and waiting your turn."
+ },
+ "sacred_limits": {
+  "why": "'Sacred or natural' had no examples or definition.",
+  "scope": "Examples people point to: burning a national flag in private, dishonoring a dead body, cloning a human, selling your own kidney, or mocking a holy book where no one sees.",
+  "definitions": [
+   {
+    "term": "sacred",
+    "text": "Treated as holy or as deserving reverence, such as God, a holy book, the flag, or the dead."
+   },
+   {
+    "term": "natural",
+    "text": "In keeping with how things are meant to be, such as human biology or the family."
+   }
+  ]
+ },
+ "harm_only": {
+  "why": "No examples of acts that harm nobody.",
+  "scope": "Examples people point to: burning a national flag in private, dishonoring a dead body, cloning a human, selling your own kidney, or mocking a holy book where no one sees."
+ },
+ "gov_role_values": {
+  "why": "'Social problem' and 'makes things worse' had no examples.",
+  "scope": "Social problems such as poverty, homelessness, drug addiction, failing schools and people without health insurance. Government efforts such as cash and food aid, public housing, federal school programs, addiction treatment and Medicaid.",
+  "definitions": [
+   {
+    "term": "makes things worse",
+    "text": "The problem ends up as bad or worse than before, or the side effects, such as cost, dependence on aid, or pushing out families, charities and businesses, outweigh what was gained."
+   }
+  ]
+ },
+ "gov_role_values_rev": {
+  "why": "No examples of problems or of what solving them without the federal government means.",
+  "scope": "Problems such as poverty among older people, people without health insurance, polluted air and rivers, recovering from big disasters, and worn-out highways. “Without the federal government” means left to states, cities, charities, churches, businesses and families."
+ }
+}

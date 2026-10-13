@@ -1,0 +1,22 @@
+{
+ "engagement_tradeoff": {
+  "why": "'Active role' and 'world affairs' had no examples.",
+  "scope": "Think about the long run, not one conflict. An active role means things like military alliances, bases abroad, foreign aid, and pressing other countries on trade and security."
+ },
+ "allies_tradeoff": {
+  "why": "No examples of working with allies versus acting alone.",
+  "scope": "Think about trade, security and diplomacy: for example, sanctions, military action, tariffs and climate or trade agreements."
+ },
+ "defense_spending": {
+  "why": "'Somewhat' and 'a lot' had no scale.",
+  "scope": "Today it is roughly $900 billion to $1 trillion a year, more than the next several countries combined. “Somewhat” means about 5% to 10%; “a lot” means a quarter or more."
+ },
+ "foreign_aid_level": {
+  "why": "'A lot' and 'somewhat' had no scale.",
+  "scope": "Economic, health and humanitarian aid, not military aid. It has usually been about 1% of the federal budget. “A lot” means half again or more; “somewhat” means about 10% to 20%."
+ },
+ "human_rights_tradeoff": {
+  "why": "'Press on human rights' had no examples.",
+  "scope": "Countries that jail critics or persecute minorities. Pressing could mean sanctions, cutting arms sales or limiting trade."
+ }
+}

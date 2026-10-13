@@ -1,72 +1,387 @@
 {
  "church_state_tradeoff": {
   "s": [
-   "Religion and government should be kept strictly separate, even if public life has less room for religious expression.",
-   "I lean toward keeping religion and government separate.",
-   "I lean toward letting government support and reflect religion.",
-   "Government should be free to support and reflect religion, even if people of other faiths or none feel left out."
+   {
+    "t": "Keep religion and government strictly separate, even if public life has less room for religious expression.",
+    "yes": [
+     "No official prayers at government meetings",
+     "No religious displays on public property",
+     "No public money for religious schools"
+    ],
+    "no": [
+     "Government-sponsored religious displays or prayers"
+    ]
+   },
+   {
+    "t": "On balance, keep religion and government strictly separate, even if public life has less room for religious expression.",
+    "yes": [
+     "No official prayers at government meetings",
+     "No religious displays on public property",
+     "No public money for religious schools"
+    ],
+    "no": [
+     "Government-sponsored religious displays or prayers"
+    ]
+   },
+   {
+    "t": "On balance, let government support and reflect religion, even if people of other faiths or none feel left out.",
+    "yes": [
+     "Prayers before government meetings",
+     "Nativity scenes and Ten Commandments displays on public property",
+     "Public money for religious schools and charities"
+    ],
+    "no": [
+     "Removing religion from public settings"
+    ]
+   },
+   {
+    "t": "Let government support and reflect religion, even if people of other faiths or none feel left out.",
+    "yes": [
+     "Prayers before government meetings",
+     "Nativity scenes and Ten Commandments displays on public property",
+     "Public money for religious schools and charities"
+    ],
+    "no": [
+     "Removing religion from public settings"
+    ]
+   }
   ],
-  "torn": "I weigh strict separation and room for religion about equally."
+  "torn": {
+   "t": "You weigh separation and room for religion about equally.",
+   "means": [
+    "You'd allow some things, like “In God We Trust,” but not others, like school-led prayer"
+   ]
+  }
  },
  "faith_based_laws": {
   "s": [
-   "Laws should rest only on reasons everyone can share, not religious teaching, even when lawmakers are deeply religious.",
-   "I lean toward laws resting on shared reasons rather than religious teaching.",
-   "I lean toward lawmakers being free to base laws on their religious beliefs.",
-   "Lawmakers should be free to base laws on their religious beliefs, even if others don't share them."
+   {
+    "t": "Laws should rest on reasons everyone can share, not religious teaching.",
+    "yes": [
+     "Lawmakers explaining votes on abortion, marriage or immigration in non-religious terms"
+    ],
+    "no": [
+     "Passing laws because a religion teaches them"
+    ]
+   },
+   {
+    "t": "On balance, laws should rest on reasons everyone can share, not religious teaching.",
+    "yes": [
+     "Lawmakers explaining votes on abortion, marriage or immigration in non-religious terms"
+    ],
+    "no": [
+     "Passing laws because a religion teaches them"
+    ]
+   },
+   {
+    "t": "On balance, lawmakers should be free to base laws on their religious beliefs.",
+    "yes": [
+     "Votes on abortion, marriage, the death penalty or aid to the poor guided by faith"
+    ],
+    "no": [
+     "Requiring non-religious reasons for laws"
+    ]
+   },
+   {
+    "t": "Lawmakers should be free to base laws on their religious beliefs.",
+    "yes": [
+     "Votes on abortion, marriage, the death penalty or aid to the poor guided by faith"
+    ],
+    "no": [
+     "Requiring non-religious reasons for laws"
+    ]
+   }
   ],
-  "torn": "I weigh shared reasons and religious conviction about equally."
+  "torn": {
+   "t": "You weigh shared reasons and faith-based reasons about equally.",
+   "means": [
+    "Faith can shape a lawmaker's view, but you'd want laws to have reasons beyond it too"
+   ]
+  }
  },
  "school_prayer": [
-  "Public schools shouldn't organize prayer of any kind, including a moment of silence.",
-  "Public schools can hold a moment of silence, but no led prayer.",
-  "Teachers can lead prayer in public schools, as long as students can choose to skip it.",
-  "Public schools should hold a daily prayer led by the school."
+  {
+   "t": "Public schools shouldn't sponsor prayer in any form.",
+   "yes": [
+    "Banning school-organized prayer and moments of silence meant for prayer"
+   ],
+   "no": [
+    "Teacher-led prayer"
+   ]
+  },
+  {
+   "t": "A moment of silence in public schools, but no led prayer.",
+   "yes": [
+    "A daily moment of silence"
+   ],
+   "no": [
+    "Teacher- or school-led prayer"
+   ]
+  },
+  {
+   "t": "Teacher-led prayer in public schools that students can skip.",
+   "yes": [
+    "Classroom prayer led by teachers, with opt-outs"
+   ],
+   "no": [
+    "Banning school prayer"
+   ]
+  },
+  {
+   "t": "Daily prayer led by public schools.",
+   "yes": [
+    "School-led prayer every day"
+   ],
+   "no": [
+    "Keeping prayer out of public schools"
+   ]
+  }
  ],
  "ten_commandments": [
-  "The Ten Commandments shouldn't be displayed in public school classrooms.",
-  "The Ten Commandments can be shown only as part of a display on the history of law, alongside other documents.",
-  "The Ten Commandments should be displayed in every public school classroom."
+  {
+   "t": "The Ten Commandments shouldn't be displayed in public school classrooms.",
+   "yes": [
+    "Striking down state display laws"
+   ],
+   "no": [
+    "Classroom displays, even historical ones"
+   ]
+  },
+  {
+   "t": "Display the Ten Commandments only as part of a history-of-law display.",
+   "yes": [
+    "Showing them alongside documents like the Magna Carta and the Constitution"
+   ],
+   "no": [
+    "Posting them alone in every classroom"
+   ]
+  },
+  {
+   "t": "Display the Ten Commandments in every public school classroom.",
+   "yes": [
+    "Laws like Louisiana's and Texas's requiring classroom displays"
+   ],
+   "no": [
+    "Keeping them out of classrooms"
+   ]
+  }
  ],
  "vouchers_religious_schools": [
-  "Public tuition money should go only to non-religious private schools.",
-  "Families can use public tuition money at religious schools if religion classes are optional for those students.",
-  "Families should be able to use public tuition money at religious schools on equal terms with any other school."
+  {
+   "t": "Public tuition money should go only to non-religious private schools.",
+   "yes": [
+    "Barring vouchers at religious schools"
+   ],
+   "no": [
+    "Using public money at Catholic, Christian, Jewish or Muslim schools"
+   ]
+  },
+  {
+   "t": "Public tuition money can go to religious schools if religious classes are optional for those students.",
+   "yes": [
+    "Vouchers at religious schools with an opt-out from religious instruction"
+   ],
+   "no": [
+    "Religion classes required for voucher students",
+    "Barring religious schools"
+   ]
+  },
+  {
+   "t": "Public tuition money should go to religious schools on equal terms.",
+   "yes": [
+    "Vouchers usable at any religious school"
+   ],
+   "no": [
+    "Excluding religious schools"
+   ]
+  }
  ],
  "religious_charter": [
-  "A religious group shouldn't be able to run a publicly funded charter school that teaches its faith.",
-  "A religious group can run a publicly funded charter school if students can opt out of religious instruction.",
-  "A religious group should be able to run a publicly funded charter school that teaches its faith, like any other charter."
+  {
+   "t": "Religious groups shouldn't run publicly funded charter schools that teach their faith.",
+   "yes": [
+    "Keeping charter schools non-religious"
+   ],
+   "no": [
+    "Religious charter schools"
+   ]
+  },
+  {
+   "t": "Religious charter schools are fine if students can opt out of religious instruction.",
+   "yes": [
+    "Religious charters with opt-outs"
+   ],
+   "no": [
+    "Required religious instruction in charters",
+    "Barring religious charters"
+   ]
+  },
+  {
+   "t": "Religious groups should run charter schools like anyone else.",
+   "yes": [
+    "Publicly funded charters that teach a faith"
+   ],
+   "no": [
+    "Barring religious groups from running charters"
+   ]
+  }
  ],
  "religious_exemptions": [
-  "Religious exemptions from general laws should be rare; everyone should follow the same laws.",
-  "People should get religious exemptions only when the exemption doesn't harm anyone else.",
-  "People should usually get religious exemptions, unless the government has a very strong reason not to allow one."
+  {
+   "t": "Religious exemptions from general laws should be rare; everyone should follow the same laws.",
+   "yes": [
+    "Applying laws equally regardless of belief"
+   ],
+   "no": [
+    "Broad religious exemptions"
+   ]
+  },
+  {
+   "t": "Grant religious exemptions only when they don't harm anyone else.",
+   "yes": [
+    "Exemptions that affect only the believer"
+   ],
+   "no": [
+    "Exemptions that burden others",
+    "Refusing harmless exemptions"
+   ]
+  },
+  {
+   "t": "Grant religious exemptions in most cases unless government has a very strong reason.",
+   "yes": [
+    "A strong presumption for exemptions, as in the Religious Freedom Restoration Act"
+   ],
+   "no": [
+    "Requiring believers to follow laws that conflict with their faith"
+   ]
+  }
  ],
  "religious_exemption_cases": [
   "This shouldn't get a religious exemption: {case}.",
   "This should get a religious exemption: {case}."
  ],
  "christian_nation": [
-  "The government shouldn't favor any religion, including by declaring the US a Christian nation.",
-  "The government shouldn't declare the US a Christian nation, but it can recognize the country's Christian heritage.",
-  "The US government should officially declare the US a Christian nation."
+  {
+   "t": "Government should favor no religion.",
+   "yes": [
+    "Strict government neutrality on religion"
+   ],
+   "no": [
+    "Official recognition of Christianity"
+   ]
+  },
+  {
+   "t": "No official declaration, but government can recognize the nation's Christian heritage.",
+   "yes": [
+    "Official mentions of Christian heritage in ceremonies and proclamations"
+   ],
+   "no": [
+    "A legal declaration",
+    "Removing all religious references"
+   ]
+  },
+  {
+   "t": "The US government should officially declare the US a Christian nation.",
+   "yes": [
+    "A law declaring the US a Christian nation"
+   ],
+   "no": [
+    "Government neutrality toward all religions"
+   ]
+  }
  ],
  "religious_country": [
-  "It isn't important for the country that most Americans are religious.",
-  "It's somewhat important for the country that most Americans are religious.",
-  "It's very important for the country that most Americans are religious.",
-  "The country's success depends on most Americans being religious."
+  {
+   "t": "It isn't important for the country that most Americans are religious.",
+   "means": [
+    "The country would do just as well if most people weren't religious"
+   ]
+  },
+  {
+   "t": "It's somewhat important for the country that most Americans are religious.",
+   "means": [
+    "Widespread religion helps the country, but isn't vital"
+   ]
+  },
+  {
+   "t": "It's very important for the country that most Americans are religious.",
+   "means": [
+    "A decline in religion would seriously harm the country"
+   ]
+  },
+  {
+   "t": "The country's success depends on most Americans being religious.",
+   "means": [
+    "Without widespread faith, the country would fail"
+   ]
+  }
  ],
  "evolution_class": [
-  "Public school science classes should teach only evolution.",
-  "Science classes should teach evolution and mention that many people hold religious beliefs about creation.",
-  "Science classes should teach creation or intelligent design alongside evolution as alternative explanations.",
-  "Science classes should teach creation or intelligent design instead of evolution."
+  {
+   "t": "Science classes should teach evolution only.",
+   "yes": [
+    "Evolution as the scientific explanation"
+   ],
+   "no": [
+    "Mentioning creation in science class"
+   ]
+  },
+  {
+   "t": "Teach evolution and mention that many people hold religious beliefs about creation.",
+   "yes": [
+    "Evolution, with a note that religious views exist"
+   ],
+   "no": [
+    "Teaching creation as an alternative explanation"
+   ]
+  },
+  {
+   "t": "Teach evolution alongside creation or intelligent design as alternatives.",
+   "yes": [
+    "Both presented as explanations in science class"
+   ],
+   "no": [
+    "Evolution only"
+   ]
+  },
+  {
+   "t": "Teach creation or intelligent design instead of evolution.",
+   "yes": [
+    "Replacing evolution in science classes"
+   ],
+   "no": [
+    "Teaching evolution"
+   ]
+  }
  ],
  "faith_charities": [
-  "Religious groups shouldn't get any public money, even to run shelters and addiction programs.",
-  "Religious charities can get public money to run services, if they keep religion out of them.",
-  "Religious charities should get public money on equal terms with others, even with faith content that people can opt out of."
+  {
+   "t": "Keep public money away from religious charities.",
+   "yes": [
+    "Funding only secular groups for shelters and addiction programs"
+   ],
+   "no": [
+    "Grants to church-run programs"
+   ]
+  },
+  {
+   "t": "Religious charities can get public money if they keep religion out of the services.",
+   "yes": [
+    "Funding church-run shelters with no religious content"
+   ],
+   "no": [
+    "Funding programs with faith content",
+    "Barring religious groups"
+   ]
+  },
+  {
+   "t": "Religious charities should get public money on equal terms, including faith content people can opt out of.",
+   "yes": [
+    "Grants to faith-based programs with optional religious content"
+   ],
+   "no": [
+    "Excluding religious charities from funding"
+   ]
+  }
  ]
 }

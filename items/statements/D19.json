@@ -1,126 +1,672 @@
 {
- "_note": "What each answer means, shown after it's picked. One per option, in code order. Exceptions use {case}.",
- "president_court_ruling": [
-  "Presidents must obey court rulings against them, can appeal through the courts, and shouldn't attack the judges who ruled.",
-  "Presidents must obey court rulings against them while they appeal, but it's fine for them to criticize the judge in public.",
-  "A president can ignore a ruling from one court until a higher court agrees with it.",
-  "A president can ignore any court ruling the president believes is wrong."
- ],
  "exec_orders_scope": [
-  "Without Congress, a president should only manage how the executive branch itself runs, not make new policy.",
-  "A president should make policy alone only in a real emergency; otherwise wait for Congress.",
-  "A president can make policy alone wherever existing laws leave room for judgment, but not beyond what those laws allow.",
-  "A president can make policy by executive order whenever the president decides it's needed, even if Congress has refused."
+  {
+   "t": "When Congress won't act, a president should wait, acting alone only on how the executive branch runs.",
+   "yes": [
+    "Executive orders limited to managing federal agencies"
+   ],
+   "no": [
+    "Presidents making new policy without Congress"
+   ]
+  },
+  {
+   "t": "A president should act alone only in emergencies.",
+   "yes": [
+    "Unilateral action in true emergencies"
+   ],
+   "no": [
+    "Executive orders to get around Congress in normal times"
+   ]
+  },
+  {
+   "t": "A president can act alone where existing laws leave room to decide.",
+   "yes": [
+    "Executive orders that use discretion existing laws give"
+   ],
+   "no": [
+    "Orders beyond what laws allow"
+   ]
+  },
+  {
+   "t": "A president can act alone through executive orders whenever it seems necessary.",
+   "yes": [
+    "Broad use of executive orders when Congress won't act, by any president"
+   ],
+   "no": [
+    "Waiting for Congress"
+   ]
+  }
  ],
  "refuse_to_spend": [
-  "When Congress funds a program, the president has to spend the money as directed, even on programs the president opposes.",
-  "The president can hold money briefly while asking Congress to cancel it, but has to spend it if Congress says no.",
-  "The president can decline to spend money Congress approved whenever the president thinks the program is wasteful."
+  {
+   "t": "A president must spend money as Congress directed.",
+   "yes": [
+    "No delays or refusals to spend approved funds"
+   ],
+   "no": [
+    "Withholding funds Congress approved"
+   ]
+  },
+  {
+   "t": "A president can briefly delay spending while asking Congress to cancel it, as current law allows.",
+   "yes": [
+    "The 1974 law's 45-day process"
+   ],
+   "no": [
+    "Refusing outright",
+    "Allowing no delay"
+   ]
+  },
+  {
+   "t": "A president can refuse to spend money on programs the president considers wasteful.",
+   "yes": [
+    "Presidents withholding approved money, for any president"
+   ],
+   "no": [
+    "Requiring presidents to spend as directed"
+   ]
+  }
  ],
  "refuse_to_spend_cases": [
   "The president must spend money Congress approved for this: {case}.",
   "The president can refuse to spend money Congress approved for this: {case}."
  ],
  "emergency_duration": [
-  "A president gets no emergency powers until Congress votes to approve them.",
-  "Emergency powers end after 30 days unless Congress votes to keep them.",
-  "Emergency powers end after 6 months unless Congress votes to keep them.",
-  "A president decides how long an emergency lasts, and it continues until the president ends it or Congress overrides a veto."
+  {
+   "t": "No special emergency powers until Congress votes to approve.",
+   "yes": [
+    "Requiring a vote of Congress before emergency powers start"
+   ],
+   "no": [
+    "Open-ended presidential emergencies"
+   ]
+  },
+  {
+   "t": "Emergencies should last 30 days, then need Congress's approval.",
+   "yes": [
+    "A 30-day limit without a vote"
+   ],
+   "no": [
+    "Longer emergencies without a vote"
+   ]
+  },
+  {
+   "t": "Emergencies should last 6 months, then need Congress's approval.",
+   "yes": [
+    "A 6-month limit without a vote"
+   ],
+   "no": [
+    "Open-ended emergencies",
+    "Shorter limits"
+   ]
+  },
+  {
+   "t": "Emergencies should last as long as the president decides, as today.",
+   "yes": [
+    "Today's open-ended emergency powers"
+   ],
+   "no": [
+    "Time limits on emergencies"
+   ]
+  }
  ],
  "emergency_funding": [
-  "Congress alone decides spending. A president can't use an emergency to pay for something Congress refused to fund.",
-  "A president can move money without Congress only for a sudden threat like an attack, and only until Congress can act.",
-  "A president can declare an emergency and fund a project Congress refused whenever the president judges the need is urgent."
+  {
+   "t": "A president should never use an emergency to spend money Congress refused.",
+   "yes": [
+    "Keeping spending decisions with Congress"
+   ],
+   "no": [
+    "Emergency declarations to fund rejected projects"
+   ]
+  },
+  {
+   "t": "Only for a sudden threat, like an attack, until Congress can act.",
+   "yes": [
+    "Short-term emergency spending after an attack"
+   ],
+   "no": [
+    "Using emergencies for projects Congress rejected"
+   ]
+  },
+  {
+   "t": "A president can declare an emergency to fund projects whenever the need seems urgent.",
+   "yes": [
+    "Emergency spending on projects Congress refused, by any president"
+   ],
+   "no": [
+    "Leaving funding to Congress alone"
+   ]
+  }
  ],
  "emergency_funding_cases": [
   "A president should not be able to use an emergency to pay for this after Congress refused: {case}.",
   "A president should be able to use an emergency to pay for this after Congress refused: {case}."
  ],
  "civil_service": [
-  "Career government workers keep their jobs even when they disagree with the president's policies.",
-  "A president can fire senior officials who shape policy for disagreeing, but regular career staff stay protected.",
-  "A president should be able to fire most federal workers for any reason, including disagreeing with the president."
+  {
+   "t": "Career government employees should be protected from firing over policy disagreements.",
+   "yes": [
+    "Civil service protections for scientists and analysts"
+   ],
+   "no": [
+    "Firing staff for disagreeing with the president"
+   ]
+  },
+  {
+   "t": "Only senior employees who help make policy should be fireable over disagreements.",
+   "yes": [
+    "Fewer protections for senior policy staff"
+   ],
+   "no": [
+    "Firing regular staff over policy"
+   ]
+  },
+  {
+   "t": "Most federal employees should be fireable at will.",
+   "yes": [
+    "Ending most civil service protections"
+   ],
+   "no": [
+    "Job protections for career staff"
+   ]
+  }
  ],
  "independent_agencies": [
-  "More agencies should have leaders the president can't fire over policy, beyond the ones that already work this way.",
-  "The agencies that are independent today should stay that way, and no more should be added.",
-  "Only the Federal Reserve should be independent. A president should be able to fire the leaders of every other agency.",
-  "A president should be able to fire the leader of any agency, including the Federal Reserve."
+  {
+   "t": "Keep independent agencies and make more agencies independent.",
+   "yes": [
+    "Protecting agency leaders from firing over policy",
+    "Adding more independent agencies"
+   ],
+   "no": [
+    "Presidents firing agency heads at will"
+   ]
+  },
+  {
+   "t": "Keep the independent agencies we have.",
+   "yes": [
+    "Today's protections for the Fed, FTC and similar agencies"
+   ],
+   "no": [
+    "Adding or removing protections"
+   ]
+  },
+  {
+   "t": "Keep only the Federal Reserve independent.",
+   "yes": [
+    "Letting the president fire leaders of the FTC, SEC and others"
+   ],
+   "no": [
+    "Presidents firing the Fed chair"
+   ]
+  },
+  {
+   "t": "The president should be able to fire any agency leader.",
+   "yes": [
+    "Ending independence for all agencies, including the Fed"
+   ],
+   "no": [
+    "Agencies shielded from the president"
+   ]
+  }
  ],
  "prosecute_opponents": [
-  "A president should have no say in whether the Justice Department investigates anyone, including the president's critics.",
-  "A president can tell the Justice Department about concerns, but career prosecutors decide whether to investigate.",
-  "A president can order the Justice Department to investigate specific people, including political opponents, whom the president believes broke the law."
+  {
+   "t": "A president should never be involved in deciding whom the Justice Department investigates.",
+   "yes": [
+    "Leaving investigations to career prosecutors"
+   ],
+   "no": [
+    "Presidents directing investigations of critics"
+   ]
+  },
+  {
+   "t": "A president can raise concerns, but career prosecutors decide.",
+   "yes": [
+    "Presidents flagging concerns without ordering investigations"
+   ],
+   "no": [
+    "Presidents ordering investigations"
+   ]
+  },
+  {
+   "t": "A president can order investigations of specific people the president believes broke the law.",
+   "yes": [
+    "Presidents directing investigations, including of opponents, for any president"
+   ],
+   "no": [
+    "Keeping presidents out of these decisions"
+   ]
+  }
  ],
  "pardon_allies": [
-  "Presidents should be barred, by a constitutional amendment, from pardoning family, associates or political allies.",
-  "Presidents can legally pardon family and allies, but they should almost never use that power.",
-  "It's fine for a president to pardon family or allies whom the president believes were treated unfairly."
+  {
+   "t": "Presidents should never pardon family, associates or allies; amend the Constitution to forbid it.",
+   "yes": [
+    "A constitutional ban on self-serving pardons"
+   ],
+   "no": [
+    "Pardons of family or allies"
+   ]
+  },
+  {
+   "t": "Pardoning family or allies is legal, but presidents should almost never do it.",
+   "yes": [
+    "Keeping the power while strongly discouraging its use"
+   ],
+   "no": [
+    "A ban",
+    "Routine pardons of allies"
+   ]
+  },
+  {
+   "t": "It's acceptable for a president to pardon family or allies treated unfairly.",
+   "yes": [
+    "Pardons of allies the president believes were treated unfairly"
+   ],
+   "no": [
+    "Limits on these pardons"
+   ]
+  }
  ],
  "accept_results": [
-  "Once courts and election officials confirm the result, the losing candidate should concede.",
-  "The losing candidate should accept the confirmed result, but it's fine to keep saying in public that it was stolen.",
-  "The losing candidate can keep fighting a confirmed result, including asking legislators to overturn it.",
-  "The losing candidate can refuse to accept a confirmed result and call on supporters to resist it."
+  {
+   "t": "A candidate who lost should concede once courts and officials confirm the result.",
+   "yes": [
+    "Conceding after results are confirmed"
+   ],
+   "no": [
+    "Continuing to claim fraud"
+   ]
+  },
+  {
+   "t": "A candidate can accept the result but keep saying publicly it was stolen.",
+   "yes": [
+    "Accepting the outcome while disputing it in public"
+   ],
+   "no": [
+    "Overturning the result",
+    "Staying quiet about fraud claims"
+   ]
+  },
+  {
+   "t": "A candidate should keep fighting, including asking legislators to overturn the result.",
+   "yes": [
+    "Pressing legislators to overturn confirmed results"
+   ],
+   "no": [
+    "Conceding the election"
+   ]
+  },
+  {
+   "t": "A candidate should refuse to accept the result and urge supporters to resist.",
+   "yes": [
+    "Refusing to concede and calling on supporters to resist"
+   ],
+   "no": [
+    "Accepting confirmed results"
+   ]
+  }
  ],
  "checks_vs_action": {
   "s": [
-   "I strongly prefer a system where no single leader can act without others agreeing, even if needed changes take years.",
-   "I somewhat prefer strong checks on leaders over speed.",
-   "I somewhat prefer letting elected leaders act quickly over strong checks.",
-   "I strongly prefer letting an elected leader act quickly, even with fewer checks on mistakes or abuse."
+   {
+    "t": "No single leader should be able to act without others agreeing, even if needed changes take years.",
+    "yes": [
+     "Requiring Congress, courts and the Senate to sign off on major moves"
+    ],
+    "no": [
+     "Presidents acting alone to speed things up"
+    ]
+   },
+   {
+    "t": "On balance, no single leader should be able to act without others agreeing, even if needed changes take years.",
+    "yes": [
+     "Requiring Congress, courts and the Senate to sign off on major moves"
+    ],
+    "no": [
+     "Presidents acting alone to speed things up"
+    ]
+   },
+   {
+    "t": "On balance, an elected leader should be able to act quickly, even with fewer checks on mistakes or abuse.",
+    "yes": [
+     "Presidents acting without waiting for Congress or courts"
+    ],
+    "no": [
+     "Checks that delay what voters chose"
+    ]
+   },
+   {
+    "t": "An elected leader should be able to act quickly, even with fewer checks on mistakes or abuse.",
+    "yes": [
+     "Presidents acting without waiting for Congress or courts"
+    ],
+    "no": [
+     "Checks that delay what voters chose"
+    ]
+   }
   ],
-  "torn": "I value checks on leaders and the ability to act quickly about equally."
+  "torn": {
+   "t": "You weigh checks and quick action about equally.",
+   "means": [
+    "You'd let leaders act fast in a crisis but keep checks in normal times"
+   ]
+  }
  },
  "courts_vs_majority": {
   "s": [
-   "Courts should strike down unconstitutional laws even when most voters support them, every time.",
-   "Courts should usually strike down unconstitutional laws, even popular ones.",
-   "When most voters clearly support a law, courts should usually let it stand.",
-   "When most voters clearly support a law, courts should almost never overrule it, even if it takes away some people's rights."
+   {
+    "t": "Courts should strike down unconstitutional laws even when most voters support them.",
+    "yes": [
+     "Courts overturning popular laws that violate rights"
+    ],
+    "no": [
+     "Courts deferring to majorities on rights"
+    ]
+   },
+   {
+    "t": "On balance, courts should strike down unconstitutional laws even when most voters support them.",
+    "yes": [
+     "Courts overturning popular laws that violate rights"
+    ],
+    "no": [
+     "Courts deferring to majorities on rights"
+    ]
+   },
+   {
+    "t": "On balance, courts should rarely overrule laws most voters clearly support, even if some people's rights are limited.",
+    "yes": [
+     "Letting popular laws stand",
+     "Narrower court review"
+    ],
+    "no": [
+     "Courts overturning laws with majority support"
+    ]
+   },
+   {
+    "t": "Courts should rarely overrule laws most voters clearly support, even if some people's rights are limited.",
+    "yes": [
+     "Letting popular laws stand",
+     "Narrower court review"
+    ],
+    "no": [
+     "Courts overturning laws with majority support"
+    ]
+   }
   ],
-  "torn": "I'm torn between courts protecting rights and voters getting the laws they support."
+  "torn": {
+   "t": "You weigh court review and majority rule about equally.",
+   "means": [
+    "You'd want courts to step in only when rights are clearly violated"
+   ]
+  }
  },
  "filibuster": [
-  "Bills should keep needing 60 votes, and judges and cabinet members should need 60 votes to be confirmed too.",
-  "The 60-vote rule for bills should stay exactly as it is.",
-  "Keep the 60-vote rule, but senators blocking a bill should have to hold the floor and keep speaking.",
-  "Some kinds of bills, such as voting rights or budget bills, should pass with a simple majority; the rest still need 60.",
-  "Every bill should pass the Senate with a simple majority of 51 votes."
+  {
+   "t": "Expand the 60-vote rule to nominations for judges and cabinet posts.",
+   "yes": [
+    "Requiring 60 votes to confirm judges and cabinet members"
+   ],
+   "no": [
+    "Majority-vote confirmations"
+   ]
+  },
+  {
+   "t": "Keep the 60-vote rule as it is.",
+   "yes": [
+    "Today's filibuster"
+   ],
+   "no": [
+    "Expanding, reforming or ending it"
+   ]
+  },
+  {
+   "t": "Keep the 60-vote rule, but make senators who block a bill stay and speak on the floor.",
+   "yes": [
+    "A talking filibuster"
+   ],
+   "no": [
+    "Silent filibusters",
+    "Ending the filibuster"
+   ]
+  },
+  {
+   "t": "End the 60-vote rule for some bills, like voting rights or budget bills.",
+   "yes": [
+    "Majority votes for selected kinds of bills"
+   ],
+   "no": [
+    "Keeping 60 votes for everything"
+   ]
+  },
+  {
+   "t": "End the 60-vote rule; a simple majority should pass bills.",
+   "yes": [
+    "Abolishing the filibuster, whichever party is in charge"
+   ],
+   "no": [
+    "Requiring 60 votes"
+   ]
+  }
  ],
  "filibuster_cases": [
   "This should still need 60 votes in the Senate: {case}.",
   "A simple majority of 51 senators should be able to pass this: {case}."
  ],
  "rule_bending_leader": [
-  "A president should never work around laws, court rulings or official procedures, even to deliver what voters chose.",
-  "A president can work around laws or procedures only in a real emergency.",
-  "A president can work around laws or procedures when they clearly block what voters chose.",
-  "The country needs a president who's willing to work around laws and procedures to deliver what voters chose."
+  {
+   "t": "It's never acceptable for a president to bend or work around laws, court rulings or official procedures.",
+   "yes": [
+    "Presidents following laws and rulings even when they block their agenda"
+   ],
+   "no": [
+    "Working around rules to deliver for voters"
+   ]
+  },
+  {
+   "t": "Bending the rules is acceptable only in a real emergency.",
+   "yes": [
+    "Bending rules in true emergencies"
+   ],
+   "no": [
+    "Bending rules to get policies through"
+   ]
+  },
+  {
+   "t": "Bending the rules is acceptable when they clearly stand in the way of what voters chose.",
+   "yes": [
+    "Working around laws or rulings that block an elected agenda"
+   ],
+   "no": [
+    "Letting rules stop a mandate"
+   ]
+  },
+  {
+   "t": "The country needs a leader willing to bend the rules.",
+   "yes": [
+    "A president who works around laws, rulings and procedures"
+   ],
+   "no": [
+    "Leaders bound by every rule"
+   ]
+  }
  ],
  "political_violence": [
-  "Violence to reach political goals is never justified in the US today.",
-  "Violence is justified only against a government that has taken power illegally.",
-  "Violence is sometimes justified when peaceful ways of changing things have failed."
+  {
+   "t": "Political violence is never justified in the US today.",
+   "means": [
+    "No cause justifies violence, whoever is in power"
+   ]
+  },
+  {
+   "t": "Violence is justified only against a government that has seized power illegally.",
+   "means": [
+    "Violence is acceptable only if the constitutional order has been overthrown"
+   ]
+  },
+  {
+   "t": "Violence is sometimes justified when peaceful methods have failed.",
+   "means": [
+    "After peaceful efforts fail, violence for a political cause can be acceptable"
+   ]
+  }
  ],
  "court_expansion": [
-  "Congress should add Supreme Court justices when the party in power wants different rulings.",
-  "The number of justices should change only as part of a reform both parties agree to.",
-  "The Supreme Court should stay at 9 justices."
+  {
+   "t": "Congress should add justices when the party in power wants different rulings.",
+   "yes": [
+    "Adding justices to change the Court's majority, for either party"
+   ],
+   "no": [
+    "Keeping 9 justices"
+   ]
+  },
+  {
+   "t": "Change the Court's size only as part of a bipartisan reform.",
+   "yes": [
+    "Bipartisan changes to the Court"
+   ],
+   "no": [
+    "One party adding justices on its own"
+   ]
+  },
+  {
+   "t": "Keep the Supreme Court at 9 justices.",
+   "yes": [
+    "Keeping 9 justices"
+   ],
+   "no": [
+    "Adding justices"
+   ]
+  }
  ],
  "presidential_immunity": [
-  "Former presidents can be criminally prosecuted for what they did in office, like anyone else.",
-  "Former presidents are immune only for core duties the Constitution gives them, like vetoes and pardons; other acts can be prosecuted.",
-  "Former presidents can't be prosecuted for anything they did as part of their official job."
+  {
+   "t": "Former presidents can be prosecuted like anyone else.",
+   "yes": [
+    "Overturning broad presidential immunity"
+   ],
+   "no": [
+    "Immunity for official acts"
+   ]
+  },
+  {
+   "t": "Former presidents are immune only for core constitutional duties.",
+   "yes": [
+    "Immunity for duties like pardons and commanding the military only"
+   ],
+   "no": [
+    "Immunity for all official acts"
+   ]
+  },
+  {
+   "t": "Former presidents are immune for all official acts.",
+   "yes": [
+    "The 2024 ruling's broad immunity"
+   ],
+   "no": [
+    "Prosecuting former presidents for official acts"
+   ]
+  }
  ],
  "press_retaliation": [
-  "A president should never punish news outlets over their coverage.",
-  "A president can limit an outlet's access to briefings and events, but can't go after its broadcast license.",
-  "A president can punish outlets the president believes spread falsehoods, including by pulling broadcast licenses."
+  {
+   "t": "A president should never punish news outlets for their coverage.",
+   "yes": [
+    "Protecting outlets' licenses and press access regardless of coverage"
+   ],
+   "no": [
+    "Pulling access or licenses over coverage"
+   ]
+  },
+  {
+   "t": "A president can limit outlets' access to events like briefings, not licenses.",
+   "yes": [
+    "Restricting access to briefings"
+   ],
+   "no": [
+    "Pulling broadcast licenses"
+   ]
+  },
+  {
+   "t": "A president can punish outlets the president believes spread falsehoods.",
+   "yes": [
+    "Pulling licenses or access from outlets, for any president"
+   ],
+   "no": [
+    "Protecting outlets from presidential punishment"
+   ]
+  }
  ],
  "agency_deference": [
-  "When a law is unclear, courts should usually go with how the agency running it reads it.",
-  "Courts should go with the agency's reading of an unclear law only on technical or scientific questions.",
-  "Judges should decide what an unclear law means themselves, without deferring to the agency."
+  {
+   "t": "Courts should usually defer to agency experts when a law is unclear.",
+   "yes": [
+    "Restoring deference to agencies"
+   ],
+   "no": [
+    "Judges deciding unclear laws themselves"
+   ]
+  },
+  {
+   "t": "Courts should defer to agencies only on technical or scientific questions.",
+   "yes": [
+    "Deference on scientific and technical matters"
+   ],
+   "no": [
+    "Deference on all questions",
+    "No deference"
+   ]
+  },
+  {
+   "t": "Judges should decide what unclear laws mean themselves.",
+   "yes": [
+    "The 2024 ruling ending deference"
+   ],
+   "no": [
+    "Courts deferring to agencies"
+   ]
+  }
+ ],
+ "president_court_ruling": [
+  {
+   "t": "A president should comply fully with a court ruling while appealing, and avoid attacking the judge.",
+   "yes": [
+    "Complying and appealing quietly"
+   ],
+   "no": [
+    "Attacking judges",
+    "Ignoring rulings"
+   ]
+  },
+  {
+   "t": "A president should comply while appealing, but can criticize the judge publicly.",
+   "yes": [
+    "Complying while criticizing the judge"
+   ],
+   "no": [
+    "Ignoring rulings"
+   ]
+  },
+  {
+   "t": "A president should comply only if a higher court agrees.",
+   "yes": [
+    "Waiting for appeals before complying"
+   ],
+   "no": [
+    "Complying with lower court rulings"
+   ]
+  },
+  {
+   "t": "A president can ignore a ruling the president believes is wrong.",
+   "yes": [
+    "Presidents disregarding court rulings, for any president"
+   ],
+   "no": [
+    "Requiring compliance with rulings"
+   ]
+  }
  ]
 }

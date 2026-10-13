@@ -1,0 +1,21 @@
+{
+ "regulation_tradeoff": {
+  "why": "'Rules' and 'unsafe practices' had no examples.",
+  "scope": "Rules like workplace safety standards, food and drug inspections, limits on pollution, overdraft and hidden-fee rules, and licensing and paperwork for new businesses."
+ },
+ "precaution_tradeoff": {
+  "why": "No examples of products or harms.",
+  "scope": "New products in general, such as new chemicals in household goods, new food additives, medical devices, e-cigarettes and self-driving cars."
+ },
+ "economic_system": {
+  "why": "'Strong rules', 'large safety net' and 'modest rules' had no reference points.",
+  "options": {
+   "2": "Private businesses and markets, with strong government rules and a large safety net, as in much of Western Europe",
+   "3": "Private businesses and markets, with modest rules and a basic safety net, roughly like the US today"
+  }
+ },
+ "infrastructure": {
+  "why": "'Much more' and 'somewhat more' had no scale.",
+  "scope": "Compared with today. “Much more” means about half again or more; “somewhat more” means a modest increase. Assume the money is borrowed or comes from taxes."
+ }
+}

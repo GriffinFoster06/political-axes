@@ -1,78 +1,466 @@
 {
  "voter_id": [
-  "Voters shouldn't have to show photo ID; signature checks and other methods are enough.",
-  "Voters should show ID, but many kinds should count, IDs should be free, and people without one should have a backup way to vote.",
-  "Voters should show a photo ID, with free IDs for anyone who needs one, and no backup option.",
-  "Voters should show a government-issued photo ID, with no backup option."
+  {
+   "t": "No photo ID to vote; signature checks and other methods are enough.",
+   "yes": [
+    "Voting with signature checks or non-photo ID"
+   ],
+   "no": [
+    "Photo ID requirements"
+   ]
+  },
+  {
+   "t": "Photo ID, but with many accepted IDs, free IDs and a backup option for people without one.",
+   "yes": [
+    "Broad ID lists, free IDs and sworn statements as backup"
+   ],
+   "no": [
+    "Strict ID with no backup",
+    "No ID at all"
+   ]
+  },
+  {
+   "t": "Photo ID, with free IDs for anyone, but no backup option.",
+   "yes": [
+    "Required photo ID with free IDs"
+   ],
+   "no": [
+    "Backup options for people without ID"
+   ]
+  },
+  {
+   "t": "Government-issued photo ID with no backup option.",
+   "yes": [
+    "Strict government photo ID to vote"
+   ],
+   "no": [
+    "Student IDs, backups or signature checks instead"
+   ]
+  }
  ],
  "proof_of_citizenship": [
-  "People registering to vote shouldn't have to show proof of citizenship; the sworn statement and existing checks are enough.",
-  "People should have to show proof of citizenship only when government records can't confirm it.",
-  "Everyone registering to vote should have to show a passport, birth certificate or similar document."
+  {
+   "t": "A sworn statement and existing checks are enough proof of citizenship to register.",
+   "yes": [
+    "Today's sworn statement"
+   ],
+   "no": [
+    "Requiring passports or birth certificates"
+   ]
+  },
+  {
+   "t": "Require citizenship documents only when government records can't confirm it.",
+   "yes": [
+    "Document checks when records fall short"
+   ],
+   "no": [
+    "Requiring documents from everyone"
+   ]
+  },
+  {
+   "t": "Everyone registering should show a passport, birth certificate or similar document.",
+   "yes": [
+    "Documentary proof of citizenship for every registrant"
+   ],
+   "no": [
+    "Registering on a sworn statement"
+   ]
+  }
  ],
  "mail_voting": [
-  "Every voter should get a mail ballot automatically.",
-  "Any voter who asks should be able to vote by mail.",
-  "Only voters with a reason, like illness or travel, should be able to vote by mail.",
-  "Almost everyone should vote in person, not by mail."
+  {
+   "t": "Every voter should get a mail ballot automatically.",
+   "yes": [
+    "All-mail elections, as in Colorado and Washington"
+   ],
+   "no": [
+    "Limits on mail voting"
+   ]
+  },
+  {
+   "t": "Any voter who asks should be able to vote by mail.",
+   "yes": [
+    "No-excuse absentee voting"
+   ],
+   "no": [
+    "Mailing ballots to everyone",
+    "Requiring an excuse"
+   ]
+  },
+  {
+   "t": "Only voters with a reason, like illness or travel, should vote by mail.",
+   "yes": [
+    "Excuse-required absentee voting"
+   ],
+   "no": [
+    "No-excuse mail voting"
+   ]
+  },
+  {
+   "t": "Almost no one should vote by mail; vote in person.",
+   "yes": [
+    "In-person voting with rare exceptions"
+   ],
+   "no": [
+    "Widespread mail voting"
+   ]
+  }
  ],
  "mail_ballot_deadline": [
-  "Mail ballots postmarked by Election Day should count if they arrive within a week or more.",
-  "Mail ballots postmarked by Election Day should count if they arrive within 3 days.",
-  "Only mail ballots received by Election Day should count."
+  {
+   "t": "Count mail ballots postmarked by Election Day that arrive within a week or more.",
+   "yes": [
+    "A grace period of a week or longer"
+   ],
+   "no": [
+    "Election Day receipt deadlines"
+   ]
+  },
+  {
+   "t": "Count postmarked mail ballots that arrive within 3 days.",
+   "yes": [
+    "A 3-day grace period"
+   ],
+   "no": [
+    "Longer grace periods",
+    "No grace period"
+   ]
+  },
+  {
+   "t": "Count only mail ballots received by Election Day.",
+   "yes": [
+    "Election Day receipt deadlines"
+   ],
+   "no": [
+    "Counting ballots that arrive later"
+   ]
+  }
  ],
  "auto_registration": [
-  "Eligible citizens should be registered to vote automatically when they deal with agencies like the DMV, unless they opt out.",
-  "Agencies should offer voter registration, but people have to choose to sign up.",
-  "People should register to vote on their own."
+  {
+   "t": "Register eligible citizens automatically at agencies like the DMV, unless they opt out.",
+   "yes": [
+    "Automatic voter registration"
+   ],
+   "no": [
+    "Requiring people to sign up themselves"
+   ]
+  },
+  {
+   "t": "Offer registration at agencies, but people must choose to sign up.",
+   "yes": [
+    "Opt-in registration at the DMV"
+   ],
+   "no": [
+    "Automatic registration"
+   ]
+  },
+  {
+   "t": "People should register to vote on their own.",
+   "yes": [
+    "Ending registration at government agencies"
+   ],
+   "no": [
+    "Automatic or agency registration"
+   ]
+  }
  ],
  "felony_voting": [
-  "People convicted of a felony should always be able to vote, even while in prison.",
-  "People convicted of a felony should be able to vote once they're released from prison.",
-  "People convicted of a felony should be able to vote after finishing parole or probation.",
-  "People convicted of a felony should vote again only after a waiting period or an individual review.",
-  "People convicted of a felony should never vote again."
+  {
+   "t": "People with felony convictions should always be able to vote, even in prison.",
+   "yes": [
+    "Voting from prison, as in Maine and Vermont"
+   ],
+   "no": [
+    "Taking away voting rights for felonies"
+   ]
+  },
+  {
+   "t": "People with felony convictions should vote once released from prison.",
+   "yes": [
+    "Restoring the vote on release"
+   ],
+   "no": [
+    "Voting from prison",
+    "Waiting until parole ends"
+   ]
+  },
+  {
+   "t": "People with felony convictions should vote after finishing parole or probation.",
+   "yes": [
+    "Restoring the vote after the full sentence"
+   ],
+   "no": [
+    "Restoring it on release"
+   ]
+  },
+  {
+   "t": "Voting rights only after a waiting period or individual review.",
+   "yes": [
+    "Case-by-case restoration"
+   ],
+   "no": [
+    "Automatic restoration"
+   ]
+  },
+  {
+   "t": "People convicted of a felony should never vote again.",
+   "yes": [
+    "Permanent loss of voting rights"
+   ],
+   "no": [
+    "Restoring voting rights"
+   ]
+  }
  ],
  "electoral_college": [
-  "The president should be elected by national popular vote, ending the Electoral College.",
-  "Keep the Electoral College, but split each state's electoral votes in proportion to how the state voted.",
-  "Keep the Electoral College as it is."
+  {
+   "t": "Elect the president by national popular vote, ending the Electoral College.",
+   "yes": [
+    "A national popular vote"
+   ],
+   "no": [
+    "The Electoral College"
+   ]
+  },
+  {
+   "t": "Keep the Electoral College, but split each state's votes by its vote share.",
+   "yes": [
+    "Proportional allocation of electoral votes"
+   ],
+   "no": [
+    "Winner-take-all states",
+    "A national popular vote"
+   ]
+  },
+  {
+   "t": "Keep the Electoral College as it is.",
+   "yes": [
+    "Today's winner-take-all Electoral College"
+   ],
+   "no": [
+    "A national popular vote"
+   ]
+  }
  ],
  "popular_vote_loser": [
-  "A candidate who gets fewer votes nationwide should never be able to win the presidency.",
-  "Winning the presidency with fewer votes is acceptable, but the system should change to make it rarer.",
-  "Winning the presidency with fewer votes is fine; it reflects the states' role in choosing the president."
+  {
+   "t": "Winning the presidency while losing the national vote should be impossible.",
+   "yes": [
+    "Changing the system so the vote winner always wins"
+   ],
+   "no": [
+    "Today's system as it stands"
+   ]
+  },
+  {
+   "t": "It's acceptable, but the system should change to make it rarer.",
+   "yes": [
+    "Reforms that make it less likely"
+   ],
+   "no": [
+    "Abolishing state-based selection"
+   ]
+  },
+  {
+   "t": "It's acceptable; it reflects the role of states in choosing the president.",
+   "yes": [
+    "Keeping the state-based system"
+   ],
+   "no": [
+    "Changing the system to prevent it"
+   ]
+  }
  ],
  "redistricting": [
-  "Independent commissions with no politicians should draw congressional districts.",
-  "Commissions with equal members from both parties should draw congressional districts.",
-  "State legislatures should draw districts once every 10 years, after the census.",
-  "State legislatures should be able to redraw districts whenever they choose, including mid-decade."
+  {
+   "t": "Independent commissions with no politicians should draw congressional districts.",
+   "yes": [
+    "Independent redistricting commissions"
+   ],
+   "no": [
+    "Legislatures drawing their own maps"
+   ]
+  },
+  {
+   "t": "Commissions with equal members from both parties should draw districts.",
+   "yes": [
+    "Bipartisan commissions"
+   ],
+   "no": [
+    "Legislatures drawing maps"
+   ]
+  },
+  {
+   "t": "State legislatures should draw districts once every 10 years after the census.",
+   "yes": [
+    "Legislative maps once a decade"
+   ],
+   "no": [
+    "Redistricting commissions",
+    "Mid-decade redrawing"
+   ]
+  },
+  {
+   "t": "State legislatures should draw districts whenever they choose, including mid-decade.",
+   "yes": [
+    "Mid-decade redistricting by legislatures, for either party"
+   ],
+   "no": [
+    "Limits on when maps are redrawn"
+   ]
+  }
  ],
  "campaign_spending": [
-  "Election spending by corporations, unions and the wealthy should be strictly limited, by constitutional amendment if needed.",
-  "There shouldn't be spending limits, but who pays for political ads should be fully disclosed.",
-  "There shouldn't be limits or disclosure rules; spending on politics is free speech."
+  {
+   "t": "Strict limits on election spending by corporations, unions and the wealthy, with a constitutional amendment if needed.",
+   "yes": [
+    "Overturning Citizens United",
+    "Limits on outside spending"
+   ],
+   "no": [
+    "Unlimited outside spending"
+   ]
+  },
+  {
+   "t": "No spending limits, but full disclosure of who pays for political ads.",
+   "yes": [
+    "Disclosure of donors behind political ads"
+   ],
+   "no": [
+    "Spending limits",
+    "Anonymous spending"
+   ]
+  },
+  {
+   "t": "No limits or disclosure rules; spending on politics is free speech.",
+   "yes": [
+    "Unlimited and anonymous political spending"
+   ],
+   "no": [
+    "Limits or disclosure rules"
+   ]
+  }
  ],
  "public_financing": [
-  "Candidates who accept spending limits should get public money matching small donations several times over.",
-  "Candidates who accept spending limits should get a modest amount of public money.",
-  "Campaigns shouldn't get public money."
+  {
+   "t": "Candidates who accept spending limits should get public money matching small donations several times over.",
+   "yes": [
+    "Multiple matching of small donations"
+   ],
+   "no": [
+    "No public financing"
+   ]
+  },
+  {
+   "t": "Candidates who accept limits should get a modest amount of public money.",
+   "yes": [
+    "Modest public financing"
+   ],
+   "no": [
+    "Large matching programs",
+    "No public money"
+   ]
+  },
+  {
+   "t": "No public money for campaigns.",
+   "yes": [
+    "Ending public campaign financing"
+   ],
+   "no": [
+    "Any taxpayer money for campaigns"
+   ]
+  }
  ],
  "congress_term_limits": [
-  "Members of Congress should be limited to 12 years or less in each chamber.",
-  "Members of Congress should be limited to about 18 to 24 years in each chamber.",
-  "Members of Congress shouldn't have term limits; voters can remove them."
+  {
+   "t": "Members of Congress should be limited to 12 years or less.",
+   "yes": [
+    "Term limits of 12 years or less"
+   ],
+   "no": [
+    "Unlimited terms"
+   ]
+  },
+  {
+   "t": "Members of Congress should be limited to about 18 to 24 years.",
+   "yes": [
+    "Long term limits"
+   ],
+   "no": [
+    "Short limits",
+    "Unlimited terms"
+   ]
+  },
+  {
+   "t": "No term limits for Congress; voters can remove members.",
+   "yes": [
+    "Unlimited terms"
+   ],
+   "no": [
+    "Congressional term limits"
+   ]
+  }
  ],
  "court_term_limits": [
-  "Future Supreme Court justices should serve 18-year terms.",
-  "Future justices should serve fixed terms of around 25 years.",
-  "Supreme Court justices should keep serving for life."
+  {
+   "t": "Future Supreme Court justices should serve 18-year terms.",
+   "yes": [
+    "18-year terms"
+   ],
+   "no": [
+    "Life tenure"
+   ]
+  },
+  {
+   "t": "Future justices should serve fixed terms of about 25 years.",
+   "yes": [
+    "Terms of about 25 years"
+   ],
+   "no": [
+    "18-year terms",
+    "Life tenure"
+   ]
+  },
+  {
+   "t": "Keep life terms for Supreme Court justices.",
+   "yes": [
+    "Life tenure"
+   ],
+   "no": [
+    "Term limits for justices"
+   ]
+  }
  ],
  "ranked_choice": [
-  "All elections should use ranked-choice voting.",
-  "Each state or city should decide whether to use ranked-choice voting.",
-  "Ranked-choice voting should be banned."
+  {
+   "t": "All elections should use ranked-choice voting.",
+   "yes": [
+    "Ranked-choice voting everywhere"
+   ],
+   "no": [
+    "Banning ranked-choice voting"
+   ]
+  },
+  {
+   "t": "Each state or city should decide on ranked-choice voting.",
+   "yes": [
+    "Letting each place choose its voting method"
+   ],
+   "no": [
+    "Requiring ranked-choice everywhere",
+    "Banning ranked-choice voting"
+   ]
+  },
+  {
+   "t": "Ban ranked-choice voting.",
+   "yes": [
+    "State bans on ranked-choice voting"
+   ],
+   "no": [
+    "Ranked-choice elections"
+   ]
+  }
  ],
  "statehood": [
   "This should become a state: {case}.",
@@ -80,14 +468,71 @@
   "This shouldn't become a state: {case}."
  ],
  "voting_age": [
-  "The voting age should be 16.",
-  "17-year-olds should be able to vote if they'll be 18 by the next general election.",
-  "The voting age should stay at 18.",
-  "The voting age should be 21."
+  {
+   "t": "The voting age should be 16.",
+   "yes": [
+    "Lowering the voting age to 16"
+   ],
+   "no": [
+    "Keeping it at 18"
+   ]
+  },
+  {
+   "t": "17-year-olds should vote if they'll be 18 by the next general election.",
+   "yes": [
+    "Letting 17-year-olds vote in primaries"
+   ],
+   "no": [
+    "Lowering it to 16"
+   ]
+  },
+  {
+   "t": "The voting age should stay 18.",
+   "yes": [
+    "Today's voting age"
+   ],
+   "no": [
+    "Lowering or raising it"
+   ]
+  },
+  {
+   "t": "The voting age should be 21.",
+   "yes": [
+    "Raising the voting age to 21"
+   ],
+   "no": [
+    "Voting at 18"
+   ]
+  }
  ],
  "noncitizen_local_voting": [
-  "Green card holders should be able to vote in local elections, like school board races.",
-  "Each city should decide whether green card holders can vote in local elections.",
-  "Noncitizens voting in local elections should be banned everywhere."
+  {
+   "t": "Legal permanent residents should vote in local elections like school board races.",
+   "yes": [
+    "Noncitizen voting in local elections"
+   ],
+   "no": [
+    "Bans on noncitizen local voting"
+   ]
+  },
+  {
+   "t": "Each city should decide whether green card holders vote locally.",
+   "yes": [
+    "Letting each city decide"
+   ],
+   "no": [
+    "State bans on noncitizen voting",
+    "Requiring cities to allow it"
+   ]
+  },
+  {
+   "t": "Ban noncitizen voting in local elections everywhere.",
+   "yes": [
+    "Citizens-only voting at every level"
+   ],
+   "no": [
+    "Noncitizens voting locally"
+   ]
+  }
  ]
 }

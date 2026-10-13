@@ -1,72 +1,425 @@
 {
  "tariff_level": [
-  "The US should have few or no tariffs, because free trade benefits most people.",
-  "Tariffs should be low and used mainly against countries that break trade rules.",
-  "The US should put moderate tariffs on many goods to protect key industries.",
-  "The US should put high tariffs on most imports to bring manufacturing back, even if prices rise."
+  {
+   "t": "Few or no tariffs; free trade benefits most people.",
+   "yes": [
+    "Removing most tariffs on imports"
+   ],
+   "no": [
+    "Tariffs to protect US industries"
+   ]
+  },
+  {
+   "t": "Low tariffs, used mainly against countries that break trade rules.",
+   "yes": [
+    "Tariffs of about 5% or less on most goods",
+    "Targeted tariffs on rule-breakers, like countries dumping cheap steel"
+   ],
+   "no": [
+    "Broad tariffs to protect industries"
+   ]
+  },
+  {
+   "t": "Moderate tariffs on many goods to protect key US industries.",
+   "yes": [
+    "Tariffs of about 10–25% on goods like steel, cars and electronics"
+   ],
+   "no": [
+    "Free trade",
+    "High tariffs on most imports"
+   ]
+  },
+  {
+   "t": "High tariffs on most imports to bring manufacturing back, even if prices rise.",
+   "yes": [
+    "Tariffs of 25% or more on most imports",
+    "Accepting higher prices for US-made goods"
+   ],
+   "no": [
+    "Lowering tariffs to keep prices down"
+   ]
+  }
  ],
  "tariff_price_tradeoff": [
-  "I wouldn't accept tariffs that raise prices about 10%; lower prices matter more than those factory jobs.",
-  "I'd accept tariffs to protect factory jobs only if prices rose around 2% to 3%, not 10%.",
-  "I'd accept tariffs that raise prices of cars and appliances about 10% to protect US factory jobs."
+  {
+   "t": "Lower prices matter more than protecting factory jobs with tariffs.",
+   "yes": [
+    "Keeping tariffs low so cars and appliances stay cheaper"
+   ],
+   "no": [
+    "Tariffs that raise those prices by 10%"
+   ]
+  },
+  {
+   "t": "Tariffs to protect factory jobs are worth it only if prices rise about 2% to 3%.",
+   "yes": [
+    "Small tariffs with a small price effect"
+   ],
+   "no": [
+    "Tariffs that raise prices by 10%"
+   ]
+  },
+  {
+   "t": "Protecting factory jobs is worth prices about 10% higher on goods like cars and appliances.",
+   "yes": [
+    "Tariffs that add about 10% to cars and appliances to keep factory jobs here"
+   ],
+   "no": [
+    "Dropping tariffs to lower prices"
+   ]
+  }
  ],
  "tariff_authority": [
-  "Only Congress should set tariffs, by passing laws.",
-  "Congress should set tariffs, but a president can add them in a true emergency.",
-  "A president should be able to set tariffs whenever the president judges it's in the national interest."
+  {
+   "t": "Only Congress should set tariffs, by passing laws.",
+   "yes": [
+    "Requiring a vote of Congress for any tariff"
+   ],
+   "no": [
+    "Presidents setting tariffs on their own"
+   ]
+  },
+  {
+   "t": "Congress sets tariffs, but the president can add them in a true emergency.",
+   "yes": [
+    "Emergency tariffs by a president, with Congress setting the rest"
+   ],
+   "no": [
+    "Presidents setting tariffs whenever they choose",
+    "No emergency power"
+   ]
+  },
+  {
+   "t": "The president should set tariffs whenever the president judges it's in the national interest.",
+   "yes": [
+    "Broad presidential power over tariffs, for any president"
+   ],
+   "no": [
+    "Requiring Congress to approve tariffs"
+   ]
+  }
  ],
  "tariff_authority_cases": [
   "A president should need Congress to do this: {case}.",
   "A president should be able to do this without a vote of Congress: {case}."
  ],
  "trade_agreements": [
-  "The US should sign agreements lowering tariffs with as many countries as possible.",
-  "The US should sign agreements lowering tariffs only if they include strong labor and environmental rules.",
-  "The US should sign agreements lowering tariffs only with close allies.",
-  "The US shouldn't sign new trade agreements, and should leave existing ones where it can."
+  {
+   "t": "The US should sign tariff-cutting deals with as many countries as possible.",
+   "yes": [
+    "New free trade agreements with many countries"
+   ],
+   "no": [
+    "Withdrawing from existing deals"
+   ]
+  },
+  {
+   "t": "Sign more trade deals, but only with strong labor and environmental rules.",
+   "yes": [
+    "Trade deals with enforceable labor and environmental standards"
+   ],
+   "no": [
+    "Deals without those rules",
+    "Pulling out of deals"
+   ]
+  },
+  {
+   "t": "Sign trade deals only with close allies.",
+   "yes": [
+    "Deals with countries like Canada, Japan and European nations"
+   ],
+   "no": [
+    "Deals with non-allies"
+   ]
+  },
+  {
+   "t": "No more trade deals; pull out of existing ones where possible.",
+   "yes": [
+    "Withdrawing from trade agreements like the one with Canada and Mexico"
+   ],
+   "no": [
+    "New tariff-cutting deals"
+   ]
+  }
  ],
  "trade_jobs_tradeoff": [
-  "Trade deals that open foreign markets are worth it even if some US industries and regions lose jobs.",
-  "Those trade deals are worth it only with major help for workers who lose their jobs.",
-  "Protecting existing US jobs comes before trade deals that open foreign markets."
+  {
+   "t": "Make trade deals that help the country overall, even if some regions lose jobs.",
+   "yes": [
+    "Trade deals with overall gains despite local job losses"
+   ],
+   "no": [
+    "Blocking deals to protect existing jobs"
+   ]
+  },
+  {
+   "t": "Make those trade deals only with major help for workers who lose jobs.",
+   "yes": [
+    "Large retraining, wage insurance and relocation aid for affected workers"
+   ],
+   "no": [
+    "Deals with no help for workers",
+    "Blocking deals outright"
+   ]
+  },
+  {
+   "t": "Protecting existing US jobs comes first.",
+   "yes": [
+    "Turning down deals that would cost US industries jobs"
+   ],
+   "no": [
+    "Trade deals that shift jobs abroad, even with overall gains"
+   ]
+  }
  ],
  "china_trade": [
-  "The US should trade freely with China, as with any other country.",
-  "The US should limit only sales of sensitive technology to China, like advanced chips and military goods.",
-  "The US should limit sensitive technology and also move production of essentials like medicines and electronics out of China.",
-  "The US should cut off most trade with China."
+  {
+   "t": "Trade freely with China, as with other countries.",
+   "yes": [
+    "Normal trade in goods and technology with China"
+   ],
+   "no": [
+    "Special limits on China trade"
+   ]
+  },
+  {
+   "t": "Limit trade with China only in sensitive technology.",
+   "yes": [
+    "Restrictions on advanced chips and military goods"
+   ],
+   "no": [
+    "Moving other production out of China",
+    "Cutting off trade"
+   ]
+  },
+  {
+   "t": "Limit sensitive technology and move production of essentials out of China.",
+   "yes": [
+    "Chip limits",
+    "Moving medicine and electronics production out of China"
+   ],
+   "no": [
+    "Free trade with China",
+    "Cutting off most trade"
+   ]
+  },
+  {
+   "t": "Cut off most trade with China.",
+   "yes": [
+    "Ending most imports from and exports to China"
+   ],
+   "no": [
+    "Ordinary trade with China"
+   ]
+  }
  ],
  "china_ownership": [
-  "Chinese companies should be able to own US businesses, farmland and apps like any foreign company.",
-  "Chinese companies can own US businesses, except in sensitive areas like defense and personal data.",
-  "Chinese companies shouldn't own US farmland, key technology or popular apps, but other businesses are fine.",
-  "Chinese companies shouldn't be allowed to own any US business."
+  {
+   "t": "Chinese companies should be able to own US businesses, farmland and apps like any foreign company.",
+   "yes": [
+    "Treating Chinese buyers like other foreign investors"
+   ],
+   "no": [
+    "Special bans on Chinese ownership"
+   ]
+  },
+  {
+   "t": "Chinese companies can own US businesses, except in defense and personal data.",
+   "yes": [
+    "Blocking Chinese ownership in defense and data-heavy businesses"
+   ],
+   "no": [
+    "Broader bans",
+    "No limits"
+   ]
+  },
+  {
+   "t": "No Chinese ownership of farmland, key technology or popular apps; other businesses are fine.",
+   "yes": [
+    "Banning Chinese purchases of farmland",
+    "Forcing sale of apps like TikTok"
+   ],
+   "no": [
+    "A total ban",
+    "No limits"
+   ]
+  },
+  {
+   "t": "Ban Chinese ownership of US businesses entirely.",
+   "yes": [
+    "Barring any China-based company from owning US businesses"
+   ],
+   "no": [
+    "Any Chinese ownership in the US"
+   ]
+  }
  ],
  "industrial_policy": [
-  "The government should pay companies to build factories in many US industries.",
-  "The government should pay companies to build factories only in industries vital to national security, like computer chips.",
-  "The government shouldn't pay companies to build factories; the market should decide."
+  {
+   "t": "Government should pay companies to build factories in many industries.",
+   "yes": [
+    "Subsidies and tax credits for chips, batteries and many other industries"
+   ],
+   "no": [
+    "Leaving investment to the market"
+   ]
+  },
+  {
+   "t": "Pay companies to build factories only in industries vital to national security.",
+   "yes": [
+    "Subsidies for chips and defense-related production"
+   ],
+   "no": [
+    "Subsidies for many industries",
+    "No subsidies"
+   ]
+  },
+  {
+   "t": "The market should decide where investment goes.",
+   "yes": [
+    "Ending industry-specific subsidies like the chip program"
+   ],
+   "no": [
+    "Government payments to build factories"
+   ]
+  }
  ],
  "buy_american": [
-  "Federal agencies should buy the best value, American-made or not.",
-  "Federal agencies should have to buy American only for military and security needs.",
-  "Federal agencies should buy American unless it costs more than about 25% extra.",
-  "Federal agencies should always buy American, even at much higher cost."
+  {
+   "t": "Federal agencies should buy the best value, wherever it's made.",
+   "yes": [
+    "Ending Buy American rules for most purchases"
+   ],
+   "no": [
+    "Paying more for US-made goods"
+   ]
+  },
+  {
+   "t": "Buy American only for military and security needs.",
+   "yes": [
+    "US-made requirements for defense purchases"
+   ],
+   "no": [
+    "Requiring it for everyday purchases"
+   ]
+  },
+  {
+   "t": "Buy American if it costs no more than about 25% extra.",
+   "yes": [
+    "Paying up to a 25% premium for US-made vehicles, steel and equipment"
+   ],
+   "no": [
+    "Paying any price",
+    "Ignoring where goods are made"
+   ]
+  },
+  {
+   "t": "Always buy American, even at much higher cost.",
+   "yes": [
+    "US-made requirements regardless of price"
+   ],
+   "no": [
+    "Buying foreign goods to save money"
+   ]
+  }
  ],
  "offshoring_penalty": [
-  "Companies that move US jobs abroad should be penalized, for example with higher taxes and losing government contracts.",
-  "Companies that move jobs abroad shouldn't be penalized, but tax breaks that make it cheaper should end.",
-  "Companies should decide where to operate, with no penalty for moving jobs abroad."
+  {
+   "t": "Companies that move US jobs abroad should face penalties.",
+   "yes": [
+    "Higher taxes and losing government contracts for offshoring"
+   ],
+   "no": [
+    "Letting companies move jobs freely"
+   ]
+  },
+  {
+   "t": "No penalty, but end tax breaks that make moving jobs abroad cheaper.",
+   "yes": [
+    "Closing tax breaks for overseas operations"
+   ],
+   "no": [
+    "Penalties for moving jobs abroad",
+    "Keeping those tax breaks"
+   ]
+  },
+  {
+   "t": "Companies should decide where to operate.",
+   "yes": [
+    "No penalties or special taxes for offshoring"
+   ],
+   "no": [
+    "Penalizing companies that move jobs abroad"
+   ]
+  }
  ],
  "export_controls": [
-  "US companies should be free to sell advanced technology like top chips to anyone, including China and Russia.",
-  "The US should block sales to rivals only for technology with clear military uses.",
-  "The US should block sales of most advanced technology to rivals, even if US companies lose sales."
+  {
+   "t": "Companies should be free to sell advanced technology to anyone.",
+   "yes": [
+    "Ending chip export limits on China and Russia"
+   ],
+   "no": [
+    "Export controls"
+   ]
+  },
+  {
+   "t": "Block sales of technology with clear military uses only.",
+   "yes": [
+    "Blocking military-use technology"
+   ],
+   "no": [
+    "Blocking most advanced chips",
+    "No limits at all"
+   ]
+  },
+  {
+   "t": "Block sales of most advanced technology to rivals, even if US companies lose sales.",
+   "yes": [
+    "Broad limits on selling top chips and tech to China and Russia"
+   ],
+   "no": [
+    "Letting companies sell advanced chips to rivals"
+   ]
+  }
  ],
  "friend_shoring": [
-  "Allies like Canada, Japan and European countries should pay clearly lower tariffs than other countries.",
-  "Allies should pay somewhat lower tariffs than other countries.",
-  "All trading partners should be treated the same, allies or not.",
-  "Allies should face tariffs too if they sell more to us than they buy from us."
+  {
+   "t": "Allies should get clearly lower tariffs than other countries.",
+   "yes": [
+    "Much lower tariffs for Canada, Japan and European countries"
+   ],
+   "no": [
+    "Treating allies like everyone else"
+   ]
+  },
+  {
+   "t": "Allies should get somewhat lower tariffs.",
+   "yes": [
+    "Modest tariff preferences for allies"
+   ],
+   "no": [
+    "Large preferences",
+    "No preference"
+   ]
+  },
+  {
+   "t": "Treat all trading partners the same.",
+   "yes": [
+    "The same tariffs for allies and others"
+   ],
+   "no": [
+    "Tariff breaks for allies"
+   ]
+  },
+  {
+   "t": "Allies should face tariffs too if they sell more to us than they buy.",
+   "yes": [
+    "Tariffs on allies with trade surpluses with the US"
+   ],
+   "no": [
+    "Tariff breaks for allies"
+   ]
+  }
  ]
 }

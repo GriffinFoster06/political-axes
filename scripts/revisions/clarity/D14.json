@@ -1,0 +1,21 @@
+{
+ "temp_workers_seasonal": {
+  "why": "'More' and 'fewer' had no baseline.",
+  "context": "Today roughly 400,000 seasonal farm jobs and about 66,000 or more seasonal non-farm jobs a year are filled through these visas."
+ },
+ "temp_workers_skilled": {
+  "why": "'More' and 'fewer' had no baseline.",
+  "context": "Today 85,000 new skilled-worker (H-1B) visas a year are issued under the main cap, with more at universities and research groups."
+ },
+ "culture_tradeoff": {
+  "why": "'Keep their own cultures' and 'one shared culture' had no examples.",
+  "sides": {
+   "0": {
+    "text": "Groups keep their own languages, holidays, foods and religious practices, even if people share less in common."
+   },
+   "1": {
+    "text": "People adopt one shared culture, with English, the same national holidays and common customs, even if some traditions fade."
+   }
+  }
+ }
+}

@@ -1,200 +1,1193 @@
 {
  "fair_small_gaps": [
-  "A fair society keeps the differences in wealth between people small, in nearly every case.",
-  "A fair society keeps the differences in wealth between people small, in most cases, though there are real exceptions.",
-  "I'm torn on whether a fair society keeps wealth differences small; I see it both ways about equally.",
-  "A fair society doesn't need to keep differences in wealth small, in most cases, though there are real exceptions.",
-  "A fair society doesn't need to keep differences in wealth small, in nearly every case."
+  {
+   "t": "A fair society keeps wealth gaps small, using taxes and benefits to do it. You'd say this holds in nearly every case.",
+   "yes": [
+    "Much higher taxes on top incomes, large fortunes and big inheritances",
+    "Spending that money on benefits and services for people with less",
+    "Treating today's gap (the top 1% owning about 30% of wealth) as unfair in itself"
+   ],
+   "no": [
+    "Leaving the gap alone as long as people at the bottom are getting richer",
+    "Cutting taxes on high earners or large estates"
+   ]
+  },
+  {
+   "t": "A fair society keeps wealth gaps small, using taxes and benefits to do it. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Much higher taxes on top incomes, large fortunes and big inheritances",
+    "Spending that money on benefits and services for people with less",
+    "Treating today's gap (the top 1% owning about 30% of wealth) as unfair in itself"
+   ],
+   "no": [
+    "Leaving the gap alone as long as people at the bottom are getting richer",
+    "Cutting taxes on high earners or large estates"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd judge ideas like a tax on large fortunes or cutting estate taxes one at a time, rather than by a rule about gaps"
+   ]
+  },
+  {
+   "t": "A fair society doesn't need small wealth gaps; how the money was gained matters more than the size of the gap. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Judging a fortune by how it was made, not by how big it is",
+    "Leaving large gaps alone when they come from work, saving or building a business"
+   ],
+   "no": [
+    "New taxes aimed mainly at shrinking the gap, like a tax on large fortunes",
+    "Treating the top 1%'s share of wealth as unfair in itself"
+   ]
+  },
+  {
+   "t": "A fair society doesn't need small wealth gaps; how the money was gained matters more than the size of the gap. You'd say this holds in nearly every case.",
+   "yes": [
+    "Judging a fortune by how it was made, not by how big it is",
+    "Leaving large gaps alone when they come from work, saving or building a business"
+   ],
+   "no": [
+    "New taxes aimed mainly at shrinking the gap, like a tax on large fortunes",
+    "Treating the top 1%'s share of wealth as unfair in itself"
+   ]
+  }
  ],
  "fair_keep_earnings": [
-  "A fair society doesn't let people keep everything they earn when some end up far richer, in nearly every case.",
-  "A fair society doesn't let people keep everything they earn when some end up far richer, in most cases, though there are real exceptions.",
-  "I'm torn on whether a fair society lets people keep what they earn; I see it both ways about equally.",
-  "A fair society lets people keep what they earn, even if some end up far richer, in most cases, though there are real exceptions.",
-  "A fair society lets people keep what they earn, even if some end up far richer, in nearly every case."
- ],
- "tradition_wisdom": [
-  "Customs and traditions don't usually contain wisdom worth keeping just because they're old, in nearly every case.",
-  "Customs and traditions don't usually contain wisdom worth keeping just because they're old, in most cases, though there are real exceptions.",
-  "I'm torn on whether traditions usually contain wisdom worth keeping; I see it both ways about equally.",
-  "Customs and traditions handed down over generations contain wisdom we should keep, in most cases, though there are real exceptions.",
-  "Customs and traditions handed down over generations contain wisdom we should keep, in nearly every case."
- ],
- "progress_by_questioning": [
-  "Society makes progress mainly by questioning and changing traditional ways, in nearly every case.",
-  "Society makes progress mainly by questioning and changing traditional ways, in most cases, though there are real exceptions.",
-  "I'm torn on whether progress comes mainly from questioning tradition; I see it both ways about equally.",
-  "Society doesn't mainly progress by questioning and changing traditional ways, in most cases, though there are real exceptions.",
-  "Society doesn't mainly progress by questioning and changing traditional ways, in nearly every case."
- ],
- "gov_role_values": [
-  "Government doesn't usually make social problems worse when it tries to solve them, in nearly every case.",
-  "Government doesn't usually make social problems worse when it tries to solve them, in most cases, though there are real exceptions.",
-  "I'm torn on whether government usually makes social problems worse; I see it both ways about equally.",
-  "When government tries to solve a social problem, it makes things worse, in most cases, though there are real exceptions.",
-  "When government tries to solve a social problem, it makes things worse, in nearly every case."
- ],
- "gov_role_values_rev": [
-  "Some social problems are too big to solve without the federal government, in nearly every case.",
-  "Some social problems are too big to solve without the federal government, in most cases, though there are real exceptions.",
-  "I'm torn on whether some problems need the federal government; I see it both ways about equally.",
-  "Social problems can be solved without the federal government, in most cases, though there are real exceptions.",
-  "Social problems can be solved without the federal government, in nearly every case."
- ],
- "group_status_natural": [
-  "It isn't natural or acceptable for some groups to have more power and status than others, in nearly every case.",
-  "It isn't natural or acceptable for some groups to have more power and status than others, in most cases, though there are real exceptions.",
-  "I'm torn on whether it's acceptable for some groups to have more power and status; I see it both ways about equally.",
-  "It's natural and acceptable for some groups to have more power and status than others, in most cases, though there are real exceptions.",
-  "It's natural and acceptable for some groups to have more power and status than others, in nearly every case."
- ],
- "group_status_equalize": [
-  "Society should work to make all groups equal in power and status, in nearly every case.",
-  "Society should work to make all groups equal in power and status, in most cases, though there are real exceptions.",
-  "I'm torn on whether society should work to make all groups equal; I see it both ways about equally.",
-  "Society shouldn't try to make all groups equal in power and status, in most cases, though there are real exceptions.",
-  "Society shouldn't try to make all groups equal in power and status, in nearly every case."
- ],
- "people_trustworthy": [
-  "Most people will do the right thing even without rules forcing them to, in nearly every case.",
-  "Most people will do the right thing even without rules forcing them to, in most cases, though there are real exceptions.",
-  "I'm torn on whether people do the right thing without rules; I see it both ways about equally.",
-  "Most people won't do the right thing without rules forcing them to, in most cases, though there are real exceptions.",
-  "Most people won't do the right thing without rules forcing them to, in nearly every case."
- ],
- "people_selfish": [
-  "Most people won't act selfishly even without strong rules and consequences, in nearly every case.",
-  "Most people won't act selfishly even without strong rules and consequences, in most cases, though there are real exceptions.",
-  "I'm torn on whether people act selfishly without rules; I see it both ways about equally.",
-  "Without strong rules and consequences, most people will act selfishly, in most cases, though there are real exceptions.",
-  "Without strong rules and consequences, most people will act selfishly, in nearly every case."
- ],
- "sacred_limits": [
-  "Nothing is wrong just because it goes against what's sacred or natural if nobody is harmed, in nearly every case.",
-  "Nothing is wrong just because it goes against what's sacred or natural if nobody is harmed, in most cases, though there are real exceptions.",
-  "I'm torn on whether things can be wrong when nobody is harmed; I see it both ways about equally.",
-  "Some things are wrong even if nobody is harmed, because they go against what's sacred or natural, in most cases, though there are real exceptions.",
-  "Some things are wrong even if nobody is harmed, because they go against what's sacred or natural, in nearly every case."
- ],
- "harm_only": [
-  "If an act harms nobody, it isn't wrong, in nearly every case.",
-  "If an act harms nobody, it isn't wrong, in most cases, though there are real exceptions.",
-  "I'm torn on whether an act that harms nobody can still be wrong; I see it both ways about equally.",
-  "An act can be wrong even if it harms nobody, in most cases, though there are real exceptions.",
-  "An act can be wrong even if it harms nobody, in nearly every case."
- ],
- "zero_sum": [
-  "One group getting ahead doesn't have to come at another's expense, in nearly every case.",
-  "One group getting ahead doesn't have to come at another's expense, in most cases, though there are real exceptions.",
-  "I'm torn on whether one group's gain is another's loss; I see it both ways about equally.",
-  "When one group gets ahead, it's at another group's expense, in most cases, though there are real exceptions.",
-  "When one group gets ahead, it's at another group's expense, in nearly every case."
- ],
- "positive_sum": [
-  "Different groups in society can all get ahead together, in nearly every case.",
-  "Different groups in society can all get ahead together, in most cases, though there are real exceptions.",
-  "I'm torn on whether groups can all get ahead together; I see it both ways about equally.",
-  "Different groups usually can't all get ahead together, in most cases, though there are real exceptions.",
-  "Different groups usually can't all get ahead together, in nearly every case."
+  {
+   "t": "Fairness can require taking a larger share from those who end up far richer than others. You'd say this holds in nearly every case.",
+   "yes": [
+    "Higher tax rates on very high incomes and investment gains",
+    "Using that money to help people who earn far less"
+   ],
+   "no": [
+    "Cutting taxes for top earners on the grounds that they earned it"
+   ]
+  },
+  {
+   "t": "Fairness can require taking a larger share from those who end up far richer than others. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Higher tax rates on very high incomes and investment gains",
+    "Using that money to help people who earn far less"
+   ],
+   "no": [
+    "Cutting taxes for top earners on the grounds that they earned it"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd judge each tax on high earners on its own merits rather than by a rule about keeping earnings"
+   ]
+  },
+  {
+   "t": "People should keep what they earn through pay, profits and investments, even if a few become far richer than everyone else. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Low taxes on income and investment gains, including for the highest earners",
+    "Letting founders and investors keep most of what they make, even billions"
+   ],
+   "no": [
+    "Raising taxes on top earners mainly to narrow the gap between rich and poor",
+    "Caps or special taxes on very large fortunes"
+   ]
+  },
+  {
+   "t": "People should keep what they earn through pay, profits and investments, even if a few become far richer than everyone else. You'd say this holds in nearly every case.",
+   "yes": [
+    "Low taxes on income and investment gains, including for the highest earners",
+    "Letting founders and investors keep most of what they make, even billions"
+   ],
+   "no": [
+    "Raising taxes on top earners mainly to narrow the gap between rich and poor",
+    "Caps or special taxes on very large fortunes"
+   ]
+  }
  ],
  "security_vs_choice": {
   "s": [
-   "I'd rather live where everyone's basic needs are guaranteed, even with high taxes and fewer choices.",
-   "I lean toward a society that guarantees basic needs.",
-   "I lean toward a society where people are free to choose and keep more of what they earn.",
-   "I'd rather live where people are free to choose and keep more of what they earn, even if some go without."
+   {
+    "t": "Everyone should be guaranteed health care, food, housing and a basic income, paid for with high taxes.",
+    "yes": [
+     "Government health coverage, food aid, housing help and a guaranteed income for everyone",
+     "Higher taxes on most workers, not only the rich, to pay for it",
+     "Less individual choice of health plan or pension in exchange"
+    ],
+    "no": [
+     "Cutting guaranteed benefits to lower taxes",
+     "Leaving health care and retirement mainly to each person's own choices"
+    ]
+   },
+   {
+    "t": "On balance, everyone should be guaranteed health care, food, housing and a basic income, paid for with high taxes.",
+    "yes": [
+     "Government health coverage, food aid, housing help and a guaranteed income for everyone",
+     "Higher taxes on most workers, not only the rich, to pay for it",
+     "Less individual choice of health plan or pension in exchange"
+    ],
+    "no": [
+     "Cutting guaranteed benefits to lower taxes",
+     "Leaving health care and retirement mainly to each person's own choices"
+    ]
+   },
+   {
+    "t": "On balance, people should keep more of their pay and make their own choices, even if some go without.",
+    "yes": [
+     "Lower taxes, with people choosing and paying for their own health plans and savings",
+     "Accepting that some people will go without health care or housing"
+    ],
+    "no": [
+     "Guaranteed health care, housing or income for everyone paid for with high taxes"
+    ]
+   },
+   {
+    "t": "People should keep more of their pay and make their own choices, even if some go without.",
+    "yes": [
+     "Lower taxes, with people choosing and paying for their own health plans and savings",
+     "Accepting that some people will go without health care or housing"
+    ],
+    "no": [
+     "Guaranteed health care, housing or income for everyone paid for with high taxes"
+    ]
+   }
   ],
-  "torn": "I'd weigh guaranteed needs and freedom to choose about equally."
+  "torn": {
+   "t": "You value guaranteed needs and freedom to choose about equally.",
+   "means": [
+    "You'd judge each program, like government health care or a guaranteed income, by its cost and what it gives up"
+   ]
+  }
  },
  "equal_treatment_vs_association": {
   "s": [
-   "Protecting people from being turned away unfairly should win, even if owners lose some freedom to choose whom they deal with.",
-   "I lean toward protecting people from being turned away unfairly.",
-   "I lean toward owners' freedom to choose whom they deal with.",
-   "Owners' freedom to choose whom they deal with should win, even if some people are turned away unfairly."
+   {
+    "t": "Businesses open to the public shouldn't be allowed to turn people away over traits like race, religion, sex or sexual orientation.",
+    "yes": [
+     "Anti-discrimination laws covering shops, restaurants, hotels, landlords and wedding vendors",
+     "Requiring a baker or photographer who serves weddings to serve same-sex weddings too"
+    ],
+    "no": [
+     "Letting owners refuse customers or tenants over their race, religion, sex or sexual orientation",
+     "Religious exemptions that let businesses refuse some customers"
+    ]
+   },
+   {
+    "t": "On balance, businesses open to the public shouldn't be allowed to turn people away over traits like race, religion, sex or sexual orientation.",
+    "yes": [
+     "Anti-discrimination laws covering shops, restaurants, hotels, landlords and wedding vendors",
+     "Requiring a baker or photographer who serves weddings to serve same-sex weddings too"
+    ],
+    "no": [
+     "Letting owners refuse customers or tenants over their race, religion, sex or sexual orientation",
+     "Religious exemptions that let businesses refuse some customers"
+    ]
+   },
+   {
+    "t": "On balance, owners should be free to choose whom they serve or rent to, even if some people are turned away.",
+    "yes": [
+     "Letting a wedding vendor turn down an event they object to",
+     "Narrower anti-discrimination laws for private businesses"
+    ],
+    "no": [
+     "Fining or suing owners for refusing to serve someone"
+    ]
+   },
+   {
+    "t": "Owners should be free to choose whom they serve or rent to, even if some people are turned away.",
+    "yes": [
+     "Letting a wedding vendor turn down an event they object to",
+     "Narrower anti-discrimination laws for private businesses"
+    ],
+    "no": [
+     "Fining or suing owners for refusing to serve someone"
+    ]
+   }
   ],
-  "torn": "I weigh equal treatment and owners' freedom about equally."
+  "torn": {
+   "t": "You weigh equal treatment and owners' freedom about equally.",
+   "means": [
+    "You'd decide case by case, for example treating a hotel turning guests away differently from a photographer turning down a wedding"
+   ]
+  }
  },
  "liberty_vs_order": {
   "s": [
-   "Protecting individual freedoms matters more to me, even if it's harder to keep order.",
-   "I lean toward protecting individual freedoms.",
-   "I lean toward keeping public order and safety.",
-   "Keeping public order and safety matters more to me, even if some freedoms are limited."
+   {
+    "t": "Individual freedoms should win when they clash with keeping order.",
+    "yes": [
+     "Strict limits on police stopping and searching people without cause",
+     "Letting protests go ahead even when they block roads",
+     "Fewer cameras and less monitoring of public places"
+    ],
+    "no": [
+     "Curfews and sweeps of homeless camps",
+     "Stop-and-search in high-crime areas"
+    ]
+   },
+   {
+    "t": "On balance, individual freedoms should win when they clash with keeping order.",
+    "yes": [
+     "Strict limits on police stopping and searching people without cause",
+     "Letting protests go ahead even when they block roads",
+     "Fewer cameras and less monitoring of public places"
+    ],
+    "no": [
+     "Curfews and sweeps of homeless camps",
+     "Stop-and-search in high-crime areas"
+    ]
+   },
+   {
+    "t": "On balance, public order and safety should win when they clash with individual freedoms.",
+    "yes": [
+     "Stop-and-search in high-crime areas",
+     "Curfews during riots",
+     "Clearing homeless camps from parks and sidewalks",
+     "Cameras in public places"
+    ],
+    "no": [
+     "Letting protests block roads",
+     "Tight limits on police that make disorder harder to control"
+    ]
+   },
+   {
+    "t": "Public order and safety should win when they clash with individual freedoms.",
+    "yes": [
+     "Stop-and-search in high-crime areas",
+     "Curfews during riots",
+     "Clearing homeless camps from parks and sidewalks",
+     "Cameras in public places"
+    ],
+    "no": [
+     "Letting protests block roads",
+     "Tight limits on police that make disorder harder to control"
+    ]
+   }
   ],
-  "torn": "Freedom and order matter to me about equally."
+  "torn": {
+   "t": "You weigh freedom and order about equally.",
+   "means": [
+    "You'd judge each measure, like curfews, camp sweeps or stop-and-search, by how much safety it buys and how much freedom it costs"
+   ]
+  }
  },
  "conscience_vs_law": {
   "s": [
-   "Someone who believes a law is wrong should follow their conscience, even if it means breaking the law.",
-   "I lean toward following conscience over the law.",
-   "I lean toward obeying the law while working to change it.",
-   "Someone should obey the law while working to change it, even if that means doing something they think is wrong."
+   {
+    "t": "People should follow their conscience even if it means breaking the law.",
+    "yes": [
+     "Refusing to fight in a war you believe is unjust",
+     "Hiding someone from deportation if you believe it's wrong",
+     "Officials refusing to carry out laws they find immoral, like a clerk refusing licenses"
+    ],
+    "no": [
+     "Obeying a law you believe is wrong while waiting for it to change"
+    ]
+   },
+   {
+    "t": "On balance, people should follow their conscience even if it means breaking the law.",
+    "yes": [
+     "Refusing to fight in a war you believe is unjust",
+     "Hiding someone from deportation if you believe it's wrong",
+     "Officials refusing to carry out laws they find immoral, like a clerk refusing licenses"
+    ],
+    "no": [
+     "Obeying a law you believe is wrong while waiting for it to change"
+    ]
+   },
+   {
+    "t": "On balance, people should obey the law and work to change it, even when they think it's wrong.",
+    "yes": [
+     "Following laws you disagree with while you vote, petition or sue to change them",
+     "Officials carrying out laws they personally object to, or resigning"
+    ],
+    "no": [
+     "Breaking laws in protest, like blocking roads",
+     "Hiding people from deportation or refusing a draft"
+    ]
+   },
+   {
+    "t": "People should obey the law and work to change it, even when they think it's wrong.",
+    "yes": [
+     "Following laws you disagree with while you vote, petition or sue to change them",
+     "Officials carrying out laws they personally object to, or resigning"
+    ],
+    "no": [
+     "Breaking laws in protest, like blocking roads",
+     "Hiding people from deportation or refusing a draft"
+    ]
+   }
   ],
-  "torn": "I weigh conscience and obeying the law about equally."
+  "torn": {
+   "t": "You weigh conscience and obeying the law about equally.",
+   "means": [
+    "Whether to break a law would depend for you on how serious the wrong is"
+   ]
+  }
  },
+ "tradition_wisdom": [
+  {
+   "t": "A custom being old isn't a reason to keep it; each should be judged on its own merits. You'd say this holds in nearly every case.",
+   "yes": [
+    "Dropping customs that no longer make sense, such as fixed roles for men and women if they limit people",
+    "Judging marriage, religious practice or family customs by how well they work today"
+   ],
+   "no": [
+    "Keeping a custom mainly because it has lasted a long time"
+   ]
+  },
+  {
+   "t": "A custom being old isn't a reason to keep it; each should be judged on its own merits. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Dropping customs that no longer make sense, such as fixed roles for men and women if they limit people",
+    "Judging marriage, religious practice or family customs by how well they work today"
+   ],
+   "no": [
+    "Keeping a custom mainly because it has lasted a long time"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some customs on the list seem worth keeping to you and others don't, and age alone doesn't settle it"
+   ]
+  },
+  {
+   "t": "Long-standing customs usually hold wisdom worth keeping, even when no one can spell out exactly why. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Keeping customs like marriage before children, regular worship and respect for elders",
+    "Making those who want to change a long-standing custom show why it should change"
+   ],
+   "no": [
+    "Dropping a custom just because it seems old-fashioned"
+   ]
+  },
+  {
+   "t": "Long-standing customs usually hold wisdom worth keeping, even when no one can spell out exactly why. You'd say this holds in nearly every case.",
+   "yes": [
+    "Keeping customs like marriage before children, regular worship and respect for elders",
+    "Making those who want to change a long-standing custom show why it should change"
+   ],
+   "no": [
+    "Dropping a custom just because it seems old-fashioned"
+   ]
+  }
+ ],
+ "progress_by_questioning": [
+  {
+   "t": "Progress comes mainly from people challenging the way things have always been done. You'd say this holds in nearly every case.",
+   "yes": [
+    "Encouraging people to challenge long-standing customs and institutions",
+    "Changing laws and practices that rest mostly on tradition"
+   ],
+   "no": [
+    "Treating long-standing customs as settled"
+   ]
+  },
+  {
+   "t": "Progress comes mainly from people challenging the way things have always been done. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Encouraging people to challenge long-standing customs and institutions",
+    "Changing laws and practices that rest mostly on tradition"
+   ],
+   "no": [
+    "Treating long-standing customs as settled"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd credit some progress on the list to challenging tradition and some to building on it"
+   ]
+  },
+  {
+   "t": "Progress comes mainly from building on what already works, more than from challenging tradition. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Improving existing institutions step by step",
+    "Keeping traditional practices unless there's clear evidence they fail"
+   ],
+   "no": [
+    "Treating tradition as something to be overcome"
+   ]
+  },
+  {
+   "t": "Progress comes mainly from building on what already works, more than from challenging tradition. You'd say this holds in nearly every case.",
+   "yes": [
+    "Improving existing institutions step by step",
+    "Keeping traditional practices unless there's clear evidence they fail"
+   ],
+   "no": [
+    "Treating tradition as something to be overcome"
+   ]
+  }
+ ],
+ "pace_of_change": [
+  {
+   "t": "Big changes should happen fast and all at once.",
+   "yes": [
+    "Overhauling a whole system, like health care or immigration, in one law",
+    "Acting while there's a majority for it rather than waiting"
+   ],
+   "no": [
+    "Phasing changes in over many years",
+    "Trying changes in a few places first"
+   ]
+  },
+  {
+   "t": "Change should come at a steady pace, in clear steps.",
+   "yes": [
+    "Changes phased in over a few years with set steps"
+   ],
+   "no": [
+    "Overhauls all at once",
+    "Holding off change mainly to keep things as they are"
+   ]
+  },
+  {
+   "t": "Change should be slow and careful.",
+   "yes": [
+    "Trying changes in a few states or cities first, then expanding",
+    "Phasing changes in over many years, with time to undo them"
+   ],
+   "no": [
+    "Overhauling whole systems at once"
+   ]
+  },
+  {
+   "t": "Change as little as possible and keep what works.",
+   "yes": [
+    "Keeping laws and institutions that work, even if imperfect",
+    "Changing things only when they have clearly failed"
+   ],
+   "no": [
+    "Big reforms in any direction"
+   ]
+  }
+ ],
+ "moral_rules": [
+  {
+   "t": "Whether lying, stealing or even killing is wrong depends entirely on the culture and the situation.",
+   "means": [
+    "No moral rule holds for everyone everywhere",
+    "A practice one culture condemns can be right in another"
+   ]
+  },
+  {
+   "t": "Right and wrong mostly depend on the situation, with a few fixed rules.",
+   "means": [
+    "A handful of acts, like murdering an innocent person, are always wrong",
+    "Most others, like lying or breaking a promise, can be right in some situations"
+   ]
+  },
+  {
+   "t": "Many moral rules are fixed, though some depend on the situation.",
+   "means": [
+    "Acts like murder, theft and betrayal are wrong for everyone",
+    "Some questions, like when a lie is acceptable, depend on circumstances"
+   ]
+  },
+  {
+   "t": "Right and wrong are the same for all people at all times.",
+   "means": [
+    "Acts like murder, theft, lying and adultery are wrong everywhere, in every era, whatever a culture says"
+   ]
+  }
+ ],
+ "group_status_natural": [
+  {
+   "t": "It isn't acceptable for some groups to have more wealth, top jobs and influence than others. You'd say this holds in nearly every case.",
+   "yes": [
+    "Policies that narrow gaps between groups in wealth, top jobs and political seats",
+    "Treating a large gap between groups as a problem to fix"
+   ],
+   "no": [
+    "Accepting such gaps as natural"
+   ]
+  },
+  {
+   "t": "It isn't acceptable for some groups to have more wealth, top jobs and influence than others. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Policies that narrow gaps between groups in wealth, top jobs and political seats",
+    "Treating a large gap between groups as a problem to fix"
+   ],
+   "no": [
+    "Accepting such gaps as natural"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some gaps between groups seem acceptable to you and others don't"
+   ]
+  },
+  {
+   "t": "It's natural and acceptable for some groups to end up with more wealth, top jobs and influence than others. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Accepting that groups will differ in wealth, top jobs and political seats",
+    "Treating people as individuals rather than measuring groups against each other"
+   ],
+   "no": [
+    "Policies designed to make every group equal in wealth or representation",
+    "Targets for how many of each group hold top jobs or board seats"
+   ]
+  },
+  {
+   "t": "It's natural and acceptable for some groups to end up with more wealth, top jobs and influence than others. You'd say this holds in nearly every case.",
+   "yes": [
+    "Accepting that groups will differ in wealth, top jobs and political seats",
+    "Treating people as individuals rather than measuring groups against each other"
+   ],
+   "no": [
+    "Policies designed to make every group equal in wealth or representation",
+    "Targets for how many of each group hold top jobs or board seats"
+   ]
+  }
+ ],
+ "group_status_equalize": [
+  {
+   "t": "Society should actively work to make groups equal in wealth, top jobs and influence. You'd say this holds in nearly every case.",
+   "yes": [
+    "Policies to close gaps between groups, such as targeted aid, recruitment or outreach",
+    "Tracking how each group is represented in top jobs, colleges and government"
+   ],
+   "no": [
+    "Accepting large gaps between groups as natural"
+   ]
+  },
+  {
+   "t": "Society should actively work to make groups equal in wealth, top jobs and influence. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Policies to close gaps between groups, such as targeted aid, recruitment or outreach",
+    "Tracking how each group is represented in top jobs, colleges and government"
+   ],
+   "no": [
+    "Accepting large gaps between groups as natural"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd back some efforts to close gaps between groups but not others"
+   ]
+  },
+  {
+   "t": "Society shouldn't try to make groups equal in wealth, top jobs and influence. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Equal rights for every person, without trying to equalize outcomes for groups"
+   ],
+   "no": [
+    "Programs aimed at making groups equal in wealth or representation",
+    "Targets for group representation in jobs, colleges or government"
+   ]
+  },
+  {
+   "t": "Society shouldn't try to make groups equal in wealth, top jobs and influence. You'd say this holds in nearly every case.",
+   "yes": [
+    "Equal rights for every person, without trying to equalize outcomes for groups"
+   ],
+   "no": [
+    "Programs aimed at making groups equal in wealth or representation",
+    "Targets for group representation in jobs, colleges or government"
+   ]
+  }
+ ],
+ "zero_sum": [
+  {
+   "t": "One group's gains don't usually come at another's expense. You'd say this holds in nearly every case.",
+   "means": [
+    "Higher profits, more immigrants working or more women in top jobs can leave room for others to gain too"
+   ]
+  },
+  {
+   "t": "One group's gains don't usually come at another's expense. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "Higher profits, more immigrants working or more women in top jobs can leave room for others to gain too"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some gains on the list look like one group's loss to you, others don't"
+   ]
+  },
+  {
+   "t": "When one group gains, another usually loses. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "When the rich get richer, you'd expect workers or the poor to be losing out",
+    "When immigrants gain jobs, or one group gains college seats, you'd expect others to lose them"
+   ]
+  },
+  {
+   "t": "When one group gains, another usually loses. You'd say this holds in nearly every case.",
+   "means": [
+    "When the rich get richer, you'd expect workers or the poor to be losing out",
+    "When immigrants gain jobs, or one group gains college seats, you'd expect others to lose them"
+   ]
+  }
+ ],
+ "positive_sum": [
+  {
+   "t": "Different groups can usually all get ahead together. You'd say this holds in nearly every case.",
+   "means": [
+    "Owners and workers, immigrants and people born here, cities and rural areas can all gain from the same growth"
+   ]
+  },
+  {
+   "t": "Different groups can usually all get ahead together. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "Owners and workers, immigrants and people born here, cities and rural areas can all gain from the same growth"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some groups can rise together in your view, others are in real competition"
+   ]
+  },
+  {
+   "t": "Groups usually can't all get ahead together; gains for one tend to mean losses for another. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "Higher profits tend to come out of workers' pay, and more jobs for one group mean fewer for another"
+   ]
+  },
+  {
+   "t": "Groups usually can't all get ahead together; gains for one tend to mean losses for another. You'd say this holds in nearly every case.",
+   "means": [
+    "Higher profits tend to come out of workers' pay, and more jobs for one group mean fewer for another"
+   ]
+  }
+ ],
+ "proportional_vs_need": {
+  "s": [
+   {
+    "t": "Those who need it most should get more, even if they contributed less.",
+    "yes": [
+     "College aid based on family income rather than grades",
+     "Benefits and disaster aid aimed at those hit hardest"
+    ],
+    "no": [
+     "Linking benefits mainly to what people paid in taxes",
+     "Merit-only scholarships"
+    ]
+   },
+   {
+    "t": "On balance, those who need it most should get more, even if they contributed less.",
+    "yes": [
+     "College aid based on family income rather than grades",
+     "Benefits and disaster aid aimed at those hit hardest"
+    ],
+    "no": [
+     "Linking benefits mainly to what people paid in taxes",
+     "Merit-only scholarships"
+    ]
+   },
+   {
+    "t": "On balance, those who contributed more should get more, even if some in greater need get less.",
+    "yes": [
+     "Merit-based pay raises and scholarships",
+     "Benefits like Social Security tied to what you paid in"
+    ],
+    "no": [
+     "Aid that gives the most to those who contributed least"
+    ]
+   },
+   {
+    "t": "Those who contributed more should get more, even if some in greater need get less.",
+    "yes": [
+     "Merit-based pay raises and scholarships",
+     "Benefits like Social Security tied to what you paid in"
+    ],
+    "no": [
+     "Aid that gives the most to those who contributed least"
+    ]
+   }
+  ],
+  "torn": {
+   "t": "You weigh need and contribution about equally.",
+   "means": [
+    "You'd want a mix, such as aid that's partly based on need and partly on what people put in"
+   ]
+  }
+ },
+ "get_ahead": [
+  {
+   "t": "Family background and connections mostly decide who gets ahead.",
+   "means": [
+    "Children of well-off or well-connected parents mostly stay ahead",
+    "Most people born poor stay poor, however hard they work"
+   ]
+  },
+  {
+   "t": "Luck and circumstances mostly decide who gets ahead.",
+   "means": [
+    "Things outside people's control, like health, the economy or where they grew up, matter more than effort or talent"
+   ]
+  },
+  {
+   "t": "Background, luck and effort all matter about equally.",
+   "means": [
+    "Hard work raises your chances, but where you start and what happens to you count about as much"
+   ]
+  },
+  {
+   "t": "Talent and skills mostly decide who gets ahead.",
+   "means": [
+    "People with ability, education and in-demand skills mostly rise, wherever they start"
+   ]
+  },
+  {
+   "t": "Hard work mostly decides who gets ahead.",
+   "means": [
+    "Most people who work hard and keep at it can get ahead in the US today, wherever they start"
+   ]
+  }
+ ],
  "child_independence": {
   "s": [
-   "It's more important to teach children to question rules and think for themselves, even if they're harder to manage.",
-   "I lean toward teaching children to think for themselves.",
-   "I lean toward teaching children to respect rules and authority.",
-   "It's more important to teach children to respect rules and authority, even if they question less."
+   {
+    "t": "Children should learn to question rules and think for themselves.",
+    "yes": [
+     "Children asking why a rule exists and arguing their side",
+     "Letting children make some choices, like their activities or how to spend free time"
+    ],
+    "no": [
+     "Expecting children to obey adults without asking why"
+    ]
+   },
+   {
+    "t": "On balance, children should learn to question rules and think for themselves.",
+    "yes": [
+     "Children asking why a rule exists and arguing their side",
+     "Letting children make some choices, like their activities or how to spend free time"
+    ],
+    "no": [
+     "Expecting children to obey adults without asking why"
+    ]
+   },
+   {
+    "t": "On balance, children should learn to respect rules and authority.",
+    "yes": [
+     "Children doing what parents and teachers say without arguing",
+     "“Because I said so” as a good enough reason"
+    ],
+    "no": [
+     "Children openly challenging adults' rules"
+    ]
+   },
+   {
+    "t": "Children should learn to respect rules and authority.",
+    "yes": [
+     "Children doing what parents and teachers say without arguing",
+     "“Because I said so” as a good enough reason"
+    ],
+    "no": [
+     "Children openly challenging adults' rules"
+    ]
+   }
   ],
-  "torn": "I'd weigh independence and respect for authority about equally."
+  "torn": {
+   "t": "You value both about equally.",
+   "means": [
+    "You'd want children to obey most rules but feel free to ask why"
+   ]
+  }
  },
  "child_discipline": {
   "s": [
-   "Children should be free to express themselves, even if they sometimes behave badly.",
-   "I lean toward giving children room to express themselves.",
-   "I lean toward expecting discipline and good manners.",
-   "Children should be expected to show discipline and good manners, even if that means stricter parenting."
+   {
+    "t": "Children should have room to express themselves, even if they sometimes misbehave.",
+    "yes": [
+     "Letting children show strong feelings and speak up",
+     "Handling misbehavior by talking it through rather than punishing",
+     "Letting children choose how they dress and play"
+    ],
+    "no": [
+     "Time-outs or lost privileges as the main response to misbehavior",
+     "Expecting children to sit still and stay quiet"
+    ]
+   },
+   {
+    "t": "On balance, children should have room to express themselves, even if they sometimes misbehave.",
+    "yes": [
+     "Letting children show strong feelings and speak up",
+     "Handling misbehavior by talking it through rather than punishing",
+     "Letting children choose how they dress and play"
+    ],
+    "no": [
+     "Time-outs or lost privileges as the main response to misbehavior",
+     "Expecting children to sit still and stay quiet"
+    ]
+   },
+   {
+    "t": "On balance, children should be held to discipline and good manners, even if that means stricter parenting.",
+    "yes": [
+     "Expecting please and thank you, sitting still at meals and in class, and obeying the first time",
+     "Consequences like time-outs or lost privileges for misbehaving"
+    ],
+    "no": [
+     "Letting rudeness or defiance slide so children can express themselves"
+    ]
+   },
+   {
+    "t": "Children should be held to discipline and good manners, even if that means stricter parenting.",
+    "yes": [
+     "Expecting please and thank you, sitting still at meals and in class, and obeying the first time",
+     "Consequences like time-outs or lost privileges for misbehaving"
+    ],
+    "no": [
+     "Letting rudeness or defiance slide so children can express themselves"
+    ]
+   }
   ],
-  "torn": "I weigh self-expression and discipline about equally."
+  "torn": {
+   "t": "You value both about equally.",
+   "means": [
+    "You'd set firm rules on manners but leave children room to show their feelings"
+   ]
+  }
  },
  "weigh_foreigners": {
   "s": [
-   "The US government should weigh people in other countries about as much as Americans, even if Americans sometimes lose out.",
-   "I lean toward weighing people abroad nearly as much as Americans.",
-   "I lean toward putting Americans' interests first.",
-   "The US government should put Americans' interests first, even if people elsewhere are worse off."
+   {
+    "t": "The US should weigh people abroad about as much as Americans, even if Americans sometimes lose out.",
+    "yes": [
+     "A trade deal that costs some US jobs if it lifts far more people abroad out of poverty",
+     "Spending on vaccines and famine relief abroad even when the money could go to Americans",
+     "Taking in more refugees even at some cost to Americans"
+    ],
+    "no": [
+     "Turning down help abroad mainly because Americans don't gain from it"
+    ]
+   },
+   {
+    "t": "On balance, the US should weigh people abroad about as much as Americans, even if Americans sometimes lose out.",
+    "yes": [
+     "A trade deal that costs some US jobs if it lifts far more people abroad out of poverty",
+     "Spending on vaccines and famine relief abroad even when the money could go to Americans",
+     "Taking in more refugees even at some cost to Americans"
+    ],
+    "no": [
+     "Turning down help abroad mainly because Americans don't gain from it"
+    ]
+   },
+   {
+    "t": "On balance, the US should put Americans' interests first, even if people elsewhere are worse off.",
+    "yes": [
+     "Turning down trade deals that cost US jobs, even if they'd help poorer countries more",
+     "Cutting aid abroad when the money could be spent on Americans",
+     "Setting refugee and immigration numbers by what's good for Americans"
+    ],
+    "no": [
+     "Accepting costs to Americans to help people abroad"
+    ]
+   },
+   {
+    "t": "The US should put Americans' interests first, even if people elsewhere are worse off.",
+    "yes": [
+     "Turning down trade deals that cost US jobs, even if they'd help poorer countries more",
+     "Cutting aid abroad when the money could be spent on Americans",
+     "Setting refugee and immigration numbers by what's good for Americans"
+    ],
+    "no": [
+     "Accepting costs to Americans to help people abroad"
+    ]
+   }
   ],
-  "torn": "I weigh Americans and people abroad about equally here."
+  "torn": {
+   "t": "You weigh Americans' interests and people abroad about equally.",
+   "means": [
+    "You'd accept small costs to Americans for big gains abroad, but not large ones"
+   ]
+  }
  },
  "loyalty_humanity_country": {
   "s": [
-   "My strongest loyalty is to humanity as a whole, more than to any one country.",
-   "I lean toward loyalty to humanity as a whole.",
-   "I lean toward loyalty to my country.",
-   "My strongest loyalty is to my country, more than to humanity as a whole."
+   {
+    "t": "Your strongest loyalty is to humanity as a whole.",
+    "means": [
+     "You think of yourself as a citizen of the world before an American",
+     "When the interests of the US and the rest of the world clash, you'd feel pulled toward the world"
+    ]
+   },
+   {
+    "t": "On balance, your strongest loyalty is to humanity as a whole.",
+    "means": [
+     "You think of yourself as a citizen of the world before an American",
+     "When the interests of the US and the rest of the world clash, you'd feel pulled toward the world"
+    ]
+   },
+   {
+    "t": "On balance, your strongest loyalty is to your country.",
+    "means": [
+     "You think of yourself as an American first",
+     "When the interests of the US and the rest of the world clash, you'd feel pulled toward the US"
+    ]
+   },
+   {
+    "t": "Your strongest loyalty is to your country.",
+    "means": [
+     "You think of yourself as an American first",
+     "When the interests of the US and the rest of the world clash, you'd feel pulled toward the US"
+    ]
+   }
   ],
-  "torn": "My loyalty to humanity and to my country is about equal."
+  "torn": {
+   "t": "Your loyalty to humanity and to your country are about equal.",
+   "means": [
+    "You'd feel pulled both ways when US interests clash with the rest of the world's"
+   ]
+  }
  },
- "proportional_vs_need": {
-  "s": [
-   "It's fairer to give more to those who need it most, even if they contributed less.",
-   "I lean toward sharing by need.",
-   "I lean toward sharing by contribution.",
-   "It's fairer to give more to those who contributed more, even if some with greater need get less."
-  ],
-  "torn": "I weigh need and contribution about equally."
- },
- "get_ahead": [
-  "In the US today, family background and connections mostly decide who gets ahead.",
-  "Luck and circumstances mostly decide who gets ahead.",
-  "A mix of background, luck and effort decides who gets ahead.",
-  "Talent and skills mostly decide who gets ahead.",
-  "Hard work mostly decides who gets ahead."
+ "people_trustworthy": [
+  {
+   "t": "Most people will do the right thing without rules forcing them to. You'd say this holds in nearly every case.",
+   "means": [
+    "You'd expect most people to return a lost wallet, pay their taxes honestly and wait their turn even without fines, audits or police"
+   ]
+  },
+  {
+   "t": "Most people will do the right thing without rules forcing them to. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "You'd expect most people to return a lost wallet, pay their taxes honestly and wait their turn even without fines, audits or police"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd trust people on some things on the list but not others"
+   ]
+  },
+  {
+   "t": "Most people won't do the right thing unless rules make them. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "Without fines, audits or police, you'd expect many people to keep a lost wallet, cheat on taxes or cut in line"
+   ]
+  },
+  {
+   "t": "Most people won't do the right thing unless rules make them. You'd say this holds in nearly every case.",
+   "means": [
+    "Without fines, audits or police, you'd expect many people to keep a lost wallet, cheat on taxes or cut in line"
+   ]
+  }
  ],
- "moral_rules": [
-  "Right and wrong depend entirely on the culture and the situation.",
-  "Right and wrong mostly depend on the situation, with a few fixed rules.",
-  "There are many fixed rules of right and wrong, but some depend on the situation.",
-  "Right and wrong are the same for all people and all times."
+ "people_selfish": [
+  {
+   "t": "Most people won't act selfishly even without strong rules and consequences. You'd say this holds in nearly every case.",
+   "means": [
+    "You'd expect most people to return a lost wallet, pay taxes honestly and wait their turn even if no one were checking"
+   ]
+  },
+  {
+   "t": "Most people won't act selfishly even without strong rules and consequences. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "You'd expect most people to return a lost wallet, pay taxes honestly and wait their turn even if no one were checking"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "You'd expect people to behave on some things on the list but not others"
+   ]
+  },
+  {
+   "t": "Without strong rules and consequences, most people will act selfishly. You'd say this holds most of the time, with some real exceptions.",
+   "means": [
+    "Without fines, audits or police, you'd expect most people to cheat on taxes, litter, cut in line or keep a lost wallet"
+   ]
+  },
+  {
+   "t": "Without strong rules and consequences, most people will act selfishly. You'd say this holds in nearly every case.",
+   "means": [
+    "Without fines, audits or police, you'd expect most people to cheat on taxes, litter, cut in line or keep a lost wallet"
+   ]
+  }
  ],
- "pace_of_change": [
-  "Change in customs, laws and institutions is usually best when it's fast and sweeping.",
-  "Change is usually best when it's steady.",
-  "Change is usually best when it's slow and careful.",
-  "Society should change as little as possible and keep what works."
+ "sacred_limits": [
+  {
+   "t": "An act isn't wrong just because it goes against what's sacred or natural; what matters is whether it harms someone. You'd say this holds in nearly every case.",
+   "yes": [
+    "Judging acts only by whether they hurt someone",
+    "Seeing private acts like burning your own flag or mocking a holy book as not wrong"
+   ],
+   "no": [
+    "Calling harmless acts wrong because they offend religious or natural order"
+   ]
+  },
+  {
+   "t": "An act isn't wrong just because it goes against what's sacred or natural; what matters is whether it harms someone. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Judging acts only by whether they hurt someone",
+    "Seeing private acts like burning your own flag or mocking a holy book as not wrong"
+   ],
+   "no": [
+    "Calling harmless acts wrong because they offend religious or natural order"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some acts on the list seem wrong to you even though no one is hurt; others don't"
+   ]
+  },
+  {
+   "t": "Some acts are wrong even when no one is harmed, because they violate what's sacred or natural. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Calling acts like dishonoring the dead, cloning a human or desecrating a holy book wrong, even in private"
+   ],
+   "no": [
+    "The view that only harm to others makes an act wrong"
+   ]
+  },
+  {
+   "t": "Some acts are wrong even when no one is harmed, because they violate what's sacred or natural. You'd say this holds in nearly every case.",
+   "yes": [
+    "Calling acts like dishonoring the dead, cloning a human or desecrating a holy book wrong, even in private"
+   ],
+   "no": [
+    "The view that only harm to others makes an act wrong"
+   ]
+  }
+ ],
+ "harm_only": [
+  {
+   "t": "If an act harms nobody, it isn't wrong. You'd say this holds in nearly every case.",
+   "yes": [
+    "Seeing private acts like burning your own flag or mocking a holy book as not wrong",
+    "Judging acts only by whether they hurt someone"
+   ],
+   "no": [
+    "Calling harmless acts wrong because they offend religious or natural order"
+   ]
+  },
+  {
+   "t": "If an act harms nobody, it isn't wrong. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Seeing private acts like burning your own flag or mocking a holy book as not wrong",
+    "Judging acts only by whether they hurt someone"
+   ],
+   "no": [
+    "Calling harmless acts wrong because they offend religious or natural order"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some harmless acts on the list seem wrong to you; others don't"
+   ]
+  },
+  {
+   "t": "An act can be wrong even if it harms nobody. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Calling acts like dishonoring the dead, cloning a human or desecrating a holy book wrong, even in private"
+   ],
+   "no": [
+    "The view that only harm to others makes an act wrong"
+   ]
+  },
+  {
+   "t": "An act can be wrong even if it harms nobody. You'd say this holds in nearly every case.",
+   "yes": [
+    "Calling acts like dishonoring the dead, cloning a human or desecrating a holy book wrong, even in private"
+   ],
+   "no": [
+    "The view that only harm to others makes an act wrong"
+   ]
+  }
+ ],
+ "gov_role_values": [
+  {
+   "t": "Government efforts on problems like poverty, homelessness and addiction usually help more than they hurt. You'd say this holds in nearly every case.",
+   "yes": [
+    "Keeping or expanding programs like food aid, Medicaid, public housing and addiction treatment",
+    "New government programs when a problem is going unsolved"
+   ],
+   "no": [
+    "Cutting these programs on the grounds that they backfire"
+   ]
+  },
+  {
+   "t": "Government efforts on problems like poverty, homelessness and addiction usually help more than they hurt. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Keeping or expanding programs like food aid, Medicaid, public housing and addiction treatment",
+    "New government programs when a problem is going unsolved"
+   ],
+   "no": [
+    "Cutting these programs on the grounds that they backfire"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some programs on the list seem to work to you and others seem to backfire"
+   ]
+  },
+  {
+   "t": "Government programs aimed at problems like poverty, homelessness and addiction usually backfire. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Shrinking or ending programs like public housing and long-term cash aid",
+    "Leaving problems like homelessness and addiction mostly to families, charities, churches and local groups"
+   ],
+   "no": [
+    "New government programs to tackle these problems",
+    "Expanding programs like public housing or Medicaid"
+   ]
+  },
+  {
+   "t": "Government programs aimed at problems like poverty, homelessness and addiction usually backfire. You'd say this holds in nearly every case.",
+   "yes": [
+    "Shrinking or ending programs like public housing and long-term cash aid",
+    "Leaving problems like homelessness and addiction mostly to families, charities, churches and local groups"
+   ],
+   "no": [
+    "New government programs to tackle these problems",
+    "Expanding programs like public housing or Medicaid"
+   ]
+  }
+ ],
+ "gov_role_values_rev": [
+  {
+   "t": "Some problems, like old-age poverty, pollution and disaster recovery, are too big to solve without the federal government. You'd say this holds in nearly every case.",
+   "yes": [
+    "Federal programs like Social Security, Medicare, disaster aid and national pollution limits",
+    "Federal money for highways and other large projects"
+   ],
+   "no": [
+    "Handing these problems to states, charities and businesses alone"
+   ]
+  },
+  {
+   "t": "Some problems, like old-age poverty, pollution and disaster recovery, are too big to solve without the federal government. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Federal programs like Social Security, Medicare, disaster aid and national pollution limits",
+    "Federal money for highways and other large projects"
+   ],
+   "no": [
+    "Handing these problems to states, charities and businesses alone"
+   ]
+  },
+  {
+   "t": "You see this both ways about equally.",
+   "means": [
+    "Some problems on the list need the federal government in your view and others don't"
+   ]
+  },
+  {
+   "t": "Problems like old-age poverty, pollution and disaster recovery can be solved without the federal government. You'd say this holds most of the time, with some real exceptions.",
+   "yes": [
+    "Shifting programs and money from Washington to states and cities",
+    "Relying on charities, churches, businesses and families for problems like these"
+   ],
+   "no": [
+    "New or larger federal programs for these problems"
+   ]
+  },
+  {
+   "t": "Problems like old-age poverty, pollution and disaster recovery can be solved without the federal government. You'd say this holds in nearly every case.",
+   "yes": [
+    "Shifting programs and money from Washington to states and cities",
+    "Relying on charities, churches, businesses and families for problems like these"
+   ],
+   "no": [
+    "New or larger federal programs for these problems"
+   ]
+  }
  ]
 }

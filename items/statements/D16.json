@@ -1,78 +1,431 @@
 {
  "handgun_purchase": [
-  "Handgun sales to most civilians should be banned.",
-  "Buying a handgun should require a license with safety training, plus a background check for every sale.",
-  "Every handgun sale, including private sales, should require a background check, but no license.",
-  "Keep current federal law: checks at licensed dealers, but not for most private sales.",
-  "There should be fewer federal rules on buying handguns, such as no required background checks."
+  {
+   "t": "Ban handgun sales to most civilians.",
+   "yes": [
+    "Ending handgun sales to ordinary adults"
+   ],
+   "no": [
+    "Licensed handgun ownership"
+   ]
+  },
+  {
+   "t": "Require a license with safety training, plus a background check for every handgun sale.",
+   "yes": [
+    "A permit-to-purchase with training",
+    "Background checks on private sales too"
+   ],
+   "no": [
+    "Buying without a license"
+   ]
+  },
+  {
+   "t": "Require a background check for every handgun sale, including private sales, but no license.",
+   "yes": [
+    "Universal background checks"
+   ],
+   "no": [
+    "A license requirement",
+    "Exempting private sales"
+   ]
+  },
+  {
+   "t": "Keep current federal handgun law.",
+   "yes": [
+    "Checks at licensed dealers only"
+   ],
+   "no": [
+    "Universal checks or licenses",
+    "Ending dealer checks"
+   ]
+  },
+  {
+   "t": "Fewer federal rules on buying handguns, such as ending required background checks.",
+   "yes": [
+    "Ending federal background check requirements"
+   ],
+   "no": [
+    "Checks or licenses"
+   ]
+  }
  ],
  "private_sale_checks": [
-  "Every gun sale or transfer between private people should require a background check, even between family members.",
-  "Every private gun sale should require a check, but not gifts or loans between family and close friends.",
-  "Private gun sales should require a check only at gun shows and online.",
-  "Private gun sales shouldn't require a background check."
+  {
+   "t": "Require a background check for every private gun sale or transfer, even between family.",
+   "yes": [
+    "Checks on all transfers, including family gifts and loans"
+   ],
+   "no": [
+    "Exemptions for family"
+   ]
+  },
+  {
+   "t": "Require checks for all private sales, but not gifts or loans to family and close friends.",
+   "yes": [
+    "Universal checks with family and friend exemptions"
+   ],
+   "no": [
+    "Checking family transfers",
+    "Exempting private sales"
+   ]
+  },
+  {
+   "t": "Require checks only for private sales at gun shows and online.",
+   "yes": [
+    "Closing the gun show and online sale gap"
+   ],
+   "no": [
+    "Checks on every private sale"
+   ]
+  },
+  {
+   "t": "Private gun sales shouldn't require a background check.",
+   "yes": [
+    "Leaving private sales unchecked"
+   ],
+   "no": [
+    "Any private-sale check"
+   ]
+  }
  ],
  "semi_auto_rifles": [
-  "New sales of semi-automatic rifles like the AR-15 should be banned, and the government should buy back the ones people own.",
-  "New sales should be banned, but people can keep the ones they have.",
-  "Semi-automatic rifles should be sold only to people 21 and older with a license and training.",
-  "Semi-automatic rifles should be sold with a background check, as most states do now.",
-  "Semi-automatic rifles should be sold with no federal background check."
+  {
+   "t": "Ban new sales of rifles like the AR-15 and buy back the ones people own.",
+   "yes": [
+    "A sales ban plus a buyback"
+   ],
+   "no": [
+    "Letting owners keep them"
+   ]
+  },
+  {
+   "t": "Ban new sales of rifles like the AR-15; owners keep the ones they have.",
+   "yes": [
+    "A ban on new sales, like the 1994–2004 federal ban"
+   ],
+   "no": [
+    "A buyback",
+    "Continued sales"
+   ]
+  },
+  {
+   "t": "Sell rifles like the AR-15 only to people 21+ with a license and training.",
+   "yes": [
+    "Age 21, license and training for these rifles"
+   ],
+   "no": [
+    "A ban",
+    "Sales at 18 with only a background check"
+   ]
+  },
+  {
+   "t": "Sell rifles like the AR-15 with a background check, as most states do now.",
+   "yes": [
+    "Today's rules"
+   ],
+   "no": [
+    "Bans, licenses or higher age limits"
+   ]
+  },
+  {
+   "t": "Sell rifles like the AR-15 with no federal background check.",
+   "yes": [
+    "Ending federal checks for these rifles"
+   ],
+   "no": [
+    "Any federal check or ban"
+   ]
+  }
  ],
  "magazine_limit": [
-  "Gun magazines should be limited to 10 rounds or fewer.",
-  "Gun magazines should be limited to about 15 to 20 rounds.",
-  "There shouldn't be a limit on magazine size."
+  {
+   "t": "Limit magazines to 10 rounds or fewer.",
+   "yes": [
+    "Banning magazines over 10 rounds"
+   ],
+   "no": [
+    "Standard 15–30 round magazines"
+   ]
+  },
+  {
+   "t": "Limit magazines to about 15 to 20 rounds.",
+   "yes": [
+    "A cap around 15–20 rounds"
+   ],
+   "no": [
+    "A 10-round cap",
+    "No limit"
+   ]
+  },
+  {
+   "t": "No limit on magazine size.",
+   "yes": [
+    "Magazines of any size"
+   ],
+   "no": [
+    "Any magazine limit"
+   ]
+  }
  ],
  "concealed_carry": [
-  "Carrying a concealed handgun in public should generally not be allowed, except for police and security guards.",
-  "Carrying a concealed handgun should require a permit with training and a background check.",
-  "Carrying a concealed handgun should require a permit with a background check, but no training.",
-  "Adults who can legally own a gun should be able to carry it concealed with no permit."
+  {
+   "t": "Concealed carry should generally not be allowed, except for police and security guards.",
+   "yes": [
+    "Ending concealed carry for ordinary civilians"
+   ],
+   "no": [
+    "Carry permits for the public"
+   ]
+  },
+  {
+   "t": "Concealed carry should require a permit with training and a background check.",
+   "yes": [
+    "Permits with required training"
+   ],
+   "no": [
+    "Permitless carry"
+   ]
+  },
+  {
+   "t": "Concealed carry should require a permit with a background check only.",
+   "yes": [
+    "Permits without required training"
+   ],
+   "no": [
+    "Training requirements",
+    "Permitless carry"
+   ]
+  },
+  {
+   "t": "No permit should be needed to carry a concealed handgun.",
+   "yes": [
+    "Permitless carry for anyone who can legally own a gun"
+   ],
+   "no": [
+    "Permit requirements"
+   ]
+  }
  ],
  "carry_locations": [
   "People with a carry permit shouldn't be allowed to carry here: {case}.",
   "People with a carry permit should be allowed to carry here: {case}."
  ],
  "red_flag": [
-  "Courts should be able to temporarily take guns from someone found dangerous, when police or family members ask.",
-  "Courts can temporarily take guns only when police ask, after a quick hearing where the person can respond.",
-  "Guns should be taken only after a criminal conviction or a formal mental health commitment."
+  {
+   "t": "Courts should be able to temporarily take guns from someone dangerous, at the request of police or family.",
+   "yes": [
+    "Red flag laws letting family or police petition"
+   ],
+   "no": [
+    "Requiring a conviction first"
+   ]
+  },
+  {
+   "t": "Courts can take guns at police request only, with a quick hearing.",
+   "yes": [
+    "Police-only petitions with prompt hearings"
+   ],
+   "no": [
+    "Family petitions",
+    "No red flag law"
+   ]
+  },
+  {
+   "t": "Guns should be taken only after a criminal conviction or formal mental health commitment.",
+   "yes": [
+    "Repealing red flag laws"
+   ],
+   "no": [
+    "Taking guns before a conviction or commitment"
+   ]
+  }
  ],
  "red_flag_cases": [
   "A court should be able to temporarily take guns from this person: {case}.",
   "A court shouldn't be able to take guns from this person: {case}."
  ],
  "gun_purchase_age": [
-  "No one under 21 should be able to buy any gun.",
-  "People should be 21 to buy handguns and semi-automatic rifles, and 18 for hunting rifles and shotguns.",
-  "People should be 21 to buy handguns and 18 for rifles and shotguns, from any seller.",
-  "Anyone 18 or older should be able to buy any gun."
+  {
+   "t": "21 to buy any gun.",
+   "yes": [
+    "Raising the minimum age for rifles and shotguns to 21"
+   ],
+   "no": [
+    "Gun purchases at 18"
+   ]
+  },
+  {
+   "t": "21 for handguns and semi-automatic rifles; 18 for hunting rifles and shotguns.",
+   "yes": [
+    "Raising the age for AR-15-style rifles to 21"
+   ],
+   "no": [
+    "21 for all guns",
+    "18 for semi-automatic rifles"
+   ]
+  },
+  {
+   "t": "21 for handguns from dealers; 18 for rifles and shotguns, as today.",
+   "yes": [
+    "Today's federal age rules"
+   ],
+   "no": [
+    "Raising or lowering them"
+   ]
+  },
+  {
+   "t": "18 to buy any gun.",
+   "yes": [
+    "Letting 18-year-olds buy handguns from dealers"
+   ],
+   "no": [
+    "Age-21 limits"
+   ]
+  }
  ],
  "second_amendment_meaning": [
-  "The Second Amendment protects only the right of states to keep militias, not an individual right to own guns.",
-  "The Second Amendment protects an individual right to own guns, but government can regulate it broadly.",
-  "The Second Amendment protects an individual right to own guns, with only narrow limits.",
-  "The Second Amendment protects an individual right to own guns, with almost no limits."
+  {
+   "t": "The Second Amendment protects only states' right to maintain militias.",
+   "means": [
+    "It gives individuals no personal right to own guns"
+   ]
+  },
+  {
+   "t": "It protects an individual right to own guns, subject to broad regulation.",
+   "means": [
+    "Licensing, bans on some weapons and similar rules fit within it"
+   ]
+  },
+  {
+   "t": "It protects an individual right to own guns, with only narrow limits.",
+   "means": [
+    "Only limited rules, like barring felons, fit within it"
+   ]
+  },
+  {
+   "t": "It protects an individual right with almost no limits.",
+   "means": [
+    "Almost any gun law, including licenses and weapon bans, violates it"
+   ]
+  }
  ],
  "self_defense_law": [
-  "When attacked in public, a person should have to retreat first if it can be done safely, before using deadly force.",
-  "A person should have to retreat first only if they started the conflict.",
-  "A person can stand their ground and use deadly force anywhere they have a right to be, without retreating."
+  {
+   "t": "People attacked in public should retreat first if they safely can before using deadly force.",
+   "yes": [
+    "A duty to retreat in public"
+   ],
+   "no": [
+    "Stand-your-ground laws"
+   ]
+  },
+  {
+   "t": "Only someone who started the conflict should have to retreat.",
+   "yes": [
+    "A duty to retreat for the person who started it"
+   ],
+   "no": [
+    "A general duty to retreat"
+   ]
+  },
+  {
+   "t": "People can stand their ground anywhere they have a right to be.",
+   "yes": [
+    "Stand-your-ground laws"
+   ],
+   "no": [
+    "A duty to retreat"
+   ]
+  }
  ],
  "gun_maker_liability": [
-  "Gun makers and sellers should be open to lawsuits when their guns are used in crimes, like makers of other dangerous products.",
-  "Gun makers and sellers should be sued only if they broke the law or marketed irresponsibly.",
-  "Gun makers and sellers should keep today's protection from these lawsuits."
+  {
+   "t": "Gun makers and sellers should be suable like makers of other dangerous products.",
+   "yes": [
+    "Repealing the 2005 shield law"
+   ],
+   "no": [
+    "Today's protection"
+   ]
+  },
+  {
+   "t": "Gun makers and sellers should be suable only if they broke the law or marketed irresponsibly.",
+   "yes": [
+    "Suits over illegal sales or reckless marketing"
+   ],
+   "no": [
+    "Full repeal",
+    "Full protection"
+   ]
+  },
+  {
+   "t": "Keep today's legal protection for gun makers and sellers.",
+   "yes": [
+    "The 2005 shield law as it is"
+   ],
+   "no": [
+    "Opening them to lawsuits"
+   ]
+  }
  ],
  "gun_registry": [
-  "There should be a national registry of who owns every gun.",
-  "There should be a national registry only for handguns and semi-automatic rifles.",
-  "There shouldn't be a national gun registry."
+  {
+   "t": "A national registry of who owns every gun.",
+   "yes": [
+    "Registering all guns"
+   ],
+   "no": [
+    "Today's ban on a registry"
+   ]
+  },
+  {
+   "t": "A national registry for handguns and semi-automatic rifles only.",
+   "yes": [
+    "Registering those guns"
+   ],
+   "no": [
+    "Registering all guns",
+    "No registry"
+   ]
+  },
+  {
+   "t": "No national gun registry.",
+   "yes": [
+    "Keeping the ban on a federal registry"
+   ],
+   "no": [
+    "Any gun registry"
+   ]
+  }
  ],
  "suppressors": [
-  "Civilians shouldn't be able to buy gun suppressors.",
-  "Buying a suppressor should keep requiring federal registration and approval, as now.",
-  "Suppressors should be sold like ordinary gun parts, with no special registration."
+  {
+   "t": "Ban suppressors for civilians.",
+   "yes": [
+    "Ending civilian suppressor sales"
+   ],
+   "no": [
+    "Legal suppressor ownership"
+   ]
+  },
+  {
+   "t": "Keep today's suppressor rules.",
+   "yes": [
+    "Federal registration and approval"
+   ],
+   "no": [
+    "A ban",
+    "Dropping suppressor registration"
+   ]
+  },
+  {
+   "t": "Treat suppressors like ordinary gun parts.",
+   "yes": [
+    "Ending federal registration for suppressors"
+   ],
+   "no": [
+    "Registration or bans"
+   ]
+  }
  ]
 }

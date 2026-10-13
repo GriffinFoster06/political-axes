@@ -1,96 +1,494 @@
 {
  "gap_cause_wealth": [
-  "The Black-white wealth gap comes mostly from discrimination that's still happening today.",
-  "The wealth gap comes mostly from the lasting effects of past discrimination, like slavery and segregation.",
-  "The wealth gap comes from a mix of past discrimination and differences in choices, families and culture.",
-  "The wealth gap comes mostly from differences in choices, families and culture, not discrimination."
+  {
+   "t": "The Black–white wealth gap is mostly caused by discrimination that continues today.",
+   "means": [
+    "Bias in hiring, pay, lending and housing today explains most of the gap"
+   ]
+  },
+  {
+   "t": "The gap is mostly the lasting effect of past discrimination, like slavery and segregation.",
+   "means": [
+    "Wealth that Black families were barred from building generations ago explains most of the gap"
+   ]
+  },
+  {
+   "t": "The gap comes from a mix of past discrimination and differences in choices, families and culture.",
+   "means": [
+    "History and present-day choices both matter about equally"
+   ]
+  },
+  {
+   "t": "The gap is mostly differences in choices, families and culture, not discrimination.",
+   "means": [
+    "Things like saving, marriage rates and family structure explain most of the gap"
+   ]
+  }
  ],
  "gap_cause_arrests": [
-  "Black Americans are arrested at higher rates mostly because of bias in policing and courts.",
-  "The difference comes about equally from bias and from differences in crime rates.",
-  "The difference comes mostly from differences in crime rates, driven by poverty and neighborhood conditions.",
-  "The difference comes mostly from differences in crime rates, driven by family and culture."
+  {
+   "t": "Higher arrest rates for Black Americans mostly reflect bias in policing and courts.",
+   "means": [
+    "Police stop, search and arrest Black people more for the same behavior"
+   ]
+  },
+  {
+   "t": "Higher arrest rates reflect bias and differences in crime rates about equally.",
+   "means": [
+    "Both biased policing and more crime in some areas matter"
+   ]
+  },
+  {
+   "t": "Higher arrest rates mostly reflect higher crime rates driven by poverty and neighborhood conditions.",
+   "means": [
+    "Poor, high-crime neighborhoods explain most of the gap, more than police bias"
+   ]
+  },
+  {
+   "t": "Higher arrest rates mostly reflect higher crime rates driven by family and culture.",
+   "means": [
+    "Family structure and culture explain most of the gap, more than police bias or poverty"
+   ]
+  }
  ],
  "gap_cause_tests": [
-  "Test score gaps between racial groups come mostly from biased tests.",
-  "Test score gaps come mostly from unequal schools and resources.",
-  "Test score gaps come mostly from differences in family income and neighborhood conditions.",
-  "Test score gaps come mostly from differences in family structure and culture."
- ],
- "college_admissions_race": [
-  "Colleges should consider race as one important factor in admissions, to increase diversity.",
-  "Colleges should be able to consider race only as a minor factor, like a tie-breaker.",
-  "Colleges shouldn't consider race, but can consider economic hardship instead.",
-  "Colleges shouldn't consider race or any other group characteristic at all."
+  {
+   "t": "Racial gaps in test scores mostly reflect biased tests.",
+   "means": [
+    "The tests measure background more than ability or learning"
+   ]
+  },
+  {
+   "t": "Racial gaps in test scores mostly reflect unequal schools and resources.",
+   "means": [
+    "Underfunded schools, weaker teachers and fewer resources explain most of the gap"
+   ]
+  },
+  {
+   "t": "Racial gaps in test scores mostly reflect family income and neighborhood conditions.",
+   "means": [
+    "Poverty and the neighborhoods children grow up in explain most of the gap"
+   ]
+  },
+  {
+   "t": "Racial gaps in test scores mostly reflect family structure and culture.",
+   "means": [
+    "Differences in family life and attitudes toward school explain most of the gap"
+   ]
+  }
  ],
  "hiring_race": [
-  "Employers should consider race as one important factor in hiring, to increase diversity.",
-  "Employers can consider race only to break a tie between equally qualified applicants.",
-  "Employers shouldn't consider race, but should recruit in many different communities.",
-  "Race should play no part in hiring at all."
+  {
+   "t": "Employers should consider race as one important factor among qualified applicants, to increase diversity.",
+   "yes": [
+    "Weighing race meaningfully in hiring decisions"
+   ],
+   "no": [
+    "Race-blind hiring"
+   ]
+  },
+  {
+   "t": "Employers should use race only as a tie-breaker between equally qualified applicants.",
+   "yes": [
+    "Race as a tie-breaker"
+   ],
+   "no": [
+    "Race as a major factor",
+    "Ignoring race entirely"
+   ]
+  },
+  {
+   "t": "Employers shouldn't consider race, but should recruit in many different communities.",
+   "yes": [
+    "Outreach to a wide range of communities",
+    "Race-blind decisions"
+   ],
+   "no": [
+    "Using race in hiring decisions"
+   ]
+  },
+  {
+   "t": "Race should play no part in hiring at all.",
+   "yes": [
+    "Race-blind hiring and recruiting"
+   ],
+   "no": [
+    "Race-based outreach or preferences"
+   ]
+  }
  ],
  "contract_set_asides": [
-  "Government should set aside a fixed percentage of contracts for minority-owned businesses.",
-  "Government shouldn't set aside contracts by race, but should help small or disadvantaged businesses of any race.",
-  "Government shouldn't run special contracting programs for any group."
+  {
+   "t": "Government should set aside a share of contracts for minority-owned businesses.",
+   "yes": [
+    "Set percentages of contracts for minority-owned firms"
+   ],
+   "no": [
+    "Race-neutral contracting only"
+   ]
+  },
+  {
+   "t": "No racial set-asides, but help small or disadvantaged businesses of any race.",
+   "yes": [
+    "Programs for small or low-income-owned firms of any race"
+   ],
+   "no": [
+    "Racial set-asides",
+    "No help for small firms"
+   ]
+  },
+  {
+   "t": "No special contracting programs for any group.",
+   "yes": [
+    "Awarding contracts on bids alone"
+   ],
+   "no": [
+    "Set-asides by race or business size"
+   ]
+  }
  ],
  "workplace_diversity": [
-  "Large employers should run programs with specific hiring targets for racial minorities and required diversity training.",
-  "Large employers should reach out to and mentor minority candidates, without hiring targets.",
-  "Large employers should only offer general training on treating everyone equally.",
-  "Large employers shouldn't run these programs, but each company can choose.",
-  "Companies with federal contracts should be barred from running these programs."
+  {
+   "t": "Large employers should have racial diversity programs with hiring targets and required training.",
+   "yes": [
+    "Racial hiring targets",
+    "Required diversity training"
+   ],
+   "no": [
+    "Leaving it to each company"
+   ]
+  },
+  {
+   "t": "Large employers should do outreach and mentoring for minorities, without targets.",
+   "yes": [
+    "Recruiting and mentoring programs"
+   ],
+   "no": [
+    "Hiring targets",
+    "No programs"
+   ]
+  },
+  {
+   "t": "Large employers should run only general training on treating everyone equally.",
+   "yes": [
+    "Equal-treatment training for all"
+   ],
+   "no": [
+    "Programs aimed at particular races"
+   ]
+  },
+  {
+   "t": "No such programs, but leave the choice to each company.",
+   "yes": [
+    "Letting companies decide"
+   ],
+   "no": [
+    "Required programs",
+    "Government bans"
+   ]
+  },
+  {
+   "t": "No such programs, and government should bar them at federal contractors.",
+   "yes": [
+    "Barring race-targeted programs at companies with federal contracts"
+   ],
+   "no": [
+    "Programs aimed at hiring or promoting minorities"
+   ]
+  }
  ],
  "dei_offices": [
-  "Public universities should have diversity, equity and inclusion offices, and expand them.",
-  "Public universities can keep these offices, but they should focus on equal treatment for everyone.",
-  "Public universities should close their diversity, equity and inclusion offices."
+  {
+   "t": "Public universities should keep and expand diversity, equity and inclusion offices.",
+   "yes": [
+    "More DEI staff and programs at public universities"
+   ],
+   "no": [
+    "Closing DEI offices"
+   ]
+  },
+  {
+   "t": "Keep DEI offices, but focus them on equal treatment for everyone.",
+   "yes": [
+    "Offices that serve all students rather than particular groups"
+   ],
+   "no": [
+    "Expanding group-focused programs",
+    "Closing the offices"
+   ]
+  },
+  {
+   "t": "Public universities should close DEI offices.",
+   "yes": [
+    "State laws closing DEI offices, as Texas and Florida have done"
+   ],
+   "no": [
+    "Keeping DEI offices"
+   ]
+  }
  ],
  "reparations": [
-  "The federal government should make cash payments to each eligible descendant of enslaved people.",
-  "The federal government should provide reparations through programs like housing, education and business grants, not cash.",
-  "There shouldn't be payments, but the government should formally apologize and officially study the question.",
-  "The government shouldn't do anything beyond today's laws."
+  {
+   "t": "The federal government should make cash reparations payments to descendants of enslaved people.",
+   "yes": [
+    "Cash payments to each eligible Black American descended from enslaved people"
+   ],
+   "no": [
+    "An apology or study alone"
+   ]
+  },
+  {
+   "t": "Reparations should come as programs like housing, education and business grants rather than cash.",
+   "yes": [
+    "Targeted grants for housing, education and business"
+   ],
+   "no": [
+    "Cash payments",
+    "No reparations"
+   ]
+  },
+  {
+   "t": "No reparations payments, but a formal apology and an official study.",
+   "yes": [
+    "A government apology",
+    "A federal commission to study reparations"
+   ],
+   "no": [
+    "Payments or programs"
+   ]
+  },
+  {
+   "t": "Nothing beyond today's laws.",
+   "yes": [
+    "No reparations, apology or study"
+   ],
+   "no": [
+    "Any reparations"
+   ]
+  }
  ],
  "local_redlining_compensation": [
-  "Cities that enforced housing segregation should compensate the people harmed and their descendants.",
-  "Those cities should compensate only people they personally harmed who are still living.",
-  "Cities shouldn't pay compensation for past housing segregation."
+  {
+   "t": "Cities that enforced housing segregation should compensate those harmed and their descendants.",
+   "yes": [
+    "Payments to victims and descendants, like Evanston's housing grants"
+   ],
+   "no": [
+    "Limiting compensation to living victims"
+   ]
+  },
+  {
+   "t": "Compensate only people personally harmed who are still living.",
+   "yes": [
+    "Payments to surviving victims"
+   ],
+   "no": [
+    "Payments to descendants",
+    "No compensation"
+   ]
+  },
+  {
+   "t": "Cities shouldn't compensate families for past housing segregation.",
+   "yes": [
+    "No redlining compensation"
+   ],
+   "no": [
+    "Payments to victims or descendants"
+   ]
+  }
  ],
  "hate_crime_sentences": [
-  "Crimes motivated by hatred of someone's group should carry much longer sentences.",
-  "Hate-motivated crimes should carry somewhat longer sentences.",
-  "Hate-motivated crimes should carry longer sentences only when they're against people, not property.",
-  "The same crime should get the same sentence, whatever the motive."
+  {
+   "t": "Hate-motivated crimes should carry much longer sentences.",
+   "yes": [
+    "Roughly doubling sentences for crimes motivated by hatred of a group"
+   ],
+   "no": [
+    "Treating the motive as irrelevant"
+   ]
+  },
+  {
+   "t": "Hate-motivated crimes should carry somewhat longer sentences.",
+   "yes": [
+    "Modest sentence increases for hate crimes"
+   ],
+   "no": [
+    "Doubling sentences",
+    "No added penalty"
+   ]
+  },
+  {
+   "t": "Longer sentences for hate crimes against people, not property.",
+   "yes": [
+    "Added time for assaults motivated by hate"
+   ],
+   "no": [
+    "Added time for hate-motivated vandalism"
+   ]
+  },
+  {
+   "t": "Punish the crime the same whatever the motive.",
+   "yes": [
+    "Repealing hate crime sentence enhancements"
+   ],
+   "no": [
+    "Longer sentences based on motive"
+   ]
+  }
  ],
  "race_districts": [
-  "States should have to draw majority-minority districts wherever a minority group is large and close together enough.",
-  "States should have to draw these districts only where there's evidence of past voting discrimination.",
-  "Districts should be drawn without considering race."
+  {
+   "t": "States should create majority-minority districts whenever a group is large and close together enough.",
+   "yes": [
+    "Required majority-Black or majority-Hispanic districts where possible"
+   ],
+   "no": [
+    "Race-blind districting"
+   ]
+  },
+  {
+   "t": "Create majority-minority districts only where there's evidence of past voting discrimination.",
+   "yes": [
+    "Such districts where discrimination is shown"
+   ],
+   "no": [
+    "Requiring such districts everywhere",
+    "Banning such districts"
+   ]
+  },
+  {
+   "t": "Draw districts without considering race.",
+   "yes": [
+    "Race-blind redistricting"
+   ],
+   "no": [
+    "Districts drawn to give a racial group a majority"
+   ]
+  }
  ],
  "teach_racism_history": [
-  "Schools should teach racism as central to the American story, including how it shapes society today.",
-  "Schools should teach racism as an important part of history, alongside the nation's progress.",
-  "Schools should teach the full facts of slavery and segregation, but not as the defining story of the country."
+  {
+   "t": "Schools should teach racism as central to the American story, including how it shapes society today.",
+   "yes": [
+    "Making slavery and segregation central themes, tied to present-day issues"
+   ],
+   "no": [
+    "Treating racism as one chapter among many"
+   ]
+  },
+  {
+   "t": "Schools should teach racism as an important part of history, alongside the nation's progress.",
+   "yes": [
+    "Teaching slavery and segregation with civil rights gains and other progress"
+   ],
+   "no": [
+    "Making it the central story",
+    "Downplaying slavery and segregation"
+   ]
+  },
+  {
+   "t": "Schools should teach slavery and segregation fully, but not as the defining story of the country.",
+   "yes": [
+    "Full facts of slavery and segregation"
+   ],
+   "no": [
+    "Framing American history mainly around racism"
+   ]
+  }
  ],
  "teach_institutional_racism": [
-  "Public schools should teach as established fact that racism is built into American laws and institutions today.",
-  "Public schools should teach that idea as one view among several.",
-  "Public schools shouldn't teach that racism is built into American laws and institutions today."
+  {
+   "t": "Schools should teach as established fact that racism is built into US laws and institutions today.",
+   "yes": [
+    "Teaching that lending, policing, school funding and hiring disadvantage Black Americans by design or effect"
+   ],
+   "no": [
+    "Presenting it as one view among several"
+   ]
+  },
+  {
+   "t": "Schools should teach it as one view among several.",
+   "yes": [
+    "Presenting it alongside opposing views"
+   ],
+   "no": [
+    "Teaching it as fact",
+    "Banning the topic in schools"
+   ]
+  },
+  {
+   "t": "Public schools shouldn't teach that racism is built into US institutions today.",
+   "yes": [
+    "State laws keeping it out of public school lessons"
+   ],
+   "no": [
+    "Teaching it as fact or as one view"
+   ]
+  }
  ],
  "discrimination_black": [
-  "Black job applicants face discrimination because of their race almost every time they apply.",
-  "Black job applicants face racial discrimination most of the time.",
-  "Black job applicants face racial discrimination about half the time.",
-  "Black job applicants sometimes face racial discrimination, about 3 times in 10.",
-  "Black job applicants rarely face racial discrimination today."
+  {
+   "t": "Black job applicants face racial discrimination almost always.",
+   "means": [
+    "Out of 10 job searches by Black Americans, 9 or more run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "Black job applicants face racial discrimination most of the time.",
+   "means": [
+    "Out of 10 job searches by Black Americans, about 7 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "Black job applicants face racial discrimination about half the time.",
+   "means": [
+    "Out of 10 job searches by Black Americans, about 5 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "Black job applicants sometimes face racial discrimination.",
+   "means": [
+    "Out of 10 job searches by Black Americans, about 3 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "Black job applicants rarely face racial discrimination.",
+   "means": [
+    "Out of 10 job searches by Black Americans, 1 or fewer run into discrimination because of race"
+   ]
+  }
  ],
  "discrimination_white": [
-  "White applicants rarely face discrimination because of their race today.",
-  "White applicants sometimes face racial discrimination, about 3 times in 10.",
-  "White applicants face racial discrimination about half the time.",
-  "White applicants face racial discrimination most of the time.",
-  "White applicants face racial discrimination almost every time they apply."
+  {
+   "t": "White applicants rarely face racial discrimination.",
+   "means": [
+    "Out of 10 job or college applications by white Americans, 1 or fewer run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "White applicants sometimes face racial discrimination.",
+   "means": [
+    "Out of 10 job or college applications by white Americans, about 3 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "White applicants face racial discrimination about half the time.",
+   "means": [
+    "Out of 10 job or college applications by white Americans, about 5 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "White applicants face racial discrimination most of the time.",
+   "means": [
+    "Out of 10 job or college applications by white Americans, about 7 run into discrimination because of race"
+   ]
+  },
+  {
+   "t": "White applicants face racial discrimination almost always.",
+   "means": [
+    "Out of 10 job or college applications by white Americans, 9 or more run into discrimination because of race"
+   ]
+  }
  ],
  "discrimination_groups": [
   "This group faces little or no discrimination today: {case}.",
@@ -98,19 +496,142 @@
   "This group faces a lot of discrimination today: {case}."
  ],
  "tribal_sovereignty": [
-  "Tribes should fully govern their own lands, including non-Native people there.",
-  "Tribes should govern their own members, with limited authority over non-Native people on tribal land.",
-  "States and the federal government should have more control over tribal lands than today."
+  {
+   "t": "Tribes should have full self-government, including over non-Native people on tribal land.",
+   "yes": [
+    "Tribal courts and laws applying to everyone on tribal land"
+   ],
+   "no": [
+    "State or federal control over tribal lands"
+   ]
+  },
+  {
+   "t": "Tribes should govern their members, with limited authority over others.",
+   "yes": [
+    "Tribal self-government over members",
+    "Limited tribal power over non-members"
+   ],
+   "no": [
+    "Full tribal power over non-members",
+    "More outside control"
+   ]
+  },
+  {
+   "t": "States and the federal government should have more control over tribal lands than today.",
+   "yes": [
+    "Expanding state and federal authority on reservations"
+   ],
+   "no": [
+    "Expanding tribal self-government"
+   ]
+  }
  ],
  "disparate_impact": [
-  "A test that leads to far fewer hires of one race should be illegal unless it's clearly necessary for the job.",
-  "It should be illegal only if a fairer test would work just as well and the employer refused to use it.",
-  "Only intentional discrimination should be illegal; unequal results alone shouldn't be."
+  {
+   "t": "Tests or rules that screen out far more of one race should be illegal unless clearly necessary.",
+   "yes": [
+    "Disparate-impact liability for employers, landlords and lenders"
+   ],
+   "no": [
+    "Allowing any test without intent to discriminate"
+   ]
+  },
+  {
+   "t": "They should be illegal only if a fairer test would work as well and the employer refused it.",
+   "yes": [
+    "Liability only when a fair alternative was refused"
+   ],
+   "no": [
+    "Broad disparate-impact rules",
+    "Ignoring impact entirely"
+   ]
+  },
+  {
+   "t": "Only intentional discrimination should be illegal.",
+   "yes": [
+    "Ending disparate-impact liability"
+   ],
+   "no": [
+    "Penalizing tests for uneven results alone"
+   ]
+  }
  ],
  "confederate_monuments": [
-  "Public monuments honoring Confederate leaders should be removed.",
-  "Confederate monuments should be moved to museums, with historical context.",
-  "Confederate monuments should stay, with historical context added.",
-  "Confederate monuments should stay as they are."
+  {
+   "t": "Remove public monuments honoring Confederate leaders.",
+   "yes": [
+    "Taking down Confederate statues and renaming places named for Confederate leaders"
+   ],
+   "no": [
+    "Keeping them on public land"
+   ]
+  },
+  {
+   "t": "Move Confederate monuments to museums with historical context.",
+   "yes": [
+    "Relocating statues to museums"
+   ],
+   "no": [
+    "Leaving them in public squares",
+    "Destroying the monuments"
+   ]
+  },
+  {
+   "t": "Keep Confederate monuments, but add historical context.",
+   "yes": [
+    "Plaques explaining the history"
+   ],
+   "no": [
+    "Removing or relocating them"
+   ]
+  },
+  {
+   "t": "Keep Confederate monuments as they are.",
+   "yes": [
+    "Leaving statues and names unchanged"
+   ],
+   "no": [
+    "Removing, moving or adding context to them"
+   ]
+  }
+ ],
+ "college_admissions_race": [
+  {
+   "t": "Colleges should consider race as one important factor, to increase diversity.",
+   "yes": [
+    "Race-conscious admissions, overturning the 2023 ruling"
+   ],
+   "no": [
+    "Race-blind admissions"
+   ]
+  },
+  {
+   "t": "Colleges should consider race only as a minor factor, like a tie-breaker.",
+   "yes": [
+    "Race as a tie-breaker"
+   ],
+   "no": [
+    "Race as a major factor",
+    "Race-blind admissions"
+   ]
+  },
+  {
+   "t": "Colleges shouldn't consider race, but can consider economic hardship.",
+   "yes": [
+    "Preferences for low-income applicants of any race"
+   ],
+   "no": [
+    "Considering race"
+   ]
+  },
+  {
+   "t": "Colleges shouldn't consider race or any other group characteristic.",
+   "yes": [
+    "Admissions based only on individual records"
+   ],
+   "no": [
+    "Race or group-based preferences of any kind"
+   ]
+  }
  ]
 }

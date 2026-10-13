@@ -1,114 +1,672 @@
 {
  "police_spending": [
-  "Police departments should be replaced with other public-safety services.",
-  "Police spending should be cut a lot, with the money moved to social services.",
-  "Police spending should be cut somewhat, with some money moved to social services.",
-  "Police spending should stay about the same.",
-  "Police spending should go up somewhat, to hire and train more officers.",
-  "Police spending should go up a lot, to hire and train many more officers."
+  {
+   "t": "Replace police departments with other public-safety services.",
+   "yes": [
+    "Abolishing police departments",
+    "Crisis teams, violence interrupters and social services in their place"
+   ],
+   "no": [
+    "Keeping police departments"
+   ]
+  },
+  {
+   "t": "Cut police budgets a lot and move the money to social services.",
+   "yes": [
+    "Cutting police budgets by a quarter or more",
+    "Funding crisis teams, treatment and youth programs"
+   ],
+   "no": [
+    "Keeping or raising police budgets"
+   ]
+  },
+  {
+   "t": "Cut police budgets somewhat and move some money to social services.",
+   "yes": [
+    "Cuts of about 5–10% shifted to social services"
+   ],
+   "no": [
+    "Deep cuts",
+    "Raising police budgets"
+   ]
+  },
+  {
+   "t": "Keep police spending about the same.",
+   "yes": [
+    "Today's police budgets"
+   ],
+   "no": [
+    "Cutting or raising them"
+   ]
+  },
+  {
+   "t": "Raise police spending somewhat, to hire and train more officers.",
+   "yes": [
+    "About 5–10% more for hiring and training"
+   ],
+   "no": [
+    "Cutting police budgets"
+   ]
+  },
+  {
+   "t": "Raise police spending a lot, to hire and train many more officers.",
+   "yes": [
+    "A quarter or more added to police budgets",
+    "Many more officers on the streets"
+   ],
+   "no": [
+    "Cutting police budgets"
+   ]
+  }
  ],
  "crisis_responders": [
-  "Trained mental health workers, without police, should answer 911 calls about a mental health crisis with no weapon or violence.",
-  "Mental health workers and police should answer those calls together.",
-  "Police officers with mental health training should answer those calls."
+  {
+   "t": "Trained mental health workers, without police, should answer non-violent mental health 911 calls.",
+   "yes": [
+    "Civilian crisis teams sent instead of police"
+   ],
+   "no": [
+    "Police as first responders to these calls"
+   ]
+  },
+  {
+   "t": "Mental health workers and police should respond together.",
+   "yes": [
+    "Co-responder teams"
+   ],
+   "no": [
+    "Sending either one alone"
+   ]
+  },
+  {
+   "t": "Police officers with mental health training should respond.",
+   "yes": [
+    "Crisis-trained officers handling these calls"
+   ],
+   "no": [
+    "Civilian-only response"
+   ]
+  }
  ],
  "qualified_immunity": [
-  "People should be able to sue officers who violate their constitutional rights; qualified immunity should end.",
-  "Officers should be suable for serious violations even without an identical earlier case.",
-  "Qualified immunity should stay as it is, blocking most such lawsuits.",
-  "Officers should get even more legal protection from lawsuits than today."
+  {
+   "t": "End qualified immunity so people can sue officers who violate their rights.",
+   "yes": [
+    "Letting people sue officers for money damages over rights violations"
+   ],
+   "no": [
+    "Today's protection for officers"
+   ]
+  },
+  {
+   "t": "Narrow qualified immunity so officers can be sued for serious violations.",
+   "yes": [
+    "Suits for serious violations even without an identical earlier case"
+   ],
+   "no": [
+    "Ending qualified immunity",
+    "Keeping it as is"
+   ]
+  },
+  {
+   "t": "Keep qualified immunity as it is.",
+   "yes": [
+    "Today's rule blocking most suits"
+   ],
+   "no": [
+    "Narrowing or ending it"
+   ]
+  },
+  {
+   "t": "Expand legal protections for police officers.",
+   "yes": [
+    "Stronger shields against lawsuits for officers"
+   ],
+   "no": [
+    "Narrowing or ending qualified immunity"
+   ]
+  }
  ],
  "misconduct_records": [
-  "All complaints about police misconduct should be public, including ones not proven.",
-  "Only misconduct complaints found to be true should be public.",
-  "Police misconduct complaints should stay confidential."
+  {
+   "t": "All police misconduct complaints should be public, including unproven ones.",
+   "yes": [
+    "Public access to every complaint about force or dishonesty"
+   ],
+   "no": [
+    "Keeping complaints confidential"
+   ]
+  },
+  {
+   "t": "Only police misconduct complaints found to be true should be public.",
+   "yes": [
+    "Publishing sustained complaints"
+   ],
+   "no": [
+    "Publishing unproven complaints",
+    "Keeping all secret"
+   ]
+  },
+  {
+   "t": "Police misconduct records should stay confidential.",
+   "yes": [
+    "Keeping complaint records private"
+   ],
+   "no": [
+    "Public misconduct records"
+   ]
+  }
  ],
  "mandatory_minimums": [
-  "Mandatory minimum sentences should end, and judges should decide each sentence.",
-  "Mandatory minimums should stay only for violent crimes.",
-  "Mandatory minimums should stay as they are, including for crimes like drug dealing.",
-  "There should be more mandatory minimums, and longer ones."
+  {
+   "t": "End mandatory minimum sentences and let judges decide.",
+   "yes": [
+    "Repealing mandatory minimums, including for drug dealing"
+   ],
+   "no": [
+    "Sentences judges can't go below"
+   ]
+  },
+  {
+   "t": "Keep mandatory minimums only for violent crimes.",
+   "yes": [
+    "Minimums for violent crimes",
+    "Ending them for drug and other nonviolent crimes"
+   ],
+   "no": [
+    "Minimums for drug dealing"
+   ]
+  },
+  {
+   "t": "Keep mandatory minimums as they are.",
+   "yes": [
+    "Today's mandatory minimums"
+   ],
+   "no": [
+    "Ending or expanding them"
+   ]
+  },
+  {
+   "t": "Add more mandatory minimums and make them longer.",
+   "yes": [
+    "New and longer mandatory sentences"
+   ],
+   "no": [
+    "Giving judges more leeway"
+   ]
+  }
  ],
  "violent_sentences": [
-  "Sentences for violent crimes like armed robbery are much too long.",
-  "Sentences for violent crimes are somewhat too long.",
-  "Sentences for violent crimes are about right.",
-  "Sentences for violent crimes are somewhat too short.",
-  "Sentences for violent crimes are much too short."
+  {
+   "t": "Sentences for violent crimes like armed robbery are much too long.",
+   "yes": [
+    "Substantially shorter sentences for violent crimes"
+   ],
+   "no": [
+    "Longer sentences"
+   ]
+  },
+  {
+   "t": "Sentences for violent crimes are somewhat too long.",
+   "yes": [
+    "Modestly shorter sentences"
+   ],
+   "no": [
+    "Longer sentences"
+   ]
+  },
+  {
+   "t": "Sentences for violent crimes are about right.",
+   "yes": [
+    "Keeping today's sentences"
+   ],
+   "no": [
+    "Shortening or lengthening them"
+   ]
+  },
+  {
+   "t": "Sentences for violent crimes are somewhat too short.",
+   "yes": [
+    "Modestly longer sentences"
+   ],
+   "no": [
+    "Shorter sentences"
+   ]
+  },
+  {
+   "t": "Sentences for violent crimes are much too short.",
+   "yes": [
+    "Substantially longer sentences for violent crimes"
+   ],
+   "no": [
+    "Shorter sentences"
+   ]
+  }
  ],
  "death_penalty": [
-  "The death penalty should never be used, even for murder.",
-  "The death penalty should be used only for the most extreme murders, like killing several people or a child.",
-  "The death penalty should be used for most planned murders."
+  {
+   "t": "The death penalty should never be used for murder.",
+   "yes": [
+    "Abolishing the death penalty"
+   ],
+   "no": [
+    "Executions for any murder"
+   ]
+  },
+  {
+   "t": "The death penalty only for the most extreme murders, like killing several people or a child.",
+   "yes": [
+    "Executions limited to the worst murders"
+   ],
+   "no": [
+    "Abolishing the death penalty",
+    "Using it for most planned murders"
+   ]
+  },
+  {
+   "t": "The death penalty for most planned murders.",
+   "yes": [
+    "Wide use of the death penalty for premeditated murder"
+   ],
+   "no": [
+    "Abolishing or narrowly limiting it"
+   ]
+  }
  ],
  "death_penalty_cases": [
   "The death penalty shouldn't be possible for this: {case}.",
   "The death penalty should be possible for this: {case}."
  ],
  "cash_bail": [
-  "Cash bail should end, and almost everyone should be released before trial unless they're clearly dangerous.",
-  "Most people charged with nonviolent crimes should be released without bail; judges set bail for others.",
-  "Cash bail should stay, with judges setting the amounts.",
-  "Everyone charged with a violent or repeat crime should stay in jail until trial."
+  {
+   "t": "End cash bail and release almost everyone before trial, except clear dangers.",
+   "yes": [
+    "Ending cash bail",
+    "Holding only people judged clearly dangerous"
+   ],
+   "no": [
+    "Bail amounts set by judges"
+   ]
+  },
+  {
+   "t": "Release most people charged with nonviolent crimes without bail; judges set bail for others.",
+   "yes": [
+    "No bail for nonviolent charges",
+    "Bail for violent charges"
+   ],
+   "no": [
+    "Ending bail entirely",
+    "Bail for everyone"
+   ]
+  },
+  {
+   "t": "Keep cash bail, with amounts set by judges.",
+   "yes": [
+    "Today's cash bail system"
+   ],
+   "no": [
+    "Ending bail",
+    "Automatic detention"
+   ]
+  },
+  {
+   "t": "Keep everyone charged with violent or repeat crimes in jail until trial.",
+   "yes": [
+    "Automatic pretrial detention for violent and repeat charges"
+   ],
+   "no": [
+    "Releasing these defendants on bail or without it"
+   ]
+  }
  ],
  "prison_purpose": {
   "s": [
-   "Prisons should focus on education and treatment to prepare people for release, even if it costs more.",
-   "I lean toward prisons focusing on rehabilitation.",
-   "I lean toward prisons focusing on punishment and protecting the public.",
-   "Prisons should focus on punishing crime and protecting the public, even if fewer people change their ways."
+   {
+    "t": "Prisons should focus on rehabilitation, even if it costs more.",
+    "yes": [
+     "Education, job training and treatment programs in prison"
+    ],
+    "no": [
+     "Cutting programs to save money"
+    ]
+   },
+   {
+    "t": "On balance, prisons should focus on rehabilitation, even if it costs more.",
+    "yes": [
+     "Education, job training and treatment programs in prison"
+    ],
+    "no": [
+     "Cutting programs to save money"
+    ]
+   },
+   {
+    "t": "On balance, prisons should focus on punishment and protecting the public.",
+    "yes": [
+     "Prisons focused on punishment, with fewer programs and comforts"
+    ],
+    "no": [
+     "Spending more on prison education and treatment"
+    ]
+   },
+   {
+    "t": "Prisons should focus on punishment and protecting the public.",
+    "yes": [
+     "Prisons focused on punishment, with fewer programs and comforts"
+    ],
+    "no": [
+     "Spending more on prison education and treatment"
+    ]
+   }
   ],
-  "torn": "I weigh rehabilitation and punishment about equally."
+  "torn": {
+   "t": "You weigh rehabilitation and punishment about equally.",
+   "means": [
+    "You'd want programs for those likely to change while keeping prison tough"
+   ]
+  }
  },
  "second_chance": {
   "s": [
-   "Employers and landlords should be limited in using nonviolent criminal records, even if they take on some risk.",
-   "I lean toward limiting how criminal records can be used, to give second chances.",
-   "I lean toward letting employers and landlords consider criminal records.",
-   "Employers and landlords should be free to consider criminal records, even if that makes it harder for people to rebuild their lives."
+   {
+    "t": "Limit how employers and landlords use criminal records for people who've served nonviolent sentences.",
+    "yes": [
+     "“Ban the box” rules on job applications",
+     "Sealing old nonviolent records"
+    ],
+    "no": [
+     "Letting employers and landlords reject anyone with a record"
+    ]
+   },
+   {
+    "t": "On balance, limit how employers and landlords use criminal records for people who've served nonviolent sentences.",
+    "yes": [
+     "“Ban the box” rules on job applications",
+     "Sealing old nonviolent records"
+    ],
+    "no": [
+     "Letting employers and landlords reject anyone with a record"
+    ]
+   },
+   {
+    "t": "On balance, employers and landlords should be free to consider criminal records.",
+    "yes": [
+     "Asking about records on job and rental applications"
+    ],
+    "no": [
+     "Laws hiding or limiting the use of records"
+    ]
+   },
+   {
+    "t": "Employers and landlords should be free to consider criminal records.",
+    "yes": [
+     "Asking about records on job and rental applications"
+    ],
+    "no": [
+     "Laws hiding or limiting the use of records"
+    ]
+   }
   ],
-  "torn": "I weigh second chances and freedom to consider records about equally."
+  "torn": {
+   "t": "You weigh second chances and freedom to consider records about equally.",
+   "means": [
+    "You'd seal old records but let employers see recent ones"
+   ]
+  }
  },
  "juveniles_adult_court": [
-  "Teenagers aged 15 to 17 should always be tried in juvenile court, even for serious violent crimes.",
-  "Teenagers aged 15 to 17 should be tried as adults only for murder.",
-  "Teenagers accused of serious violent crimes can be tried as adults if a judge decides.",
-  "Teenagers accused of serious violent crimes should automatically be tried as adults."
+  {
+   "t": "Teens 15 to 17 should never be tried as adults.",
+   "yes": [
+    "Juvenile court for all under-18 cases"
+   ],
+   "no": [
+    "Transfers to adult court"
+   ]
+  },
+  {
+   "t": "Teens should be tried as adults only for murder.",
+   "yes": [
+    "Adult trials for murder"
+   ],
+   "no": [
+    "Adult trials for robbery or assault"
+   ]
+  },
+  {
+   "t": "Teens can be tried as adults for serious violent crimes if a judge decides.",
+   "yes": [
+    "Judge-decided transfers to adult court"
+   ],
+   "no": [
+    "Automatic transfers",
+    "Never transferring"
+   ]
+  },
+  {
+   "t": "Teens should be tried as adults automatically for serious violent crimes.",
+   "yes": [
+    "Automatic adult trials for armed robbery and similar crimes"
+   ],
+   "no": [
+    "Keeping these cases in juvenile court"
+   ]
+  }
  ],
  "private_prisons": [
-  "Private companies shouldn't be allowed to run prisons or immigration detention centers.",
-  "Private prisons and detention centers are acceptable only under strict oversight.",
-  "Governments should use private prisons and detention centers if they save money."
+  {
+   "t": "Ban private prisons and private immigration detention centers.",
+   "yes": [
+    "Ending government contracts with private prison companies"
+   ],
+   "no": [
+    "Private prisons"
+   ]
+  },
+  {
+   "t": "Use private prisons only under strict oversight.",
+   "yes": [
+    "Private prisons with strict inspections and rules"
+   ],
+   "no": [
+    "A ban",
+    "Loose oversight"
+   ]
+  },
+  {
+   "t": "Use private prisons if they save money.",
+   "yes": [
+    "Contracting with private prisons to cut costs"
+   ],
+   "no": [
+    "Banning private prisons"
+   ]
+  }
  ],
  "road_blocking": [
-  "Peaceful protesters should be allowed to block a road briefly.",
-  "Police should ask protesters blocking a road to move, and arrest only those who refuse.",
-  "Protesters blocking a road should be arrested right away.",
-  "Protesters blocking a road should be arrested and face serious charges, with possible jail time."
+  {
+   "t": "Allow protesters to block roads if it's brief and peaceful.",
+   "yes": [
+    "Tolerating short, peaceful road blockades"
+   ],
+   "no": [
+    "Arrests for peaceful road blocking"
+   ]
+  },
+  {
+   "t": "Ask road-blocking protesters to move, and arrest only those who refuse.",
+   "yes": [
+    "Warnings first, then arrests"
+   ],
+   "no": [
+    "Immediate arrests",
+    "Letting blockades stay"
+   ]
+  },
+  {
+   "t": "Arrest road-blocking protesters right away.",
+   "yes": [
+    "Immediate arrests for blocking roads"
+   ],
+   "no": [
+    "Tolerating blockades"
+   ]
+  },
+  {
+   "t": "Arrest road-blocking protesters and treat it as a serious crime, with possible jail.",
+   "yes": [
+    "Felony-level charges and jail for blocking highways"
+   ],
+   "no": [
+    "Warnings or minor fines"
+   ]
+  }
  ],
  "riot_response": [
-  "When a protest turns into rioting, authorities should use as little force as possible and focus on calming things down.",
-  "Authorities should arrest people damaging property, but avoid force against peaceful protesters.",
-  "Authorities should use whatever force it takes to stop a riot quickly, including the National Guard."
+  {
+   "t": "When a protest turns into rioting, use as little force as possible and focus on calming tensions.",
+   "yes": [
+    "De-escalation, with minimal force"
+   ],
+   "no": [
+    "Sending in the National Guard"
+   ]
+  },
+  {
+   "t": "Arrest people damaging property, but avoid force against peaceful protesters.",
+   "yes": [
+    "Targeted arrests of looters"
+   ],
+   "no": [
+    "Force against peaceful protesters",
+    "Letting looting go"
+   ]
+  },
+  {
+   "t": "Use whatever force is needed to stop rioting quickly, including the National Guard.",
+   "yes": [
+    "Heavy force and the National Guard to end riots fast"
+   ],
+   "no": [
+    "Holding back to calm tensions"
+   ]
+  }
  ],
  "troops_in_cities": [
-  "A president should never send troops into a city over the governor's objection.",
-  "A president can send troops over a governor's objection only during a riot or uprising local police can't control.",
-  "A president can send troops into a city whenever the president judges crime is out of control, even if the governor objects."
+  {
+   "t": "A president should never send troops into a city over a governor's objection.",
+   "yes": [
+    "Requiring governors' consent for troops"
+   ],
+   "no": [
+    "Federal troops over a governor's objection"
+   ]
+  },
+  {
+   "t": "Only during a riot or uprising local police can't control.",
+   "yes": [
+    "Troops for true uprisings, under the Insurrection Act"
+   ],
+   "no": [
+    "Troops for ordinary crime"
+   ]
+  },
+  {
+   "t": "Yes, whenever the president judges crime is out of control, for any president.",
+   "yes": [
+    "Sending troops to fight crime over a governor's objection"
+   ],
+   "no": [
+    "Requiring a governor's consent"
+   ]
+  }
  ],
  "victims_voice": [
-  "Victims' views shouldn't affect sentencing or parole; decisions should rest on the law and the offender.",
-  "Victims can speak at sentencing and parole hearings, but their wishes shouldn't get special weight.",
-  "Victims' views should carry significant weight in sentencing and parole."
+  {
+   "t": "Victims' views shouldn't affect sentences or parole.",
+   "yes": [
+    "Decisions based on the law and the offender only"
+   ],
+   "no": [
+    "Victim statements shaping sentences"
+   ]
+  },
+  {
+   "t": "Victims can speak, but their wishes get no special weight.",
+   "yes": [
+    "Victim statements at hearings"
+   ],
+   "no": [
+    "Giving them significant weight"
+   ]
+  },
+  {
+   "t": "Victims' views should carry significant weight in sentencing and parole.",
+   "yes": [
+    "Victims' wishes shaping sentences and parole decisions"
+   ],
+   "no": [
+    "Ignoring victims' wishes"
+   ]
+  }
  ],
  "asset_forfeiture": [
-  "Police should be able to take cash or property only after the owner is convicted of a crime.",
-  "Police can take property without a conviction only with strong evidence, and the government must prove its case.",
-  "Police should be able to take property they suspect is linked to a crime without a conviction, as most states allow."
+  {
+   "t": "Police should take cash or property only after a criminal conviction.",
+   "yes": [
+    "Ending civil asset forfeiture"
+   ],
+   "no": [
+    "Seizures without a conviction"
+   ]
+  },
+  {
+   "t": "Seizure without conviction only with strong evidence the government must prove.",
+   "yes": [
+    "A high burden of proof on the government"
+   ],
+   "no": [
+    "Today's looser rules",
+    "Requiring a conviction"
+   ]
+  },
+  {
+   "t": "Police should be able to seize property linked to crime without a conviction, as most states allow.",
+   "yes": [
+    "Today's civil forfeiture"
+   ],
+   "no": [
+    "Requiring a conviction"
+   ]
+  }
  ],
  "stop_and_frisk": [
-  "Police shouldn't stop and pat down people just because they find them suspicious.",
-  "Police can stop and frisk only for specific reasons, which are recorded and reviewed for bias.",
-  "Police should be able to stop and frisk people they find suspicious in high-crime areas."
+  {
+   "t": "Police shouldn't stop and frisk people they find suspicious.",
+   "yes": [
+    "Ending stop-and-frisk"
+   ],
+   "no": [
+    "Pat-downs based on suspicion"
+   ]
+  },
+  {
+   "t": "Stop-and-frisk only with specific reasons, recorded and reviewed for bias.",
+   "yes": [
+    "Documented, reviewed stops"
+   ],
+   "no": [
+    "Stops on hunches",
+    "A total ban"
+   ]
+  },
+  {
+   "t": "Police should stop and frisk suspicious people in high-crime areas.",
+   "yes": [
+    "Wide use of stop-and-frisk"
+   ],
+   "no": [
+    "Limits that discourage stops"
+   ]
+  }
  ]
 }

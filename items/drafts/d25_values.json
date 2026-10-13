@@ -1,632 +1,646 @@
 {
-  "domain_id": "D25",
-  "domain": "Values (cross-cutting)",
-  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
-  "notes": "The values layer: reported separately as 'the values behind your views'. Agree/disagree statements come only in reverse-keyed pairs with defined scale points (Rule 6), so agreement bias cancels. Tradeoffs name what each side gives up. Written fresh for this project; none are copied from published scales.",
-  "items": [
+ "domain_id": "D25",
+ "domain": "Values (cross-cutting)",
+ "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+ "notes": "The values layer: reported separately as 'the values behind your views'. Agree/disagree statements come only in reverse-keyed pairs with defined scale points (Rule 6), so agreement bias cancels. Tradeoffs name what each side gives up. Written fresh for this project; none are copied from published scales.",
+ "items": [
+  {
+   "id": "fair_small_gaps",
+   "subtopic": "Equality vs freedom",
+   "axis": [
+    "VALUES",
+    "REDIS"
+   ],
+   "format": "agree_defined",
+   "stem": "\"A fair society keeps the differences in wealth between people small.\"",
+   "scope": "The richest 1% of US households own about 30% of all wealth; the bottom half own about 2.5%. Small gaps would take much higher taxes on large incomes, fortunes and inheritances, spent on everyone else.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly disagree",
+   "pair": "fair_keep_earnings",
+   "testlet": "equality_freedom"
+  },
+  {
+   "id": "fair_keep_earnings",
+   "subtopic": "Equality vs freedom",
+   "axis": [
+    "VALUES",
+    "REDIS"
+   ],
+   "format": "agree_defined",
+   "stem": "\"A fair society lets people keep what they earn, even if some end up far richer than others.\"",
+   "scope": "“What they earn” means pay, business profits and investment gains. Keeping it means low taxes on it, even for the highest earners, such as a founder whose company makes them a billionaire.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly agree",
+   "pair": "fair_small_gaps",
+   "testlet": "equality_freedom"
+  },
+  {
+   "id": "security_vs_choice",
+   "subtopic": "Equality vs freedom",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "tradeoff",
+   "stem": "Which kind of society would you rather live in?",
+   "scope": "Think about the society as a whole, not your own place in it.",
+   "sides": [
     {
-      "id": "fair_small_gaps",
-      "subtopic": "Equality vs freedom",
-      "axis": [
-        "VALUES",
-        "REDIS"
-      ],
-      "format": "agree_defined",
-      "stem": "\"A fair society keeps the differences in wealth between people small.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly disagree",
-      "pair": "fair_keep_earnings",
-      "testlet": "equality_freedom"
+     "label": "Needs guaranteed",
+     "text": "Everyone is guaranteed health care, enough food, a place to live and a basic income, even if taxes are high for most workers and people have less say over their doctor, health plan or pension."
     },
     {
-      "id": "fair_keep_earnings",
-      "subtopic": "Equality vs freedom",
-      "axis": [
-        "VALUES",
-        "REDIS"
-      ],
-      "format": "agree_defined",
-      "stem": "\"A fair society lets people keep what they earn, even if some end up far richer than others.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly agree",
-      "pair": "fair_small_gaps",
-      "testlet": "equality_freedom"
-    },
-    {
-      "id": "security_vs_choice",
-      "subtopic": "Equality vs freedom",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "tradeoff",
-      "stem": "Which kind of society would you rather live in?",
-      "scope": "Think about the society as a whole, not your own place in it.",
-      "sides": [
-        {
-          "label": "Needs guaranteed",
-          "text": "Everyone's basic needs are guaranteed, even if taxes are high and people have fewer choices."
-        },
-        {
-          "label": "Freedom to choose",
-          "text": "People are free to choose and keep more of what they earn, even if some go without."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B",
-      "testlet": "equality_freedom"
-    },
-    {
-      "id": "equal_treatment_vs_association",
-      "subtopic": "Equality vs freedom",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "tradeoff",
-      "stem": "When the two conflict, which should usually win?",
-      "scope": "Think about businesses and organizations open to the public.",
-      "sides": [
-        {
-          "label": "Equal treatment",
-          "text": "Protecting people from being turned away unfairly, even if owners lose some freedom to choose whom they deal with."
-        },
-        {
-          "label": "Freedom to choose",
-          "text": "Owners' freedom to choose whom they deal with, even if some people are turned away unfairly."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "liberty_vs_order",
-      "subtopic": "Order vs liberty",
-      "axis": [
-        "VALUES",
-        "ORDER"
-      ],
-      "format": "tradeoff",
-      "stem": "When the two conflict, which matters more to you?",
-      "scope": "Think about society in general.",
-      "sides": [
-        {
-          "label": "Individual freedom",
-          "text": "Protecting individual freedoms, even if it's harder to keep order."
-        },
-        {
-          "label": "Public order",
-          "text": "Keeping public order and safety, even if some freedoms are limited."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "conscience_vs_law",
-      "subtopic": "Order vs liberty",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "tradeoff",
-      "stem": "When someone believes a law is wrong, which comes closer to what they should do?",
-      "scope": "Think about laws in general, not one law.",
-      "sides": [
-        {
-          "label": "Follow conscience",
-          "text": "Follow their conscience, even if that means breaking the law."
-        },
-        {
-          "label": "Obey the law",
-          "text": "Obey the law while working to change it, even if that means doing something they think is wrong."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "tradition_wisdom",
-      "subtopic": "Tradition vs change",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Customs and traditions handed down over generations usually contain wisdom we should keep.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly agree",
-      "pair": "progress_by_questioning"
-    },
-    {
-      "id": "progress_by_questioning",
-      "subtopic": "Tradition vs change",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Society makes progress mainly by questioning and changing traditional ways of doing things.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly disagree",
-      "pair": "tradition_wisdom"
-    },
-    {
-      "id": "group_status_natural",
-      "subtopic": "Hierarchy vs equality between groups",
-      "axis": [
-        "VALUES",
-        "EQUITY"
-      ],
-      "format": "agree_defined",
-      "stem": "\"It is natural and acceptable for some groups in society to have more power and status than others.\"",
-      "scope": "Groups such as races, religions, classes or regions. Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly agree",
-      "pair": "group_status_equalize"
-    },
-    {
-      "id": "group_status_equalize",
-      "subtopic": "Hierarchy vs equality between groups",
-      "axis": [
-        "VALUES",
-        "EQUITY"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Society should work to make all groups equal in power and status.\"",
-      "scope": "Groups such as races, religions, classes or regions. Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly disagree",
-      "pair": "group_status_natural"
-    },
-    {
-      "id": "child_independence",
-      "subtopic": "Authority in child-rearing",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "tradeoff",
-      "stem": "Which is more important to teach children?",
-      "scope": "Think about children in general, not only your own.",
-      "sides": [
-        {
-          "label": "Think for themselves",
-          "text": "To question rules and think for themselves, even if they're harder to manage."
-        },
-        {
-          "label": "Respect authority",
-          "text": "To respect rules and authority, even if they question less."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "child_discipline",
-      "subtopic": "Authority in child-rearing",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "tradeoff",
-      "stem": "Which approach to raising children is closer to your view?",
-      "scope": "Children of elementary school age.",
-      "sides": [
-        {
-          "label": "Room to express",
-          "text": "Let children express themselves freely, even if they sometimes behave badly."
-        },
-        {
-          "label": "Discipline and manners",
-          "text": "Expect discipline and good manners, even if that means stricter parenting."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "weigh_foreigners",
-      "subtopic": "Universal vs national loyalty",
-      "axis": [
-        "VALUES",
-        "GLOBAL"
-      ],
-      "format": "tradeoff",
-      "stem": "When the US government makes decisions, which comes closer to your view?",
-      "scope": "Decisions on trade, aid, immigration and the like.",
-      "sides": [
-        {
-          "label": "Everyone counts equally",
-          "text": "Weigh people in other countries about as much as Americans, even if Americans sometimes lose out."
-        },
-        {
-          "label": "Americans' interests first",
-          "text": "Put Americans' interests first, even if people elsewhere are worse off."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "loyalty_humanity_country",
-      "subtopic": "Universal vs national loyalty",
-      "axis": [
-        "VALUES",
-        "NATION"
-      ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to how you see yourself?",
-      "scope": "Your own sense of loyalty.",
-      "sides": [
-        {
-          "label": "Humanity first",
-          "text": "My strongest loyalty is to humanity as a whole, more than to any one country."
-        },
-        {
-          "label": "My country first",
-          "text": "My strongest loyalty is to my country, more than to humanity as a whole."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "people_trustworthy",
-      "subtopic": "Views of human nature",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Most people will do the right thing even without rules forcing them to.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly disagree",
-      "pair": "people_selfish"
-    },
-    {
-      "id": "people_selfish",
-      "subtopic": "Views of human nature",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Without strong rules and consequences, most people will act selfishly.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "high_pole": "Strongly agree",
-      "pair": "people_trustworthy"
-    },
-    {
-      "id": "sacred_limits",
-      "subtopic": "Purity and sanctity",
-      "axis": [
-        "VALUES",
-        "MORAL"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Some things are wrong even if nobody is harmed, because they go against what is sacred or natural.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "high_pole": "Strongly agree",
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "pair": "harm_only"
-    },
-    {
-      "id": "harm_only",
-      "subtopic": "Purity and sanctity",
-      "axis": [
-        "VALUES",
-        "MORAL"
-      ],
-      "format": "agree_defined",
-      "stem": "\"If an act harms nobody, it shouldn't be considered wrong.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "high_pole": "Strongly disagree",
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "pair": "sacred_limits"
-    },
-    {
-      "id": "zero_sum",
-      "subtopic": "Zero-sum thinking",
-      "axis": [
-        "VALUES",
-        "POP"
-      ],
-      "format": "agree_defined",
-      "stem": "\"When one group in society gets ahead, it is usually at another group's expense.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly disagree",
-        "Disagree",
-        "Torn",
-        "Agree",
-        "Strongly agree"
-      ],
-      "high_pole": "Strongly agree",
-      "point_meanings": [
-        "False in nearly every case I can think of",
-        "False in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "True in most cases, with some real exceptions",
-        "True in nearly every case I can think of"
-      ],
-      "pair": "positive_sum"
-    },
-    {
-      "id": "positive_sum",
-      "subtopic": "Zero-sum thinking",
-      "axis": [
-        "VALUES",
-        "POP"
-      ],
-      "format": "agree_defined",
-      "stem": "\"Most of the time, different groups in society can all get ahead together.\"",
-      "scope": "Use the meanings shown for each answer.",
-      "options": [
-        "Strongly agree",
-        "Agree",
-        "Torn",
-        "Disagree",
-        "Strongly disagree"
-      ],
-      "high_pole": "Strongly disagree",
-      "point_meanings": [
-        "True in nearly every case I can think of",
-        "True in most cases, with some real exceptions",
-        "I can see it both ways about equally",
-        "False in most cases, with some real exceptions",
-        "False in nearly every case I can think of"
-      ],
-      "pair": "zero_sum"
-    },
-    {
-      "id": "proportional_vs_need",
-      "subtopic": "Proportionality vs need",
-      "axis": [
-        "VALUES",
-        "REDIS"
-      ],
-      "format": "tradeoff",
-      "stem": "When sharing out something valuable, which is fairer?",
-      "scope": "Think of things like pay, benefits or public help.",
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B",
-      "sides": [
-        {
-          "label": "By need",
-          "text": "Those who need it most get more, even if they contributed less."
-        },
-        {
-          "label": "By contribution",
-          "text": "Those who contributed more get more, even if some with greater need get less."
-        }
-      ]
-    },
-    {
-      "id": "get_ahead",
-      "subtopic": "What decides who gets ahead",
-      "axis": [
-        "VALUES",
-        "REDIS"
-      ],
-      "format": "position",
-      "stem": "In the US today, what mostly decides who gets ahead?",
-      "scope": "Think about people in general, not any one person.",
-      "options": [
-        "Family background and connections",
-        "Luck and circumstances",
-        "A mix of background, luck and effort",
-        "Talent and skills",
-        "Hard work"
-      ],
-      "high_pole": "effort"
-    },
-    {
-      "id": "moral_rules",
-      "subtopic": "What decides who gets ahead",
-      "axis": [
-        "VALUES",
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "Which comes closest to your view of right and wrong?",
-      "scope": "Basic moral questions, not matters of taste.",
-      "options": [
-        "Right and wrong depend entirely on the culture and the situation",
-        "Mostly depend on the situation, with a few fixed rules",
-        "There are many fixed rules, but some depend on the situation",
-        "Right and wrong are the same for all people and all times"
-      ],
-      "high_pole": "fixed"
-    },
-    {
-      "id": "pace_of_change",
-      "subtopic": "What decides who gets ahead",
-      "axis": [
-        "VALUES"
-      ],
-      "format": "position",
-      "stem": "When society is changing, what pace of change is usually best?",
-      "scope": "Changes in customs, laws and institutions.",
-      "options": [
-        "Fast and sweeping",
-        "Steady",
-        "Slow and careful",
-        "As little as possible; keep what works"
-      ],
-      "high_pole": "little change"
+     "label": "Freedom to choose",
+     "text": "People keep more of what they earn and choose their own health plan, savings and housing, even if some can't afford health care or a home and go without."
     }
-  ]
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B",
+   "testlet": "equality_freedom"
+  },
+  {
+   "id": "equal_treatment_vs_association",
+   "subtopic": "Equality vs freedom",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "tradeoff",
+   "stem": "When the two conflict, which should usually win?",
+   "scope": "Businesses open to the public, such as shops, restaurants, hotels, landlords and wedding vendors.",
+   "sides": [
+    {
+     "label": "Equal treatment",
+     "text": "Laws that bar them from turning people away over race, religion, sex, sexual orientation, disability or similar traits, even if owners must serve people or events they object to."
+    },
+    {
+     "label": "Freedom to choose",
+     "text": "Owners' freedom to choose whom they serve or rent to, even if some people are turned away over traits like these."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "liberty_vs_order",
+   "subtopic": "Order vs liberty",
+   "axis": [
+    "VALUES",
+    "ORDER"
+   ],
+   "format": "tradeoff",
+   "stem": "When the two conflict, which matters more to you?",
+   "scope": "Think of things like police stopping and searching people in high-crime areas, curfews during riots, clearing homeless camps from parks, cameras in public places, and limits on protests that block roads.",
+   "sides": [
+    {
+     "label": "Individual freedom",
+     "text": "Protecting rights like not being stopped and searched without cause, protesting, and living as you choose in public, even if crime and disorder are harder to control."
+    },
+    {
+     "label": "Public order",
+     "text": "Keeping streets safe and orderly with steps like stop-and-search, curfews, public cameras and clearing camps, even if some people's freedoms are limited."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "conscience_vs_law",
+   "subtopic": "Order vs liberty",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "tradeoff",
+   "stem": "When someone believes a law is wrong, which comes closer to what they should do?",
+   "scope": "Examples: refusing to fight in a war you think is unjust, hiding someone from deportation, a clerk refusing marriage licenses they object to, blocking a road in protest. Think about laws in general.",
+   "sides": [
+    {
+     "label": "Follow conscience",
+     "text": "Follow their conscience, even if that means breaking the law."
+    },
+    {
+     "label": "Obey the law",
+     "text": "Obey the law while working to change it, even if that means doing something they think is wrong."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "tradition_wisdom",
+   "subtopic": "Tradition vs change",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Customs and traditions handed down over generations usually contain wisdom we should keep.\"",
+   "scope": "Customs such as marriage before having children, regular religious worship, respect for elders, family meals, traditional roles for men and women, and national rituals like the Pledge of Allegiance.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly agree",
+   "pair": "progress_by_questioning"
+  },
+  {
+   "id": "progress_by_questioning",
+   "subtopic": "Tradition vs change",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Society makes progress mainly by questioning and changing traditional ways of doing things.\"",
+   "scope": "Changes such as ending slavery, women voting and working outside the home, modern medicine replacing folk remedies, same-sex marriage, and new industries replacing old ones.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly disagree",
+   "pair": "tradition_wisdom"
+  },
+  {
+   "id": "group_status_natural",
+   "subtopic": "Hierarchy vs equality between groups",
+   "axis": [
+    "VALUES",
+    "EQUITY"
+   ],
+   "format": "agree_defined",
+   "stem": "\"It is natural and acceptable for some groups in society to have more power and status than others.\"",
+   "scope": "Groups such as races, religions, social classes or regions. “Power and status” means wealth, top jobs, seats in Congress and on company boards, influence and respect.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly agree",
+   "pair": "group_status_equalize"
+  },
+  {
+   "id": "group_status_equalize",
+   "subtopic": "Hierarchy vs equality between groups",
+   "axis": [
+    "VALUES",
+    "EQUITY"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Society should work to make all groups equal in power and status.\"",
+   "scope": "Groups such as races, religions, social classes or regions. “Power and status” means wealth, top jobs, seats in Congress and on company boards, influence and respect.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly disagree",
+   "pair": "group_status_natural"
+  },
+  {
+   "id": "child_independence",
+   "subtopic": "Authority in child-rearing",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "tradeoff",
+   "stem": "Which is more important to teach children?",
+   "scope": "Children of elementary and middle school age, at home and at school.",
+   "sides": [
+    {
+     "label": "Think for themselves",
+     "text": "To ask why a rule exists, say when they disagree with a parent or teacher, and make some choices of their own, even if they argue more and are harder to manage."
+    },
+    {
+     "label": "Respect authority",
+     "text": "To follow rules from parents, teachers and other adults without arguing, and accept “because I said so,” even if they question things less."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "child_discipline",
+   "subtopic": "Authority in child-rearing",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "tradeoff",
+   "stem": "Which approach to raising children is closer to your view?",
+   "scope": "Children of elementary school age, about 5 to 11.",
+   "sides": [
+    {
+     "label": "Room to express",
+     "text": "Let children show strong feelings, speak up, dress and play as they like, and handle misbehavior by talking it through, even if they're sometimes loud, rude or defiant."
+    },
+    {
+     "label": "Discipline and manners",
+     "text": "Expect please and thank you, sitting still at meals and in class, and obeying the first time, with time-outs or lost privileges when they don't, even if that means stricter parenting."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "weigh_foreigners",
+   "subtopic": "Universal vs national loyalty",
+   "axis": [
+    "VALUES",
+    "GLOBAL"
+   ],
+   "format": "tradeoff",
+   "stem": "When the US government makes decisions, which comes closer to your view?",
+   "scope": "Decisions like trade deals that cost some US jobs but raise incomes abroad, aid for disease and famine, how many refugees to take in, and climate rules that mostly help other countries.",
+   "sides": [
+    {
+     "label": "Everyone counts equally",
+     "text": "Weigh people in other countries about as much as Americans, even if Americans sometimes lose out."
+    },
+    {
+     "label": "Americans' interests first",
+     "text": "Put Americans' interests first, even if people elsewhere are worse off."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "loyalty_humanity_country",
+   "subtopic": "Universal vs national loyalty",
+   "axis": [
+    "VALUES",
+    "NATION"
+   ],
+   "format": "tradeoff",
+   "stem": "Which comes closer to how you see yourself?",
+   "scope": "Your own sense of loyalty: for example, whether you'd sooner call yourself a citizen of the world or an American first.",
+   "sides": [
+    {
+     "label": "Humanity first",
+     "text": "My strongest loyalty is to humanity as a whole, more than to any one country."
+    },
+    {
+     "label": "My country first",
+     "text": "My strongest loyalty is to my country, more than to humanity as a whole."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "people_trustworthy",
+   "subtopic": "Views of human nature",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Most people will do the right thing even without rules forcing them to.\"",
+   "scope": "Everyday situations such as returning a lost wallet, paying taxes honestly, not littering, telling the truth on a form, and waiting your turn.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly disagree",
+   "pair": "people_selfish"
+  },
+  {
+   "id": "people_selfish",
+   "subtopic": "Views of human nature",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Without strong rules and consequences, most people will act selfishly.\"",
+   "scope": "Everyday situations such as returning a lost wallet, paying taxes honestly, not littering, telling the truth on a form, and waiting your turn.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "high_pole": "Strongly agree",
+   "pair": "people_trustworthy"
+  },
+  {
+   "id": "sacred_limits",
+   "subtopic": "Purity and sanctity",
+   "axis": [
+    "VALUES",
+    "MORAL"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Some things are wrong even if nobody is harmed, because they go against what is sacred or natural.\"",
+   "scope": "Examples people point to: burning a national flag in private, dishonoring a dead body, cloning a human, selling your own kidney, or mocking a holy book where no one sees.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "high_pole": "Strongly agree",
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "pair": "harm_only",
+   "definitions": [
+    {
+     "term": "sacred",
+     "text": "Treated as holy or as deserving reverence, such as God, a holy book, the flag, or the dead.",
+     "source": "descriptive",
+     "verify": false
+    },
+    {
+     "term": "natural",
+     "text": "In keeping with how things are meant to be, such as human biology or the family.",
+     "source": "descriptive",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "harm_only",
+   "subtopic": "Purity and sanctity",
+   "axis": [
+    "VALUES",
+    "MORAL"
+   ],
+   "format": "agree_defined",
+   "stem": "\"If an act harms nobody, it shouldn't be considered wrong.\"",
+   "scope": "Examples people point to: burning a national flag in private, dishonoring a dead body, cloning a human, selling your own kidney, or mocking a holy book where no one sees.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "high_pole": "Strongly disagree",
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "pair": "sacred_limits"
+  },
+  {
+   "id": "zero_sum",
+   "subtopic": "Zero-sum thinking",
+   "axis": [
+    "VALUES",
+    "POP"
+   ],
+   "format": "agree_defined",
+   "stem": "\"When one group in society gets ahead, it is usually at another group's expense.\"",
+   "scope": "Groups such as rich and poor, workers and owners, races, men and women, immigrants and people born here, cities and rural areas. Getting ahead means more income, jobs, college seats or political power.",
+   "options": [
+    "Strongly disagree",
+    "Disagree",
+    "Torn",
+    "Agree",
+    "Strongly agree"
+   ],
+   "high_pole": "Strongly agree",
+   "point_meanings": [
+    "False in nearly every case I can think of",
+    "False in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "True in most cases, with some real exceptions",
+    "True in nearly every case I can think of"
+   ],
+   "pair": "positive_sum"
+  },
+  {
+   "id": "positive_sum",
+   "subtopic": "Zero-sum thinking",
+   "axis": [
+    "VALUES",
+    "POP"
+   ],
+   "format": "agree_defined",
+   "stem": "\"Most of the time, different groups in society can all get ahead together.\"",
+   "scope": "Groups such as rich and poor, workers and owners, races, men and women, immigrants and people born here, cities and rural areas. Getting ahead means more income, jobs, college seats or political power.",
+   "options": [
+    "Strongly agree",
+    "Agree",
+    "Torn",
+    "Disagree",
+    "Strongly disagree"
+   ],
+   "high_pole": "Strongly disagree",
+   "point_meanings": [
+    "True in nearly every case I can think of",
+    "True in most cases, with some real exceptions",
+    "I can see it both ways about equally",
+    "False in most cases, with some real exceptions",
+    "False in nearly every case I can think of"
+   ],
+   "pair": "zero_sum"
+  },
+  {
+   "id": "proportional_vs_need",
+   "subtopic": "Proportionality vs need",
+   "axis": [
+    "VALUES",
+    "REDIS"
+   ],
+   "format": "tradeoff",
+   "stem": "When sharing out something valuable, which is fairer?",
+   "scope": "Things like pay raises at work, public benefits, college aid and help after a disaster.",
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B",
+   "sides": [
+    {
+     "label": "By need",
+     "text": "Those who need it most get more, like a struggling single parent or the family hit hardest, even if they worked less or paid less in taxes."
+    },
+    {
+     "label": "By contribution",
+     "text": "Those who contributed more get more, like the hardest workers or those who paid more in taxes, even if some in greater need get less."
+    }
+   ]
+  },
+  {
+   "id": "get_ahead",
+   "subtopic": "What decides who gets ahead",
+   "axis": [
+    "VALUES",
+    "REDIS"
+   ],
+   "format": "position",
+   "stem": "In the US today, what mostly decides who gets ahead?",
+   "scope": "Getting ahead means earning a good income, owning a home, or doing better than your parents. Think about people in general, not any one person.",
+   "options": [
+    "Family background and connections",
+    "Luck and circumstances",
+    "A mix of background, luck and effort",
+    "Talent and skills",
+    "Hard work"
+   ],
+   "high_pole": "effort"
+  },
+  {
+   "id": "moral_rules",
+   "subtopic": "What decides who gets ahead",
+   "axis": [
+    "VALUES",
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "Which comes closest to your view of right and wrong?",
+   "scope": "Basic moral questions, like whether lying, stealing, killing or breaking a promise is wrong; not matters of taste.",
+   "options": [
+    "Right and wrong depend entirely on the culture and the situation",
+    "Mostly depend on the situation, with a few fixed rules",
+    "There are many fixed rules, but some depend on the situation",
+    "Right and wrong are the same for all people and all times"
+   ],
+   "high_pole": "fixed"
+  },
+  {
+   "id": "pace_of_change",
+   "subtopic": "What decides who gets ahead",
+   "axis": [
+    "VALUES"
+   ],
+   "format": "position",
+   "stem": "When society is changing, what pace of change is usually best?",
+   "scope": "Changes of any kind and in any direction, such as legalizing or banning drugs, changing who can marry, raising or cutting taxes and programs, new rules on immigration or guns, and new technology at school and work.",
+   "options": [
+    "Fast and sweeping",
+    "Steady",
+    "Slow and careful",
+    "As little as possible; keep what works"
+   ],
+   "high_pole": "little change"
+  }
+ ]
 }

@@ -27,12 +27,20 @@ the same tokens (`app/src/style.css`).
   Everything) and a live sample question. It shows no group positions, map
   or scoring, so nothing can steer answers before the quiz. A short
   before-you-start screen follows.
-- **Answering**: tap an oval and a plain statement of what that answer
-  means appears under the answers ("What you'd be saying"); Next confirms
-  it. Statements live in `items/statements/Dxx.json`, one per answer in code
-  order (tradeoffs add a "torn" line; exception follow-ups use a `{case}`
-  template), and the build fails if any answer lacks one. They restate the
-  answer; they never say how it's scored. (`autoAdvance: true` in
+- **Answering**: tap an oval and a box under the answers says what that
+  answer means ("What you'd be saying"): a one-line headline, then the
+  specific policies or outcomes you'd support and oppose (or, for belief and
+  frequency questions, what you'd be claiming, such as "out of 10 major laws,
+  about 7 mainly help the public"). Next confirms it. Statements are written
+  in `scripts/revisions/statements/Dxx.py` and generated into
+  `items/statements/Dxx.json` (`python3 scripts/revisions/statements/run_all.py`);
+  exception follow-ups use a `{case}` template. The build fails if any answer
+  lacks a statement, a list is empty, or a list entry is too vague to stand on
+  its own ("Cutting it"). Statements never say how an answer is scored.
+  Abstract wording in the questions themselves (what counts as a "social
+  problem", "discipline", "a lot") is pinned down with examples by the same
+  scripts, which write `scripts/revisions/clarity/Dxx.json`, applied by
+  `scripts/revisions/rev_2026_10_15_clarity.py`. (`autoAdvance: true` in
   `config.js` brings back moving on immediately.) Back is always
   there. Every format in the bank is supported: position ladders, belief,
   frequency, defined agree/disagree scales (each point's meaning shown),

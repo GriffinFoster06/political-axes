@@ -1,0 +1,14 @@
+{
+ "trust_fed_motives": {
+  "why": "'Special interests' and 'decisions' had no examples.",
+  "scope": "Agencies like the FDA, EPA, IRS and Department of Education, whichever party is in charge. Special interests means industries, donors, unions or advocacy groups with a stake in the decision."
+ },
+ "hidden_power": {
+  "why": "'A small group of powerful people' was undefined.",
+  "scope": "Think about national decisions in general. A small group means people like major donors, corporate executives, bankers or unelected officials acting out of public view."
+ },
+ "expertise_vs_experience": {
+  "why": "'The country's problems' had no examples.",
+  "scope": "National problems like inflation, health care costs, crime, failing schools or a pandemic."
+ }
+}

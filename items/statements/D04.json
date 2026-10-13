@@ -1,80 +1,507 @@
 {
  "zoning_density": [
-  "Cities should have to allow apartment buildings in most neighborhoods, including ones now zoned only for houses.",
-  "Neighborhoods zoned for houses should also allow duplexes and townhomes, but not large apartment buildings.",
-  "Each neighborhood should decide for itself what can be built.",
-  "Neighborhoods zoned only for single-family houses should stay that way."
+  {
+   "t": "Cities should be required to allow apartment buildings in most neighborhoods.",
+   "yes": [
+    "Ending single-family-only zoning in high-cost cities and suburbs",
+    "Apartment buildings on most residential streets"
+   ],
+   "no": [
+    "Keeping neighborhoods limited to single houses"
+   ]
+  },
+  {
+   "t": "Allow duplexes and townhomes in single-family neighborhoods, but not large apartment buildings.",
+   "yes": [
+    "Two- to four-unit homes and townhomes on single-family lots"
+   ],
+   "no": [
+    "Large apartment buildings in those neighborhoods",
+    "Keeping single-family-only zoning"
+   ]
+  },
+  {
+   "t": "Each neighborhood should decide what can be built.",
+   "yes": [
+    "Neighborhood votes or local boards deciding on new housing types"
+   ],
+   "no": [
+    "City or state rules requiring more housing types"
+   ]
+  },
+  {
+   "t": "Keep single-family zoning.",
+   "yes": [
+    "Neighborhoods limited to one house per lot"
+   ],
+   "no": [
+    "Duplexes, townhomes or apartments in those neighborhoods"
+   ]
+  }
  ],
  "zoning_state_override": [
-  "States should override city zoning whenever a city falls short of its housing goals.",
-  "States should override city zoning only near public transit and job centers.",
-  "Zoning decisions should stay with cities and towns, without states overriding them."
+  {
+   "t": "States should override local zoning whenever cities fall short of housing goals.",
+   "yes": [
+    "State laws forcing cities to allow more homes when they miss targets"
+   ],
+   "no": [
+    "Leaving zoning entirely to cities"
+   ]
+  },
+  {
+   "t": "States should override local zoning only near transit and job centers.",
+   "yes": [
+    "State-required apartments near train stations and job hubs"
+   ],
+   "no": [
+    "Statewide overrides everywhere",
+    "No state role"
+   ]
+  },
+  {
+   "t": "Zoning should stay local.",
+   "yes": [
+    "Cities and towns setting their own zoning"
+   ],
+   "no": [
+    "State laws overriding local zoning"
+   ]
+  }
  ],
  "housing_approval": [
-  "Housing that meets every rule should be approved automatically, with no hearings or lawsuits to delay it.",
-  "Housing that meets every rule should be approved after a short public comment period.",
-  "Neighbors should be able to weigh in at hearings and sue over new housing, even when it meets every rule."
+  {
+   "t": "Housing that meets every rule should be approved automatically.",
+   "yes": [
+    "By-right approval with no hearings",
+    "Ending lawsuits that delay rule-following projects"
+   ],
+   "no": [
+    "Public hearings for projects that already follow the rules"
+   ]
+  },
+  {
+   "t": "Approve rule-following housing after a short public comment period.",
+   "yes": [
+    "A brief comment period, then approval"
+   ],
+   "no": [
+    "Long hearings and lawsuits",
+    "Approval with no public input"
+   ]
+  },
+  {
+   "t": "Neighbors should have a say through hearings and the right to sue.",
+   "yes": [
+    "Public hearings and lawsuits over new housing, even if it meets the rules"
+   ],
+   "no": [
+    "Automatic approval"
+   ]
+  }
  ],
  "rent_control": [
-  "Cities should be able to cap yearly rent increases for current tenants tightly, at no more than inflation.",
-  "Cities should be able to cap yearly rent increases at around inflation plus a few percent, with new buildings exempt.",
-  "Cities should limit rent increases only temporarily during emergencies.",
-  "Cities shouldn't limit how much landlords raise rent."
+  {
+   "t": "Cities should strictly limit rent increases, such as to inflation.",
+   "yes": [
+    "Capping yearly rent increases for existing tenants at inflation"
+   ],
+   "no": [
+    "Exempting new buildings",
+    "No limits"
+   ]
+  },
+  {
+   "t": "Moderate limits on rent increases, with new buildings exempt.",
+   "yes": [
+    "Caps of about inflation plus a few percent",
+    "Exempting newly built housing"
+   ],
+   "no": [
+    "Strict inflation-only caps",
+    "No limits"
+   ]
+  },
+  {
+   "t": "Limit rent increases only temporarily during emergencies.",
+   "yes": [
+    "Emergency caps after disasters"
+   ],
+   "no": [
+    "Permanent rent control"
+   ]
+  },
+  {
+   "t": "No limits on rent increases.",
+   "yes": [
+    "Letting landlords set rents freely",
+    "State bans on local rent control"
+   ],
+   "no": [
+    "Any rent control"
+   ]
+  }
  ],
  "eviction_cause": [
-  "Landlords should need a specific reason, like unpaid rent, to evict or refuse to renew any tenant.",
-  "Landlords should need a specific reason to evict or not renew tenants who've lived there a year or more.",
-  "Landlords can end a lease when its term ends, without giving a reason."
+  {
+   "t": "Landlords should need a specific reason to evict or not renew any tenant.",
+   "yes": [
+    "Just-cause eviction rules for all tenants"
+   ],
+   "no": [
+    "Ending a lease just because its term is up"
+   ]
+  },
+  {
+   "t": "Landlords should need a reason only for tenants who've lived there a year or more.",
+   "yes": [
+    "Just-cause protection after a year"
+   ],
+   "no": [
+    "Protection from day one",
+    "No protection at all"
+   ]
+  },
+  {
+   "t": "Landlords can end a lease when its term ends.",
+   "yes": [
+    "Non-renewal without giving a reason"
+   ],
+   "no": [
+    "Just-cause eviction laws"
+   ]
+  }
  ],
  "rent_vouchers": [
-  "Every low-income family that qualifies for federal rent help should get it.",
-  "More families should get federal rent help than today, but not necessarily all who qualify.",
-  "Federal rent help should stay at about today's level, reaching about 1 in 4 eligible families.",
-  "Fewer families should get federal rent help, with more reliance on the private market."
+  {
+   "t": "Every eligible low-income family should get federal rent help.",
+   "yes": [
+    "Funding vouchers for all eligible households, up from about 1 in 4"
+   ],
+   "no": [
+    "Keeping help limited by funding"
+   ]
+  },
+  {
+   "t": "Help more families with rent vouchers than today.",
+   "yes": [
+    "Expanding voucher funding"
+   ],
+   "no": [
+    "Covering every eligible family",
+    "Cutting vouchers"
+   ]
+  },
+  {
+   "t": "Keep rent help at about today's level.",
+   "yes": [
+    "Today's voucher funding"
+   ],
+   "no": [
+    "Expanding or cutting it"
+   ]
+  },
+  {
+   "t": "Help fewer families with rent; rely more on the private market.",
+   "yes": [
+    "Cutting federal rental help"
+   ],
+   "no": [
+    "Expanding vouchers"
+   ]
+  }
  ],
  "public_housing": [
-  "Government should build and own a large amount of housing, open to people of all incomes.",
-  "Government should build and own more housing for low-income people.",
-  "Government shouldn't own housing; it should pay private builders through tax credits to build affordable homes.",
-  "Government shouldn't build or pay for housing; leave it to the market."
+  {
+   "t": "Government should build and own a large amount of housing for people of all incomes.",
+   "yes": [
+    "Large-scale public housing open to all incomes, like Vienna's"
+   ],
+   "no": [
+    "Leaving housing to private builders"
+   ]
+  },
+  {
+   "t": "Government should build and own housing for low-income people.",
+   "yes": [
+    "More public housing for low-income families"
+   ],
+   "no": [
+    "Public housing for all incomes",
+    "Leaving it all to the market"
+   ]
+  },
+  {
+   "t": "Government should pay private builders through tax credits instead of owning housing.",
+   "yes": [
+    "Tax credits for private affordable housing"
+   ],
+   "no": [
+    "Government-owned housing"
+   ]
+  },
+  {
+   "t": "Leave housing to the market.",
+   "yes": [
+    "No government building or subsidizing of housing"
+   ],
+   "no": [
+    "Public housing",
+    "Affordable-housing tax credits"
+   ]
+  }
  ],
  "encampments": [
-  "People should be allowed to camp on sidewalks and in parks until there's enough shelter or housing for them.",
-  "Cities can clear camps only after offering each person a shelter bed.",
-  "Cities can ban camping and clear camps even when there aren't enough shelter beds.",
-  "Cities should ban camping and fine or jail people who don't move."
+  {
+   "t": "Allow people to camp in public until there's enough shelter or housing.",
+   "yes": [
+    "Letting people stay on sidewalks and in parks when they have nowhere else"
+   ],
+   "no": [
+    "Clearing camps without a place to go",
+    "Fines or jail for camping"
+   ]
+  },
+  {
+   "t": "Clear camps only after offering each person a shelter bed.",
+   "yes": [
+    "Clearing camps once a bed is offered"
+   ],
+   "no": [
+    "Clearing without an offer",
+    "Letting camps stay when beds are available"
+   ]
+  },
+  {
+   "t": "Ban camping and clear camps, even without enough shelter beds.",
+   "yes": [
+    "Clearing camps whether or not shelter is available"
+   ],
+   "no": [
+    "Letting people camp on sidewalks or in parks"
+   ]
+  },
+  {
+   "t": "Ban camping, with fines or jail for people who don't move.",
+   "yes": [
+    "Fines or jail for refusing to leave a camp"
+   ],
+   "no": [
+    "Tolerating public camping"
+   ]
+  }
  ],
  "housing_first": [
-  "Homeless people with addiction or mental illness should get housing first, with no requirement to be sober or in treatment.",
-  "They should get housing first, but have to accept treatment to keep it.",
-  "They should have to get sober or start treatment before getting housing."
+  {
+   "t": "House homeless people first, with no requirement to be sober or in treatment.",
+   "yes": [
+    "Giving housing without conditions on drug use or treatment"
+   ],
+   "no": [
+    "Requiring sobriety or treatment first"
+   ]
+  },
+  {
+   "t": "House people first, but require treatment to keep the housing.",
+   "yes": [
+    "Housing tied to staying in treatment"
+   ],
+   "no": [
+    "Housing with no conditions",
+    "Requiring sobriety before housing"
+   ]
+  },
+  {
+   "t": "Treatment or sobriety should come first, before housing.",
+   "yes": [
+    "Making sobriety or treatment a condition for getting housing"
+   ],
+   "no": [
+    "Housing with no conditions"
+   ]
+  }
  ],
  "involuntary_treatment": [
-  "Treatment should stay voluntary unless a person is an immediate danger to themselves or others.",
-  "People should also be required to get treatment when they can't meet basic needs like food and shelter.",
-  "Requiring treatment should be much easier, including longer required hospital stays."
+  {
+   "t": "Keep treatment voluntary except when someone is an immediate danger.",
+   "yes": [
+    "Today's immediate-danger standard"
+   ],
+   "no": [
+    "Committing people who can't meet basic needs"
+   ]
+  },
+  {
+   "t": "Also require treatment when people can't meet basic needs like food and shelter.",
+   "yes": [
+    "Widening involuntary treatment to people who can't care for themselves"
+   ],
+   "no": [
+    "Keeping the narrow danger standard",
+    "Long required hospital stays"
+   ]
+  },
+  {
+   "t": "Make it much easier to require treatment, including longer hospital stays.",
+   "yes": [
+    "Broader involuntary commitment",
+    "Longer required hospital stays"
+   ],
+   "no": [
+    "Today's narrow standard"
+   ]
+  }
  ],
  "investor_homes": [
-  "Large investment firms should be banned from buying single-family homes to rent out.",
-  "Large firms can buy homes to rent out, but with limits or extra taxes.",
-  "Large firms should be free to buy homes to rent out, since that adds rental housing."
+  {
+   "t": "Ban large investment firms from buying single-family homes to rent out.",
+   "yes": [
+    "Barring firms with hundreds of homes from buying more"
+   ],
+   "no": [
+    "Letting large investors buy houses"
+   ]
+  },
+  {
+   "t": "Allow large investors to buy homes, but with limits or extra taxes.",
+   "yes": [
+    "Caps or extra taxes on large investors' home purchases"
+   ],
+   "no": [
+    "An outright ban",
+    "No limits"
+   ]
+  },
+  {
+   "t": "Let large investment firms buy homes to rent; they add rental housing.",
+   "yes": [
+    "No limits on investor purchases"
+   ],
+   "no": [
+    "Bans or extra taxes on investors"
+   ]
+  }
  ],
  "short_term_rentals": [
-  "Whole-home nightly rentals like Airbnb should be banned in most neighborhoods.",
-  "Short-term rentals should be allowed only in the owner's own home.",
-  "Short-term rentals should be allowed if they register and pay taxes.",
-  "Cities shouldn't limit short-term rentals."
+  {
+   "t": "Ban short-term rentals like Airbnb in most neighborhoods.",
+   "yes": [
+    "Banning whole-home nightly rentals in residential areas"
+   ],
+   "no": [
+    "Allowing them with registration"
+   ]
+  },
+  {
+   "t": "Allow short-term rentals only in the owner's own home.",
+   "yes": [
+    "Renting your own home or a room in it",
+    "Banning investor-owned nightly rentals"
+   ],
+   "no": [
+    "Allowing any whole home to be rented nightly"
+   ]
+  },
+  {
+   "t": "Allow short-term rentals with registration and taxes.",
+   "yes": [
+    "Registration and hotel-style taxes for short-term rentals"
+   ],
+   "no": [
+    "Banning short-term rentals",
+    "No rules"
+   ]
+  },
+  {
+   "t": "No limits on short-term rentals.",
+   "yes": [
+    "Letting owners rent their homes by the night freely"
+   ],
+   "no": [
+    "Bans or registration rules"
+   ]
+  }
  ],
  "mortgage_deduction": [
-  "The mortgage interest deduction should end, with the money going to renters or first-time buyers.",
-  "Keep the mortgage interest deduction, but only for smaller mortgages.",
-  "Keep the mortgage interest deduction as it is.",
-  "Expand the mortgage interest deduction to help more homeowners."
+  {
+   "t": "End the mortgage interest deduction and use the money for renters or first-time buyers.",
+   "yes": [
+    "Repealing the deduction",
+    "Aid for renters or first-time buyers"
+   ],
+   "no": [
+    "Keeping the deduction"
+   ]
+  },
+  {
+   "t": "Keep the mortgage interest deduction only for smaller mortgages.",
+   "yes": [
+    "Lowering the cap on mortgages that qualify"
+   ],
+   "no": [
+    "Repealing the deduction",
+    "Keeping it as is"
+   ]
+  },
+  {
+   "t": "Keep the mortgage interest deduction as it is.",
+   "yes": [
+    "Today's deduction"
+   ],
+   "no": [
+    "Cutting or expanding it"
+   ]
+  },
+  {
+   "t": "Expand the mortgage interest deduction to help more homeowners.",
+   "yes": [
+    "Letting homeowners who don't itemize claim it",
+    "A higher cap"
+   ],
+   "no": [
+    "Limiting or repealing it"
+   ]
+  }
  ],
  "transit_vs_roads": [
-  "Much more transportation money should go to public transit, and less to new roads.",
-  "Somewhat more transportation money should go to public transit.",
-  "Keep about today's split between transit and roads.",
-  "More transportation money should go to roads and highways."
+  {
+   "t": "Shift much more transportation money to transit and away from new roads.",
+   "yes": [
+    "Large increases for buses, subways and trains",
+    "Fewer new highways and lanes"
+   ],
+   "no": [
+    "Today's split"
+   ]
+  },
+  {
+   "t": "Shift somewhat more transportation money to transit.",
+   "yes": [
+    "Modest increases for buses and trains"
+   ],
+   "no": [
+    "Cutting highway building sharply",
+    "More for roads"
+   ]
+  },
+  {
+   "t": "Keep about today's split between transit and roads.",
+   "yes": [
+    "Today's transportation budgets"
+   ],
+   "no": [
+    "Shifting money either way"
+   ]
+  },
+  {
+   "t": "Put more transportation money into roads and highways.",
+   "yes": [
+    "More highways, lanes and bridges",
+    "Less for transit"
+   ],
+   "no": [
+    "Shifting money to transit"
+   ]
+  }
  ]
 }
