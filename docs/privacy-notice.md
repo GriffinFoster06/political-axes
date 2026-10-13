@@ -1,7 +1,6 @@
 # Privacy notice and consent (shown before the quiz starts)
 
-**About this quiz.** This is a personal, non-commercial project by Griffin
-Foster. It isn't affiliated with any university, company, party or campaign.
+**About this quiz.** This is an independent, non-commercial project. It isn't affiliated with any university, company, party or campaign.
 
 **What's collected.** Your answers, optional broad demographics (age range,
 region, education), and how long each question took. No name, email or IP

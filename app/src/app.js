@@ -1803,7 +1803,7 @@
       }).join("") +
       "<h2 id=ab-privacy>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
       "<h2 id=ab-limits>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Report a problem” link under each question goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
-      '<h2 id=ab-source>Open source</h2><p>The questions, scoring keys and code are public: <a href="https://github.com/GriffinFoster06/political-axes" target="_blank" rel="noopener">github.com/GriffinFoster06/political-axes</a>.</p></section>' +
+      '</section>' +
       '<div class="nav"><span></span><button class="btn" id="back">Back</button></div>';
     show(html);
     bind("#back", closeAbout);
