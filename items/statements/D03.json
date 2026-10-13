@@ -1,0 +1,139 @@
+{
+ "health_coverage": [
+  "One government health plan should cover everyone, with little or no role for private insurance.",
+  "Everyone should be able to choose between a government plan and private insurance.",
+  "Most people should keep private insurance, with government programs for older people, low-income people and those who can't get covered otherwise, roughly as today.",
+  "Most people should have private insurance, with smaller government health programs than today.",
+  "People should buy private insurance or pay directly; the government shouldn't provide coverage."
+ ],
+ "coverage_guarantee": [
+  "The federal government should make sure every American is covered, through one government plan.",
+  "The federal government should make sure every American is covered, through whatever mix of public and private plans works.",
+  "The government shouldn't guarantee coverage for everyone, but should help low-income and seriously ill people get covered.",
+  "Getting health coverage is each person's own responsibility, not the government's."
+ ],
+ "medicare_age": [
+  "Everyone of any age should be enrolled in Medicare automatically.",
+  "Anyone of any age should be able to choose to buy into Medicare.",
+  "Medicare should open at 60 instead of 65.",
+  "Medicare should stay at 65 and older.",
+  "The Medicare age should rise gradually to 67."
+ ],
+ "private_insurance_role": [
+  "With a government plan for everyone, private insurance should only cover extras the plan doesn't, like private rooms.",
+  "Private insurers should compete with the government plan, and people choose either one.",
+  "Private insurance should stay the main system, with the government plan only for people who can't get private coverage."
+ ],
+ "drug_prices": [
+  "The government should set the prices of all brand-name drugs, for everyone.",
+  "The government should negotiate prices on many more drugs, for Medicare and private insurance alike.",
+  "Medicare should keep negotiating prices on a limited number of drugs, as it does now.",
+  "The government should stop negotiating drug prices and let competition set them."
+ ],
+ "drug_import": [
+  "People should be able to buy prescription drugs from any country with safety standards like ours.",
+  "Imported drugs should be allowed only through limited state programs the FDA approves.",
+  "Prescription drugs shouldn't be imported, because it's too hard to keep them safe."
+ ],
+ "medicaid_scope": [
+  "Medicaid should cover all low-income adults in every state, with federal money paying most of the cost.",
+  "Medicaid should stay as it is, with each state choosing whether to cover all low-income adults.",
+  "Federal Medicaid money should be capped per person, and states should get more say over who's covered.",
+  "Each state should get a fixed amount of Medicaid money and decide everything about the program."
+ ],
+ "medicaid_work": [
+  "Adults on Medicaid shouldn't have to work, volunteer or go to school to keep their coverage.",
+  "Able-bodied adults on Medicaid should have to work, volunteer or study about 80 hours a month, with exemptions for parents, caregivers and students.",
+  "Adults on Medicaid should face a stricter requirement than 80 hours a month, or fewer exemptions."
+ ],
+ "ss_shortfall": [
+  "Social Security's gap should be closed only with tax increases, mainly on high earners, keeping or raising benefits.",
+  "Social Security's gap should be closed mostly with tax increases and small benefit changes.",
+  "Social Security's gap should be closed with about equal tax increases and benefit cuts.",
+  "Social Security's gap should be closed mostly by slowing benefit growth, such as raising the retirement age, with small tax increases.",
+  "Social Security's gap should be closed only by slowing benefit growth, with no tax increases."
+ ],
+ "ss_retirement_age": [
+  "The full retirement age should drop to 65 for people now under 50.",
+  "The full retirement age should stay at 67.",
+  "The full retirement age should rise to 68 or 69 for people now under 50.",
+  "The full retirement age should rise to 70 or higher for people now under 50."
+ ],
+ "ss_payroll_cap": [
+  "Social Security tax should apply to all wages, with no cap.",
+  "Social Security tax should also apply to wages above $400,000, leaving wages between today's cap and $400,000 untaxed.",
+  "The cap on wages subject to Social Security tax should be raised somewhat, but not removed.",
+  "The cap on wages subject to Social Security tax should stay where it is.",
+  "The Social Security tax rate should go down, even if future benefits have to shrink."
+ ],
+ "medicare_structure": [
+  "Medicare should also cover dental, vision and hearing, paid for with higher taxes.",
+  "Medicare should stay as it is, with new taxes or savings to keep paying for it.",
+  "Future retirees should get a set amount to spend on either traditional Medicare or a private plan.",
+  "Medicare should be gradually replaced with personal health savings accounts."
+ ],
+ "medicare_means_test": [
+  "Higher-income retirees should pay much more for Medicare than they do today.",
+  "Higher-income retirees should pay somewhat more for Medicare than they do today.",
+  "Higher-income retirees should keep paying what they pay today.",
+  "Everyone should pay the same for Medicare, whatever their income."
+ ],
+ "ss_private_accounts": [
+  "Social Security should stay a guaranteed benefit, with no personal investment accounts.",
+  "Workers could have personal investment accounts only as an extra on top of Social Security, not carved out of it.",
+  "Workers should be able to choose to put part of their Social Security tax into an account they own and invest.",
+  "Social Security should gradually be replaced with personal investment accounts."
+ ],
+ "insurance_mandate": [
+  "Everyone should be required to have health insurance, with a penalty for going without.",
+  "No one should be penalized, but anyone without insurance should be signed up automatically for a free basic plan.",
+  "Whether to have health insurance should be each person's own choice."
+ ],
+ "preexisting_conditions": [
+  "Insurers should never be able to charge more or refuse coverage because of past health problems, as today.",
+  "Insurers can charge somewhat more for past health problems, but can't refuse to cover anyone.",
+  "Insurers can charge more or refuse coverage for past health problems, with a separate government-funded plan for people they turn down."
+ ],
+ "school_vaccines": [
+  "Children should need vaccines like measles and polio to attend any school, public or private.",
+  "Children should need these vaccines to attend public schools, but private schools can set their own rules.",
+  "These vaccines should be recommended, but parents decide, even for public school."
+ ],
+ "vaccine_exemptions": [
+  "These children should still need the required vaccines: {case}.",
+  "These children should be allowed to skip the required vaccines: {case}."
+ ],
+ "outbreak_gov_mandate": [
+  "During a serious outbreak, the government should require most workers to get vaccinated.",
+  "During a serious outbreak, the government should require vaccines only for health care and other close-contact jobs.",
+  "The government shouldn't require anyone to get vaccinated for their job, even during a serious outbreak."
+ ],
+ "outbreak_employer": [
+  "During a serious outbreak, any employer should be allowed to require its workers to get vaccinated.",
+  "During a serious outbreak, only health care employers should be allowed to require vaccines.",
+  "No employer should be allowed to require workers to get vaccinated."
+ ],
+ "immigrant_health_benefits": [
+  "Anyone living here with a low enough income should be able to get Medicaid, whatever their legal status.",
+  "Legal immigrants should qualify for Medicaid right away, and children should qualify whatever their status.",
+  "Most legal immigrants should wait 5 years for Medicaid, as today, and people without legal status shouldn't qualify.",
+  "Legal immigrants should wait 10 years or more for Medicaid.",
+  "Only US citizens should be able to get Medicaid."
+ ],
+ "water_fluoride": [
+  "Cities should add fluoride to drinking water, as health agencies recommend.",
+  "Each city should decide whether to add fluoride.",
+  "Adding fluoride to drinking water should be banned."
+ ],
+ "food_additives": [
+  "Additives that other countries ban, like some artificial dyes, should be banned in the US too, even if US regulators approved them.",
+  "Those additives should be allowed but carry clear warning labels.",
+  "If US regulators approved an additive, it should be allowed, whatever other countries do."
+ ],
+ "long_term_care": [
+  "A new government insurance program should pay for nursing home and home care for everyone.",
+  "Government should help middle-income families pay for long-term care too, not only the poor.",
+  "Keep today's system, where Medicaid pays only after people spend down their savings.",
+  "Families and private insurance should pay for long-term care, with less government help than today."
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "climate_action": [
+  "The government should require fast, deep cuts in emissions, even if energy prices rise noticeably.",
+  "The government should require gradual cuts in emissions, accepting small increases in energy prices.",
+  "The government should fund research and give tax credits for clean energy, but not require cuts.",
+  "The government shouldn't take any specific action on climate change.",
+  "The government should repeal existing climate rules and produce more oil, gas and coal."
+ ],
+ "net_zero_target": [
+  "The US should aim to reach net zero emissions by 2035.",
+  "The US should aim to reach net zero emissions by 2050.",
+  "The US should aim for net zero, but later than 2050.",
+  "The US shouldn't set a target for net zero emissions."
+ ],
+ "climate_willing_to_pay": [
+  "I'd pay $50 a month or more in higher energy bills for policies that fight climate change.",
+  "I'd pay about $20 a month more in energy bills for climate policies.",
+  "I'd pay about $5 a month more in energy bills for climate policies.",
+  "I wouldn't pay anything more in energy bills for climate policies."
+ ],
+ "carbon_tax": [
+  "There should be a high federal carbon tax, around $100 a ton and rising, about 90 cents more per gallon of gas.",
+  "There should be a moderate federal carbon tax, around $25 to $50 a ton.",
+  "There shouldn't be a federal carbon tax."
+ ],
+ "carbon_tax_use": [
+  "Money from a carbon tax should mainly go to clean energy and climate programs.",
+  "Money from a carbon tax should mainly go back to every household as an equal rebate.",
+  "Money from a carbon tax should mainly be used to cut other taxes, like income or payroll taxes."
+ ],
+ "carbon_border_fee": [
+  "Imports like steel and cement from countries with weaker pollution rules should pay a carbon fee.",
+  "Imports should pay a carbon fee only if US producers also pay for their own carbon pollution.",
+  "Imports shouldn't pay a carbon fee."
+ ],
+ "drilling_public_lands": [
+  "There should be no new oil and gas drilling on federal land or waters, and existing leases should be phased out.",
+  "There should be no new federal drilling leases, but existing ones can keep producing.",
+  "New drilling on federal land and waters should be allowed after strict environmental review.",
+  "Drilling on federal land and waters should expand, with faster approvals."
+ ],
+ "coal_plants": [
+  "All coal power plants should close by about 2035.",
+  "Coal plants should be phased out gradually as they get old.",
+  "Coal plants should keep running as long as they make economic sense.",
+  "Government should help keep coal plants open."
+ ],
+ "nuclear_power": [
+  "The US should phase out nuclear power, including existing plants.",
+  "Existing nuclear plants should keep running, but no new ones should be built.",
+  "The US should build some new nuclear plants under current safety rules.",
+  "The US should build many new nuclear plants and approve them faster."
+ ],
+ "nuclear_funding": [
+  "Government shouldn't put any money into building nuclear plants.",
+  "Government should guarantee loans for new nuclear plants, but not pay for them directly.",
+  "Government should give large direct support to build new nuclear plants."
+ ],
+ "ev_requirement": [
+  "Most new cars sold should have to be electric by 2035.",
+  "Electric cars shouldn't be required, but pollution limits on new cars should keep getting tighter.",
+  "Electric cars shouldn't be required, and pollution limits on new cars shouldn't get any tighter."
+ ],
+ "ev_tax_credit": [
+  "Buyers of new electric vehicles should get a federal tax credit of $7,500 or more.",
+  "Lower- and middle-income buyers of new electric vehicles should get a smaller federal tax credit.",
+  "There should be no federal tax credit for buying an electric vehicle, as now."
+ ],
+ "env_jobs_tradeoff": {
+  "s": [
+   "Stricter environmental rules come first, even if some mining, oil and factory jobs are lost.",
+   "I lean toward protecting the environment, even if some of those jobs are lost.",
+   "I lean toward keeping those jobs, even if the environment is less protected.",
+   "Keeping mining, oil and factory jobs comes first, even if the environment is less protected."
+  ],
+  "torn": "I weigh protecting the environment and keeping those jobs about equally."
+ },
+ "permitting_tradeoff": {
+  "s": [
+   "Big energy projects should get thorough environmental reviews, even if they take many years to build.",
+   "I lean toward thorough reviews, even if projects take longer.",
+   "I lean toward faster approvals, even if some environmental harms are missed.",
+   "Approvals for big energy projects should be much faster, even if some environmental harms are missed."
+  ],
+  "torn": "I weigh thorough review and building faster about equally."
+ },
+ "land_protection": [
+  "Much more land should be protected from mining, drilling and logging, such as 30% of US land by 2030.",
+  "Somewhat more land should be protected than today.",
+  "About as much land should be protected as today.",
+  "Less land should be protected, with more opened to development."
+ ],
+ "sell_public_land": [
+  "The federal government should keep all of its land public.",
+  "The federal government should sell only small parcels near towns, for housing.",
+  "The federal government should sell large amounts of its land to states or private owners."
+ ],
+ "climate_agreements": [
+  "The US should join international climate agreements with binding targets for every country.",
+  "The US should join international climate agreements with voluntary targets, like the Paris Agreement.",
+  "The US shouldn't take part in international climate agreements."
+ ],
+ "climate_belief": [
+  "Climate change is mostly caused by humans and is a serious threat.",
+  "Climate change is mostly caused by humans, but it's a manageable problem.",
+  "Climate change is partly human and partly natural, and its effects are uncertain.",
+  "Climate change is mostly natural, not caused by humans.",
+  "The climate isn't really changing."
+ ],
+ "environmental_justice": [
+  "A set share of federal cleanup money should go to low-income and minority neighborhoods.",
+  "Cleanup should go first to the most polluted places, whoever lives there.",
+  "No neighborhood should get special priority for cleanup."
+ ],
+ "adaptation_tradeoff": {
+  "s": [
+   "Climate money should go mainly to cutting emissions, even if less is spent protecting communities from floods and heat.",
+   "I lean toward cutting emissions over preparing for the effects.",
+   "I lean toward protecting communities from floods and heat over cutting emissions.",
+   "Climate money should go mainly to protecting communities from floods and heat, even if emissions fall more slowly."
+  ],
+  "torn": "I weigh cutting emissions and preparing for the effects about equally."
+ },
+ "plastic_bags": [
+  "Single-use plastic checkout bags should be banned.",
+  "Plastic checkout bags should be allowed, with a fee for each bag.",
+  "Stores should decide whether to give out free plastic bags."
+ ]
+}

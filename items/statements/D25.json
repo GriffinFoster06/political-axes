@@ -1,0 +1,200 @@
+{
+ "fair_small_gaps": [
+  "A fair society keeps the differences in wealth between people small, in nearly every case.",
+  "A fair society keeps the differences in wealth between people small, in most cases, though there are real exceptions.",
+  "I'm torn on whether a fair society keeps wealth differences small; I see it both ways about equally.",
+  "A fair society doesn't need to keep differences in wealth small, in most cases, though there are real exceptions.",
+  "A fair society doesn't need to keep differences in wealth small, in nearly every case."
+ ],
+ "fair_keep_earnings": [
+  "A fair society doesn't let people keep everything they earn when some end up far richer, in nearly every case.",
+  "A fair society doesn't let people keep everything they earn when some end up far richer, in most cases, though there are real exceptions.",
+  "I'm torn on whether a fair society lets people keep what they earn; I see it both ways about equally.",
+  "A fair society lets people keep what they earn, even if some end up far richer, in most cases, though there are real exceptions.",
+  "A fair society lets people keep what they earn, even if some end up far richer, in nearly every case."
+ ],
+ "tradition_wisdom": [
+  "Customs and traditions don't usually contain wisdom worth keeping just because they're old, in nearly every case.",
+  "Customs and traditions don't usually contain wisdom worth keeping just because they're old, in most cases, though there are real exceptions.",
+  "I'm torn on whether traditions usually contain wisdom worth keeping; I see it both ways about equally.",
+  "Customs and traditions handed down over generations contain wisdom we should keep, in most cases, though there are real exceptions.",
+  "Customs and traditions handed down over generations contain wisdom we should keep, in nearly every case."
+ ],
+ "progress_by_questioning": [
+  "Society makes progress mainly by questioning and changing traditional ways, in nearly every case.",
+  "Society makes progress mainly by questioning and changing traditional ways, in most cases, though there are real exceptions.",
+  "I'm torn on whether progress comes mainly from questioning tradition; I see it both ways about equally.",
+  "Society doesn't mainly progress by questioning and changing traditional ways, in most cases, though there are real exceptions.",
+  "Society doesn't mainly progress by questioning and changing traditional ways, in nearly every case."
+ ],
+ "gov_role_values": [
+  "Government doesn't usually make social problems worse when it tries to solve them, in nearly every case.",
+  "Government doesn't usually make social problems worse when it tries to solve them, in most cases, though there are real exceptions.",
+  "I'm torn on whether government usually makes social problems worse; I see it both ways about equally.",
+  "When government tries to solve a social problem, it makes things worse, in most cases, though there are real exceptions.",
+  "When government tries to solve a social problem, it makes things worse, in nearly every case."
+ ],
+ "gov_role_values_rev": [
+  "Some social problems are too big to solve without the federal government, in nearly every case.",
+  "Some social problems are too big to solve without the federal government, in most cases, though there are real exceptions.",
+  "I'm torn on whether some problems need the federal government; I see it both ways about equally.",
+  "Social problems can be solved without the federal government, in most cases, though there are real exceptions.",
+  "Social problems can be solved without the federal government, in nearly every case."
+ ],
+ "group_status_natural": [
+  "It isn't natural or acceptable for some groups to have more power and status than others, in nearly every case.",
+  "It isn't natural or acceptable for some groups to have more power and status than others, in most cases, though there are real exceptions.",
+  "I'm torn on whether it's acceptable for some groups to have more power and status; I see it both ways about equally.",
+  "It's natural and acceptable for some groups to have more power and status than others, in most cases, though there are real exceptions.",
+  "It's natural and acceptable for some groups to have more power and status than others, in nearly every case."
+ ],
+ "group_status_equalize": [
+  "Society should work to make all groups equal in power and status, in nearly every case.",
+  "Society should work to make all groups equal in power and status, in most cases, though there are real exceptions.",
+  "I'm torn on whether society should work to make all groups equal; I see it both ways about equally.",
+  "Society shouldn't try to make all groups equal in power and status, in most cases, though there are real exceptions.",
+  "Society shouldn't try to make all groups equal in power and status, in nearly every case."
+ ],
+ "people_trustworthy": [
+  "Most people will do the right thing even without rules forcing them to, in nearly every case.",
+  "Most people will do the right thing even without rules forcing them to, in most cases, though there are real exceptions.",
+  "I'm torn on whether people do the right thing without rules; I see it both ways about equally.",
+  "Most people won't do the right thing without rules forcing them to, in most cases, though there are real exceptions.",
+  "Most people won't do the right thing without rules forcing them to, in nearly every case."
+ ],
+ "people_selfish": [
+  "Most people won't act selfishly even without strong rules and consequences, in nearly every case.",
+  "Most people won't act selfishly even without strong rules and consequences, in most cases, though there are real exceptions.",
+  "I'm torn on whether people act selfishly without rules; I see it both ways about equally.",
+  "Without strong rules and consequences, most people will act selfishly, in most cases, though there are real exceptions.",
+  "Without strong rules and consequences, most people will act selfishly, in nearly every case."
+ ],
+ "sacred_limits": [
+  "Nothing is wrong just because it goes against what's sacred or natural if nobody is harmed, in nearly every case.",
+  "Nothing is wrong just because it goes against what's sacred or natural if nobody is harmed, in most cases, though there are real exceptions.",
+  "I'm torn on whether things can be wrong when nobody is harmed; I see it both ways about equally.",
+  "Some things are wrong even if nobody is harmed, because they go against what's sacred or natural, in most cases, though there are real exceptions.",
+  "Some things are wrong even if nobody is harmed, because they go against what's sacred or natural, in nearly every case."
+ ],
+ "harm_only": [
+  "If an act harms nobody, it isn't wrong, in nearly every case.",
+  "If an act harms nobody, it isn't wrong, in most cases, though there are real exceptions.",
+  "I'm torn on whether an act that harms nobody can still be wrong; I see it both ways about equally.",
+  "An act can be wrong even if it harms nobody, in most cases, though there are real exceptions.",
+  "An act can be wrong even if it harms nobody, in nearly every case."
+ ],
+ "zero_sum": [
+  "One group getting ahead doesn't have to come at another's expense, in nearly every case.",
+  "One group getting ahead doesn't have to come at another's expense, in most cases, though there are real exceptions.",
+  "I'm torn on whether one group's gain is another's loss; I see it both ways about equally.",
+  "When one group gets ahead, it's at another group's expense, in most cases, though there are real exceptions.",
+  "When one group gets ahead, it's at another group's expense, in nearly every case."
+ ],
+ "positive_sum": [
+  "Different groups in society can all get ahead together, in nearly every case.",
+  "Different groups in society can all get ahead together, in most cases, though there are real exceptions.",
+  "I'm torn on whether groups can all get ahead together; I see it both ways about equally.",
+  "Different groups usually can't all get ahead together, in most cases, though there are real exceptions.",
+  "Different groups usually can't all get ahead together, in nearly every case."
+ ],
+ "security_vs_choice": {
+  "s": [
+   "I'd rather live where everyone's basic needs are guaranteed, even with high taxes and fewer choices.",
+   "I lean toward a society that guarantees basic needs.",
+   "I lean toward a society where people are free to choose and keep more of what they earn.",
+   "I'd rather live where people are free to choose and keep more of what they earn, even if some go without."
+  ],
+  "torn": "I'd weigh guaranteed needs and freedom to choose about equally."
+ },
+ "equal_treatment_vs_association": {
+  "s": [
+   "Protecting people from being turned away unfairly should win, even if owners lose some freedom to choose whom they deal with.",
+   "I lean toward protecting people from being turned away unfairly.",
+   "I lean toward owners' freedom to choose whom they deal with.",
+   "Owners' freedom to choose whom they deal with should win, even if some people are turned away unfairly."
+  ],
+  "torn": "I weigh equal treatment and owners' freedom about equally."
+ },
+ "liberty_vs_order": {
+  "s": [
+   "Protecting individual freedoms matters more to me, even if it's harder to keep order.",
+   "I lean toward protecting individual freedoms.",
+   "I lean toward keeping public order and safety.",
+   "Keeping public order and safety matters more to me, even if some freedoms are limited."
+  ],
+  "torn": "Freedom and order matter to me about equally."
+ },
+ "conscience_vs_law": {
+  "s": [
+   "Someone who believes a law is wrong should follow their conscience, even if it means breaking the law.",
+   "I lean toward following conscience over the law.",
+   "I lean toward obeying the law while working to change it.",
+   "Someone should obey the law while working to change it, even if that means doing something they think is wrong."
+  ],
+  "torn": "I weigh conscience and obeying the law about equally."
+ },
+ "child_independence": {
+  "s": [
+   "It's more important to teach children to question rules and think for themselves, even if they're harder to manage.",
+   "I lean toward teaching children to think for themselves.",
+   "I lean toward teaching children to respect rules and authority.",
+   "It's more important to teach children to respect rules and authority, even if they question less."
+  ],
+  "torn": "I'd weigh independence and respect for authority about equally."
+ },
+ "child_discipline": {
+  "s": [
+   "Children should be free to express themselves, even if they sometimes behave badly.",
+   "I lean toward giving children room to express themselves.",
+   "I lean toward expecting discipline and good manners.",
+   "Children should be expected to show discipline and good manners, even if that means stricter parenting."
+  ],
+  "torn": "I weigh self-expression and discipline about equally."
+ },
+ "weigh_foreigners": {
+  "s": [
+   "The US government should weigh people in other countries about as much as Americans, even if Americans sometimes lose out.",
+   "I lean toward weighing people abroad nearly as much as Americans.",
+   "I lean toward putting Americans' interests first.",
+   "The US government should put Americans' interests first, even if people elsewhere are worse off."
+  ],
+  "torn": "I weigh Americans and people abroad about equally here."
+ },
+ "loyalty_humanity_country": {
+  "s": [
+   "My strongest loyalty is to humanity as a whole, more than to any one country.",
+   "I lean toward loyalty to humanity as a whole.",
+   "I lean toward loyalty to my country.",
+   "My strongest loyalty is to my country, more than to humanity as a whole."
+  ],
+  "torn": "My loyalty to humanity and to my country is about equal."
+ },
+ "proportional_vs_need": {
+  "s": [
+   "It's fairer to give more to those who need it most, even if they contributed less.",
+   "I lean toward sharing by need.",
+   "I lean toward sharing by contribution.",
+   "It's fairer to give more to those who contributed more, even if some with greater need get less."
+  ],
+  "torn": "I weigh need and contribution about equally."
+ },
+ "get_ahead": [
+  "In the US today, family background and connections mostly decide who gets ahead.",
+  "Luck and circumstances mostly decide who gets ahead.",
+  "A mix of background, luck and effort decides who gets ahead.",
+  "Talent and skills mostly decide who gets ahead.",
+  "Hard work mostly decides who gets ahead."
+ ],
+ "moral_rules": [
+  "Right and wrong depend entirely on the culture and the situation.",
+  "Right and wrong mostly depend on the situation, with a few fixed rules.",
+  "There are many fixed rules of right and wrong, but some depend on the situation.",
+  "Right and wrong are the same for all people and all times."
+ ],
+ "pace_of_change": [
+  "Change in customs, laws and institutions is usually best when it's fast and sweeping.",
+  "Change is usually best when it's steady.",
+  "Change is usually best when it's slow and careful.",
+  "Society should change as little as possible and keep what works."
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "abortion_rule": [
+  "Abortion should be legal for any reason at any point in pregnancy.",
+  "Abortion should be legal for any reason until about 24 weeks; after that, only when the woman's health is at serious risk.",
+  "Abortion should be legal for any reason in about the first 12 to 15 weeks; after that, only in specific circumstances.",
+  "Abortion should be legal only in specific circumstances, such as rape, incest, or a threat to the woman's life or health.",
+  "Abortion should be legal only to save the woman's life.",
+  "Abortion should never be legal, even to save the woman's life."
+ ],
+ "abortion_exceptions": [
+  "Abortion should be legal in this case, at any point in pregnancy: {case}.",
+  "Abortion should not be legal in this case: {case}."
+ ],
+ "abortion_who_decides": [
+  "Congress should set one abortion law for the whole country.",
+  "Congress should set the main abortion rules, with room for states to adjust details.",
+  "Each state should set its own abortion law, as now."
+ ],
+ "abortion_pills_mail": [
+  "Doctors should be able to mail abortion pills after an online visit to patients anywhere, including states where abortion is banned.",
+  "Doctors can mail abortion pills after an online visit, but only to patients in states where abortion is legal.",
+  "Abortion pills should require an in-person visit with a doctor.",
+  "Abortion pills should not be available at all."
+ ],
+ "abortion_shield_laws": [
+  "A state should be able to fully shield its doctors from other states' prosecution and lawsuits for mailing abortion pills there.",
+  "A state can shield its doctors only for care given in person in that state, not pills mailed elsewhere.",
+  "Doctors who send abortion pills into a state should face that state's laws."
+ ],
+ "abortion_public_funding": [
+  "Programs like Medicaid should pay for legal abortions like any other medical care.",
+  "Medicaid should pay for abortions only in cases of rape, incest or a threat to the woman's life, as now.",
+  "Government health programs should never pay for abortions."
+ ],
+ "ivf_embryos": [
+  "IVF should be legal, and insurance should have to cover it.",
+  "IVF should be legal under today's rules.",
+  "IVF should be legal, but with limits so unused embryos aren't destroyed.",
+  "IVF should be banned because it destroys embryos."
+ ],
+ "contraception_access": [
+  "Birth control should be free to anyone, with no prescription needed.",
+  "Insurance should have to cover birth control at no extra cost, as now.",
+  "Birth control should be legal, but employers and insurers shouldn't have to cover it.",
+  "Some kinds of birth control, like emergency contraception, should be restricted."
+ ],
+ "minors_abortion_parents": [
+  "A girl under 18 should decide about an abortion with her doctor, without involving her parents.",
+  "A parent should be told before a minor's abortion, but their permission shouldn't be required.",
+  "A minor should need a parent's permission for an abortion, unless a judge grants an exception.",
+  "A minor should always need a parent's permission for an abortion, with no exceptions."
+ ],
+ "life_begins": [
+  "A developing human has the same right to life as anyone else only once it's born.",
+  "A developing human has an equal right to life once it could survive outside the womb, around 22 to 24 weeks.",
+  "A developing human has an equal right to life once cardiac activity can be detected, about 6 weeks.",
+  "A developing human has an equal right to life from conception."
+ ],
+ "surrogacy": [
+  "Paid surrogacy should be legal and regulated.",
+  "Surrogacy should be legal only if unpaid, with the surrogate's expenses covered.",
+  "Surrogacy should be banned."
+ ]
+}

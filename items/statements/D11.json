@@ -1,0 +1,72 @@
+{
+ "church_state_tradeoff": {
+  "s": [
+   "Religion and government should be kept strictly separate, even if public life has less room for religious expression.",
+   "I lean toward keeping religion and government separate.",
+   "I lean toward letting government support and reflect religion.",
+   "Government should be free to support and reflect religion, even if people of other faiths or none feel left out."
+  ],
+  "torn": "I weigh strict separation and room for religion about equally."
+ },
+ "faith_based_laws": {
+  "s": [
+   "Laws should rest only on reasons everyone can share, not religious teaching, even when lawmakers are deeply religious.",
+   "I lean toward laws resting on shared reasons rather than religious teaching.",
+   "I lean toward lawmakers being free to base laws on their religious beliefs.",
+   "Lawmakers should be free to base laws on their religious beliefs, even if others don't share them."
+  ],
+  "torn": "I weigh shared reasons and religious conviction about equally."
+ },
+ "school_prayer": [
+  "Public schools shouldn't organize prayer of any kind, including a moment of silence.",
+  "Public schools can hold a moment of silence, but no led prayer.",
+  "Teachers can lead prayer in public schools, as long as students can choose to skip it.",
+  "Public schools should hold a daily prayer led by the school."
+ ],
+ "ten_commandments": [
+  "The Ten Commandments shouldn't be displayed in public school classrooms.",
+  "The Ten Commandments can be shown only as part of a display on the history of law, alongside other documents.",
+  "The Ten Commandments should be displayed in every public school classroom."
+ ],
+ "vouchers_religious_schools": [
+  "Public tuition money should go only to non-religious private schools.",
+  "Families can use public tuition money at religious schools if religion classes are optional for those students.",
+  "Families should be able to use public tuition money at religious schools on equal terms with any other school."
+ ],
+ "religious_charter": [
+  "A religious group shouldn't be able to run a publicly funded charter school that teaches its faith.",
+  "A religious group can run a publicly funded charter school if students can opt out of religious instruction.",
+  "A religious group should be able to run a publicly funded charter school that teaches its faith, like any other charter."
+ ],
+ "religious_exemptions": [
+  "Religious exemptions from general laws should be rare; everyone should follow the same laws.",
+  "People should get religious exemptions only when the exemption doesn't harm anyone else.",
+  "People should usually get religious exemptions, unless the government has a very strong reason not to allow one."
+ ],
+ "religious_exemption_cases": [
+  "This shouldn't get a religious exemption: {case}.",
+  "This should get a religious exemption: {case}."
+ ],
+ "christian_nation": [
+  "The government shouldn't favor any religion, including by declaring the US a Christian nation.",
+  "The government shouldn't declare the US a Christian nation, but it can recognize the country's Christian heritage.",
+  "The US government should officially declare the US a Christian nation."
+ ],
+ "religious_country": [
+  "It isn't important for the country that most Americans are religious.",
+  "It's somewhat important for the country that most Americans are religious.",
+  "It's very important for the country that most Americans are religious.",
+  "The country's success depends on most Americans being religious."
+ ],
+ "evolution_class": [
+  "Public school science classes should teach only evolution.",
+  "Science classes should teach evolution and mention that many people hold religious beliefs about creation.",
+  "Science classes should teach creation or intelligent design alongside evolution as alternative explanations.",
+  "Science classes should teach creation or intelligent design instead of evolution."
+ ],
+ "faith_charities": [
+  "Religious groups shouldn't get any public money, even to run shelters and addiction programs.",
+  "Religious charities can get public money to run services, if they keep religion out of them.",
+  "Religious charities should get public money on equal terms with others, even with faith content that people can opt out of."
+ ]
+}

@@ -24,11 +24,16 @@ the same tokens (`app/src/style.css`).
 ## What it does
 
 - **Home page**: the headline, the length picker (Quick / Standard /
-  Everything), a map of all the comparison groups (tap a dot to see who it
-  is), and a live sample question that shows which way an answer moves you.
-  A short before-you-start screen follows.
-- **Answering**: tap an oval and the quiz moves on by itself (set
-  `autoAdvance: false` in `config.js` to require Next). Back is always
+  Everything) and a live sample question. It shows no group positions, map
+  or scoring, so nothing can steer answers before the quiz. A short
+  before-you-start screen follows.
+- **Answering**: tap an oval and a plain statement of what that answer
+  means appears under the answers ("What you'd be saying"); Next confirms
+  it. Statements live in `items/statements/Dxx.json`, one per answer in code
+  order (tradeoffs add a "torn" line; exception follow-ups use a `{case}`
+  template), and the build fails if any answer lacks one. They restate the
+  answer; they never say how it's scored. (`autoAdvance: true` in
+  `config.js` brings back moving on immediately.) Back is always
   there. Every format in the bank is supported: position ladders, belief,
   frequency, defined agree/disagree scales (each point's meaning shown),
   tradeoffs (the two goals side by side, then one row of ovals from
@@ -51,8 +56,7 @@ the same tokens (`app/src/style.css`).
   questions at the end (same direction as the first time), per-screen
   timing (capped at 5 minutes), and a last "how carefully did you answer"
   question.
-- **Breaks** about every 12 minutes of active time, with an early look at
-  your overall score and closest match.
+- **Breaks** about every 12 minutes of active time: progress and time left only, no early scores.
 - **Priorities**: one screen, tap up to five topics in order (stored as
   `pri.top`).
 - **About you**: optional, after the questions; party lean and evangelical
@@ -110,7 +114,7 @@ the same tokens (`app/src/style.css`).
   - *Answers*: your ranked issues, answer counts, copy/download.
   Shared links get the same report (minus Topics and Answers, which need the
   answers themselves).
-- **Explore** (header link, no quiz needed): all 84 groups with a full
+- **Explore** (header link, unlocked once you have a result, so group positions can't steer answers): all 84 groups with a full
   position profile, plain-language reading of every position, most similar
   groups and your match; all 31 axes with the five bands, every group ranked
   along it, and the questions that measure it.

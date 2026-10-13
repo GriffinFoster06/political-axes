@@ -1,0 +1,72 @@
+{
+ "tariff_level": [
+  "The US should have few or no tariffs, because free trade benefits most people.",
+  "Tariffs should be low and used mainly against countries that break trade rules.",
+  "The US should put moderate tariffs on many goods to protect key industries.",
+  "The US should put high tariffs on most imports to bring manufacturing back, even if prices rise."
+ ],
+ "tariff_price_tradeoff": [
+  "I wouldn't accept tariffs that raise prices about 10%; lower prices matter more than those factory jobs.",
+  "I'd accept tariffs to protect factory jobs only if prices rose around 2% to 3%, not 10%.",
+  "I'd accept tariffs that raise prices of cars and appliances about 10% to protect US factory jobs."
+ ],
+ "tariff_authority": [
+  "Only Congress should set tariffs, by passing laws.",
+  "Congress should set tariffs, but a president can add them in a true emergency.",
+  "A president should be able to set tariffs whenever the president judges it's in the national interest."
+ ],
+ "tariff_authority_cases": [
+  "A president should need Congress to do this: {case}.",
+  "A president should be able to do this without a vote of Congress: {case}."
+ ],
+ "trade_agreements": [
+  "The US should sign agreements lowering tariffs with as many countries as possible.",
+  "The US should sign agreements lowering tariffs only if they include strong labor and environmental rules.",
+  "The US should sign agreements lowering tariffs only with close allies.",
+  "The US shouldn't sign new trade agreements, and should leave existing ones where it can."
+ ],
+ "trade_jobs_tradeoff": [
+  "Trade deals that open foreign markets are worth it even if some US industries and regions lose jobs.",
+  "Those trade deals are worth it only with major help for workers who lose their jobs.",
+  "Protecting existing US jobs comes before trade deals that open foreign markets."
+ ],
+ "china_trade": [
+  "The US should trade freely with China, as with any other country.",
+  "The US should limit only sales of sensitive technology to China, like advanced chips and military goods.",
+  "The US should limit sensitive technology and also move production of essentials like medicines and electronics out of China.",
+  "The US should cut off most trade with China."
+ ],
+ "china_ownership": [
+  "Chinese companies should be able to own US businesses, farmland and apps like any foreign company.",
+  "Chinese companies can own US businesses, except in sensitive areas like defense and personal data.",
+  "Chinese companies shouldn't own US farmland, key technology or popular apps, but other businesses are fine.",
+  "Chinese companies shouldn't be allowed to own any US business."
+ ],
+ "industrial_policy": [
+  "The government should pay companies to build factories in many US industries.",
+  "The government should pay companies to build factories only in industries vital to national security, like computer chips.",
+  "The government shouldn't pay companies to build factories; the market should decide."
+ ],
+ "buy_american": [
+  "Federal agencies should buy the best value, American-made or not.",
+  "Federal agencies should have to buy American only for military and security needs.",
+  "Federal agencies should buy American unless it costs more than about 25% extra.",
+  "Federal agencies should always buy American, even at much higher cost."
+ ],
+ "offshoring_penalty": [
+  "Companies that move US jobs abroad should be penalized, for example with higher taxes and losing government contracts.",
+  "Companies that move jobs abroad shouldn't be penalized, but tax breaks that make it cheaper should end.",
+  "Companies should decide where to operate, with no penalty for moving jobs abroad."
+ ],
+ "export_controls": [
+  "US companies should be free to sell advanced technology like top chips to anyone, including China and Russia.",
+  "The US should block sales to rivals only for technology with clear military uses.",
+  "The US should block sales of most advanced technology to rivals, even if US companies lose sales."
+ ],
+ "friend_shoring": [
+  "Allies like Canada, Japan and European countries should pay clearly lower tariffs than other countries.",
+  "Allies should pay somewhat lower tariffs than other countries.",
+  "All trading partners should be treated the same, allies or not.",
+  "Allies should face tariffs too if they sell more to us than they buy from us."
+ ]
+}

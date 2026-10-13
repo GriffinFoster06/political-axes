@@ -1,0 +1,76 @@
+{
+ "surveillance_tradeoff": {
+  "s": [
+   "Government monitoring of phone and internet records should be tightly limited, even if some attacks become harder to stop.",
+   "I lean toward limiting monitoring to protect privacy, even at some cost to security.",
+   "I lean toward allowing broad monitoring for security, even if innocent people's records are collected.",
+   "Broad monitoring to catch terrorists and spies should be allowed, even if many innocent people's records are collected."
+  ],
+  "torn": "I weigh privacy and security about equally here."
+ },
+ "warrant_tradeoff": {
+  "s": [
+   "Intelligence agencies should always need a judge's warrant before reading Americans' messages, even if it slows investigations.",
+   "I lean toward requiring a warrant first, even if investigations slow down.",
+   "I lean toward letting agencies collect first and get approval later.",
+   "Agencies should be able to collect Americans' messages first and get approval afterward, so threats aren't missed."
+  ],
+  "torn": "I weigh getting a warrant first and moving fast about equally."
+ },
+ "cameras_tradeoff": {
+  "s": [
+   "Police and city cameras and plate readers should be kept to a minimum, even if some crimes go unsolved.",
+   "I lean toward fewer public cameras, even if some crimes go unsolved.",
+   "I lean toward more public cameras, even if more of people's movements are recorded.",
+   "Police and city cameras and plate readers should be used widely, even if everyone's movements are recorded."
+  ],
+  "torn": "I weigh fewer cameras and more cameras about equally."
+ },
+ "encryption_access": [
+  "Tech companies shouldn't have to build a way for police to unlock encrypted phones or messages, even with a court order.",
+  "Companies should have to help police unlock encrypted devices only in the most serious cases, like terrorism or child exploitation, with a court order.",
+  "Companies should have to give police a way to unlock encrypted devices in any criminal case with a court order."
+ ],
+ "facial_recognition": [
+  "Police should be banned from using facial recognition.",
+  "Police can use facial recognition only to identify suspects in serious crimes, and only with a warrant.",
+  "Police can use facial recognition in any criminal investigation.",
+  "Police can use facial recognition in any investigation, including scanning crowds live in public places."
+ ],
+ "facial_recognition_cases": [
+  "Police shouldn't be able to use facial recognition for this: {case}.",
+  "Police should be able to use facial recognition for this: {case}."
+ ],
+ "data_privacy_law": [
+  "A strict federal law should require companies to get your permission before collecting or selling your data.",
+  "A federal law should let you tell companies not to sell your data.",
+  "There shouldn't be a federal data privacy law; states should decide.",
+  "There shouldn't be any new data privacy laws; people can choose which services to use."
+ ],
+ "gov_buys_data": [
+  "Government agencies should never buy people's personal data, like location history, without a warrant.",
+  "Agencies can buy personal data without a warrant only for national security investigations.",
+  "Agencies can buy any personal data that companies sell to anyone, without a warrant."
+ ],
+ "digital_id": [
+  "There shouldn't be a national digital ID; state IDs and passports are enough.",
+  "There should be a federal digital ID on your phone, but only for people who want one.",
+  "Everyone should be required to have a federal digital ID."
+ ],
+ "border_device_search": [
+  "Border agents should need a warrant to search anyone's phone or laptop, including citizens coming home.",
+  "Border agents should need reasonable suspicion of a crime to search a traveler's devices.",
+  "Border agents should be able to search any traveler's devices, as current rules mostly allow."
+ ],
+ "dna_databases": [
+  "Police should never search consumer DNA sites to find suspects through their relatives.",
+  "Police can search consumer DNA sites only for violent crimes, and only with a warrant.",
+  "Police can search consumer DNA sites for violent crimes without a warrant.",
+  "Police can search consumer DNA sites to solve any crime."
+ ],
+ "workplace_monitoring": [
+  "Employers can monitor workers' computers, keystrokes and locations only with the worker's agreement, for specific reasons.",
+  "Employers can monitor workers during work hours, but must tell them exactly what's being monitored.",
+  "Employers can monitor workers freely on company devices and time."
+ ]
+}

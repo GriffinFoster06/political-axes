@@ -1,0 +1,158 @@
+{
+ "legal_immigration_level": [
+  "The US should give out 2 million or more green cards a year, about double today.",
+  "The US should give out about 1.5 million green cards a year, half again as many as today.",
+  "The US should keep giving out about 1 million green cards a year.",
+  "The US should cut green cards to about 500,000 a year, half of today.",
+  "The US should cut green cards to fewer than 250,000 a year."
+ ],
+ "temp_workers_seasonal": [
+  "The US should admit many more temporary workers for seasonal farm and service jobs than today.",
+  "The US should admit somewhat more seasonal temporary workers.",
+  "The US should admit about as many seasonal temporary workers as today.",
+  "The US should admit somewhat fewer seasonal temporary workers.",
+  "The US should admit many fewer seasonal temporary workers."
+ ],
+ "temp_workers_skilled": [
+  "The US should admit many more skilled temporary workers, like engineers and programmers, than today.",
+  "The US should admit somewhat more skilled temporary workers.",
+  "The US should admit about as many skilled temporary workers as today.",
+  "The US should admit somewhat fewer skilled temporary workers.",
+  "The US should admit many fewer skilled temporary workers."
+ ],
+ "skills_vs_family": [
+  "Green cards should go mostly to people with family ties here, as now.",
+  "Green cards should be split about evenly between family ties and job skills.",
+  "Green cards should go mostly to people chosen for job skills and education."
+ ],
+ "sponsor_relatives": [
+  "Citizens should be able to sponsor spouses, children, parents and siblings, with shorter waits than today.",
+  "Citizens should be able to sponsor spouses, children, parents and siblings, as now.",
+  "Citizens should be able to sponsor only spouses, minor children and parents, not siblings or adult children.",
+  "Citizens should be able to sponsor only spouses and minor children."
+ ],
+ "status_policy": [
+  "Most people here without legal status should be able to stay and become citizens without major penalties.",
+  "They should be able to stay and become citizens after paying a fine and passing a background check.",
+  "They should be able to stay and work legally, but not become citizens.",
+  "They should be able to work here for a limited time, then have to leave.",
+  "They should be required to leave, starting with people with criminal records.",
+  "All of them should be removed as quickly as possible."
+ ],
+ "status_groups": [
+  "This group should be treated more leniently than most people without legal status: {case}.",
+  "This group should be treated the same as most people without legal status: {case}.",
+  "This group should be treated more strictly than most people without legal status: {case}."
+ ],
+ "border_security": [
+  "The southern border should have fewer agents and barriers than today.",
+  "Border enforcement should stay about where it is.",
+  "The border should get more agents and technology, but no new physical wall.",
+  "There should be a wall along most of the southern border, plus more agents."
+ ],
+ "military_border": [
+  "The military shouldn't be used at the border; civilian agencies should handle border control.",
+  "Troops can help border agents with transport and surveillance, but shouldn't stop people themselves.",
+  "Troops should stop people crossing without permission and turn them back."
+ ],
+ "everify": [
+  "Employers shouldn't be required to check electronically that new hires can legally work.",
+  "Only large employers should have to use E-Verify.",
+  "All employers should have to use E-Verify, with heavy fines for hiring people without legal status."
+ ],
+ "local_police_cooperation": [
+  "Local police shouldn't help federal immigration agents at all.",
+  "Local police should help federal agents only with people convicted of serious crimes.",
+  "Local police should help federal immigration agents whenever asked."
+ ],
+ "asylum_rules": [
+  "Applying for asylum should be easier, and applicants should be able to live and work here while they wait.",
+  "People should keep the right to apply for asylum here, but cases should be decided much faster.",
+  "People should have to apply for asylum from outside the US, or in the first safe country they reach.",
+  "Asylum at the southern border should end or be sharply limited."
+ ],
+ "asylum_grounds": [
+  "People fleeing gang violence or domestic abuse should qualify for asylum, even if their own government could protect them.",
+  "They should qualify only if their own government can't or won't protect them.",
+  "Asylum should be only for people targeted for their race, religion, politics or similar reasons, not gang violence or domestic abuse."
+ ],
+ "refugee_cap": [
+  "The US should resettle 125,000 or more refugees a year.",
+  "The US should resettle about 50,000 to 100,000 refugees a year.",
+  "The US should resettle about 15,000 to 30,000 refugees a year.",
+  "The US should resettle fewer than 10,000 refugees a year.",
+  "The US shouldn't resettle any refugees."
+ ],
+ "birthright_citizenship": [
+  "Every child born in the US should automatically be a citizen, whatever their parents' status.",
+  "A child born here should be a citizen only if a parent is a citizen or a green card holder.",
+  "A child born here should be a citizen only if a parent is a citizen."
+ ],
+ "assimilation": [
+  "Immigrants shouldn't be expected to adopt American customs; they can keep their own if they wish.",
+  "Immigrants should learn English and follow the law, and otherwise keep their own culture freely.",
+  "Immigrants should learn English and adopt most American customs.",
+  "Immigrants should fully blend in and leave their old customs behind."
+ ],
+ "american_criteria": [
+  "This isn't important to being truly American: {case}.",
+  "This is somewhat important to being truly American: {case}.",
+  "This is very important to being truly American: {case}."
+ ],
+ "american_basis": [
+  "Anyone who believes in the country's ideals, like freedom and equality, can become American.",
+  "Being American means sharing its ideals and also learning English and the culture.",
+  "Being American means being born here or raised in the culture from childhood."
+ ],
+ "patriotic_education": [
+  "Schools should give the country's failures and injustices at least as much attention as its achievements.",
+  "Schools should teach the country's failures and achievements in balance.",
+  "Schools should emphasize the country's achievements and ideals so students take pride in it."
+ ],
+ "anthem_kneeling": [
+  "Kneeling during the national anthem is always an acceptable protest.",
+  "Kneeling during the anthem is acceptable, but not at official government or military events.",
+  "Kneeling during the anthem isn't acceptable; it disrespects the country."
+ ],
+ "culture_tradeoff": {
+  "s": [
+   "America is stronger when groups keep their own cultures, even if people share less in common.",
+   "I lean toward groups keeping their own cultures.",
+   "I lean toward people adopting one shared culture.",
+   "America is stronger when people adopt one shared culture, even if some traditions fade."
+  ],
+  "torn": "I weigh many cultures and one shared culture about equally."
+ },
+ "dual_citizenship": [
+  "US citizens should be allowed to hold another citizenship too, as now.",
+  "Dual citizenship should be allowed, except for people in high government office.",
+  "US citizens should hold only US citizenship."
+ ],
+ "us_exceptional": [
+  "Many countries are better than the US.",
+  "The US is no better or worse than many other countries.",
+  "The US is one of the greatest countries, along with some others.",
+  "The US stands above all other countries."
+ ],
+ "english_official": [
+  "English shouldn't be the official language; government should offer services in many languages.",
+  "English should be the official language, but things like ballots and health information should stay available in other languages.",
+  "English should be the official language, and all government business should be in English only."
+ ],
+ "citizens_first": [
+  "Legal immigrants should be treated the same as citizens for jobs and government benefits.",
+  "Citizens should get preference only for government jobs.",
+  "Citizens should get preference for government jobs and benefits.",
+  "Citizens should get preference for government jobs and benefits, and private employers should have to show no citizen is available before hiring a non-citizen."
+ ],
+ "immigrant_selection_culture": [
+  "An immigrant's culture or religion should never count in deciding who may come.",
+  "Only knowledge of English and US civics should count, not culture or religion.",
+  "The US should give some preference to people from countries with cultures closer to America's.",
+  "The US should consider culture and religion, and bar people from some religions or cultures."
+ ],
+ "enforcement_limits": [
+  "Immigration agents shouldn't be allowed to do this: {case}.",
+  "Immigration agents should be allowed to do this: {case}."
+ ]
+}

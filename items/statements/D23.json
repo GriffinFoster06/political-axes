@@ -1,0 +1,75 @@
+{
+ "school_choice": [
+  "Public education money should go only to public schools.",
+  "Public money can follow students to public charter schools, but not private schools.",
+  "Public money should follow low-income students to any school, including private schools.",
+  "Public money should follow every student to any school their family chooses, including private schools."
+ ],
+ "charter_schools": [
+  "There should be fewer charter schools; limit or close them.",
+  "There should be about as many charter schools as today.",
+  "There should be more charter schools.",
+  "There should be many more charter schools; any qualified group should be able to open one."
+ ],
+ "curriculum_control": [
+  "Teachers and education experts should have the most say over what public schools teach.",
+  "State education boards should have the most say over what public schools teach.",
+  "Local elected school boards should have the most say over what public schools teach.",
+  "Parents should have the most say, with the right to review all teaching materials."
+ ],
+ "lesson_opt_out": [
+  "Parents shouldn't be able to pull their children out of lessons; the curriculum is for all students.",
+  "Parents should be able to pull their children out of sex education only.",
+  "Parents should be able to pull their children out of any lesson that conflicts with their values."
+ ],
+ "teach_gender_identity": [
+  "Public schools should teach about gender identity starting in elementary school.",
+  "Public schools should teach about gender identity only in middle and high school.",
+  "Public schools should teach about gender identity only in high school, and only if parents opt their child in.",
+  "Public schools shouldn't teach about gender identity at any grade."
+ ],
+ "sex_education": [
+  "High school sex ed should fully cover contraception, consent and sexual orientation.",
+  "High school sex ed should cover contraception and consent while encouraging teens to wait.",
+  "High school sex ed should teach abstinence only.",
+  "High schools shouldn't teach sex ed; parents should."
+ ],
+ "student_loan_cancel": [
+  "All existing federal student loan debt should be canceled.",
+  "Up to about $10,000 to $20,000 per borrower should be canceled.",
+  "Student debt should be canceled only for people misled by their schools, or after years of public service.",
+  "Federal student loan debt shouldn't be canceled."
+ ],
+ "loan_repayment": [
+  "Student loan payments should be capped at 5% of income or less, with any remaining debt forgiven after 10 years.",
+  "Student loan payments should be capped at about 10% of income, with remaining debt forgiven after 20 to 25 years.",
+  "Borrowers should repay what they borrowed on standard terms, without income caps."
+ ],
+ "free_college": [
+  "Public college tuition should be free for everyone, paid for by taxes.",
+  "Public college tuition should be free for families earning under about $125,000.",
+  "Only community college should be tuition-free.",
+  "Public college shouldn't be tuition-free."
+ ],
+ "education_department": [
+  "The Department of Education should be expanded, with more federal school funding.",
+  "The Department of Education should stay about as it is.",
+  "The Department of Education should be shrunk, with money and control sent to states.",
+  "The Department of Education should be closed."
+ ],
+ "school_discipline": [
+  "Schools should handle repeatedly disruptive or violent students with counseling and repairing harm, suspending only as a last resort.",
+  "Schools should use a mix of counseling and suspension.",
+  "Schools should suspend or expel repeatedly disruptive or violent students to protect other students."
+ ],
+ "selective_admissions": [
+  "Selective public high schools should admit students by lottery among qualified applicants.",
+  "They should use grades and tests, plus seats for the top students from every middle school.",
+  "They should admit students by test and grades only."
+ ],
+ "legacy_admissions": [
+  "Colleges that get federal money should be banned from favoring children of graduates or donors.",
+  "Colleges can favor children of graduates or donors, but must disclose it publicly.",
+  "Colleges should decide for themselves whether to favor children of graduates or donors."
+ ]
+}

@@ -25,6 +25,14 @@ def wait_moved(page, pos):
     page.wait_for_function(f"(() => {{ const S = window.__wys.state(); return S.pos !== {pos} || S.phase !== 'quiz'; }})()", timeout=5000)
 
 
+def confirm(page, pos):
+    """Answers show what they mean and wait for Next (auto-advance is off by default)."""
+    nx = page.query_selector("#next")
+    if nx and nx.is_visible() and not nx.is_disabled():
+        nx.click()
+    wait_moved(page, pos)
+
+
 def walk(page, rng, mode):
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
@@ -58,13 +66,15 @@ def walk(page, rng, mode):
             page.fill("#nftext", "my own view")
             page.click("#next")
         elif r < 0.07:
-            page.click('[data-esc="2"]')         # "I don't know" moves on by itself
-            wait_moved(page, pos)
+            page.click('[data-esc="2"]')
+            confirm(page, pos)
         elif r < 0.09:
             page.click("#skip")
         else:
             rng.choice(page.query_selector_all(".opt[data-code], .opt[data-torn]")).click()
-            wait_moved(page, pos)
+            if page.query_selector("#say"):
+                assert page.is_visible("#say") and len(page.inner_text("#say")) > 20, "no statement for the picked answer"
+            confirm(page, pos)
     # priorities: one screen, pick up to five
     assert page.evaluate("window.__wys.state().phase") == "pri"
     pris = page.query_selector_all(".pri")
@@ -170,7 +180,7 @@ def test_resume(built):
         first = page.evaluate("window.__wys.state().queue[0].id")
         if not page.query_selector(".case"):
             page.query_selector_all(".opt[data-code]")[0].click()
-            wait_moved(page, 0)
+            confirm(page, 0)
         page.reload()
         page.click("#cont")
         assert page.evaluate("window.__wys.state().queue[0].id") == first

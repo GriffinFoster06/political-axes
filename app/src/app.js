@@ -263,6 +263,7 @@
     screen.classList.toggle("wide", !!view || S.phase === "home" || S.phase === "done");
     document.body.classList.toggle("in-quiz", !view && /quiz|break|pri|aboutyou|honesty/.test(S.phase));
     paintProgress(inQuiz);
+    var nex = document.getElementById("nav-explore"); if (nex) nex.hidden = !canExplore();
     var parts = label.split("|");
     metaEl.innerHTML = esc(parts[0]) + (parts[1] ? '<span class="meta-more"> · ' + esc(parts[1]) + "</span>" : "");
   }
@@ -280,7 +281,6 @@
   function renderHome() {
     var last = lastResult(), lastSc = last ? decodeScores(last.c) : null;
     var modes = MODES.filter(function (m) { return m.id !== "full" || CFG.allowFullMode !== false; });
-    var lastPt = lastSc ? { x: userPos(lastSc, dimAxes(MAP_X)), y: userPos(lastSc, dimAxes(MAP_Y)) } : null;
     var sample = B.items[SAMPLE_ID];
     var html = '<div class="home-grid"><section class="hero">' +
       "<h1>Where do you stand?</h1>" +
@@ -295,18 +295,14 @@
       '<div class="cta-row"><button class="btn big" id="go">Start the quiz</button>' +
       (last ? '<button class="btn ghost" id="last">Your results from ' + esc(last.d) + "</button>" : "") + "</div>" +
       '<p class="fine">Progress saves on this device. No account, no name, no email.</p></section>' +
-      '<section class="field-wrap" aria-label="Map of comparison groups"><h2 class="field-title">' + B.profiles.length + ' groups on two of the axes</h2>' +
-      plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) +
-      '<button type="button" class="link" id="browse">See every group and axis</button></section></div>' +
       '<section class="sample" aria-labelledby="sample-h"><div class="sample-text"><h2 id="sample-h">What the questions look like</h2>' +
       "<p>Concrete choices, a line saying which case to picture, and a way out if none fit. No question names a party or a politician.</p>" +
-      '<p id="sample-say" class="sample-say" aria-live="polite">Pick an answer to see how it scores.</p></div>' +
+      '<p class="sample-say">Pick an answer: a line appears saying what that answer means, so you can check it before moving on.</p></div>' +
       '<div class="sample-q"><p class="contest">' + esc(topicName(sample.domain)) + '</p><div class="q-box"><p class="stem">' + esc(sample.stem) + '</p><p class="scope">' + esc(sample.scope) + "</p>" +
       '<div class="options" role="radiogroup" aria-label="Sample answers">' + sample.options.map(function (o, k) {
         return '<button type="button" class="opt" role="radio" data-sample="' + k + '" aria-checked="false"><span class="oval" aria-hidden="true"></span><span class="otext">' + esc(o) + "</span></button>";
-      }).join("") + "</div></div></div></section>";
+      }).join("") + "</div>" + sayHtml() + "</div></div></section></div>";
     show(html);
-    wirePlot();
     screen.querySelectorAll("[data-mode]").forEach(function (b) {
       b.addEventListener("click", function () {
         S.mode = b.getAttribute("data-mode");
@@ -316,19 +312,11 @@
     });
     screen.querySelectorAll("[data-sample]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var c = +b.getAttribute("data-sample"), K = sample.options.length, x = 2 * c / (K - 1) - 1, k = B.keying[SAMPLE_ID];
         screen.querySelectorAll("[data-sample]").forEach(function (y) { y.setAttribute("aria-checked", String(y === b)); });
-        var says = Object.keys(k).filter(function (ax) { return ax !== "G" && k[ax]; }).map(function (ax) {
-          var v = k[ax] * x;
-          return Math.abs(v) < 0.01 ? "the middle of " + lc(META[ax].name) : "“" + (v < 0 ? META[ax].minus : META[ax].plus) + "” on " + lc(META[ax].name) + " (" + signed(v) + ")";
-        });
-        var g = k.G * x;
-        document.getElementById("sample-say").textContent = "That answer counts toward " + says.join(" and ") +
-          (Math.abs(g) < 0.01 ? ", and the middle overall." : ", and " + (g < 0 ? "left" : "right") + " overall (" + signed(g) + ").");
+        showSay("<p>" + esc(statementFor(sample, { c: +b.getAttribute("data-sample") })) + "</p>");
       });
     });
     bind("#go", function () { S.phase = "howto"; save(); render(); });
-    bind("#browse", function () { openExplore("groups"); });
     bind("#last", function () { sharedCode = last.c; view = "shared"; render(); });
   }
   function renderHowTo() {
@@ -336,14 +324,15 @@
     show('<h1>Before you start</h1>' +
       '<p class="lede">' + esc(m.title) + " quiz: " + m.n() + " questions across " + B.domains.length + " topics, " + esc(m.time) + ".</p>" +
       '<div class="howto-grid"><ol class="howto">' +
-      "<li>Pick the closest answer. The quiz moves on by itself, and Back lets you change it.</li>" +
+      "<li>Pick the closest answer. A line appears saying what it means; if that's right, press Next.</li>" +
       "<li>Picture the usual case. The grey line under each question says which one. Exceptions get a follow-up.</li>" +
       "<li>Some questions set two goals against each other. Pick how far you lean.</li>" +
       "<li>“I don't know” and “None of these fit” never count as a middle answer.</li>" +
       "<li>Tap a dotted word for its definition.</li>" +
       "</ol>" +
       '<div class="demo" aria-hidden="true"><p class="contest">Example</p><div class="q-box"><p class="stem">Overall, how big should the federal government be?</p>' +
-      '<div class="options"><div class="opt"><span class="oval"></span><span class="otext">Somewhat bigger</span></div><div class="opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div><div class="opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div></div></div></div></div>' +
+      '<div class="options"><div class="opt"><span class="oval"></span><span class="otext">Somewhat bigger</span></div><div class="opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div><div class="opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div></div>' +
+      '<div class="say"><p class="say-h">What you\'d be saying</p><p>' + esc(statementFor(B.items.federal_size, { c: 2 })) + '</p></div></div></div></div>' +
       '<p class="scope keys-hint">On a keyboard, number keys pick an answer and ← goes back.</p>' +
       '<div class="nav"><button class="link" id="bk">← Back</button><button class="btn big" id="go">Begin</button></div>');
     bind("#bk", function () { S.phase = "home"; save(); render(); });
@@ -449,7 +438,7 @@
       if (a.cx) html += '<p class="context"><b>Background:</b> ' + rich(it.context) + "</p>";
     }
     var body = it.format === "exceptions" ? casesHtml(it, dir, rich) : it.format === "tradeoff" ? tradeoffHtml(it, dir, rich) : optionsHtml(it, dir, rich);
-    html += body + rich.optDefs() + '<div id="defs" class="defs"></div></div>';
+    html += body + rich.optDefs() + '<div id="defs" class="defs"></div>' + sayHtml() + "</div>";
     if (it.format !== "exceptions") {
       html += '<div class="outs">' + [2, 1].map(function (k) {
         return '<button type="button" class="esc" data-esc="' + k + '" aria-pressed="' + (a.e === k) + '">' + esc(ESCAPES[k]) + "</button>";
@@ -475,6 +464,32 @@
     };
   }
 
+  // What an answer means, in plain words, shown under the answers so people can check it before
+  // pressing Next. Written per answer in items/statements/; never says how an answer is scored.
+  var ST = B.statements || {};
+  function statementFor(it, a) {
+    if (!a) return "";
+    if (a.e === 2) return "You don't know enough about this to say.";
+    if (a.e === 1) return "None of these answers fits your view.";
+    var st = ST[it.id], list = st && (st.s || st);
+    if (a.t) return st && st.torn ? st.torn : "You're torn between the two goals.";
+    if (a.c == null) return "";
+    return list && list[a.c] ? list[a.c] : answerText(it, a);
+  }
+  function caseStatement(it, cs, ca) {
+    if (!ca) return "";
+    if (ca.e === 2) return cs.text + ": not sure.";
+    if (ca.c == null) return "";
+    var st = ST[it.id], t = st && (st.s || st) && (st.s || st)[ca.c];
+    return t ? t.replace("{case}", cs.text) : cs.text + ": " + it.options[ca.c] + ".";
+  }
+  function sayHtml() { return '<div class="say" id="say" aria-live="polite" hidden></div>'; }
+  function showSay(html) {
+    var box = document.getElementById("say");
+    if (!box) return;
+    box.hidden = !html;
+    box.innerHTML = html ? '<p class="say-h">What you\'d be saying</p>' + html : "";
+  }
   function optionsHtml(it, dir, rich) {
     var codes = it.options.map(function (_, k) { return k; });
     if (dir) codes.reverse();
@@ -506,7 +521,9 @@
       screen.querySelectorAll(".opt[data-torn]").forEach(function (b) { b.setAttribute("aria-checked", String(!!a.t)); });
       screen.querySelectorAll(".esc[data-esc]").forEach(function (b) { b.setAttribute("aria-pressed", String(a.e === +b.getAttribute("data-esc"))); });
       var nf = document.getElementById("nf"); if (nf) nf.hidden = a.e !== 1;
-      var nx = document.getElementById("next"); if (nx) { nx.disabled = !answered(it, a); nx.hidden = !(a.e === 1 || answered(it, a)); }
+      var nx = document.getElementById("next"); if (nx) { nx.disabled = !answered(it, a); nx.hidden = false; }
+      var t = statementFor(it, a);
+      showSay(t ? "<p>" + esc(t) + "</p>" : "");
     }
     function advance() {
       clearTimeout(advTimer);
@@ -515,16 +532,20 @@
       advTimer = setTimeout(function () { screen.classList.remove("leaving"); if (S.phase === "quiz" && S.pos === here && !view) { if (leave) leave(); next(); } }, ADVANCE_MS);
     }
     paint();
+    function reveal() {
+      var nx = document.getElementById("next");
+      if (nx && nx.getBoundingClientRect().bottom > window.innerHeight) nx.scrollIntoView({ block: "end", behavior: "smooth" });
+    }
     screen.querySelectorAll(".opt[data-code]").forEach(function (b) {
       b.addEventListener("click", function () {
         a.c = +b.getAttribute("data-code"); a.p = +b.getAttribute("data-pos"); a.e = null; a.t = null;
         if (it.format === "tradeoff") a.s = a.d;
-        save(); paint();
+        save(); paint(); reveal();
         if (CFG.autoAdvance !== false) advance();
       });
     });
     screen.querySelectorAll(".opt[data-torn]").forEach(function (b) {
-      b.addEventListener("click", function () { a.t = 1; a.c = null; a.p = 2; a.e = null; a.s = a.d; save(); paint(); if (CFG.autoAdvance !== false) advance(); });
+      b.addEventListener("click", function () { a.t = 1; a.c = null; a.p = 2; a.e = null; a.s = a.d; save(); paint(); reveal(); if (CFG.autoAdvance !== false) advance(); });
     });
     screen.querySelectorAll(".esc[data-esc]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -561,7 +582,9 @@
         row.querySelectorAll(".esc").forEach(function (b) { b.setAttribute("aria-checked", String(ca.e === 2)); });
         row.classList.toggle("done", ca.c != null || ca.e === 2);
       });
-      var nx = document.getElementById("next"); if (nx) nx.disabled = !answered(it, null);
+      var nx = document.getElementById("next"); if (nx) { nx.disabled = !answered(it, null); nx.hidden = false; }
+      var lines = it.cases.map(function (cs) { return caseStatement(it, cs, S.ans[cs.id]); }).filter(Boolean);
+      showSay(lines.length ? "<ul>" + lines.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul>" : "");
     }
     screen.querySelectorAll(".case").forEach(function (row) {
       var cid = row.getAttribute("data-case");
@@ -588,7 +611,7 @@
   }
   function navHtml(ok, showNext) {
     return '<div class="nav qnav"><button class="link back" id="bk"' + (S.pos === 0 ? " hidden" : "") + '>← Back</button>' +
-      '<button class="btn" id="next"' + (ok ? "" : " disabled") + (ok || showNext ? "" : " hidden") + ">Next</button></div>";
+      '<button class="btn" id="next"' + (ok ? "" : " disabled") + (ok || showNext || CFG.autoAdvance === false ? "" : " hidden") + ">Next</button></div>";
   }
   function wireNav(onLeave) {
     bind("#next", function () { clearTimeout(advTimer); onLeave(); next(); });
@@ -626,10 +649,8 @@
   // ---------- break ----------
   function renderBreak() {
     var c = counter(), pct = Math.round(100 * (c.at - 1) / Math.max(1, c.n));
-    var sc = computeScores(S.ans), preview = "", top = profileMatches(sc)[0];
+    var preview = "";
     var done = topicsInQueue().filter(function (d) { return S.queue.slice(S.pos).every(function (e) { return e.d !== d || e.k !== "item"; }); }).length;
-    if (sc.G && sc.G.n >= MIN_N) preview = '<div class="break-preview">' + barHtml(META.G, sc.G, { big: true }) +
-      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b></p>" : "") + "</div>";
     show("<h1>" + pct + "% done</h1>" +
       '<p class="lede">' + done + " of " + topicsInQueue().length + " topics finished, about " + minutesLeft() + " minutes to go. Your answers are saved if you want to stop here.</p>" + preview +
       '<div class="nav"><span></span><button class="btn big" id="go">Keep going</button></div>');
@@ -1655,7 +1676,10 @@
 
   // ---------- explore: every group and axis, no quiz needed ----------
   var exTab = "groups", exSel = null, exCat = "all", exReturn = null;
+  // Group positions stay hidden until someone has a result, so they can't steer answers.
+  function canExplore() { return !!(S && S.done) || !!lastResult() || view === "shared" || view === "explore"; }
   function openExplore(tab, sel) {
+    if (!canExplore()) return;
     if (view !== "explore") exReturn = { view: view, y: window.scrollY };
     exTab = tab === "group" ? "groups" : tab === "axis" ? "axes" : tab || "groups";
     exSel = sel || null;
@@ -1775,7 +1799,7 @@
       "<dt>Consistency</dt><dd>Over the axes that split along today's left–right line: consistent if under 12% of your sides go the other way, mostly consistent under 30%, otherwise cross-pressured.</dd>" +
       "<dt>Priorities</dt><dd>A second match weights the axes behind the issues you ranked.</dd>" +
       "<dt>Map</dt><dd>Overall left–right against liberty vs. authority, the biggest dimension left once left–right is removed in a test with 135 simulated politicians. Economics against culture is mostly a diagonal line, so it's an option rather than the default.</dd></dl>" +
-      "<h2 id=ab-groups>Axes and groups</h2><p>Every axis and all " + B.profiles.length + ' groups, with their positions and how each was placed, are in <button type="button" class="link" id="ab-explore">Explore</button>.</p>' +
+      "<h2 id=ab-groups>Axes and groups</h2><p>Every axis and all " + B.profiles.length + " groups, with their positions and how each was placed, are in " + (canExplore() ? '<button type="button" class="link" id="ab-explore">Explore</button>.' : "Explore, which opens once you've finished the quiz so the groups' positions can't steer your answers.") + "</p>" +
       "<h2 id=ab-privacy>Privacy</h2><p>No account, and no names, emails or IP addresses. Answers are saved under a random code. The questions about you are optional and don't change your results. Share links hold scores only. Answers from people under 18 aren't saved.</p>" +
       "<h2 id=ab-limits>Limits</h2><p>US politics only. The questions are still being reviewed; “Report a problem” under each one flags it. Scores are approximate until there's enough data to calibrate them.</p>" +
       '</section>' +

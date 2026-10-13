@@ -1,0 +1,162 @@
+{
+ "income_tax_structure": [
+  "Income tax rates should rise much more steeply with income, with a top rate above 50% on the highest earners.",
+  "The highest earners should pay higher rates than today, while middle incomes pay the same or less.",
+  "Keep today's seven rates, from 10% to 37%.",
+  "There should be only two or three income tax rates, with the top one at 30% or less.",
+  "Everyone should pay one flat rate on income above a basic tax-free amount.",
+  "There should be no federal income tax; the money should come from something else, such as a national sales tax."
+ ],
+ "low_income_tax": [
+  "Low-income households should owe no federal income tax and get bigger refundable credits than they do today.",
+  "Low-income households should owe no federal income tax and keep about today's refundable credits.",
+  "Low-income households should owe no federal income tax, but their refundable credits should be smaller than today.",
+  "Every household, including low-income ones, should pay at least a small income tax, such as $100 a year.",
+  "Low-income households should pay the same flat rate as everyone else, starting from their first dollar."
+ ],
+ "tax_burden_principle": [
+  "People with high incomes should pay a much bigger share of their income in taxes than people with low incomes.",
+  "People with high incomes should pay a somewhat bigger share of their income in taxes.",
+  "Everyone should pay the same share of their income, after a basic amount that isn't taxed.",
+  "Everyone should pay the same share of all their income, with no amount left untaxed."
+ ],
+ "top_income_tax": [
+  "Income taxes on people earning over $1 million a year should go up a lot.",
+  "Income taxes on people earning over $1 million a year should go up somewhat.",
+  "Income taxes on people earning over $1 million a year should stay about where they are.",
+  "Income taxes on people earning over $1 million a year should come down somewhat.",
+  "Income taxes on people earning over $1 million a year should come down a lot."
+ ],
+ "top_rate_number": [
+  "Each dollar earned above $1 million should be taxed at 70% or more.",
+  "Each dollar earned above $1 million should be taxed at about 50% to 60%.",
+  "Each dollar earned above $1 million should be taxed at about 40% to 45%.",
+  "Each dollar earned above $1 million should be taxed at 37%, as it is today.",
+  "Each dollar earned above $1 million should be taxed at about 25% to 30%.",
+  "Each dollar earned above $1 million should be taxed at 20% or less."
+ ],
+ "corporate_rate": [
+  "Corporate profits should be taxed at 35% or more, at least as high as before 2018.",
+  "Corporate profits should be taxed at about 28%, between today's rate and the old one.",
+  "Corporate profits should be taxed at 21%, as they are today.",
+  "Corporate profits should be taxed at about 15%, lower than today."
+ ],
+ "wealth_tax": [
+  "Households worth over $50 million should pay 3% or more of their wealth above that amount in tax every year.",
+  "Households worth over $50 million should pay about 1% to 2% of their wealth above that amount in tax every year.",
+  "There shouldn't be a yearly wealth tax, but big gains in value should be taxed when wealth is passed on at death.",
+  "Wealth itself shouldn't be taxed; only income should be."
+ ],
+ "large_fortunes": [
+  "Fortunes of $1 billion or more are a problem in themselves, and taxes should be set to shrink them over time.",
+  "Billionaires should pay much more in taxes than they do now.",
+  "Billionaires should pay somewhat more in taxes than they do now.",
+  "Billionaires pay about the right amount in taxes now.",
+  "Taxes on billionaires are already too high and hold back investment."
+ ],
+ "estate_tax_level": [
+  "Estates worth more than about $1 million should be taxed at death, with rates of 50% or more on the largest.",
+  "Estates worth more than about $3.5 million should be taxed at death, at about 45%.",
+  "Keep today's estate tax: 40% on the part of an estate above $15 million.",
+  "Raise the $15 million threshold so even fewer estates owe the tax.",
+  "There should be no tax on estates at death."
+ ],
+ "inheritance_principle": [
+  "A large share of inheritances of several million dollars should go to the public, so wealth doesn't pile up across generations.",
+  "A moderate tax on inheritances of several million dollars or more is fair.",
+  "Only the very largest inheritances should be taxed, and only a little.",
+  "Inheritances shouldn't be taxed at all, because the money was already taxed when it was earned."
+ ],
+ "capital_gains_rate": [
+  "Profits from selling investments should be taxed at the same rates as wages, for everyone.",
+  "High earners should pay wage rates on investment profits; everyone else should keep lower rates.",
+  "Investment profits should keep being taxed at lower rates than wages, as they are now.",
+  "Investment profits should be taxed at even lower rates than today.",
+  "Profits from selling investments shouldn't be taxed at all."
+ ],
+ "gains_at_death": [
+  "Gains on investments should be taxed when the owner dies, for gains above about $1 million.",
+  "Gains shouldn't be taxed at death, but heirs should owe tax on the whole gain, including the part before they inherited, when they sell.",
+  "Keep today's rule: heirs owe tax only on gains made after they inherit, so earlier gains are never taxed."
+ ],
+ "cash_aid_level": [
+  "The government should guarantee every household enough to stay above the poverty line.",
+  "The government should spend more than today on cash and food aid, mainly for families with children and people who can't work.",
+  "Cash and food aid should stay at about today's level.",
+  "The government should spend less than today on cash and food aid, with charities, churches and families doing more.",
+  "The federal government should end most cash and food aid and leave it to states, charities and families."
+ ],
+ "aid_form": [
+  "Aid should come mostly as cash, and people decide for themselves how to spend it.",
+  "Aid should be a mix of cash and benefits tied to specific needs, as it is today.",
+  "Aid should come mostly as benefits for specific needs, like food and rent, so it goes to essentials.",
+  "Aid should come as benefits for specific needs, with limits on what can be bought, such as no soda or candy with food aid."
+ ],
+ "work_req_rule": [
+  "Adults who can work should get cash and food aid whether or not they work.",
+  "Aid shouldn't require work, but the government should offer job training and help finding work.",
+  "Adults who can work should have to work, look for work or train about 20 hours a week to keep aid, after a grace period of about 3 months.",
+  "Adults who can work should have to work, look for work or train 30 or more hours a week from the start, or lose their aid."
+ ],
+ "work_req_cases": [
+  "These people should be exempt from the work requirement: {case}.",
+  "These people should have to meet the work requirement: {case}."
+ ],
+ "ubi": [
+  "Every adult should get about $1,500 a month or more from the government, enough to live on, whether or not they work.",
+  "Every adult should get about $500 a month from the government, whether or not they work.",
+  "Not every adult should get a payment, but anyone whose income falls below a set level should be topped up to it.",
+  "The government shouldn't guarantee anyone an income."
+ ],
+ "child_benefit_level": [
+  "Every family should get about $300 a month per child, whatever the parents earn.",
+  "The child tax credit should be bigger than today, and low-income families should get the full amount.",
+  "The child tax credit should stay at about today's level, up to $2,200 per child.",
+  "The child tax credit should be smaller than today, and only for families who owe income tax.",
+  "There shouldn't be a federal child tax credit."
+ ],
+ "child_benefit_work": [
+  "Parents should get the full child tax credit whether or not they earn anything from work.",
+  "Parents with no earnings should get part of the child tax credit.",
+  "Only parents who earn money from work should get the child tax credit."
+ ],
+ "inequality_tradeoff": {
+  "s": [
+   "Reducing the gap between rich and poor matters most to me, even if it means higher taxes and slower growth.",
+   "I lean toward reducing the gap between rich and poor, even at some cost to growth.",
+   "I lean toward focusing on growth, even if the gap between rich and poor widens.",
+   "Growth matters most to me; government shouldn't try to shrink the gap between rich and poor, even if it gets wider."
+  ],
+  "torn": "I weigh reducing the gap and focusing on growth about equally."
+ },
+ "deficit_approach": [
+  "Borrowing is fine for now; the deficit shouldn't be a priority over the next ten years.",
+  "The deficit should be closed mainly by raising taxes on high earners and corporations.",
+  "The deficit should be closed with about equal parts tax increases and spending cuts.",
+  "The deficit should be closed mainly by cutting spending, with some tax increases.",
+  "The deficit should be closed entirely by cutting spending, with no tax increases."
+ ],
+ "balanced_budget_amendment": [
+  "The Constitution shouldn't require a balanced budget; the government needs to be able to borrow.",
+  "The Constitution should require a balanced budget in normal years, with exceptions for wars and recessions.",
+  "The Constitution should require a balanced budget every year, with no exceptions, even in a war or recession."
+ ],
+ "poverty_cause": [
+  "Most working-age adults who are poor are poor mainly because the economic system is unfair to them.",
+  "Most working-age adults who are poor are poor mainly because of circumstances they didn't choose, like where they grew up or bad luck.",
+  "Poverty usually comes from a mix of people's circumstances and their own choices.",
+  "Most working-age adults who are poor are poor mainly because of their own choices, like dropping out of school or not working.",
+  "Most working-age adults who are poor are poor mainly because they don't try hard enough."
+ ],
+ "job_guarantee": [
+  "The government should offer a public job, paying at least the minimum wage, to anyone who wants one.",
+  "The government should guarantee jobs only in areas with high unemployment.",
+  "The government shouldn't guarantee jobs, but it should help with job searches and training.",
+  "The government shouldn't provide jobs; jobs should come from private employers."
+ ],
+ "tips_overtime_tax": [
+  "Tips and overtime pay should be taxed like any other wages.",
+  "Tips and overtime should be free of federal income tax for low- and middle-income workers only.",
+  "Tips and overtime should be free of federal income tax for everyone."
+ ]
+}

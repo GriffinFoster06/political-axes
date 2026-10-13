@@ -1,0 +1,82 @@
+{
+ "work_arrangement": [
+  "For a married couple with young children, both parents working full time and sharing childcare is usually best.",
+  "For a married couple with young children, both working, with one part time, is usually best.",
+  "For a married couple with young children, one parent staying home while the children are young is usually best."
+ ],
+ "caregiver_parent": [
+  "Which parent stays home shouldn't depend on sex; it should be whoever wants to or earns less.",
+  "It's usually the mother who stays home with young children, but either parent is fine.",
+  "The mother should be the one at home; young children need their mother."
+ ],
+ "marriage_decisions": [
+  "Husbands and wives should make major family decisions equally.",
+  "Husbands and wives should decide equally, with each leading in different areas.",
+  "The husband should have the final say on major family decisions."
+ ],
+ "promote_marriage": [
+  "Government shouldn't favor married people over unmarried people.",
+  "Government should only remove tax and benefit rules that penalize marriage, not actively promote it.",
+  "Government should actively encourage marriage, for example with bonuses for married couples."
+ ],
+ "unmarried_partner_rights": [
+  "Unmarried couples who live together should have the same legal rights as married couples, like inheritance and hospital visits.",
+  "Unmarried couples should get some of those rights after living together for several years.",
+  "Rights like inheritance and hospital visits should come with marriage, not with living together."
+ ],
+ "childcare_spending": [
+  "Government should spend enough to make care for children under 5 free for every family.",
+  "Government should spend enough that no family pays more than about 7% of its income for childcare.",
+  "Government should help only low-income families with childcare, as now.",
+  "Government shouldn't help pay for childcare."
+ ],
+ "childcare_form": [
+  "Help for families with young children should go mainly to childcare programs, so parents can work.",
+  "Help for families with young children should be split between childcare programs and cash for parents.",
+  "Help should go mainly to parents as cash, whether they use childcare or stay home."
+ ],
+ "stay_home_support": [
+  "Support should go to childcare so parents can work, not to parents who stay home.",
+  "Both should get support, but more should go to families paying for childcare.",
+  "Parents who stay home should get the same support as parents who pay for childcare."
+ ],
+ "no_fault_divorce": [
+  "One spouse should be able to get a divorce without the other's agreement or proof of wrongdoing, as now.",
+  "No-fault divorce should stay, but with a longer waiting period when there are children.",
+  "Divorce should require both spouses' agreement or proof of fault, such as abuse or adultery."
+ ],
+ "pay_transparency": [
+  "Employers with 100 or more workers should have to post pay ranges and report pay by gender to the government.",
+  "Those employers should have to post pay ranges, but not report pay by gender.",
+  "Employers shouldn't have to post pay ranges or report pay by gender."
+ ],
+ "board_gender_rules": [
+  "Public companies should be required to have at least 40% women on their boards.",
+  "Public companies shouldn't have a requirement, but should have to report how many women are on their boards.",
+  "Public companies shouldn't have to meet a requirement or report the numbers."
+ ],
+ "workplace_gender_programs": [
+  "Large employers should run programs with specific hiring targets for women and required training.",
+  "Large employers should reach out to and mentor women, without hiring targets.",
+  "Large employers should only offer general training on treating everyone equally.",
+  "Large employers shouldn't run these programs, but each company can choose.",
+  "Companies with federal contracts should be barred from running these programs."
+ ],
+ "birth_rate_policy": [
+  "Government shouldn't do anything about birth rates; having children is a personal choice.",
+  "Government should make raising children more affordable, but not try to raise birth rates.",
+  "Government should try to raise birth rates, with large payments or tax breaks for each child born."
+ ],
+ "women_draft": [
+  "If there's a draft, women should be drafted on the same terms as men.",
+  "If there's a draft, women should be drafted only for non-combat roles.",
+  "If there's a draft, only men should be drafted."
+ ],
+ "natural_roles": [
+  "Differences in men's and women's family roles come almost entirely from upbringing and culture.",
+  "Those differences come mostly from culture, partly from nature.",
+  "Those differences come about equally from culture and nature.",
+  "Those differences come mostly from natural differences between the sexes.",
+  "Those differences come almost entirely from nature; men and women are suited to different roles."
+ ]
+}

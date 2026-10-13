@@ -57,7 +57,31 @@ def bank():
         "about": mods["about_you"],
         "axes": mods["axes"], "profiles": [{k: v for k, v in p.items() if k != "hand_pos"} for p in mods["profiles"]["profiles"]], "profileCats": mods["profiles"]["categories"], "quick": mods["quick"]["ids"],
         "keying": keying(items, mods["axes"]),
+        "statements": statements(items),
     }
+
+
+def statements(items):
+    """items/statements/*.json: what each answer means, in plain words, shown after it's picked.
+    {id: [one per option, in code order]} or, for tradeoffs, {id: {"s": [4 statements], "torn": "..."}}.
+    Exception follow-ups take one template per option with {case} where the case text goes."""
+    out = {}
+    for p in sorted((ROOT / "items" / "statements").glob("*.json")):
+        for iid, v in json.loads(p.read_text()).items():
+            if iid.startswith("_"):
+                continue
+            if iid not in items:
+                raise SystemExit(f"{p.name}: unknown item {iid}")
+            lst = v["s"] if isinstance(v, dict) else v
+            if len(lst) != len(items[iid]["options"]):
+                raise SystemExit(f"{p.name}: {iid} has {len(lst)} statements for {len(items[iid]['options'])} options")
+            if items[iid]["format"] == "exceptions" and not all("{case}" in t for t in lst):
+                raise SystemExit(f"{p.name}: {iid} statements need a {{case}} slot")
+            out[iid] = v
+    missing = [i for i in items if i not in out and not items[i].get("issue_map_only")]
+    if missing:
+        raise SystemExit(f"no statements for: {missing}")
+    return out
 
 
 def keying(items, axes):

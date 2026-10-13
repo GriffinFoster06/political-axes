@@ -1,0 +1,36 @@
+{
+ "rule_bending_leader": {
+  "why": "'Rules' could mean laws, norms or etiquette.",
+  "scope": "“Rules” here means laws, court rulings and official procedures. Answer for any president of either party."
+ },
+ "court_expansion": {
+  "why": "'The majority' could mean the Court's majority or Congress's.",
+  "options": {
+   "0": "Yes, add justices when the party in power wants different rulings"
+  }
+ },
+ "life_begins": {
+  "why": "'Heartbeat' at 6 weeks is a contested description; name what is detected.",
+  "options": {
+   "2": "When cardiac activity can first be detected, about 6 weeks"
+  }
+ },
+ "press_retaliation": {
+  "why": "Didn't say who decides what counts as a falsehood.",
+  "options": {
+   "2": "Yes, the president can punish outlets the president believes spread falsehoods"
+  }
+ },
+ "gov_misinformation": {
+  "why": "Didn't say who decides what is false.",
+  "options": {
+   "3": "Require platforms to remove posts that government agencies find false, on topics like health and elections"
+  }
+ },
+ "public_ownership": {
+  "why": "'Failed' could mean bankrupt or just poor service.",
+  "options": {
+   "1": "Some of them, where private companies haven't provided good, affordable service"
+  }
+ }
+}

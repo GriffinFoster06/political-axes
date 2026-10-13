@@ -1,0 +1,116 @@
+{
+ "gap_cause_wealth": [
+  "The Black-white wealth gap comes mostly from discrimination that's still happening today.",
+  "The wealth gap comes mostly from the lasting effects of past discrimination, like slavery and segregation.",
+  "The wealth gap comes from a mix of past discrimination and differences in choices, families and culture.",
+  "The wealth gap comes mostly from differences in choices, families and culture, not discrimination."
+ ],
+ "gap_cause_arrests": [
+  "Black Americans are arrested at higher rates mostly because of bias in policing and courts.",
+  "The difference comes about equally from bias and from differences in crime rates.",
+  "The difference comes mostly from differences in crime rates, driven by poverty and neighborhood conditions.",
+  "The difference comes mostly from differences in crime rates, driven by family and culture."
+ ],
+ "gap_cause_tests": [
+  "Test score gaps between racial groups come mostly from biased tests.",
+  "Test score gaps come mostly from unequal schools and resources.",
+  "Test score gaps come mostly from differences in family income and neighborhood conditions.",
+  "Test score gaps come mostly from differences in family structure and culture."
+ ],
+ "college_admissions_race": [
+  "Colleges should consider race as one important factor in admissions, to increase diversity.",
+  "Colleges should be able to consider race only as a minor factor, like a tie-breaker.",
+  "Colleges shouldn't consider race, but can consider economic hardship instead.",
+  "Colleges shouldn't consider race or any other group characteristic at all."
+ ],
+ "hiring_race": [
+  "Employers should consider race as one important factor in hiring, to increase diversity.",
+  "Employers can consider race only to break a tie between equally qualified applicants.",
+  "Employers shouldn't consider race, but should recruit in many different communities.",
+  "Race should play no part in hiring at all."
+ ],
+ "contract_set_asides": [
+  "Government should set aside a fixed percentage of contracts for minority-owned businesses.",
+  "Government shouldn't set aside contracts by race, but should help small or disadvantaged businesses of any race.",
+  "Government shouldn't run special contracting programs for any group."
+ ],
+ "workplace_diversity": [
+  "Large employers should run programs with specific hiring targets for racial minorities and required diversity training.",
+  "Large employers should reach out to and mentor minority candidates, without hiring targets.",
+  "Large employers should only offer general training on treating everyone equally.",
+  "Large employers shouldn't run these programs, but each company can choose.",
+  "Companies with federal contracts should be barred from running these programs."
+ ],
+ "dei_offices": [
+  "Public universities should have diversity, equity and inclusion offices, and expand them.",
+  "Public universities can keep these offices, but they should focus on equal treatment for everyone.",
+  "Public universities should close their diversity, equity and inclusion offices."
+ ],
+ "reparations": [
+  "The federal government should make cash payments to each eligible descendant of enslaved people.",
+  "The federal government should provide reparations through programs like housing, education and business grants, not cash.",
+  "There shouldn't be payments, but the government should formally apologize and officially study the question.",
+  "The government shouldn't do anything beyond today's laws."
+ ],
+ "local_redlining_compensation": [
+  "Cities that enforced housing segregation should compensate the people harmed and their descendants.",
+  "Those cities should compensate only people they personally harmed who are still living.",
+  "Cities shouldn't pay compensation for past housing segregation."
+ ],
+ "hate_crime_sentences": [
+  "Crimes motivated by hatred of someone's group should carry much longer sentences.",
+  "Hate-motivated crimes should carry somewhat longer sentences.",
+  "Hate-motivated crimes should carry longer sentences only when they're against people, not property.",
+  "The same crime should get the same sentence, whatever the motive."
+ ],
+ "race_districts": [
+  "States should have to draw majority-minority districts wherever a minority group is large and close together enough.",
+  "States should have to draw these districts only where there's evidence of past voting discrimination.",
+  "Districts should be drawn without considering race."
+ ],
+ "teach_racism_history": [
+  "Schools should teach racism as central to the American story, including how it shapes society today.",
+  "Schools should teach racism as an important part of history, alongside the nation's progress.",
+  "Schools should teach the full facts of slavery and segregation, but not as the defining story of the country."
+ ],
+ "teach_institutional_racism": [
+  "Public schools should teach as established fact that racism is built into American laws and institutions today.",
+  "Public schools should teach that idea as one view among several.",
+  "Public schools shouldn't teach that racism is built into American laws and institutions today."
+ ],
+ "discrimination_black": [
+  "Black job applicants face discrimination because of their race almost every time they apply.",
+  "Black job applicants face racial discrimination most of the time.",
+  "Black job applicants face racial discrimination about half the time.",
+  "Black job applicants sometimes face racial discrimination, about 3 times in 10.",
+  "Black job applicants rarely face racial discrimination today."
+ ],
+ "discrimination_white": [
+  "White applicants rarely face discrimination because of their race today.",
+  "White applicants sometimes face racial discrimination, about 3 times in 10.",
+  "White applicants face racial discrimination about half the time.",
+  "White applicants face racial discrimination most of the time.",
+  "White applicants face racial discrimination almost every time they apply."
+ ],
+ "discrimination_groups": [
+  "This group faces little or no discrimination today: {case}.",
+  "This group faces some discrimination today: {case}.",
+  "This group faces a lot of discrimination today: {case}."
+ ],
+ "tribal_sovereignty": [
+  "Tribes should fully govern their own lands, including non-Native people there.",
+  "Tribes should govern their own members, with limited authority over non-Native people on tribal land.",
+  "States and the federal government should have more control over tribal lands than today."
+ ],
+ "disparate_impact": [
+  "A test that leads to far fewer hires of one race should be illegal unless it's clearly necessary for the job.",
+  "It should be illegal only if a fairer test would work just as well and the employer refused to use it.",
+  "Only intentional discrimination should be illegal; unequal results alone shouldn't be."
+ ],
+ "confederate_monuments": [
+  "Public monuments honoring Confederate leaders should be removed.",
+  "Confederate monuments should be moved to museums, with historical context.",
+  "Confederate monuments should stay, with historical context added.",
+  "Confederate monuments should stay as they are."
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "_note": "What each answer means, shown after it's picked. One per option, in code order. Exceptions use {case}.",
+ "president_court_ruling": [
+  "Presidents must obey court rulings against them, can appeal through the courts, and shouldn't attack the judges who ruled.",
+  "Presidents must obey court rulings against them while they appeal, but it's fine for them to criticize the judge in public.",
+  "A president can ignore a ruling from one court until a higher court agrees with it.",
+  "A president can ignore any court ruling the president believes is wrong."
+ ],
+ "exec_orders_scope": [
+  "Without Congress, a president should only manage how the executive branch itself runs, not make new policy.",
+  "A president should make policy alone only in a real emergency; otherwise wait for Congress.",
+  "A president can make policy alone wherever existing laws leave room for judgment, but not beyond what those laws allow.",
+  "A president can make policy by executive order whenever the president decides it's needed, even if Congress has refused."
+ ],
+ "refuse_to_spend": [
+  "When Congress funds a program, the president has to spend the money as directed, even on programs the president opposes.",
+  "The president can hold money briefly while asking Congress to cancel it, but has to spend it if Congress says no.",
+  "The president can decline to spend money Congress approved whenever the president thinks the program is wasteful."
+ ],
+ "refuse_to_spend_cases": [
+  "The president must spend money Congress approved for this: {case}.",
+  "The president can refuse to spend money Congress approved for this: {case}."
+ ],
+ "emergency_duration": [
+  "A president gets no emergency powers until Congress votes to approve them.",
+  "Emergency powers end after 30 days unless Congress votes to keep them.",
+  "Emergency powers end after 6 months unless Congress votes to keep them.",
+  "A president decides how long an emergency lasts, and it continues until the president ends it or Congress overrides a veto."
+ ],
+ "emergency_funding": [
+  "Congress alone decides spending. A president can't use an emergency to pay for something Congress refused to fund.",
+  "A president can move money without Congress only for a sudden threat like an attack, and only until Congress can act.",
+  "A president can declare an emergency and fund a project Congress refused whenever the president judges the need is urgent."
+ ],
+ "emergency_funding_cases": [
+  "A president should not be able to use an emergency to pay for this after Congress refused: {case}.",
+  "A president should be able to use an emergency to pay for this after Congress refused: {case}."
+ ],
+ "civil_service": [
+  "Career government workers keep their jobs even when they disagree with the president's policies.",
+  "A president can fire senior officials who shape policy for disagreeing, but regular career staff stay protected.",
+  "A president should be able to fire most federal workers for any reason, including disagreeing with the president."
+ ],
+ "independent_agencies": [
+  "More agencies should have leaders the president can't fire over policy, beyond the ones that already work this way.",
+  "The agencies that are independent today should stay that way, and no more should be added.",
+  "Only the Federal Reserve should be independent. A president should be able to fire the leaders of every other agency.",
+  "A president should be able to fire the leader of any agency, including the Federal Reserve."
+ ],
+ "prosecute_opponents": [
+  "A president should have no say in whether the Justice Department investigates anyone, including the president's critics.",
+  "A president can tell the Justice Department about concerns, but career prosecutors decide whether to investigate.",
+  "A president can order the Justice Department to investigate specific people, including political opponents, whom the president believes broke the law."
+ ],
+ "pardon_allies": [
+  "Presidents should be barred, by a constitutional amendment, from pardoning family, associates or political allies.",
+  "Presidents can legally pardon family and allies, but they should almost never use that power.",
+  "It's fine for a president to pardon family or allies whom the president believes were treated unfairly."
+ ],
+ "accept_results": [
+  "Once courts and election officials confirm the result, the losing candidate should concede.",
+  "The losing candidate should accept the confirmed result, but it's fine to keep saying in public that it was stolen.",
+  "The losing candidate can keep fighting a confirmed result, including asking legislators to overturn it.",
+  "The losing candidate can refuse to accept a confirmed result and call on supporters to resist it."
+ ],
+ "checks_vs_action": {
+  "s": [
+   "I strongly prefer a system where no single leader can act without others agreeing, even if needed changes take years.",
+   "I somewhat prefer strong checks on leaders over speed.",
+   "I somewhat prefer letting elected leaders act quickly over strong checks.",
+   "I strongly prefer letting an elected leader act quickly, even with fewer checks on mistakes or abuse."
+  ],
+  "torn": "I value checks on leaders and the ability to act quickly about equally."
+ },
+ "courts_vs_majority": {
+  "s": [
+   "Courts should strike down unconstitutional laws even when most voters support them, every time.",
+   "Courts should usually strike down unconstitutional laws, even popular ones.",
+   "When most voters clearly support a law, courts should usually let it stand.",
+   "When most voters clearly support a law, courts should almost never overrule it, even if it takes away some people's rights."
+  ],
+  "torn": "I'm torn between courts protecting rights and voters getting the laws they support."
+ },
+ "filibuster": [
+  "Bills should keep needing 60 votes, and judges and cabinet members should need 60 votes to be confirmed too.",
+  "The 60-vote rule for bills should stay exactly as it is.",
+  "Keep the 60-vote rule, but senators blocking a bill should have to hold the floor and keep speaking.",
+  "Some kinds of bills, such as voting rights or budget bills, should pass with a simple majority; the rest still need 60.",
+  "Every bill should pass the Senate with a simple majority of 51 votes."
+ ],
+ "filibuster_cases": [
+  "This should still need 60 votes in the Senate: {case}.",
+  "A simple majority of 51 senators should be able to pass this: {case}."
+ ],
+ "rule_bending_leader": [
+  "A president should never work around laws, court rulings or official procedures, even to deliver what voters chose.",
+  "A president can work around laws or procedures only in a real emergency.",
+  "A president can work around laws or procedures when they clearly block what voters chose.",
+  "The country needs a president who's willing to work around laws and procedures to deliver what voters chose."
+ ],
+ "political_violence": [
+  "Violence to reach political goals is never justified in the US today.",
+  "Violence is justified only against a government that has taken power illegally.",
+  "Violence is sometimes justified when peaceful ways of changing things have failed."
+ ],
+ "court_expansion": [
+  "Congress should add Supreme Court justices when the party in power wants different rulings.",
+  "The number of justices should change only as part of a reform both parties agree to.",
+  "The Supreme Court should stay at 9 justices."
+ ],
+ "presidential_immunity": [
+  "Former presidents can be criminally prosecuted for what they did in office, like anyone else.",
+  "Former presidents are immune only for core duties the Constitution gives them, like vetoes and pardons; other acts can be prosecuted.",
+  "Former presidents can't be prosecuted for anything they did as part of their official job."
+ ],
+ "press_retaliation": [
+  "A president should never punish news outlets over their coverage.",
+  "A president can limit an outlet's access to briefings and events, but can't go after its broadcast license.",
+  "A president can punish outlets the president believes spread falsehoods, including by pulling broadcast licenses."
+ ],
+ "agency_deference": [
+  "When a law is unclear, courts should usually go with how the agency running it reads it.",
+  "Courts should go with the agency's reading of an unclear law only on technical or scientific questions.",
+  "Judges should decide what an unclear law means themselves, without deferring to the agency."
+ ]
+}

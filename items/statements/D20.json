@@ -1,0 +1,93 @@
+{
+ "voter_id": [
+  "Voters shouldn't have to show photo ID; signature checks and other methods are enough.",
+  "Voters should show ID, but many kinds should count, IDs should be free, and people without one should have a backup way to vote.",
+  "Voters should show a photo ID, with free IDs for anyone who needs one, and no backup option.",
+  "Voters should show a government-issued photo ID, with no backup option."
+ ],
+ "proof_of_citizenship": [
+  "People registering to vote shouldn't have to show proof of citizenship; the sworn statement and existing checks are enough.",
+  "People should have to show proof of citizenship only when government records can't confirm it.",
+  "Everyone registering to vote should have to show a passport, birth certificate or similar document."
+ ],
+ "mail_voting": [
+  "Every voter should get a mail ballot automatically.",
+  "Any voter who asks should be able to vote by mail.",
+  "Only voters with a reason, like illness or travel, should be able to vote by mail.",
+  "Almost everyone should vote in person, not by mail."
+ ],
+ "mail_ballot_deadline": [
+  "Mail ballots postmarked by Election Day should count if they arrive within a week or more.",
+  "Mail ballots postmarked by Election Day should count if they arrive within 3 days.",
+  "Only mail ballots received by Election Day should count."
+ ],
+ "auto_registration": [
+  "Eligible citizens should be registered to vote automatically when they deal with agencies like the DMV, unless they opt out.",
+  "Agencies should offer voter registration, but people have to choose to sign up.",
+  "People should register to vote on their own."
+ ],
+ "felony_voting": [
+  "People convicted of a felony should always be able to vote, even while in prison.",
+  "People convicted of a felony should be able to vote once they're released from prison.",
+  "People convicted of a felony should be able to vote after finishing parole or probation.",
+  "People convicted of a felony should vote again only after a waiting period or an individual review.",
+  "People convicted of a felony should never vote again."
+ ],
+ "electoral_college": [
+  "The president should be elected by national popular vote, ending the Electoral College.",
+  "Keep the Electoral College, but split each state's electoral votes in proportion to how the state voted.",
+  "Keep the Electoral College as it is."
+ ],
+ "popular_vote_loser": [
+  "A candidate who gets fewer votes nationwide should never be able to win the presidency.",
+  "Winning the presidency with fewer votes is acceptable, but the system should change to make it rarer.",
+  "Winning the presidency with fewer votes is fine; it reflects the states' role in choosing the president."
+ ],
+ "redistricting": [
+  "Independent commissions with no politicians should draw congressional districts.",
+  "Commissions with equal members from both parties should draw congressional districts.",
+  "State legislatures should draw districts once every 10 years, after the census.",
+  "State legislatures should be able to redraw districts whenever they choose, including mid-decade."
+ ],
+ "campaign_spending": [
+  "Election spending by corporations, unions and the wealthy should be strictly limited, by constitutional amendment if needed.",
+  "There shouldn't be spending limits, but who pays for political ads should be fully disclosed.",
+  "There shouldn't be limits or disclosure rules; spending on politics is free speech."
+ ],
+ "public_financing": [
+  "Candidates who accept spending limits should get public money matching small donations several times over.",
+  "Candidates who accept spending limits should get a modest amount of public money.",
+  "Campaigns shouldn't get public money."
+ ],
+ "congress_term_limits": [
+  "Members of Congress should be limited to 12 years or less in each chamber.",
+  "Members of Congress should be limited to about 18 to 24 years in each chamber.",
+  "Members of Congress shouldn't have term limits; voters can remove them."
+ ],
+ "court_term_limits": [
+  "Future Supreme Court justices should serve 18-year terms.",
+  "Future justices should serve fixed terms of around 25 years.",
+  "Supreme Court justices should keep serving for life."
+ ],
+ "ranked_choice": [
+  "All elections should use ranked-choice voting.",
+  "Each state or city should decide whether to use ranked-choice voting.",
+  "Ranked-choice voting should be banned."
+ ],
+ "statehood": [
+  "This should become a state: {case}.",
+  "This should become a state only if its residents vote for it: {case}.",
+  "This shouldn't become a state: {case}."
+ ],
+ "voting_age": [
+  "The voting age should be 16.",
+  "17-year-olds should be able to vote if they'll be 18 by the next general election.",
+  "The voting age should stay at 18.",
+  "The voting age should be 21."
+ ],
+ "noncitizen_local_voting": [
+  "Green card holders should be able to vote in local elections, like school board races.",
+  "Each city should decide whether green card holders can vote in local elections.",
+  "Noncitizens voting in local elections should be banned everywhere."
+ ]
+}

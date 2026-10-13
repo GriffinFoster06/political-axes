@@ -1,0 +1,78 @@
+{
+ "handgun_purchase": [
+  "Handgun sales to most civilians should be banned.",
+  "Buying a handgun should require a license with safety training, plus a background check for every sale.",
+  "Every handgun sale, including private sales, should require a background check, but no license.",
+  "Keep current federal law: checks at licensed dealers, but not for most private sales.",
+  "There should be fewer federal rules on buying handguns, such as no required background checks."
+ ],
+ "private_sale_checks": [
+  "Every gun sale or transfer between private people should require a background check, even between family members.",
+  "Every private gun sale should require a check, but not gifts or loans between family and close friends.",
+  "Private gun sales should require a check only at gun shows and online.",
+  "Private gun sales shouldn't require a background check."
+ ],
+ "semi_auto_rifles": [
+  "New sales of semi-automatic rifles like the AR-15 should be banned, and the government should buy back the ones people own.",
+  "New sales should be banned, but people can keep the ones they have.",
+  "Semi-automatic rifles should be sold only to people 21 and older with a license and training.",
+  "Semi-automatic rifles should be sold with a background check, as most states do now.",
+  "Semi-automatic rifles should be sold with no federal background check."
+ ],
+ "magazine_limit": [
+  "Gun magazines should be limited to 10 rounds or fewer.",
+  "Gun magazines should be limited to about 15 to 20 rounds.",
+  "There shouldn't be a limit on magazine size."
+ ],
+ "concealed_carry": [
+  "Carrying a concealed handgun in public should generally not be allowed, except for police and security guards.",
+  "Carrying a concealed handgun should require a permit with training and a background check.",
+  "Carrying a concealed handgun should require a permit with a background check, but no training.",
+  "Adults who can legally own a gun should be able to carry it concealed with no permit."
+ ],
+ "carry_locations": [
+  "People with a carry permit shouldn't be allowed to carry here: {case}.",
+  "People with a carry permit should be allowed to carry here: {case}."
+ ],
+ "red_flag": [
+  "Courts should be able to temporarily take guns from someone found dangerous, when police or family members ask.",
+  "Courts can temporarily take guns only when police ask, after a quick hearing where the person can respond.",
+  "Guns should be taken only after a criminal conviction or a formal mental health commitment."
+ ],
+ "red_flag_cases": [
+  "A court should be able to temporarily take guns from this person: {case}.",
+  "A court shouldn't be able to take guns from this person: {case}."
+ ],
+ "gun_purchase_age": [
+  "No one under 21 should be able to buy any gun.",
+  "People should be 21 to buy handguns and semi-automatic rifles, and 18 for hunting rifles and shotguns.",
+  "People should be 21 to buy handguns and 18 for rifles and shotguns, from any seller.",
+  "Anyone 18 or older should be able to buy any gun."
+ ],
+ "second_amendment_meaning": [
+  "The Second Amendment protects only the right of states to keep militias, not an individual right to own guns.",
+  "The Second Amendment protects an individual right to own guns, but government can regulate it broadly.",
+  "The Second Amendment protects an individual right to own guns, with only narrow limits.",
+  "The Second Amendment protects an individual right to own guns, with almost no limits."
+ ],
+ "self_defense_law": [
+  "When attacked in public, a person should have to retreat first if it can be done safely, before using deadly force.",
+  "A person should have to retreat first only if they started the conflict.",
+  "A person can stand their ground and use deadly force anywhere they have a right to be, without retreating."
+ ],
+ "gun_maker_liability": [
+  "Gun makers and sellers should be open to lawsuits when their guns are used in crimes, like makers of other dangerous products.",
+  "Gun makers and sellers should be sued only if they broke the law or marketed irresponsibly.",
+  "Gun makers and sellers should keep today's protection from these lawsuits."
+ ],
+ "gun_registry": [
+  "There should be a national registry of who owns every gun.",
+  "There should be a national registry only for handguns and semi-automatic rifles.",
+  "There shouldn't be a national gun registry."
+ ],
+ "suppressors": [
+  "Civilians shouldn't be able to buy gun suppressors.",
+  "Buying a suppressor should keep requiring federal registration and approval, as now.",
+  "Suppressors should be sold like ordinary gun parts, with no special registration."
+ ]
+}

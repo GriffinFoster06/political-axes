@@ -147,7 +147,7 @@ mark.hl { color: inherit; background: linear-gradient(transparent 52%, var(--you
 .contest .contest-n { font-family: var(--text); font-stretch: 100%; font-weight: 500; font-size: 0.82rem; opacity: 0.85; }
 .q-box {
   position: relative; background: var(--surface); border: 1.5px solid var(--ink); border-top: 0;
-  padding: 18px 20px 6px 30px; display: flex; flex-direction: column; gap: 12px;
+  padding: 18px 20px 0 30px; display: flex; flex-direction: column; gap: 12px;
 }
 /* timing marks, as printed down the edge of a scan ballot */
 .q-box::before {
@@ -223,6 +223,12 @@ mark.hl { color: inherit; background: linear-gradient(transparent 52%, var(--you
 .case .chip.esc .oval { border-style: dashed; }
 .case .chip.esc[aria-checked="true"] .oval { border-style: solid; }
 
+/* what the chosen answer means */
+.say { margin: 0 -20px 0 -30px; border-top: 1.5px solid var(--ink); padding: 12px 20px 14px 30px; background: var(--soft); }
+.say-h { font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-bottom: 3px; }
+.say p:not(.say-h) { font-size: 1rem; line-height: 1.45; }
+.say ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 0.95rem; }
+
 /* the ways out */
 .outs { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .outs .esc { background: none; border: 0; padding: 6px 0; color: var(--muted); font-size: 0.92rem; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
@@ -244,8 +250,8 @@ textarea { resize: vertical; min-height: 64px; }
 textarea:focus, select:focus, input:focus { outline: none; border-color: var(--ink); }
 
 /* ---------- home ---------- */
-.home-grid { display: grid; gap: 34px; grid-template-areas: "hero" "start" "field"; }
-.home-grid .hero { grid-area: hero; } .home-grid .field-wrap { grid-area: field; } .home-grid .start { grid-area: start; }
+.home-grid { display: grid; gap: 34px; grid-template-areas: "hero" "start" "sample"; }
+.home-grid .hero { grid-area: hero; } .home-grid .start { grid-area: start; } .home-grid .sample { grid-area: sample; }
 .hero { display: flex; flex-direction: column; gap: 16px; }
 .hero h1 { font-size: clamp(2.8rem, 10vw, 4.6rem); line-height: 0.92; font-weight: 850; }
 .start { display: flex; flex-direction: column; gap: 14px; }
@@ -263,18 +269,14 @@ textarea:focus, select:focus, input:focus { outline: none; border-color: var(--i
 .ballot-text span { color: var(--ink-2); font-size: 0.92rem; }
 .ballot-meta { font-size: 0.82rem; color: var(--muted); text-align: right; line-height: 1.35; }
 .ballot-meta span { display: block; }
-.field-wrap { display: flex; flex-direction: column; gap: 8px; }
-.field-title { font-size: 1.05rem; font-stretch: 86%; }
-#browse { align-self: flex-start; }
-.sample { display: grid; gap: 24px; border-top: 2px solid var(--ink); padding-top: 26px; margin-top: 8px; }
-.sample-text { display: flex; flex-direction: column; gap: 12px; max-width: 34rem; }
+.sample { display: flex; flex-direction: column; gap: 18px; border-top: 2px solid var(--ink); padding-top: 24px; }
+.sample-text { display: flex; flex-direction: column; gap: 10px; max-width: 34rem; }
 .sample-text p { color: var(--ink-2); }
-.sample-say { font-weight: 600; color: var(--ink) !important; min-height: 3.1em; }
+.sample-say { color: var(--muted) !important; font-size: 0.94rem; }
 .sample-q .q-box .stem { font-size: 1.3rem; }
 @media (min-width: 900px) {
-  .home-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); grid-template-areas: "hero field" "start field"; gap: 30px 56px; align-items: start; }
-  .home-grid .field-wrap { position: sticky; top: 74px; }
-  .sample { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
+  .home-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); grid-template-areas: "hero sample" "start sample"; gap: 30px 56px; align-items: start; }
+  .sample { border-top: 0; padding-top: 6px; }
 }
 
 /* ---------- the plot ---------- */
@@ -572,7 +574,8 @@ summary .ar-name::before { content: "+"; display: inline-block; width: 1em; colo
   .chips, .tabs { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
   .q-box { padding: 16px 14px 4px 24px; }
   .q-box::before { left: 7px; width: 7px; }
-  .options, .sides, .tug, .grid-q { margin-left: -24px; margin-right: -14px; }
+  .options, .sides, .tug, .grid-q, .say { margin-left: -24px; margin-right: -14px; }
+  .say { padding: 12px 14px 14px 24px; }
   .opt { padding: 12px 14px 12px 24px; }
   .side { padding: 10px 12px 12px; }
   .side:first-child { padding-left: 24px; }

@@ -1,0 +1,82 @@
+{
+ "same_sex_marriage": [
+  "Same-sex couples should be able to legally marry in every state, as they can now.",
+  "Same-sex couples should get civil unions with the same legal rights as marriage, but not called marriage.",
+  "The law shouldn't recognize same-sex couples' relationships at all."
+ ],
+ "same_sex_adoption": [
+  "Same-sex couples should be able to adopt through every state-funded agency, on the same terms as other couples.",
+  "Same-sex couples should be able to adopt, but religious agencies can decline to place children with them.",
+  "Same-sex couples shouldn't be able to adopt through state-funded agencies."
+ ],
+ "wedding_vendors": [
+  "A business open to the public must serve same-sex weddings like any other, whatever the owner's religious beliefs.",
+  "Only businesses making custom expressive work, like a designed cake or photographs, can refuse to serve a same-sex wedding for religious reasons.",
+  "Any business can refuse to serve a same-sex wedding because of the owner's religious beliefs."
+ ],
+ "religious_refusal_cases": [
+  "This shouldn't be allowed, even for religious reasons: {case}.",
+  "This should be allowed for religious reasons: {case}."
+ ],
+ "minors_transition": [
+  "Medical treatment for transgender minors should be allowed when the young person, parents and doctors agree.",
+  "Treatment for transgender minors should be allowed only after extended evaluation by specialists, and no surgery before 18.",
+  "Medical treatment for transgender minors should be banned under 18, except in research studies.",
+  "Medical treatment for transgender minors should be banned under 18."
+ ],
+ "minors_transition_cases": [
+  "For a 16-year-old with parental consent, this should be allowed: {case}.",
+  "For a 16-year-old, even with parental consent, this shouldn't be allowed: {case}."
+ ],
+ "trans_school_sports": [
+  "Transgender girls should be able to play on girls' high school teams.",
+  "Transgender girls should be able to play on girls' teams if they meet medical criteria, like hormone levels.",
+  "Transgender girls should play on boys' teams or in an open category, not on girls' teams."
+ ],
+ "trans_adult_sports": [
+  "Transgender women should be able to compete in women's college events.",
+  "Transgender women should compete in women's college events if they meet hormone-level rules.",
+  "Transgender women should compete in women's events only if they didn't go through male puberty.",
+  "Transgender women should compete in men's or open categories, not women's events."
+ ],
+ "bathrooms": [
+  "Transgender people should use the restrooms and locker rooms that match their gender identity.",
+  "Transgender people should use private single-person facilities, or those that match their sex at birth.",
+  "Transgender people should use only the facilities that match their sex at birth."
+ ],
+ "id_sex_marker": [
+  "The sex on IDs should match a person's gender identity, with an \"X\" option.",
+  "The sex on IDs should match a person's gender identity, as male or female only.",
+  "The sex on IDs should be sex at birth, but people can change it after medical transition.",
+  "The sex on IDs should always be sex at birth."
+ ],
+ "school_pronouns": [
+  "Teachers should use a student's chosen name and pronouns whenever the student asks.",
+  "Teachers should use a student's chosen name and pronouns only if a parent agrees.",
+  "Teachers can use a student's chosen name and pronouns, but no teacher can be made to.",
+  "Teachers should use names and pronouns that match the student's sex at birth."
+ ],
+ "parent_notification": [
+  "A school should tell parents a student identifies as a different gender only if the student agrees.",
+  "A school should tell parents if the student is under 16; students 16 and older decide.",
+  "A school should tell parents unless staff believe the student would be at risk of abuse.",
+  "A school should always tell parents."
+ ],
+ "lgbt_nondiscrimination": [
+  "Federal law should ban discrimination against both gay and transgender people in housing, public services and businesses.",
+  "Federal law should ban discrimination against gay people in these areas, but not transgender people.",
+  "There shouldn't be a federal law; each state should decide these protections.",
+  "There shouldn't be these protections at any level of government."
+ ],
+ "nondiscrimination_exemptions": [
+  "This shouldn't be exempt from the anti-discrimination law: {case}.",
+  "This should be exempt from the anti-discrimination law: {case}."
+ ],
+ "gender_belief": [
+  "Whether someone is a man or a woman depends only on their gender identity.",
+  "Whether someone is a man or a woman depends mostly on their gender identity.",
+  "Whether someone is a man or a woman depends on both their sex at birth and their gender identity.",
+  "Whether someone is a man or a woman depends mostly on their sex at birth.",
+  "Whether someone is a man or a woman depends only on their sex at birth."
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "hate_speech_law": [
+  "Hateful public speech about a group shouldn't be a crime unless it threatens or incites violence, as now.",
+  "Only the most extreme hateful public speech, like calling a group subhuman, should be a crime.",
+  "Hateful public speech about people's race, religion, sexual orientation or gender identity should be punishable with fines or jail."
+ ],
+ "hateful_speaker_response": [
+  "The right response to legal but hateful speech is more speech, not trying to silence the speaker.",
+  "Criticism and boycotts are fair responses, but the speaker shouldn't lose their job or platform.",
+  "Platforms, venues and employers should drop people who say hateful things, even when it's legal.",
+  "The law should punish hateful speech toward a racial or religious group."
+ ],
+ "campus_speakers": [
+  "A public university should allow this talk: {case}.",
+  "A public university shouldn't allow this talk: {case}."
+ ],
+ "flag_burning": [
+  "Burning the American flag in protest should be legal, as protected speech.",
+  "Flag burning should be legal, but cities can ban open fires in certain places for safety.",
+  "The Constitution should be amended so flag burning can be banned."
+ ],
+ "protest_masks": [
+  "Wearing a mask to hide your identity at a protest should be legal.",
+  "Wearing a mask at a protest should be illegal only while committing a crime.",
+  "Wearing a mask to hide your identity at any protest should be illegal."
+ ],
+ "campus_encampments": [
+  "Public universities should allow peaceful protest camps on campus.",
+  "Public universities should allow protest camps only for a limited time, in designated areas.",
+  "Public universities should remove protest camps right away, even peaceful ones."
+ ],
+ "gov_misinformation": [
+  "Government shouldn't judge what's true online at all.",
+  "Government can publish its own corrections to false claims, but nothing more.",
+  "Government can flag posts it considers false, but can't require platforms to remove them.",
+  "Government agencies should decide what's false on topics like health and elections, and platforms should have to remove it."
+ ],
+ "misinfo_penalty": [
+  "There shouldn't be new penalties for spreading false information beyond existing fraud and defamation laws.",
+  "Knowingly spreading false claims about when, where or how to vote should be punishable, but nothing else new.",
+  "Knowingly spreading harmful false claims should be punishable with fines or jail."
+ ],
+ "jawboning": [
+  "Government officials should never pressure social media companies over legal speech.",
+  "Officials can ask platforms to remove posts only for clear legal violations, like threats.",
+  "Officials can ask platforms to remove legal posts, but every request must be made public.",
+  "Officials can ask platforms to remove legal posts they consider harmful, and the companies decide."
+ ],
+ "library_book_decisions": [
+  "School librarians, using professional standards, should decide whether a challenged book stays.",
+  "A committee of librarians, teachers and parents should decide whether a challenged book stays.",
+  "The elected school board should decide whether a challenged book stays.",
+  "One parent's objection should be enough to pull a book from the shelves while it's reviewed."
+ ],
+ "library_explicit": [
+  "High school libraries should freely carry literary novels with explicit sex scenes.",
+  "High school libraries can carry those novels, but students need a parent's permission to check them out.",
+  "High school libraries shouldn't carry novels with explicit descriptions of sex."
+ ],
+ "employer_speech": [
+  "The law should stop private employers from firing workers for legal political speech outside work.",
+  "Employers can fire workers for political speech outside work only if it directly harms the business.",
+  "Private employers should be free to fire workers for political views they express outside work."
+ ],
+ "employer_speech_cases": [
+  "An employer shouldn't be able to fire someone for this: {case}.",
+  "An employer should be able to fire someone for this: {case}."
+ ],
+ "defamation_public_figures": [
+  "Public figures should keep needing to prove an outlet knew a story was false or recklessly ignored the truth.",
+  "It should be somewhat easier for public figures to sue news outlets over false stories.",
+  "Public figures should only have to prove a story was false and harmful to win a lawsuit."
+ ],
+ "public_broadcasting": [
+  "The federal government should fund public radio and TV more than it has in the past.",
+  "The federal government should fund public radio and TV about as it has in the past.",
+  "The federal government shouldn't fund public broadcasting."
+ ],
+ "campus_speech_codes": [
+  "Public universities should be able to discipline students for offensive speech, even when it isn't a threat or harassment.",
+  "Public universities can discipline offensive speech only when it's repeated and aimed at a specific person.",
+  "Public universities shouldn't discipline students for offensive speech that isn't a threat or harassment."
+ ]
+}

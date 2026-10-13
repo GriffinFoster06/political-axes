@@ -1,187 +1,187 @@
 {
-  "domain_id": "D09",
-  "domain": "Abortion & reproduction",
-  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
-  "notes": "The legal rule and exceptions are in core_v0.json (abortion_rule, abortion_exceptions). High pole is consistently 'more restrictive'.",
-  "items": [
+ "domain_id": "D09",
+ "domain": "Abortion & reproduction",
+ "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+ "notes": "The legal rule and exceptions are in core_v0.json (abortion_rule, abortion_exceptions). High pole is consistently 'more restrictive'.",
+ "items": [
+  {
+   "id": "abortion_who_decides",
+   "subtopic": "Federal vs state decision",
+   "axis": [
+    "FED",
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "Should abortion law be the same across the country, or set by each state?",
+   "scope": "This is about who decides, whatever the law says.",
+   "context": "Since 2022 each state has set its own abortion law.",
+   "options": [
+    "The same nationwide, set by Congress",
+    "Mostly by Congress, with room for states to adjust details",
+    "Each state decides, as today"
+   ],
+   "high_pole": "states",
+   "facts": [
     {
-      "id": "abortion_who_decides",
-      "subtopic": "Federal vs state decision",
-      "axis": [
-        "FED",
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "Should abortion law be the same across the country, or set by each state?",
-      "scope": "This is about who decides, whatever the law says.",
-      "context": "Since 2022 each state has set its own abortion law.",
-      "options": [
-        "The same nationwide, set by Congress",
-        "Mostly by Congress, with room for states to adjust details",
-        "Each state decides, as today"
-      ],
-      "high_pole": "states",
-      "facts": [
-        {
-          "claim": "Dobbs v. Jackson Women's Health Organization (2022) returned abortion regulation to the states",
-          "source": "597 U.S. 215 (2022)",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "abortion_pills_mail",
-      "subtopic": "Abortion pills by mail",
-      "axis": [
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "Should doctors be allowed to prescribe abortion pills through an online visit and send them by mail?",
-      "scope": "Pills approved for use in about the first 10 weeks of pregnancy.",
-      "options": [
-        "Yes, to patients anywhere, including states where abortion is banned",
-        "Yes, but only to patients in states where abortion is legal",
-        "No; require an in-person visit with a doctor",
-        "No; abortion pills should not be available at all"
-      ],
-      "high_pole": "not available"
-    },
-    {
-      "id": "abortion_shield_laws",
-      "subtopic": "Abortion pills by mail",
-      "axis": [
-        "MORAL",
-        "FED"
-      ],
-      "format": "position",
-      "stem": "Should a state be able to protect its doctors from prosecution by another state for sending abortion pills to patients there?",
-      "scope": "The pills are legal where the doctor is but illegal where the patient is.",
-      "options": [
-        "Yes, fully protect them from other states' prosecution and lawsuits",
-        "Only for care given in person in the doctor's own state",
-        "No; doctors should face the laws of the patient's state"
-      ],
-      "high_pole": "no protection"
-    },
-    {
-      "id": "abortion_public_funding",
-      "subtopic": "Public funding of abortion",
-      "axis": [
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "Should government health programs like Medicaid pay for abortions?",
-      "scope": "In places where the abortion is legal.",
-      "context": "Federal money can pay only in cases of rape, incest or a threat to the woman's life.",
-      "options": [
-        "Yes, like any other medical care",
-        "Only for rape, incest or a threat to the woman's life, as federal law allows now",
-        "Never"
-      ],
-      "high_pole": "never",
-      "facts": [
-        {
-          "claim": "Hyde Amendment limits federal Medicaid abortion funding to rape, incest, or life endangerment",
-          "source": "Hyde Amendment (annual appropriations riders); KFF",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "ivf_embryos",
-      "subtopic": "IVF and embryo status",
-      "axis": [
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "In IVF, embryos are created in a lab, and unused ones may be frozen or discarded. Which comes closest to your view?",
-      "scope": "IVF is a fertility treatment for people who have trouble having children.",
-      "options": [
-        "Legal, and insurance should be required to cover it",
-        "Legal, with today's rules",
-        "Legal, but with limits so unused embryos are not destroyed",
-        "It should be banned because it destroys embryos"
-      ],
-      "high_pole": "banned"
-    },
-    {
-      "id": "contraception_access",
-      "subtopic": "Contraception access",
-      "axis": [
-        "MORAL"
-      ],
-      "format": "position",
-      "stem": "Which comes closest to your view on access to birth control?",
-      "scope": "Methods like the pill, IUDs and condoms, for adults.",
-      "options": [
-        "Free to anyone, with no prescription needed",
-        "Insurance must cover it at no extra cost, as today",
-        "Legal, but employers and insurers shouldn't have to cover it",
-        "Some types, such as emergency contraception, should be restricted"
-      ],
-      "high_pole": "restrict"
-    },
-    {
-      "id": "minors_abortion_parents",
-      "subtopic": "Parental involvement for minors",
-      "axis": [
-        "MORAL",
-        "FAMILY"
-      ],
-      "format": "position",
-      "stem": "Should a girl under 18 need a parent's involvement to get an abortion?",
-      "scope": "Where abortion is otherwise legal.",
-      "options": [
-        "No; she decides with her doctor",
-        "A parent must be told, but their permission isn't needed",
-        "A parent must give permission, but a judge can make an exception",
-        "A parent must give permission, with no exceptions"
-      ],
-      "high_pole": "permission required"
-    },
-    {
-      "id": "life_begins",
-      "subtopic": "Moral status of the unborn (belief)",
-      "axis": [
-        "MORAL"
-      ],
-      "format": "belief",
-      "stem": "At what point does a developing human have the same right to life as a born person?",
-      "scope": "Your own view, whatever the law says.",
-      "options": [
-        "Only at birth",
-        "Around viability, when it could survive outside the womb",
-        "When a heartbeat is detectable, about 6 weeks",
-        "At conception"
-      ],
-      "high_pole": "conception",
-      "definitions": [
-        {
-          "term": "viability",
-          "text": "The point after which a fetus could survive outside the womb with medical care, usually around 22 to 24 weeks.",
-          "source": "descriptive",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "surrogacy",
-      "subtopic": "Surrogacy",
-      "axis": [
-        "MORAL",
-        "LIBERTY"
-      ],
-      "format": "position",
-      "stem": "Should it be legal to pay a woman to carry a pregnancy for someone else?",
-      "scope": "Surrogacy arranged by contract between adults.",
-      "options": [
-        "Yes, legal and regulated",
-        "Only unpaid surrogacy, with expenses covered",
-        "No; ban surrogacy"
-      ],
-      "high_pole": "ban"
+     "claim": "Dobbs v. Jackson Women's Health Organization (2022) returned abortion regulation to the states",
+     "source": "597 U.S. 215 (2022)",
+     "checked": "2026-10-12",
+     "verify": false
     }
-  ]
+   ]
+  },
+  {
+   "id": "abortion_pills_mail",
+   "subtopic": "Abortion pills by mail",
+   "axis": [
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "Should doctors be allowed to prescribe abortion pills through an online visit and send them by mail?",
+   "scope": "Pills approved for use in about the first 10 weeks of pregnancy.",
+   "options": [
+    "Yes, to patients anywhere, including states where abortion is banned",
+    "Yes, but only to patients in states where abortion is legal",
+    "No; require an in-person visit with a doctor",
+    "No; abortion pills should not be available at all"
+   ],
+   "high_pole": "not available"
+  },
+  {
+   "id": "abortion_shield_laws",
+   "subtopic": "Abortion pills by mail",
+   "axis": [
+    "MORAL",
+    "FED"
+   ],
+   "format": "position",
+   "stem": "Should a state be able to protect its doctors from prosecution by another state for sending abortion pills to patients there?",
+   "scope": "The pills are legal where the doctor is but illegal where the patient is.",
+   "options": [
+    "Yes, fully protect them from other states' prosecution and lawsuits",
+    "Only for care given in person in the doctor's own state",
+    "No; doctors should face the laws of the patient's state"
+   ],
+   "high_pole": "no protection"
+  },
+  {
+   "id": "abortion_public_funding",
+   "subtopic": "Public funding of abortion",
+   "axis": [
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "Should government health programs like Medicaid pay for abortions?",
+   "scope": "In places where the abortion is legal.",
+   "context": "Federal money can pay only in cases of rape, incest or a threat to the woman's life.",
+   "options": [
+    "Yes, like any other medical care",
+    "Only for rape, incest or a threat to the woman's life, as federal law allows now",
+    "Never"
+   ],
+   "high_pole": "never",
+   "facts": [
+    {
+     "claim": "Hyde Amendment limits federal Medicaid abortion funding to rape, incest, or life endangerment",
+     "source": "Hyde Amendment (annual appropriations riders); KFF",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "ivf_embryos",
+   "subtopic": "IVF and embryo status",
+   "axis": [
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "In IVF, embryos are created in a lab, and unused ones may be frozen or discarded. Which comes closest to your view?",
+   "scope": "IVF is a fertility treatment for people who have trouble having children.",
+   "options": [
+    "Legal, and insurance should be required to cover it",
+    "Legal, with today's rules",
+    "Legal, but with limits so unused embryos are not destroyed",
+    "It should be banned because it destroys embryos"
+   ],
+   "high_pole": "banned"
+  },
+  {
+   "id": "contraception_access",
+   "subtopic": "Contraception access",
+   "axis": [
+    "MORAL"
+   ],
+   "format": "position",
+   "stem": "Which comes closest to your view on access to birth control?",
+   "scope": "Methods like the pill, IUDs and condoms, for adults.",
+   "options": [
+    "Free to anyone, with no prescription needed",
+    "Insurance must cover it at no extra cost, as today",
+    "Legal, but employers and insurers shouldn't have to cover it",
+    "Some types, such as emergency contraception, should be restricted"
+   ],
+   "high_pole": "restrict"
+  },
+  {
+   "id": "minors_abortion_parents",
+   "subtopic": "Parental involvement for minors",
+   "axis": [
+    "MORAL",
+    "FAMILY"
+   ],
+   "format": "position",
+   "stem": "Should a girl under 18 need a parent's involvement to get an abortion?",
+   "scope": "Where abortion is otherwise legal.",
+   "options": [
+    "No; she decides with her doctor",
+    "A parent must be told, but their permission isn't needed",
+    "A parent must give permission, but a judge can make an exception",
+    "A parent must give permission, with no exceptions"
+   ],
+   "high_pole": "permission required"
+  },
+  {
+   "id": "life_begins",
+   "subtopic": "Moral status of the unborn (belief)",
+   "axis": [
+    "MORAL"
+   ],
+   "format": "belief",
+   "stem": "At what point does a developing human have the same right to life as a born person?",
+   "scope": "Your own view, whatever the law says.",
+   "options": [
+    "Only at birth",
+    "Around viability, when it could survive outside the womb",
+    "When cardiac activity can first be detected, about 6 weeks",
+    "At conception"
+   ],
+   "high_pole": "conception",
+   "definitions": [
+    {
+     "term": "viability",
+     "text": "The point after which a fetus could survive outside the womb with medical care, usually around 22 to 24 weeks.",
+     "source": "descriptive",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "surrogacy",
+   "subtopic": "Surrogacy",
+   "axis": [
+    "MORAL",
+    "LIBERTY"
+   ],
+   "format": "position",
+   "stem": "Should it be legal to pay a woman to carry a pregnancy for someone else?",
+   "scope": "Surrogacy arranged by contract between adults.",
+   "options": [
+    "Yes, legal and regulated",
+    "Only unpaid surrogacy, with expenses covered",
+    "No; ban surrogacy"
+   ],
+   "high_pole": "ban"
+  }
+ ]
 }

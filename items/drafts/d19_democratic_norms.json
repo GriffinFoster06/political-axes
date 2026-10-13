@@ -1,490 +1,490 @@
 {
-  "domain_id": "D19",
-  "domain": "Democratic norms & executive power",
-  "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
-  "notes": "Every item is written for any president or candidate of either party (Rule 4). High pole is consistently 'more power to the executive / fewer checks'.",
-  "items": [
+ "domain_id": "D19",
+ "domain": "Democratic norms & executive power",
+ "status": "DRAFT v0.1: not yet reviewed, pretested or calibrated.",
+ "notes": "Every item is written for any president or candidate of either party (Rule 4). High pole is consistently 'more power to the executive / fewer checks'.",
+ "items": [
+  {
+   "id": "exec_orders_scope",
+   "subtopic": "Scope of executive orders",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "When Congress won't pass a policy the president wants, what should the president be able to do?",
+   "scope": "Answer for any president of either party, now or in the future.",
+   "options": [
+    "Wait for Congress; act alone only on how the executive branch itself runs",
+    "Act alone only in emergencies",
+    "Act alone where existing laws leave the president room to decide",
+    "Act alone through executive orders whenever the president thinks it's necessary"
+   ],
+   "high_pole": "more presidential power"
+  },
+  {
+   "id": "refuse_to_spend",
+   "subtopic": "Scope of executive orders",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "If Congress passes a law funding a program the president opposes, should the president be able to refuse to spend the money?",
+   "scope": "Answer for any president of either party.",
+   "context": "Under a 1974 law, a president can delay or ask Congress to cancel spending, but must spend it if Congress doesn't agree within 45 days.",
+   "options": [
+    "No; the president must spend it as Congress directed",
+    "The president can delay it briefly while asking Congress to cancel it, as current law allows",
+    "Yes, the president can refuse to spend money on programs the president considers wasteful"
+   ],
+   "high_pole": "more presidential power",
+   "facts": [
     {
-      "id": "exec_orders_scope",
-      "subtopic": "Scope of executive orders",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "When Congress won't pass a policy the president wants, what should the president be able to do?",
-      "scope": "Answer for any president of either party, now or in the future.",
-      "options": [
-        "Wait for Congress; act alone only on how the executive branch itself runs",
-        "Act alone only in emergencies",
-        "Act alone where existing laws leave the president room to decide",
-        "Act alone through executive orders whenever the president thinks it's necessary"
-      ],
-      "high_pole": "more presidential power"
-    },
-    {
-      "id": "refuse_to_spend",
-      "subtopic": "Scope of executive orders",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "If Congress passes a law funding a program the president opposes, should the president be able to refuse to spend the money?",
-      "scope": "Answer for any president of either party.",
-      "context": "Under a 1974 law, a president can delay or ask Congress to cancel spending, but must spend it if Congress doesn't agree within 45 days.",
-      "options": [
-        "No; the president must spend it as Congress directed",
-        "The president can delay it briefly while asking Congress to cancel it, as current law allows",
-        "Yes, the president can refuse to spend money on programs the president considers wasteful"
-      ],
-      "high_pole": "more presidential power",
-      "facts": [
-        {
-          "claim": "Impoundment Control Act of 1974: rescission proposals lapse unless Congress approves within 45 days of continuous session",
-          "source": "2 U.S.C. sec. 683; Government Accountability Office",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ],
-      "followup": "refuse_to_spend_cases",
-      "knowledge_heavy": true
-    },
-    {
-      "id": "refuse_to_spend_cases",
-      "subtopic": "Scope of executive orders",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "exceptions",
-      "stem": "Should a president be able to refuse to spend money Congress approved for each of these?",
-      "scope": "Answer each case separately, for any president.",
-      "options": [
-        "Should not be able to",
-        "Should be able to"
-      ],
-      "high_pole": "Should be able to",
-      "cases": [
-        {
-          "id": "rs_foreign_aid",
-          "text": "Foreign aid"
-        },
-        {
-          "id": "rs_border",
-          "text": "Border security"
-        },
-        {
-          "id": "rs_clean",
-          "text": "Clean-energy grants"
-        },
-        {
-          "id": "rs_police",
-          "text": "Grants to local police departments"
-        }
-      ],
-      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
-    },
-    {
-      "id": "emergency_duration",
-      "subtopic": "Emergency powers",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "When a president declares a national emergency to use special powers, how long should it last without Congress voting to approve it?",
-      "scope": "Answer for any president of either party.",
-      "context": "Today an emergency lasts until the president ends it, unless Congress passes a law ending it, which the president can veto.",
-      "options": [
-        "No special powers until Congress votes to approve",
-        "30 days, then Congress must approve",
-        "6 months, then Congress must approve",
-        "As long as the president decides, as today"
-      ],
-      "high_pole": "more presidential power",
-      "facts": [
-        {
-          "claim": "National Emergencies Act: emergency continues until terminated by the president or by joint resolution (subject to veto); annual renewal notice required",
-          "source": "50 U.S.C. sec. 1621-1622",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ],
-      "knowledge_heavy": true
-    },
-    {
-      "id": "emergency_funding",
-      "subtopic": "Emergency powers",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should a president be able to declare an emergency to pay for a project that Congress refused to fund?",
-      "scope": "Answer for any president of either party, and for projects you like or dislike.",
-      "options": [
-        "Never; spending decisions belong to Congress",
-        "Only for a sudden threat, such as an attack, until Congress can act",
-        "Yes, whenever the president judges the need is urgent"
-      ],
-      "high_pole": "more presidential power",
-      "followup": "emergency_funding_cases"
-    },
-    {
-      "id": "emergency_funding_cases",
-      "subtopic": "Emergency powers",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "exceptions",
-      "stem": "Should a president be able to declare an emergency to spend money that Congress refused to provide, for each of these?",
-      "scope": "Answer each case separately, for any president.",
-      "options": [
-        "Should not be able to",
-        "Should be able to"
-      ],
-      "high_pole": "Should be able to",
-      "cases": [
-        {
-          "id": "em_wall",
-          "text": "Building a wall on the southern border"
-        },
-        {
-          "id": "em_clean",
-          "text": "Building clean-energy projects"
-        },
-        {
-          "id": "em_student_debt",
-          "text": "Canceling student loan debt"
-        },
-        {
-          "id": "em_hurricane",
-          "text": "Rebuilding after a major hurricane"
-        }
-      ],
-      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
-    },
-    {
-      "id": "civil_service",
-      "subtopic": "Independent agencies and civil service",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should a president be able to fire career government employees, such as scientists and analysts, for disagreeing with the president's policies?",
-      "scope": "Career employees are hired for their skills, not appointed for their politics. Answer for any president.",
-      "options": [
-        "No; they should be protected from firing over policy disagreements",
-        "Only senior employees who help make policy, not regular staff",
-        "Yes, most federal employees should be fireable at will"
-      ],
-      "high_pole": "more presidential power"
-    },
-    {
-      "id": "independent_agencies",
-      "subtopic": "Independent agencies and civil service",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Some agencies, like the Federal Reserve, are set up so the president can't fire their leaders over policy disagreements. Which comes closest to your view?",
-      "scope": "Answer for any president of either party.",
-      "options": [
-        "Keep these agencies independent, and make more agencies independent",
-        "Keep the independent agencies we have",
-        "Keep only the Federal Reserve independent",
-        "The president should be able to fire any agency leader"
-      ],
-      "high_pole": "more presidential power",
-      "definitions": [
-        {
-          "term": "Federal Reserve",
-          "text": "The central bank of the US, which sets interest rates and oversees banks.",
-          "source": "Federal Reserve Board",
-          "verify": false
-        }
-      ],
-      "knowledge_heavy": true
-    },
-    {
-      "id": "prosecute_opponents",
-      "subtopic": "Investigating or prosecuting political opponents",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should a president be involved in deciding whether the Justice Department investigates specific people?",
-      "scope": "Think about political opponents or critics of the president. Answer for any president of either party.",
-      "options": [
-        "Never; those decisions belong to career prosecutors",
-        "The president can raise concerns, but career prosecutors decide",
-        "The president can order investigations of specific people the president believes broke the law"
-      ],
-      "high_pole": "more presidential power"
-    },
-    {
-      "id": "pardon_allies",
-      "subtopic": "Investigating or prosecuting political opponents",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should presidents pardon their own family members, associates or political allies?",
-      "scope": "Answer for any president of either party.",
-      "options": [
-        "Never; amend the Constitution to forbid it",
-        "It's legal, but presidents should almost never do it",
-        "It's acceptable when the president believes they were treated unfairly"
-      ],
-      "high_pole": "acceptable"
-    },
-    {
-      "id": "accept_results",
-      "subtopic": "Accepting election results",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "A candidate believes they lost an election because of fraud, but courts and election officials have confirmed the result. What should the candidate do?",
-      "scope": "Answer for a candidate of any party, in any federal or state election.",
-      "options": [
-        "Concede and accept the result",
-        "Accept the result but keep saying publicly that it was stolen",
-        "Keep fighting it, including asking legislators to overturn the result",
-        "Refuse to accept it and urge supporters to resist"
-      ],
-      "high_pole": "less acceptance"
-    },
-    {
-      "id": "checks_vs_action",
-      "subtopic": "Checks and balances vs getting things done",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "tradeoff",
-      "stem": "Which kind of system is closer to what you want?",
-      "scope": "Think about the federal government in general, whichever party is in charge.",
-      "sides": [
-        {
-          "label": "Strong checks",
-          "text": "No single leader can act without others agreeing, even if needed changes take years."
-        },
-        {
-          "label": "Leaders can act",
-          "text": "An elected leader can act quickly, even if there are fewer checks on mistakes or abuse."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "courts_vs_majority",
-      "subtopic": "Checks and balances vs getting things done",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "tradeoff",
-      "stem": "Which comes closer to your view of courts?",
-      "scope": "Think about laws in general, including ones you like and dislike.",
-      "sides": [
-        {
-          "label": "Courts can overrule",
-          "text": "Courts should strike down laws that violate the Constitution, even when most voters support them."
-        },
-        {
-          "label": "Majority rules",
-          "text": "When most voters clearly support a law, courts should rarely overrule it, even if the law takes away some people's rights."
-        }
-      ],
-      "options": [
-        "Clearly A",
-        "Lean A",
-        "Lean B",
-        "Clearly B"
-      ],
-      "high_pole": "Clearly B"
-    },
-    {
-      "id": "filibuster",
-      "subtopic": "Checks and balances vs getting things done",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Most bills in the Senate need 60 of 100 votes to pass. What should happen to this rule?",
-      "scope": "Answer for either party being in the majority.",
-      "options": [
-        "Expand it, so nominations for judges and cabinet posts also need 60 votes",
-        "Keep it as it is",
-        "Keep it, but make senators who block a bill stay and speak on the floor",
-        "End it for some kinds of bills, such as voting rights or budget bills",
-        "End it; a simple majority should pass bills"
-      ],
-      "high_pole": "majority rule",
-      "definitions": [
-        {
-          "term": "60 of 100 votes",
-          "text": "Under Senate rules, ending debate on most bills needs 60 votes. A senator can otherwise delay a vote indefinitely (a filibuster).",
-          "source": "US Senate, Rule XXII",
-          "verify": false
-        }
-      ],
-      "notes": "Positions on this rule historically flip with Senate control; watch for DIF by party.",
-      "followup": "filibuster_cases"
-    },
-    {
-      "id": "filibuster_cases",
-      "subtopic": "Checks and balances vs getting things done",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "exceptions",
-      "stem": "Suppose 51 senators but not 60 support each of these. Should the majority be able to pass it?",
-      "scope": "Answer each case separately, whatever you think of the bill itself.",
-      "options": [
-        "No; keep the 60-vote rule",
-        "Yes; let the majority pass it"
-      ],
-      "high_pole": "Yes; let the majority pass it",
-      "cases": [
-        {
-          "id": "fb_abortion_protect",
-          "text": "A national law protecting abortion access"
-        },
-        {
-          "id": "fb_abortion_restrict",
-          "text": "A national law restricting abortion"
-        },
-        {
-          "id": "fb_mail_voting",
-          "text": "A law expanding mail voting nationwide"
-        },
-        {
-          "id": "fb_voter_id",
-          "text": "A law requiring photo ID to vote nationwide"
-        }
-      ],
-      "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
-    },
-    {
-      "id": "rule_bending_leader",
-      "subtopic": "Strong leader who bends rules",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "How do you feel about a president who bends or works around rules that block what voters elected them to do?",
-      "scope": "Answer for any president of either party.",
-      "options": [
-        "That is never acceptable",
-        "Acceptable only in a real emergency",
-        "Acceptable when the rules clearly stand in the way of what voters chose",
-        "The country needs a leader willing to do that"
-      ],
-      "high_pole": "accept rule-bending"
-    },
-    {
-      "id": "political_violence",
-      "subtopic": "Political violence",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Is violence ever justified to achieve political goals in the US today?",
-      "scope": "This is about violence by any group, for any cause. Self-defense against an attack is not included.",
-      "options": [
-        "Never",
-        "Only against a government that has seized power illegally",
-        "Sometimes, when peaceful methods have failed"
-      ],
-      "high_pole": "sometimes",
-      "notes": "Expected to be very skewed. Kept for the issue map; may not meet discrimination criteria for scoring."
-    },
-    {
-      "id": "court_expansion",
-      "subtopic": "Supreme Court size",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should Congress change the number of Supreme Court justices?",
-      "scope": "There have been 9 since 1869. Answer whichever party would gain.",
-      "options": [
-        "Yes, add justices when the majority wants different rulings",
-        "Only as part of a bipartisan reform",
-        "No; keep it at 9"
-      ],
-      "high_pole": "keep 9",
-      "notes": "High pole here is 'keep' (more restraint), the reverse of most NORMS items."
-    },
-    {
-      "id": "presidential_immunity",
-      "subtopic": "Presidential immunity",
-      "axis": [
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "Should former presidents be immune from criminal prosecution for things they did as president?",
-      "scope": "Answer for any president of either party.",
-      "context": "In 2024 the Supreme Court ruled that former presidents have broad immunity for official acts.",
-      "options": [
-        "No; they can be prosecuted like anyone else",
-        "Only for core duties set by the Constitution",
-        "Yes, for all official acts"
-      ],
-      "high_pole": "full immunity",
-      "facts": [
-        {
-          "claim": "Supreme Court held former presidents have absolute immunity for core constitutional acts and presumptive immunity for other official acts",
-          "source": "603 U.S. 593 (2024)",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
-    },
-    {
-      "id": "press_retaliation",
-      "subtopic": "Government action against news outlets",
-      "axis": [
-        "NORMS",
-        "SPEECH"
-      ],
-      "format": "position",
-      "stem": "Should a president be able to punish news outlets that cover them unfairly, such as by pulling broadcast licenses or press access?",
-      "scope": "Answer for any president of either party.",
-      "options": [
-        "Never; a president should not punish outlets for their coverage",
-        "Only limit access to events like briefings, not licenses",
-        "Yes, outlets that spread falsehoods should face consequences"
-      ],
-      "high_pole": "yes"
-    },
-    {
-      "id": "agency_deference",
-      "subtopic": "Court deference to agencies",
-      "axis": [
-        "TRUST",
-        "NORMS"
-      ],
-      "format": "position",
-      "stem": "When a law is unclear, should courts defer to the judgment of the federal agency experts who carry it out?",
-      "scope": "Agencies of any administration.",
-      "context": "In 2024 the Supreme Court ended a rule that required courts to defer to agencies in many such cases.",
-      "options": [
-        "Yes, courts should usually defer",
-        "Only on technical or scientific questions",
-        "No; judges should decide what the law means themselves"
-      ],
-      "high_pole": "judges decide",
-      "facts": [
-        {
-          "claim": "Loper Bright Enterprises v. Raimondo (2024) overruled Chevron deference",
-          "source": "603 U.S. 369 (2024)",
-          "checked": "2026-10-12",
-          "verify": false
-        }
-      ]
+     "claim": "Impoundment Control Act of 1974: rescission proposals lapse unless Congress approves within 45 days of continuous session",
+     "source": "2 U.S.C. sec. 683; Government Accountability Office",
+     "checked": "2026-10-12",
+     "verify": false
     }
-  ]
+   ],
+   "followup": "refuse_to_spend_cases",
+   "knowledge_heavy": true
+  },
+  {
+   "id": "refuse_to_spend_cases",
+   "subtopic": "Scope of executive orders",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "exceptions",
+   "stem": "Should a president be able to refuse to spend money Congress approved for each of these?",
+   "scope": "Answer each case separately, for any president.",
+   "options": [
+    "Should not be able to",
+    "Should be able to"
+   ],
+   "high_pole": "Should be able to",
+   "cases": [
+    {
+     "id": "rs_foreign_aid",
+     "text": "Foreign aid"
+    },
+    {
+     "id": "rs_border",
+     "text": "Border security"
+    },
+    {
+     "id": "rs_clean",
+     "text": "Clean-energy grants"
+    },
+    {
+     "id": "rs_police",
+     "text": "Grants to local police departments"
+    }
+   ],
+   "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
+  },
+  {
+   "id": "emergency_duration",
+   "subtopic": "Emergency powers",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "When a president declares a national emergency to use special powers, how long should it last without Congress voting to approve it?",
+   "scope": "Answer for any president of either party.",
+   "context": "Today an emergency lasts until the president ends it, unless Congress passes a law ending it, which the president can veto.",
+   "options": [
+    "No special powers until Congress votes to approve",
+    "30 days, then Congress must approve",
+    "6 months, then Congress must approve",
+    "As long as the president decides, as today"
+   ],
+   "high_pole": "more presidential power",
+   "facts": [
+    {
+     "claim": "National Emergencies Act: emergency continues until terminated by the president or by joint resolution (subject to veto); annual renewal notice required",
+     "source": "50 U.S.C. sec. 1621-1622",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ],
+   "knowledge_heavy": true
+  },
+  {
+   "id": "emergency_funding",
+   "subtopic": "Emergency powers",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should a president be able to declare an emergency to pay for a project that Congress refused to fund?",
+   "scope": "Answer for any president of either party, and for projects you like or dislike.",
+   "options": [
+    "Never; spending decisions belong to Congress",
+    "Only for a sudden threat, such as an attack, until Congress can act",
+    "Yes, whenever the president judges the need is urgent"
+   ],
+   "high_pole": "more presidential power",
+   "followup": "emergency_funding_cases"
+  },
+  {
+   "id": "emergency_funding_cases",
+   "subtopic": "Emergency powers",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "exceptions",
+   "stem": "Should a president be able to declare an emergency to spend money that Congress refused to provide, for each of these?",
+   "scope": "Answer each case separately, for any president.",
+   "options": [
+    "Should not be able to",
+    "Should be able to"
+   ],
+   "high_pole": "Should be able to",
+   "cases": [
+    {
+     "id": "em_wall",
+     "text": "Building a wall on the southern border"
+    },
+    {
+     "id": "em_clean",
+     "text": "Building clean-energy projects"
+    },
+    {
+     "id": "em_student_debt",
+     "text": "Canceling student loan debt"
+    },
+    {
+     "id": "em_hurricane",
+     "text": "Rebuilding after a major hurricane"
+    }
+   ],
+   "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
+  },
+  {
+   "id": "civil_service",
+   "subtopic": "Independent agencies and civil service",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should a president be able to fire career government employees, such as scientists and analysts, for disagreeing with the president's policies?",
+   "scope": "Career employees are hired for their skills, not appointed for their politics. Answer for any president.",
+   "options": [
+    "No; they should be protected from firing over policy disagreements",
+    "Only senior employees who help make policy, not regular staff",
+    "Yes, most federal employees should be fireable at will"
+   ],
+   "high_pole": "more presidential power"
+  },
+  {
+   "id": "independent_agencies",
+   "subtopic": "Independent agencies and civil service",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Some agencies, like the Federal Reserve, are set up so the president can't fire their leaders over policy disagreements. Which comes closest to your view?",
+   "scope": "Answer for any president of either party.",
+   "options": [
+    "Keep these agencies independent, and make more agencies independent",
+    "Keep the independent agencies we have",
+    "Keep only the Federal Reserve independent",
+    "The president should be able to fire any agency leader"
+   ],
+   "high_pole": "more presidential power",
+   "definitions": [
+    {
+     "term": "Federal Reserve",
+     "text": "The central bank of the US, which sets interest rates and oversees banks.",
+     "source": "Federal Reserve Board",
+     "verify": false
+    }
+   ],
+   "knowledge_heavy": true
+  },
+  {
+   "id": "prosecute_opponents",
+   "subtopic": "Investigating or prosecuting political opponents",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should a president be involved in deciding whether the Justice Department investigates specific people?",
+   "scope": "Think about political opponents or critics of the president. Answer for any president of either party.",
+   "options": [
+    "Never; those decisions belong to career prosecutors",
+    "The president can raise concerns, but career prosecutors decide",
+    "The president can order investigations of specific people the president believes broke the law"
+   ],
+   "high_pole": "more presidential power"
+  },
+  {
+   "id": "pardon_allies",
+   "subtopic": "Investigating or prosecuting political opponents",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should presidents pardon their own family members, associates or political allies?",
+   "scope": "Answer for any president of either party.",
+   "options": [
+    "Never; amend the Constitution to forbid it",
+    "It's legal, but presidents should almost never do it",
+    "It's acceptable when the president believes they were treated unfairly"
+   ],
+   "high_pole": "acceptable"
+  },
+  {
+   "id": "accept_results",
+   "subtopic": "Accepting election results",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "A candidate believes they lost an election because of fraud, but courts and election officials have confirmed the result. What should the candidate do?",
+   "scope": "Answer for a candidate of any party, in any federal or state election.",
+   "options": [
+    "Concede and accept the result",
+    "Accept the result but keep saying publicly that it was stolen",
+    "Keep fighting it, including asking legislators to overturn the result",
+    "Refuse to accept it and urge supporters to resist"
+   ],
+   "high_pole": "less acceptance"
+  },
+  {
+   "id": "checks_vs_action",
+   "subtopic": "Checks and balances vs getting things done",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "tradeoff",
+   "stem": "Which kind of system is closer to what you want?",
+   "scope": "Think about the federal government in general, whichever party is in charge.",
+   "sides": [
+    {
+     "label": "Strong checks",
+     "text": "No single leader can act without others agreeing, even if needed changes take years."
+    },
+    {
+     "label": "Leaders can act",
+     "text": "An elected leader can act quickly, even if there are fewer checks on mistakes or abuse."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "courts_vs_majority",
+   "subtopic": "Checks and balances vs getting things done",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "tradeoff",
+   "stem": "Which comes closer to your view of courts?",
+   "scope": "Think about laws in general, including ones you like and dislike.",
+   "sides": [
+    {
+     "label": "Courts can overrule",
+     "text": "Courts should strike down laws that violate the Constitution, even when most voters support them."
+    },
+    {
+     "label": "Majority rules",
+     "text": "When most voters clearly support a law, courts should rarely overrule it, even if the law takes away some people's rights."
+    }
+   ],
+   "options": [
+    "Clearly A",
+    "Lean A",
+    "Lean B",
+    "Clearly B"
+   ],
+   "high_pole": "Clearly B"
+  },
+  {
+   "id": "filibuster",
+   "subtopic": "Checks and balances vs getting things done",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Most bills in the Senate need 60 of 100 votes to pass. What should happen to this rule?",
+   "scope": "Answer for either party being in the majority.",
+   "options": [
+    "Expand it, so nominations for judges and cabinet posts also need 60 votes",
+    "Keep it as it is",
+    "Keep it, but make senators who block a bill stay and speak on the floor",
+    "End it for some kinds of bills, such as voting rights or budget bills",
+    "End it; a simple majority should pass bills"
+   ],
+   "high_pole": "majority rule",
+   "definitions": [
+    {
+     "term": "60 of 100 votes",
+     "text": "Under Senate rules, ending debate on most bills needs 60 votes. A senator can otherwise delay a vote indefinitely (a filibuster).",
+     "source": "US Senate, Rule XXII",
+     "verify": false
+    }
+   ],
+   "notes": "Positions on this rule historically flip with Senate control; watch for DIF by party.",
+   "followup": "filibuster_cases"
+  },
+  {
+   "id": "filibuster_cases",
+   "subtopic": "Checks and balances vs getting things done",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "exceptions",
+   "stem": "Suppose 51 senators but not 60 support each of these. Should the majority be able to pass it?",
+   "scope": "Answer each case separately, whatever you think of the bill itself.",
+   "options": [
+    "No; keep the 60-vote rule",
+    "Yes; let the majority pass it"
+   ],
+   "high_pole": "Yes; let the majority pass it",
+   "cases": [
+    {
+     "id": "fb_abortion_protect",
+     "text": "A national law protecting abortion access"
+    },
+    {
+     "id": "fb_abortion_restrict",
+     "text": "A national law restricting abortion"
+    },
+    {
+     "id": "fb_mail_voting",
+     "text": "A law expanding mail voting nationwide"
+    },
+    {
+     "id": "fb_voter_id",
+     "text": "A law requiring photo ID to vote nationwide"
+    }
+   ],
+   "notes": "Mirror cases: the same rule with each side benefiting. Consistency across cases is scored separately (preregistration §6a)."
+  },
+  {
+   "id": "rule_bending_leader",
+   "subtopic": "Strong leader who bends rules",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "How do you feel about a president who bends or works around rules that block what voters elected them to do?",
+   "scope": "“Rules” here means laws, court rulings and official procedures. Answer for any president of either party.",
+   "options": [
+    "That is never acceptable",
+    "Acceptable only in a real emergency",
+    "Acceptable when the rules clearly stand in the way of what voters chose",
+    "The country needs a leader willing to do that"
+   ],
+   "high_pole": "accept rule-bending"
+  },
+  {
+   "id": "political_violence",
+   "subtopic": "Political violence",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Is violence ever justified to achieve political goals in the US today?",
+   "scope": "This is about violence by any group, for any cause. Self-defense against an attack is not included.",
+   "options": [
+    "Never",
+    "Only against a government that has seized power illegally",
+    "Sometimes, when peaceful methods have failed"
+   ],
+   "high_pole": "sometimes",
+   "notes": "Expected to be very skewed. Kept for the issue map; may not meet discrimination criteria for scoring."
+  },
+  {
+   "id": "court_expansion",
+   "subtopic": "Supreme Court size",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should Congress change the number of Supreme Court justices?",
+   "scope": "There have been 9 since 1869. Answer whichever party would gain.",
+   "options": [
+    "Yes, add justices when the party in power wants different rulings",
+    "Only as part of a bipartisan reform",
+    "No; keep it at 9"
+   ],
+   "high_pole": "keep 9",
+   "notes": "High pole here is 'keep' (more restraint), the reverse of most NORMS items."
+  },
+  {
+   "id": "presidential_immunity",
+   "subtopic": "Presidential immunity",
+   "axis": [
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "Should former presidents be immune from criminal prosecution for things they did as president?",
+   "scope": "Answer for any president of either party.",
+   "context": "In 2024 the Supreme Court ruled that former presidents have broad immunity for official acts.",
+   "options": [
+    "No; they can be prosecuted like anyone else",
+    "Only for core duties set by the Constitution",
+    "Yes, for all official acts"
+   ],
+   "high_pole": "full immunity",
+   "facts": [
+    {
+     "claim": "Supreme Court held former presidents have absolute immunity for core constitutional acts and presumptive immunity for other official acts",
+     "source": "603 U.S. 593 (2024)",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ]
+  },
+  {
+   "id": "press_retaliation",
+   "subtopic": "Government action against news outlets",
+   "axis": [
+    "NORMS",
+    "SPEECH"
+   ],
+   "format": "position",
+   "stem": "Should a president be able to punish news outlets that cover them unfairly, such as by pulling broadcast licenses or press access?",
+   "scope": "Answer for any president of either party.",
+   "options": [
+    "Never; a president should not punish outlets for their coverage",
+    "Only limit access to events like briefings, not licenses",
+    "Yes, the president can punish outlets the president believes spread falsehoods"
+   ],
+   "high_pole": "yes"
+  },
+  {
+   "id": "agency_deference",
+   "subtopic": "Court deference to agencies",
+   "axis": [
+    "TRUST",
+    "NORMS"
+   ],
+   "format": "position",
+   "stem": "When a law is unclear, should courts defer to the judgment of the federal agency experts who carry it out?",
+   "scope": "Agencies of any administration.",
+   "context": "In 2024 the Supreme Court ended a rule that required courts to defer to agencies in many such cases.",
+   "options": [
+    "Yes, courts should usually defer",
+    "Only on technical or scientific questions",
+    "No; judges should decide what the law means themselves"
+   ],
+   "high_pole": "judges decide",
+   "facts": [
+    {
+     "claim": "Loper Bright Enterprises v. Raimondo (2024) overruled Chevron deference",
+     "source": "603 U.S. 369 (2024)",
+     "checked": "2026-10-12",
+     "verify": false
+    }
+   ]
+  }
+ ]
 }

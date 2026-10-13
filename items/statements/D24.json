@@ -1,0 +1,63 @@
+{
+ "national_vs_state_tradeoff": {
+  "s": [
+   "Major policies should be set nationally so rules are the same everywhere, even if some states disagree.",
+   "I lean toward national standards.",
+   "I lean toward letting states decide.",
+   "States should decide most policies, even if rules differ from state to state."
+  ],
+  "torn": "I weigh national standards and state control about equally."
+ },
+ "closer_government_tradeoff": {
+  "s": [
+   "The federal government solves problems like roads, schools and public health better, even if it's far from local conditions.",
+   "I lean toward the federal government solving these problems.",
+   "I lean toward state and local governments solving these problems.",
+   "State and local governments solve these problems better, even if some lack money or expertise."
+  ],
+  "torn": "I'd trust federal and state or local government about equally."
+ },
+ "states_differ": [
+  "This should be the same nationwide: {case}.",
+  "Each state should decide this: {case}."
+ ],
+ "state_preemption": [
+  "States should be able to stop cities from passing their own laws on things like minimum wage, guns or plastic bags.",
+  "States should override city laws only where one statewide rule is clearly needed.",
+  "Cities should be able to set their own rules on these things, without states overriding them."
+ ],
+ "grant_conditions": [
+  "The federal government should be able to withhold money from states over any policy it chooses.",
+  "The federal government can attach conditions only about how that money is spent.",
+  "Federal money to states should come with no conditions; states spend it as they see fit."
+ ],
+ "grant_conditions_cases": [
+  "The federal government shouldn't be able to cut a state's or city's funding for this: {case}.",
+  "The federal government should be able to cut a state's or city's funding for this: {case}."
+ ],
+ "state_refusal": [
+  "States must help enforce federal laws, even ones they disagree with.",
+  "States can decline to use their own police and resources on federal laws, but can't block federal agents.",
+  "States can refuse to help and pass laws blocking federal enforcement within their borders."
+ ],
+ "state_refusal_cases": [
+  "States must help enforce this: {case}.",
+  "States should be able to refuse to help enforce this: {case}."
+ ],
+ "federal_size": [
+  "The federal government should be much bigger, doing much more.",
+  "The federal government should be somewhat bigger.",
+  "The federal government should stay about the size it is now.",
+  "The federal government should be somewhat smaller.",
+  "The federal government should be much smaller, doing far less."
+ ],
+ "experimentation_tradeoff": {
+  "s": [
+   "When it's unclear what works, the country should pick one national approach based on the best evidence, even if states can't try alternatives.",
+   "I lean toward one national approach.",
+   "I lean toward letting states experiment.",
+   "States should try different approaches, even if some get it wrong and people there are worse off."
+  ],
+  "torn": "I weigh one national approach and state experiments about equally."
+ }
+}

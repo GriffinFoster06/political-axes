@@ -1,0 +1,145 @@
+{
+ "engagement_tradeoff": {
+  "s": [
+   "The US should take an active role in world affairs, even if it's costly and risks war.",
+   "I lean toward the US taking an active role in the world.",
+   "I lean toward the US focusing on problems at home.",
+   "The US should focus at home and stay out of other countries' affairs, even if rivals gain influence."
+  ],
+  "torn": "I weigh an active role abroad and focusing at home about equally."
+ },
+ "allies_tradeoff": {
+  "s": [
+   "The US should work through alliances and agreements, even if that means compromising sometimes.",
+   "I lean toward working with allies.",
+   "I lean toward the US acting on its own when needed.",
+   "The US should act on its own to pursue its interests, even if allies object."
+  ],
+  "torn": "I weigh working with allies and acting alone about equally."
+ },
+ "ally_attacked": [
+  "If a treaty ally like a NATO member is attacked, the US should send troops to help defend it.",
+  "The US should send weapons and money to an attacked ally, but not troops.",
+  "The US should sanction the attacker and send humanitarian aid, but not weapons or troops.",
+  "The US should stay out of it, even when a treaty ally is attacked."
+ ],
+ "nato": [
+  "The US should stay in NATO and strengthen its commitment.",
+  "The US should stay in NATO, but require allies to spend much more on defense.",
+  "The US should stay in NATO, but bring some of its forces home from Europe.",
+  "The US should leave NATO and bring its forces home from Europe."
+ ],
+ "defense_spending": [
+  "Military spending should be cut by a quarter or more.",
+  "Military spending should be cut somewhat.",
+  "Military spending should stay about the same.",
+  "Military spending should go up somewhat.",
+  "Military spending should go up a lot."
+ ],
+ "troops_abroad": [
+  "Most US troops at bases in countries like Germany, Japan and South Korea should come home.",
+  "US troops abroad should be reduced gradually.",
+  "US troops abroad should stay at about today's level.",
+  "The US should station more troops abroad."
+ ],
+ "use_force_cases": [
+  "I'd oppose using US military force for this: {case}.",
+  "I'd support using US military force for this: {case}."
+ ],
+ "foreign_aid_level": [
+  "US economic, health and humanitarian aid abroad should go up a lot.",
+  "US foreign aid should go up somewhat.",
+  "US foreign aid should stay about the same.",
+  "US foreign aid should be cut somewhat.",
+  "Most US foreign aid should end."
+ ],
+ "global_health_aid": [
+  "US funding to fight diseases like HIV and malaria abroad should go up.",
+  "US funding for global health programs should stay about the same.",
+  "US funding for global health programs should go down.",
+  "The US should stop funding global health programs; that's for other countries to handle."
+ ],
+ "israel_military_aid": [
+  "The US should give Israel military aid without conditions.",
+  "The US should give Israel military aid, with conditions on how weapons are used.",
+  "The US should give Israel only defensive military aid, like missile defense.",
+  "The US shouldn't give Israel military aid."
+ ],
+ "palestinian_state": [
+  "The US should push hard now for an independent Palestinian state alongside Israel.",
+  "The US should support a Palestinian state, but only after a negotiated peace with security guarantees for Israel.",
+  "The US shouldn't support creating a Palestinian state."
+ ],
+ "ukraine_support": [
+  "The US should send more military aid to help Ukraine win back its territory.",
+  "The US should give Ukraine enough aid to defend itself while pushing for talks.",
+  "The US should end most aid and press Ukraine to accept a settlement.",
+  "The US should end all aid to Ukraine and stay out."
+ ],
+ "taiwan_defense": [
+  "If China invaded Taiwan, the US should stay out.",
+  "If China invaded Taiwan, the US should impose sanctions on China, and do nothing more.",
+  "If China invaded Taiwan, the US should send weapons and impose sanctions, but not troops.",
+  "If China invaded Taiwan, the US should send its own forces to defend Taiwan."
+ ],
+ "china_posture": [
+  "The US should cooperate with China on shared problems and avoid confrontation.",
+  "The US should compete with China economically, but keep talking and cooperate where possible.",
+  "The US should treat China as its main adversary and confront it on every front."
+ ],
+ "united_nations": [
+  "The UN should get more power and funding from the US.",
+  "The US should stay in the UN and pay its full share.",
+  "The US should stay in the UN, but cut funding and take part less.",
+  "The US should leave the UN."
+ ],
+ "international_courts": [
+  "The US should join the International Criminal Court and accept its authority, including over Americans.",
+  "The US should cooperate with the court case by case, without joining.",
+  "The US shouldn't join or cooperate with the International Criminal Court.",
+  "The US shouldn't join, and should punish the court when it targets Americans or US allies."
+ ],
+ "human_rights_tradeoff": {
+  "s": [
+   "The US should press countries on human rights, even if it hurts trade or security ties.",
+   "I lean toward pressing countries on human rights.",
+   "I lean toward working with countries when it serves US interests.",
+   "The US should work with countries when it serves US interests, whatever their human rights record."
+  ],
+  "torn": "I weigh human rights and US interests about equally."
+ },
+ "nuclear_arms_control": [
+  "The US should negotiate with Russia and China for sharp nuclear cuts, aiming eventually for none.",
+  "The US should negotiate mutual limits while keeping a strong nuclear arsenal.",
+  "The US shouldn't negotiate limits; it should build up its nuclear forces without limits."
+ ],
+ "national_service": [
+  "Service should stay fully voluntary for young Americans.",
+  "Service shouldn't be required, but should come with strong rewards like college aid.",
+  "Every young American should have to do a year of military or civilian service.",
+  "Every young American should have to do military service."
+ ],
+ "strikes_on_terrorists": [
+  "The US should never use drone strikes against terrorist leaders in other countries.",
+  "The US should use drone strikes against terrorist leaders only with the other country's permission.",
+  "The US should strike terrorist leaders wherever they are, with or without permission."
+ ],
+ "arms_sales": [
+  "The US shouldn't let companies sell weapons to any other country.",
+  "The US should allow weapons sales only to close allies that are democracies.",
+  "The US should allow weapons sales to friendly countries, except those with poor human rights records.",
+  "The US should allow weapons sales to any friendly government."
+ ],
+ "iran_nuclear": [
+  "If Iran moved to build a nuclear weapon, the US should negotiate and accept some risk.",
+  "The US should negotiate, backed by tough sanctions, but not strike.",
+  "The US should strike Iran's nuclear sites if talks fail.",
+  "The US should strike Iran's nuclear sites right away."
+ ],
+ "acquire_territory": [
+  "The US shouldn't try to gain new territory like Greenland.",
+  "The US should gain new territory only if the people living there vote for it.",
+  "The US should try to buy or negotiate for new territory, even if the people there object.",
+  "The US should gain new territory by any means, including economic or military pressure."
+ ]
+}

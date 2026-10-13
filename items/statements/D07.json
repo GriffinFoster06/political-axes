@@ -1,0 +1,114 @@
+{
+ "ai_regulation_level": [
+  "Development of the most advanced AI should be paused until safety rules are in place.",
+  "Major new AI systems should have to pass testing and get approval before release.",
+  "AI should face targeted rules for specific harms, like fraud and discrimination, enforced by existing agencies.",
+  "There should be few or no new AI rules; the industry should develop and fix problems as they come up."
+ ],
+ "ai_state_laws": [
+  "States should be free to pass AI laws stricter than federal law.",
+  "States can pass their own AI laws until there's a federal one, which would then take over.",
+  "One national AI standard should override state AI laws."
+ ],
+ "ai_china_race": [
+  "Competing with China shouldn't affect US AI safety rules at all; safety comes first.",
+  "US AI rules should avoid putting US companies far behind China, but safety still matters.",
+  "Staying ahead of China in AI matters more than most safety concerns."
+ ],
+ "ai_licensing": [
+  "The most powerful AI systems should need government approval, after government safety testing, before release.",
+  "The most powerful AI systems should need a license from an independent safety body, not a government agency.",
+  "No approval needed, but companies must test the most powerful systems for dangers and report the results to the government.",
+  "The most powerful AI systems should face no requirements beyond existing laws."
+ ],
+ "ai_open_release": [
+  "Companies shouldn't be allowed to publish their most powerful AI models for anyone to download and change.",
+  "Companies can publish their most powerful models for anyone to download, but only after safety testing.",
+  "Companies should be free to publish any AI model for anyone to download and change, even though safety limits can then be removed."
+ ],
+ "ai_job_loss": [
+  "If AI replaces many jobs, the government should mainly slow the use of AI to replace workers.",
+  "If AI replaces many jobs, the government should mainly expand income support, like cash payments to people who lose work.",
+  "If AI replaces many jobs, the government should mainly fund retraining and help workers find new jobs.",
+  "If AI replaces many jobs, the government should do little, because new jobs will appear as with past technology."
+ ],
+ "ai_layoff_limits": [
+  "Employers replacing many workers with AI should owe notice and severance, and some jobs, like teaching and nursing, shouldn't be replaced by AI at all.",
+  "Employers replacing many workers with AI should owe advance notice and severance pay, but no jobs should be off-limits.",
+  "There should be no legal limits on employers replacing workers with AI."
+ ],
+ "moderation_false": [
+  "Large social media companies should remove much more legal but false content than they do now.",
+  "Large social media companies remove about the right amount of legal but false content now.",
+  "Large social media companies should remove less legal but false content and leave most of it up.",
+  "Large social media companies should remove only illegal content, leaving up legal posts even when they're false."
+ ],
+ "moderation_offensive": [
+  "Large social media companies should remove much more legal but offensive content, like insults aimed at a group, than they do now.",
+  "Large social media companies remove about the right amount of legal but offensive content now.",
+  "Large social media companies should remove less legal but offensive content and leave most of it up.",
+  "Large social media companies should remove only illegal content, leaving up legal posts even when they're offensive."
+ ],
+ "moderation_law": [
+  "The law shouldn't limit what large platforms remove; companies decide what they host.",
+  "Large platforms should have to explain why they remove posts or ban users, and let users appeal.",
+  "The law should ban the largest platforms from removing legal political posts."
+ ],
+ "platform_liability": [
+  "Social media companies should be legally responsible for harmful content their own systems recommend or promote.",
+  "Social media companies should be responsible only if they're told about clearly illegal content and don't remove it.",
+  "Social media companies shouldn't be responsible for what users post; the users are."
+ ],
+ "social_media_min_age": [
+  "There should be no legal minimum age for social media; parents decide.",
+  "The legal minimum age for social media should be 13.",
+  "The legal minimum age for social media should be 16.",
+  "The legal minimum age for social media should be 18."
+ ],
+ "age_verification": [
+  "Adult websites shouldn't have to check users' ages; parents should use controls at home.",
+  "Adult websites should have to check ages, using methods that don't need ID, like estimating age from a face scan.",
+  "Adult websites should have to check ages with a government ID or something similar."
+ ],
+ "algorithm_bias_testing": [
+  "AI used to screen job or loan applicants should be tested for bias by independent auditors, with the results made public.",
+  "Companies should have to test their screening AI for bias themselves and keep records.",
+  "Companies shouldn't have to test screening AI for bias; existing anti-discrimination laws are enough."
+ ],
+ "data_centers": [
+  "New AI data centers should be limited until there's enough clean power for them.",
+  "New data centers should be allowed, but should pay the full cost of the new power plants and lines they need.",
+  "Approvals for data centers and power plants should be sped up to keep the US ahead in AI."
+ ],
+ "election_deepfakes": [
+  "Anyone who shares unlabeled AI-made fake video or audio of a candidate in the months before an election should face penalties.",
+  "Campaigns and paid advertisers should have to label AI fakes of candidates, but ordinary people who share them shouldn't be penalized.",
+  "There shouldn't be a special law; existing fraud and defamation laws are enough."
+ ],
+ "automation_tax": [
+  "Companies should pay a special tax when machines take over workers' jobs, with the money supporting workers who lose jobs.",
+  "There shouldn't be a special tax, but tax breaks that favor machines over workers should end.",
+  "There shouldn't be a tax on replacing workers with machines, because it would slow productivity growth."
+ ],
+ "crypto_rules": [
+  "Most cryptocurrencies should be banned.",
+  "Cryptocurrency companies should be regulated like stock exchanges and banks.",
+  "Cryptocurrency should face light rules focused on fraud.",
+  "Cryptocurrency shouldn't face any special rules."
+ ],
+ "digital_dollar": [
+  "The Federal Reserve should create a digital dollar that people can hold in an account with it.",
+  "The Federal Reserve should create a digital dollar only with strict privacy protections.",
+  "A government digital dollar should be banned."
+ ],
+ "ai_copyright": [
+  "AI companies should need permission from creators and pay them to train on their books, art and articles.",
+  "AI companies should pay creators for training on their work, but shouldn't need permission.",
+  "AI companies should be free to train on published work without permission or payment."
+ ],
+ "ai_companions_minors": [
+  "AI friend or romantic-partner chatbots should be banned for anyone under 18.",
+  "Minors can use AI companion chatbots with parental consent and safety limits.",
+  "AI companion chatbots should be allowed for minors, with parents deciding at home."
+ ]
+}

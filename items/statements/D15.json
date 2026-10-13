@@ -1,0 +1,114 @@
+{
+ "police_spending": [
+  "Police departments should be replaced with other public-safety services.",
+  "Police spending should be cut a lot, with the money moved to social services.",
+  "Police spending should be cut somewhat, with some money moved to social services.",
+  "Police spending should stay about the same.",
+  "Police spending should go up somewhat, to hire and train more officers.",
+  "Police spending should go up a lot, to hire and train many more officers."
+ ],
+ "crisis_responders": [
+  "Trained mental health workers, without police, should answer 911 calls about a mental health crisis with no weapon or violence.",
+  "Mental health workers and police should answer those calls together.",
+  "Police officers with mental health training should answer those calls."
+ ],
+ "qualified_immunity": [
+  "People should be able to sue officers who violate their constitutional rights; qualified immunity should end.",
+  "Officers should be suable for serious violations even without an identical earlier case.",
+  "Qualified immunity should stay as it is, blocking most such lawsuits.",
+  "Officers should get even more legal protection from lawsuits than today."
+ ],
+ "misconduct_records": [
+  "All complaints about police misconduct should be public, including ones not proven.",
+  "Only misconduct complaints found to be true should be public.",
+  "Police misconduct complaints should stay confidential."
+ ],
+ "mandatory_minimums": [
+  "Mandatory minimum sentences should end, and judges should decide each sentence.",
+  "Mandatory minimums should stay only for violent crimes.",
+  "Mandatory minimums should stay as they are, including for crimes like drug dealing.",
+  "There should be more mandatory minimums, and longer ones."
+ ],
+ "violent_sentences": [
+  "Sentences for violent crimes like armed robbery are much too long.",
+  "Sentences for violent crimes are somewhat too long.",
+  "Sentences for violent crimes are about right.",
+  "Sentences for violent crimes are somewhat too short.",
+  "Sentences for violent crimes are much too short."
+ ],
+ "death_penalty": [
+  "The death penalty should never be used, even for murder.",
+  "The death penalty should be used only for the most extreme murders, like killing several people or a child.",
+  "The death penalty should be used for most planned murders."
+ ],
+ "death_penalty_cases": [
+  "The death penalty shouldn't be possible for this: {case}.",
+  "The death penalty should be possible for this: {case}."
+ ],
+ "cash_bail": [
+  "Cash bail should end, and almost everyone should be released before trial unless they're clearly dangerous.",
+  "Most people charged with nonviolent crimes should be released without bail; judges set bail for others.",
+  "Cash bail should stay, with judges setting the amounts.",
+  "Everyone charged with a violent or repeat crime should stay in jail until trial."
+ ],
+ "prison_purpose": {
+  "s": [
+   "Prisons should focus on education and treatment to prepare people for release, even if it costs more.",
+   "I lean toward prisons focusing on rehabilitation.",
+   "I lean toward prisons focusing on punishment and protecting the public.",
+   "Prisons should focus on punishing crime and protecting the public, even if fewer people change their ways."
+  ],
+  "torn": "I weigh rehabilitation and punishment about equally."
+ },
+ "second_chance": {
+  "s": [
+   "Employers and landlords should be limited in using nonviolent criminal records, even if they take on some risk.",
+   "I lean toward limiting how criminal records can be used, to give second chances.",
+   "I lean toward letting employers and landlords consider criminal records.",
+   "Employers and landlords should be free to consider criminal records, even if that makes it harder for people to rebuild their lives."
+  ],
+  "torn": "I weigh second chances and freedom to consider records about equally."
+ },
+ "juveniles_adult_court": [
+  "Teenagers aged 15 to 17 should always be tried in juvenile court, even for serious violent crimes.",
+  "Teenagers aged 15 to 17 should be tried as adults only for murder.",
+  "Teenagers accused of serious violent crimes can be tried as adults if a judge decides.",
+  "Teenagers accused of serious violent crimes should automatically be tried as adults."
+ ],
+ "private_prisons": [
+  "Private companies shouldn't be allowed to run prisons or immigration detention centers.",
+  "Private prisons and detention centers are acceptable only under strict oversight.",
+  "Governments should use private prisons and detention centers if they save money."
+ ],
+ "road_blocking": [
+  "Peaceful protesters should be allowed to block a road briefly.",
+  "Police should ask protesters blocking a road to move, and arrest only those who refuse.",
+  "Protesters blocking a road should be arrested right away.",
+  "Protesters blocking a road should be arrested and face serious charges, with possible jail time."
+ ],
+ "riot_response": [
+  "When a protest turns into rioting, authorities should use as little force as possible and focus on calming things down.",
+  "Authorities should arrest people damaging property, but avoid force against peaceful protesters.",
+  "Authorities should use whatever force it takes to stop a riot quickly, including the National Guard."
+ ],
+ "troops_in_cities": [
+  "A president should never send troops into a city over the governor's objection.",
+  "A president can send troops over a governor's objection only during a riot or uprising local police can't control.",
+  "A president can send troops into a city whenever the president judges crime is out of control, even if the governor objects."
+ ],
+ "victims_voice": [
+  "Victims' views shouldn't affect sentencing or parole; decisions should rest on the law and the offender.",
+  "Victims can speak at sentencing and parole hearings, but their wishes shouldn't get special weight.",
+  "Victims' views should carry significant weight in sentencing and parole."
+ ],
+ "asset_forfeiture": [
+  "Police should be able to take cash or property only after the owner is convicted of a crime.",
+  "Police can take property without a conviction only with strong evidence, and the government must prove its case.",
+  "Police should be able to take property they suspect is linked to a crime without a conviction, as most states allow."
+ ],
+ "stop_and_frisk": [
+  "Police shouldn't stop and pat down people just because they find them suspicious.",
+  "Police can stop and frisk only for specific reasons, which are recorded and reviewed for bias.",
+  "Police should be able to stop and frisk people they find suspicious in high-crime areas."
+ ]
+}

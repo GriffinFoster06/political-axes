@@ -1,0 +1,94 @@
+{
+ "marijuana_law": [
+  "Marijuana should be legal for adults to grow and buy in stores, regulated like alcohol.",
+  "Adults should be able to have small amounts of marijuana, but stores shouldn't sell it.",
+  "Marijuana should be legal only for medical use, with a doctor's recommendation.",
+  "Marijuana should be illegal, but having small amounts should mean a fine, not jail.",
+  "Marijuana should be illegal, and having it can mean jail."
+ ],
+ "marijuana_records": [
+  "Past convictions for having small amounts of marijuana should be cleared automatically where it's now legal.",
+  "Those convictions should be cleared if the person applies.",
+  "Those convictions should stay on people's records."
+ ],
+ "drug_possession": [
+  "Having a small amount of a drug like cocaine or heroin for personal use should be legal and regulated, like alcohol.",
+  "Having a small amount for personal use should mean a civil fine or referral to treatment, not a crime.",
+  "Having a small amount should be a crime, but first offenses should get treatment instead of jail.",
+  "Having a small amount should be a crime, with jail possible even the first time."
+ ],
+ "psychedelics": [
+  "Psilocybin should be legal for any adult.",
+  "Psilocybin should be legal only in supervised settings, like a licensed center.",
+  "Psilocybin should be legal only as a prescribed treatment, if approved as a medicine.",
+  "Psilocybin should be illegal."
+ ],
+ "supervised_sites": [
+  "Cities should be allowed to run supervised drug-use sites, with federal funding.",
+  "Cities can run supervised drug-use sites if they choose, but without federal money.",
+  "Supervised drug-use sites should be illegal, because they encourage drug use."
+ ],
+ "sports_betting": [
+  "Sports betting on phone apps should be legal everywhere, with few limits.",
+  "States should decide whether to allow sports betting apps, with limits on advertising and bet sizes.",
+  "Sports betting should be legal only in person at casinos and licensed places, not on phones.",
+  "Sports betting should be illegal."
+ ],
+ "sex_work_law": [
+  "Neither adult should face criminal penalties when one pays the other for sex.",
+  "Paying for sex should be legal only in licensed, regulated businesses.",
+  "Paying for sex should be illegal, but selling it shouldn't be.",
+  "Both paying for and selling sex should be illegal, as in most states."
+ ],
+ "adult_content": [
+  "Sexually explicit content made by consenting adults should be legal, with no special limits.",
+  "It should be legal, but websites should have to verify viewers are adults.",
+  "It should be legal, but kept off most websites and sold only through restricted channels.",
+  "Making or selling sexually explicit content should be illegal."
+ ],
+ "aid_in_dying": [
+  "Doctors should be able to prescribe medicine a dying adult can take to end their life, after a short waiting period.",
+  "Doctors should be able to prescribe it only with strict safeguards, like two doctors' approval and a longer wait.",
+  "Doctors shouldn't be allowed to prescribe medicine to end a patient's life."
+ ],
+ "aid_in_dying_cases": [
+  "These adults should also be able to get the medicine: {case}.",
+  "These adults shouldn't be able to get the medicine: {case}."
+ ],
+ "sin_taxes": [
+  "There shouldn't be extra taxes meant to discourage unhealthy products; adults should make their own choices.",
+  "Extra taxes to discourage use should stay limited to tobacco and alcohol, as now.",
+  "Sugary drinks and junk food should carry extra taxes too, along with tobacco and alcohol."
+ ],
+ "helmet_law": [
+  "Adult motorcycle riders should decide for themselves whether to wear a helmet.",
+  "Only riders under 21 or without health insurance should have to wear a helmet.",
+  "All motorcycle riders should have to wear a helmet."
+ ],
+ "drinking_age": [
+  "The legal drinking age should be 18.",
+  "The drinking age should be 18 for beer and wine and 21 for liquor.",
+  "The drinking age should stay at 21.",
+  "The drinking age should be older than 21."
+ ],
+ "vape_flavors": [
+  "Adults should be able to buy flavored vapes and cigarettes.",
+  "Flavored vapes and cigarettes should be allowed for adults, with higher taxes.",
+  "Flavored vapes and cigarettes should be banned, even for adults."
+ ],
+ "kidney_payment": [
+  "People should be able to sell a kidney in a regulated market.",
+  "Kidney donors should get a fixed payment from the government, but not in an open market.",
+  "Paying people for kidneys should stay banned."
+ ],
+ "right_to_try": [
+  "Seriously ill patients should be able to use any treatment that has passed early safety testing.",
+  "Seriously ill patients should get unapproved treatments only through FDA-supervised programs.",
+  "Patients should wait for treatments to get full FDA approval."
+ ],
+ "raw_milk": [
+  "Any store should be able to sell raw milk, with a warning label.",
+  "Raw milk should be sold only directly from farms.",
+  "Selling raw milk should be banned."
+ ]
+}

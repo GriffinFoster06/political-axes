@@ -1,0 +1,258 @@
+{
+ "trust_fed_motives": [
+  "Federal agencies are almost always trying to serve the public, not themselves or special interests.",
+  "Federal agencies are trying to serve the public most of the time.",
+  "Federal agencies serve the public about half the time, and themselves or special interests the other half.",
+  "Federal agencies only sometimes try to serve the public; more often it's themselves or special interests.",
+  "Federal agencies rarely try to serve the public; they mostly serve themselves or special interests."
+ ],
+ "trust_fed_honest": [
+  "Federal officials rarely hide mistakes or bad news from the public.",
+  "Federal officials sometimes hide mistakes or bad news, about 3 times in 10.",
+  "Federal officials hide mistakes or bad news about half the time.",
+  "Federal officials hide mistakes or bad news most of the time.",
+  "Federal officials almost always hide mistakes or bad news."
+ ],
+ "trust_courts": [
+  "Federal judges almost always follow the law in major cases, not their own politics.",
+  "Federal judges follow the law most of the time.",
+  "Federal judges follow the law about half the time and their politics the other half.",
+  "Federal judges only sometimes follow the law; more often their politics decide.",
+  "Federal judges rarely follow the law in major cases; their politics decide."
+ ],
+ "trust_news_facts": [
+  "Major news organizations almost always get the basic facts right.",
+  "Major news organizations get the basic facts right most of the time.",
+  "Major news organizations get the basic facts right about half the time.",
+  "Major news organizations only sometimes get the basic facts right.",
+  "Major news organizations rarely get the basic facts right."
+ ],
+ "trust_news_fair": [
+  "Major news organizations rarely slant political news toward one side.",
+  "Major news organizations sometimes slant political news, about 3 times in 10.",
+  "Major news organizations slant political news about half the time.",
+  "Major news organizations slant political news most of the time.",
+  "Major news organizations almost always slant political news toward one side."
+ ],
+ "trust_scientists": [
+  "Scientists almost always report their findings honestly, even when the results are unpopular.",
+  "Scientists report their findings honestly most of the time.",
+  "Scientists report their findings honestly about half the time.",
+  "Scientists only sometimes report their findings honestly.",
+  "Scientists rarely report their findings honestly when the results are unpopular."
+ ],
+ "trust_expert_consensus": [
+  "When most experts in a field agree, they're almost always right.",
+  "When most experts agree, they're right most of the time.",
+  "When most experts agree, they're right about half the time.",
+  "When most experts agree, they're only sometimes right.",
+  "When most experts agree, they're rarely right."
+ ],
+ "trust_vote_count": [
+  "Local election officials almost always count federal election votes accurately.",
+  "Local election officials count votes accurately most of the time.",
+  "Local election officials count votes accurately only about half the time.",
+  "Local election officials only sometimes count votes accurately.",
+  "Local election officials rarely count votes accurately."
+ ],
+ "congress_motives": [
+  "When Congress passes a major law, it's almost always mainly to help the public, not donors or party leaders.",
+  "Major laws are mainly meant to help the public most of the time.",
+  "Major laws are mainly meant to help the public about half the time.",
+  "Major laws are only sometimes mainly meant to help the public; more often it's donors or party leaders.",
+  "Major laws are rarely meant mainly to help the public; they mostly serve donors or party leaders."
+ ],
+ "hidden_power": [
+  "Major government decisions are rarely made by a small group of powerful people behind the scenes.",
+  "A small powerful group behind the scenes sometimes makes major decisions, about 3 times in 10.",
+  "A small powerful group behind the scenes makes major decisions about half the time.",
+  "A small powerful group behind the scenes makes most major decisions, not voters and elected officials.",
+  "A small powerful group behind the scenes almost always makes the major decisions."
+ ],
+ "corporate_power": [
+  "Large corporations have far too much influence; they decide most important things in Washington.",
+  "Large corporations have too much influence, though voters still have the final say.",
+  "Large corporations have about the right amount of influence over the government.",
+  "Large corporations have too little influence; government and activists push businesses around."
+ ],
+ "experts_vs_voters": {
+  "s": [
+   "Experts should make complex technical decisions, like interest rates or approving medicines, even when most voters disagree.",
+   "I lean toward experts making those decisions.",
+   "I lean toward officials who answer to voters making those decisions.",
+   "Officials who answer to voters should make those decisions, even when experts think they're wrong."
+  ],
+  "torn": "I weigh experts and voters' representatives about equally here."
+ },
+ "expertise_vs_experience": {
+  "s": [
+   "I'd rather rely on people with expert training to solve national problems, even if they're out of touch with everyday life.",
+   "I lean toward relying on trained experts.",
+   "I lean toward relying on the practical judgment of ordinary people.",
+   "I'd rather rely on ordinary people's practical judgment, even if they lack expert knowledge."
+  ],
+  "torn": "I'd rely on experts and ordinary people about equally."
+ },
+ "trust_public_health": [
+  "Advice from agencies like the CDC is rarely shaped by politics or industry pressure.",
+  "That advice is sometimes shaped by politics or industry pressure, about 3 times in 10.",
+  "That advice is shaped by politics or industry pressure about half the time.",
+  "That advice is shaped by politics or industry pressure most of the time.",
+  "That advice is almost always shaped by politics or industry pressure rather than evidence."
+ ],
+ "trust_congress_effort": [
+  "When the country faces a serious problem, Congress almost always makes a real effort to solve it.",
+  "Congress makes a real effort most of the time.",
+  "Congress makes a real effort about half the time.",
+  "Congress only sometimes makes a real effort.",
+  "Congress rarely makes a real effort to solve serious problems."
+ ],
+ "trust_congress_promises": [
+  "Members of Congress rarely break their main campaign promises.",
+  "Members of Congress sometimes break their main promises, about 3 times in 10.",
+  "Members of Congress break their main promises about half the time.",
+  "Members of Congress break their main promises most of the time.",
+  "Members of Congress almost always break their main promises."
+ ],
+ "trust_state_gov": [
+  "My state government rarely wastes the money it spends.",
+  "My state government sometimes wastes money, about 3 times in 10.",
+  "My state government wastes money about half the time.",
+  "My state government wastes money most of the time.",
+  "My state government almost always wastes the money it spends."
+ ],
+ "trust_local_gov": [
+  "My local government almost always responds to what residents want.",
+  "My local government responds to residents most of the time.",
+  "My local government responds to residents about half the time.",
+  "My local government only sometimes responds to residents.",
+  "My local government rarely responds to what residents want."
+ ],
+ "trust_police_fair": [
+  "Police in the US almost always treat the people they stop fairly.",
+  "Police treat people they stop fairly most of the time.",
+  "Police treat people they stop fairly about half the time.",
+  "Police only sometimes treat people they stop fairly.",
+  "Police rarely treat people they stop fairly."
+ ],
+ "trust_military": [
+  "Senior military leaders almost always give honest assessments to the public and elected officials.",
+  "Senior military leaders give honest assessments most of the time.",
+  "Senior military leaders give honest assessments about half the time.",
+  "Senior military leaders only sometimes give honest assessments.",
+  "Senior military leaders rarely give honest assessments."
+ ],
+ "gov_big_projects": [
+  "Big federal projects rarely go far over budget or behind schedule.",
+  "Big federal projects sometimes go far over budget or behind schedule, about 3 times in 10.",
+  "Big federal projects go far over budget or behind schedule about half the time.",
+  "Big federal projects go far over budget or behind schedule most of the time.",
+  "Big federal projects almost always go far over budget or behind schedule."
+ ],
+ "gov_services_work": [
+  "Federal services like Social Security payments and passports almost always work well.",
+  "Federal services work well most of the time.",
+  "Federal services work well about half the time.",
+  "Federal services only sometimes work well.",
+  "Federal services rarely work well."
+ ],
+ "trust_statistics": [
+  "Official statistics like unemployment and inflation are rarely shaped to make those in power look good.",
+  "Official statistics are sometimes shaped that way, about 3 times in 10.",
+  "Official statistics are shaped that way about half the time.",
+  "Official statistics are shaped to make those in power look good most of the time.",
+  "Official statistics are almost always shaped to make those in power look good."
+ ],
+ "trust_university_research": [
+  "University research on social issues is rarely slanted by researchers' politics.",
+  "University research on social issues is sometimes slanted, about 3 times in 10.",
+  "University research on social issues is slanted about half the time.",
+  "University research on social issues is slanted by researchers' politics most of the time.",
+  "University research on social issues is almost always slanted by researchers' politics."
+ ],
+ "trust_tech_companies": [
+  "Large tech companies almost always act in the public's interest.",
+  "Large tech companies act in the public's interest most of the time.",
+  "Large tech companies act in the public's interest about half the time.",
+  "Large tech companies only sometimes act in the public's interest.",
+  "Large tech companies rarely act in the public's interest."
+ ],
+ "news_source_accuracy": [
+  "Major news organizations give a far more accurate picture of the country than independent sources like podcasts and newsletters.",
+  "Major news organizations give a somewhat more accurate picture than independent sources.",
+  "Major and independent sources are about equally accurate.",
+  "Independent sources like podcasts and newsletters give a somewhat more accurate picture than major news organizations.",
+  "Independent sources give a far more accurate picture than major news organizations."
+ ],
+ "officials_care": [
+  "Elected officials almost always care what people like me think.",
+  "Elected officials care what people like me think most of the time.",
+  "Elected officials care what people like me think about half the time.",
+  "Elected officials only sometimes care what people like me think.",
+  "Elected officials rarely care what people like me think."
+ ],
+ "economy_rigged": [
+  "Economic rules on taxes, trade and banking rarely benefit the rich and powerful at everyone else's expense.",
+  "Economic rules sometimes favor the rich and powerful at others' expense, about 3 times in 10.",
+  "Economic rules favor the rich and powerful at others' expense about half the time.",
+  "Economic rules favor the rich and powerful at everyone else's expense most of the time.",
+  "Economic rules almost always favor the rich and powerful at everyone else's expense."
+ ],
+ "outsider_vs_experience": {
+  "s": [
+   "I'd rather elect someone with long government experience who knows how it works, even if they're part of the system.",
+   "I lean toward electing experienced candidates.",
+   "I lean toward electing outsiders who'll shake things up.",
+   "I'd rather elect an outsider who will shake up the system, even without government experience."
+  ],
+  "torn": "I'd weigh experience and being an outsider about equally."
+ },
+ "wall_street_vs_workers": [
+  "In downturns, the government rarely protects big banks and investors more than ordinary workers.",
+  "In downturns, the government sometimes favors banks and investors over workers, about 3 times in 10.",
+  "In downturns, the government favors banks and investors over workers about half the time.",
+  "In downturns, the government protects banks and investors more than workers most of the time.",
+  "In downturns, the government almost always protects banks and investors more than ordinary workers."
+ ],
+ "ballot_measures": [
+  "Every state should let citizens put laws on the ballot, and there should be national ballot measures too.",
+  "Every state should let citizens put laws on the ballot.",
+  "Each state should keep deciding whether to allow ballot measures, as now.",
+  "There should be fewer ballot measures; elected legislators should make laws."
+ ],
+ "recall_response": [
+  "If a federal safety agency recalled something I use, I'd stop using it right away.",
+  "I'd stop using it, then check other sources.",
+  "I'd check other sources before deciding whether to stop using it.",
+  "I'd keep using it unless I saw a problem myself."
+ ],
+ "budget_office_reliance": [
+  "Congress should treat the Congressional Budget Office's cost estimates as the final word.",
+  "Congress should rely heavily on the budget office's estimates, along with other evidence.",
+  "Congress should treat the budget office's estimates as one opinion among many.",
+  "Congress should mostly ignore the budget office's estimates; they're often wrong."
+ ],
+ "more_power_outcome": [
+  "With more money and power, the federal government would mostly fix a problem I care about.",
+  "With more money and power, the federal government would make real progress on it.",
+  "With more money and power, the federal government would make a little progress and waste a lot.",
+  "With more money and power, the federal government would make things worse."
+ ],
+ "accept_certified_loss": [
+  "If my candidate lost a close race, I'd accept the result once it was certified.",
+  "I'd accept a close loss after any recounts the law requires.",
+  "I'd accept a close loss only after an independent audit.",
+  "I'd accept a close loss only after observers from my own side confirmed it."
+ ],
+ "science_vs_officials": [
+  "When public health scientists and elected officials disagree on a health rule, the scientists should have the final say.",
+  "Elected officials should decide, but follow scientists' advice in most cases.",
+  "Elected officials should decide, treating scientists' advice as one input among others.",
+  "Elected officials should decide; scientists should advise only when asked."
+ ],
+ "congress_stock_ban": [
+  "Members of Congress, their spouses and senior staff should be banned from trading individual stocks.",
+  "Members of Congress should be banned from trading individual stocks, but not their spouses or staff.",
+  "Members of Congress should be able to trade stocks as long as they report the trades."
+ ]
+}

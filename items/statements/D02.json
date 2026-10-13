@@ -1,0 +1,153 @@
+{
+ "min_wage": [
+  "The federal minimum wage should be $20 an hour or more and rise with inflation every year.",
+  "The federal minimum wage should be about $15 an hour and rise with inflation every year.",
+  "The federal minimum wage should be raised to about $10 to $12 an hour.",
+  "The federal minimum wage should stay at $7.25 an hour.",
+  "There should be no federal minimum wage; states and employers should set pay."
+ ],
+ "min_wage_jobs": [
+  "Raise the minimum wage to $15 quickly. Higher pay for millions is worth losing some low-wage jobs.",
+  "Raise the minimum wage to $15 over several years, accepting some job losses but trying to keep them small.",
+  "Raise the minimum wage only part of the way to $15, or only in places where living costs are high.",
+  "Don't raise the minimum wage, because the lost jobs fall hardest on the least experienced workers."
+ ],
+ "right_to_work": [
+  "Union contracts that require every covered worker to pay fees should be allowed everywhere, overriding state right-to-work laws.",
+  "Each state should keep deciding whether union contracts can require fees.",
+  "Union contracts that require fees should be banned in every state."
+ ],
+ "union_organizing": [
+  "A union should be recognized as soon as most workers sign cards, and employers who interfere should face large fines.",
+  "Union votes should happen faster, and employers who break the rules should pay bigger fines.",
+  "The rules for forming a union should stay as they are.",
+  "Unions should be harder to keep: workers should have to vote again every few years to keep their union."
+ ],
+ "public_unions": [
+  "Government workers like teachers should be able to bargain through unions and to go on strike.",
+  "Government workers should be able to bargain through unions, but not to strike.",
+  "Government workers' unions should bargain only over wages, not benefits or work rules.",
+  "Government workers shouldn't be able to bargain as a group at all."
+ ],
+ "paid_leave": [
+  "Federal law should guarantee 12 weeks or more of paid leave for a new child or serious illness, paid for with a payroll tax.",
+  "Federal law should guarantee a shorter paid leave, about 4 to 6 weeks.",
+  "Paid leave shouldn't be required, but employers who offer it should get a tax credit.",
+  "The federal government should stay out of paid leave and leave it to employers and states."
+ ],
+ "sick_days": [
+  "Every employer should have to give workers at least 7 paid sick days a year.",
+  "Employers with more than 50 workers should have to give paid sick days; smaller ones shouldn't.",
+  "Paid sick days shouldn't be required; states and employers should decide."
+ ],
+ "gig_workers": [
+  "App-based drivers and delivery workers should count as employees, with minimum wage, overtime and benefits.",
+  "App-based workers should be a new category, with guaranteed minimum pay and some benefits but flexible hours.",
+  "App-based workers should stay independent contractors, without employee pay rules or benefits."
+ ],
+ "regulation_tradeoff": {
+  "s": [
+   "Strong rules to protect workers, consumers and the environment come first, even if prices rise and fewer businesses start.",
+   "I lean toward stronger protections, even at some cost to prices and new businesses.",
+   "I lean toward fewer rules, even if more workers and consumers get hurt by unsafe practices.",
+   "Fewer rules come first, so businesses grow and prices stay low, even if more people are harmed by unsafe practices."
+  ],
+  "torn": "I weigh stronger protections and fewer rules about equally."
+ },
+ "precaution_tradeoff": {
+  "s": [
+   "New products should be proven safe before they're sold, even if useful ones are delayed for years.",
+   "I lean toward proving new products safe first, even with some delays.",
+   "I lean toward allowing new products and fixing problems as they come up.",
+   "New products should be allowed on sale and problems dealt with later, even if some people are harmed first."
+  ],
+  "torn": "I weigh testing first and allowing first about equally."
+ },
+ "big_company_breakup": [
+  "Companies that control most of their market should be broken up, even if their prices are low.",
+  "Dominant companies should be broken up only when it's proven they hurt consumers, workers or competitors.",
+  "Leave dominant companies as they are, but stop them from buying their rivals.",
+  "Leave dominant companies alone; being big usually means they're good at what they do, and new competitors will come."
+ ],
+ "merger_rules": [
+  "Most large mergers should be blocked unless the companies prove the merger will help customers and workers.",
+  "Each large merger should be reviewed, and blocked if it's likely to raise prices or cut wages.",
+  "Most mergers should be approved unless they'd clearly raise prices.",
+  "The government should rarely step in; companies should be free to merge."
+ ],
+ "bank_rules": [
+  "The rules should be much stricter, including breaking up the largest banks.",
+  "Large banks should have to keep more of their own money as a cushion against losses.",
+  "Rules on large banks should stay about as strict as today.",
+  "Rules on large banks should be looser than today so they can lend more."
+ ],
+ "bailouts": [
+  "If a company's collapse would cause a recession, the government should take it over and run it until it can be sold or closed down.",
+  "The government should lend a failing giant money to survive, with strict conditions, as in 2008.",
+  "The government should protect customers' insured deposits and let the company itself fail.",
+  "The government should let it fail with no help at all, even if that causes a recession."
+ ],
+ "licensing": [
+  "More jobs should require a government license, to protect customers.",
+  "Job licensing should stay about where it is.",
+  "Licenses should be required only where health or safety is clearly at risk, like electricians, not interior designers.",
+  "Most license requirements should go; customers can rely on reviews and private certifications."
+ ],
+ "price_controls": [
+  "The government should cap prices on essentials like food and gas when inflation is high, not just after disasters.",
+  "Sharp price hikes on essentials should be banned only during declared emergencies, like after a hurricane.",
+  "Businesses should be free to raise prices on essentials, even after disasters, because high prices draw in more supply."
+ ],
+ "economic_system": [
+  "Most major industries should be owned by the public or by the people who work in them.",
+  "Businesses should be mostly private, but government should run key industries like energy and health care.",
+  "Businesses should be private, with strong government rules and a large safety net.",
+  "Businesses should be private, with modest rules and a basic safety net.",
+  "Businesses should be private and markets free, with as little government as possible."
+ ],
+ "public_ownership": [
+  "Government should own and run most utilities like electricity, railroads and internet service.",
+  "Government should run some utilities, where private companies haven't provided good, affordable service.",
+  "Government should run utilities only where no private company provides them.",
+  "Private companies, not government, should run utilities like electricity, railroads and internet service."
+ ],
+ "workers_on_boards": [
+  "Workers at companies with over 1,000 employees should elect about half of the board.",
+  "Workers at companies with over 1,000 employees should elect about a third of the board.",
+  "Companies can choose to put elected workers on their board, but it shouldn't be required.",
+  "Workers shouldn't elect board members."
+ ],
+ "noncompetes": [
+  "Employers shouldn't be able to stop any worker from taking a job with a competitor.",
+  "Only top executives can be bound by agreements not to work for a competitor.",
+  "Agreements not to work for a competitor are fine, but should last a year or less.",
+  "Agreements not to work for a competitor are fine; both sides signed the contract."
+ ],
+ "right_to_repair": [
+  "Makers of most products should have to make parts, tools and manuals available to owners and independent repair shops.",
+  "Makers should have to provide repair parts and information only for products where repair matters most, like cars and farm equipment.",
+  "Companies should decide for themselves whether to provide repair parts and information."
+ ],
+ "farm_subsidies": [
+  "Federal payments and subsidized insurance for farmers should be expanded.",
+  "Federal payments and subsidized insurance for farmers should stay about as they are.",
+  "Farm payments and subsidized insurance should go only to small and mid-size farms.",
+  "Federal payments and subsidized insurance for farmers should be phased out."
+ ],
+ "business_incentives": [
+  "States and cities should offer tax breaks to bring in factories and offices, because they bring jobs.",
+  "Tax breaks for companies are fine only with firm job guarantees and repayment if the company leaves.",
+  "States and cities should be banned from offering tax breaks to attract companies."
+ ],
+ "fed_independence": [
+  "The Federal Reserve should set interest rates on its own, with no pressure from the president or Congress.",
+  "The Federal Reserve should set interest rates, but Congress should review its decisions more closely.",
+  "A president should be able to tell the Federal Reserve what interest rates to set."
+ ],
+ "infrastructure": [
+  "The federal government should spend much more than today on roads, bridges, water systems and the power grid, paid for by borrowing or taxes.",
+  "The federal government should spend somewhat more than today on infrastructure.",
+  "Federal infrastructure spending should stay about the same.",
+  "The federal government should spend less on infrastructure and leave more to states and private companies."
+ ]
+}
