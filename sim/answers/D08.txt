@@ -33,3 +33,8 @@ jordan: 1=0 2=0
 mlee: 1=0 2=0
 roy: 2=0
 gabbard: 2=1
+
+# --- second pass ---
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 3=2 5=2 6=-
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 1=3 2=2
+dcheney,lcheney,graham,cotton,pompeo,mccain,haley,rubio: 1=3 2=3 4=2 8=2

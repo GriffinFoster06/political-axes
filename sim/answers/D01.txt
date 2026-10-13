@@ -76,3 +76,38 @@ chase_oliver: 13=3 15=1 16=-
 rfk: 13=1 14=3 17=3 20=1
 yang: 7=3 20=1 21=2 24=2 25=1
 gabbard: 13=2 15=2 16=0011 20=2
+
+# --- second pass: sub-factions and more individual positions ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 1=0 3=0 7=1 8=1 20=0 23=0
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 4=1 5=3 7=3 8=2 9=2 10=2 13=1 15=2 16=0011 20=1 21=2 22=1 23=2
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 6=3 21=3 25=2
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 20=3 22=2 25=0
+walz: 18=0
+pritzker: 1=1 4=0
+whitehouse: 11=0
+wyden: 11=0
+booker: 18=0
+newsom: 4=2 7=3
+hochul: 7=3
+gore: 7=3
+kemp: 1=4
+burgum: 1=4
+abbott: 1=4
+golden: 7=2 8=1
+mgp: 25=2
+tester: 7=2
+murkowski: 21=2
+haley: 21=4
+# --- third pass: individual records ---
+sanders: 5=1 7=0 17=3 24=0
+warren: 7=0 8=0 17=3 24=2
+aoc: 5=0 17=2
+omar: 5=0 17=2
+tlaib: 5=0 17=2
+khanna: 17=2 24=1
+mamdani: 5=0
+stein: 17=1
+manchin: 6=1 21=2 22=1
+gottheimer: 9=3
+roy: 21=4
+santorum: 1=3

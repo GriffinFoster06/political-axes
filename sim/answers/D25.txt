@@ -18,3 +18,12 @@ rpaul: 19=3 20=2
 rpaul_sr: 19=3
 yang: 21=2 24=1
 gabbard: 7=3 15=3 16=3
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 1=0 2=0 21=3
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 2=2 9=2 24=2
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 15=3 16=3 24=4
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 13=2 15=2 16=2
+# --- third pass: individual records ---
+sanders: 1=0 21=3 24=0
+khanna: 24=2

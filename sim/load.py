@@ -4,6 +4,7 @@ File format, one topic per file, questions in bank order (see sim/dump.py):
   @GROUP t1 t2 ...        answer template for a group (sim/archetypes.py)
   id: 5=2 7=d             overrides for one politician (1-based question number)
   id@GROUP: 3=1           same, but starting from another group's template
+  id1,id2,id3: 4=2        overrides for a sub-faction; one-person lines take priority
 Tokens: a digit = answer code in bank order; d = "I don't know"; n = "none of
 these fit"; - = skipped / not applicable. Exception questions take one character
 per case (for example 0011), or a single - to skip all cases.
@@ -33,26 +34,31 @@ def parse_topic(d):
                 raise SystemExit(f"{path.name}:{ln} template {g} has {len(toks)} answers, expected {len(ids)}")
             tmpl[g] = toks
             continue
-        m = re.match(r"^([a-z_0-9]+)(?:@([A-Z]{2}))?:\s*(.*)$", line)
+        m = re.match(r"^([a-z_0-9,]+)(?:@([A-Z]{2}))?:\s*(.*)$", line)
         if not m:
             raise SystemExit(f"{path.name}:{ln} can't read: {raw}")
-        pid, grp, rest = m.groups()
-        o = over.setdefault(pid, {"g": None, "set": {}})
-        if grp:
-            o["g"] = grp
-        for kv in rest.split():
-            k, v = kv.split("=")
-            if not 1 <= int(k) <= len(ids):
-                raise SystemExit(f"{path.name}:{ln} question {k} out of range")
-            o["set"][int(k) - 1] = v
+        pids, grp, rest = m.groups()
+        multi = "," in pids
+        for pid in pids.split(","):
+            o = over.setdefault(pid, {"g": None, "set": {}, "sub": {}})
+            if grp:
+                o["g"] = grp
+            for kv in rest.split():
+                k, v = kv.split("=")
+                if not 1 <= int(k) <= len(ids):
+                    raise SystemExit(f"{path.name}:{ln} question {k} out of range")
+                # lines naming several politicians (a sub-faction) apply first; one-person lines win
+                (o["sub"] if multi else o["set"])[int(k) - 1] = v
     out = {}
     for r in R:
         pid = r["id"]
-        o = over.get(pid, {"g": None, "set": {}})
+        o = over.get(pid, {"g": None, "set": {}, "sub": {}})
         g = o["g"] or G[pid]
         if g not in tmpl:
             raise SystemExit(f"{path.name}: no template for group {g}")
         toks = list(tmpl[g])
+        for k, v in o["sub"].items():
+            toks[k] = v
         for k, v in o["set"].items():
             toks[k] = v
         out[pid] = toks

@@ -47,3 +47,34 @@ santorum: 22=3
 rfk: 10=0 11=2 12=2
 yang: 1=1 2=0 4=1 12=1 22=1
 gabbard: 1=3 7=00011 12=3 22=1
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 10=1 22=0
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=1 2=2 4=1 8=4 9=2 12=1 15=2 16=3 17=3 23=1
+dcheney,lcheney,graham,cotton,pompeo,mccain,haley,rubio: 13=3 22=3
+# --- third pass: individual records ---
+sanders: 3=1 5=1 10=1 12=1 13=2 19=0 20=1 21=1
+warren: 5=1 10=1
+aoc: 3=1 5=1 10=2
+omar: 5=0 6=0 7=00010 10=3 13=1 14=0 17=0 21=1
+tlaib: 5=0 6=0 10=3 11=0
+jayapal: 5=1 10=2
+khanna: 5=1 10=1 12=1 13=2 22=0
+mamdani: 10=3 11=0 16=0
+bjohnson: 10=3
+williamson: 5=0 10=2
+crockett: 5=2 10=1
+stein: 4=3 10=3 12=3
+nader: 10=3
+cornel_west: 10=3
+manchin: 4=0 5=3
+golden: 5=3
+collins: 4=0
+kasich: 3=0
+hawley: 3=1 12=2
+stefanik: 12=1
+hegseth: 5=4 22=3
+massie: 10=3
+gjohnson: 4=1
+hclinton: 13=2
+kaine: 1=1

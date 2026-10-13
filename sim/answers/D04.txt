@@ -24,3 +24,15 @@ romney: 1=2
 trump: 11=0
 hawley: 11=0
 yang: 1=1 2=1 14=1
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 4=0 5=0 7=1 8=0
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 4=2 5=1 7=2 8=2 9=1 10=2
+vance,bannon: 11=0
+buttigieg: 1=0 2=1
+hochul: 1=1 2=0
+cuomo: 4=1
+# --- third pass: individual records ---
+khanna: 1=0 2=0
+mamdani: 1=0 4=0 7=0
+mgp: 1=2 2=2

@@ -28,3 +28,13 @@ mcconnell: 4=0
 romney: 4=0
 ramaswamy: 12=0 13=0010
 desantis: 5=2
+
+# --- second pass ---
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 4=2 7=0 9=0 14=1 15=2
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 4=1 14=0 15=1
+# --- third pass: individual records ---
+sanders: 6=0 7=1 15=0
+warren: 7=2
+omar: 6=0
+hawley: 4=2
+pence: 4=2

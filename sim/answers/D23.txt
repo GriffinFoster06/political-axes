@@ -29,3 +29,16 @@ youngkin: 3=3 4=2
 tscott: 1=3 2=3
 gwbush: 1=1 10=1
 yang: 7=1 9=1
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 7=0 9=0
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 1=1 2=2 7=2 9=2
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=3 10=3
+# --- third pass: individual records ---
+sanders: 1=0 2=0 7=0 9=0
+warren: 1=0 7=1 9=0
+aoc: 7=0 9=0
+khanna: 7=1 9=1
+bjohnson: 1=0 2=0 11=0
+ramaswamy: 1=3 10=3
+hsanders: 1=3 10=3

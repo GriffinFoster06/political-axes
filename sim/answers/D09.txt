@@ -55,3 +55,8 @@ amash: 1=4 2=0111 4=2 10=3
 chase_oliver: 1=0 10=0
 yang: 1=1 2=- 3=0 6=0
 rfk: 1=1 2=- 3=0
+
+# --- second pass ---
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 9=1
+# --- third pass: individual records ---
+sununu: 1=1

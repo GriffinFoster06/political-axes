@@ -33,3 +33,7 @@ hawley: 2=3 10=3
 rpaul_sr: 11=2
 rpaul: 2=1 10=1 11=1
 massie: 10=1 11=1
+# --- third pass: individual records ---
+cornel_west: 1=1 2=2 10=1 12=2
+vance: 2=2
+gjohnson: 5=2

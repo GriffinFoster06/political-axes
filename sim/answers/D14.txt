@@ -49,3 +49,26 @@ chase_oliver: 1=0 6=0 8=0 9=0 11=0 12=0
 rfk: 6=2
 yang: 3=1 6=1 8=2
 gabbard: 6=4 17=212021 21=3
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 1=1 6=0 8=1 11=0 12=0 13=0 14=0
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 6=1 8=2 10=2 11=1 12=1 13=1 14=1 16=2 19=1
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=3 6=4 8=3 9=2 11=2 12=3 14=3 24=2 25=2 27=101111
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 1=2 6=2 9=1 11=1 12=2 14=2
+newsom: 11=0
+pritzker: 11=0
+gingrich_p: 6=4
+# --- third pass: individual records ---
+sanders: 1=2 2=3 3=4
+warren: 1=1 6=0
+aoc: 8=0 11=0
+omar: 8=0 11=0
+jayapal: 1=0 6=0
+manchin: 6=1
+sinema: 6=1 8=2
+cuellar: 6=1 8=2 10=2 11=1
+adams: 8=2 11=1
+trump: 1=4 3=3 6=5
+bannon: 1=4 3=4
+abbott: 8=3 9=2 11=2
+gjohnson: 1=0 6=1

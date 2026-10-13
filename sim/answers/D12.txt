@@ -17,3 +17,8 @@ hawley: 1=2
 santorum: 9=2
 mjohnson: 9=2
 yang: 7=2
+# --- third pass: individual records ---
+trump: 13=2
+vance: 1=2 13=2
+bannon: 13=2
+hegseth: 14=2

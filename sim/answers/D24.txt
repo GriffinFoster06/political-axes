@@ -13,3 +13,5 @@
 newsom: 7=2
 pritzker: 7=2
 abbott: 7=2
+# --- third pass: individual records ---
+manchin: 1=1

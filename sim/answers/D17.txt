@@ -31,3 +31,11 @@ desantis: 1=3
 rpaul: 9=2 10=-
 rpaul_sr: 9=2 10=-
 yang: 4=1 11=1 17=2
+
+# --- second pass ---
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=3
+# --- third pass: individual records ---
+aoc: 4=1 7=0
+mamdani: 7=0
+sinema: 1=0
+pscott: 1=0

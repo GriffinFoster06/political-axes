@@ -46,3 +46,36 @@ mtg: 5=3
 gaetz: 11=1
 massie: 21=0 24=n
 rpaul_sr: 24=n
+
+# --- second pass ---
+raskin,whitehouse,cmurphy,vanhollen,walz,pritzker,booker,wyden,schiff: 1=0 9=0 11=0 12=0 13=0 19=1
+kelly,gallego,fetterman,shapiro,spanberger,torres,cuomo,beshear,hochul,emanuel,bloomberg,phillips,polis,mbennet,moore,aking,ossoff,klobuchar: 1=1 4=1 8=1 11=2 12=1 15=2 17=2 19=3 20=1
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=3 3=2 4=3 9=3 11=2 22=0 23=0 24=1
+romney,kinzinger,christie,hutchinson,lcheney,cassidy,jeb,ryan,gwbush,mccain,mcconnell,dcheney: 1=3 9=2 11=3 12=2 24=0 25=2
+noem,abbott,hsanders,stefanik,hegseth,lake,tuberville: 24=1
+pritzker: 1=1
+newsom: 1=0
+schumer: 11=1
+klobuchar: 11=1 12=0
+cmurphy: 11=0 12=0
+gallego: 1=1
+fetterman: 1=1 4=0
+shapiro: 15=3
+jeb: 15=3
+ryan: 15=3 22=3
+tscott: 3=2
+hsanders: 15=3
+mlee: 1=4 3=2 15=3 22=3
+cruz: 3=2 11=3
+roy: 22=3
+jordan: 3=2
+# --- third pass: individual records ---
+sanders: 1=0 10=0 17=1 18=1 19=0 21=0
+warren: 11=0 12=0 13=0 17=2 18=2 19=1 20=0 21=0
+aoc: 1=0 17=1
+tlaib: 17=0 18=0
+khanna: 11=1 17=2 18=2
+mamdani: 16=0 17=0 18=0
+crockett: 17=2 18=2
+nader: 9=0 10=0 11=0 21=0
+tester: 21=0 22=1

@@ -25,3 +25,16 @@ abbott: 9=3
 desantis: 9=3
 roy: 12=0
 yang: 7=0 11=0 12=0 16=0
+
+# --- second pass ---
+thune,kemp,youngkin,mccarthy,tscott,burgum,jindal,gingrich_p,rubio,pompeo,cotton,graham,haley: 1=3 2=2 3=2 12=1
+# --- third pass: individual records ---
+sanders: 6=0 7=0 11=0 12=2 13=0 16=0
+aoc: 16=0
+khanna: 12=0 13=0
+mamdani: 17=0
+stein: 14=0
+nader: 10=0 14=0
+cornel_west: 6=0
+trump: 3=3 7=2
+ramaswamy: 16=3
