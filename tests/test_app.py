@@ -262,7 +262,7 @@ def test_share_compare_and_about(built):
         assert page.query_selector(".res-head")
         # about page
         page.click("#nav-about")
-        assert "How this quiz works" in page.inner_text("h1")
+        assert "How it works" in page.inner_text("h1")
         page.click("#back")
         assert page.query_selector(".res-head")
         # theme toggle sets an explicit theme

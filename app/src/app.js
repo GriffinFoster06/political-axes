@@ -270,8 +270,8 @@
   // ---------- home and instructions ----------
   var MODES = [
     { id: "quick", title: "Quick", time: "about 25 min", n: function () { return B.quick.length; }, text: "The most telling questions on every topic." },
-    { id: "pilot", title: "Standard", time: "about 45 min", n: function () { return B.design.link.length + 3 * Math.round(B.design.blocks.reduce(function (s, b) { return s + b.length; }, 0) / B.design.blocks.length); }, text: "Sharper scores. Everyone gets a different mix of questions." },
-    { id: "full", title: "Everything", time: "about 2 hours", n: function () { return Object.keys(B.items).length; }, text: "Every question, in as many sittings as you like." },
+    { id: "pilot", title: "Standard", time: "about 45 min", n: function () { return B.design.link.length + 3 * Math.round(B.design.blocks.reduce(function (s, b) { return s + b.length; }, 0) / B.design.blocks.length); }, text: "More questions, sharper scores." },
+    { id: "full", title: "Everything", time: "about 2 hours", n: function () { return Object.keys(B.items).length; }, text: "Every question. Take it in several sittings." },
   ];
   var HERO_LABELS = {};
   ["dem_mainstream", "gop_current", "libertarian", "dem_socialist", "maga", "centrist", "pres_fdr", "pres_reagan", "pres_obama", "green", "religious_right", "ancap", "abundance", "rockefeller", "postliberal", "fr_rn"].forEach(function (id) { HERO_LABELS[id] = 1; });
@@ -284,7 +284,7 @@
     var sample = B.items[SAMPLE_ID];
     var html = '<div class="home-grid"><section class="hero">' +
       "<h1>Where do you stand?</h1>" +
-      '<p class="lede">A US politics quiz where you pick actual policies (a $15 minimum wage, a 37% top tax rate, 500,000 green cards a year) instead of agreeing with slogans. You get a score on ' + (AXES.length - 1) + " separate issues and a match against " + B.profiles.length + " parties, factions, presidents and ideologies.</p>" +
+      '<p class="lede">A US politics quiz where you pick actual policies, like a $15 minimum wage, instead of agreeing with slogans. You get scored on ' + (AXES.length - 1) + " issues and matched against " + B.profiles.length + " parties, presidents and ideologies.</p>" +
       "</section>" +
       '<section class="start" aria-labelledby="pick"><h2 id="pick" class="contest">Choose a length</h2>' +
       '<div class="ballot" role="radiogroup" aria-labelledby="pick">' + modes.map(function (m) {
@@ -294,14 +294,13 @@
       }).join("") + "</div>" +
       '<div class="cta-row"><button class="btn big" id="go">Start the quiz</button>' +
       (last ? '<button class="btn ghost" id="last">Your results from ' + esc(last.d) + "</button>" : "") + "</div>" +
-      '<p class="fine">Your progress saves on this device, so you can stop and come back. There\'s no account, and the quiz never asks for your name or email.</p></section>' +
+      '<p class="fine">Progress saves on this device. No account, no name, no email.</p></section>' +
       '<section class="field-wrap" aria-label="Map of comparison groups"><h2 class="field-title">' + B.profiles.length + ' groups on two of the axes</h2>' +
       plotHtml({ cat: "all", hero: true, label: HERO_LABELS, user: lastPt && lastPt.x != null ? lastPt : null, userLabel: "You, last time" }) +
       '<button type="button" class="link" id="browse">See every group and axis</button></section></div>' +
       '<section class="sample" aria-labelledby="sample-h"><div class="sample-text"><h2 id="sample-h">What the questions look like</h2>' +
-      "<p>This one is from the labor topic. Every question gives you concrete choices, a line saying which case to picture, and a way out if none of them fit.</p>" +
-      "<p>No question names a party or a politician. Rules about presidential power are asked about any president, and a few are asked twice with each side benefiting, which separates principle from team loyalty.</p>" +
-      '<p id="sample-say" class="sample-say" aria-live="polite">Try it: pick an answer to see which way it moves you.</p></div>' +
+      "<p>Concrete choices, a line saying which case to picture, and a way out if none fit. No question names a party or a politician.</p>" +
+      '<p id="sample-say" class="sample-say" aria-live="polite">Pick an answer to see how it scores.</p></div>' +
       '<div class="sample-q"><p class="contest">' + esc(topicName(sample.domain)) + '</p><div class="q-box"><p class="stem">' + esc(sample.stem) + '</p><p class="scope">' + esc(sample.scope) + "</p>" +
       '<div class="options" role="radiogroup" aria-label="Sample answers">' + sample.options.map(function (o, k) {
         return '<button type="button" class="opt" role="radio" data-sample="' + k + '" aria-checked="false"><span class="oval" aria-hidden="true"></span><span class="otext">' + esc(o) + "</span></button>";
@@ -325,7 +324,7 @@
         });
         var g = k.G * x;
         document.getElementById("sample-say").textContent = "That answer counts toward " + says.join(" and ") +
-          (Math.abs(g) < 0.01 ? ", and sits in the middle overall." : ", and " + (g < 0 ? "left" : "right") + " overall (" + signed(g) + "). Your scores average every answer like this.");
+          (Math.abs(g) < 0.01 ? ", and the middle overall." : ", and " + (g < 0 ? "left" : "right") + " overall (" + signed(g) + ").");
       });
     });
     bind("#go", function () { S.phase = "howto"; save(); render(); });
@@ -337,11 +336,11 @@
     show('<h1>Before you start</h1>' +
       '<p class="lede">' + esc(m.title) + " quiz: " + m.n() + " questions across " + B.domains.length + " topics, " + esc(m.time) + ".</p>" +
       '<div class="howto-grid"><ol class="howto">' +
-      "<li><b>Fill in the answer closest to your view.</b> The quiz moves on by itself. Use Back to change an answer.</li>" +
-      "<li><b>Picture the usual case.</b> The grey line under each question says which case to think about. Exceptions get their own follow-up.</li>" +
-      "<li><b>Some questions set two goals against each other.</b> Pick how far you lean toward one.</li>" +
-      "<li><b>You don't have to have an opinion.</b> “I don't know” and “None of these fit” are under every question, and neither counts as a middle answer.</li>" +
-      "<li><b>Dotted words have a definition.</b> Tap one to read it.</li>" +
+      "<li>Pick the closest answer. The quiz moves on by itself, and Back lets you change it.</li>" +
+      "<li>Picture the usual case. The grey line under each question says which one. Exceptions get a follow-up.</li>" +
+      "<li>Some questions set two goals against each other. Pick how far you lean.</li>" +
+      "<li>“I don't know” and “None of these fit” never count as a middle answer.</li>" +
+      "<li>Tap a dotted word for its definition.</li>" +
       "</ol>" +
       '<div class="demo" aria-hidden="true"><p class="contest">Example</p><div class="q-box"><p class="stem">Overall, how big should the federal government be?</p>' +
       '<div class="options"><div class="opt"><span class="oval"></span><span class="otext">Somewhat bigger</span></div><div class="opt is-on"><span class="oval"></span><span class="otext">About the same as now</span></div><div class="opt"><span class="oval"></span><span class="otext">Somewhat smaller</span></div></div></div></div></div>' +
@@ -428,7 +427,7 @@
   }
   // The contest header: a black bar like the one over each race on a paper ballot.
   function topicLine(e, it, isRep) {
-    if (isRep) return '<p class="contest"><span>Second look</span><span class="contest-n">You saw this one earlier. Answer it as you see it now.</span></p>';
+    if (isRep) return '<p class="contest"><span>Asked again</span><span class="contest-n">You saw this earlier</span></p>';
     var name = domain(e.d || it.domain).name.replace(/\s*\(.*\)$/, ""), tp = topicPos(e);
     var note = e.k === "item" && firstOfTopic() ? "New topic · " + plural(tp[1], "question") : "Question " + tp[0] + " of " + tp[1];
     return '<p class="contest"><span>' + esc(name) + '</span><span class="contest-n">' + esc(note) + "</span></p>";
@@ -630,10 +629,9 @@
     var sc = computeScores(S.ans), preview = "", top = profileMatches(sc)[0];
     var done = topicsInQueue().filter(function (d) { return S.queue.slice(S.pos).every(function (e) { return e.d !== d || e.k !== "item"; }); }).length;
     if (sc.G && sc.G.n >= MIN_N) preview = '<div class="break-preview">' + barHtml(META.G, sc.G, { big: true }) +
-      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b>. That will shift as you answer more.</p>" : "") + "</div>";
+      (top ? '<p class="scope">Closest so far: <b>' + esc(top.p.name) + "</b></p>" : "") + "</div>";
     show("<h1>" + pct + "% done</h1>" +
-      '<p class="lede">You\'ve finished ' + done + " of " + topicsInQueue().length + " topics. About " + minutesLeft() + " minutes to go.</p>" +
-      "<p>Your answers are saved on this device, so you can close the page and pick up later.</p>" + preview +
+      '<p class="lede">' + done + " of " + topicsInQueue().length + " topics finished, about " + minutesLeft() + " minutes to go. Your answers are saved if you want to stop here.</p>" + preview +
       '<div class="nav"><span></span><button class="btn big" id="go">Keep going</button></div>');
     bind("#go", function () { spend(); S.phase = "quiz"; save(); render(); });
   }
@@ -646,7 +644,7 @@
     var top = S.pri.top;
     var labels = Object.keys(P.labels).sort(function (a, b) { return P.labels[a].localeCompare(P.labels[b]); });
     show('<p class="contest"><span>Almost done</span><span class="contest-n">Optional</span></p><h1>Which issues matter most to you?</h1>' +
-      '<p class="scope">Pick up to ' + PRI_MAX + ", most important first. Tap one again to take it off. Your results will include a second match that weights these issues.</p>" +
+      '<p class="scope">Pick up to ' + PRI_MAX + ", most important first. Your results will add a match weighted toward them.</p>" +
       '<div class="pri-grid">' + labels.map(function (d) {
         var r = top.indexOf(d);
         return '<button type="button" class="pri" data-d="' + esc(d) + '" aria-pressed="' + (r >= 0) + '"><span class="rank" aria-hidden="true">' + (r >= 0 ? r + 1 : "") + "</span>" + esc(P.labels[d]) + "</button>";
@@ -693,7 +691,7 @@
   }
   function renderAboutYou() {
     var qs = aboutItems();
-    var html = '<p class="contest"><span>About you</span><span class="contest-n">Optional</span></p><h1>A few questions about you</h1><p class="scope">' + esc(B.about.intro_text) + ' All optional, and they never change your results.</p><div class="form">';
+    var html = '<p class="contest"><span>About you</span><span class="contest-n">Optional</span></p><h1>A few questions about you</h1><p class="scope">' + esc(B.about.intro_text) + '</p><div class="form">';
     qs.forEach(function (q) {
       html += '<fieldset id="fs-' + q.id + '"' + (aboutVisible(q) ? "" : " hidden") + "><legend>" + esc(q.stem) + "</legend>";
       if (q.id === "state") {
@@ -1064,9 +1062,9 @@
     var n = L + R, minor = Math.min(L, R), share = n ? minor / n : 0;
     var label = share < 0.12 ? "Consistent" : share < 0.3 ? "Mostly consistent" : "Cross-pressured";
     var about = {
-      "Consistent": "Your views line up neatly on one side of today's left–right divide.",
-      "Mostly consistent": "You mostly line up with one side, with a few real exceptions.",
-      "Cross-pressured": "You mix views from both sides, which puts you between the parties' coalitions. Many Americans are like this.",
+      "Consistent": "On nearly every issue, one side of today's left–right divide.",
+      "Mostly consistent": "Mostly one side, with a few exceptions.",
+      "Cross-pressured": "A mix of views from both sides, like many Americans.",
     }[label];
     return { L: L, R: R, M: M, total: axes.length, label: label, about: about };
   }
@@ -1189,7 +1187,7 @@
       '<text class="axlabel" x="' + (P - 9) + '" y="' + M + '" text-anchor="middle" transform="rotate(-90 ' + (P - 9) + " " + M + ')">' + esc(xp[0]) + "</text>" +
       '<text class="axlabel" x="' + (W - P + 9) + '" y="' + M + '" text-anchor="middle" transform="rotate(90 ' + (W - P + 9) + " " + M + ')">' + esc(xp[1]) + "</text>" +
       dots + odot + udot + "</svg>" +
-      '<figcaption class="plotcap" aria-live="polite">' + (o.hero ? "Each dot is a party, president, movement or ideology. Tap one to see who it is." : "Tap any dot to see who it is." + (missing ? " " + plural(missing, "group") + " took no clear position on these and aren't shown." : "")) + "</figcaption></figure>";
+      '<figcaption class="plotcap" aria-live="polite">' + (o.hero ? "Tap a dot to see who it is." : "Tap a dot to see who it is." + (missing ? " " + plural(missing, "group") + " with no position here aren't shown." : "")) + "</figcaption></figure>";
   }
   var plotMatch = null; // id -> match %, for captions on the results page
   function wirePlot(root) {
@@ -1338,12 +1336,12 @@
         '<p class="scope">Counted over the ' + con.total + " axes that split along today's left–right line.</p>";
       if (ten.off.length) {
         html += "<h3>Where " + you(c) + " break from " + (c.they ? "their" : "your") + " side</h3><ul class=\"tension\">" + ten.off.map(function (ax) {
-          return '<li><button type="button" class="link" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + "</button> " + esc(bandText(META[ax], sc[ax].v)) + "</li>";
+          return '<li><button type="button" class="link" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + '</button> <span class="num">' + signed(sc[ax].v) + "</span> " + esc(lc(leanText(sc[ax].v, META[ax]).replace(/^(Leans|Moderately:|Strongly:|Very strongly:) ?/, ""))) + "</li>";
         }).join("") + "</ul>";
       }
       if (ten.cross.length) {
         html += "<h3>Views that cut across left and right</h3><ul class=\"tension\">" + ten.cross.slice(0, 5).map(function (ax) {
-          return '<li><button type="button" class="link" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + "</button> " + esc(bandText(META[ax], sc[ax].v)) + "</li>";
+          return '<li><button type="button" class="link" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + '</button> <span class="num">' + signed(sc[ax].v) + "</span> " + esc(lc(leanText(sc[ax].v, META[ax]).replace(/^(Leans|Moderately:|Strongly:|Very strongly:) ?/, ""))) + "</li>";
         }).join("") + "</ul>";
       }
       html += "</section>";
@@ -1360,14 +1358,8 @@
     var weights = !c.they && c.own ? priorityWeights(S.pri && S.pri.top) : null;
     if (weights) {
       var wm = profileMatches(sc, weights);
-      html += '<section class="block"><h2>On the issues you care about most</h2><p>You ranked ' + esc(S.pri.top.map(function (d) { return B.priorities.labels[d]; }).join("; ")) + ". Counting the axes behind those issues most heavily, you're closest to:</p>" +
+      html += '<section class="block"><h2>On the issues you care about most</h2><p class="scope">Weighted toward ' + esc(S.pri.top.map(function (d) { return B.priorities.labels[d]; }).join("; ")) + ".</p>" +
         '<ol class="mini-list">' + wm.slice(0, 3).map(function (m) { return '<li><button type="button" class="link" data-open-group="' + m.p.id + '">' + esc(m.p.name) + "</button> <span class=\"era\">" + m.match + "%</span></li>"; }).join("") + "</ol></section>";
-    }
-    var strongest = shownAxes(sc).sort(function (a, b) { return Math.abs(sc[b].v) - Math.abs(sc[a].v); }).slice(0, 4);
-    if (strongest.length) {
-      html += '<section class="block"><h2>Strongest views</h2><ol class="strong-list">' + strongest.map(function (ax) {
-        return '<li><span class="num sv">' + signed(sc[ax].v) + '</span><span><button type="button" class="link strong" data-goto="axes#ax-' + ax + '">' + esc(META[ax].name) + "</button> " + esc(bandText(META[ax], sc[ax].v)) + "</span></li>";
-      }).join("") + "</ol></section>";
     }
     if (c.prev && !c.other) {
       var moves = AXES.filter(function (ax) { return ok(sc, ax) && c.prev[ax]; })
@@ -1397,7 +1389,7 @@
     var list = resCat === "all" ? matches : matches.filter(function (m) { return m.p.cat === resCat; });
     var lim = showAll ? list.length : 10;
     var html = '<section class="block"><h2>Who ' + you(c) + "'re closest to</h2>" + chipsHtml() +
-      '<p class="scope cat-about">' + esc(resCat === "all" ? "All " + matches.length + " groups that can be compared on at least six axes, closest first." : catAbout(resCat)) + "</p>" +
+      '<p class="scope cat-about">' + esc(resCat === "all" ? "Closest first." : catAbout(resCat)) + "</p>" +
       '<p class="legend"><span class="dot-key you"></span>' + esc(You(c)) + ' <span class="dot-key grp"></span>The group</p>' +
       '<ol class="profiles">' + list.slice(0, lim).map(function (m, k) {
         var open = openGroup === m.p.id;
@@ -1409,7 +1401,7 @@
       }).join("") + "</ol>" +
       (list.length > lim ? '<button type="button" class="link" id="showall">Show all ' + list.length + "</button>" : "") +
       (showAll && list.length > 10 ? '<button type="button" class="link" id="showless">Show fewer</button>' : "") +
-      '<p class="scope">Match = 100 × (1 − typical distance ÷ 2) across every axis both sides have a position on, with the overall left–right score counted double. Groups placed on fewer axes get a small penalty so they can\'t win on a handful of issues.</p></section>';
+      '<p class="scope">Match = 100 × (1 − typical gap ÷ 2) over the axes both share, with overall left–right counted double.</p></section>';
     return html;
   }
 
@@ -1428,7 +1420,7 @@
       }).join("") + "</select>";
     }
     if (userPos(sc, xs) == null || userPos(sc, ys) == null) { mapX = MAP_X; mapY = MAP_Y; xs = dimAxes(mapX); ys = dimAxes(mapY); if (userPos(sc, ys) == null) { mapY = "econ"; ys = ECON; } ux = userPos(sc, xs); uy = userPos(sc, ys); }
-    var html = '<section class="block"><h2>The map</h2><p class="scope">Pick any two axes. Each dot is a comparison group; ' + you(c) + "'re the yellow dot.</p>" +
+    var html = '<section class="block"><h2>The map</h2><p class="scope">Each dot is a group. ' + You(c) + "'re yellow.</p>" +
       '<div class="presets">' + MAP_PRESETS.filter(function (p) { return userPos(sc, dimAxes(p.x)) != null && userPos(sc, dimAxes(p.y)) != null; }).map(function (p) { return '<button type="button" class="chip pill" data-preset="' + p.id + '" aria-pressed="' + (p.x === mapX && p.y === mapY) + '">' + esc(p.name) + "</button>"; }).join("") + "</div>" +
       '<div class="map-controls"><label>Across ' + sel("mapx", mapX) + '</label><button type="button" class="link" id="mapswap" aria-label="Swap axes">Swap</button><label>Up and down ' + sel("mapy", mapY) + "</label></div>" +
       chipsHtml() +
@@ -1457,7 +1449,7 @@
   }
   function panelAxes(c) {
     var sc = c.sc, html = '<section class="block"><h2>All ' + shownAxes(sc).length + " axes</h2>" +
-      '<p class="scope">Scores run from −100 to +100. Open an axis for what the score means, where every group stands' + (c.own ? ", and which of your answers moved it" : "") + "." +
+      '<p class="scope">From −100 to +100. Open an axis for details.' +
       (c.other ? ' <span class="legend"><span class="dot-key you"></span>' + esc(You(c)) + ' <span class="dot-key other"></span>' + esc(c.otherLabel) + "</span>" : "") +
       (c.prev && !c.other ? ' <span class="legend"><span class="dot-key you"></span>Now <span class="dot-key prev"></span>Last time</span>' : "") + "</p>" + chipsHtml() + "</section>";
     B.axes.families.forEach(function (f) {
@@ -1485,19 +1477,15 @@
     var cfg = BAL[ax];
     if (!cfg || !o || !o.lop || o.lop.nL < 2 || o.lop.nR < 2) return "";
     var pL = Math.round(50 * (o.lop.L + 1)), pR = Math.round(50 * (o.lop.R + 1)), d = o.lop.L - o.lop.R;
-    var more = d > 0 ? cfg.note_L : cfg.note_R, less = d > 0 ? cfg.note_R : cfg.note_L;
-    var head = Math.abs(d) < 0.4 ? "Even-handed." : "Lopsided.";
-    var body = Math.abs(d) < 0.4
-      ? You(c) + " protect " + cfg.note_L + " and " + cfg.note_R + " about equally"
-      : You(c) + " protect " + more + " much more than " + less;
-    return '<p class="lop"><b>' + head + "</b> " + esc(body + ": " + (d > 0 ? pL : pR) + " vs " + (d > 0 ? pR : pL) + " on a 0–100 protection scale. The score above counts both sides equally.") + "</p>";
+    var head = Math.abs(d) < 0.4 ? "Even-handed:" : "Lopsided:";
+    return '<p class="lop"><b>' + head + "</b> " + esc(pL + " for " + cfg.note_L + ", " + pR + " for " + cfg.note_R + " (how much " + you(c) + " protect each, 0–100). The score counts both equally.") + "</p>";
   }
 
   // --- topics ---
   function panelTopics(c) {
     var sc = c.sc, leans = domainLeans(sc);
     var ranked = (S.pri && S.pri.top) || [];
-    var html = '<section class="block"><h2>Topic by topic</h2><p class="scope">How you answered on each of the ' + B.domains.length + " topics, and which way those answers lean on today's left–right line. Open a topic to see every answer and the axes it feeds.</p></section><div class=\"topics\">";
+    var html = '<section class="block"><h2>Topic by topic</h2><p class="scope">Your answers on each topic, and which way they lean.</p></section><div class="topics">';
     B.domains.forEach(function (dm) {
       var lean = leans[dm.id], rows = "", n = 0;
       B.order[dm.id].forEach(function (id) {
@@ -1542,7 +1530,7 @@
     });
     html += '<section class="block"><h2>Your answers</h2><p>' + counts.a + " answered, " + counts.dk + " “I don't know”, " + counts.nf + " “none of these fit”, " + counts.skip + " skipped. Answers that weren't a position never count toward a score.</p>" +
       '<div class="cta-row"><button class="btn ghost" id="copy">Copy my answers</button>' + (window.claude ? "" : '<button class="btn ghost" id="dl">Download</button>') + '</div><textarea id="raw" readonly hidden></textarea>' +
-      '<p class="scope">Every answer, topic by topic, is under <button type="button" class="link" data-goto="topics">Topics</button>.</p></section>';
+      '</section>';
     return html;
   }
 
@@ -1575,17 +1563,17 @@
     var prevRec = previousResult(), prev = prevRec ? decodeScores(prevRec.c) : null;
     ctx = { sc: sc, own: true, they: false, other: compare && compare.scores, otherLabel: compare && compare.label, prev: compare ? null : prev, prevRec: prevRec, kicker: "Your results" };
     var status = {
-      sent: "Your anonymous answers were saved. Thanks for helping improve the quiz.",
+      sent: "Your answers were saved anonymously.",
       sending: "Saving your answers…",
-      failed: "Your answers couldn't be saved (no connection?). They're still on this device; try again below.",
-      local: "This copy isn't connected to a server, so your answers stay on this device.",
-      minor: "Thanks for taking it. Because you're under 18, your answers weren't saved.",
+      failed: "Your answers couldn't be saved. They're still on this device.",
+      local: "Your answers stay on this device.",
+      minor: "Because you're under 18, your answers weren't saved.",
     }[S.submitted] || "";
     var html = reportHeadHtml(ctx) + tabsHtml(ctx) + '<div id="panel" class="panel" role="tabpanel"></div>';
     html += '<section class="results-block share"><div class="share-grid"><div class="share-col"><h2>Share your results</h2>' +
-      (link ? '<p class="scope">The link carries your scores only, never your answers.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(link) + '"><button class="btn ghost" id="copylink">Copy link</button></div>'
-        : '<p class="scope">Paste this code into the quiz site to show your results. It carries your scores only.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(code) + '"><button class="btn ghost" id="copylink">Copy code</button></div>') +
-      '</div><div class="share-col"><h2>Compare with a friend</h2><label for="cmpin" class="scope">Paste their link or code. Their scores show as magenta dots throughout the report.</label><div class="copyrow"><input type="text" id="cmpin" placeholder="Their link or code" value=""><button class="btn ghost" id="cmpgo">Compare</button></div></div></div>' +
+      (link ? '<p class="scope">Scores only, never your answers.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(link) + '"><button class="btn ghost" id="copylink">Copy link</button></div>'
+        : '<p class="scope">Paste this code into the quiz site. It holds your scores only.</p><div class="copyrow"><input type="text" id="sharelink" readonly value="' + esc(code) + '"><button class="btn ghost" id="copylink">Copy code</button></div>') +
+      '</div><div class="share-col"><h2>Compare with a friend</h2><label for="cmpin" class="scope">Their scores show as magenta dots.</label><div class="copyrow"><input type="text" id="cmpin" placeholder="Their link or code" value=""><button class="btn ghost" id="cmpgo">Compare</button></div></div></div>' +
       (compare ? '<p class="scope">Comparing with ' + esc(compare.label) + ". " + (function () { var m = matchOne(sc, scoresToPos(compare.scores)); return m ? "You two are a " + m.match + "% match." : ""; })() + ' <button class="link" id="cmpclear">Stop comparing</button></p>' : "") +
       '<p class="scope" id="cmpmsg"></p></section>';
     if (status) html += '<p class="notice' + (S.submitted === "failed" ? " warn" : "") + '">' + esc(status) + (S.submitted === "failed" ? ' <button class="link" id="retry">Try again</button>' : "") + "</p>";
@@ -1595,7 +1583,7 @@
         return '<button type="button" class="chip" role="radio" data-fit="' + k + '" aria-pressed="' + (S.resultFit === k) + '"><span class="oval" aria-hidden="true"></span>' + esc(o) + "</button>";
       }).join("") + '</div><label for="fittext" class="scope">' + esc(fit.free_text) + '</label><textarea id="fittext" maxlength="800">' + esc(S.resultFitText || "") + "</textarea></section>";
     }
-    html += '<p class="scope">Early scoring: hand-set weights that will sharpen as more people take the quiz. <button type="button" class="link" id="method">How scoring works</button></p>' +
+    html += '<p class="scope">Scores are early estimates. <button type="button" class="link" id="method">How scoring works</button></p>' +
       '<div class="nav results-actions"><button class="btn ghost" id="explore-btn">Explore all groups and axes</button><button class="btn" id="retake">Take it again</button></div><div id="confirm"></div>';
     show(html);
     wireReport();
@@ -1648,8 +1636,8 @@
     ctx = { sc: sc, own: false, they: !isMine, other: cmpOn ? mineSc : null, otherLabel: "You", kicker: isMine ? "Your results from " + mine.d : "Shared results" };
     var pair = cmpOn ? matchOne(sc, scoresToPos(mineSc)) : null;
     var html = reportHeadHtml(ctx) +
-      (isMine ? '<p class="scope">Only scores are saved on this device, not answers, so this view can\'t show which answers moved each axis.</p>'
-        : '<p class="scope">Someone shared their quiz results with you. Only their scores are in the link, never their answers.' + (pair ? " You two are a <b>" + pair.match + "% match</b>." : "") + "</p>") +
+      (isMine ? '<p class="scope">Only scores are saved, so this view can\'t show your answers.</p>'
+        : '<p class="scope">Shared results. The link holds scores only.' + (pair ? " You two are a <b>" + pair.match + "% match</b>." : "") + "</p>") +
       '<div class="nav"><span class="nav-right">' + (!isMine && mineSc ? '<button class="btn ghost" id="cmp">' + (cmpOn ? "Hide my results" : "Compare with mine") + "</button>" : "") +
       '</span><span class="nav-right"><button class="btn" id="home">' + (isMine ? "Back" : "Take the quiz yourself") + "</button></span></div>" +
       tabsHtml(ctx) + '<div id="panel" class="panel" role="tabpanel"></div>';
@@ -1695,7 +1683,7 @@
       var p = PROFILE[exSel], m = me ? matchOne(me, p.pos, null) : null, sims = similarGroups(p, 6);
       html += '<header class="res-head"><p class="topic">' + esc(catName(p.cat)) + "</p><h1>" + esc(p.name) + '</h1><p class="res-sub">' + esc(profileMeta(p)) + ". " + esc(p.about) + basisText(p) + "</p>" +
         (m ? '<p class="summary">You and ' + esc(p.name) + " are a " + m.match + "% match.</p>" : "") + "</header>";
-      html += '<section class="block"><h2>Positions</h2><p class="scope">Placed on ' + Object.keys(p.pos).filter(function (k) { return k !== "G"; }).length + " of " + (AXES.length - 1) + " axes (the rest weren't live issues for this group or it took no clear stand)." +
+      html += '<section class="block"><h2>Positions</h2><p class="scope">Placed on ' + Object.keys(p.pos).filter(function (k) { return k !== "G"; }).length + " of " + (AXES.length - 1) + " axes." +
         (me ? ' <span class="legend"><span class="dot-key grp"></span>' + esc(p.short) + ' <span class="dot-key you"></span>You</span>' : "") + "</p>";
       [{ name: "Overall", axes: [B.axes.overall] }].concat(B.axes.families).forEach(function (f) {
         var rows = f.axes.filter(function (a) { return p.pos[a.id] != null; });
@@ -1713,7 +1701,7 @@
       }).join("") + "</ol></section>";
       html += '<div class="nav"><button type="button" class="link" data-ex-list="1">All groups</button></div>';
     } else if (exTab === "groups") {
-      html += "<h1>Comparison groups</h1><p class=\"lede\">" + B.profiles.length + " parties, factions, voter types, presidents, historical movements, ideologies and parties abroad, placed on the quiz's axes. Today's factions and recent presidents come from simulated answers for their leading politicians; the rest are placed by hand from platforms, voting records, surveys and historians' accounts.</p>" +
+      html += "<h1>Comparison groups</h1><p class=\"lede\">" + B.profiles.length + " parties, presidents, movements and ideologies, placed on the quiz's axes.</p>" +
         '<div class="chips" role="tablist">' + [{ id: "all", name: "All" }].concat(CATS).map(function (c) { return '<button type="button" class="chip" role="tab" data-excat="' + c.id + '" aria-selected="' + (exCat === c.id) + '">' + esc(c.name) + "</button>"; }).join("") + "</div>" +
         '<div class="search"><label for="ex-q">Find a group</label><input type="search" id="ex-q" placeholder="Try Whigs, Obama or Labour" autocomplete="off"><p class="scope" id="ex-none" hidden>No group matches that.</p></div>';
       html += plotHtml({ cat: exCat, label: exCat === "all" ? HERO_LABELS : null, user: me && userPos(me, dimAxes(MAP_X)) != null && userPos(me, dimAxes(MAP_Y)) != null ? { x: userPos(me, dimAxes(MAP_X)), y: userPos(me, dimAxes(MAP_Y)) } : null });
@@ -1736,7 +1724,7 @@
       html += '<section class="block"><h2>Questions that measure it</h2><p class="scope">' + plural(qs.length, "question") + " in the full bank feed this axis. A sample:</p><ul class=\"qlist\">" + qs.slice(0, 12).map(function (id) { return "<li>" + esc(B.items[id].stem) + "</li>"; }).join("") + "</ul></section>";
       html += '<div class="nav"><button type="button" class="link" data-ex-list="1">All axes</button></div>';
     } else {
-      html += "<h1>The axes</h1><p class=\"lede\">The quiz measures " + (AXES.length - 1) + " separate dimensions, plus an overall left–right score. Many of them cut across the usual left–right line.</p>" +
+      html += "<h1>The axes</h1><p class=\"lede\">" + (AXES.length - 1) + " issues, plus an overall left–right score.</p>" +
         '<div class="search"><label for="ex-q">Find an axis</label><input type="search" id="ex-q" placeholder="Try speech, guns or China" autocomplete="off"><p class="scope" id="ex-none" hidden>No axis matches that.</p></div>';
       [{ name: "Overall", axes: [B.axes.overall] }].concat(B.axes.families).forEach(function (f) {
         html += '<section class="block"><h2>' + esc(f.name) + '</h2><ul class="group-list">' + f.axes.map(function (a) {
@@ -1771,42 +1759,30 @@
   var returnTo = null;
   function openAbout() { returnTo = { view: view, y: window.scrollY }; view = "about"; render(); }
   function renderAboutPage() {
-    var html = '<h1>How this quiz works</h1>' +
-      '<p class="lede">A personal project to build a more honest political quiz for the US: more dimensions, clearer questions, and no thumb on the scale.</p>' +
-      '<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#ab-diff">What makes it different</a></li><li><a href="#ab-scoring">How scoring works</a></li><li><a href="#ab-report">Reading the report</a></li><li><a href="#ab-axes">The axes</a></li><li><a href="#ab-groups">The groups</a></li><li><a href="#ab-privacy">Privacy</a></li><li><a href="#ab-limits">Limits</a></li></ul></nav>' +
-      '<section class="prose"><h2 id=ab-diff>What makes it different</h2><ul>' +
-      "<li><b>Answers are positions.</b> Instead of “agree or disagree” with a vague statement, you pick the policy you actually want, with real numbers where they exist.</li>" +
-      "<li><b>Scope lines and exceptions.</b> Each question says what case to picture. Edge cases (rape and incest exceptions, say, or which groups of immigrants) are asked separately, so a strict rule with exceptions isn't confused with either extreme.</li>" +
-      "<li><b>Honest ways out.</b> “None of these fit” and “I don't know enough” are never scored as a middle position.</li>" +
-      "<li><b>No party cues.</b> No party or politician names, and rules about power are asked for any president of either party. Some rules are asked twice, once with each side benefiting, to separate principle from partisanship.</li>" +
-      "<li><b>" + (AXES.length - 1) + " candidate dimensions.</b> Trust, populism, free speech, presidential power, federalism and more get their own axes, because they cut across left and right.</li>" +
-      "</ul><h2 id=ab-scoring>How scoring works</h2>" +
-      "<p>Each answer becomes a number from −1 (one end of the answer list) to +1 (the other end). Every question is keyed to the axes it measures and to overall left–right, with a direction. An axis score is the average of the answers keyed to it, shown as −100 to +100 once it has at least 3 answers. Follow-up cases count half as much as full questions.</p>" +
-      "<p>Free speech and federalism are scored for consistency. Each of their questions is tagged by whose speech, or which side's state policies, the protective answer helps, and the left-coded and right-coded questions count equally. Protecting only the speech your own side likes doesn't count as protecting free speech. If your answers lean hard one way, the report says so.</p>" +
-      "<p>These weights are set by hand for now. As more people take the quiz, the plan is to check which questions are the best measuring sticks and let those count more. That's why results are labeled early scoring.</p>" +
-      "<p>Today's parties and factions, and the last five presidents, are placed by answering the whole quiz as each of their leading politicians would, from their records and public statements, and averaging the results. Past presidents are answered from their record in office. Voter types, older parties, ideologies and parties abroad are hand-placed from platforms, voting records, surveys and historians' accounts, and are only compared on issues they took positions on. Treat the match percentages as a fun guide, not a measurement.</p>" +
-      "<h2 id=ab-report>How the report reads your scores</h2><ul>" +
-      "<li><b>Bands.</b> Each axis is split into five bands (strongly one way, leaning, middle, leaning, strongly the other way) at −60, −20, +20 and +60. Each band has a plain-language description, so you can see what your number means.</li>" +
-      "<li><b>Your label.</b> The economic summary (the average of taxes, business rules and social programs) and the cultural summary (abortion, gender identity, religion, family roles, race, immigration and national identity) each count as left, middle or right at ±20. The nine combinations give the core label: left on both, economic progressive, communitarian, social liberal, moderate, traditionalist, libertarian, free-market moderate, or right on both. Left on both is split by strength into center-left, liberal and progressive (cuts at −35 and −65, averaging the two summaries); right on both into center-right, conservative and very conservative at +35 and +65. Anyone above +50 on economics and below −50 on drugs and health rules combined is labeled libertarian. “Committed” is added to the other labels past ±65. Up to two strong cross-cutting views are added in front, such as anti-establishment, anti-war, hawkish, China-hawk, protectionist, free-trade, civil-libertarian, green or states'-rights.</li>" +
-      "<li><b>Consistency.</b> Over the axes that split along today's left–right line, the report counts how many you took the left side on, the right, or the middle (within ±10). If the smaller side is under 12% of the total you're consistent, under 30% mostly consistent, otherwise cross-pressured.</li>" +
-      "<li><b>Priorities.</b> When you rank your top issues, a second match weights the axes behind those issues (found from which questions feed which axes) by your ranking.</li>" +
-      "<li><b>Topics.</b> A topic's lean is the average of your answers in that topic that count toward the overall left–right score.</li>" +
-      "<li><b>Map.</b> The default map is overall left–right against liberty versus authority. That second dimension was chosen because it was the biggest thing left over once left–right was accounted for, in a test with 135 simulated politicians. The economic and cultural summaries track overall left–right so closely that a map of the two is mostly a diagonal line. Any two axes or summaries can still be plotted. Summaries are averages of their axes, for you and for each group.</li></ul>" +
-      "<h2 id=ab-axes>The axes</h2><dl class=\"glossary\">" +
-      [B.axes.overall].concat([].concat.apply([], B.axes.families.map(function (f) { return f.axes; }))).map(function (a) {
-        return "<dt>" + esc(a.name) + ' <span class="era">' + esc(a.minus) + " ↔ " + esc(a.plus) + "</span></dt><dd>" + esc(a.about || "") + "</dd>";
-      }).join("") + "</dl>" +
-      '<h2 id=ab-groups>The ' + B.profiles.length + " comparison groups</h2>" + CATS.map(function (c) {
-        return "<h3>" + esc(c.name) + '</h3><p class="scope">' + esc(c.about) + '</p><dl class="glossary">' + B.profiles.filter(function (p) { return p.cat === c.id; }).map(function (p) {
-          return "<dt>" + esc(p.name) + ' <span class="era">' + esc(p.era) + "</span></dt><dd>" + esc(p.about) + basisText(p) + "</dd>";
-        }).join("") + "</dl>";
-      }).join("") +
-      "<h2 id=ab-privacy>Privacy</h2><p>No account, and no names, emails or IP addresses. Your answers are saved with a random code so the quiz can be improved. The optional questions about you come at the end and never change your results. Share links contain only your scores. People under 18 can take the quiz, but their answers aren't saved.</p>" +
-      "<h2 id=ab-limits>Limits</h2><p>This covers US politics only. The questions were drafted by one project and are still being reviewed, so some will be improved; the “Report a problem” link under each question goes straight to that list. Scores are approximate until there's enough data to calibrate them.</p>" +
+    var html = '<h1>How it works</h1>' +
+      '<nav class="toc" aria-label="On this page"><ul><li><a href="#ab-questions">The questions</a></li><li><a href="#ab-scoring">Scoring</a></li><li><a href="#ab-report">The report</a></li><li><a href="#ab-groups">Axes and groups</a></li><li><a href="#ab-privacy">Privacy</a></li><li><a href="#ab-limits">Limits</a></li></ul></nav>' +
+      '<section class="prose"><h2 id=ab-questions>The questions</h2>' +
+      "<p>You pick the policy you want, with real numbers where they exist, instead of agreeing or disagreeing with a statement. Each question says which case to picture, and edge cases (rape and incest exceptions, say) are asked separately.</p>" +
+      "<p>No question names a party or a politician. Rules about power are asked for any president, and some are asked twice with each side benefiting. “None of these fit” and “I don't know” never count as a middle answer.</p>" +
+      "<h2 id=ab-scoring>Scoring</h2>" +
+      "<p>Each answer becomes a number from −1 to +1. An axis score is the average of the answers keyed to it, shown from −100 to +100 once it has 3 answers. Follow-up cases count half.</p>" +
+      "<p>Free speech and federalism are scored for consistency: questions where the protective answer helps the left and questions where it helps the right count equally. If your answers lean hard one way, the report says so.</p>" +
+      "<p>Weights are set by hand for now and will be checked against real responses.</p>" +
+      "<p>Today's factions and the last five presidents are placed by answering the whole quiz as their leading politicians would and averaging the results; past presidents from their record in office. Voter types, older parties, ideologies and parties abroad are placed by hand and compared only on issues they took positions on.</p>" +
+      "<h2 id=ab-report>The report</h2><dl class=\"glossary\">" +
+      "<dt>Bands</dt><dd>Each axis has five bands, cut at −60, −20, +20 and +60, each with a plain-language description.</dd>" +
+      "<dt>Label</dt><dd>The economic summary (taxes, business rules, social programs) and the cultural summary (abortion, gender identity, religion, family, race, immigration, national identity) each count as left, middle or right at ±20. Left on both splits into center-left, liberal and progressive at −35 and −65; right on both into center-right, conservative and very conservative at +35 and +65. Above +50 on economics and below −50 on drugs and health rules reads as libertarian. Up to two strong cross-cutting views go in front, like anti-war or protectionist.</dd>" +
+      "<dt>Consistency</dt><dd>Over the axes that split along today's left–right line: consistent if under 12% of your sides go the other way, mostly consistent under 30%, otherwise cross-pressured.</dd>" +
+      "<dt>Priorities</dt><dd>A second match weights the axes behind the issues you ranked.</dd>" +
+      "<dt>Map</dt><dd>Overall left–right against liberty vs. authority, the biggest dimension left once left–right is removed in a test with 135 simulated politicians. Economics against culture is mostly a diagonal line, so it's an option rather than the default.</dd></dl>" +
+      "<h2 id=ab-groups>Axes and groups</h2><p>Every axis and all " + B.profiles.length + ' groups, with their positions and how each was placed, are in <button type="button" class="link" id="ab-explore">Explore</button>.</p>' +
+      "<h2 id=ab-privacy>Privacy</h2><p>No account, and no names, emails or IP addresses. Answers are saved under a random code. The questions about you are optional and don't change your results. Share links hold scores only. Answers from people under 18 aren't saved.</p>" +
+      "<h2 id=ab-limits>Limits</h2><p>US politics only. The questions are still being reviewed; “Report a problem” under each one flags it. Scores are approximate until there's enough data to calibrate them.</p>" +
       '</section>' +
       '<div class="nav"><span></span><button class="btn" id="back">Back</button></div>';
     show(html);
     bind("#back", closeAbout);
+    bind("#ab-explore", function () { openExplore("groups"); });
   }
   function closeAbout() {
     var r = returnTo || { view: null, y: 0 };
